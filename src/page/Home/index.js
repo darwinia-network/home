@@ -78,7 +78,7 @@ class Home extends Component {
                                     </InputGroup.Append>
 
                                 </InputGroup>
-                                <Form.Text className={`text-muted ${styles.subscribeTip}`} dangerouslySetInnerHTML = {{ __html: info || '&nbsp' }} >
+                                <Form.Text className={`text-muted ${styles.subscribeTip} hidden-xs`} dangerouslySetInnerHTML = {{ __html: info || '&nbsp' }} >
 
                                 </Form.Text>
                                 <Form className={`${styles.subscribe} hidden-md`}>
