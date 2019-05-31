@@ -39,9 +39,6 @@ class Home extends Component {
             })
             .catch( (error) => {
                 // console.log(error);
-                this.setState({
-                    info: this.props.t('home_page:subscribe_tip')
-                })
             });
     }
 
