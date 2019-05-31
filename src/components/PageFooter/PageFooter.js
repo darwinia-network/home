@@ -39,7 +39,7 @@ class PageFooter extends Component {
                 // window.open('https://medium.com/@DarwiniaNetwork');
                 return;
             case 'email':
-                window.open('https://medium.com/@DarwiniaNetwork');
+                window.open('mailto:hello@darwinia.network');
                 return;
         }
     }
@@ -68,18 +68,18 @@ class PageFooter extends Component {
                     </Row>
 
                     <Row className={styles.xsContent}>
-                        <Col className={`text-center`}>
+                        <Col className={`text-center  ${styles.shareLogo}`}>
                             <div className={styles.logoContent}>
-                                <img src={share1}/>
-                                <img src={share2}/>
-                                <img src={share3}/>
-                                <img src={share4}/>
+                                <img  onClick={() => {this.goto('medium')}} src={share1}/>
+                                <img onClick={() => {this.goto('tg')}} src={share2}/>
+                                <img onClick={() => {this.goto('twitter')}} src={share3}/>
+                                <img onClick={() => {this.goto('github')}}  src={share4}/>
                             </div>
                             <div className={styles.logoContent}>
-                                <img src={share5}/>
-                                <img src={share6}/>
-                                <img src={share7}/>
-                                <img src={share8}/>
+                                <img onClick={() => {this.goto('bihu')}} src={share5}/>
+                                <img onClick={() => {this.goto('weibo')}} src={share6}/>
+                                <img onClick={() => {this.goto('wx')}} src={share7}/>
+                                <img onClick={() => {this.goto('email')}} src={share8}/>
                             </div>
                         </Col>
                         <Col className={`text-center ${styles.copyright}`}>
