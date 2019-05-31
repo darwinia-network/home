@@ -5,18 +5,21 @@ import {PageFooter} from '../../components/PageFooter'
 import styles from './style.module.scss'
 import dwIcon from './img/darwinia-logo.png'
 import architecture from './img/architecture.png'
+import architecture_en from './img/architecture-en.png'
 import roadmap from './img/roadmap.png'
 import roadmapMobile from './img/roadmap-m.png'
 import axios from 'axios'
 import archorsComponent from '../../components/anchorsComponent'
 import {withTranslation} from "react-i18next";
+import i18n from '../../locales/i18n';
 
 class Home extends Component {
     constructor(props, context) {
         super(props, context);
 
         this.state = {
-            email: ''
+            email: '',
+            info: ''
         }
     }
 
@@ -26,11 +29,19 @@ class Home extends Component {
 
     subscribe = (text) => {
         axios.post('https://darwinia.network/api/subscribe?email=' + text)
-            .then(function (response) {
+            .then( (response) => {
                 console.log(response);
+                if (response.data.code === 0) {
+                    this.setState({
+                        info: this.props.t('home_page:subscribe_tip')
+                    })
+                }
             })
-            .catch(function (error) {
-                console.log(error);
+            .catch( (error) => {
+                // console.log(error);
+                this.setState({
+                    info: this.props.t('home_page:subscribe_tip')
+                })
             });
     }
 
@@ -42,7 +53,7 @@ class Home extends Component {
 
     render() {
         const {t} = this.props
-        const {email} = this.state
+        const {email, info} = this.state
         return (
             <div>
                 <div className={styles.homeBannerArea}>
@@ -68,10 +79,15 @@ class Home extends Component {
                                             this.subscribe(email)
                                         }}>{t('home_page:subscribe_btn')}</Button>
                                     </InputGroup.Append>
+
                                 </InputGroup>
+                                <Form.Text className={`text-muted ${styles.subscribeTip}`} dangerouslySetInnerHTML = {{ __html: info || '&nbsp' }} >
+
+                                </Form.Text>
                                 <Form className={`${styles.subscribe} hidden-md`}>
                                     <FormControl
                                         value={email}
+                                        type={'email'}
                                         onChange={(e) => {
                                             this.changeTextValue('email', e)
                                         }}
@@ -79,11 +95,15 @@ class Home extends Component {
                                         aria-label={t('home_page:placeholder')}
                                         aria-describedby={t('home_page:placeholder')}
                                     />
+                                    <Form.Text className={`text-muted ${styles.subscribeTip}`}>
+                                        We'll never share your email with anyone else.
+                                    </Form.Text>
                                     <Button block onClick={() => {
                                         this.subscribe(email)
                                     }}>
                                         {t('home_page:subscribe_btn')}
                                     </Button>
+
                                 </Form>
                             </Col>
                             <Col xs={{order: 1}} md={{order: 2, span: 6}}
@@ -122,7 +142,8 @@ class Home extends Component {
                 <div className={`${styles.architectureContainer}`}>
                     <Container>
                         <h1 className={`text-center ${styles.fontH1}`}>{t('home_page:architecture_title')}</h1>
-                        <img src={architecture}/>
+                        {i18n.language === 'en-US' ? <img src={architecture_en}/> :
+                            <img src={architecture}/>}
                     </Container>
                 </div>
 
