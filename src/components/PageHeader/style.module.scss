@@ -1,0 +1,75 @@
+@import "../../style/index";
+
+.navLink {
+  color: $text-fff;
+  font-weight: bold;
+}
+
+.lngBtn{
+  width: 24px;
+  height: 24px;
+  background: url("./img/lng.svg") top center no-repeat;
+  background-size: contain;
+  padding: $nav-link-padding-y 0 $nav-link-padding-y $nav-link-padding-x;
+  @extend .extend-link:hover;
+}
+
+.navDraw{
+  position: absolute;
+  height: 100%;
+  margin-top: 0px;
+  max-height: calc(100% - 0px);
+  transform: translateX(0px);
+  width: 165px;
+  right: 0;
+  top: 0;
+  box-shadow: 0 8px 10px -5px rgba(0,0,0,.2), 0 16px 24px 2px rgba(0,0,0,.14), 0 6px 30px 5px rgba(0,0,0,.12);
+  transition: .2s cubic-bezier(.4,0,.2,1);
+  transition-property: width,-webkit-transform;
+  transition-property: transform,width;
+  transition-property: transform,width,-webkit-transform;
+
+  background-color: #fff;
+  z-index: 1000;
+}
+
+
+.Navbar{
+  background: transparent;
+  padding: .5rem 40px;
+  img{
+    width: 295px;
+  }
+}
+
+.NavBg{
+  background:linear-gradient(315deg,rgba(254,56,118,1) 0%,rgba(124,48,221,1) 71%,rgba(58,48,221,1) 100%);
+}
+
+.closeBox{
+  padding: 11px 15px;
+  background: #F7F7F7;
+}
+
+.lngBox{
+  padding-top: 25px;
+  padding-bottom: 25px;
+  background: #F7F7F7;
+}
+
+.navLinkSub{
+  font-size: 14px;
+  font-weight: normal;
+  padding: 0.5rem 0;
+}
+
+@media (max-width: 575.98px) {
+  .Navbar{
+    padding: .5rem 1rem;
+    a{
+      img {
+        width: 117px;
+      }
+    }
+  }
+}

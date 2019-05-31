@@ -1,0 +1,85 @@
+@import "../../style/index";
+
+.navLink {
+  color: $text-main;
+  font-weight: bold;
+}
+
+.navFooter {
+  background: #201550;
+  color: #7B70AE;
+  padding: 24px;
+  img {
+    width: 25px;
+    margin-left: 24px;
+  }
+}
+
+.shareLogo {
+  cursor: pointer;
+}
+
+.mdContent {
+  img {
+
+  }
+}
+
+.xsContent {
+  display: none;
+
+  .logoContent {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+
+  img {
+
+  }
+
+  .copyright {
+    margin-top: 50px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 768px) {
+  .mdContent {
+    display: none;
+  }
+
+  .xsContent {
+    display: block;
+    padding-left: 25px;
+    padding-right: 25px;
+  }
+
+  .navFooter {
+    padding-top: 35px;
+
+    img {
+      margin-left: 0;
+    }
+  }
+}
+
+//@media (max-width: 768px) {
+//  .mdContent{
+//    text-align: center;
+//    .shareLogo{
+//      text-align: center!important;
+//      margin-bottom: 20px;
+//      img{
+//        margin-left: 25px;
+//        margin-right: 25px;
+//      }
+//    }
+//  }
+//}
+
+
+
+

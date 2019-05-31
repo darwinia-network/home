@@ -1,0 +1,43 @@
+{
+  "header": {
+    "home": "首页",
+    "genepaper": "Genepaper",
+    "faq": "FAQs"
+  },
+  "home_page": {
+    "slogan": "为游戏设计的跨链网络",
+    "subtitle": "达尔文网络是一个开放的跨链协议，用来支持游戏在不同公链之间进行游戏逻辑和游戏资产的跨链交互",
+    "placeholder": "name@email.com",
+    "subscribe_btn": "获取更新",
+    "subscribe_tip": "订阅成功",
+    "highlight_title": "核心要素",
+    "highlight_block_title_1": "Polkadot 生态",
+    "highlight_block_content_1": "达尔文网络是 Polkadot 上的第一个游戏链，得益于 Polkadot 生态，达尔文网络可以链接更广泛的游戏和玩家",
+    "highlight_block_title_2": "燃料费模型",
+    "highlight_block_content_2": "达尔文网络的系统代币RING作为燃料费，用户可以通过锁定RING来获得KTON，KTON可以获得达尔文网络的收入分成（以RING的形式），达尔文网络将会免费发送一些KTON给用户，让用户免费获得燃料费",
+    "highlight_block_title_3": "星际资产编码标准",
+    "highlight_block_content_3": "我们设计了一个星际资产编码标准，让不同公链，不同游戏的资产在达尔文网络可以得到唯一标识，让游戏资产可以方便的跨链转移",
+    "highlight_block_title_4": "达尔文应用链",
+    "highlight_block_content_4": "达尔文应用链是一组区块链开发套件，可以满足应用开发者不同区块链定制需求，甚至一键发链。同时，通过达尔文网络的跨链支持和 Polkadot 生态，传统游戏可以触及更多的区块链游戏玩家",
+    "architecture_title": "架构设计",
+    "dev_title": "开发团队",
+    "dev_content": "Itering 团队将支持达尔文网络的开发",
+    "dev_link": "www.itering.com",
+    "roadmap_title": "路线图",
+    "roadmap_1_name": "达尔文网络",
+    "roadmap_1_milestone": "Solo 模式测试网",
+    "roadmap_2_name": "达尔文应用链",
+    "roadmap_2_milestone": "Beta 版",
+    "roadmap_3_name": "达尔文网络",
+    "roadmap_3_milestone": "主网",
+    "roadmap_4_name": "达尔文应用链",
+    "roadmap_4_milestone": "进化星球新大陆"
+  },
+  "faq_page": {
+    "title": "FAQs",
+    "faq_1_title": "达尔文网络和 Polkadot 的关系是什么？",
+    "faq_1_content": "达尔文网络是 Polkadot 上的第一个游戏链，达尔文网络基于 Polkadot 和 Substrate 开发，后面达尔文网络将会成为 Polkadot 网络的一个平行链",
+    "faq_2_title": "如果达尔文网络不再是 Polkadot 的平行链会发生什么？",
+    "faq_2_content": "即使达尔文网络被投票退出 Polkadot 的平行链集合，达尔文网络仍将作为“ Solo Chain ”工作，将会自己负责自己的安全。"
+  }
+}

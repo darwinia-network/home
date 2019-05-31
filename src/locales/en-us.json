@@ -1,0 +1,43 @@
+{
+  "header": {
+    "home": "Home",
+    "genepaper": "Genepaper",
+    "faq": "FAQs"
+  },
+  "home_page": {
+    "slogan": "cross-chain protocol designed for game",
+    "subtitle": "Darwinia Network is an open, cross-chain protocol support games for cross-chain interaction in game logic and game assets",
+    "placeholder": "name@email.com",
+    "subscribe_btn": "Get Updates",
+    "subscribe_tip": "Subscription success",
+    "highlight_title": "Key Value",
+    "highlight_block_title_1": "Polkadot Ecosystem",
+    "highlight_block_content_1": "Darwinia Network is the first game chain of the Polkadot. Thanks to the Polkadot ecosystem, Darwinia Networks can link to a wider range of games and players",
+    "highlight_block_title_2": "Gas Model",
+    "highlight_block_content_2": "System token RING of Darwinia Network is used as gas. Users can get KTON by locking RING. KTON can get Darwinia Network revenue share (in the form of RING). User can get some gas for free",
+    "highlight_block_title_3": "Interstellar Asset Coding Standard",
+    "highlight_block_content_3": "We designed an Interstellar Asset Coding Standard so that different public-chain and different game assets can be uniquely identified on the Darwinia Network, allowing game assets to be easily cross-chain interaction",
+    "highlight_block_title_4": "App Chain",
+    "highlight_block_content_4": "Darwinia AppChain is a set of blockchain development kits that can meet the needs of application developers for different blockchain customizations",
+    "architecture_title": "Architecture Design",
+    "dev_title": "Dev team",
+    "dev_content": "Itering Team is the Dev Team for Darwinia Network",
+    "dev_link": "www.itering.com",
+    "roadmap_title": "Roadmap",
+    "roadmap_1_name": "Darwinia Network",
+    "roadmap_1_milestone": "Solo Mode Testnet",
+    "roadmap_2_name": "Darwinia AppChain SDK Suite",
+    "roadmap_2_milestone": "Beta Version",
+    "roadmap_3_name": "Darwinia Network",
+    "roadmap_3_milestone": "Mainnet",
+    "roadmap_4_name": "Darwinia AppChain",
+    "roadmap_4_milestone": "New Land For EvolutionLand"
+  },
+  "faq_page": {
+    "title": "FAQs",
+    "faq_1_title": "What is the relationship between Darwinia Network and Polkadot?",
+    "faq_1_content": "Darwinia Network is the first game chain on Polkadot. The development of Darwinia network is based on Polkadot and Substrate framework. Later Darwin network will become a parachain of the Polkadot network.",
+    "faq_2_title": "What happens if Edgeware is no longer a parachain?",
+    "faq_2_content": "Even if Darwinia Network is voted off the Polkadot parachain set, it will still work as a \"Solo Chain\", where it's responsible for its own security. "
+  }
+}
