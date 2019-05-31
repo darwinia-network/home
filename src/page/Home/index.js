@@ -92,14 +92,13 @@ class Home extends Component {
                                         aria-label={t('home_page:placeholder')}
                                         aria-describedby={t('home_page:placeholder')}
                                     />
-                                    <Form.Text className={`text-muted ${styles.subscribeTip}`}>
-                                        We'll never share your email with anyone else.
-                                    </Form.Text>
+
                                     <Button block onClick={() => {
                                         this.subscribe(email)
                                     }}>
                                         {t('home_page:subscribe_btn')}
                                     </Button>
+                                    <Form.Text className={`text-muted ${styles.subscribeTip}`} dangerouslySetInnerHTML = {{ __html: info || '&nbsp' }} />
 
                                 </Form>
                             </Col>

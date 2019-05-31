@@ -127,9 +127,9 @@ class PageHeader extends Component {
                             <Col md={12}>
                                 <Nav.Link href="/">{t('header:home')}</Nav.Link>
                             </Col>
-                            <Col md={12}>
-                                <Nav.Link href="/">{t('header:genepaper')}</Nav.Link>
-                            </Col>
+                            {/*<Col md={12}>*/}
+                                {/*<Nav.Link href="/">{t('header:genepaper')}</Nav.Link>*/}
+                            {/*</Col>*/}
                             <Col md={12}>
                                 <Nav.Link href="/faq">{t('header:faq')}</Nav.Link>
                             </Col>
