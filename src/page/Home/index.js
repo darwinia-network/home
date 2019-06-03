@@ -140,7 +140,7 @@ class Home extends Component {
                 <div className={`${styles.architectureContainer}`}>
                     <Container>
                         <h1 className={`text-center ${styles.fontH1}`}>{t('home_page:architecture_title')}</h1>
-                        {i18n.language.indexOf('en') > -1 ? <img src={architecture_en}/> :
+                        {i18n.language.indexOf('en') > -1 ? <Zmage src={architecture_en}/> :
                             <Zmage src={architecture}/>}
                     </Container>
                 </div>
