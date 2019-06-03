@@ -1,5 +1,5 @@
 import React, {Component} from "react";
-import {Container, Row, Col} from 'react-bootstrap'
+import {Container, Row, Col, OverlayTrigger, Popover} from 'react-bootstrap'
 import {withTranslation} from "react-i18next";
 import styles from './style.module.scss'
 
@@ -11,11 +11,14 @@ import share5 from './img/share-5.png'
 import share6 from './img/share-6.png'
 import share7 from './img/share-7.png'
 import share8 from './img/share-8.png'
+import wx from './img/wx.jpg'
+
+
 
 
 class PageFooter extends Component {
 
-    goto = (type) => {
+    goto = (type, e) => {
         switch (type) {
             case 'medium':
                 window.open('https://medium.com/@DarwiniaNetwork');
@@ -37,11 +40,21 @@ class PageFooter extends Component {
                 return;
             case 'wx':
                 // window.open('https://medium.com/@DarwiniaNetwork');
+                console.log(e.pageX)
                 return;
             case 'email':
                 window.open('mailto:hello@darwinia.network');
                 return;
         }
+    }
+
+    renderTooltip = props => {
+        const {t} = this.props
+        return <Popover {...props} className={styles.wxContainer}>
+            <img src={wx} />
+            <p>{t("footer:scan")}</p>
+            <p>{t("footer:follow")}</p>
+        </Popover>
     }
 
     render() {
@@ -62,7 +75,13 @@ class PageFooter extends Component {
                             <img onClick={() => {this.goto('github')}} src={share4}/>
                             <img onClick={() => {this.goto('bihu')}} src={share5}/>
                             <img onClick={() => {this.goto('weibo')}} src={share6}/>
-                            <img onClick={() => {this.goto('wx')}} src={share7}/>
+                            <OverlayTrigger
+                                placement="top-end"
+                                delay={{ show: 100, hide: 1000 }}
+                                overlay={this.renderTooltip}
+                            >
+                                <img onClick={(e) => {this.goto('wx',e)}} src={share7}/>
+                            </OverlayTrigger>
                             <img onClick={() => {this.goto('email')}} src={share8}/>
                         </Col>
                     </Row>

@@ -15,7 +15,8 @@
     "react-dom": "^16.8.6",
     "react-i18next": "^10.8.1",
     "react-router-dom": "^5.0.0",
-    "react-scripts": "2.1.8"
+    "react-scripts": "2.1.8",
+    "react-zmage": "^0.7.5"
   },
   "scripts": {
     "start": "react-scripts start",

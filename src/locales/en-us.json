@@ -39,5 +39,9 @@
     "faq_1_content": "Darwinia Network is the first game chain on Polkadot. The development of Darwinia network is based on Polkadot and Substrate framework. Later Darwin network will become a parachain of the Polkadot network.",
     "faq_2_title": "What happens if Edgeware is no longer a parachain?",
     "faq_2_content": "Even if Darwinia Network is voted off the Polkadot parachain set, it will still work as a \"Solo Chain\", where it's responsible for its own security. "
+  },
+  "footer": {
+    "scan": "Scan QR",
+    "follow": "Follow Official Accounts"
   }
 }

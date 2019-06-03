@@ -12,6 +12,8 @@ import axios from 'axios'
 import archorsComponent from '../../components/anchorsComponent'
 import {withTranslation} from "react-i18next";
 import i18n from '../../locales/i18n';
+import Zmage from 'react-zmage'
+
 
 class Home extends Component {
     constructor(props, context) {
@@ -51,7 +53,6 @@ class Home extends Component {
     render() {
         const {t} = this.props
         const {email, info} = this.state
-        console.log(i18n.language)
         return (
             <div>
                 <div className={styles.homeBannerArea}>
@@ -60,7 +61,7 @@ class Home extends Component {
                         <Row className={`${styles.promoteContentArea} d-flex justify-content-center`}>
                             <Col xs={{order: 2, span: 11}} md={{order: 1, span: 6}}>
                                 <p className={styles.slogan}>{t('home_page:slogan')}</p>
-                                <div className={styles.line}></div>
+                                <div className={styles.line}/>
                                 <p className={`${styles.subTitle} mb-4`}>{t('home_page:subtitle')}</p>
                                 <InputGroup className={`mb-3 ${styles.subscribe} hidden-xs`}>
                                     <FormControl
@@ -140,7 +141,7 @@ class Home extends Component {
                     <Container>
                         <h1 className={`text-center ${styles.fontH1}`}>{t('home_page:architecture_title')}</h1>
                         {i18n.language.indexOf('en') > -1 ? <img src={architecture_en}/> :
-                            <img src={architecture}/>}
+                            <Zmage src={architecture}/>}
                     </Container>
                 </div>
 
