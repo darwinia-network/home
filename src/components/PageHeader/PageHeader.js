@@ -93,7 +93,7 @@ class PageHeader extends Component {
                         <Nav className="mr-auto">
                         </Nav>
                         <Form inline>
-                            {/*<Nav.Link href="/">{t('header:genepaper')}</Nav.Link>*/}
+                            <Nav.Link target={'_blank'} href="https://itering.oss-cn-hangzhou.aliyuncs.com/darwinia/Darwinia_Genepaper_Preview.pdf">{t('header:genepaper')}</Nav.Link>
 
                             <Nav.Link href="/faq">{t('header:faq')}</Nav.Link>
 
@@ -127,9 +127,9 @@ class PageHeader extends Component {
                             <Col md={12}>
                                 <Nav.Link href="/">{t('header:home')}</Nav.Link>
                             </Col>
-                            {/*<Col md={12}>*/}
-                                {/*<Nav.Link href="/">{t('header:genepaper')}</Nav.Link>*/}
-                            {/*</Col>*/}
+                            <Col md={12}>
+                                <Nav.Link  target={'_blank'} href="https://itering.oss-cn-hangzhou.aliyuncs.com/darwinia/Darwinia_Genepaper_Preview.pdf">{t('header:genepaper')}</Nav.Link>
+                            </Col>
                             <Col md={12}>
                                 <Nav.Link href="/faq">{t('header:faq')}</Nav.Link>
                             </Col>
