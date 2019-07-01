@@ -7,10 +7,12 @@
   font-size: 0px;
   .slogan {
     text-transform: uppercase;
-    font-size: 40px;
+    font-size: 34px;
   }
   .subTitle {
-    text-align: justify
+    text-align: left;
+    margin-bottom: 40px!important;
+    width: 85%;
   }
   div {
     p {
@@ -138,8 +140,10 @@
       margin-bottom: 50px;
     }
     .subTitle {
+      font-size: 16px;
       text-align: center;
       margin-bottom: 30px !important;
+      width: 100%!important;
     }
     img {
       width: 203px;
@@ -164,7 +168,7 @@
   .subscribe {
     width: 100%;
     button {
-      margin-top: 10px;
+      margin-top: 20px;
       background: linear-gradient(315deg, rgba(254, 56, 118, 1) 0%, rgba(124, 48, 221, 1) 71%, rgba(58, 48, 221, 1) 100%);
       border-radius: 4px;
       font-weight: bold;

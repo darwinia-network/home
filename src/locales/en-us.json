@@ -5,8 +5,8 @@
     "faq": "FAQs"
   },
   "home_page": {
-    "slogan": "cross-chain protocol designed for game",
-    "subtitle": "Darwinia Network is an open, cross-chain protocol support games for cross-chain interaction in game logic and game assets",
+    "slogan": "Polkadot Parachain for User-facing Blockchain Application Developers",
+    "subtitle": "Darwinia Network provides game developers the scalability, cross-chain interoperability, and NFT identifiability, with seamless integrations to Polkadot, bridges to all major blockchains, and on-chain RNG services",
     "placeholder": "name@email.com",
     "subscribe_btn": "Get Updates",
     "subscribe_tip": "Subscription success.",

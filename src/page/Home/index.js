@@ -59,7 +59,7 @@ class Home extends Component {
                     <PageHeader transparent={true}/>
                     <Container>
                         <Row className={`${styles.promoteContentArea} d-flex justify-content-center`}>
-                            <Col xs={{order: 2, span: 11}} md={{order: 1, span: 6}}>
+                            <Col xs={{order: 2, span: 11}} md={{order: 1, span: 7}}>
                                 <p className={styles.slogan}>{t('home_page:slogan')}</p>
                                 <div className={styles.line}/>
                                 <p className={`${styles.subTitle} mb-4`}>{t('home_page:subtitle')}</p>
@@ -104,7 +104,7 @@ class Home extends Component {
 
                                 </Form>
                             </Col>
-                            <Col xs={{order: 1}} md={{order: 2, span: 6}}
+                            <Col xs={{order: 1}} md={{order: 2, span: 5}}
                                  className={` d-flex justify-content-center align-items-center`}>
                                 <img src={dwIcon}/>
                             </Col>
