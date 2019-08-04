@@ -4,6 +4,7 @@ import {asyncComponent} from "./components/AsyncComponent";
 import { createBrowserHistory} from "history";
 const AsyncHome = asyncComponent(import("./page/Home"));
 const AsyncFaq = asyncComponent(import("./page/Faq"));
+const AsyncNews = asyncComponent(import("./page/News"));
 const AsyncNotFound = asyncComponent(import("./page/NotFound"));
 
 const history = createBrowserHistory();
@@ -21,6 +22,12 @@ export default () =>
                 exact
                 component={AsyncFaq}
                 path='/faq'
+            />
+
+            <Route
+                exact
+                component={AsyncNews}
+                path='/news'
             />
 
             <Route component={AsyncNotFound}/>

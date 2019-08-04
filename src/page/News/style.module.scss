@@ -1,12 +1,13 @@
 @import "../../style/index";
 
-.faq {
+.news {
   text-align: left;
   padding: 60px 0 100px 0;
   min-height: calc(100vh - 132px);
   h1 {
     text-align: center;
     font-weight: bold;
+    text-transform: uppercase;
   }
   h3 {
     font-size: 20px;
@@ -18,10 +19,16 @@
   }
   p {
     font-size: 14px;
-    color: #6330DD;
+    a{
+      color: $text-main;
+    }
   }
 
   .content {
+    img {
+      width: 100%;
+      margin-bottom: 30px;
+    }
     padding: 0 25px 70px 35px;
     box-sizing: border-box;
   }
@@ -29,6 +36,7 @@
 
 .fontH1 {
   font-size: 35px;
+  text-transform: uppercase;
 }
 
 .lineH1 {
@@ -39,7 +47,7 @@
 }
 
 @media (max-width: 575.98px) {
-  .faq {
+  .news {
     h1 {
       font-size: 26px;
     }

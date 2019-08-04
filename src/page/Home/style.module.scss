@@ -7,12 +7,16 @@
   font-size: 0px;
   .slogan {
     text-transform: uppercase;
-    font-size: 34px;
+    font-size: 30px;
+  }
+  .slideLogo {
+    width: 331px;
+    margin-bottom: 80px;
   }
   .subTitle {
     text-align: left;
-    margin-bottom: 40px!important;
-    width: 85%;
+    margin-bottom: 40px !important;
+    width: 95%;
   }
   div {
     p {
@@ -26,13 +30,20 @@
   }
 }
 
+
+
 .highlightContainer {
   padding: 60px 0 100px 0;
+  img {
+    width: 100%;
+    margin-bottom: 20px;
+  }
   h3 {
-    font-size: 20px;
+    font-size: 16px;
     text-align: center;
-    height: 50px;
+    height: 24px;
     margin-bottom: 1rem;
+    font-weight: bold;
   }
   p {
     font-size: 14px;
@@ -40,18 +51,55 @@
   }
 }
 
+.economicContainer {
+  text-align: center;
+  img {
+    width: 170px;
+  }
+}
+.partnersContainer {
+  padding-top: 100px;
+  padding-bottom: 50px;
+  background: #f8f8f8;
+  &>div>div>div{
+    text-align: center;
+    margin-bottom: 90px;
+  }
+  img {
+    height: 80px;
+  }
+  h3 {
+    font-size: 14px;
+    margin-top: 20px;
+    text-align: center;
+  }
+}
+
+.newContainer{
+  background: #fff;
+  h3{
+    text-align: left;
+    a{
+      color: $text-main;
+    }
+  }
+}
+
+
 .line {
   display: inline-block;
-  height: 4px;
+  height: 2px;
   width: 113px;
   background-color: #fff;
   margin: 0px 8px 35px 3px;
 }
 
 .subscribe {
-  width: 70%;
+  width: 50%;
   button {
     border: 0;
+    padding-left: 20px;
+    padding-right: 20px;
     font-size: 14px;
     color: #fff;
     font-weight: bold;
@@ -65,20 +113,22 @@
 }
 
 .homeBannerArea {
-  background: url("https://itering.oss-cn-hangzhou.aliyuncs.com/darwinia/public/banner.svg") top center no-repeat;
+  background: url("./img/banner.png") top center no-repeat;
   //background-size: auto 100%;
   background-size: cover;
 }
 
 .fontH1 {
-  font-size: 40px;
+  font-size: 35px;
   margin-bottom: 30px;
+  text-transform: uppercase;
 }
 
 .lineH1 {
   height: 1px;
   background: #EFEFEF;
   margin-bottom: 70px;
+  font-weight: bold;
 }
 
 .lineH2 {
@@ -88,8 +138,16 @@
   margin: 2rem auto;
 }
 
+
+.applicationContainer{
+  background: #f8f8f8;
+  img{
+    margin-bottom: 40px;
+  }
+}
+
 .architectureContainer {
-  background: #F9F9F9;
+  background: url("./img/architecture-bg.svg");
   padding: 60px 0 100px 0;
   img {
     width: 100%;
@@ -98,7 +156,6 @@
 
 .roadmapContainer {
   padding: 60px 0 100px 0;
-
   .content {
     margin: 35px;
   }
@@ -114,12 +171,18 @@
 }
 
 .teamContainer {
-  background: url("./img/dev-team.jpg") top center no-repeat;
+  background: url("./img/dev-team.png") top center no-repeat;
   background-size: cover;
   color: #fff;
   height: 680px;
   p {
     font-size: 24px;
+  }
+  .link{
+    a{
+      color: #fff;
+      text-decoration: underline;
+    }
   }
 }
 
@@ -128,22 +191,28 @@
   color: #fff !important;
 }
 
+
+.button {
+  margin-top: 60px;
+}
+
 @media (max-width: 767.98px) {
   .promoteContentArea {
-    padding-top: 50px;
+    padding-top: 90px;
     padding-bottom: 70px;
     .slogan {
       text-transform: uppercase;
       text-align: center;
-      font-size: 24px;
+      font-size: 26px;
       margin-top: 40px;
+      line-height:33px;
       margin-bottom: 50px;
     }
     .subTitle {
       font-size: 16px;
       text-align: center;
       margin-bottom: 30px !important;
-      width: 100%!important;
+      width: 100% !important;
     }
     img {
       width: 203px;
@@ -152,6 +221,10 @@
 
   .highlightContainer {
     padding: 30px 0 20px 0;
+    img {
+      width: 100%;
+      margin-bottom: 26px;
+    }
     h3 {
       font-size: 20px;
       text-align: center;
@@ -162,6 +235,25 @@
       font-size: 14px;
       color: #6330DD;
       margin-bottom: 50px;
+    }
+  }
+
+  .newContainer{
+    background: #fff;
+    h3{
+      font-size: 16px;
+      text-align: left;
+      margin-bottom: 40px;
+      a{
+        color: $text-main;
+      }
+    }
+  }
+
+  .economicContainer {
+    text-align: center;
+    img {
+      width: 170px;
     }
   }
 
@@ -197,7 +289,7 @@
   }
 
   .fontH1 {
-    font-size: 26px;
+    font-size: 20px;
     margin-bottom: 15px;
     font-weight: bold;
 
@@ -229,6 +321,10 @@
     .nospace {
       padding-left: 0;
       padding-right: 0;
+      p{
+        text-align: center;
+      }
+
       & > div > div {
         padding-left: 0;
         padding-right: 0;
@@ -262,7 +358,12 @@
       }
     }
   }
+
+  .button {
+    margin-bottom: 20px;
+  }
 }
+
 
 //@media (min-width: 576px) and(max-width: 768px) {
 //  .highlightContainer {

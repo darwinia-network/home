@@ -2,46 +2,113 @@
   "header": {
     "home": "Home",
     "genepaper": "Genepaper",
-    "faq": "FAQs"
+    "gringotts": "Gringotts",
+    "testnet": "Testnet",
+    "faq": "FAQs",
+    "wallet": "Wallet",
+    "comingsoon": "Coming Soon"
   },
   "home_page": {
     "slogan": "Polkadot Parachain for User-facing Blockchain Application Developers",
-    "subtitle": "Darwinia Network provides game developers the scalability, cross-chain interoperability, and NFT identifiability, with seamless integrations to Polkadot, bridges to all major blockchains, and on-chain RNG services",
+    "subtitle": "Darwinia Network provides developers the scalability, cross-chain interoperability, and NFT identifiability, with seamless integrations to Polkadot, bridges to all major blockchains, and on-chain RNG services",
     "placeholder": "name@email.com",
     "subscribe_btn": "Get Updates",
     "subscribe_tip": "Subscription success.",
-    "highlight_title": "Key Value",
+    "highlight_title": "Key/Highlight",
     "highlight_block_title_1": "Polkadot Ecosystem",
-    "highlight_block_content_1": "Darwinia Network is the first game chain of the Polkadot. Thanks to the Polkadot ecosystem, Darwinia Networks can link to a wider range of games and players",
-    "highlight_block_title_2": "Gas Model",
-    "highlight_block_content_2": "System token RING of Darwinia Network is used as gas. Users can get KTON by locking RING. KTON can get Darwinia Network revenue share (in the form of RING). User can get some gas for free",
-    "highlight_block_title_3": "Interstellar Asset Coding Standard",
-    "highlight_block_content_3": "We designed an Interstellar Asset Coding Standard so that different public-chain and different game assets can be uniquely identified on the Darwinia Network, allowing game assets to be easily cross-chain interaction",
-    "highlight_block_title_4": "AppChain",
-    "highlight_block_content_4": "Darwinia AppChain is a set of blockchain development kits that can meet the needs of application developers for different blockchain customizations",
+    "highlight_block_content_1": "Seamless Integrations To Polkadot",
+    "highlight_block_title_2": "Bridge",
+    "highlight_block_content_2": "Bridge to all major Blockchain",
+    "highlight_block_title_3": "Appchain",
+    "highlight_block_content_3": "Gaming appchain for Developers",
+    "highlight_block_title_4": "Cross Chain",
+    "highlight_block_content_4": "Cross-chain interoperation solution",
+
+    "highlight_block_title_5": "NFT Identifiability",
+    "highlight_block_content_5": "Unleash the power of NFT",
+    "highlight_block_title_6": "Onchain RNG",
+    "highlight_block_content_6": "Onchain RNG solution",
+
+
     "architecture_title": "Architecture Design",
+
+    "economic_title":"Darwinia Economic",
+    "economic_block_title_1":"RING",
+    "economic_block_content_1":"The system token for Darwinia Network is RING, RING is also used as gas for transactions. Gas include transaction fees, contract execution fees, network bandwidth charges, storage fees, and more",
+    "economic_block_title_2":"KTON",
+    "economic_block_content_2":"KTON is the staking and governance credential of Darwinia Network, KTON can only obtained by locking RING",
+    "economic_block_title_3":"Staking",
+    "economic_block_content_3":"Darwinia Network will distribute all of its income as an incentive to Staking participants. Staking participants include KTON holder and KTON staking Locker",
+    "economic_btn": "How to staking?",
+    "economic_url": "https://mp.weixin.qq.com/s/vSWn8Wz2C_f3_mxOiV-54g",
+
+    "application_title": "Applications",
+    "application_block_title_1": "Open Game",
+    "application_block_title_2": "Open Finance",
+
     "dev_title": "Dev team",
     "dev_content": "Itering Team is the Dev Team for Darwinia Network",
     "dev_link": "www.itering.com",
+
     "roadmap_title": "Roadmap",
     "roadmap_1_name": "Darwinia Network",
     "roadmap_1_milestone": "Solo Mode Testnet",
-    "roadmap_2_name": "Darwinia AppChain SDK Suite",
-    "roadmap_2_milestone": "Beta Version",
-    "roadmap_3_name": "Darwinia Network",
-    "roadmap_3_milestone": "Mainnet",
+    "roadmap_2_name": "Darwinia Network",
+    "roadmap_2_milestone": "Mainnet",
+    "roadmap_3_name": "Darwinia AppChain SDK Suite",
+    "roadmap_3_milestone": "Beta Version",
     "roadmap_4_name": "Darwinia AppChain",
-    "roadmap_4_milestone": "New Land For EvolutionLand"
+    "roadmap_4_milestone": "New Land For EvolutionLand",
+    "roadmap_btn": "Join Darwinia Testnet",
+
+    "partners_title": "Partners",
+
+    "newest_title": "Newest Announcement",
+
+    "news_title_1": "Darwinia sharing on Polkadot China row.",
+    "news_title_2": "How to buy/sell RING on uniswap? ",
+    "news_title_3": "Darwinia Network released its first test network, codenamed \"Trilobita\".",
+    "news_title_4": "How to Staking in Darwinia",
+
+    "news_link_1":"https://mp.weixin.qq.com/s/OfLKkWFB-WvOsSYSQ-cioA",
+    "news_link_2":"https://mp.weixin.qq.com/s/EgelOosWlrBX60vvec32nw",
+    "news_link_3":"https://mp.weixin.qq.com/s/S_tFUzH-40g_vKgLxEsO6A",
+    "news_link_4":"https://mp.weixin.qq.com/s/vSWn8Wz2C_f3_mxOiV-54g",
+
+    "news_btn": "View all"
   },
   "faq_page": {
     "title": "FAQs",
     "faq_1_title": "What is the relationship between Darwinia Network and Polkadot?",
     "faq_1_content": "Darwinia Network is the first game chain on Polkadot. The development of Darwinia network is based on Polkadot and Substrate framework. Later Darwin network will become a parachain of the Polkadot network.",
     "faq_2_title": "What happens if Darwinia Network is no longer a parachain?",
-    "faq_2_content": "Even if Darwinia Network is voted off the Polkadot parachain set, it will still work as a \"Solo Chain\", where it's responsible for its own security. "
+    "faq_2_content": "Even if Darwinia Network is voted off the Polkadot parachain set, it will still work as a \"Solo Chain\", where it's responsible for its own security. ",
+    "faq_3_title": "What is RING and KTON",
+    "faq_3_content": "RING is system token of Darwinia Network, the initial supply before Darwinia network mainnet release is 2 billion.<br/>KTON is the staking and governance credential of Darwinia Network, KTON can only obtained by locking RING, the initial supply is 0.<br/>At present, some RING and KTON exist in the Ethereum network and the Tron network in the form of ERC-20 and TRC-20. These TOKENs will be transferred to the Darwinia main network by 1:1 cross-chain conversion after the Darwinia main online.",
+    "faq_4_title": "What is RING and KTON in Evolution Land?",
+    "faq_4_content": "RING and KTON in Evolution Land is the ERC-20/TRC-20 token, Evolution Land will use RING in Darwinia Network as the payment token in game."
+
   },
   "footer": {
     "scan": "Scan QR",
-    "follow": "Follow Official Accounts"
+    "follow": "Follow Official Accounts",
+
+    "general": "General",
+    "general_title_1": "Staking",
+    "general_title_2": "FAQ",
+    "general_title_3": "Contact",
+
+    "technology": "Technology",
+    "technology_title_1": "Testnet",
+    "technology_title_2": "Telemetry",
+    "technology_title_3": "Genepaper",
+
+    "community": "Community",
+    "community_title_1": "RFCS",
+    "community_title_2": "GITHUB",
+    "community_title_3": "Medium",
+    "community_title_4": "Telegram",
+    "community_title_5": "Reddit"
+
   }
 }

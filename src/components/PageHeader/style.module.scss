@@ -1,7 +1,7 @@
 @import "../../style/index";
 
 .navLink {
-  color: $text-fff;
+  color: $text-fff!important;
   font-weight: bold;
 }
 
@@ -10,6 +10,7 @@
   height: 24px;
   background: url("./img/lng.svg") top center no-repeat;
   background-size: contain;
+  margin-top:7px;
   padding: $nav-link-padding-y 0 $nav-link-padding-y $nav-link-padding-x;
   @extend .extend-link:hover;
 }
@@ -29,17 +30,26 @@
   transition-property: transform,width;
   transition-property: transform,width,-webkit-transform;
 
-  background-color: #fff;
+  background-color: #E4378A;
   z-index: 1000;
+  opacity: 0.9;
+
+  a{
+    color: #fff!important;
+  }
 }
 
+.githubBox{
+  padding: 0.5rem 0rem 0.5rem 1.6rem;
+}
 
 .Navbar{
   background: transparent;
   padding: .5rem 40px;
-  img{
-    width: 295px;
-  }
+  font-size: 20px;
+    .logo{
+      width: 242px;
+    }
 }
 
 .NavBg{
@@ -48,13 +58,13 @@
 
 .closeBox{
   padding: 11px 15px;
-  background: #F7F7F7;
+  background: #E4378A;
 }
 
 .lngBox{
   padding-top: 25px;
   padding-bottom: 25px;
-  background: #F7F7F7;
+  background: #E4378A;
 }
 
 .navLinkSub{
@@ -62,6 +72,7 @@
   font-weight: normal;
   padding: 0.5rem 0;
 }
+
 
 @media (max-width: 575.98px) {
   .Navbar{

@@ -1,11 +1,13 @@
 import React, {Component} from "react";
 import {Navbar, NavDropdown, Dropdown, Nav, Form, Container, Row, Col} from 'react-bootstrap'
-import { disableBodyScroll, enableBodyScroll, clearAllBodyScrollLocks } from 'body-scroll-lock';
+import {disableBodyScroll, enableBodyScroll, clearAllBodyScrollLocks} from 'body-scroll-lock';
+import {withTranslation} from "react-i18next";
 
 import styles from './style.module.scss'
 import logo from './img/logo-darwinia.png'
 import closeIcon from './img/close.png'
-import {withTranslation} from "react-i18next";
+import github from './img/github.svg'
+
 
 class CustomToggle extends React.Component {
     constructor(props, context) {
@@ -78,35 +80,54 @@ class PageHeader extends Component {
         enableBodyScroll(this.targetElement);
     }
 
-
     render() {
         const {t, transparent, i18n} = this.props
         const {open} = this.state
         return (
             <div>
-                <Navbar expand="lg" className={`${styles.Navbar} ${transparent? null : styles.NavBg} cs-header`}>
+                <Navbar expand="lg" className={`${styles.Navbar} ${transparent ? null : styles.NavBg} cs-header`}>
                     <Navbar.Brand href="/">
-                        <img src={logo}/>
+                        <img className={styles.logo} src={logo}/>
                     </Navbar.Brand>
-                    <Navbar.Toggle onClick={() => {this.showTargetElement()}} aria-controls="basic-navbar-nav"/>
+                    <Navbar.Toggle onClick={() => {
+                        this.showTargetElement()
+                    }} aria-controls="basic-navbar-nav"/>
 
                     <Navbar.Collapse className={'d-none d-lg-block'}>
                         <Nav className="mr-auto">
                         </Nav>
                         <Form inline>
-                            {i18n.language.indexOf('en') > -1 ?
-                                <Nav.Link target={'_blank'} href="https://evolution.l2me.com/darwinia/Darwinia_Genepaper_EN.pdf">{t('header:genepaper')}</Nav.Link>
-                                :
-                                <Nav.Link target={'_blank'} href="https://evolution.l2me.com/darwinia/Darwinia_Genepaper_Preview.pdf">{t('header:genepaper')}</Nav.Link>
-                            }
+                            <Nav.Link href="/">{t('header:home')}</Nav.Link>
+                            <Nav.Link target="_blank" href="https://www.evolution.land/land/1/bank/buy-ring">{t('header:gringotts')}</Nav.Link>
+                            <Nav.Link target="_blank" href="https://github.com/darwinia-network/darwinia/wiki/How-To-Join-Darwinia-POC-1-Testnet---Trilobita">{t('header:testnet')}</Nav.Link>
+                            {/*{i18n.language.indexOf('en') > -1 ?*/}
+                                {/*<Nav.Link target={'_blank'}*/}
+                                          {/*href="https://evolution.l2me.com/darwinia/Darwinia_Genepaper_EN.pdf">{t('header:genepaper')}</Nav.Link>*/}
+                                {/*:*/}
+                                {/*<Nav.Link target={'_blank'}*/}
+                                          {/*href="https://evolution.l2me.com/darwinia/Darwinia_Genepaper_Preview.pdf">{t('header:genepaper')}</Nav.Link>*/}
+                            {/*}*/}
 
                             <Nav.Link href="/faq">{t('header:faq')}</Nav.Link>
 
                             <Dropdown>
                                 <Dropdown.Toggle as={CustomToggle} id="dropdown-custom-components">
+                                   {t('header:wallet')}
+                                </Dropdown.Toggle>
+                                <Dropdown.Menu className=' animated fadeIn faster'>
+                                    <Dropdown.Item>
+                                        {t('header:comingsoon')}
+                                    </Dropdown.Item>
+                                </Dropdown.Menu>
+                            </Dropdown>
+
+                            <Nav.Link target="_blank" href="https://github.com/darwinia-network" className={styles.githubBox}><img width={24} src={github}/></Nav.Link>
+
+                            <Dropdown>
+                                <Dropdown.Toggle as={CustomToggle} id="dropdown-custom-components">
                                     <div className={styles.lngBtn}/>
                                 </Dropdown.Toggle>
-                                <Dropdown.Menu  className=' animated fadeIn faster'>
+                                <Dropdown.Menu className=' animated fadeIn faster'>
                                     <Dropdown.Item onClick={() => this.changeLng('zh-cn')} eventKey="4.1">
                                         简体中文
                                     </Dropdown.Item>
@@ -119,10 +140,13 @@ class PageHeader extends Component {
                     </Navbar.Collapse>
                 </Navbar>
 
-                {open ? <div id="basic-navbar-nav" className={`${styles.navDraw} d-flex flex-column animated fadeInRight faster`}>
+                {open ? <div id="basic-navbar-nav"
+                             className={`${styles.navDraw} d-flex flex-column animated fadeInRight faster`}>
                     <div className={`${styles.closeBox} d-flex`}>
                         <div className={'spacer'}></div>
-                        <div onClick={() => {this.hideTargetElement()}}>
+                        <div onClick={() => {
+                            this.hideTargetElement()
+                        }}>
                             <img width={15} src={closeIcon}/>
                         </div>
                     </div>
@@ -133,11 +157,23 @@ class PageHeader extends Component {
                                 <Nav.Link href="/">{t('header:home')}</Nav.Link>
                             </Col>
                             <Col md={12}>
-                                {i18n.language.indexOf('en') > -1 ?
-                                    <Nav.Link target={'_blank'} href="https://evolution.l2me.com/darwinia/Darwinia_Genepaper_EN.pdf">{t('header:genepaper')}</Nav.Link>
-                                    :
-                                    <Nav.Link target={'_blank'} href="https://evolution.l2me.com/darwinia/Darwinia_Genepaper_EN.pdf">{t('header:genepaper')}</Nav.Link>
-                                }                            </Col>
+                                <Nav.Link target="_blank" href="https://www.evolution.land/land/1/bank/buy-ring">{t('header:gringotts')}</Nav.Link>
+                            </Col>
+                            <Col md={12}>
+                                <Nav.Link target="_blank" href="https://github.com/darwinia-network/darwinia/wiki/How-To-Join-Darwinia-POC-1-Testnet---Trilobita">{t('header:testnet')}</Nav.Link>
+                            </Col>
+                            {/*<Col md={12}>*/}
+                                {/*<Nav.Link target="_blank" href="https://github.com/darwinia-network">{t('footer:community_title_2')}</Nav.Link>*/}
+                            {/*</Col>*/}
+                            {/*<Col md={12}>*/}
+                                {/*{i18n.language.indexOf('en') > -1 ?*/}
+                                    {/*<Nav.Link target={'_blank'}*/}
+                                              {/*href="https://evolution.l2me.com/darwinia/Darwinia_Genepaper_EN.pdf">{t('header:genepaper')}</Nav.Link>*/}
+                                    {/*:*/}
+                                    {/*<Nav.Link target={'_blank'}*/}
+                                              {/*href="https://evolution.l2me.com/darwinia/Darwinia_Genepaper_EN.pdf">{t('header:genepaper')}</Nav.Link>*/}
+                                {/*}                            */}
+                            {/*</Col>*/}
                             <Col md={12}>
                                 <Nav.Link href="/faq">{t('header:faq')}</Nav.Link>
                             </Col>
@@ -156,7 +192,9 @@ class PageHeader extends Component {
                     </Container>
                 </div> : null}
 
-                {open ? <div onClick={() => {this.hideTargetElement()}} className="overlay overlay--active  animated fadeIn faster"></div> : null}
+                {open ? <div onClick={() => {
+                    this.hideTargetElement()
+                }} className="overlay overlay--active  animated fadeIn faster"></div> : null}
             </div>
 
         );

@@ -6,7 +6,7 @@
 }
 
 .navFooter {
-  background: #201550;
+  background: #000000;
   position: relative;
   color: #7B70AE;
   padding: 24px;
@@ -43,6 +43,43 @@
 .mdContent {
   img {
 
+  }
+}
+
+.map{
+  background: #201550;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  width: 100%;
+  h1{
+    font-size: 14px;
+    font-weight: bold;
+    color: #fff;
+    margin-bottom: 32px;
+  }
+  p{
+    color: #7B70AE;
+  }
+  a{
+    color: #7B70AE;
+    font-size: 14px;
+    font-weight: bold;
+  }
+  .footerIcon{
+    width: 100%;
+    max-width: 180px;
+    margin-bottom: 37px;
+  }
+  .shareLogo{
+    &>div{
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 20px;
+    }
+    img{
+      width: 25px;
+
+    }
   }
 }
 
