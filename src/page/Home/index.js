@@ -301,12 +301,12 @@ class Home extends Component {
                                             <p>{t('home_page:roadmap_1_milestone')}</p>
                                         </div>
                                         <div xs={12}>
-                                            <p>{t('home_page:roadmap_3_name')}</p>
-                                            <p>{t('home_page:roadmap_3_milestone')}</p>
-                                        </div>
-                                        <div xs={12}>
                                             <p>{t('home_page:roadmap_2_name')}</p>
                                             <p>{t('home_page:roadmap_2_milestone')}</p>
+                                        </div>
+                                        <div xs={12}>
+                                            <p>{t('home_page:roadmap_3_name')}</p>
+                                            <p>{t('home_page:roadmap_3_milestone')}</p>
                                         </div>
                                         <div xs={12}>
                                             <p>{t('home_page:roadmap_4_name')}</p>
@@ -324,12 +324,12 @@ class Home extends Component {
                                     <p>{t('home_page:roadmap_1_milestone')}</p>
                                 </Col>
                                 <Col>
-                                    <p>{t('home_page:roadmap_3_name')}</p>
-                                    <p>{t('home_page:roadmap_3_milestone')}</p>
-                                </Col>
-                                <Col>
                                     <p>{t('home_page:roadmap_2_name')}</p>
                                     <p>{t('home_page:roadmap_2_milestone')}</p>
+                                </Col>
+                                <Col>
+                                    <p>{t('home_page:roadmap_3_name')}</p>
+                                    <p>{t('home_page:roadmap_3_milestone')}</p>
                                 </Col>
                                 <Col>
                                     <p>{t('home_page:roadmap_4_name')}</p>
