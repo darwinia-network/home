@@ -10,7 +10,7 @@
   height: 24px;
   background: url("./img/lng.svg") top center no-repeat;
   background-size: contain;
-  margin-top:7px;
+  margin-top:1px;
   padding: $nav-link-padding-y 0 $nav-link-padding-y $nav-link-padding-x;
   @extend .extend-link:hover;
 }
@@ -41,6 +41,7 @@
 
 .githubBox{
   padding: 0.5rem 0rem 0.5rem 1.6rem;
+  font-size: 0;
 }
 
 .Navbar{

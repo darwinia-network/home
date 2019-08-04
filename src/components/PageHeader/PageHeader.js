@@ -99,7 +99,7 @@ class PageHeader extends Component {
                         <Form inline>
                             <Nav.Link href="/">{t('header:home')}</Nav.Link>
                             <Nav.Link target="_blank" href="https://www.evolution.land/land/1/bank/buy-ring">{t('header:gringotts')}</Nav.Link>
-                            <Nav.Link target="_blank" href="https://github.com/darwinia-network/darwinia/wiki/How-To-Join-Darwinia-POC-1-Testnet---Trilobita">{t('header:testnet')}</Nav.Link>
+                            <Nav.Link target="_blank" href={t('header:testnet_url')}>{t('header:testnet')}</Nav.Link>
                             {/*{i18n.language.indexOf('en') > -1 ?*/}
                                 {/*<Nav.Link target={'_blank'}*/}
                                           {/*href="https://evolution.l2me.com/darwinia/Darwinia_Genepaper_EN.pdf">{t('header:genepaper')}</Nav.Link>*/}

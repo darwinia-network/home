@@ -73,6 +73,8 @@ class Home extends Component {
         this.partners = [
             partner1 ,
             partner2 ,
+            partner20,
+            partner21,
             partner3 ,
             partner4 ,
             partner5 ,
@@ -90,8 +92,7 @@ class Home extends Component {
             partner17,
             partner18,
             partner19,
-            partner20,
-            partner21,
+
             partner22,
             partner23,
         ]
@@ -262,7 +263,7 @@ class Home extends Component {
                             </Col>
                         </Row>
                         <div>
-                            <Button variant="dark" target="_blank" href={t('home_page:economic_url')} className={styles.button}>How to staking?</Button>
+                            <Button variant="dark" target="_blank" href={t('home_page:economic_url')} className={styles.button}>{t('home_page:economic_btn')}</Button>
                         </div>
                     </Container>
                 </div>
@@ -336,7 +337,7 @@ class Home extends Component {
                                 </Col>
                             </Row>
                             <div className={`text-center`}>
-                            <Button variant="dark" className={styles.button}>How to staking?</Button>
+                                <Button variant="dark" target="_blank" href={t('header:testnet_url')} className={styles.button}>{t('home_page:roadmap_btn')}</Button>
                             </div>
                         </div>
                     </Container>
