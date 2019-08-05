@@ -37,9 +37,9 @@
     "economic_block_title_1":"RING",
     "economic_block_content_1":"RING 是达尔⽂⽹络的原⽣资产，RING可以作为交易的燃料费。燃料费包括交易费⽤，合约执⾏费⽤，⽹络带宽费⽤，存储费⽤等等",
     "economic_block_title_2":"KTON",
-    "economic_block_content_2":"KTON 是达尔⽂⽹络的 Staking 和治理凭证。。氪⽯只能通过锁定RING获得",
+    "economic_block_content_2":"KTON 是达尔⽂⽹络的 Staking 和治理凭证。氪⽯只能通过锁定RING获得",
     "economic_block_title_3":"Staking",
-    "economic_block_content_3":"达尔⽂⽹络将会把全部收⼊作为激励分发给 Staking 的参与者。Staking 参与者包括验证人和 KTON 持有者",
+    "economic_block_content_3":"达尔⽂⽹络将会把全部收⼊作为激励分发给 Staking 的参与者。Staking 参与者包括 RING 持有人，KTON 持有者和 DOT 持有人(仅波卡连接模式)",
     "economic_btn": "如何 Staking?",
     "economic_url": "https://mp.weixin.qq.com/s/vSWn8Wz2C_f3_mxOiV-54g",
 
@@ -66,9 +66,9 @@
 
     "newest_title": "新闻公告",
 
-    "news_title_1": "波卡中国行上海站 & Darwinia 分享。",
-    "news_title_2": "如何使用Uniswap购买/出售RING？",
-    "news_title_3": "达尔文网络首个测试网络“三叶虫”正式发布。",
+    "news_title_1": "波卡中国行上海站 & Darwinia 分享",
+    "news_title_2": "如何使用Uniswap购买/出售RING ？",
+    "news_title_3": "达尔文网络首个测试网络“三叶虫”正式发布",
     "news_title_4": "在 Darwinia 中如何 Staking ？",
 
     "news_link_1":"https://mp.weixin.qq.com/s/OfLKkWFB-WvOsSYSQ-cioA",

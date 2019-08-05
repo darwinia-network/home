@@ -39,7 +39,7 @@
     "economic_block_title_2":"KTON",
     "economic_block_content_2":"KTON is the staking and governance credential of Darwinia Network, KTON can only obtained by locking RING",
     "economic_block_title_3":"Staking",
-    "economic_block_content_3":"Darwinia Network will distribute all of its income as an incentive to Staking participants. Staking participants include KTON holder and KTON staking Locker",
+    "economic_block_content_3":"Darwinia Network will distribute all of its income as an incentive to Staking participants. Staking participants include RING holders, KTON holders and DOT holders (Only in connection model)",
     "economic_btn": "How to staking?",
     "economic_url": "https://mp.weixin.qq.com/s/vSWn8Wz2C_f3_mxOiV-54g",
 
@@ -66,9 +66,9 @@
 
     "newest_title": "Newest Announcement",
 
-    "news_title_1": "Darwinia sharing on Polkadot China row.",
+    "news_title_1": "Darwinia sharing on Polkadot China row",
     "news_title_2": "How to buy/sell RING on uniswap? ",
-    "news_title_3": "Darwinia Network released its first test network, codenamed \"Trilobita\".",
+    "news_title_3": "Darwinia Network released its first test network, codenamed \"Trilobita\"",
     "news_title_4": "How to Staking in Darwinia",
 
     "news_link_1":"https://mp.weixin.qq.com/s/OfLKkWFB-WvOsSYSQ-cioA",
