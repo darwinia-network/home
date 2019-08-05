@@ -414,17 +414,17 @@ class Home extends Component {
                             <Col xs={10} md={4} lg={3}>
                                 <img src={news2}/>
                                 <h3><a target="_blank"
-                                       href={t('home_page:news_link_1')}>{t('home_page:news_title_2')}</a></h3>
+                                       href={t('home_page:news_link_2')}>{t('home_page:news_title_2')}</a></h3>
                             </Col>
                             <Col xs={10} md={4} lg={3}>
                                 <img src={news0}/>
                                 <h3><a target="_blank"
-                                       href={t('home_page:news_link_1')}>{t('home_page:news_title_3')}</a></h3>
+                                       href={t('home_page:news_link_3')}>{t('home_page:news_title_3')}</a></h3>
                             </Col>
                             <Col xs={10} md={4} lg={3}>
                                 <img src={news0}/>
                                 <h3><a target="_blank"
-                                       href={t('home_page:news_link_1')}>{t('home_page:news_title_4')}</a></h3>
+                                       href={t('home_page:news_link_4')}>{t('home_page:news_title_4')}</a></h3>
                             </Col>
                         </Row>
                         <div className="text-center">
