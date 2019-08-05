@@ -110,9 +110,9 @@ class PageHeader extends Component {
 
                             <Nav.Link href="/faq">{t('header:faq')}</Nav.Link>
 
-                            <Dropdown>
-                                <Dropdown.Toggle as={CustomToggle} id="dropdown-custom-components">
-                                   {t('header:wallet')}
+                            <Dropdown className={styles.walletBtnBox}>
+                                <Dropdown.Toggle as={CustomToggle}>
+                                   <p className={styles.walletBtn}>{t('header:wallet')}</p>
                                 </Dropdown.Toggle>
                                 <Dropdown.Menu className=' animated fadeIn faster'>
                                     <Dropdown.Item>

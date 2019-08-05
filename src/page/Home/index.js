@@ -26,15 +26,15 @@ import eco1 from './img/economic/eco-1.png'
 import eco2 from './img/economic/eco-2.png'
 import eco3 from './img/economic/eco-3.png'
 
-import partner1  from './img/partner/partner-1.png'
-import partner2  from './img/partner/partner-2.png'
-import partner3  from './img/partner/partner-3.png'
-import partner4  from './img/partner/partner-4.png'
-import partner5  from './img/partner/partner-5.png'
-import partner6  from './img/partner/partner-6.png'
-import partner7  from './img/partner/partner-7.png'
-import partner8  from './img/partner/partner-8.png'
-import partner9  from './img/partner/partner-9.png'
+import partner1 from './img/partner/partner-1.png'
+import partner2 from './img/partner/partner-2.png'
+import partner3 from './img/partner/partner-3.png'
+import partner4 from './img/partner/partner-4.png'
+import partner5 from './img/partner/partner-5.png'
+import partner6 from './img/partner/partner-6.png'
+import partner7 from './img/partner/partner-7.png'
+import partner8 from './img/partner/partner-8.png'
+import partner9 from './img/partner/partner-9.png'
 import partner10 from './img/partner/partner-10.png'
 import partner11 from './img/partner/partner-11.png'
 import partner12 from './img/partner/partner-12.png'
@@ -71,17 +71,17 @@ class Home extends Component {
             info: ''
         }
         this.partners = [
-            partner1 ,
-            partner2 ,
+            partner1,
+            partner2,
             partner20,
             partner21,
-            partner3 ,
-            partner4 ,
-            partner5 ,
-            partner6 ,
-            partner7 ,
-            partner8 ,
-            partner9 ,
+            partner3,
+            partner4,
+            partner5,
+            partner6,
+            partner7,
+            partner8,
+            partner9,
             partner10,
             partner11,
             partner12,
@@ -92,9 +92,33 @@ class Home extends Component {
             partner17,
             partner18,
             partner19,
-
             partner22,
             partner23,
+        ]
+        this.partnersUrl = [
+            'https://polkadot.network/',
+            'https://web3.foundation/',
+            'https://snzholding.com/',
+            'https://www.hashkey.com/',
+            'https://bihu.com/',
+            'https://www.polkaworld.org/',
+            'https://token.im/',
+            'https://www.mathwallet.org/',
+            'https://cobo.com/',
+            'https://polkawallet.io//',
+            'https://www.bitportal.io/',
+            'https://www.wetez.io',
+            'http://sssnodes.com/',
+            'http://drf.ee/',
+            'http://drf.ee/',
+            'https://cha.in/',
+            'https://www.nodeasy.com/',
+            'http://dapp.cc/',
+            'http://www.blackpool.pro/',
+            'https://cybex.io/',
+            'https://ddex.io/',
+            'https://www.evolution.land/',
+            'https://www.otcmaker.com/',
         ]
     }
 
@@ -104,7 +128,7 @@ class Home extends Component {
 
     subscribe = (text) => {
         axios.post('https://darwinia.network/api/subscribe?email=' + text)
-            .then( (response) => {
+            .then((response) => {
                 console.log(response);
                 if (response.data.code === 0) {
                     this.setState({
@@ -112,7 +136,7 @@ class Home extends Component {
                     })
                 }
             })
-            .catch( (error) => {
+            .catch((error) => {
                 // console.log(error);
             });
     }
@@ -126,7 +150,7 @@ class Home extends Component {
     renderPartner = () => {
         return this.partners.map((partner, index) => {
             return (
-                <Col key={index} xs={6} md={4} lg={2}><img src={partner}/></Col>
+                <Col key={index} xs={6} md={4} lg={2}><a target="_blank" href={this.partnersUrl[index]}><img src={partner}/></a></Col>
             )
         })
     }
@@ -162,7 +186,8 @@ class Home extends Component {
                                     </InputGroup.Append>
 
                                 </InputGroup>
-                                <Form.Text className={`text-muted ${styles.subscribeTip} hidden-xs`} dangerouslySetInnerHTML = {{ __html: info || '&nbsp' }} >
+                                <Form.Text className={`text-muted ${styles.subscribeTip} hidden-xs`}
+                                           dangerouslySetInnerHTML={{__html: info || '&nbsp'}}>
 
                                 </Form.Text>
                                 <Form className={`${styles.subscribe} hidden-md`}>
@@ -182,7 +207,8 @@ class Home extends Component {
                                     }}>
                                         {t('home_page:subscribe_btn')}
                                     </Button>
-                                    <Form.Text className={`text-muted ${styles.subscribeTip}`} dangerouslySetInnerHTML = {{ __html: info || '&nbsp' }} />
+                                    <Form.Text className={`text-muted ${styles.subscribeTip}`}
+                                               dangerouslySetInnerHTML={{__html: info || '&nbsp'}}/>
 
                                 </Form>
                             </Col>
@@ -196,7 +222,8 @@ class Home extends Component {
 
                 <div className={`${styles.highlightContainer}`}>
                     <Container>
-                        <GradientHeading className={`text-center ${styles.fontH1}`}>{t('home_page:highlight_title')}</GradientHeading>
+                        <GradientHeading
+                            className={`text-center ${styles.fontH1}`}>{t('home_page:highlight_title')}</GradientHeading>
                         <div className={styles.lineH1}></div>
                         <Row className={`d-flex justify-content-center text-center`}>
                             <Col xs={6} md={4} lg={2}>
@@ -243,7 +270,8 @@ class Home extends Component {
 
                 <div className={`${styles.highlightContainer} ${styles.economicContainer}`}>
                     <Container>
-                        <GradientHeading className={`text-center ${styles.fontH1}`}>{t('home_page:economic_title')}</GradientHeading>
+                        <GradientHeading
+                            className={`text-center ${styles.fontH1}`}>{t('home_page:economic_title')}</GradientHeading>
                         <div className={styles.lineH1}/>
                         <Row className={`d-flex justify-content-center`}>
                             <Col xs={12} md={4} lg={4}>
@@ -263,14 +291,16 @@ class Home extends Component {
                             </Col>
                         </Row>
                         <div>
-                            <Button variant="dark" target="_blank" href={t('home_page:economic_url')} className={styles.button}>{t('home_page:economic_btn')}</Button>
+                            <Button variant="dark" target="_blank" href={t('home_page:economic_url')}
+                                    className={styles.button}>{t('home_page:economic_btn')}</Button>
                         </div>
                     </Container>
                 </div>
 
                 <div className={`${styles.highlightContainer} ${styles.applicationContainer}`}>
                     <Container>
-                        <GradientHeading className={`text-center ${styles.fontH1}`}>{t('home_page:application_title')}</GradientHeading>
+                        <GradientHeading
+                            className={`text-center ${styles.fontH1}`}>{t('home_page:application_title')}</GradientHeading>
                         <div className={styles.lineH1}/>
                         <Row className={`d-flex justify-content-center`}>
                             <Col xs={12} md={6}>
@@ -287,7 +317,8 @@ class Home extends Component {
 
                 <div className={`${styles.roadmapContainer}`}>
                     <Container>
-                        <GradientHeading className={`text-center ${styles.fontH1}`}>{t('home_page:roadmap_title')}</GradientHeading>
+                        <GradientHeading
+                            className={`text-center ${styles.fontH1}`}>{t('home_page:roadmap_title')}</GradientHeading>
                         <div className={styles.lineH1}/>
                         <div className={`hidden-md`}>
                             <Row className={`d-flex justify-content-center align-items-between`}>
@@ -337,7 +368,8 @@ class Home extends Component {
                                 </Col>
                             </Row>
                             <div className={`text-center`}>
-                                <Button variant="dark" target="_blank" href={t('header:testnet_url')} className={styles.button}>{t('home_page:roadmap_btn')}</Button>
+                                <Button variant="dark" target="_blank" href={t('header:testnet_url')}
+                                        className={styles.button}>{t('home_page:roadmap_btn')}</Button>
                             </div>
                         </div>
                     </Container>
@@ -350,7 +382,8 @@ class Home extends Component {
                                 <h1>{t('home_page:dev_title')}</h1>
                                 <div className={styles.lineH2}></div>
                                 <p>{t('home_page:dev_content')}</p>
-                                <p className={styles.link}><a href="https://itering.com" >{t('home_page:dev_link')}</a></p>
+                                <p className={styles.link}><a
+                                    href="https://itering.com">{t('home_page:dev_link')}</a></p>
                             </Col>
                         </Row>
                     </Container>
@@ -358,7 +391,8 @@ class Home extends Component {
 
                 <div className={`${styles.partnersContainer}`}>
                     <Container>
-                        <GradientHeading className={`text-center ${styles.fontH1}`}>{t('home_page:partners_title')}</GradientHeading>
+                        <GradientHeading
+                            className={`text-center ${styles.fontH1}`}>{t('home_page:partners_title')}</GradientHeading>
                         <div className={styles.lineH1}/>
                         <Row className={`d-flex`}>
                             {this.renderPartner()}
@@ -368,28 +402,34 @@ class Home extends Component {
 
                 <div className={`${styles.highlightContainer}  ${styles.newContainer}`}>
                     <Container>
-                        <GradientHeading className={`text-center ${styles.fontH1}`}>{t('home_page:newest_title')}</GradientHeading>
+                        <GradientHeading
+                            className={`text-center ${styles.fontH1}`}>{t('home_page:newest_title')}</GradientHeading>
                         <div className={styles.lineH1}/>
                         <Row className={`d-flex justify-content-center text-left`}>
                             <Col xs={10} md={4} lg={3}>
                                 <img src={news1}/>
-                                <h3><a target="_blank" href={t('home_page:news_link_1')}>{t('home_page:news_title_1')}</a></h3>
+                                <h3><a target="_blank"
+                                       href={t('home_page:news_link_1')}>{t('home_page:news_title_1')}</a></h3>
                             </Col>
                             <Col xs={10} md={4} lg={3}>
                                 <img src={news2}/>
-                                <h3><a target="_blank" href={t('home_page:news_link_1')}>{t('home_page:news_title_2')}</a></h3>
+                                <h3><a target="_blank"
+                                       href={t('home_page:news_link_1')}>{t('home_page:news_title_2')}</a></h3>
                             </Col>
                             <Col xs={10} md={4} lg={3}>
                                 <img src={news0}/>
-                                <h3><a target="_blank" href={t('home_page:news_link_1')}>{t('home_page:news_title_3')}</a></h3>
+                                <h3><a target="_blank"
+                                       href={t('home_page:news_link_1')}>{t('home_page:news_title_3')}</a></h3>
                             </Col>
                             <Col xs={10} md={4} lg={3}>
                                 <img src={news0}/>
-                                <h3><a target="_blank" href={t('home_page:news_link_1')}>{t('home_page:news_title_4')}</a></h3>
+                                <h3><a target="_blank"
+                                       href={t('home_page:news_link_1')}>{t('home_page:news_title_4')}</a></h3>
                             </Col>
                         </Row>
                         <div className="text-center">
-                            <Button variant="dark" href="/news" className={styles.button}>{t('home_page:news_btn')}</Button>
+                            <Button variant="dark" href="/news"
+                                    className={styles.button}>{t('home_page:news_btn')}</Button>
                         </div>
                     </Container>
                 </div>
@@ -400,4 +440,9 @@ class Home extends Component {
     }
 }
 
-export default withTranslation()(Home);
+export default withTranslation()
+
+(
+    Home
+)
+;
