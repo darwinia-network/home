@@ -70,6 +70,7 @@ class PageFooter extends Component {
                             <p><a target="_blank" href={t('home_page:economic_url')}>{t('footer:general_title_1')}</a></p>
                             <p><a href="/faq">{t('footer:general_title_2')}</a></p>
                             <p><a target="_blank" href="mailto:hello@darwinia.network">{t('footer:general_title_3')}</a></p>
+                            <p><a target="_blank" href="https://www.evolution.land/land/1/bank/buy-ring">{t('header:gringotts')}</a></p>
                         </Col>
                         <Col xs={6} md={4} lg={2}>
                             <h1>{t('footer:technology')}</h1>
