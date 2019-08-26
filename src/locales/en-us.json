@@ -45,7 +45,7 @@
     "economic_url": "https://mp.weixin.qq.com/s/vSWn8Wz2C_f3_mxOiV-54g",
 
     "application_title": "Applications",
-    "application_block_title_1": "Open Game",
+    "application_block_title_1": "Open Game in Open Finance",
     "application_block_title_2": "Open Finance",
 
     "dev_title": "Dev team",
@@ -53,14 +53,16 @@
     "dev_link": "www.itering.com",
 
     "roadmap_title": "Roadmap",
-    "roadmap_1_name": "Darwinia Network",
-    "roadmap_1_milestone": "Solo Mode Testnet",
-    "roadmap_2_name": "Darwinia Network",
-    "roadmap_2_milestone": "Mainnet",
-    "roadmap_3_name": "Darwinia AppChain SDK Suite",
-    "roadmap_3_milestone": "Beta Version",
-    "roadmap_4_name": "Darwinia AppChain",
-    "roadmap_4_milestone": "New Land For EvolutionLand",
+    "roadmap_1_name": "Darwinia",
+    "roadmap_1_milestone": "Trilobita Testnet",
+    "roadmap_2_name": "Darwinia",
+    "roadmap_2_milestone": "Crayfish Testnet",
+    "roadmap_3_name": "Darwinia",
+    "roadmap_3_milestone": "NFT Identifiability",
+    "roadmap_4_name": "Darwinia",
+    "roadmap_4_milestone": "Mainnet Launch",
+    "roadmap_5_name": "Darwinia",
+    "roadmap_5_milestone": "Appchain SDK",
     "roadmap_btn": "Join Darwinia Testnet",
 
     "partners_title": "Partners",

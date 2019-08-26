@@ -10,7 +10,6 @@ import architecture from './img/architecture.png'
 import architecture_en from './img/architecture-en.png'
 
 import application_1 from './img/application/application-1.png'
-import application_2 from './img/application/application-2.png'
 
 import roadmap from './img/roadmap.png'
 import roadmapMobile from './img/roadmap-m.png'
@@ -303,14 +302,14 @@ class Home extends Component {
                             className={`text-center ${styles.fontH1}`}>{t('home_page:application_title')}</GradientHeading>
                         <div className={styles.lineH1}/>
                         <Row className={`d-flex justify-content-center`}>
-                            <Col xs={12} md={6}>
+                            <Col xs={12} md={8}>
                                 <img src={application_1}/>
                                 <h3>{t('home_page:application_block_title_1')}</h3>
                             </Col>
-                            <Col xs={12} md={6}>
-                                <img src={application_2}/>
-                                <h3>{t('home_page:application_block_title_2')}</h3>
-                            </Col>
+                            {/*<Col xs={12} md={6}>*/}
+                                {/*<img src={application_2}/>*/}
+                                {/*<h3>{t('home_page:application_block_title_2')}</h3>*/}
+                            {/*</Col>*/}
                         </Row>
                     </Container>
                 </div>
@@ -322,7 +321,31 @@ class Home extends Component {
                         <div className={styles.lineH1}/>
                         <div className={`hidden-md`}>
                             <Row className={`d-flex justify-content-center align-items-between`}>
-                                <Col xs={5}>
+                                <Col xs={4}>
+                                <Row className={`text-center ${styles.label} ${styles.status}`}>
+                                    <Col>
+                                        <p>2019-07</p>
+                                        <p>Launched</p>
+                                    </Col>
+                                    <Col className={styles.crayfishCol}>
+                                        <p>2019-09</p>
+                                        <p></p>
+                                    </Col>
+                                    <Col>
+                                        <p>2019-11</p>
+                                        <p></p>
+                                    </Col>
+                                    <Col>
+                                        <p>2019-12</p>
+                                        <p></p>
+                                    </Col>
+                                    <Col className={styles.lastCol}>
+                                        <p>2020 Q2</p>
+                                        <p></p>
+                                    </Col>
+                                </Row>
+                                </Col>
+                                <Col xs={3} className={`${styles.roadMapImageBox}`}>
                                     <img src={roadmapMobile}/>
                                 </Col>
                                 <Col xs={5} className={styles.nospace}>
@@ -331,7 +354,7 @@ class Home extends Component {
                                             <p>{t('home_page:roadmap_1_name')}</p>
                                             <p>{t('home_page:roadmap_1_milestone')}</p>
                                         </div>
-                                        <div xs={12}>
+                                        <div xs={12} className={styles.crayfishCol}>
                                             <p>{t('home_page:roadmap_2_name')}</p>
                                             <p>{t('home_page:roadmap_2_milestone')}</p>
                                         </div>
@@ -343,18 +366,44 @@ class Home extends Component {
                                             <p>{t('home_page:roadmap_4_name')}</p>
                                             <p>{t('home_page:roadmap_4_milestone')}</p>
                                         </div>
+                                        <div xs={12} className={styles.lastCol}>
+                                            <p>{t('home_page:roadmap_5_name')}</p>
+                                            <p>{t('home_page:roadmap_5_milestone')}</p>
+                                        </div>
                                     </div>
                                 </Col>
                             </Row>
                         </div>
                         <div className={`${styles.content} hidden-xs`}>
+                            <Row className={`text-center ${styles.label} ${styles.status}`}>
+                                <Col>
+                                    <p>2019-07</p>
+                                    <p>Launched</p>
+                                </Col>
+                                <Col className={styles.crayfishCol}>
+                                    <p>2019-09</p>
+                                    <p></p>
+                                </Col>
+                                <Col>
+                                    <p>2019-11</p>
+                                    <p></p>
+                                </Col>
+                                <Col>
+                                    <p>2019-12</p>
+                                    <p></p>
+                                </Col>
+                                <Col className={styles.lastCol}>
+                                    <p>2020 Q2</p>
+                                    <p></p>
+                                </Col>
+                            </Row>
                             <img src={roadmap}/>
                             <Row className={`text-center ${styles.label}`}>
                                 <Col>
                                     <p>{t('home_page:roadmap_1_name')}</p>
                                     <p>{t('home_page:roadmap_1_milestone')}</p>
                                 </Col>
-                                <Col>
+                                <Col className={styles.crayfishCol}>
                                     <p>{t('home_page:roadmap_2_name')}</p>
                                     <p>{t('home_page:roadmap_2_milestone')}</p>
                                 </Col>
@@ -365,6 +414,10 @@ class Home extends Component {
                                 <Col>
                                     <p>{t('home_page:roadmap_4_name')}</p>
                                     <p>{t('home_page:roadmap_4_milestone')}</p>
+                                </Col>
+                                <Col className={styles.lastCol}>
+                                    <p>{t('home_page:roadmap_5_name')}</p>
+                                    <p>{t('home_page:roadmap_5_milestone')}</p>
                                 </Col>
                             </Row>
                             <div className={`text-center`}>

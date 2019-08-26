@@ -45,7 +45,7 @@
     "economic_url": "https://mp.weixin.qq.com/s/vSWn8Wz2C_f3_mxOiV-54g",
 
     "application_title": "应用",
-    "application_block_title_1": "开放游戏",
+    "application_block_title_1": "Open Game in Open Finance",
     "application_block_title_2": "开放金融",
 
     "dev_title": "开发团队",
@@ -53,14 +53,16 @@
     "dev_link": "www.itering.com",
 
     "roadmap_title": "路线图",
-    "roadmap_1_name": "达尔文网络",
-    "roadmap_1_milestone": "Solo 模式测试网",
-    "roadmap_2_name": "达尔文网络",
-    "roadmap_2_milestone": "主网",
-    "roadmap_3_name": "达尔文应用链",
-    "roadmap_3_milestone": "Beta 版",
-    "roadmap_4_name": "达尔文应用链",
-    "roadmap_4_milestone": "进化星球新大陆",
+    "roadmap_1_name": "Darwinia",
+    "roadmap_1_milestone": "Trilobita Testnet",
+    "roadmap_2_name": "Darwinia",
+    "roadmap_2_milestone": "Crayfish Testnet",
+    "roadmap_3_name": "Darwinia",
+    "roadmap_3_milestone": "NFT Identifiability",
+    "roadmap_4_name": "Darwinia",
+    "roadmap_4_milestone": "Mainnet Launch",
+    "roadmap_5_name": "Darwinia",
+    "roadmap_5_milestone": "Appchain SDK",
     "roadmap_btn": "加入测试网络",
 
     "partners_title": "合作机构",
