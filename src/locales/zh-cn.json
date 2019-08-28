@@ -36,11 +36,11 @@
 
     "economic_title":"达尔文经济模型",
     "economic_block_title_1":"RING",
-    "economic_block_content_1":"RING 是达尔⽂⽹络的原⽣资产，RING可以作为交易的燃料费。燃料费包括交易费⽤，合约执⾏费⽤，⽹络带宽费⽤，存储费⽤等等",
+    "economic_block_content_1":"RING是达尔文网络的原生资产，RING可以作为交易的燃料费。燃料费包括交易费用，合约执行费用，网络带宽费用，存储费用等等。",
     "economic_block_title_2":"KTON",
-    "economic_block_content_2":"KTON 是达尔⽂⽹络的 Staking 和治理凭证。氪⽯只能通过锁定RING获得",
+    "economic_block_content_2":"为了鼓励用户进行长期锁定和承诺投入，用户在Staking RING的过程中，可以承诺锁定RING 3 - 36个月，系统会给参与Staking的用户一个氪石的通证进行奖励。",
     "economic_block_title_3":"Staking",
-    "economic_block_content_3":"达尔⽂⽹络将会把全部收⼊作为激励分发给 Staking 的参与者。Staking 参与者包括 RING 持有人，KTON 持有者和 DOT 持有人(仅波卡连接模式)",
+    "economic_block_content_3":"达尔文网络将会把主要收入作为激励分发给Staking的参与者。Staking的过程也可以理解为POS挖矿过程，挖矿者通过质押资产来获得Staking能量来进行POS挖矿。",
     "economic_btn": "如何 Staking?",
     "economic_url": "https://mp.weixin.qq.com/s/vSWn8Wz2C_f3_mxOiV-54g",
 
