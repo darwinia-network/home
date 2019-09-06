@@ -74,7 +74,7 @@ class PageFooter extends Component {
                         </Col>
                         <Col xs={6} md={4} lg={2}>
                             <h1>{t('footer:technology')}</h1>
-                            <p><a target="_blank" href="https://github.com/darwinia-network/darwinia/wiki/How-To-Join-Darwinia-POC-1-Testnet---Trilobita">{t('footer:technology_title_1')}</a></p>
+                            <p><a target="_blank" href={t('header:testnet_url')}>{t('footer:technology_title_1')}</a></p>
                             <p><a target="_blank" href="https://telemetry.polkadot.io/#list/Darwinia%20POC-1%20Testnet">{t('footer:technology_title_2')}</a></p>
                             {i18n.language.indexOf('en') > -1 ?
                                 <p><a target="_blank" href="https://evolution.l2me.com/darwinia/Darwinia_Genepaper_EN.pdf">{t('footer:technology_title_3')}</a></p>

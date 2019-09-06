@@ -110,17 +110,8 @@ class PageHeader extends Component {
 
 
                             <Nav.Link href="/faq">{t('header:faq')}</Nav.Link>
+                            <Nav.Link className={styles.walletBtn} href="https://testnet-wallet.darwinia.network/#/accounts">{t('header:wallet')}</Nav.Link>
 
-                            <Dropdown className={styles.walletBtnBox}>
-                                <Dropdown.Toggle as={CustomToggle}>
-                                   <p className={styles.walletBtn}>{t('header:wallet')}</p>
-                                </Dropdown.Toggle>
-                                <Dropdown.Menu className=' animated fadeIn faster'>
-                                    <Dropdown.Item>
-                                        {t('header:comingsoon')}
-                                    </Dropdown.Item>
-                                </Dropdown.Menu>
-                            </Dropdown>
 
                             <Nav.Link target="_blank" href="https://github.com/darwinia-network" className={styles.githubBox}><img width={24} src={github}/></Nav.Link>
 
