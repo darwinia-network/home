@@ -83,7 +83,7 @@ class Home extends Component {
             },
             'snz': {
                 logo: partner20,
-                name: 'SNZ',
+                name: 'SNZ Holding',
                 url: 'https://snzholding.com'
             },
             'maker': {
@@ -144,7 +144,7 @@ class Home extends Component {
             'guild': {
                 logo: partner12,
                 name: 'The Guild',
-                url: 'javascript:void(0)'
+                url: 'http://drf.ee'
             },
             'digital': {
                 logo: partner13,
@@ -156,9 +156,9 @@ class Home extends Component {
                 name: 'cha.in',
                 url: 'https://cha.in'
             },
-            'nodesay': {
+            'nodeasy': {
                 logo: partner15,
-                name: 'Nodesay',
+                name: 'nodeasy',
                 url: 'https://www.nodeasy.com'
             },
             'dappcc': {
@@ -197,7 +197,7 @@ class Home extends Component {
             'polkadot', 'web3', 'maker', 'snz', 'hashkey', 'bihu',
             'evolutionland', 'polkaworld', 'imtoken', 'mathwallet', 'cobowallet', 'polkawallet',
             'bitportal', 'wetez', 'sssnodes', 'guild', 'digital', 'chain',
-            'nodesay', 'dappcc', 'blackpool', 'cybex', 'ddex',  'otcmaker'
+            'nodeasy', 'dappcc', 'blackpool', 'cybex', 'ddex',  'otcmaker'
         ]
     }
 
