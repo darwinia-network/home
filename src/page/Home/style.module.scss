@@ -67,11 +67,17 @@
   }
   img {
     height: 80px;
+    max-width: 100%;
   }
   h3 {
     font-size: 14px;
     margin-top: 20px;
     text-align: center;
+    color: #201550;
+  }
+  a:hover{
+    text-decoration: none;
+    color: #201550;
   }
 }
 

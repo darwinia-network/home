@@ -48,6 +48,7 @@ import partner20 from './img/partner/partner-20.png'
 import partner21 from './img/partner/partner-21.png'
 import partner22 from './img/partner/partner-22.png'
 import partner23 from './img/partner/partner-23.png'
+import partner24 from './img/partner/partner-24.png'
 
 
 import news1 from './img/news/news-1.jpg'
@@ -69,55 +70,134 @@ class Home extends Component {
             email: '',
             info: ''
         }
+        this.partnerInfo = {
+            'polkadot': {
+                logo: partner1,
+                name: 'Polkadot',
+                url: 'https://polkadot.network'
+            },
+            'web3': {
+                logo: partner2,
+                name: 'Web3 Foundation',
+                url: 'https://web3.foundation'
+            },
+            'snz': {
+                logo: partner20,
+                name: 'SNZ',
+                url: 'https://snzholding.com'
+            },
+            'maker': {
+                logo: partner24,
+                name: 'MAKER',
+                url: 'https://makerdao.com'
+            },
+            'hashkey': {
+                logo: partner21,
+                name: 'HashKey',
+                url: 'https://www.hashkey.com'
+            },
+            'bihu': {
+                logo: partner3,
+                name: 'Bihu',
+                url: 'https://bihu.com'
+            },
+            'polkaworld': {
+                logo: partner4,
+                name: 'Polka World',
+                url: 'https://www.polkaworld.org'
+            },
+            'imtoken': {
+                logo: partner5,
+                name: 'imToken',
+                url: 'https://token.im'
+            },
+            'mathwallet': {
+                logo: partner6,
+                name: 'Math Wallet',
+                url: 'https://www.mathwallet.org'
+            },
+            'cobowallet': {
+                logo: partner7,
+                name: 'Cobo Wallet',
+                url: 'https://cobo.com'
+            },
+            'polkawallet': {
+                logo: partner8,
+                name: 'Polka Wallet',
+                url: 'https://polkawallet.io'
+            },
+            'bitportal': {
+                logo: partner9,
+                name: 'BitPortal',
+                url: 'https://www.bitportal.io'
+            },
+            'wetez': {
+                logo: partner10,
+                name: 'wetez',
+                url: 'https://www.wetez.io'
+            },
+            'sssnodes': {
+                logo: partner11,
+                name: 'SSSnodes',
+                url: 'http://sssnodes.com'
+            },
+            'guild': {
+                logo: partner12,
+                name: 'The Guild',
+                url: 'javascript:void(0)'
+            },
+            'digital': {
+                logo: partner13,
+                name: 'Digital Renaissance',
+                url: 'http://drf.ee'
+            },
+            'chain': {
+                logo: partner14,
+                name: 'cha.in',
+                url: 'https://cha.in'
+            },
+            'nodesay': {
+                logo: partner15,
+                name: 'Nodesay',
+                url: 'https://www.nodeasy.com'
+            },
+            'dappcc': {
+                logo: partner16,
+                name: 'dapp.cc',
+                url: 'http://dapp.cc'
+            },
+            'blackpool': {
+                logo: partner17,
+                name: 'BlackPool',
+                url: 'http://www.blackpool.pro'
+            },
+            'cybex': {
+                logo: partner18,
+                name: 'Cybex',
+                url: 'https://cybex.io'
+            },
+            'ddex': {
+                logo: partner19,
+                name: 'DDEX',
+                url: 'https://ddex.io'
+            },
+            'evolutionland': {
+                logo: partner22,
+                name: 'Evolution Land',
+                url: 'https://www.evolution.land'
+            },
+            'otcmaker': {
+                logo: partner23,
+                name: 'OTCMAKER',
+                url: 'https://www.otcmaker.com'
+            }
+        }
+
         this.partners = [
-            partner1,
-            partner2,
-            partner20,
-            partner21,
-            partner3,
-            partner4,
-            partner5,
-            partner6,
-            partner7,
-            partner8,
-            partner9,
-            partner10,
-            partner11,
-            partner12,
-            partner13,
-            partner14,
-            partner15,
-            partner16,
-            partner17,
-            partner18,
-            partner19,
-            partner22,
-            partner23,
-        ]
-        this.partnersUrl = [
-            'https://polkadot.network/',
-            'https://web3.foundation/',
-            'https://snzholding.com/',
-            'https://www.hashkey.com/',
-            'https://bihu.com/',
-            'https://www.polkaworld.org/',
-            'https://token.im/',
-            'https://www.mathwallet.org/',
-            'https://cobo.com/',
-            'https://polkawallet.io//',
-            'https://www.bitportal.io/',
-            'https://www.wetez.io',
-            'http://sssnodes.com/',
-            'http://drf.ee/',
-            'http://drf.ee/',
-            'https://cha.in/',
-            'https://www.nodeasy.com/',
-            'http://dapp.cc/',
-            'http://www.blackpool.pro/',
-            'https://cybex.io/',
-            'https://ddex.io/',
-            'https://www.evolution.land/',
-            'https://www.otcmaker.com/',
+            'polkadot', 'web3', 'maker', 'snz', 'hashkey', 'bihu',
+            'evolutionland', 'polkaworld', 'imtoken', 'mathwallet', 'cobowallet', 'polkawallet',
+            'bitportal', 'wetez', 'sssnodes', 'guild', 'digital', 'chain',
+            'nodesay', 'dappcc', 'blackpool', 'cybex', 'ddex',  'otcmaker'
         ]
     }
 
@@ -149,7 +229,12 @@ class Home extends Component {
     renderPartner = () => {
         return this.partners.map((partner, index) => {
             return (
-                <Col key={index} xs={6} md={4} lg={2}><a target="_blank" href={this.partnersUrl[index]}><img src={partner}/></a></Col>
+                <Col key={index} xs={6} md={4} lg={2}>
+                    <a target="_blank" href={this.partnerInfo[partner].url}>
+                        <img src={this.partnerInfo[partner].logo}/>
+                        <h3>{this.partnerInfo[partner].name}</h3>
+                    </a>
+                </Col>
             )
         })
     }
@@ -307,8 +392,8 @@ class Home extends Component {
                                 <h3>{t('home_page:application_block_title_1')}</h3>
                             </Col>
                             {/*<Col xs={12} md={6}>*/}
-                                {/*<img src={application_2}/>*/}
-                                {/*<h3>{t('home_page:application_block_title_2')}</h3>*/}
+                            {/*<img src={application_2}/>*/}
+                            {/*<h3>{t('home_page:application_block_title_2')}</h3>*/}
                             {/*</Col>*/}
                         </Row>
                     </Container>
@@ -322,28 +407,28 @@ class Home extends Component {
                         <div className={`hidden-md`}>
                             <Row className={`d-flex justify-content-center align-items-between`}>
                                 <Col xs={4}>
-                                <Row className={`text-center ${styles.label} ${styles.status}`}>
-                                    <Col>
-                                        <p>2019-07</p>
-                                        <p>Launched</p>
-                                    </Col>
-                                    <Col className={styles.crayfishCol}>
-                                        <p>2019-09</p>
-                                        <p></p>
-                                    </Col>
-                                    <Col>
-                                        <p>2019-11</p>
-                                        <p></p>
-                                    </Col>
-                                    <Col>
-                                        <p>2019-12</p>
-                                        <p></p>
-                                    </Col>
-                                    <Col className={styles.lastCol}>
-                                        <p>2020 Q2</p>
-                                        <p></p>
-                                    </Col>
-                                </Row>
+                                    <Row className={`text-center ${styles.label} ${styles.status}`}>
+                                        <Col>
+                                            <p>2019-07</p>
+                                            <p>Launched</p>
+                                        </Col>
+                                        <Col className={styles.crayfishCol}>
+                                            <p>2019-09</p>
+                                            <p></p>
+                                        </Col>
+                                        <Col>
+                                            <p>2019-11</p>
+                                            <p></p>
+                                        </Col>
+                                        <Col>
+                                            <p>2019-12</p>
+                                            <p></p>
+                                        </Col>
+                                        <Col className={styles.lastCol}>
+                                            <p>2020 Q2</p>
+                                            <p></p>
+                                        </Col>
+                                    </Row>
                                 </Col>
                                 <Col xs={3} className={`${styles.roadMapImageBox}`}>
                                     <img src={roadmapMobile}/>
