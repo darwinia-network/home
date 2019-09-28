@@ -84,7 +84,7 @@ class PageFooter extends Component {
                         </Col>
                         <Col xs={6} md={4} lg={2}>
                             <h1>{t('footer:community')}</h1>
-                            <p><a target="_blank" href="https://github.com/darwinia-network/rfcs">{t('footer:community_title_1')}</a></p>
+                            <p><a target="_blank" href="https://rfcs.darwinia.network">{t('footer:community_title_1')}</a></p>
                             <p><a target="_blank" href="https://github.com/darwinia-network">{t('footer:community_title_2')}</a></p>
                             <p><a target="_blank" href="https://medium.com/@DarwiniaNetwork">{t('footer:community_title_3')}</a></p>
                             <p><a target="_blank" href="https://t.me/DarwiniaNetwork">{t('footer:community_title_4')}</a></p>

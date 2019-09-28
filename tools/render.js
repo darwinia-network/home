@@ -13,7 +13,7 @@ async function render() {
         host: 'localhost:5000'
     }
 
-    const cname = 'www.darwinia.network'
+    const cname = 'darwinia.network'
     const dirName = path.join(
         'build',
         '/',

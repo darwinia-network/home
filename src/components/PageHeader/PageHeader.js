@@ -107,14 +107,10 @@ class PageHeader extends Component {
                             }
                             <Nav.Link target="_blank" href="https://talk.darwinia.network">{t('header:forum')}</Nav.Link>
                             <Nav.Link target="_blank" href={t('header:testnet_url')}>{t('header:testnet')}</Nav.Link>
-
-
+                            <Nav.Link target={'_blank'} href="https://rfcs.darwinia.network/">{t('header:rfc')}</Nav.Link>
                             <Nav.Link href="/faq">{t('header:faq')}</Nav.Link>
                             <Nav.Link className={styles.walletBtn} href="https://testnet-wallet.darwinia.network/#/accounts">{t('header:wallet')}</Nav.Link>
-
-
                             <Nav.Link target="_blank" href="https://github.com/darwinia-network" className={styles.githubBox}><img width={24} src={github}/></Nav.Link>
-
                             <Dropdown>
                                 <Dropdown.Toggle as={CustomToggle} id="dropdown-custom-components">
                                     <div className={styles.lngBtn}/>
@@ -165,6 +161,10 @@ class PageHeader extends Component {
                             </Col>
                             <Col md={12}>
                                 <Nav.Link target="_blank" href="https://github.com/darwinia-network/darwinia/wiki/How-To-Join-Darwinia-POC-1-Testnet---Trilobita">{t('header:testnet')}</Nav.Link>
+                            </Col>
+
+                            <Col md={12}>
+                                <Nav.Link target={'_blank'} href="https://rfcs.darwinia.network/">{t('header:rfc')}</Nav.Link>
                             </Col>
 
                             <Col md={12}>
