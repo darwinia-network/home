@@ -8,20 +8,20 @@ self.__precacheManifest = [
     "url": "/static/js/0.d7997e43.chunk.js"
   },
   {
-    "revision": "60435d11daca6454b1d4",
-    "url": "/static/js/1.4575f37e.chunk.js"
+    "revision": "aa19cad1c32f9b36eb45",
+    "url": "/static/js/1.468788c9.chunk.js"
   },
   {
     "revision": "433a4ca91eb3335fc9ac4cddcd49a22e",
     "url": "/static/media/partner-18.433a4ca9.png"
   },
   {
-    "revision": "11af9d1100c9deaa54b8",
-    "url": "/static/js/main.a1ba2621.chunk.js"
+    "revision": "5ff99e0c8e083ac0ab27",
+    "url": "/static/js/main.ce11eb69.chunk.js"
   },
   {
-    "revision": "c9534b8fedf4bf15d488",
-    "url": "/static/js/runtime~main.4c56ea15.js"
+    "revision": "18bea5ab8f36c1070e7c",
+    "url": "/static/js/runtime~main.54f889f1.js"
   },
   {
     "revision": "df44aea5e7638bb2a087",
@@ -32,8 +32,8 @@ self.__precacheManifest = [
     "url": "/static/media/partner-2.f602ba90.png"
   },
   {
-    "revision": "be58a34baca65f7c8e13",
-    "url": "/static/js/5.3336d9e0.chunk.js"
+    "revision": "14cda416b32e7cae16e3",
+    "url": "/static/js/5.220e0bfa.chunk.js"
   },
   {
     "revision": "adb1fc6cfa87ada15fc4",
@@ -44,20 +44,20 @@ self.__precacheManifest = [
     "url": "/static/media/roadmap-m.261245d4.png"
   },
   {
-    "revision": "274dac43299edb5df55e",
-    "url": "/static/js/7.facb24af.chunk.js"
+    "revision": "12a6f3801d54bd92db83",
+    "url": "/static/js/7.4e48e245.chunk.js"
   },
   {
     "revision": "50818b00053ec46bdfe58dbd2c04bf22",
     "url": "/static/media/roadmap.50818b00.png"
   },
   {
-    "revision": "525fd8554dc9eedf3af6",
-    "url": "/static/js/8.a48475d1.chunk.js"
+    "revision": "aba1e137dc26042f73ec",
+    "url": "/static/js/8.0940200d.chunk.js"
   },
   {
-    "revision": "6c3bd29a179ad44228e6",
-    "url": "/static/js/9.0e7af7ae.chunk.js"
+    "revision": "ab15a444f2231c0e0cea",
+    "url": "/static/js/9.1a31f5b7.chunk.js"
   },
   {
     "revision": "199e3623690bf2235928af1c7cc69514",
@@ -108,27 +108,27 @@ self.__precacheManifest = [
     "url": "/static/media/architecture-en.d5ff79d0.png"
   },
   {
-    "revision": "11af9d1100c9deaa54b8",
-    "url": "/static/css/main.28e19bec.chunk.css"
+    "revision": "5ff99e0c8e083ac0ab27",
+    "url": "/static/css/main.a0a34310.chunk.css"
   },
   {
-    "revision": "525fd8554dc9eedf3af6",
-    "url": "/static/css/8.d9724f0d.chunk.css"
+    "revision": "aba1e137dc26042f73ec",
+    "url": "/static/css/8.655614e7.chunk.css"
   },
   {
-    "revision": "274dac43299edb5df55e",
-    "url": "/static/css/7.f6433134.chunk.css"
+    "revision": "12a6f3801d54bd92db83",
+    "url": "/static/css/7.f6ab8d55.chunk.css"
   },
   {
-    "revision": "be58a34baca65f7c8e13",
-    "url": "/static/css/5.2d118573.chunk.css"
+    "revision": "14cda416b32e7cae16e3",
+    "url": "/static/css/5.3114230f.chunk.css"
   },
   {
-    "revision": "60435d11daca6454b1d4",
-    "url": "/static/css/1.bffe4c77.chunk.css"
+    "revision": "aa19cad1c32f9b36eb45",
+    "url": "/static/css/1.46e3c12a.chunk.css"
   },
   {
-    "revision": "ead2f62617eca64714b9677aeeb11518",
+    "revision": "f040bc65a97447939aba79623802abbf",
     "url": "/index.html"
   }
 ];
