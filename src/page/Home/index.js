@@ -520,8 +520,10 @@ class Home extends Component {
                                 <h1>{t('home_page:dev_title')}</h1>
                                 <div className={styles.lineH2}></div>
                                 <p>{t('home_page:dev_content')}</p>
-                                <p className={styles.link}><a
-                                    href="https://itering.com">{t('home_page:dev_link')}</a></p>
+                                <p className={styles.link}>
+                                    <a href="https://www.itering.io/">{t('home_page:dev_link')}</a>
+                                </p>
+
                             </Col>
                         </Row>
                     </Container>

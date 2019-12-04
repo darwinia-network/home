@@ -148,7 +148,7 @@ class PageFooter extends Component {
                     <Container>
                         <Row className={styles.mdContent}>
                             <Col className="text-center">
-                                &#169;2019 darwinia.network
+                                &#169;2019-2020 darwinia.network
                             </Col>
                         </Row>
 
@@ -184,7 +184,7 @@ class PageFooter extends Component {
                                 </div>
                             </Col>
                             <Col className={`text-center ${styles.copyright}`}>
-                                &#169;2019 darwinia.network
+                                &#169;2019-2020 darwinia.network
                             </Col>
                         </Row>
 
