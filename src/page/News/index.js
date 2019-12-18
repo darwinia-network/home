@@ -11,6 +11,7 @@ import GradientHeading from "../../components/GradientHeading/GradientHeading";
 import news1 from '../Home/img/news/news-1.jpg'
 import news2 from '../Home/img/news/news-2.jpg'
 import news0 from '../Home/img/news/news-0.jpg'
+import newsEthRelay from '../Home/img/news/news-eth-relay.png'
 
 class News extends Component {
     constructor(props, context) {
@@ -35,22 +36,36 @@ class News extends Component {
                         <div>
                             <Row>
                                 <Col md={3} className={styles.content}>
-                                    <img src={news1}/>
-                                    <p><a target="_blank" href={t('home_page:news_link_1')}>{t('home_page:news_title_1')}</a></p>
-                                </Col>
-
-                                <Col md={3}  className={styles.content}>
-                                    <img src={news2}/>
-                                    <p><a target="_blank" href={t('home_page:news_link_2')}>{t('home_page:news_title_2')}</a></p>
+                                    <a className={styles.imgUrl} target="_blank" href={t('home_page:news_link_eth_relay')}>
+                                        <img src={newsEthRelay}/>
+                                        <p>{t('home_page:news_title_eth_relay')}</p>
+                                    </a>
                                 </Col>
                                 <Col md={3} className={styles.content}>
-                                    <img src={news0}/>
-                                    <p><a target="_blank" href={t('home_page:news_link_3')}>{t('home_page:news_title_3')}</a></p>
+                                    <a className={styles.imgUrl} target="_blank" href={t('home_page:news_link_1')}>
+                                        <img src={news1}/>
+                                        <p>{t('home_page:news_title_1')}</p>
+                                    </a>
                                 </Col>
 
                                 <Col md={3}  className={styles.content}>
-                                    <img src={news0}/>
-                                    <p><a target="_blank" href={t('home_page:news_link_4')}>{t('home_page:news_title_4')}</a></p>
+                                    <a className={styles.imgUrl} target="_blank" href={t('home_page:news_link_2')}>
+                                        <img src={news2}/>
+                                        <p>{t('home_page:news_title_2')}</p>
+                                    </a>
+                                </Col>
+                                <Col md={3} className={styles.content}>
+                                    <a className={styles.imgUrl} target="_blank" href={t('home_page:news_link_3')}>
+                                        <img src={news0}/>
+                                        <p>{t('home_page:news_title_3')}</p>
+                                    </a>
+                                </Col>
+
+                                <Col md={3}  className={styles.content}>
+                                    <a className={styles.imgUrl} target="_blank" href={t('home_page:news_link_4')}>
+                                        <img src={news0}/>
+                                        <p>{t('home_page:news_title_4')}</p>
+                                    </a>
                                 </Col>
                             </Row>
                         </div>

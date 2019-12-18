@@ -85,9 +85,10 @@
   background: #fff;
   h3{
     text-align: left;
-    a{
-      color: $text-main;
-    }
+  }
+  .imgUrl{
+    display: inline-block;
+    color: $text-main;
   }
 }
 

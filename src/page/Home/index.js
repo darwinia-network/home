@@ -50,7 +50,7 @@ import partner22 from './img/partner/partner-22.png'
 import partner23 from './img/partner/partner-23.png'
 import partner24 from './img/partner/partner-24.png'
 
-
+import newsEthRelay from './img/news/news-eth-relay.png'
 import news1 from './img/news/news-1.jpg'
 import news2 from './img/news/news-2.jpg'
 import news0 from './img/news/news-0.jpg'
@@ -547,24 +547,28 @@ class Home extends Component {
                         <div className={styles.lineH1}/>
                         <Row className={`d-flex justify-content-center text-left`}>
                             <Col xs={10} md={4} lg={3}>
-                                <img src={news1}/>
-                                <h3><a target="_blank"
-                                       href={t('home_page:news_link_1')}>{t('home_page:news_title_1')}</a></h3>
+                                <a className={styles.imgUrl} target="_blank" href={t('home_page:news_link_eth_relay')}>
+                                    <img src={newsEthRelay}/>
+                                    <h3>{t('home_page:news_title_eth_relay')}</h3>
+                                </a>
                             </Col>
                             <Col xs={10} md={4} lg={3}>
-                                <img src={news2}/>
-                                <h3><a target="_blank"
-                                       href={t('home_page:news_link_2')}>{t('home_page:news_title_2')}</a></h3>
+                                <a className={styles.imgUrl} target="_blank" href={t('home_page:news_link_1')}>
+                                    <img src={news1}/>
+                                    <h3>{t('home_page:news_title_1')}</h3>
+                                </a>
                             </Col>
                             <Col xs={10} md={4} lg={3}>
-                                <img src={news0}/>
-                                <h3><a target="_blank"
-                                       href={t('home_page:news_link_3')}>{t('home_page:news_title_3')}</a></h3>
+                                <a className={styles.imgUrl} target="_blank" href={t('home_page:news_link_2')}>
+                                    <img src={news2}/>
+                                    <h3>{t('home_page:news_title_2')}</h3>
+                                </a>
                             </Col>
                             <Col xs={10} md={4} lg={3}>
-                                <img src={news0}/>
-                                <h3><a target="_blank"
-                                       href={t('home_page:news_link_4')}>{t('home_page:news_title_4')}</a></h3>
+                                <a className={styles.imgUrl} target="_blank" href={t('home_page:news_link_3')}>
+                                    <img src={news0}/>
+                                    <h3>{t('home_page:news_title_3')}</h3>
+                                </a>
                             </Col>
                         </Row>
                         <div className="text-center">

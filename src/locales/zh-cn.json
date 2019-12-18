@@ -74,11 +74,13 @@
     "news_title_2": "如何使用Uniswap购买/出售RING ？",
     "news_title_3": "达尔文网络首个测试网络“三叶虫”正式发布",
     "news_title_4": "在 Darwinia 中如何 Staking ？",
+    "news_title_eth_relay": "达尔文网络已发布 ETH-Relay DEMO",
 
     "news_link_1":"https://mp.weixin.qq.com/s/OfLKkWFB-WvOsSYSQ-cioA",
     "news_link_2":"https://mp.weixin.qq.com/s/EgelOosWlrBX60vvec32nw",
     "news_link_3":"https://mp.weixin.qq.com/s/S_tFUzH-40g_vKgLxEsO6A",
     "news_link_4":"https://mp.weixin.qq.com/s/vSWn8Wz2C_f3_mxOiV-54g",
+    "news_link_eth_relay": "https://mp.weixin.qq.com/s/ZsS8Z8FgLifet2t-8X84NQ",
 
     "news_btn": "查看更多"
   },
