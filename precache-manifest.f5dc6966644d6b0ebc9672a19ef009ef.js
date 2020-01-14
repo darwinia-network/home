@@ -16,12 +16,12 @@ self.__precacheManifest = [
     "url": "/static/media/partner-18.433a4ca9.png"
   },
   {
-    "revision": "38f2e730902802283464",
-    "url": "/static/js/main.3434ef64.chunk.js"
+    "revision": "fcdded1b300a4b16345a",
+    "url": "/static/js/main.6e7dadc1.chunk.js"
   },
   {
-    "revision": "9bdc3dd6e13281b407fc",
-    "url": "/static/js/runtime~main.2532095a.js"
+    "revision": "9bdfd4f7f822a1c2227a",
+    "url": "/static/js/runtime~main.ea51a6f8.js"
   },
   {
     "revision": "df44aea5e7638bb2a087",
@@ -32,24 +32,24 @@ self.__precacheManifest = [
     "url": "/static/media/partner-2.f602ba90.png"
   },
   {
-    "revision": "a1afdb52b5913191db12",
-    "url": "/static/js/5.8bb32663.chunk.js"
+    "revision": "7b48d3387234bbd94a05",
+    "url": "/static/js/5.c11edca8.chunk.js"
   },
   {
     "revision": "a845af7e0d30797e5b05",
     "url": "/static/js/6.153585d3.chunk.js"
   },
   {
-    "revision": "261245d4ce61960bc0814fd8d2e560cb",
-    "url": "/static/media/roadmap-m.261245d4.png"
+    "revision": "af495dde99bf1fd9542db4650f7fc72a",
+    "url": "/static/media/roadmap-m.af495dde.png"
   },
   {
     "revision": "670b40243707d0755a59",
     "url": "/static/js/7.816346e3.chunk.js"
   },
   {
-    "revision": "50818b00053ec46bdfe58dbd2c04bf22",
-    "url": "/static/media/roadmap.50818b00.png"
+    "revision": "6d0d03751eab6bbe71b0e428f27ec5bc",
+    "url": "/static/media/roadmap.6d0d0375.png"
   },
   {
     "revision": "013ee987ccf862c4bf44",
@@ -112,7 +112,7 @@ self.__precacheManifest = [
     "url": "/static/media/architecture-en.d5ff79d0.png"
   },
   {
-    "revision": "38f2e730902802283464",
+    "revision": "fcdded1b300a4b16345a",
     "url": "/static/css/main.a0a34310.chunk.css"
   },
   {
@@ -124,15 +124,15 @@ self.__precacheManifest = [
     "url": "/static/css/7.45a35ab8.chunk.css"
   },
   {
-    "revision": "a1afdb52b5913191db12",
-    "url": "/static/css/5.c1a371ab.chunk.css"
+    "revision": "7b48d3387234bbd94a05",
+    "url": "/static/css/5.26f33e80.chunk.css"
   },
   {
     "revision": "61db60699d3d2cd6e389",
     "url": "/static/css/1.46e3c12a.chunk.css"
   },
   {
-    "revision": "42058fa4c2128d4d9b90e41fda919e39",
+    "revision": "c95978d703598316a04d2afc494dca07",
     "url": "/index.html"
   }
 ];
