@@ -16,8 +16,8 @@ self.__precacheManifest = [
     "url": "/static/media/partner-18.433a4ca9.png"
   },
   {
-    "revision": "fcdded1b300a4b16345a",
-    "url": "/static/js/main.6e7dadc1.chunk.js"
+    "revision": "6143faba8c407e9db982",
+    "url": "/static/js/main.65cf8e48.chunk.js"
   },
   {
     "revision": "bbdf093ad5b3803d5d70",
@@ -60,12 +60,12 @@ self.__precacheManifest = [
     "url": "/static/js/9.c8f2133b.chunk.js"
   },
   {
-    "revision": "e47853a6babeac4f1aefd0d92b396bfd",
-    "url": "/static/media/Rajdhani-Bold.e47853a6.ttf"
-  },
-  {
     "revision": "199e3623690bf2235928af1c7cc69514",
     "url": "/static/media/Rajdhani-SemiBold.199e3623.ttf"
+  },
+  {
+    "revision": "e47853a6babeac4f1aefd0d92b396bfd",
+    "url": "/static/media/Rajdhani-Bold.e47853a6.ttf"
   },
   {
     "revision": "90502cd25752377be23607ae8b112eda",
@@ -112,7 +112,7 @@ self.__precacheManifest = [
     "url": "/static/media/architecture-en.d5ff79d0.png"
   },
   {
-    "revision": "fcdded1b300a4b16345a",
+    "revision": "6143faba8c407e9db982",
     "url": "/static/css/main.a0a34310.chunk.css"
   },
   {
@@ -132,7 +132,7 @@ self.__precacheManifest = [
     "url": "/static/css/1.46e3c12a.chunk.css"
   },
   {
-    "revision": "1d0c0e59c52643f6c7531785fa87f434",
+    "revision": "6b61d7ee45d343f431f43f1b1c458a76",
     "url": "/index.html"
   }
 ];
