@@ -60,12 +60,12 @@ self.__precacheManifest = [
     "url": "/static/js/9.c8f2133b.chunk.js"
   },
   {
-    "revision": "199e3623690bf2235928af1c7cc69514",
-    "url": "/static/media/Rajdhani-SemiBold.199e3623.ttf"
-  },
-  {
     "revision": "e47853a6babeac4f1aefd0d92b396bfd",
     "url": "/static/media/Rajdhani-Bold.e47853a6.ttf"
+  },
+  {
+    "revision": "199e3623690bf2235928af1c7cc69514",
+    "url": "/static/media/Rajdhani-SemiBold.199e3623.ttf"
   },
   {
     "revision": "90502cd25752377be23607ae8b112eda",
