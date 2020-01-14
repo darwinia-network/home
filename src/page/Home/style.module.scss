@@ -189,7 +189,10 @@
     }
   }
   .crayfishCol{
-    margin-left: 4%;
+    margin-right: 1%;
+  }
+  .mainnetCol {
+    margin-left: 2%;
   }
   .lastCol{
     padding-right: 5px;
@@ -369,11 +372,15 @@
       margin-bottom: 6%;
     }
     .crayfishCol{
-      margin-left: 0;
+      margin: 40px 0 0;
+    }
+    .nftCol, .mainnetCol {
       margin-top: 40px;
+      margin-left: 0;
     }
     .lastCol{
       margin-top: 10px;
+      padding-right: 15px;
     }
     .label {
       height: 100%;
