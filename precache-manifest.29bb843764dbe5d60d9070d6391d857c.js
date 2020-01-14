@@ -16,12 +16,12 @@ self.__precacheManifest = [
     "url": "/static/media/partner-18.433a4ca9.png"
   },
   {
-    "revision": "38f2e730902802283464",
-    "url": "/static/js/main.3434ef64.chunk.js"
+    "revision": "fcdded1b300a4b16345a",
+    "url": "/static/js/main.6e7dadc1.chunk.js"
   },
   {
-    "revision": "9bdc3dd6e13281b407fc",
-    "url": "/static/js/runtime~main.2532095a.js"
+    "revision": "bbdf093ad5b3803d5d70",
+    "url": "/static/js/runtime~main.a862fa21.js"
   },
   {
     "revision": "df44aea5e7638bb2a087",
@@ -32,24 +32,24 @@ self.__precacheManifest = [
     "url": "/static/media/partner-2.f602ba90.png"
   },
   {
-    "revision": "a1afdb52b5913191db12",
-    "url": "/static/js/5.8bb32663.chunk.js"
+    "revision": "a582150b65f8f970799c",
+    "url": "/static/js/5.e8ae8ae4.chunk.js"
   },
   {
     "revision": "a845af7e0d30797e5b05",
     "url": "/static/js/6.153585d3.chunk.js"
   },
   {
-    "revision": "261245d4ce61960bc0814fd8d2e560cb",
-    "url": "/static/media/roadmap-m.261245d4.png"
+    "revision": "490cd95d524c16fbcb4a6152feef7366",
+    "url": "/static/media/roadmap-m.490cd95d.png"
   },
   {
     "revision": "670b40243707d0755a59",
     "url": "/static/js/7.816346e3.chunk.js"
   },
   {
-    "revision": "50818b00053ec46bdfe58dbd2c04bf22",
-    "url": "/static/media/roadmap.50818b00.png"
+    "revision": "39214c64dd5566c51671a213d73844fa",
+    "url": "/static/media/roadmap.39214c64.png"
   },
   {
     "revision": "013ee987ccf862c4bf44",
@@ -60,12 +60,12 @@ self.__precacheManifest = [
     "url": "/static/js/9.c8f2133b.chunk.js"
   },
   {
-    "revision": "199e3623690bf2235928af1c7cc69514",
-    "url": "/static/media/Rajdhani-SemiBold.199e3623.ttf"
-  },
-  {
     "revision": "e47853a6babeac4f1aefd0d92b396bfd",
     "url": "/static/media/Rajdhani-Bold.e47853a6.ttf"
+  },
+  {
+    "revision": "199e3623690bf2235928af1c7cc69514",
+    "url": "/static/media/Rajdhani-SemiBold.199e3623.ttf"
   },
   {
     "revision": "90502cd25752377be23607ae8b112eda",
@@ -112,7 +112,7 @@ self.__precacheManifest = [
     "url": "/static/media/architecture-en.d5ff79d0.png"
   },
   {
-    "revision": "38f2e730902802283464",
+    "revision": "fcdded1b300a4b16345a",
     "url": "/static/css/main.a0a34310.chunk.css"
   },
   {
@@ -124,15 +124,15 @@ self.__precacheManifest = [
     "url": "/static/css/7.45a35ab8.chunk.css"
   },
   {
-    "revision": "a1afdb52b5913191db12",
-    "url": "/static/css/5.c1a371ab.chunk.css"
+    "revision": "a582150b65f8f970799c",
+    "url": "/static/css/5.26f33e80.chunk.css"
   },
   {
     "revision": "61db60699d3d2cd6e389",
     "url": "/static/css/1.46e3c12a.chunk.css"
   },
   {
-    "revision": "42058fa4c2128d4d9b90e41fda919e39",
+    "revision": "1d0c0e59c52643f6c7531785fa87f434",
     "url": "/index.html"
   }
 ];
