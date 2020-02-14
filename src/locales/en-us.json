@@ -12,8 +12,8 @@
     "comingsoon": "Coming Soon"
   },
   "home_page": {
-    "slogan": "Polkadot Parachain for User-facing Blockchain Application Developers",
-    "subtitle": "Darwinia Network provides developers the scalability, cross-chain interoperability, and NFT identifiability, with seamless integrations to Polkadot, bridges to all major blockchains, and on-chain RNG services",
+    "slogan": "Cross-chain App hub and Internet of Tokens",
+    "subtitle": "As an open application cross-chain protocol based on Substrate, Darwinia focuses on the construction of future Internet of Tokens, including the cross-chain of game assets, NFT, Stablecoins, and Appchain",
     "placeholder": "name@email.com",
     "subscribe_btn": "Get Updates",
     "subscribe_tip": "Subscription success! Please check your inbox.",
@@ -59,7 +59,7 @@
     "roadmap_2_name": "Darwinia",
     "roadmap_2_milestone": "Crayfish Testnet",
     "roadmap_3_name": "Darwinia",
-    "roadmap_3_milestone": "NFT Identifiability",
+    "roadmap_3_milestone": "Icefrog Testnet",
     "roadmap_4_name": "Darwinia",
     "roadmap_4_milestone": "Mainnet Launch",
     "roadmap_5_name": "Darwinia",
