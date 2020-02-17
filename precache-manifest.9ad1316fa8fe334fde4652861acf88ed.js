@@ -1,7 +1,7 @@
 self.__precacheManifest = [
   {
-    "revision": "631e1a1e24e6254102cb78d90025bd79",
-    "url": "/static/media/news-eth-relay.631e1a1e.png"
+    "revision": "e47853a6babeac4f1aefd0d92b396bfd",
+    "url": "/static/media/Rajdhani-Bold.e47853a6.ttf"
   },
   {
     "revision": "b64428c856929a9d2ee0",
@@ -16,40 +16,40 @@ self.__precacheManifest = [
     "url": "/static/media/partner-18.433a4ca9.png"
   },
   {
-    "revision": "c7c358ab8176c2c90cfc",
-    "url": "/static/js/main.7e49cb7b.chunk.js"
+    "revision": "34e72f0ce6f4689597c9",
+    "url": "/static/js/main.c9768138.chunk.js"
   },
   {
-    "revision": "bbdf093ad5b3803d5d70",
-    "url": "/static/js/runtime~main.a862fa21.js"
+    "revision": "b49b473bac390b1c2e7e",
+    "url": "/static/js/runtime~main.b5e60acd.js"
   },
   {
     "revision": "df44aea5e7638bb2a087",
     "url": "/static/js/4.893dcd5a.chunk.js"
   },
   {
-    "revision": "f602ba901f9a915aa1fc3906a3b594df",
-    "url": "/static/media/partner-2.f602ba90.png"
+    "revision": "490cd95d524c16fbcb4a6152feef7366",
+    "url": "/static/media/roadmap-m.490cd95d.png"
   },
   {
-    "revision": "a582150b65f8f970799c",
-    "url": "/static/js/5.e8ae8ae4.chunk.js"
+    "revision": "3be3ba356623294c9064",
+    "url": "/static/js/5.de5bab16.chunk.js"
   },
   {
     "revision": "a845af7e0d30797e5b05",
     "url": "/static/js/6.153585d3.chunk.js"
   },
   {
-    "revision": "490cd95d524c16fbcb4a6152feef7366",
-    "url": "/static/media/roadmap-m.490cd95d.png"
+    "revision": "39214c64dd5566c51671a213d73844fa",
+    "url": "/static/media/roadmap.39214c64.png"
   },
   {
     "revision": "670b40243707d0755a59",
     "url": "/static/js/7.816346e3.chunk.js"
   },
   {
-    "revision": "39214c64dd5566c51671a213d73844fa",
-    "url": "/static/media/roadmap.39214c64.png"
+    "revision": "90502cd25752377be23607ae8b112eda",
+    "url": "/static/media/application-1.90502cd2.png"
   },
   {
     "revision": "013ee987ccf862c4bf44",
@@ -64,12 +64,12 @@ self.__precacheManifest = [
     "url": "/static/media/Rajdhani-SemiBold.199e3623.ttf"
   },
   {
-    "revision": "e47853a6babeac4f1aefd0d92b396bfd",
-    "url": "/static/media/Rajdhani-Bold.e47853a6.ttf"
+    "revision": "d5ff79d0b28c7596a766af2e0a8e59c2",
+    "url": "/static/media/architecture-en.d5ff79d0.png"
   },
   {
-    "revision": "90502cd25752377be23607ae8b112eda",
-    "url": "/static/media/application-1.90502cd2.png"
+    "revision": "631e1a1e24e6254102cb78d90025bd79",
+    "url": "/static/media/news-eth-relay.631e1a1e.png"
   },
   {
     "revision": "123dc5d84fb45b769028e37a37a8ced6",
@@ -108,11 +108,7 @@ self.__precacheManifest = [
     "url": "/static/media/architecture.389ccdfd.png"
   },
   {
-    "revision": "d5ff79d0b28c7596a766af2e0a8e59c2",
-    "url": "/static/media/architecture-en.d5ff79d0.png"
-  },
-  {
-    "revision": "c7c358ab8176c2c90cfc",
+    "revision": "34e72f0ce6f4689597c9",
     "url": "/static/css/main.a0a34310.chunk.css"
   },
   {
@@ -124,7 +120,7 @@ self.__precacheManifest = [
     "url": "/static/css/7.45a35ab8.chunk.css"
   },
   {
-    "revision": "a582150b65f8f970799c",
+    "revision": "3be3ba356623294c9064",
     "url": "/static/css/5.26f33e80.chunk.css"
   },
   {
@@ -132,7 +128,7 @@ self.__precacheManifest = [
     "url": "/static/css/1.46e3c12a.chunk.css"
   },
   {
-    "revision": "93d521c2b23439dd3fa781dfb593b11d",
+    "revision": "0b05cc84a15861961704eee3f7742179",
     "url": "/index.html"
   }
 ];
