@@ -12,12 +12,12 @@
     "comingsoon": "Coming Soon"
   },
   "home_page": {
-    "slogan": "Cross-chain Application Hub and Asset Internet",
-    "subtitle": "As an open application cross-chain protocol based on Substrate, Darwinia focuses on the construction of future Internet of Tokens, including the cross-chain of game assets, NFT, Stablecoins, and Appchain",
+    "slogan": "Cross-chain App hub and Internet of Tokens",
+    "subtitle": "As an open application cross-chain protocol based on Substrate, Darwinia focuses on the construction of future Internet of Tokens, including the cross-chain of game tokens, NFT, Stablecoins, and Appchain",
     "placeholder": "name@email.com",
     "subscribe_btn": "Get Updates",
     "subscribe_tip": "Subscription success! Please check your inbox.",
-    "highlight_title": "Key Value",
+    "highlight_title": "Key Features",
     "highlight_block_title_1": "Polkadot Ecosystem",
     "highlight_block_content_1": "Seamless Integrations To Polkadot",
     "highlight_block_title_2": "Bridge",
@@ -37,11 +37,11 @@
 
     "economic_title":"Darwinia Economic",
     "economic_block_title_1":"RING",
-    "economic_block_content_1":"The native assets for Darwinia Network is RING, RING can be used as gas for transactions. Gas include transaction fees, contract execution fees, network bandwidth charges, storage fees, and more.",
+    "economic_block_content_1":"The native tokens for Darwinia Network is RING, RING can be used as gas for transactions. Gas include transaction fees, contract execution fees, network bandwidth charges, storage fees, and more.",
     "economic_block_title_2":"KTON",
     "economic_block_content_2":"To encourage users to make long term commitments and pledge, users can choose to lock RING for 3 - 36 months in the process of Staking, and the system will offer a KTON token as reward for users participating in Staking.",
     "economic_block_title_3":"Staking",
-    "economic_block_content_3":"The Darwinia Network will distribute the main income as an incentive to the participants of Staking. The process of Staking can also be understood as the POS mining process, where the miner obtains Staking energy by pledging assets for POS mining.",
+    "economic_block_content_3":"The Darwinia Network will distribute RING as an incentive to the participants of Staking. The process of Staking can also be understood as the POS mining process, where the miner obtains Staking energy by pledging tokens for POS mining.",
     "economic_btn": "How to staking?",
     "economic_url": "https://mp.weixin.qq.com/s/vSWn8Wz2C_f3_mxOiV-54g",
 
