@@ -88,7 +88,7 @@ class PageFooter extends Component {
                             <p><a target="_blank" href="https://github.com/darwinia-network">{t('footer:community_title_2')}</a></p>
                             <p><a target="_blank" href="https://medium.com/@DarwiniaNetwork">{t('footer:community_title_3')}</a></p>
                             <p><a target="_blank" href="https://t.me/DarwiniaNetwork">{t('footer:community_title_4')}</a></p>
-                            <p><a target="_blank" href="https://www.reddit.com/r/DarwiniaNetwork/">{t('footer:community_title_5')}</a></p>
+                            <p><a target="_blank" href="https://www.reddit.com/r/DarwiniaFans/">{t('footer:community_title_5')}</a></p>
                         </Col>
                         <Col xs={6} md={4} lg={2}>
                             <img className={styles.footerIcon} src={dwSlideIcon}/>
