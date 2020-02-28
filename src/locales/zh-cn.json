@@ -6,6 +6,8 @@
     "forum": "论坛",
     "testnet": "测试网络",
     "testnet_url": "https://talk.darwinia.network/topics/200",
+    "explorer": "浏览器",
+    "explorer_url": "http://icefrog.subscan.io/",
     "faq": "FAQs",
     "rfc": "RFCs",
     "wallet": "钱包",

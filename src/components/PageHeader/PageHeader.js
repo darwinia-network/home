@@ -107,6 +107,7 @@ class PageHeader extends Component {
                             }
                             <Nav.Link target="_blank" href="https://talk.darwinia.network">{t('header:forum')}</Nav.Link>
                             <Nav.Link target="_blank" href={t('header:testnet_url')}>{t('header:testnet')}</Nav.Link>
+                            <Nav.Link target="_blank" href={t('header:explorer_url')}>{t('header:explorer')}</Nav.Link>
                             <Nav.Link target={'_blank'} href="https://rfcs.darwinia.network/">{t('header:rfc')}</Nav.Link>
                             <Nav.Link href="/faq">{t('header:faq')}</Nav.Link>
                             <Nav.Link className={styles.walletBtn} href="https://testnet-wallet.darwinia.network/#/accounts">{t('header:wallet')}</Nav.Link>
@@ -161,6 +162,9 @@ class PageHeader extends Component {
                             </Col>
                             <Col md={12}>
                                 <Nav.Link target="_blank" href="https://github.com/darwinia-network/darwinia/wiki/How-To-Join-Darwinia-POC-1-Testnet---Trilobita">{t('header:testnet')}</Nav.Link>
+                            </Col>
+                            <Col md={12}>
+                                <Nav.Link target="_blank" href={t('header:explorer_url')}>{t('header:explorer')}</Nav.Link>
                             </Col>
 
                             <Col md={12}>

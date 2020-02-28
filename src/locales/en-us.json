@@ -6,6 +6,8 @@
     "testnet": "Testnet",
     "forum": "Forum",
     "testnet_url": "https://talk.darwinia.network/topics/200",
+    "explorer": "Explorer",
+    "explorer_url": "http://icefrog.subscan.io/",
     "faq": "FAQs",
     "rfc": "RFCs",
     "wallet": "Wallet",
