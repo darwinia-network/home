@@ -1,15 +1,15 @@
 self.__precacheManifest = [
   {
-    "revision": "199e3623690bf2235928af1c7cc69514",
-    "url": "/static/media/Rajdhani-SemiBold.199e3623.ttf"
+    "revision": "e47853a6babeac4f1aefd0d92b396bfd",
+    "url": "/static/media/Rajdhani-Bold.e47853a6.ttf"
   },
   {
     "revision": "b64428c856929a9d2ee0",
     "url": "/static/js/0.bc71de5d.chunk.js"
   },
   {
-    "revision": "ada3b0f54c6ffca3745f",
-    "url": "/static/js/1.454ff6b6.chunk.js"
+    "revision": "9d79c7149ca6f08fe032",
+    "url": "/static/js/1.9f5785c2.chunk.js"
   },
   {
     "revision": "433a4ca91eb3335fc9ac4cddcd49a22e",
@@ -20,8 +20,8 @@ self.__precacheManifest = [
     "url": "/static/js/main.f2400f4c.chunk.js"
   },
   {
-    "revision": "e5f171ac3e5b32e787be",
-    "url": "/static/js/runtime~main.29340cbb.js"
+    "revision": "415a0f40a4d30bcab5d4",
+    "url": "/static/js/runtime~main.4e46360d.js"
   },
   {
     "revision": "df44aea5e7638bb2a087",
@@ -32,8 +32,8 @@ self.__precacheManifest = [
     "url": "/static/media/roadmap-m.490cd95d.png"
   },
   {
-    "revision": "11cc23f6f401b617d116",
-    "url": "/static/js/5.f6c5704d.chunk.js"
+    "revision": "d71edd26b43c167423c1",
+    "url": "/static/js/5.4a09724b.chunk.js"
   },
   {
     "revision": "a845af7e0d30797e5b05",
@@ -60,8 +60,8 @@ self.__precacheManifest = [
     "url": "/static/js/9.c8f2133b.chunk.js"
   },
   {
-    "revision": "e47853a6babeac4f1aefd0d92b396bfd",
-    "url": "/static/media/Rajdhani-Bold.e47853a6.ttf"
+    "revision": "199e3623690bf2235928af1c7cc69514",
+    "url": "/static/media/Rajdhani-SemiBold.199e3623.ttf"
   },
   {
     "revision": "5fce69ada0a564180f0300f3d9e0cd80",
@@ -120,15 +120,15 @@ self.__precacheManifest = [
     "url": "/static/css/7.45a35ab8.chunk.css"
   },
   {
-    "revision": "11cc23f6f401b617d116",
+    "revision": "d71edd26b43c167423c1",
     "url": "/static/css/5.26f33e80.chunk.css"
   },
   {
-    "revision": "ada3b0f54c6ffca3745f",
+    "revision": "9d79c7149ca6f08fe032",
     "url": "/static/css/1.46e3c12a.chunk.css"
   },
   {
-    "revision": "ac38b7171035f0dd2d1083882cd29e22",
+    "revision": "311e74c3afa89ba57a8685f7509290ec",
     "url": "/index.html"
   }
 ];
