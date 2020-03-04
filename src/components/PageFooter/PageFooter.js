@@ -77,9 +77,9 @@ class PageFooter extends Component {
                             <p><a target="_blank" href={t('header:testnet_url')}>{t('footer:technology_title_1')}</a></p>
                             <p><a target="_blank" href="https://telemetry.polkadot.io/#list/Darwinia%20POC-1%20Testnet">{t('footer:technology_title_2')}</a></p>
                             {i18n.language.indexOf('en') > -1 ?
-                                <p><a target="_blank" href="https://evolution.l2me.com/darwinia/Darwinia_Genepaper_EN.pdf">{t('footer:technology_title_3')}</a></p>
+                                <p><a target="_blank" href="https://evolution.l2me.com/darwinia/Darwinia_Genepaper_EN_200304.pdf">{t('footer:technology_title_3')}</a></p>
                                 :
-                                <p><a target="_blank" href="https://evolution.l2me.com/darwinia/Darwinia_Genepaper_Preview.pdf">{t('footer:technology_title_3')}</a></p>
+                                <p><a target="_blank" href="https://evolution.l2me.com/darwinia/Darwinia_Genepaper_200304.pdf">{t('footer:technology_title_3')}</a></p>
                             }
                         </Col>
                         <Col xs={6} md={4} lg={2}>

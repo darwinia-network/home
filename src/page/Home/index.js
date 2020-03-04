@@ -374,10 +374,10 @@ class Home extends Component {
                                 <p>{t('home_page:economic_block_content_3')}</p>
                             </Col>
                         </Row>
-                        <div>
+                        {/* <div>
                             <Button variant="dark" target="_blank" href={t('home_page:economic_url')}
                                     className={styles.button}>{t('home_page:economic_btn')}</Button>
-                        </div>
+                        </div> */}
                     </Container>
                 </div>
 
@@ -540,7 +540,7 @@ class Home extends Component {
                     </Container>
                 </div>
 
-                <div className={`${styles.highlightContainer}  ${styles.newContainer}`}>
+                {/* <div className={`${styles.highlightContainer}  ${styles.newContainer}`}>
                     <Container>
                         <GradientHeading
                             className={`text-center ${styles.fontH1}`}>{t('home_page:newest_title')}</GradientHeading>
@@ -576,9 +576,9 @@ class Home extends Component {
                                     className={styles.button}>{t('home_page:news_btn')}</Button>
                         </div>
                     </Container>
-                </div>
+                </div> */}
 
-                <PageFooter/>
+                <PageFooter></PageFooter>
             </div>
         );
     }
