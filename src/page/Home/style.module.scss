@@ -170,7 +170,7 @@
   }
 
   img {
-    width: 88%;
+    width: 92%;
   }
   .label {
     margin-left: 5px;
@@ -192,7 +192,7 @@
     margin-right: 1%;
   }
   .mainnetCol {
-    margin-left: 2%;
+    margin-left: 1%;
   }
   .lastCol{
     padding-right: 5px;
@@ -371,11 +371,17 @@
       margin: 4% 0;
       margin-bottom: 6%;
     }
-    .crayfishCol{
-      margin: 40px 0 0;
+    .crayfishCol {
+      margin-top: 10px;
+    }
+    .icefrogCol{
+      margin: 30px 0 0;
+    }
+    .crabCol {
+      margin: 30px 0 0;
     }
     .nftCol, .mainnetCol {
-      margin-top: 40px;
+      margin-top: 30px;
       margin-left: 0;
     }
     .lastCol{

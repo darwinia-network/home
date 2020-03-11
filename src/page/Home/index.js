@@ -412,16 +412,20 @@ class Home extends Component {
                                             <p>2019-07</p>
                                             <p>Launched</p>
                                         </Col>
-                                        <Col>
+                                        <Col className={styles.crayfishCol}>
                                             <p>2019-09</p>
                                             <p></p>
                                         </Col>
-                                        <Col className={styles.nftCol}>
-                                            <p>2019-12</p>
+                                        <Col className={styles.icefrogCol}>
+                                            <p>2019-11</p>
+                                            <p></p>
+                                        </Col>
+                                        <Col className={styles.crabCol}>
+                                            <p>2020-Q1</p>
                                             <p></p>
                                         </Col>
                                         <Col className={styles.mainnetCol}>
-                                            <p>2020-Q1</p>
+                                            <p>2020-Q2</p>
                                             <p></p>
                                         </Col>
                                         <Col className={styles.lastCol}>
@@ -439,21 +443,25 @@ class Home extends Component {
                                             <p>{t('home_page:roadmap_1_name')}</p>
                                             <p>{t('home_page:roadmap_1_milestone')}</p>
                                         </div>
-                                        <div xs={12}>
+                                        <div xs={12} className={styles.crayfishCol}>
                                             <p>{t('home_page:roadmap_2_name')}</p>
                                             <p>{t('home_page:roadmap_2_milestone')}</p>
                                         </div>
-                                        <div xs={12} className={styles.nftCol}>
+                                        <div xs={12} className={styles.icefrogCol}>
                                             <p>{t('home_page:roadmap_3_name')}</p>
                                             <p>{t('home_page:roadmap_3_milestone')}</p>
                                         </div>
-                                        <div xs={12} className={styles.mainnetCol}>
+                                        <div xs={12} className={styles.crabCol}>
                                             <p>{t('home_page:roadmap_4_name')}</p>
                                             <p>{t('home_page:roadmap_4_milestone')}</p>
                                         </div>
-                                        <div xs={12} className={styles.lastCol}>
+                                        <div xs={12} className={styles.mainnetCol}>
                                             <p>{t('home_page:roadmap_5_name')}</p>
                                             <p>{t('home_page:roadmap_5_milestone')}</p>
+                                        </div>
+                                        <div xs={12} className={styles.lastCol}>
+                                            <p>{t('home_page:roadmap_6_name')}</p>
+                                            <p>{t('home_page:roadmap_6_milestone')}</p>
                                         </div>
                                     </div>
                                 </Col>
@@ -470,11 +478,15 @@ class Home extends Component {
                                     <p></p>
                                 </Col>
                                 <Col>
-                                    <p>2019-12</p>
+                                    <p>2019-11</p>
+                                    <p></p>
+                                </Col>
+                                <Col>
+                                    <p>2020-Q1</p>
                                     <p></p>
                                 </Col>
                                 <Col className={styles.mainnetCol}>
-                                    <p>2020-Q1</p>
+                                    <p>2020-Q2</p>
                                     <p></p>
                                 </Col>
                                 <Col className={styles.lastCol}>
@@ -496,13 +508,17 @@ class Home extends Component {
                                     <p>{t('home_page:roadmap_3_name')}</p>
                                     <p>{t('home_page:roadmap_3_milestone')}</p>
                                 </Col>
-                                <Col className={styles.mainnetCol}>
+                                <Col>
                                     <p>{t('home_page:roadmap_4_name')}</p>
                                     <p>{t('home_page:roadmap_4_milestone')}</p>
                                 </Col>
-                                <Col className={styles.lastCol}>
+                                <Col className={styles.mainnetCol}>
                                     <p>{t('home_page:roadmap_5_name')}</p>
                                     <p>{t('home_page:roadmap_5_milestone')}</p>
+                                </Col>
+                                <Col className={styles.lastCol}>
+                                    <p>{t('home_page:roadmap_6_name')}</p>
+                                    <p>{t('home_page:roadmap_6_milestone')}</p>
                                 </Col>
                             </Row>
                             <div className={`text-center`}>
