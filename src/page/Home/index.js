@@ -8,6 +8,8 @@ import dwIcon from './img/darwinia-logo.png'
 import dwSlideIcon from './img/slide-logo.png'
 import architecture from './img/architecture.png'
 import architecture_en from './img/architecture-en.png'
+import architecture_solo from './img/architecture-solo.svg'
+import architecture_chain from './img/architecture-chain.svg'
 
 import application_1 from './img/application/application-1.png'
 
@@ -19,7 +21,6 @@ import key2 from './img/key/key-2.png'
 import key3 from './img/key/key-3.png'
 import key4 from './img/key/key-4.png'
 import key5 from './img/key/key-5.png'
-import key6 from './img/key/key-6.png'
 
 import eco1 from './img/economic/eco-1.png'
 import eco2 from './img/economic/eco-2.png'
@@ -310,35 +311,30 @@ class Home extends Component {
                             className={`text-center ${styles.fontH1}`}>{t('home_page:highlight_title')}</GradientHeading>
                         <div className={styles.lineH1}></div>
                         <Row className={`d-flex justify-content-center text-center`}>
-                            <Col xs={6} md={4} lg={2}>
+                            <Col xs={6} md={4} className={styles.lg5}>
                                 <img src={key1}/>
                                 <h3>{t('home_page:highlight_block_title_1')}</h3>
                                 <p>{t('home_page:highlight_block_content_1')}</p>
                             </Col>
-                            <Col xs={6} md={4} lg={2}>
+                            <Col xs={6} md={4} className={styles.lg5}>
                                 <img src={key2}/>
                                 <h3>{t('home_page:highlight_block_title_2')}</h3>
                                 <p>{t('home_page:highlight_block_content_2')}</p>
                             </Col>
-                            <Col xs={6} md={4} lg={2}>
+                            <Col xs={6} md={4} className={styles.lg5}>
                                 <img src={key3}/>
                                 <h3>{t('home_page:highlight_block_title_3')}</h3>
                                 <p>{t('home_page:highlight_block_content_3')}</p>
                             </Col>
-                            <Col xs={6} md={4} lg={2}>
+                            <Col xs={6} md={4} className={styles.lg5}>
                                 <img src={key4}/>
                                 <h3>{t('home_page:highlight_block_title_4')}</h3>
                                 <p>{t('home_page:highlight_block_content_4')}</p>
                             </Col>
-                            <Col xs={6} md={4} lg={2}>
+                            <Col xs={6} md={4} className={styles.lg5}>
                                 <img src={key5}/>
                                 <h3>{t('home_page:highlight_block_title_5')}</h3>
                                 <p>{t('home_page:highlight_block_content_5')}</p>
-                            </Col>
-                            <Col xs={6} md={4} lg={2}>
-                                <img src={key6}/>
-                                <h3>{t('home_page:highlight_block_title_6')}</h3>
-                                <p>{t('home_page:highlight_block_content_6')}</p>
                             </Col>
                         </Row>
                     </Container>
@@ -346,9 +342,24 @@ class Home extends Component {
 
                 <div className={`${styles.architectureContainer}`}>
                     <Container>
-                        {/*<h1 className={`text-center ${styles.fontH1}`}>{t('home_page:architecture_title')}</h1>*/}
-                        {i18n.language.indexOf('en') > -1 ? <Zmage src={architecture_en}/> :
-                            <Zmage src={architecture}/>}
+                    <GradientHeading
+                            className={`text-center ${styles.fontH1}`}>{t('home_page:architecture_title')}</GradientHeading>
+                        {/* <h1 className={`text-center ${styles.fontH1}`}>{t('home_page:architecture_title')}</h1> */}
+                        {/* {i18n.language.indexOf('en') > -1 ? <img src={architecture_en}/> :
+                            <img src={architecture}/>} */}
+                        <div className={`${styles.archWrapper}`}>
+                            <img src={architecture_en}/>
+                            <div className={`${styles.anime}`}>
+                                <div>
+                                    <Button className={styles.soloBtn}>Solo模式</Button>
+                                    <Button className={`${styles.soloBtn} ${styles.soloWhiteBtn}`}>Solo模式</Button>
+                                    <Button className={styles.chainBtn}>平行链模式</Button>
+                                    <Button className={`${styles.chainBtn} ${styles.chainPinkBtn}`}>平行链模式</Button>
+                                    <img src={architecture_chain} className={styles.chain}/>
+                                    <img src={architecture_solo} className={styles.solo}/>
+                                </div>
+                            </div>
+                        </div>
                     </Container>
                 </div>
 

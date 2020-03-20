@@ -1,5 +1,4 @@
 @import "../../style/index";
-
 .promoteContentArea {
   text-align: left;
   padding-top: 150px;
@@ -36,18 +35,24 @@
   padding: 60px 0 100px 0;
   img {
     width: 100%;
-    margin-bottom: 20px;
+    margin-bottom: 23px;
   }
   h3 {
     font-size: 16px;
     text-align: center;
-    height: 24px;
-    margin-bottom: 1rem;
-    font-weight: bold;
+    margin-bottom: 5px;
   }
   p {
-    font-size: 14px;
+    font-size: 16px;
     color: #6330DD;
+    font-weight: bold;
+    line-height: 20px;
+  }
+  @media (min-width: 992px) {
+    .lg5 {
+      flex: 0 0 20%;
+      max-width: 20%;
+    }
   }
 }
 
@@ -156,8 +161,157 @@
 .architectureContainer {
   background: url("./img/architecture-bg.svg");
   padding: 60px 0 100px 0;
+  .fontH1 {
+    margin-bottom: 14px;
+  }
   img {
     width: 100%;
+  }
+  .archWrapper {
+    position: relative;
+  }
+  .anime {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    > div {
+      padding-top: 38.5%;
+      position: relative;
+    }
+    img {
+      position: absolute;
+    }
+    .solo {
+      width: 2.4%;
+      margin-left: 45.7%;
+      :global {
+        animation: 4s ease-in-out infinite both solo;
+      }
+    }
+    .chain {
+      width: 2.9%;
+      margin-left: 49.4%;
+      :global {
+        animation: 4s ease-in-out infinite both chain;
+      }
+    }
+    button {
+      cursor: default;
+      pointer-events: none;
+      height: 10%;
+      text-align: center;
+      font-size: 14px;
+      font-weight: bold;
+    }
+    .soloBtn {
+      margin-left: 30.7%;
+      // border: 1px solid transparent;
+      border: none;
+      background: linear-gradient(315deg, rgba(254, 56, 118, 1) 0%, rgba(124, 48, 221, 1) 71%, rgba(58, 48, 221, 1) 100%);
+      color: #fff;
+      width: 8.8%;
+      position: absolute;
+    }
+    .soloWhiteBtn {
+      border: 1px solid #d4d4d4;
+      background: white;
+      color: #d4d4d4;
+      :global {
+        animation: 4s ease-in-out infinite both soloWhiteBtn;
+      }
+    }
+    .chainBtn {
+      margin-left: 57%;
+      width: 13.8%;
+      position: absolute;
+      border: 1px solid #d4d4d4;
+      background: white;
+      color: #d4d4d4;
+    }
+    .chainPinkBtn {
+      border: 0;
+      color: #fff;
+      border: none;
+      background: linear-gradient(315deg, rgba(254, 56, 118, 1) 0%, rgba(124, 48, 221, 1) 71%, rgba(58, 48, 221, 1) 100%);
+      :global {
+        animation: 4s ease-in-out infinite both chainPinkBtn;
+      }
+    }
+    @keyframes :global(chainPinkBtn) {
+      0%,
+      20% {
+        opacity: 0;
+      }
+  
+      45%,
+      75% {
+        opacity: 1;
+      }
+      100% {
+        opacity: 0;
+      }
+    }
+    @keyframes :global(soloWhiteBtn) {
+      0%,
+      20% {
+        opacity: 0;
+      }
+  
+      45%,
+      75% {
+        opacity: 1;
+      }
+      100% {
+        opacity: 0;
+      }
+    }
+    @keyframes :global(soloBtn) {
+      0%,
+      25% {
+        opacity: 0;
+      }
+  
+      50%,
+      75% {
+        opacity: 1;
+      }
+  
+      100% {
+        opacity: 0;
+      }
+    }
+    @keyframes :global(chain) {
+      0%,
+      25% {
+        transform: translate(0, 0);
+      }
+  
+      50%,
+      75% {
+        transform: translate(-24%, 0);
+      }
+  
+      100% {
+        transform: translate(0, 0);
+      }
+    }
+    @keyframes :global(solo) {
+      0%,
+      25% {
+        transform: translate(0, 0);
+      }
+  
+      50%,
+      75% {
+        transform: translate(28%, 0);
+      }
+  
+      100% {
+        transform: translate(0, 0);
+      }
+    }
   }
 }
 
