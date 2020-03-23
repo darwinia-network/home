@@ -100,10 +100,10 @@ class PageHeader extends Component {
                             <Nav.Link href="/">{t('header:home')}</Nav.Link>
                             {i18n.language.indexOf('en') > -1 ?
                             <Nav.Link target={'_blank'}
-                            href="https://evolution.l2me.com/darwinia/Darwinia_Genepaper_EN_200304.pdf">{t('header:genepaper')}</Nav.Link>
+                            href="https://evolution.l2me.com/darwinia/Darwinia_Genepaper_EN_200320.pdf">{t('header:genepaper')}</Nav.Link>
                             :
                             <Nav.Link target={'_blank'}
-                            href="https://evolution.l2me.com/darwinia/Darwinia_Genepaper_200304.pdf">{t('header:genepaper')}</Nav.Link>
+                            href="https://evolution.l2me.com/darwinia/Darwinia_Genepaper_200320.pdf">{t('header:genepaper')}</Nav.Link>
                             }
                             <Nav.Link target="_blank" href="https://talk.darwinia.network">{t('header:forum')}</Nav.Link>
                             <Nav.Link target="_blank" href={t('header:testnet_url')}>{t('header:testnet')}</Nav.Link>
@@ -151,10 +151,10 @@ class PageHeader extends Component {
                             <Col md={12}>
                             {i18n.language.indexOf('en') > -1 ?
                             <Nav.Link target={'_blank'}
-                            href="https://evolution.l2me.com/darwinia/Darwinia_Genepaper_EN_200304.pdf">{t('header:genepaper')}</Nav.Link>
+                            href="https://evolution.l2me.com/darwinia/Darwinia_Genepaper_EN_200320.pdf">{t('header:genepaper')}</Nav.Link>
                             :
                             <Nav.Link target={'_blank'}
-                            href="https://evolution.l2me.com/darwinia/Darwinia_Genepaper_EN_200304.pdf">{t('header:genepaper')}</Nav.Link>
+                            href="https://evolution.l2me.com/darwinia/Darwinia_Genepaper_EN_200320.pdf">{t('header:genepaper')}</Nav.Link>
                             }
                             </Col>
                             <Col md={12}>

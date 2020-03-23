@@ -8,19 +8,30 @@ import dwIcon from './img/darwinia-logo.png'
 import dwSlideIcon from './img/slide-logo.png'
 import architecture from './img/architecture.png'
 import architecture_en from './img/architecture-en.png'
+import architecture_mobile from './img/architecture-mobile.png'
+import architecture_mobile_en from './img/architecture-mobile-en.png'
 import architecture_solo from './img/architecture-solo.svg'
 import architecture_chain from './img/architecture-chain.svg'
 
+import economic from './img/economic.png'
+import economic_en from './img/economic-en.png'
+
 import application_1 from './img/application/application-1.png'
+import application_2 from './img/application/application-2.png'
 
 import roadmap from './img/roadmap.png'
 import roadmapMobile from './img/roadmap-m.png'
 
 import key1 from './img/key/key-1.png'
+import key1_mobile from './img/key/key-1-mobile.png'
 import key2 from './img/key/key-2.png'
+import key2_mobile from './img/key/key-2-mobile.png'
 import key3 from './img/key/key-3.png'
+import key3_mobile from './img/key/key-3-mobile.png'
 import key4 from './img/key/key-4.png'
+import key4_mobile from './img/key/key-4-mobile.png'
 import key5 from './img/key/key-5.png'
+import key5_mobile from './img/key/key-5-mobile.png'
 
 import eco1 from './img/economic/eco-1.png'
 import eco2 from './img/economic/eco-2.png'
@@ -311,30 +322,45 @@ class Home extends Component {
                             className={`text-center ${styles.fontH1}`}>{t('home_page:highlight_title')}</GradientHeading>
                         <div className={styles.lineH1}></div>
                         <Row className={`d-flex justify-content-center text-center`}>
-                            <Col xs={6} md={4} className={styles.lg5}>
-                                <img src={key1}/>
-                                <h3>{t('home_page:highlight_block_title_1')}</h3>
-                                <p>{t('home_page:highlight_block_content_1')}</p>
+                            <Col xs={12} md={4} className={styles.lg5}>
+                                <img src={key1} className={`hidden-xs`}/>
+                                <img src={key1_mobile} className={`visible-xs`}/>
+                                <div className={styles.keyItem}>
+                                    <h3>{t('home_page:highlight_block_title_1')}</h3>
+                                    <p>{t('home_page:highlight_block_content_1')}</p>
+                                </div>
                             </Col>
-                            <Col xs={6} md={4} className={styles.lg5}>
-                                <img src={key2}/>
-                                <h3>{t('home_page:highlight_block_title_2')}</h3>
-                                <p>{t('home_page:highlight_block_content_2')}</p>
+                            <Col xs={12} md={4} className={styles.lg5}>
+                                <img src={key2} className={`hidden-xs`}/>
+                                <img src={key2_mobile} className={`visible-xs`}/>
+                                <div className={styles.keyItem}>
+                                    <h3>{t('home_page:highlight_block_title_2')}</h3>
+                                    <p>{t('home_page:highlight_block_content_2')}</p>
+                                </div>
                             </Col>
-                            <Col xs={6} md={4} className={styles.lg5}>
-                                <img src={key3}/>
-                                <h3>{t('home_page:highlight_block_title_3')}</h3>
-                                <p>{t('home_page:highlight_block_content_3')}</p>
+                            <Col xs={12} md={4} className={styles.lg5}>
+                                <img src={key3} className={`hidden-xs`}/>
+                                <img src={key3_mobile} className={`visible-xs`}/>
+                                <div className={styles.keyItem}>
+                                    <h3>{t('home_page:highlight_block_title_3')}</h3>
+                                    <p>{t('home_page:highlight_block_content_3')}</p>
+                                </div>
                             </Col>
-                            <Col xs={6} md={4} className={styles.lg5}>
-                                <img src={key4}/>
-                                <h3>{t('home_page:highlight_block_title_4')}</h3>
-                                <p>{t('home_page:highlight_block_content_4')}</p>
+                            <Col xs={12} md={4} className={styles.lg5}>
+                                <img src={key4} className={`hidden-xs`}/>
+                                <img src={key4_mobile} className={`visible-xs`}/>
+                                <div className={styles.keyItem}>
+                                    <h3>{t('home_page:highlight_block_title_4')}</h3>
+                                    <p>{t('home_page:highlight_block_content_4')}</p>
+                                </div>
                             </Col>
-                            <Col xs={6} md={4} className={styles.lg5}>
-                                <img src={key5}/>
-                                <h3>{t('home_page:highlight_block_title_5')}</h3>
-                                <p>{t('home_page:highlight_block_content_5')}</p>
+                            <Col xs={12} md={4} className={styles.lg5}>
+                                <img src={key5} className={`hidden-xs`}/>
+                                <img src={key5_mobile} className={`visible-xs`}/>
+                                <div className={styles.keyItem}>
+                                    <h3>{t('home_page:highlight_block_title_5')}</h3>
+                                    <p>{t('home_page:highlight_block_content_5')}</p>
+                                </div>
                             </Col>
                         </Row>
                     </Container>
@@ -348,13 +374,16 @@ class Home extends Component {
                         {/* {i18n.language.indexOf('en') > -1 ? <img src={architecture_en}/> :
                             <img src={architecture}/>} */}
                         <div className={`${styles.archWrapper}`}>
-                            <img src={architecture_en}/>
-                            <div className={`${styles.anime}`}>
+                            {i18n.language.indexOf('en') > -1 ? <img className={`hidden-xs`} src={architecture_en}/> :
+                            <img className={`hidden-xs`} src={architecture}/>}
+                            {i18n.language.indexOf('en') > -1 ? <img className={`visible-xs`} src={architecture_mobile_en}/> :
+                            <img className={`visible-xs`} src={architecture_mobile}/>}
+                            <div className={`hidden-xs ${styles.anime}`}>
                                 <div>
-                                    <Button className={styles.soloBtn}>Solo模式</Button>
-                                    <Button className={`${styles.soloBtn} ${styles.soloWhiteBtn}`}>Solo模式</Button>
-                                    <Button className={styles.chainBtn}>平行链模式</Button>
-                                    <Button className={`${styles.chainBtn} ${styles.chainPinkBtn}`}>平行链模式</Button>
+                                    <Button className={styles.soloBtn}>{t('home_page:architecture_solo')}</Button>
+                                    <Button className={`${styles.soloBtn} ${styles.soloWhiteBtn}`}>{t('home_page:architecture_solo')}</Button>
+                                    <Button className={styles.chainBtn}>{t('home_page:architecture_chain')}</Button>
+                                    <Button className={`${styles.chainBtn} ${styles.chainPinkBtn}`}>{t('home_page:architecture_chain')}</Button>
                                     <img src={architecture_chain} className={styles.chain}/>
                                     <img src={architecture_solo} className={styles.solo}/>
                                 </div>
@@ -369,20 +398,33 @@ class Home extends Component {
                             className={`text-center ${styles.fontH1}`}>{t('home_page:economic_title')}</GradientHeading>
                         <div className={styles.lineH1}/>
                         <Row className={`d-flex justify-content-center`}>
-                            <Col xs={12} md={4} lg={4}>
-                                <img src={eco1}/>
-                                <h3>{t('home_page:economic_block_title_1')}</h3>
-                                <p>{t('home_page:economic_block_content_1')}</p>
+                            <Col xs={12} md={12} lg={6}>
+                            {i18n.language.indexOf('en') > -1 ? <img className={styles.bridge} src={economic_en}/> :
+                            <img className={styles.bridge} src={economic}/>}
                             </Col>
-                            <Col xs={12} md={4} lg={4}>
-                                <img src={eco2}/>
-                                <h3>{t('home_page:economic_block_title_2')}</h3>
-                                <p>{t('home_page:economic_block_content_2')}</p>
-                            </Col>
-                            <Col xs={12} md={4} lg={4}>
-                                <img src={eco3}/>
-                                <h3>{t('home_page:economic_block_title_3')}</h3>
-                                <p>{t('home_page:economic_block_content_3')}</p>
+                            <Col xs={0} md={0} lg={1} />
+                            <Col xs={12} md={12} lg={5} className={styles.economicCol}>
+                                <div className={styles.economicItem}>
+                                    <div className={styles.economicItemHeader}>
+                                        <img className={styles.economicIcon} src={eco1}/>
+                                        <div>{t('home_page:economic_block_title_1')}</div>
+                                    </div>
+                                    <p>{t('home_page:economic_block_content_1')}</p>
+                                </div>
+                                <div className={styles.economicItem}>
+                                    <div className={styles.economicItemHeader}>
+                                        <img className={styles.economicIcon} src={eco2}/>
+                                        <div>{t('home_page:economic_block_title_2')}</div>
+                                    </div>
+                                    <p>{t('home_page:economic_block_content_2')}</p>
+                                </div>
+                                <div className={styles.economicItem}>
+                                    <div className={styles.economicItemHeader}>
+                                        <img className={styles.economicIcon} src={eco3}/>
+                                        <div>{t('home_page:economic_block_title_3')}</div>
+                                    </div>
+                                    <p>{t('home_page:economic_block_content_3')}</p>
+                                </div>
                             </Col>
                         </Row>
                         {/* <div>
@@ -398,14 +440,16 @@ class Home extends Component {
                             className={`text-center ${styles.fontH1}`}>{t('home_page:application_title')}</GradientHeading>
                         <div className={styles.lineH1}/>
                         <Row className={`d-flex justify-content-center`}>
-                            <Col xs={12} md={8}>
+                            <Col xs={12} md={6}>
                                 <img src={application_1}/>
                                 <h3>{t('home_page:application_block_title_1')}</h3>
+                                <p>{t('home_page:application_block_content_1')}</p>
                             </Col>
-                            {/*<Col xs={12} md={6}>*/}
-                            {/*<img src={application_2}/>*/}
-                            {/*<h3>{t('home_page:application_block_title_2')}</h3>*/}
-                            {/*</Col>*/}
+                            <Col xs={12} md={6}>
+                                <img src={application_2}/>
+                                <h3>{t('home_page:application_block_title_2')}</h3>
+                                <p>{t('home_page:application_block_content_2')}</p>
+                            </Col>
                         </Row>
                     </Container>
                 </div>
@@ -440,7 +484,7 @@ class Home extends Component {
                                             <p></p>
                                         </Col>
                                         <Col className={styles.lastCol}>
-                                            <p>2020-Q2</p>
+                                            <p>2020 Q3-Q4</p>
                                             <p></p>
                                         </Col>
                                     </Row>
@@ -501,7 +545,7 @@ class Home extends Component {
                                     <p></p>
                                 </Col>
                                 <Col className={styles.lastCol}>
-                                    <p>2020-Q2</p>
+                                    <p>2020 Q3-Q4</p>
                                     <p></p>
                                 </Col>
                             </Row>
@@ -544,7 +588,7 @@ class Home extends Component {
                     <Container className={'text-center'}>
                         <Row>
                             <Col>
-                                <h1>{t('home_page:dev_title')}</h1>
+                                <h1 className={styles.fontH1}>{t('home_page:dev_title')}</h1>
                                 <div className={styles.lineH2}></div>
                                 <p>{t('home_page:dev_content')}</p>
                                 <p className={styles.link}>

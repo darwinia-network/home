@@ -14,8 +14,8 @@
     "comingsoon": "Coming Soon"
   },
   "home_page": {
-    "slogan": "Cross-chain App hub and Internet of Tokens",
-    "subtitle": "As an open application cross-chain protocol based on Substrate, Darwinia focuses on the construction of future Internet of Tokens, including the cross-chain of game tokens, NFT, Stablecoins, and Appchain",
+    "slogan": "INTER OF TOKENS , CONNECTED !",
+    "subtitle": "As an open cross-chain bridge protocol based on Substrate, Darwinia focuses on the construction of future Internet of Tokens, including decentralized tokens swap, exchange and market",
     "placeholder": "name@email.com",
     "subscribe_btn": "Get Updates",
     "subscribe_tip": "Subscription success! Please check your inbox.",
@@ -36,6 +36,8 @@
 
 
     "architecture_title": "Architecture Design",
+    "architecture_solo": "Solo",
+    "architecture_chain": "Parachain",
 
     "economic_title":"Darwinia Economic",
     "economic_block_title_1":"RING",
@@ -47,9 +49,11 @@
     "economic_btn": "How to staking?",
     "economic_url": "https://mp.weixin.qq.com/s/vSWn8Wz2C_f3_mxOiV-54g",
 
-    "application_title": "Applications",
-    "application_block_title_1": "Open Game in Open Finance",
-    "application_block_title_2": "Open Finance",
+    "application_title": "Ecological Applications",
+    "application_block_title_1": "Token DEX",
+    "application_block_content_1": "Token DEX is a decentralized application based on the Darwinia cross-chain bridge as the core technology, which can realize automatic cross-chain transactions between tokens",
+    "application_block_title_2": "NFT Market",
+    "application_block_content_2": "The decentralized nft auction market, which supports nft auctions of different blockchain networks through cross-chain auctions, creates a new NFT cross-chain circulation scenario",
 
     "dev_title": "Dev team",
     "dev_content": "Itering IO is the Dev Team for Darwinia Network",
@@ -65,9 +69,9 @@
     "roadmap_4_name": "Darwinia",
     "roadmap_4_milestone": "Crab Testnet",
     "roadmap_5_name": "Darwinia",
-    "roadmap_5_milestone": "Mainnet Launch",
-    "roadmap_6_name": "Darwinia",
-    "roadmap_6_milestone": "Appchain SDK",
+    "roadmap_5_milestone": "Mainnet",
+    "roadmap_6_name": "Ecological",
+    "roadmap_6_milestone": "Applications",
     "roadmap_btn": "Join Darwinia Testnet",
 
     "partners_title": "Partners",

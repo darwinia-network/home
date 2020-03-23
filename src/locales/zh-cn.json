@@ -36,6 +36,8 @@
 
 
     "architecture_title": "架构设计",
+    "architecture_solo": "Solo模式",
+    "architecture_chain": "平行链模式",
 
     "economic_title":"达尔文经济模型",
     "economic_block_title_1":"RING",
@@ -65,9 +67,9 @@
     "roadmap_4_name": "Darwinia",
     "roadmap_4_milestone": "Crab Testnet",
     "roadmap_5_name": "Darwinia",
-    "roadmap_5_milestone": "Mainnet Launch",
-    "roadmap_6_name": "Darwinia",
-    "roadmap_6_milestone": "Appchain SDK",
+    "roadmap_5_milestone": "Mainnet",
+    "roadmap_6_name": "Ecological",
+    "roadmap_6_milestone": "Applications",
     "roadmap_btn": "加入测试网络",
 
     "partners_title": "合作机构",

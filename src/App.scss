@@ -120,7 +120,11 @@ body {
   padding-left: 60px;
   padding-right: 60px;
 }
-
+@media (min-width: 768px) {
+  .visible-xs {
+    display: none;
+  }
+}
 @media (max-width: 767.98px) {
   .navbar-brand {
     visibility: hidden;
