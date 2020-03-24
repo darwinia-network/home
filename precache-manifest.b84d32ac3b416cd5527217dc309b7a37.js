@@ -20,8 +20,8 @@ self.__precacheManifest = [
     "url": "/static/js/main.b92f32ca.chunk.js"
   },
   {
-    "revision": "8778bc04eb4f12efc2a3",
-    "url": "/static/js/runtime~main.6bdbc929.js"
+    "revision": "04539a9d7de51c7034db",
+    "url": "/static/js/runtime~main.b7004149.js"
   },
   {
     "revision": "df44aea5e7638bb2a087",
@@ -32,8 +32,8 @@ self.__precacheManifest = [
     "url": "/static/media/key-5-mobile.66832b56.png"
   },
   {
-    "revision": "5cc5b06fbdb62590ce38",
-    "url": "/static/js/5.d1a94977.chunk.js"
+    "revision": "9c29a99d1adb1822c570",
+    "url": "/static/js/5.004060af.chunk.js"
   },
   {
     "revision": "585a2e7736f3bf20fede",
@@ -136,12 +136,12 @@ self.__precacheManifest = [
     "url": "/static/media/economic-en.ae7a638c.png"
   },
   {
-    "revision": "b57673ba09ac011393853d010c18991c",
-    "url": "/static/media/application-1.b57673ba.png"
+    "revision": "8eb5602d7877c78b719c550487b8999c",
+    "url": "/static/media/application-1.8eb5602d.png"
   },
   {
-    "revision": "9643c0f31c91b281c81488f5bade89df",
-    "url": "/static/media/application-2.9643c0f3.png"
+    "revision": "53ac72e94e7ac49d93ce9c8a5bcc9f5b",
+    "url": "/static/media/application-2.53ac72e9.png"
   },
   {
     "revision": "799880068b56c0a10ebbb2e11cd0c45c",
@@ -188,7 +188,7 @@ self.__precacheManifest = [
     "url": "/static/css/7.e5d6d968.chunk.css"
   },
   {
-    "revision": "5cc5b06fbdb62590ce38",
+    "revision": "9c29a99d1adb1822c570",
     "url": "/static/css/5.55674817.chunk.css"
   },
   {
@@ -196,7 +196,7 @@ self.__precacheManifest = [
     "url": "/static/css/1.da2d55df.chunk.css"
   },
   {
-    "revision": "62289921bceb423b64589a6179ab8f75",
+    "revision": "9b618d166560b4bc3bc59a9b1e4575d2",
     "url": "/index.html"
   }
 ];
