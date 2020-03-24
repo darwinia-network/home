@@ -398,7 +398,7 @@ class Home extends Component {
                             className={`text-center ${styles.fontH1}`}>{t('home_page:economic_title')}</GradientHeading>
                         <div className={styles.lineH1}/>
                         <Row className={`d-flex justify-content-center`}>
-                            <Col xs={12} md={12} lg={6}>
+                            <Col xs={12} md={12} lg={6} className={styles.economicImg}>
                             {i18n.language.indexOf('en') > -1 ? <img className={styles.bridge} src={economic_en}/> :
                             <img className={styles.bridge} src={economic}/>}
                             </Col>
@@ -514,7 +514,7 @@ class Home extends Component {
                                             <p>{t('home_page:roadmap_5_name')}</p>
                                             <p>{t('home_page:roadmap_5_milestone')}</p>
                                         </div>
-                                        <div xs={12} className={styles.lastCol}>
+                                        <div xs={12} className={`${styles.lastCol} d-flex justify-content-center align-items-center`}>
                                             <p>{t('home_page:roadmap_6_name')}</p>
                                             <p>{t('home_page:roadmap_6_milestone')}</p>
                                         </div>
@@ -571,7 +571,7 @@ class Home extends Component {
                                     <p>{t('home_page:roadmap_5_name')}</p>
                                     <p>{t('home_page:roadmap_5_milestone')}</p>
                                 </Col>
-                                <Col className={styles.lastCol}>
+                                <Col className={`${styles.lastCol} d-flex justify-content-center align-items-center`}>
                                     <p>{t('home_page:roadmap_6_name')}</p>
                                     <p>{t('home_page:roadmap_6_milestone')}</p>
                                 </Col>

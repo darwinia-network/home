@@ -154,7 +154,7 @@ class PageHeader extends Component {
                             href="https://evolution.l2me.com/darwinia/Darwinia_Genepaper_EN_200320.pdf">{t('header:genepaper')}</Nav.Link>
                             :
                             <Nav.Link target={'_blank'}
-                            href="https://evolution.l2me.com/darwinia/Darwinia_Genepaper_EN_200320.pdf">{t('header:genepaper')}</Nav.Link>
+                            href="https://evolution.l2me.com/darwinia/Darwinia_Genepaper_200320.pdf">{t('header:genepaper')}</Nav.Link>
                             }
                             </Col>
                             <Col md={12}>

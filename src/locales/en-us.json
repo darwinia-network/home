@@ -28,7 +28,6 @@
     "highlight_block_content_3": "The technology that provides support for cross-chain",
     "highlight_block_title_4": "Token DEX",
     "highlight_block_content_4": "Decentralized cross-chain transaction protocol",
-
     "highlight_block_title_5": "NFT Market",
     "highlight_block_content_5": "Decentralized NFT cross-chain auction market",
     "highlight_block_title_6": "Onchain RNG",
@@ -70,8 +69,8 @@
     "roadmap_4_milestone": "Crab Network",
     "roadmap_5_name": "Darwinia",
     "roadmap_5_milestone": "Mainnet",
-    "roadmap_6_name": "Ecological",
-    "roadmap_6_milestone": "Applications",
+    "roadmap_6_name": "Ecological Applications",
+    "roadmap_6_milestone": "",
     "roadmap_btn": "Join Darwinia Testnet",
 
     "partners_title": "Partners",

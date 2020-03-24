@@ -17,7 +17,7 @@
     text-align: left;
     margin-bottom: 40px !important;
     width: 95%;
-    font-weight:600;
+    // font-weight:600;
   }
   div {
     p {
@@ -47,8 +47,13 @@
   p {
     font-size: 16px;
     color: #6330DD;
-    font-weight: bold;
+    // font-weight: bold;
     line-height: 20px;
+  }
+  .keyItem {
+    p {
+      font-size: 14px;
+    }
   }
   @media (min-width: 992px) {
     .lg5 {
@@ -348,7 +353,7 @@
     margin-left: 5px;
     margin-right: 5px;
     margin-top: 53px;
-    font-weight: bold;
+    // font-weight: bold;
     p{
       margin-bottom: 0;
     }
@@ -476,8 +481,10 @@
 
   .economicContainer {
     text-align: center;
-    img {
-      // width: 170px;
+    .economicImg {
+      img {
+        margin-bottom: 40px;
+      }
     }
   }
 
