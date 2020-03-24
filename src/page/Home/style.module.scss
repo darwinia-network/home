@@ -219,14 +219,14 @@
       width: 2.5%;
       margin-left: 45.7%;
       :global {
-        animation: 4s ease-in-out infinite both solo;
+        animation: 6s ease-in-out infinite both solo;
       }
     }
     .chain {
       width: 3.0%;
       margin-left: 49.4%;
       :global {
-        animation: 4s ease-in-out infinite both chain;
+        animation: 6s ease-in-out infinite both chain;
       }
     }
     button {
@@ -252,7 +252,7 @@
       background: white;
       color: #d4d4d4;
       :global {
-        animation: 4s ease-in-out infinite both soloWhiteBtn;
+        animation: 6s ease-in-out infinite both soloWhiteBtn;
       }
     }
     .chainBtn {
@@ -269,17 +269,17 @@
       border: none;
       background: linear-gradient(315deg, rgba(254, 56, 118, 1) 0%, rgba(124, 48, 221, 1) 71%, rgba(58, 48, 221, 1) 100%);
       :global {
-        animation: 4s ease-in-out infinite both chainPinkBtn;
+        animation: 6s ease-in-out infinite both chainPinkBtn;
       }
     }
     @keyframes :global(chainPinkBtn) {
       0%,
-      20% {
+      33% {
         opacity: 0;
       }
   
-      45%,
-      75% {
+      50%,
+      83% {
         opacity: 1;
       }
       100% {
@@ -288,12 +288,12 @@
     }
     @keyframes :global(soloWhiteBtn) {
       0%,
-      20% {
+      33% {
         opacity: 0;
       }
   
-      45%,
-      75% {
+      50%,
+      83% {
         opacity: 1;
       }
       100% {
@@ -302,12 +302,12 @@
     }
     @keyframes :global(chain) {
       0%,
-      25% {
+      33% {
         transform: translate(0, 0);
       }
   
       50%,
-      75% {
+      83% {
         transform: translate(-30%, 0);
       }
   
@@ -317,12 +317,12 @@
     }
     @keyframes :global(solo) {
       0%,
-      25% {
+      33% {
         transform: translate(0, 0);
       }
   
       50%,
-      75% {
+      83% {
         transform: translate(32%, 0);
       }
   
