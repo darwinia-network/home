@@ -261,7 +261,7 @@ class Home extends Component {
                     <Container>
                         <Row className={`${styles.promoteContentArea} d-flex justify-content-center`}>
                             <Col xs={{order: 2, span: 11}} sm={{order: 1, span: 8}}>
-                                <img className={styles.slideLogo} src={dwSlideIcon}/>
+                                {/* <img className={styles.slideLogo} src={dwSlideIcon}/> */}
                                 <p className={styles.slogan}>{t('home_page:slogan')}</p>
                                 <div className={styles.line}/>
                                 <p className={`${styles.subTitle} mb-4`}>{t('home_page:subtitle')}</p>
