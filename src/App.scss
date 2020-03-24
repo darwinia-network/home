@@ -14,7 +14,7 @@ body {
 
 .nav-link {
   color: $text-fff;
-  font-weight: bold;
+  // font-weight: bold;
   padding: $nav-link-padding-y $nav-link-padding-x;
   cursor: pointer;
   &:hover {
@@ -25,14 +25,14 @@ body {
 @font-face {
   font-family: Rajdhani;
   //src: url('./style/font/pt-sans.regular.ttf') format('truetype');
-  src: url('./style/font/Rajdhani-Bold.ttf') format('truetype');
+  src: url('./style/font/Rajdhani-SemiBold.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: Rajdhani;
-  src: url('./style/font/Rajdhani-SemiBold.ttf') format('truetype');
+  src: url('./style/font/Rajdhani-Bold.ttf') format('truetype');
   font-weight: bold;
   font-style: normal;
 }
@@ -120,7 +120,11 @@ body {
   padding-left: 60px;
   padding-right: 60px;
 }
-
+@media (min-width: 768px) {
+  .visible-xs {
+    display: none;
+  }
+}
 @media (max-width: 767.98px) {
   .navbar-brand {
     visibility: hidden;
