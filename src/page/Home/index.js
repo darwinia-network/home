@@ -55,12 +55,6 @@ import partner15 from './img/partner/partner-15.png'
 import partner16 from './img/partner/partner-16.png'
 import partner17 from './img/partner/partner-17.png'
 import partner18 from './img/partner/partner-18.png'
-import partner19 from './img/partner/partner-19.png'
-import partner20 from './img/partner/partner-20.png'
-import partner21 from './img/partner/partner-21.png'
-import partner22 from './img/partner/partner-22.png'
-import partner23 from './img/partner/partner-23.png'
-import partner24 from './img/partner/partner-24.png'
 
 import newsEthRelay from './img/news/news-eth-relay.png'
 import news1 from './img/news/news-1.jpg'
@@ -93,123 +87,92 @@ class Home extends Component {
                 name: 'Web3 Foundation',
                 url: 'https://web3.foundation'
             },
-            'snz': {
-                logo: partner20,
-                name: 'SNZ Holding',
-                url: 'https://snzholding.com'
+            'parity': {
+                logo: partner3,
+                name: 'Parity',
+                url: 'https://www.parity.io'
             },
             'maker': {
-                logo: partner24,
+                logo: partner4,
                 name: 'MAKER',
                 url: 'https://makerdao.com'
             },
+            'snz': {
+                logo: partner5,
+                name: 'SNZ Holding',
+                url: 'https://snzholding.com'
+            },
             'hashkey': {
-                logo: partner21,
+                logo: partner6,
                 name: 'HashKey',
                 url: 'https://www.hashkey.com'
             },
+            'polkabase': {
+                logo: partner7,
+                name: 'Polkabase',
+                url: 'https://www.polkabase.com'
+            },
             'bihu': {
-                logo: partner3,
+                logo: partner8,
                 name: 'Bihu',
                 url: 'https://bihu.com'
             },
+            'evolutionland': {
+                logo: partner9,
+                name: 'Evolution Land',
+                url: 'https://www.evolution.land'
+            },
             'polkaworld': {
-                logo: partner4,
+                logo: partner10,
                 name: 'Polka World',
                 url: 'https://www.polkaworld.org'
             },
             'imtoken': {
-                logo: partner5,
+                logo: partner11,
                 name: 'imToken',
                 url: 'https://token.im'
             },
             'mathwallet': {
-                logo: partner6,
+                logo: partner12,
                 name: 'Math Wallet',
                 url: 'https://www.mathwallet.org'
             },
             'cobowallet': {
-                logo: partner7,
+                logo: partner13,
                 name: 'Cobo Wallet',
                 url: 'https://cobo.com'
             },
             'polkawallet': {
-                logo: partner8,
+                logo: partner14,
                 name: 'Polka Wallet',
                 url: 'https://polkawallet.io'
             },
-            'bitportal': {
-                logo: partner9,
-                name: 'BitPortal',
-                url: 'https://www.bitportal.io'
-            },
-            'wetez': {
-                logo: partner10,
-                name: 'wetez',
-                url: 'https://www.wetez.io'
-            },
             'sssnodes': {
-                logo: partner11,
+                logo: partner15,
                 name: 'SSSnodes',
                 url: 'http://sssnodes.com'
             },
-            'guild': {
-                logo: partner12,
-                name: 'The Guild',
-                url: 'http://drf.ee'
-            },
             'digital': {
-                logo: partner13,
+                logo: partner16,
                 name: 'Digital Renaissance',
                 url: 'http://drf.ee'
             },
-            'chain': {
-                logo: partner14,
-                name: 'cha.in',
-                url: 'https://cha.in'
-            },
-            'nodeasy': {
-                logo: partner15,
-                name: 'nodeasy',
-                url: 'https://www.nodeasy.com'
-            },
-            'dappcc': {
-                logo: partner16,
-                name: 'dapp.cc',
-                url: 'http://dapp.cc'
-            },
-            'blackpool': {
-                logo: partner17,
-                name: 'BlackPool',
-                url: 'http://www.blackpool.pro'
-            },
-            'cybex': {
-                logo: partner18,
-                name: 'Cybex',
-                url: 'https://cybex.io'
-            },
             'ddex': {
-                logo: partner19,
+                logo: partner17,
                 name: 'DDEX',
                 url: 'https://ddex.io'
             },
-            'evolutionland': {
-                logo: partner22,
-                name: 'Evolution Land',
-                url: 'https://www.evolution.land'
-            },
             'otcmaker': {
-                logo: partner23,
+                logo: partner18,
                 name: 'OTCMAKER',
                 url: 'https://www.otcmaker.com'
             }
         }
 
         this.partners = [
-            'polkadot', 'web3', 'maker', 'snz', 'hashkey', 'bihu',
+            'polkadot', 'web3', 'parity', 'maker', 'snz', 'hashkey', 'polkabase', 'bihu',
             'evolutionland', 'polkaworld', 'imtoken', 'mathwallet', 'cobowallet', 'polkawallet',
-            'bitportal', 'wetez', 'sssnodes', 'guild', 'digital', 'chain',
-            'nodeasy', 'dappcc', 'blackpool', 'cybex', 'ddex',  'otcmaker'
+            'sssnodes', 'digital', 'ddex',  'otcmaker'
         ]
     }
 
