@@ -10,6 +10,7 @@
     "explorer_url": "http://icefrog.subscan.io/",
     "faq": "FAQs",
     "rfc": "RFCs",
+    "docs": "Docs",
     "wallet": "Wallet",
     "comingsoon": "Coming Soon"
   },
@@ -38,13 +39,13 @@
     "architecture_solo": "Solo",
     "architecture_chain": "Parachain",
 
-    "economic_title":"Darwinia Economic",
-    "economic_block_title_1":"RING",
-    "economic_block_content_1":"The native tokens for Darwinia Network is RING, RING can be used as gas for transactions. Gas include transaction fees, contract execution fees, network bandwidth charges, storage fees, and more.",
-    "economic_block_title_2":"KTON",
-    "economic_block_content_2":"To encourage users to make long term commitments and pledge, users can choose to lock RING for 3 - 36 months in the process of Staking, and the system will offer a KTON token as reward for users participating in Staking.",
-    "economic_block_title_3":"Staking",
-    "economic_block_content_3":"The Darwinia Network will distribute RING as an incentive to the participants of Staking. The process of Staking can also be understood as the POS mining process, where the miner obtains Staking energy by pledging tokens for POS mining.",
+    "economic_title": "Darwinia Economic",
+    "economic_block_title_1": "RING",
+    "economic_block_content_1": "The native tokens for Darwinia Network is RING, RING can be used as gas for transactions. Gas include transaction fees, contract execution fees, network bandwidth charges, storage fees, and more.",
+    "economic_block_title_2": "KTON",
+    "economic_block_content_2": "To encourage users to make long term commitments and pledge, users can choose to lock RING for 3 - 36 months in the process of Staking, and the system will offer a KTON token as reward for users participating in Staking.",
+    "economic_block_title_3": "Staking",
+    "economic_block_content_3": "The Darwinia Network will distribute RING as an incentive to the participants of Staking. The process of Staking can also be understood as the POS mining process, where the miner obtains Staking energy by pledging tokens for POS mining.",
     "economic_btn": "How to staking?",
     "economic_url": "https://mp.weixin.qq.com/s/vSWn8Wz2C_f3_mxOiV-54g",
 
@@ -83,10 +84,10 @@
     "news_title_4": "How to Staking in Darwinia",
     "news_title_eth_relay": "Darwinia Network published ETH-Relay DEMO",
 
-    "news_link_1":"https://mp.weixin.qq.com/s/OfLKkWFB-WvOsSYSQ-cioA",
-    "news_link_2":"https://mp.weixin.qq.com/s/EgelOosWlrBX60vvec32nw",
-    "news_link_3":"https://mp.weixin.qq.com/s/S_tFUzH-40g_vKgLxEsO6A",
-    "news_link_4":"https://mp.weixin.qq.com/s/vSWn8Wz2C_f3_mxOiV-54g",
+    "news_link_1": "https://mp.weixin.qq.com/s/OfLKkWFB-WvOsSYSQ-cioA",
+    "news_link_2": "https://mp.weixin.qq.com/s/EgelOosWlrBX60vvec32nw",
+    "news_link_3": "https://mp.weixin.qq.com/s/S_tFUzH-40g_vKgLxEsO6A",
+    "news_link_4": "https://mp.weixin.qq.com/s/vSWn8Wz2C_f3_mxOiV-54g",
     "news_link_eth_relay": "https://mp.weixin.qq.com/s/ZsS8Z8FgLifet2t-8X84NQ",
 
     "news_btn": "View all"
