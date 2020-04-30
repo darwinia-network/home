@@ -99,24 +99,24 @@ class PageFooter extends Component {
                                 <Col md={{order: 3}}
                                      className={`text-right ${styles.shareLogo}`}>
                                     <div>
-                                        <img onClick={() => {
+                                        <img alt="Medium" onClick={() => {
                                             this.goto('medium')
                                         }} src={share1}/>
-                                        <img onClick={() => {
+                                        <img alt="telegram" onClick={() => {
                                             this.goto('tg')
                                         }} src={share2}/>
-                                        <img onClick={() => {
+                                        <img alt="twitter" onClick={() => {
                                             this.goto('twitter')
                                         }} src={share3}/>
-                                        <img onClick={() => {
+                                        <img alt="github" onClick={() => {
                                             this.goto('github')
                                         }} src={share4}/>
                                     </div>
                                     <div>
-                                        <img onClick={() => {
+                                        <img alt="bihu" onClick={() => {
                                             this.goto('bihu')
                                         }} src={share5}/>
-                                        <img onClick={() => {
+                                        <img alt="weibo" onClick={() => {
                                             this.goto('weibo')
                                         }} src={share6}/>
                                         <OverlayTrigger
@@ -124,11 +124,11 @@ class PageFooter extends Component {
                                             delay={{show: 100, hide: 1000}}
                                             overlay={this.renderTooltip}
                                         >
-                                            <img onClick={(e) => {
+                                            <img alt="wechat" onClick={(e) => {
                                                 this.goto('wx', e)
                                             }} src={share7}/>
                                         </OverlayTrigger>
-                                        <img onClick={() => {
+                                        <img alt="email" onClick={() => {
                                             this.goto('email')
                                         }} src={share8}/>
                                     </div>
@@ -158,30 +158,30 @@ class PageFooter extends Component {
                         <Row className={styles.xsContent}>
                             <Col className={`text-center  ${styles.shareLogo}`}>
                                 <div className={styles.logoContent}>
-                                    <img onClick={() => {
+                                    <img alt="Medium" onClick={() => {
                                         this.goto('medium')
                                     }} src={share1}/>
-                                    <img onClick={() => {
+                                    <img alt="telegram" onClick={() => {
                                         this.goto('tg')
                                     }} src={share2}/>
-                                    <img onClick={() => {
+                                    <img alt="twitter" onClick={() => {
                                         this.goto('twitter')
                                     }} src={share3}/>
-                                    <img onClick={() => {
+                                    <img alt="github" onClick={() => {
                                         this.goto('github')
                                     }} src={share4}/>
                                 </div>
                                 <div className={styles.logoContent}>
-                                    <img onClick={() => {
+                                    <img alt="bihu" onClick={() => {
                                         this.goto('bihu')
                                     }} src={share5}/>
-                                    <img onClick={() => {
+                                    <img alt="weibo" onClick={() => {
                                         this.goto('weibo')
                                     }} src={share6}/>
-                                    <img onClick={() => {
+                                    <img alt="wechat" onClick={() => {
                                         this.goto('wx')
                                     }} src={share7}/>
-                                    <img onClick={() => {
+                                    <img alt="email" onClick={() => {
                                         this.goto('email')
                                     }} src={share8}/>
                                 </div>
