@@ -46,6 +46,8 @@ class PageFooter extends Component {
             case 'email':
                 window.open('mailto:hello@darwinia.network');
                 return;
+            default:
+                return;
         }
     }
 
