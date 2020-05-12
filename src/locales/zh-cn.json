@@ -10,6 +10,7 @@
     "explorer_url": "http://icefrog.subscan.io/",
     "faq": "FAQs",
     "rfc": "RFCs",
+    "docs": "知识库",
     "wallet": "钱包",
     "comingsoon": "即将到来"
   },
@@ -38,13 +39,13 @@
     "architecture_solo": "Solo模式",
     "architecture_chain": "平行链模式",
 
-    "economic_title":"达尔文经济模型",
-    "economic_block_title_1":"RING",
-    "economic_block_content_1":"RING是达尔文网络的原生资产，RING可以作为交易的燃料费。燃料费包括交易费用，合约执行费用，网络带宽费用，存储费用等等。",
-    "economic_block_title_2":"KTON",
-    "economic_block_content_2":"为了鼓励用户进行长期锁定和承诺投入，用户在Staking RING的过程中，可以承诺锁定RING 3 - 36个月，系统会给参与Staking的用户一个氪石的通证进行奖励。",
-    "economic_block_title_3":"Staking",
-    "economic_block_content_3":"达尔文网络将会把主要收入作为激励分发给Staking的参与者。Staking的过程也可以理解为POS挖矿过程，挖矿者通过质押资产来获得Staking能量来进行POS挖矿。",
+    "economic_title": "达尔文经济模型",
+    "economic_block_title_1": "RING",
+    "economic_block_content_1": "RING是达尔文网络的原生资产，RING可以作为交易的燃料费。燃料费包括交易费用，合约执行费用，网络带宽费用，存储费用等等。",
+    "economic_block_title_2": "KTON",
+    "economic_block_content_2": "为了鼓励用户进行长期锁定和承诺投入，用户在Staking RING的过程中，可以承诺锁定RING 3 - 36个月，系统会给参与Staking的用户一个氪石的通证进行奖励。",
+    "economic_block_title_3": "Staking",
+    "economic_block_content_3": "达尔文网络将会把主要收入作为激励分发给Staking的参与者。Staking的过程也可以理解为POS挖矿过程，挖矿者通过质押资产来获得Staking能量来进行POS挖矿。",
     "economic_btn": "如何 Staking?",
     "economic_url": "https://mp.weixin.qq.com/s/vSWn8Wz2C_f3_mxOiV-54g",
 
@@ -83,10 +84,10 @@
     "news_title_4": "在 Darwinia 中如何 Staking ？",
     "news_title_eth_relay": "达尔文网络已发布 ETH-Relay DEMO",
 
-    "news_link_1":"https://mp.weixin.qq.com/s/OfLKkWFB-WvOsSYSQ-cioA",
-    "news_link_2":"https://mp.weixin.qq.com/s/EgelOosWlrBX60vvec32nw",
-    "news_link_3":"https://mp.weixin.qq.com/s/S_tFUzH-40g_vKgLxEsO6A",
-    "news_link_4":"https://mp.weixin.qq.com/s/vSWn8Wz2C_f3_mxOiV-54g",
+    "news_link_1": "https://mp.weixin.qq.com/s/OfLKkWFB-WvOsSYSQ-cioA",
+    "news_link_2": "https://mp.weixin.qq.com/s/EgelOosWlrBX60vvec32nw",
+    "news_link_3": "https://mp.weixin.qq.com/s/S_tFUzH-40g_vKgLxEsO6A",
+    "news_link_4": "https://mp.weixin.qq.com/s/vSWn8Wz2C_f3_mxOiV-54g",
     "news_link_eth_relay": "https://mp.weixin.qq.com/s/ZsS8Z8FgLifet2t-8X84NQ",
 
     "news_btn": "查看更多"

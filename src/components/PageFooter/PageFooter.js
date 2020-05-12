@@ -46,6 +46,8 @@ class PageFooter extends Component {
             case 'email':
                 window.open('mailto:hello@darwinia.network');
                 return;
+            default:
+                return;
         }
     }
 
@@ -69,8 +71,9 @@ class PageFooter extends Component {
                             <h1>{t('footer:general')}</h1>
                             {/* <p><a target="_blank" href={t('home_page:economic_url')}>{t('footer:general_title_1')}</a></p> */}
                             <p><a href="/faq">{t('footer:general_title_2')}</a></p>
-                            <p><a target="_blank" href="mailto:hello@darwinia.network">{t('footer:general_title_3')}</a></p>
+                            <p><a target="_blank" href="https://docs.darwinia.network">{t('header:docs')}</a></p>
                             <p><a target="_blank" href="https://www.evolution.land/land/1/bank/buy-ring">{t('header:gringotts')}</a></p>
+                            <p><a target="_blank" href="mailto:hello@darwinia.network">{t('footer:general_title_3')}</a></p>
                         </Col>
                         <Col xs={6} md={4} lg={2}>
                             <h1>{t('footer:technology')}</h1>
@@ -96,24 +99,24 @@ class PageFooter extends Component {
                                 <Col md={{order: 3}}
                                      className={`text-right ${styles.shareLogo}`}>
                                     <div>
-                                        <img onClick={() => {
+                                        <img alt="Medium" onClick={() => {
                                             this.goto('medium')
                                         }} src={share1}/>
-                                        <img onClick={() => {
+                                        <img alt="telegram" onClick={() => {
                                             this.goto('tg')
                                         }} src={share2}/>
-                                        <img onClick={() => {
+                                        <img alt="twitter" onClick={() => {
                                             this.goto('twitter')
                                         }} src={share3}/>
-                                        <img onClick={() => {
+                                        <img alt="github" onClick={() => {
                                             this.goto('github')
                                         }} src={share4}/>
                                     </div>
                                     <div>
-                                        <img onClick={() => {
+                                        <img alt="bihu" onClick={() => {
                                             this.goto('bihu')
                                         }} src={share5}/>
-                                        <img onClick={() => {
+                                        <img alt="weibo" onClick={() => {
                                             this.goto('weibo')
                                         }} src={share6}/>
                                         <OverlayTrigger
@@ -121,11 +124,11 @@ class PageFooter extends Component {
                                             delay={{show: 100, hide: 1000}}
                                             overlay={this.renderTooltip}
                                         >
-                                            <img onClick={(e) => {
+                                            <img alt="wechat" onClick={(e) => {
                                                 this.goto('wx', e)
                                             }} src={share7}/>
                                         </OverlayTrigger>
-                                        <img onClick={() => {
+                                        <img alt="email" onClick={() => {
                                             this.goto('email')
                                         }} src={share8}/>
                                     </div>
@@ -155,30 +158,30 @@ class PageFooter extends Component {
                         <Row className={styles.xsContent}>
                             <Col className={`text-center  ${styles.shareLogo}`}>
                                 <div className={styles.logoContent}>
-                                    <img onClick={() => {
+                                    <img alt="Medium" onClick={() => {
                                         this.goto('medium')
                                     }} src={share1}/>
-                                    <img onClick={() => {
+                                    <img alt="telegram" onClick={() => {
                                         this.goto('tg')
                                     }} src={share2}/>
-                                    <img onClick={() => {
+                                    <img alt="twitter" onClick={() => {
                                         this.goto('twitter')
                                     }} src={share3}/>
-                                    <img onClick={() => {
+                                    <img alt="github" onClick={() => {
                                         this.goto('github')
                                     }} src={share4}/>
                                 </div>
                                 <div className={styles.logoContent}>
-                                    <img onClick={() => {
+                                    <img alt="bihu" onClick={() => {
                                         this.goto('bihu')
                                     }} src={share5}/>
-                                    <img onClick={() => {
+                                    <img alt="weibo" onClick={() => {
                                         this.goto('weibo')
                                     }} src={share6}/>
-                                    <img onClick={() => {
+                                    <img alt="wechat" onClick={() => {
                                         this.goto('wx')
                                     }} src={share7}/>
-                                    <img onClick={() => {
+                                    <img alt="email" onClick={() => {
                                         this.goto('email')
                                     }} src={share8}/>
                                 </div>
