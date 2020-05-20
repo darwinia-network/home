@@ -181,7 +181,7 @@ class Home extends Component {
     }
 
     subscribe = (text) => {
-        axios.post('https://crayfish.subscan.io/api/subscribe?email=' + text)
+        axios.post('https://crab.subscan.io/api/subscribe?email=' + text)
             .then((response) => {
                 console.log(response);
                 if (response.data.code === 0) {
