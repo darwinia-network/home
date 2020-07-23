@@ -432,18 +432,18 @@ class Home extends Component {
                                         </Col>
                                         <Col className={styles.crayfishCol}>
                                             <p>2019-09</p>
-                                            <p></p>
+                                            <p>Launched</p>
                                         </Col>
                                         <Col className={styles.icefrogCol}>
                                             <p>2019-11</p>
-                                            <p></p>
+                                            <p>Launched</p>
                                         </Col>
                                         <Col className={styles.crabCol}>
                                             <p>2020-Q1</p>
-                                            <p></p>
+                                            <p>Launched</p>
                                         </Col>
                                         <Col className={styles.mainnetCol}>
-                                            <p>2020-Q2</p>
+                                            <p>2020-Q3</p>
                                             <p></p>
                                         </Col>
                                         <Col className={styles.lastCol}>
@@ -493,18 +493,18 @@ class Home extends Component {
                                 </Col>
                                 <Col className={styles.crayfishCol}>
                                     <p>2019-09</p>
-                                    <p></p>
+                                    <p>Launched</p>
                                 </Col>
                                 <Col>
                                     <p>2019-11</p>
-                                    <p></p>
+                                    <p>Launched</p>
                                 </Col>
                                 <Col>
                                     <p>2020-Q1</p>
-                                    <p></p>
+                                    <p>Launched</p>
                                 </Col>
                                 <Col className={styles.mainnetCol}>
-                                    <p>2020-Q2</p>
+                                    <p>2020-Q3</p>
                                     <p></p>
                                 </Col>
                                 <Col className={styles.lastCol}>
