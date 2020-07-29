@@ -39,7 +39,7 @@
     "architecture_solo": "Solo",
     "architecture_chain": "Parachain",
 
-    "economic_title": "Darwinia Economic",
+    "economic_title": "Darwinia Economic Model",
     "economic_block_title_1": "RING",
     "economic_block_content_1": "The native tokens for Darwinia Network is RING, RING can be used as gas for transactions. Gas include transaction fees, contract execution fees, network bandwidth charges, storage fees, and more.",
     "economic_block_title_2": "KTON",
