@@ -170,7 +170,7 @@ class Home extends Component {
         }
 
         this.partners = [
-            'polkadot', 'web3', 'parity', 'maker', 'snz', 'hashkey', 'polkabase', 'bihu',
+            'polkadot', 'parity', 'maker', 'snz', 'hashkey', 'polkabase', 'bihu',
             'evolutionland', 'polkaworld', 'imtoken', 'mathwallet', 'cobowallet', 'polkawallet',
             'sssnodes', 'digital', 'ddex',  'otcmaker'
         ]
@@ -205,8 +205,8 @@ class Home extends Component {
         return this.partners.map((partner, index) => {
             return (
                 <Col key={index} xs={6} md={4} lg={2}>
-                    <a target="_blank" href={this.partnerInfo[partner].url}>
-                        <img src={this.partnerInfo[partner].logo}/>
+                    <a target="_blank" rel="noopener noreferrer" href={this.partnerInfo[partner].url}>
+                        <img alt={this.partnerInfo[partner].name} src={this.partnerInfo[partner].logo}/>
                         <h3>{this.partnerInfo[partner].name}</h3>
                     </a>
                 </Col>
