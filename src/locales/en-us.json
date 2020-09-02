@@ -93,6 +93,7 @@
     "news_btn": "View all",
 
     "view_on_etherscan": "View on Etherscan",
+    "view_on_tronscan": "Tronscan",
     "watch_token": "Add {{token}} to the Metamask token list"
   },
   "faq_page": {

@@ -92,7 +92,8 @@
 
     "news_btn": "查看更多",
 
-    "view_on_etherscan": "去 Etherscan 查看",
+    "view_on_etherscan": "Etherscan",
+    "view_on_tronscan": "Tronscan",
     "watch_token": "将 {{token}} 添加到 Metamask 通证列表中"
   },
   "faq_page": {
