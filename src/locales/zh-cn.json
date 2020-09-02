@@ -90,7 +90,10 @@
     "news_link_4": "https://mp.weixin.qq.com/s/vSWn8Wz2C_f3_mxOiV-54g",
     "news_link_eth_relay": "https://mp.weixin.qq.com/s/ZsS8Z8FgLifet2t-8X84NQ",
 
-    "news_btn": "查看更多"
+    "news_btn": "查看更多",
+
+    "view_on_etherscan": "去 Etherscan 查看",
+    "watch_token": "将 {{token}} 添加到 Metamask 通证列表中"
   },
   "faq_page": {
     "title": "FAQs",
