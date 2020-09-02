@@ -1,5 +1,5 @@
 import React, {Component} from "react";
-import {Container, Row, Col, Image, InputGroup, FormControl, Button} from 'react-bootstrap'
+import {Container, Row, Col} from 'react-bootstrap'
 import {PageHeader} from '../../components/PageHeader'
 import {PageFooter} from '../../components/PageFooter'
 
