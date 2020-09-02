@@ -1,5 +1,5 @@
 import React, {Component} from "react";
-import {Navbar, NavDropdown, Dropdown, Nav, Form, Container, Row, Col} from 'react-bootstrap'
+import {Navbar, Dropdown, Nav, Form, Container, Row, Col} from 'react-bootstrap'
 import {disableBodyScroll, enableBodyScroll, clearAllBodyScrollLocks} from 'body-scroll-lock';
 import {withTranslation} from "react-i18next";
 
@@ -87,7 +87,7 @@ class PageHeader extends Component {
             <div>
                 <Navbar expand="lg" className={`${styles.Navbar} ${transparent ? null : styles.NavBg} cs-header`}>
                     <Navbar.Brand href="/">
-                        <img className={styles.logo} src={logo}/>
+                        <img alt="darwinia logo" className={styles.logo} src={logo}/>
                     </Navbar.Brand>
                     <Navbar.Toggle onClick={() => {
                         this.showTargetElement()
@@ -111,7 +111,7 @@ class PageHeader extends Component {
                             <Nav.Link target={'_blank'} href="https://docs.darwinia.network/">{t('header:docs')}</Nav.Link>
                             <Nav.Link href="/faq">{t('header:faq')}</Nav.Link>
                             <Nav.Link className={styles.walletBtn} href="https://apps.darwinia.network/">{t('header:wallet')}</Nav.Link>
-                            <Nav.Link target="_blank" href="https://github.com/darwinia-network" className={styles.githubBox}><img width={24} src={github}/></Nav.Link>
+                            <Nav.Link target="_blank" href="https://github.com/darwinia-network" className={styles.githubBox}><img alt="github" width={24} src={github}/></Nav.Link>
                             <Dropdown>
                                 <Dropdown.Toggle as={CustomToggle} id="dropdown-custom-components">
                                     <div className={styles.lngBtn}/>
@@ -136,7 +136,7 @@ class PageHeader extends Component {
                         <div onClick={() => {
                             this.hideTargetElement()
                         }}>
-                            <img width={15} src={closeIcon}/>
+                            <img alt="close" width={15} src={closeIcon}/>
                         </div>
                     </div>
 

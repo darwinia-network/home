@@ -1,11 +1,11 @@
+/* eslint-disable no-script-url */
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { Component } from "react";
-import { Container, Row, Col, Image, InputGroup, FormControl, Button, Form } from 'react-bootstrap'
+import { Container, Row, Col, InputGroup, FormControl, Button, Form } from 'react-bootstrap'
 import { PageHeader } from '../../components/PageHeader'
 import { PageFooter } from '../../components/PageFooter'
 import { GradientHeading } from '../../components/GradientHeading'
 import styles from './style.module.scss'
-import dwIcon from './img/darwinia-logo.png'
-import dwSlideIcon from './img/slide-logo.png'
 import architecture from './img/architecture.png'
 import architecture_en from './img/architecture-en.png'
 import architecture_mobile from './img/architecture-mobile.png'
@@ -56,16 +56,10 @@ import partner16 from './img/partner/partner-16.png'
 import partner17 from './img/partner/partner-17.png'
 import partner18 from './img/partner/partner-18.png'
 
-import newsEthRelay from './img/news/news-eth-relay.png'
-import news1 from './img/news/news-1.jpg'
-import news2 from './img/news/news-2.jpg'
-import news0 from './img/news/news-0.jpg'
-
 import axios from 'axios'
 import archorsComponent from '../../components/anchorsComponent'
 import { withTranslation } from "react-i18next";
 import i18n from '../../locales/i18n';
-
 
 class Home extends Component {
     constructor(props, context) {
@@ -341,40 +335,40 @@ class Home extends Component {
                         <div className={styles.lineH1}></div>
                         <Row className={`d-flex justify-content-center text-center`}>
                             <Col xs={12} md={4} className={styles.lg5}>
-                                <img src={key1} className={`hidden-xs`} />
-                                <img src={key1_mobile} className={`visible-xs`} />
+                                <img alt="Cross-Chain Bridge" src={key1} className={`hidden-xs`} />
+                                <img alt="Cross-Chain Bridge" src={key1_mobile} className={`visible-xs`} />
                                 <div className={styles.keyItem}>
                                     <h3>{t('home_page:highlight_block_title_1')}</h3>
                                     <p>{t('home_page:highlight_block_content_1')}</p>
                                 </div>
                             </Col>
                             <Col xs={12} md={4} className={styles.lg5}>
-                                <img src={key2} className={`hidden-xs`} />
-                                <img src={key2_mobile} className={`visible-xs`} />
+                                <img alt="Polkadot Ecosystem" src={key2} className={`hidden-xs`} />
+                                <img alt="Polkadot Ecosystem" src={key2_mobile} className={`visible-xs`} />
                                 <div className={styles.keyItem}>
                                     <h3>{t('home_page:highlight_block_title_2')}</h3>
                                     <p>{t('home_page:highlight_block_content_2')}</p>
                                 </div>
                             </Col>
                             <Col xs={12} md={4} className={styles.lg5}>
-                                <img src={key3} className={`hidden-xs`} />
-                                <img src={key3_mobile} className={`visible-xs`} />
+                                <img alt="Decentralized Backing" src={key3} className={`hidden-xs`} />
+                                <img alt="Decentralized Backing" src={key3_mobile} className={`visible-xs`} />
                                 <div className={styles.keyItem}>
                                     <h3>{t('home_page:highlight_block_title_3')}</h3>
                                     <p>{t('home_page:highlight_block_content_3')}</p>
                                 </div>
                             </Col>
                             <Col xs={12} md={4} className={styles.lg5}>
-                                <img src={key4} className={`hidden-xs`} />
-                                <img src={key4_mobile} className={`visible-xs`} />
+                                <img alt="Token DEX" src={key4} className={`hidden-xs`} />
+                                <img alt="Token DEX" src={key4_mobile} className={`visible-xs`} />
                                 <div className={styles.keyItem}>
                                     <h3>{t('home_page:highlight_block_title_4')}</h3>
                                     <p>{t('home_page:highlight_block_content_4')}</p>
                                 </div>
                             </Col>
                             <Col xs={12} md={4} className={styles.lg5}>
-                                <img src={key5} className={`hidden-xs`} />
-                                <img src={key5_mobile} className={`visible-xs`} />
+                                <img alt="NFT Market" src={key5} className={`hidden-xs`} />
+                                <img alt="NFT Market" src={key5_mobile} className={`visible-xs`} />
                                 <div className={styles.keyItem}>
                                     <h3>{t('home_page:highlight_block_title_5')}</h3>
                                     <p>{t('home_page:highlight_block_content_5')}</p>
@@ -392,18 +386,18 @@ class Home extends Component {
                         {/* {i18n.language.indexOf('en') > -1 ? <img src={architecture_en}/> :
                             <img src={architecture}/>} */}
                         <div className={`${styles.archWrapper}`}>
-                            {i18n.language.indexOf('en') > -1 ? <img className={`hidden-xs`} src={architecture_en} /> :
-                                <img className={`hidden-xs`} src={architecture} />}
-                            {i18n.language.indexOf('en') > -1 ? <img className={`visible-xs`} src={architecture_mobile_en} /> :
-                                <img className={`visible-xs`} src={architecture_mobile} />}
+                            {i18n.language.indexOf('en') > -1 ? <img alt="architecture" className={`hidden-xs`} src={architecture_en} /> :
+                                <img alt="architecture" className={`hidden-xs`} src={architecture} />}
+                            {i18n.language.indexOf('en') > -1 ? <img alt="architecture" className={`visible-xs`} src={architecture_mobile_en} /> :
+                                <img alt="architecture" className={`visible-xs`} src={architecture_mobile} />}
                             <div className={`hidden-xs ${styles.anime}`}>
                                 <div>
                                     <Button className={styles.soloBtn}>{t('home_page:architecture_solo')}</Button>
                                     <Button className={`${styles.soloBtn} ${styles.soloWhiteBtn}`}>{t('home_page:architecture_solo')}</Button>
                                     <Button className={styles.chainBtn}>{t('home_page:architecture_chain')}</Button>
                                     <Button className={`${styles.chainBtn} ${styles.chainPinkBtn}`}>{t('home_page:architecture_chain')}</Button>
-                                    <img src={architecture_chain} className={styles.chain} />
-                                    <img src={architecture_solo} className={styles.solo} />
+                                    <img alt="chain" src={architecture_chain} className={styles.chain} />
+                                    <img alt="solo" src={architecture_solo} className={styles.solo} />
                                 </div>
                             </div>
                         </div>
@@ -417,15 +411,15 @@ class Home extends Component {
                         <div className={styles.lineH1} />
                         <Row className={`d-flex justify-content-center`}>
                             <Col xs={12} md={12} lg={6} className={styles.economicImg}>
-                                {i18n.language.indexOf('en') > -1 ? <img className={styles.bridge} src={economic_en} /> :
-                                    <img className={styles.bridge} src={economic} />}
+                                {i18n.language.indexOf('en') > -1 ? <img alt="economic" className={styles.bridge} src={economic_en} /> :
+                                    <img alt="economic" className={styles.bridge} src={economic} />}
                             </Col>
                             <Col xs={0} md={0} lg={1} />
                             <Col xs={12} md={12} lg={5} className={styles.economicCol}>
                                 <div className={styles.economicItem}>
                                     <div className={styles.economicItemHeader}>
                                         <div>
-                                            <img className={styles.economicIcon} src={eco1} />
+                                            <img alt="economic" className={styles.economicIcon} src={eco1} />
                                             <span>{t('home_page:economic_block_title_1')}</span>
                                         </div>
                                         <p>
@@ -440,7 +434,7 @@ class Home extends Component {
                                 <div className={styles.economicItem}>
                                     <div className={styles.economicItemHeader}>
                                         <div>
-                                            <img className={styles.economicIcon} src={eco2} />
+                                            <img alt="economic" className={styles.economicIcon} src={eco2} />
                                             <span>{t('home_page:economic_block_title_2')}</span>
                                         </div>
                                         <p>
@@ -455,7 +449,7 @@ class Home extends Component {
                                 <div className={styles.economicItem}>
                                     <div className={styles.economicItemHeader}>
                                         <div>
-                                            <img className={styles.economicIcon} src={eco3} />
+                                            <img alt="economic" className={styles.economicIcon} src={eco3} />
                                             <span>{t('home_page:economic_block_title_3')}</span>
                                         </div>
                                     </div>
@@ -477,12 +471,12 @@ class Home extends Component {
                         <div className={styles.lineH1} />
                         <Row className={`d-flex justify-content-center`}>
                             <Col xs={12} md={6}>
-                                <img src={application_1} />
+                                <img alt="Token DEX" src={application_1} />
                                 <h3>{t('home_page:application_block_title_1')}</h3>
                                 <p>{t('home_page:application_block_content_1')}</p>
                             </Col>
                             <Col xs={12} md={6}>
-                                <img src={application_2} />
+                                <img alt="NFT Market" src={application_2} />
                                 <h3>{t('home_page:application_block_title_2')}</h3>
                                 <p>{t('home_page:application_block_content_2')}</p>
                             </Col>
@@ -526,7 +520,7 @@ class Home extends Component {
                                     </Row>
                                 </Col>
                                 <Col xs={3} className={`${styles.roadMapImageBox}`}>
-                                    <img src={roadmapMobile} />
+                                    <img alt="roadmap" src={roadmapMobile} />
                                 </Col>
                                 <Col xs={5} className={styles.nospace}>
                                     <div className={`text-center d-flex ${styles.label}`}>
@@ -585,7 +579,7 @@ class Home extends Component {
                                     <p></p>
                                 </Col>
                             </Row>
-                            <img src={roadmap} />
+                            <img alt="roadmap" src={roadmap} />
                             <Row className={`text-center ${styles.label}`}>
                                 <Col>
                                     <p>{t('home_page:roadmap_1_name')}</p>
@@ -691,9 +685,4 @@ class Home extends Component {
     }
 }
 
-export default withTranslation()
-
-    (
-        Home
-    )
-    ;
+export default withTranslation()(Home);

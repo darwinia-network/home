@@ -1,5 +1,5 @@
 import React, {Component} from "react";
-import {Container, Row, Col, Image, InputGroup, FormControl, Button} from 'react-bootstrap'
+import {Container, Row, Col} from 'react-bootstrap'
 import {PageHeader} from '../../components/PageHeader'
 import {PageFooter} from '../../components/PageFooter'
 
@@ -36,34 +36,34 @@ class News extends Component {
                         <div>
                             <Row>
                                 <Col md={3} className={styles.content}>
-                                    <a className={styles.imgUrl} target="_blank" href={t('home_page:news_link_eth_relay')}>
-                                        <img src={newsEthRelay}/>
+                                    <a className={styles.imgUrl} rel="noopener noreferrer" target="_blank" href={t('home_page:news_link_eth_relay')}>
+                                        <img alt="news" src={newsEthRelay}/>
                                         <p>{t('home_page:news_title_eth_relay')}</p>
                                     </a>
                                 </Col>
                                 <Col md={3} className={styles.content}>
-                                    <a className={styles.imgUrl} target="_blank" href={t('home_page:news_link_1')}>
-                                        <img src={news1}/>
+                                    <a className={styles.imgUrl} rel="noopener noreferrer" target="_blank" href={t('home_page:news_link_1')}>
+                                        <img alt="news" src={news1}/>
                                         <p>{t('home_page:news_title_1')}</p>
                                     </a>
                                 </Col>
 
                                 <Col md={3}  className={styles.content}>
-                                    <a className={styles.imgUrl} target="_blank" href={t('home_page:news_link_2')}>
-                                        <img src={news2}/>
+                                    <a className={styles.imgUrl} rel="noopener noreferrer" target="_blank" href={t('home_page:news_link_2')}>
+                                        <img alt="news" src={news2}/>
                                         <p>{t('home_page:news_title_2')}</p>
                                     </a>
                                 </Col>
                                 <Col md={3} className={styles.content}>
-                                    <a className={styles.imgUrl} target="_blank" href={t('home_page:news_link_3')}>
-                                        <img src={news0}/>
+                                    <a className={styles.imgUrl} rel="noopener noreferrer" target="_blank" href={t('home_page:news_link_3')}>
+                                        <img alt="news" src={news0}/>
                                         <p>{t('home_page:news_title_3')}</p>
                                     </a>
                                 </Col>
 
                                 <Col md={3}  className={styles.content}>
-                                    <a className={styles.imgUrl} target="_blank" href={t('home_page:news_link_4')}>
-                                        <img src={news0}/>
+                                    <a className={styles.imgUrl} rel="noopener noreferrer" target="_blank" href={t('home_page:news_link_4')}>
+                                        <img alt="news" src={news0}/>
                                         <p>{t('home_page:news_title_4')}</p>
                                     </a>
                                 </Col>
