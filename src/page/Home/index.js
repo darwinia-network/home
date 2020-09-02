@@ -423,7 +423,8 @@ class Home extends Component {
                                             <span>{t('home_page:economic_block_title_1')}</span>
                                         </div>
                                         <p>
-                                            <a href={`https://etherscan.io/token/${this.tokenInfo.ring.tokenAddress}`} target="_blank" rel="noopener noreferrer">{t('home_page:view_on_etherscan')}</a>
+                                            <a href={`https://etherscan.io/token/${this.tokenInfo.ring.tokenAddress}`} target="_blank" rel="noopener noreferrer">{t('home_page:view_on_etherscan')}</a> / 
+                                            <a href="https://tronscan.org/#/token20/TL175uyihLqQD656aFx3uhHYe1tyGkmXaW" target="_blank" rel="noopener noreferrer">Tronscan</a>
                                         </p>
                                     </div>
                                     <div className={styles.economicItemContent}>
@@ -438,7 +439,8 @@ class Home extends Component {
                                             <span>{t('home_page:economic_block_title_2')}</span>
                                         </div>
                                         <p>
-                                            <a href={`https://etherscan.io/token/${this.tokenInfo.kton.tokenAddress}`} target="_blank" rel="noopener noreferrer">{t('home_page:view_on_etherscan')}</a>
+                                            <a href={`https://etherscan.io/token/${this.tokenInfo.kton.tokenAddress}`} target="_blank" rel="noopener noreferrer">{t('home_page:view_on_etherscan')}</a> / 
+                                            <a href="https://tronscan.org/#/token20/TW3kTpVtYYQ5Ka1awZvLb9Yy6ZTDEC93dC" target="_blank" rel="noopener noreferrer">Tronscan</a>
                                         </p>
                                     </div>
                                     <div className={styles.economicItemContent}>
