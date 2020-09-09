@@ -4,12 +4,13 @@ import styles from './style.module.scss'
 
 
 class GradientHeading extends Component {
+    // eslint-disable-next-line no-useless-constructor
     constructor(props, context) {
         super(props, context);
     }
 
     render(){
-        const {children, text, className} = this.props
+        const {children, className} = this.props
         return(
             <div className={styles.box}>
                 <h1 className={`${styles.gradientText} ${className}`}>{children}</h1>
