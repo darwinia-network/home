@@ -192,7 +192,7 @@
 .partnersContainer {
   padding-top: 100px;
   padding-bottom: 50px;
-  background: #f8f8f8;
+  // background: #f8f8f8;
 
   h1 {
     display: inline-block;
@@ -227,7 +227,18 @@
 }
 
 .newContainer {
+  padding-top: 60px;
+  padding-bottom: 200px;
   background: #fff;
+  
+  h1 {
+    display: inline-block;
+    margin-bottom: 90px;
+  }
+
+  .title {
+    text-align: left;
+  }
 
   h3 {
     text-align: left;
@@ -236,6 +247,12 @@
   .imgUrl {
     display: inline-block;
     color: $text-main;
+  }
+  .button {
+    font-weight: 600;
+    font-size: 14px;
+    padding: 10px 75px;
+    border-radius: 0;
   }
 }
 

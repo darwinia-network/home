@@ -86,7 +86,7 @@
 
     "partners_title": "Partners",
 
-    "newest_title": "Latest Announcement",
+    "newest_title": "Newest Announcement",
 
     "news_title_1": "Darwinia sharing on Polkadot China row",
     "news_title_2": "How to buy/sell RING on uniswap? ",
@@ -121,23 +121,27 @@
   "footer": {
     "scan": "Scan QR",
     "follow": "Follow Official Accounts",
+    "grant": "Granted by Web3 Foundation",
+    "copyright": "Copyright@2020 Darwinia Network",
+    "support": "Support@darwinia.network",
 
     "general": "General",
-    "general_title_1": "Staking",
-    "general_title_2": "FAQ",
-    "general_title_3": "Contact",
+    "general_title_1": "About",
+    "general_title_2": "WIKI",
+    "general_title_3": "Careers",
+    "general_title_4": "Cooperation",
+    "general_title_5": "Brand",
 
     "technology": "Technology",
     "technology_title_1": "Testnet",
-    "technology_title_2": "Telemetry",
-    "technology_title_3": "Genepaper",
+    "technology_title_2": "Genepaper",
+    "technology_title_3": "Github",
 
     "community": "Community",
     "community_title_1": "RFCS",
-    "community_title_2": "GITHUB",
-    "community_title_3": "Medium",
-    "community_title_4": "Telegram",
-    "community_title_5": "Reddit"
+    "community_title_2": "Ambassador Program",
+    "community_title_3": "Get involved",
 
+    "contact": "Contact"
   }
 }

@@ -56,6 +56,11 @@ import partner16 from './img/partner/partner-16.png'
 import partner17 from './img/partner/partner-17.png'
 import partner18 from './img/partner/partner-18.png'
 
+import newsEthRelay from './img/news/news-eth-relay.png'
+import news1 from './img/news/news-1.jpg'
+import news2 from './img/news/news-2.jpg'
+import news0 from './img/news/news-0.jpg'
+
 import axios from 'axios'
 import archorsComponent from '../../components/anchorsComponent'
 import { withTranslation } from "react-i18next";
@@ -698,11 +703,11 @@ class Home extends Component {
                     </Container>
                 </div>
 
-                {/* <div className={`${styles.highlightContainer}  ${styles.newContainer}`}>
+                <div className={`${styles.highlightContainer}  ${styles.newContainer}`}>
                     <Container>
-                        <GradientHeading
-                            className={`text-center ${styles.fontH1}`}>{t('home_page:newest_title')}</GradientHeading>
-                        <div className={styles.lineH1}/>
+                        <div className={styles.title}>
+                            <h1 className={`${styles.fontH1} ${styles.gradientText}`}>{t('home_page:newest_title')}</h1>
+                        </div>
                         <Row className={`d-flex justify-content-center text-left`}>
                             <Col xs={10} md={4} lg={3}>
                                 <a className={styles.imgUrl} target="_blank" href={t('home_page:news_link_eth_relay')}>
@@ -734,7 +739,7 @@ class Home extends Component {
                                     className={styles.button}>{t('home_page:news_btn')}</Button>
                         </div>
                     </Container>
-                </div> */}
+                </div>
 
                 <PageFooter></PageFooter>
             </div>
