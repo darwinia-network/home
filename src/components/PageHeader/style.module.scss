@@ -49,9 +49,13 @@
   background: transparent;
   padding: .5rem 40px;
   font-size: 18px;
-    .logo{
-      width: 242px;
-    }
+  .logo{
+    width: 242px;
+  }
+}
+.NavBarWrapper {
+  display: flex;
+  flex-direction: column;
 }
 
 .NavBg{
