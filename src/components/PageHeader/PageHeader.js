@@ -84,7 +84,8 @@ class PageHeader extends Component {
         const {t, transparent, i18n} = this.props
         const {open} = this.state
         return (
-            <div>
+            <div className={styles.NavBarWrapper}>
+                <div>en</div>
                 <Navbar expand="lg" className={`${styles.Navbar} ${transparent ? null : styles.NavBg} cs-header`}>
                     <Navbar.Brand href="/">
                         <img alt="darwinia logo" className={styles.logo} src={logo}/>

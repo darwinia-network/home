@@ -327,8 +327,62 @@ class Home extends Component {
                         </Row>
                     </Container>
                 </div>
+                
+                <div className={styles.launchBanner}>
+                </div>
 
-                <div className={`${styles.highlightContainer}`}>
+                <div className={styles.themeContainer}>
+                    <Container>
+                        <Row className={`${styles.promoteContentArea} d-flex justify-content-center`}>
+                            <Col xs={{ span: 12 }} sm={{ span: 12 }}>
+                                <h1 className={`text-center ${styles.fontH1} ${styles.gradientText}`}>{t('home_page:theme_title')}</h1>
+                                <p>{t('home_page:theme_desc')}</p>
+                                <InputGroup className={`${styles.subscribe} hidden-xs`}>
+                                    <FormControl
+                                        value={email}
+                                        onChange={(e) => {
+                                            this.changeTextValue('email', e)
+                                        }}
+                                        placeholder={t('home_page:placeholder')}
+                                        aria-label={t('home_page:placeholder')}
+                                        aria-describedby={t('home_page:placeholder')}
+                                    />
+                                    <InputGroup.Append>
+                                        <Button variant="outline-secondary" onClick={() => {
+                                            this.subscribe(email)
+                                        }}>{t('home_page:subscribe_btn')}</Button>
+                                    </InputGroup.Append>
+
+                                </InputGroup>
+                                <Form.Text className={`text-muted ${styles.subscribeTip} hidden-xs`}
+                                    dangerouslySetInnerHTML={{ __html: info || '&nbsp' }}>
+                                </Form.Text>
+                                <Form className={`${styles.subscribe} hidden-md`}>
+                                    <FormControl
+                                        value={email}
+                                        type={'email'}
+                                        onChange={(e) => {
+                                            this.changeTextValue('email', e)
+                                        }}
+                                        placeholder={t('home_page:placeholder')}
+                                        aria-label={t('home_page:placeholder')}
+                                        aria-describedby={t('home_page:placeholder')}
+                                    />
+
+                                    <Button block onClick={() => {
+                                        this.subscribe(email)
+                                    }}>
+                                        {t('home_page:subscribe_btn')}
+                                    </Button>
+                                    <Form.Text className={`text-muted ${styles.subscribeTip}`}
+                                        dangerouslySetInnerHTML={{ __html: info || '&nbsp' }} />
+                                </Form>
+                            </Col>
+                        </Row>
+                    </Container>
+                </div>
+
+                {/* <div className={`${styles.highlightContainer}`}>
                     <Container>
                         <GradientHeading
                             className={`text-center ${styles.fontH1}`}>{t('home_page:highlight_title')}</GradientHeading>
@@ -376,13 +430,11 @@ class Home extends Component {
                             </Col>
                         </Row>
                     </Container>
-                </div>
+                </div> */}
 
                 <div className={`${styles.architectureContainer}`}>
                     <Container>
-                        <GradientHeading
-                            className={`text-center ${styles.fontH1}`}>{t('home_page:architecture_title')}</GradientHeading>
-                        {/* <h1 className={`text-center ${styles.fontH1}`}>{t('home_page:architecture_title')}</h1> */}
+                        <h1 className={`text-center ${styles.fontH1}`}>{t('home_page:architecture_title')}</h1>
                         {/* {i18n.language.indexOf('en') > -1 ? <img src={architecture_en}/> :
                             <img src={architecture}/>} */}
                         <div className={`${styles.archWrapper}`}>
@@ -406,9 +458,10 @@ class Home extends Component {
 
                 <div className={`${styles.highlightContainer} ${styles.economicContainer}`}>
                     <Container>
-                        <GradientHeading
-                            className={`text-center ${styles.fontH1}`}>{t('home_page:economic_title')}</GradientHeading>
-                        <div className={styles.lineH1} />
+                        <div className={styles.title}>
+                            <h1 className={`${styles.fontH1} ${styles.gradientText}`}>{t('home_page:economic_title')}</h1>
+                        </div>
+                        {/* <div className={styles.lineH1} /> */}
                         <Row className={`d-flex justify-content-center`}>
                             <Col xs={12} md={12} lg={6} className={styles.economicImg}>
                                 {i18n.language.indexOf('en') > -1 ? <img alt="economic" className={styles.bridge} src={economic_en} /> :
@@ -468,9 +521,9 @@ class Home extends Component {
 
                 <div className={`${styles.highlightContainer} ${styles.applicationContainer}`}>
                     <Container>
-                        <GradientHeading
-                            className={`text-center ${styles.fontH1}`}>{t('home_page:application_title')}</GradientHeading>
-                        <div className={styles.lineH1} />
+                        <div className={styles.title}>
+                            <h1 className={styles.fontH1}>{t('home_page:application_title')}</h1>
+                        </div>
                         <Row className={`d-flex justify-content-center`}>
                             <Col xs={12} md={6}>
                                 <img alt="Token DEX" src={application_1} />
@@ -488,9 +541,9 @@ class Home extends Component {
 
                 <div className={`${styles.roadmapContainer}`}>
                     <Container>
-                        <GradientHeading
-                            className={`text-center ${styles.fontH1}`}>{t('home_page:roadmap_title')}</GradientHeading>
-                        <div className={styles.lineH1} />
+                        <div className={styles.title}>
+                            <h1 className={`${styles.fontH1} ${styles.gradientText}`}>{t('home_page:roadmap_title')}</h1>
+                        </div>
                         <div className={`hidden-md`}>
                             <Row className={`d-flex justify-content-center align-items-between`}>
                                 <Col xs={4}>
@@ -623,9 +676,11 @@ class Home extends Component {
                                 <h1 className={styles.fontH1}>{t('home_page:dev_title')}</h1>
                                 <div className={styles.lineH2}></div>
                                 <p>{t('home_page:dev_content')}</p>
-                                <p className={styles.link}>
+                                <Button variant="transparent" target="_blank" href={t('header:testnet_url')}
+                                    className={styles.button}>{t('home_page:dev_join')}</Button>
+                                {/* <p className={styles.link}>
                                     <a href="https://www.itering.io/">{t('home_page:dev_link')}</a>
-                                </p>
+                                </p> */}
 
                             </Col>
                         </Row>
@@ -634,9 +689,9 @@ class Home extends Component {
 
                 <div className={`${styles.partnersContainer}`}>
                     <Container>
-                        <GradientHeading
-                            className={`text-center ${styles.fontH1}`}>{t('home_page:partners_title')}</GradientHeading>
-                        <div className={styles.lineH1} />
+                        <div className={styles.title}>
+                            <h1 className={`${styles.fontH1} ${styles.gradientText}`}>{t('home_page:partners_title')}</h1>
+                        </div>
                         <Row className={`d-flex`}>
                             {this.renderPartner()}
                         </Row>

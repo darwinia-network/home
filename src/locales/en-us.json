@@ -1,6 +1,11 @@
 {
   "header": {
     "home": "Home",
+    "tech": "Technology",
+    "community": "Community",
+    "economical_model": "Economical Model",
+    "media": "Media",
+    "hiring": "We Are Hiring",
     "genepaper": "Genepaper",
     "gringotts": "Gringotts",
     "testnet": "Testnet",
@@ -20,6 +25,10 @@
     "placeholder": "name@email.com",
     "subscribe_btn": "Get Updates",
     "subscribe_tip": "Subscription success! Please check your inbox.",
+
+    "theme_title": "What is Darwinia Network?",
+    "theme_desc": "As an open cross-chain bridge protocol based on Substrate, Darwinia focuses on the construction of future Internet of Tokens, including decentralized tokens swap, exchange and market",
+
     "highlight_title": "Key Features",
     "highlight_block_title_1": "Cross-Chain Bridge",
     "highlight_block_content_1": "Cross-chain interoperation solution",
@@ -39,7 +48,7 @@
     "architecture_solo": "Solo",
     "architecture_chain": "Parachain",
 
-    "economic_title": "Darwinia Economic Model",
+    "economic_title": "Economic Model",
     "economic_block_title_1": "RING",
     "economic_block_content_1": "The native tokens for Darwinia Network is RING, RING can be used as gas for transactions. Gas include transaction fees, contract execution fees, network bandwidth charges, storage fees, and more.",
     "economic_block_title_2": "KTON",
@@ -49,14 +58,15 @@
     "economic_btn": "How to staking?",
     "economic_url": "https://mp.weixin.qq.com/s/vSWn8Wz2C_f3_mxOiV-54g",
 
-    "application_title": "Ecological Applications",
+    "application_title": "Application Ecosystem",
     "application_block_title_1": "Token DEX",
     "application_block_content_1": "Token DEX is a decentralized application based on the Darwinia cross-chain bridge as the core technology, which can realize automatic cross-chain transactions between tokens",
     "application_block_title_2": "NFT Market",
     "application_block_content_2": "The decentralized nft auction market, which supports nft auctions of different blockchain networks through cross-chain auctions, creates a new NFT cross-chain circulation scenario",
 
-    "dev_title": "Dev team",
-    "dev_content": "Itering Tech is the Dev Team for Darwinia Network",
+    "dev_title": "Contributors",
+    "dev_content": "Do you want to get involved?",
+    "dev_join": "Join the Community",
     "dev_link": "www.itering.io",
 
     "roadmap_title": "Roadmap",

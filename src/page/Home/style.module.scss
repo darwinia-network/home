@@ -1,24 +1,29 @@
 @import "../../style/index";
+
 .promoteContentArea {
   text-align: left;
   padding-top: 100px;
   padding-bottom: 70px;
   font-size: 0px;
+
   .slogan {
     text-transform: uppercase;
     font-size: 50px;
     font-weight: 600;
   }
+
   .slideLogo {
     width: 222px;
     margin-bottom: 93px;
   }
+
   .subTitle {
     text-align: left;
     margin-bottom: 40px !important;
     width: 95%;
     // font-weight:600;
   }
+
   div {
     p {
       color: #fff;
@@ -26,35 +31,84 @@
       line-height: 1.3;
     }
   }
+
   img {
     width: 264px;
   }
 }
 
+.gradientText {
+  text-transform: uppercase;
+  font-size: 50px;
+  color: rgba(8, 12, 32, 1);
+  letter-spacing: 2px;
+  background: linear-gradient(315deg, rgba(254, 56, 118, 1) 0%, rgba(124, 48, 221, 1) 71%, rgba(58, 48, 221, 1) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
 
+.launchBanner {
+  background: url("./img/launch-banner.png") top center no-repeat;
+  background-size: cover;
+  height: 412px;
+}
+
+.themeContainer {
+  .promoteContentArea {
+    padding: 200px 0;
+
+    div {
+      h1 {
+        margin-bottom: 20px;
+      }
+
+      p {
+        text-align: center;
+        font-size: 24px;
+        color: #333;
+        padding: 0 40px;
+        margin-bottom: 30px;
+      }
+
+      .subscribe {
+        margin: 0 auto;
+        width: 30%;
+      }
+
+      .subscribeTip {
+        text-align: center;
+      }
+    }
+  }
+}
 
 .highlightContainer {
-  padding: 60px 0 100px 0;
+
+  // padding: 60px 0 100px 0;
   img {
     width: 100%;
     margin-bottom: 23px;
   }
+
   h3 {
     font-size: 16px;
     text-align: center;
     margin-bottom: 5px;
   }
+
   p {
     font-size: 16px;
     color: #6330DD;
     // font-weight: bold;
     line-height: 20px;
   }
+
   .keyItem {
     p {
       font-size: 14px;
     }
   }
+
   @media (min-width: 992px) {
     .lg5 {
       flex: 0 0 20%;
@@ -65,84 +119,121 @@
 
 .economicContainer {
   text-align: center;
+  padding: 150px 0;
+
+  h1 {
+    display: inline-block;
+    margin-bottom: 90px;
+  }
+
+  .title {
+    text-align: left;
+  }
+
   .bridge {
     // width: 577px;
   }
+
   .economicCol {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
   }
+
   .economicItem {
     text-align: left;
+
     .economicItemHeader {
       display: flex;
       margin-bottom: 10px;
       justify-content: space-between;
       align-items: center;
+
       img {
         margin-bottom: 0;
         margin-right: 20px;
         width: 30px;
         height: 30px;
       }
-      div { 
+
+      div {
         flex: 1;
         display: flex;
         align-items: center;
       }
+
       span {
         font-size: 26px;
-        line-height:30px;
+        line-height: 30px;
       }
-      p{
+
+      p {
         margin-bottom: 0;
+
         a {
           margin-left: 7px;
           margin-right: 7px;
         }
       }
     }
+
     .economicItemContent {
       text-align: left;
       line-height: 24px;
       margin-bottom: 10px;
+
       p {
         margin-bottom: 7px;
       }
     }
   }
 }
+
 .partnersContainer {
   padding-top: 100px;
   padding-bottom: 50px;
   background: #f8f8f8;
-  &>div>div>div{
+
+  h1 {
+    display: inline-block;
+    margin-bottom: 90px;
+  }
+
+  .title {
+    text-align: left;
+  }
+  
+  &>div>div>div {
     text-align: center;
     margin-bottom: 90px;
   }
+
   img {
     max-height: 80px;
     max-width: 100%;
   }
+
   h3 {
     font-size: 14px;
     margin-top: 20px;
     text-align: center;
     color: #201550;
   }
-  a:hover{
+
+  a:hover {
     text-decoration: none;
     color: #201550;
   }
 }
 
-.newContainer{
+.newContainer {
   background: #fff;
-  h3{
+
+  h3 {
     text-align: left;
   }
-  .imgUrl{
+
+  .imgUrl {
     display: inline-block;
     color: $text-main;
   }
@@ -159,6 +250,7 @@
 
 .subscribe {
   width: 50%;
+
   button {
     border: 0;
     padding-left: 20px;
@@ -182,9 +274,8 @@
 }
 
 .fontH1 {
-  font-size: 35px;
-  margin-bottom: 30px;
   text-transform: uppercase;
+  font-size: 50px;
 }
 
 .lineH1 {
@@ -202,16 +293,36 @@
 }
 
 
-.applicationContainer{
-  background: #f8f8f8;
-  img{
-    margin-bottom: 20px;
+.applicationContainer {
+  background: url("./img/application-bg.png");
+  background-size: cover;
+  height: 770px;
+  padding-top: 68px;
+  h1 {
+    color: #fff;
+    display: inline-block;
+    margin-bottom: 90px;
   }
+
+  .title {
+    text-align: left;
+  }
+
+  img {
+    margin-bottom: 50px;
+  }
+
   h3 {
-    margin-bottom: 15px;
+    color: #fff;
+    font-size: 30px;
+    margin-bottom: 20px;
+    text-align: left;
+    font-weight: bold;
   }
+
   p {
-    text-align: center;
+    color: #fff;
+    text-align: left;
     line-height: 24px;
   }
 }
@@ -219,42 +330,56 @@
 .architectureContainer {
   background: url("./img/architecture-bg.svg");
   padding: 60px 0 88px 0;
+
+  // height: 782px;
   .fontH1 {
-    margin-bottom: 14px;
+    // padding-top: 70px;
+    // font-size: 50px;
+    // color: #fff;
   }
+
   img {
     width: 100%;
   }
+
   .archWrapper {
     position: relative;
   }
+
   .anime {
     position: absolute;
     top: 0;
     bottom: 0;
     left: 0;
     right: 0;
-    > div {
+
+    >div {
       padding-top: 38.5%;
       position: relative;
     }
+
     img {
       position: absolute;
     }
+
     .solo {
       width: 2.5%;
       margin-left: 45.7%;
+
       :global {
         animation: 6s ease-in-out infinite both solo;
       }
     }
+
     .chain {
       width: 3.0%;
       margin-left: 49.4%;
+
       :global {
         animation: 6s ease-in-out infinite both chain;
       }
     }
+
     button {
       cursor: default;
       pointer-events: none;
@@ -264,6 +389,7 @@
       font-size: 14px;
       font-weight: bold;
     }
+
     .soloBtn {
       margin-left: 30.7%;
       // border: 1px solid transparent;
@@ -273,14 +399,17 @@
       width: 8.8%;
       position: absolute;
     }
+
     .soloWhiteBtn {
       border: 1px solid #d4d4d4;
       background: white;
       color: #d4d4d4;
+
       :global {
         animation: 6s ease-in-out infinite both soloWhiteBtn;
       }
     }
+
     .chainBtn {
       margin-left: 57%;
       width: 13.8%;
@@ -289,69 +418,81 @@
       background: white;
       color: #d4d4d4;
     }
+
     .chainPinkBtn {
       border: 0;
       color: #fff;
       border: none;
       background: linear-gradient(315deg, rgba(254, 56, 118, 1) 0%, rgba(124, 48, 221, 1) 71%, rgba(58, 48, 221, 1) 100%);
+
       :global {
         animation: 6s ease-in-out infinite both chainPinkBtn;
       }
     }
-    @keyframes :global(chainPinkBtn) {
+
+    @keyframes: global(chainPinkBtn) {
+
       0%,
       33% {
         opacity: 0;
       }
-  
+
       50%,
       83% {
         opacity: 1;
       }
+
       100% {
         opacity: 0;
       }
     }
-    @keyframes :global(soloWhiteBtn) {
+
+    @keyframes: global(soloWhiteBtn) {
+
       0%,
       33% {
         opacity: 0;
       }
-  
+
       50%,
       83% {
         opacity: 1;
       }
+
       100% {
         opacity: 0;
       }
     }
-    @keyframes :global(chain) {
+
+    @keyframes: global(chain) {
+
       0%,
       33% {
         transform: translate(0, 0);
       }
-  
+
       50%,
       83% {
         transform: translate(-30%, 0);
       }
-  
+
       100% {
         transform: translate(0, 0);
       }
     }
-    @keyframes :global(solo) {
+
+    @keyframes: global(solo) {
+
       0%,
       33% {
         transform: translate(0, 0);
       }
-  
+
       50%,
       83% {
         transform: translate(32%, 0);
       }
-  
+
       100% {
         transform: translate(0, 0);
       }
@@ -362,6 +503,15 @@
 .roadmapContainer {
   padding: 60px 0 100px 0;
   color: #5430DD;
+  h1 {
+    display: inline-block;
+    margin-bottom: 90px;
+  }
+
+  .title {
+    text-align: left;
+  }
+
   .content {
     margin: 35px;
     text-align: center;
@@ -370,30 +520,43 @@
   img {
     width: 92%;
   }
+
   .label {
     margin-left: 5px;
     margin-right: 5px;
     margin-top: 53px;
+
     // font-weight: bold;
-    p{
+    p {
       margin-bottom: 0;
     }
   }
-  .status{
+
+  .status {
     color: #E93787;
     margin-bottom: 2.5rem;
-    p{
+
+    p {
       margin-bottom: 0;
     }
   }
-  .crayfishCol{
+
+  .crayfishCol {
     margin-right: 1%;
   }
+
   .mainnetCol {
     margin-left: 1%;
   }
-  .lastCol{
+
+  .lastCol {
     padding-right: 5px;
+  }
+  .button {
+    font-weight: 600;
+    font-size: 14px;
+    padding: 10px 50px;
+    border-radius: 0;
   }
 }
 
@@ -401,21 +564,31 @@
   background: url("./img/dev-team.png") top center no-repeat;
   background-size: cover;
   color: #fff;
-  height: 680px;
+  height: 500px;
+
   p {
     font-size: 24px;
   }
-  .link{
-    a{
+
+  .link {
+    a {
       color: #fff;
       text-decoration: underline;
     }
+  }
+  .button {
+    background: transparent;
+    border: 1px solid #fff;
+    color: #fff;
+    font-size: 14px;
+    padding: 10px 40px;
+    border-radius: 0;
   }
 }
 
 .subscribeTip {
   font-size: 16px !important;
-  color: #fff !important;
+  // color: #fff !important;
 }
 
 
@@ -427,49 +600,68 @@
   .promoteContentArea {
     padding-top: 90px;
     padding-bottom: 70px;
+
     .slogan {
       text-transform: uppercase;
       text-align: center;
       font-size: 26px;
       margin-top: 40px;
-      line-height:33px;
+      line-height: 33px;
       margin-bottom: 50px;
     }
+
     .subTitle {
       font-size: 16px;
       text-align: center;
       margin-bottom: 30px !important;
       width: 100% !important;
     }
+
     img {
       width: 203px;
     }
   }
 
+  .themeContainer {
+    .promoteContentArea {
+      div {
+        .subscribe {
+          width: 100%;
+        }
+      }
+    }
+  }
+
   .highlightContainer {
     padding: 30px 0 20px 0;
+
     img {
       width: 100%;
       margin-bottom: 26px;
     }
+
     h3 {
       font-size: 20px;
       text-align: center;
       height: auto;
       margin-bottom: 1rem;
     }
+
     p {
       font-size: 14px;
       color: #6330DD;
       margin-bottom: 50px;
     }
+
     .lg5 {
       display: flex;
+
       img {
         width: 140px;
         height: 130px;
         margin-bottom: 10px;
       }
+
       .keyItem {
         display: flex;
         flex-direction: column;
@@ -477,9 +669,11 @@
         margin-left: 20px;
         margin-bottom: 10px;
         align-items: flex-start;
+
         h3 {
           text-align: left;
         }
+
         p {
           margin-bottom: 0;
           text-align: left;
@@ -488,13 +682,15 @@
     }
   }
 
-  .newContainer{
+  .newContainer {
     background: #fff;
-    h3{
+
+    h3 {
       font-size: 16px;
       text-align: left;
       margin-bottom: 40px;
-      a{
+
+      a {
         color: $text-main;
       }
     }
@@ -502,14 +698,17 @@
 
   .economicContainer {
     text-align: center;
+
     .economicImg {
       img {
         margin-bottom: 40px;
       }
     }
+
     .economicItem {
       .economicItemContent {
         margin-bottom: 40px;
+
         .addToken {
           display: none;
         }
@@ -519,6 +718,7 @@
 
   .subscribe {
     width: 100%;
+
     button {
       margin-top: 20px;
       background: linear-gradient(315deg, rgba(254, 56, 118, 1) 0%, rgba(124, 48, 221, 1) 71%, rgba(58, 48, 221, 1) 100%);
@@ -528,11 +728,6 @@
       border: none;
       outline: none;
     }
-  }
-
-  .subscribeTip {
-    font-size: 16px !important;
-    color: #fff !important;
   }
 
   .lineH1 {
@@ -566,9 +761,11 @@
   .teamContainer {
     color: #fff;
     height: 500px;
+
     h1 {
       font-size: 26px;
     }
+
     p {
       font-size: 16px;
     }
@@ -581,43 +778,54 @@
     .nospace {
       padding-left: 0;
       padding-right: 0;
-      p{
+
+      p {
         text-align: center;
         margin-bottom: 0px;
       }
 
-      & > div > div {
+      &>div>div {
         padding-left: 0;
         padding-right: 0;
       }
     }
+
     .content {
       margin: 35px;
     }
+
     img {
       width: 100%;
     }
-    .roadMapImageBox{
+
+    .roadMapImageBox {
       margin: 4% 0;
       margin-bottom: 6%;
     }
+
     .crayfishCol {
       margin-top: 10px;
     }
-    .icefrogCol{
+
+    .icefrogCol {
       margin: 30px 0 0;
     }
+
     .crabCol {
       margin: 30px 0 0;
     }
-    .nftCol, .mainnetCol {
+
+    .nftCol,
+    .mainnetCol {
       margin-top: 30px;
       margin-left: 0;
     }
-    .lastCol{
+
+    .lastCol {
       margin-top: 10px;
       padding-right: 15px;
     }
+
     .label {
       height: 100%;
       margin-top: 0;
@@ -627,9 +835,11 @@
       flex-direction: column;
       justify-content: space-between;
       align-items: stretch;
-      p{
+
+      p {
         margin-bottom: 0;
       }
+
       div {
         text-align: left;
         display: flex;
@@ -637,15 +847,18 @@
         justify-content: center;
         align-items: center;
         flex: 1;
-        p + p {
+
+        p+p {
           margin-bottom: 0
         }
       }
     }
   }
+
   .partnersContainer {
     padding-top: 55px;
   }
+
   .button {
     margin-bottom: 20px;
   }
