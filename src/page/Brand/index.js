@@ -8,6 +8,7 @@ import {withTranslation} from "react-i18next";
 import styles from "./style.module.scss";
 import GradientHeading from "../../components/GradientHeading/GradientHeading";
 
+import downloadBtn from './img/download.png'
 
 class Brand extends Component {
     constructor(props, context) {
@@ -30,32 +31,55 @@ class Brand extends Component {
                     <Container>
                         <div>
                             <Row>
-                                <Col md={12}>
+                                <Col xs={12}>
                                     <div className={styles.title}>
                                         <h1 className={`${styles.fontH1} ${styles.gradientText}`}>{t('brand:title')}</h1>
                                     </div>
                                     <p>{t('brand:desc')}</p>
                                     <div className={styles.lineH1}/>
                                 </Col>
-                                <Col md={6} className={styles.content}>
-                                    <h3>{t('faq_page:faq_1_title')}</h3>
-                                    <p>{t('faq_page:faq_1_content')}</p>
+                                <Col xs={12}>
+                                    <div className={styles.subTitle}>
+                                        {t('brand:about')}
+                                    </div>
+                                    <p>
+                                        {t('brand:about_desc')}
+                                    </p>
+                                    <div className={styles.lineH1}/>
                                 </Col>
-
-                                <Col  md={6}  className={styles.content}>
-                                    <h3>{t('faq_page:faq_2_title')}</h3>
-                                    <p>{t('faq_page:faq_2_content')}</p>
+                                <Col xs={12}>
+                                    <div className={styles.subTitle}>
+                                        {t('brand:logos')}
+                                    </div>
+                                    <p>
+                                        <img alt="download"  className={styles.downloadBtn} src={downloadBtn} />
+                                        {t('brand:download')}
+                                        <a href="" className={styles.link}>{t('brand:filename')}</a>
+                                    </p>
+                                </Col>
+                            </Row>
+                            <Row className={`d-flex justify-content-center`}>
+                                <Col xs={6}>
+                                ring
+                                </Col>
+                                <Col xs={6}>
+                                kton
                                 </Col>
                             </Row>
                             <Row>
-                                <Col md={6} className={styles.content}>
-                                    <h3>{t('faq_page:faq_3_title')}</h3>
-                                    <p dangerouslySetInnerHTML={{__html: t('faq_page:faq_3_content')}}/>
+                                <Col xs={12}>
+                                    <div className={styles.lineH1}/>
                                 </Col>
-
-                                <Col  md={6}  className={styles.content}>
-                                    <h3>{t('faq_page:faq_4_title')}</h3>
-                                    <p>{t('faq_page:faq_4_content')}</p>
+                                <Col xs={12}>
+                                    <div className={styles.subTitle}>
+                                        {t('brand:note')}
+                                    </div>
+                                    <p>
+                                        {t('brand:note_1')}
+                                    </p>
+                                    <p>
+                                        {t('brand:note_2')}
+                                    </p>
                                 </Col>
                             </Row>
                         </div>
