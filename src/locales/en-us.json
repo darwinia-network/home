@@ -118,6 +118,23 @@
     "faq_4_content": "RING and KTON in Evolution Land is the ERC-20/TRC-20 token, Evolution Land will use RING in Darwinia Network as the payment token in game."
 
   },
+  "brand": {
+    "title": "Darwinia Brand",
+    "desc": "This page displays the official LOGO of Darwinia, RING, KTON and other design files",
+    "about": "About Darwinia",
+    "about_desc": "As an open cross-chain bridge protocol based on Substrate, Darwinia focuses on the construction of future Internet of Tokens, including decentralized tokens swap, exchange and market.",
+    "logos": "Logos",
+    "download": "Download",
+    "filename": "[ darwinia brand kit.zip ]",
+    "ring": "RING",
+    "cring": "cRING",
+    "kton": "KTON",
+    "ckton": "cKTON",
+    "darwinia": "Darwinia",
+    "note": "Note",
+    "note_1": "The use scenarios of Darwinia network graphic logo are divided into: use purple gradient logo on white/light background;",
+    "note_2": "use white logo on dark background; when the standard logo cannot be used in a comfortable way in monochrome application scenarios, it can be used according to the situation Grey/other color logo."
+  },
   "footer": {
     "scan": "Scan QR",
     "follow": "Follow Official Accounts",
