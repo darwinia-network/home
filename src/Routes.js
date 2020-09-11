@@ -6,6 +6,8 @@ const AsyncHome = asyncComponent(import("./page/Home"));
 const AsyncFaq = asyncComponent(import("./page/Faq"));
 const AsyncNews = asyncComponent(import("./page/News"));
 const AsyncNotFound = asyncComponent(import("./page/NotFound"));
+// const AsyncBrand = asyncComponent(import("./page/Faq"));
+const AsyncBrand = asyncComponent(import("./page/Brand"));
 
 const history = createBrowserHistory();
 
@@ -28,6 +30,12 @@ export default () =>
                 exact
                 component={AsyncNews}
                 path='/news'
+            />
+
+            <Route
+                exact
+                component={AsyncBrand}
+                path='/brand'
             />
 
             <Route component={AsyncNotFound}/>

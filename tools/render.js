@@ -4,6 +4,7 @@ import { writeFile, makeDir } from './lib/fs';
 
 const routes = [
     '/faq',
+    '/brand',
     '/news',
     '/404'
 ];
