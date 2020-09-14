@@ -4,6 +4,7 @@
   text-align: left;
   padding: 60px 0 100px 0;
   min-height: calc(100vh - 132px);
+  background-color: #f0f2f5;
   h1 {
     display: inline-block;
     margin-bottom: 45px;
@@ -32,6 +33,29 @@
     width: 15px;
     margin-right: 10px;
   }
+  .margin {
+    height: 50px;
+  }
+  .logoItem {
+    height: 90px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 28px 0 20px;
+    background-color: #FBFBFB;
+    .logo {
+      height: 30px;
+    }
+    .ring {
+      height: 56px;
+    }
+    .kton {
+      height: 45px;
+    }
+    span {
+      font-size: 30px;
+    }
+  }
   .link {
     font-weight: bold;
     color: #6330DD;
@@ -50,9 +74,10 @@
 
 .lineH1 {
   height: 1px;
-  background: #EFEFEF;
   margin-bottom: 60px;
   margin-top: 60px;
+  background: linear-gradient(315deg, #FE3876 0%, #7C30DD 72%, #3A30DD 100%);
+  opacity: 0.2;
 }
 
 .gradientText {

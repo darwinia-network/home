@@ -9,6 +9,12 @@ import styles from "./style.module.scss";
 import GradientHeading from "../../components/GradientHeading/GradientHeading";
 
 import downloadBtn from './img/download.png'
+import darwiniaLogoWithText from './img/logo_text.png'
+import darwiniaLogo from './img/logo.png'
+import ring from './img/ring.png'
+import cring from './img/cring.png'
+import kton from './img/kton.png'
+import ckton from './img/ckton.png'
 
 class Brand extends Component {
     constructor(props, context) {
@@ -57,13 +63,51 @@ class Brand extends Component {
                                         <a href="" className={styles.link}>{t('brand:filename')}</a>
                                     </p>
                                 </Col>
+                                <Col xs={12}>
+                                    <div className={styles.margin}></div>
+                                </Col>
                             </Row>
                             <Row className={`d-flex justify-content-center`}>
                                 <Col xs={6}>
-                                ring
+                                    <div className={styles.logoItem}>
+                                        <span>{t('brand:darwinia')}</span>
+                                        <img className={styles.logo} alt="darwinia_logo" src={darwiniaLogoWithText}></img>
+                                    </div>
                                 </Col>
                                 <Col xs={6}>
-                                kton
+                                    <div className={styles.logoItem}>
+                                        <span>{t('brand:darwinia')}</span>
+                                        <img className={styles.logo} alt="darwinia_logo" src={darwiniaLogo}></img>
+                                    </div>
+                                </Col>
+
+                                <Col xs={12}>
+                                    <div className={styles.margin}></div>
+                                </Col>
+
+                                <Col xs={3}>
+                                    <div className={styles.logoItem}>
+                                        <span>{t('brand:ring')}</span>
+                                        <img className={styles.ring} alt="ring" src={ring}></img>
+                                    </div>
+                                </Col>
+                                <Col xs={3}>
+                                    <div className={styles.logoItem}>
+                                        <span>{t('brand:kton')}</span>
+                                        <img className={styles.kton} alt="kton" src={kton}></img>
+                                    </div>
+                                </Col>
+                                <Col xs={3}>
+                                    <div className={styles.logoItem}>
+                                        <span>{t('brand:cring')}</span>
+                                        <img className={styles.ring} alt="cring" src={cring}></img>
+                                    </div>
+                                </Col>
+                                <Col xs={3}>
+                                    <div className={styles.logoItem}>
+                                        <span>{t('brand:ckton')}</span>
+                                        <img className={styles.kton} alt="ckton" src={ckton}></img>
+                                    </div>
                                 </Col>
                             </Row>
                             <Row>
