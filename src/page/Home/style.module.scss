@@ -202,7 +202,7 @@
   .title {
     text-align: left;
   }
-  
+
   &>div>div>div {
     text-align: center;
     margin-bottom: 90px;
@@ -230,7 +230,7 @@
   padding-top: 60px;
   padding-bottom: 200px;
   background: #fff;
-  
+
   h1 {
     display: inline-block;
     margin-bottom: 90px;
@@ -248,6 +248,7 @@
     display: inline-block;
     color: $text-main;
   }
+
   .button {
     font-weight: 600;
     font-size: 14px;
@@ -315,6 +316,7 @@
   background-size: cover;
   height: 770px;
   padding-top: 68px;
+
   h1 {
     color: #fff;
     display: inline-block;
@@ -384,7 +386,7 @@
       margin-left: 45.7%;
 
       :global {
-        animation: 6s ease-in-out infinite both solo;
+        animation: solo 6s ease-in-out infinite both;
       }
     }
 
@@ -393,7 +395,7 @@
       margin-left: 49.4%;
 
       :global {
-        animation: 6s ease-in-out infinite both chain;
+        animation: chain 6s ease-in-out infinite both;
       }
     }
 
@@ -447,7 +449,7 @@
       }
     }
 
-    @keyframes: global(chainPinkBtn) {
+    @keyframes :global(chainPinkBtn) {
 
       0%,
       33% {
@@ -464,7 +466,7 @@
       }
     }
 
-    @keyframes: global(soloWhiteBtn) {
+    @keyframes :global(soloWhiteBtn) {
 
       0%,
       33% {
@@ -481,7 +483,7 @@
       }
     }
 
-    @keyframes: global(chain) {
+    @keyframes :global(chain) {
 
       0%,
       33% {
@@ -498,7 +500,7 @@
       }
     }
 
-    @keyframes: global(solo) {
+    @keyframes :global(solo) {
 
       0%,
       33% {
@@ -520,6 +522,7 @@
 .roadmapContainer {
   padding: 60px 0 100px 0;
   color: #5430DD;
+
   h1 {
     display: inline-block;
     margin-bottom: 90px;
@@ -569,6 +572,7 @@
   .lastCol {
     padding-right: 5px;
   }
+
   .button {
     font-weight: 600;
     font-size: 14px;
@@ -593,6 +597,7 @@
       text-decoration: underline;
     }
   }
+
   .button {
     background: transparent;
     border: 1px solid #fff;

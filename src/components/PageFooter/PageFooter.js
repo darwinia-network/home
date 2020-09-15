@@ -152,7 +152,7 @@ class PageFooter extends Component {
                             <p><a target="_blank" rel="noopener noreferrer" href="https://docs.darwinia.network">{t('footer:general_title_2')}</a></p>
                             <p><a target="_blank" rel="noopener noreferrer" href="https://www.evolution.land/land/1/bank/buy-ring">{t('footer:general_title_3')}</a></p>
                             <p><a target="_blank" rel="noopener noreferrer" href="mailto:hello@darwinia.network">{t('footer:general_title_4')}</a></p>
-                            <p><a target="_blank" rel="noopener noreferrer" href="mailto:hello@darwinia.network">{t('footer:general_title_5')}</a></p>
+                            <p><a target="_blank" rel="noopener noreferrer" href="/brand">{t('footer:general_title_5')}</a></p>
                         </Col>
                         <Col xs={6} md={4} lg={2}>
                             <h1>{t('footer:technology')}</h1>
