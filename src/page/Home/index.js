@@ -209,7 +209,9 @@ class Home extends Component {
         scrollreveal({
             reset: true,
             mobile: false
-        }).reveal('.reveal-h1', { distance: '50px' });
+        }).reveal('.reveal-h1', { 
+            distance: '50px'
+        });
     }
 
     detectMetaMask = () => {
@@ -282,8 +284,8 @@ class Home extends Component {
         const { email, info, hasMetamask } = this.state
         return (
             <div>
+                <PageHeader transparent={true} />
                 <div className={styles.homeBannerArea}>
-                    <PageHeader transparent={true} />
                     <Container>
                         <Row className={`${styles.promoteContentArea} d-flex justify-content-center`}>
                             <Col xs={{ order: 2, span: 11 }} sm={{ order: 1, span: 8 }}>

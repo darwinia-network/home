@@ -14,12 +14,12 @@ body {
 }
 
 .nav-link {
-  color: $text-fff;
+  color: $text-main;
   // font-weight: bold;
   padding: $nav-link-padding-y $nav-link-padding-x;
   cursor: pointer;
   &:hover {
-    color: #dddddd;
+    color: $text-main;
   }
 }
 
@@ -127,6 +127,12 @@ body {
   border-color: #201550;
   padding-left: 60px;
   padding-right: 60px;
+}
+@media (min-width: 576px) {
+  .nav-primary-fixed {
+    top: -57px !important;
+    border-bottom: 1px solid #f0ebfc;
+  }
 }
 @media (min-width: 768px) {
   .visible-xs {

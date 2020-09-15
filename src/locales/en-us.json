@@ -6,7 +6,8 @@
     "economical_model": "Economical Model",
     "media": "Media",
     "hiring": "We Are Hiring",
-    "genepaper": "Genepaper",
+    "genepaper": "GenePaper",
+    "techpaper": "Technical Paper",
     "gringotts": "Gringotts",
     "testnet": "Testnet",
     "forum": "Forum",
@@ -140,7 +141,7 @@
     "follow": "Follow Official Accounts",
     "grant": "Granted by Web3 Foundation",
     "copyright": "Copyright@2020 Darwinia Network",
-    "support": "Support@darwinia.network",
+    "support": "Substrate Builder Program",
 
     "general": "General",
     "general_title_1": "About",
