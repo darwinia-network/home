@@ -20,7 +20,8 @@
     "react-i18next": "^10.8.1",
     "react-router-dom": "^5.0.0",
     "react-scripts": "2.1.8",
-    "rimraf": "^2.6.2"
+    "rimraf": "^2.6.2",
+    "scrollreveal": "^4.0.7"
   },
   "scripts": {
     "start": "react-scripts start",

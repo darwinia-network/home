@@ -65,6 +65,7 @@ import axios from 'axios'
 import archorsComponent from '../../components/anchorsComponent'
 import { withTranslation } from "react-i18next";
 import i18n from '../../locales/i18n';
+import scrollreveal from "scrollreveal";
 
 class Home extends Component {
     constructor(props, context) {
@@ -194,6 +195,7 @@ class Home extends Component {
 
     componentDidMount() {
         archorsComponent();
+        this.addScrollReveal();
         this.detectMetaMaskTimer = setTimeout(() => {
             this.detectMetaMask();
         }, 1500);
@@ -201,6 +203,13 @@ class Home extends Component {
 
     componentWillUnmount() {
         this.detectMetaMaskTimer && clearTimeout(this.detectMetaMaskTimer);
+    }
+
+    addScrollReveal = () => {
+        scrollreveal({
+            reset: true,
+            mobile: false
+        }).reveal('.reveal-h1', { distance: '50px' });
     }
 
     detectMetaMask = () => {
@@ -340,7 +349,7 @@ class Home extends Component {
                     <Container>
                         <Row className={`${styles.promoteContentArea} d-flex justify-content-center`}>
                             <Col xs={{ span: 12 }} sm={{ span: 12 }}>
-                                <h1 className={`text-center ${styles.fontH1} ${styles.gradientText}`}>{t('home_page:theme_title')}</h1>
+                                <h1 className={`text-center reveal-h1 ${styles.fontH1} ${styles.gradientText}`}>{t('home_page:theme_title')}</h1>
                                 <p>{t('home_page:theme_desc')}</p>
                                 <InputGroup className={`${styles.subscribe} hidden-xs`}>
                                     <FormControl
@@ -439,7 +448,7 @@ class Home extends Component {
 
                 <div className={`${styles.architectureContainer}`}>
                     <Container>
-                        <h1 className={`text-center ${styles.fontH1}`}>{t('home_page:architecture_title')}</h1>
+                        <h1 className={`text-center reveal-h1 ${styles.fontH1}`}>{t('home_page:architecture_title')}</h1>
                         {/* {i18n.language.indexOf('en') > -1 ? <img src={architecture_en}/> :
                             <img src={architecture}/>} */}
                         <div className={`${styles.archWrapper}`}>
@@ -464,7 +473,7 @@ class Home extends Component {
                 <div className={`${styles.highlightContainer} ${styles.economicContainer}`}>
                     <Container>
                         <div className={styles.title}>
-                            <h1 className={`${styles.fontH1} ${styles.gradientText}`}>{t('home_page:economic_title')}</h1>
+                            <h1 className={`reveal-h1 ${styles.fontH1} ${styles.gradientText}`}>{t('home_page:economic_title')}</h1>
                         </div>
                         {/* <div className={styles.lineH1} /> */}
                         <Row className={`d-flex justify-content-center`}>
@@ -527,7 +536,7 @@ class Home extends Component {
                 <div className={`${styles.highlightContainer} ${styles.applicationContainer}`}>
                     <Container>
                         <div className={styles.title}>
-                            <h1 className={styles.fontH1}>{t('home_page:application_title')}</h1>
+                            <h1 className={`reveal-h1 ${styles.fontH1}`}>{t('home_page:application_title')}</h1>
                         </div>
                         <Row className={`d-flex justify-content-center`}>
                             <Col xs={12} md={6}>
@@ -547,7 +556,7 @@ class Home extends Component {
                 <div className={`${styles.roadmapContainer}`}>
                     <Container>
                         <div className={styles.title}>
-                            <h1 className={`${styles.fontH1} ${styles.gradientText}`}>{t('home_page:roadmap_title')}</h1>
+                            <h1 className={`reveal-h1 ${styles.fontH1} ${styles.gradientText}`}>{t('home_page:roadmap_title')}</h1>
                         </div>
                         <div className={`hidden-md`}>
                             <Row className={`d-flex justify-content-center align-items-between`}>
@@ -678,7 +687,7 @@ class Home extends Component {
                     <Container className={'text-center'}>
                         <Row>
                             <Col>
-                                <h1 className={styles.fontH1}>{t('home_page:dev_title')}</h1>
+                                <h1 className={`reveal-h1 ${styles.fontH1}`}>{t('home_page:dev_title')}</h1>
                                 <div className={styles.lineH2}></div>
                                 <p>{t('home_page:dev_content')}</p>
                                 <Button variant="transparent" target="_blank" href={t('header:testnet_url')}
@@ -695,7 +704,7 @@ class Home extends Component {
                 <div className={`${styles.partnersContainer}`}>
                     <Container>
                         <div className={styles.title}>
-                            <h1 className={`${styles.fontH1} ${styles.gradientText}`}>{t('home_page:partners_title')}</h1>
+                            <h1 className={`reveal-h1 ${styles.fontH1} ${styles.gradientText}`}>{t('home_page:partners_title')}</h1>
                         </div>
                         <Row className={`d-flex`}>
                             {this.renderPartner()}
@@ -706,7 +715,7 @@ class Home extends Component {
                 <div className={`${styles.highlightContainer}  ${styles.newContainer}`}>
                     <Container>
                         <div className={styles.title}>
-                            <h1 className={`${styles.fontH1} ${styles.gradientText}`}>{t('home_page:newest_title')}</h1>
+                            <h1 className={`reveal-h1 ${styles.fontH1} ${styles.gradientText}`}>{t('home_page:newest_title')}</h1>
                         </div>
                         <Row className={`d-flex justify-content-center text-left`}>
                             <Col xs={10} md={4} lg={3}>

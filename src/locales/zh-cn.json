@@ -107,6 +107,23 @@
     "faq_4_title": "目前Evolution Land中的RING/KTON是什么?",
     "faq_4_content": "Evolution Land中的RING 和 KTON就是ERC-20/TRC-20形式的TOKEN，进化星球游戏决定采用Darwinia Network的RING通证作为游戏内的支付通证。"
   },
+  "brand": {
+    "title": "Darwinia Brand",
+    "desc": "此页面展示官方的 Darwinia 和 RING、KTON 等元素的 LOGO、图标等设计用文件",
+    "about": "About Darwinia",
+    "about_desc": "达尔文网络是基于Substrate开发的跨链桥接网络，专注于建设未来资产互联网络，包括非标资产拍卖市场、稳定币跨链、资产交易兑换等领域。",
+    "logos": "Logos",
+    "download": "Download",
+    "filename": "[ darwinia brand kit.zip ]",
+    "ring": "RING",
+    "cring": "cRING",
+    "kton": "KTON",
+    "ckton": "cKTON",
+    "darwinia": "Darwinia",
+    "note": "注意",
+    "note_1": "达尔文网络图形标志的使用场景分为: 在白色/浅色背景上使用紫色渐变标志; 深色背景上使用白色标志;",
+    "note_2": "当标准标志不能以舒适的方式使用在单色应用场景时，可根据情况使用灰色/其他颜色标志。"
+  },
   "footer": {
     "scan": "扫描二维码",
     "follow": "Follow Official Accounts",
