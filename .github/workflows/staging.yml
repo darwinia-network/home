@@ -1,0 +1,30 @@
+name: Staging
+on:
+  push:
+    branches: [dev, feature/github-actions-*]
+
+jobs:
+  build-and-deploy:
+    name: Build and Deploy
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/checkout@v2
+        with:
+          repository: itering/actions
+          path: .github/actions
+          persist-credentials: false
+          ssh-key: "${{ secrets.ITERING_ACTIONS_DEPLOY_KEY }}"
+
+      - uses: actions/setup-node@v1
+        with:
+          node-version: '12'
+
+      - run: yarn install
+      - run: yarn build
+
+      - uses: ./.github/actions/rsync-deploy
+        with:
+          deployer_ssh_private_key: ${{ secrets.ITERING_DEPLOYER_SSH_PRIVATE_KEY }}
+          rsync_src: ./build/
+          rsync_dest: ${{ secrets.RSYNC_DEST }}/darwinia.network.l2me.com/
