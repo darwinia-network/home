@@ -11,7 +11,7 @@
     "gringotts": "Gringotts",
     "testnet": "Testnet",
     "forum": "Forum",
-    "testnet_url": "https://docs.darwinia.network/docs/en/crab-tut-node",
+    "testnet_url": "https://docs.darwinia.network/docs/en/crab-home",
     "explorer": "Explorer",
     "explorer_url": "http://crab.subscan.io/",
     "faq": "FAQs",
@@ -117,7 +117,6 @@
     "faq_3_content": "RING is system token of Darwinia Network, the initial supply before Darwinia network mainnet release is 2 billion.<br/>KTON is the staking and governance credential of Darwinia Network, KTON can only obtained by locking RING, the initial supply is 0.<br/>At present, some RING and KTON exist in the Ethereum network and the Tron network in the form of ERC-20 and TRC-20. These TOKENs will be transferred to the Darwinia main network by 1:1 cross-chain conversion after the Darwinia main online.",
     "faq_4_title": "What is RING and KTON in Evolution Land?",
     "faq_4_content": "RING and KTON in Evolution Land is the ERC-20/TRC-20 token, Evolution Land will use RING in Darwinia Network as the payment token in game."
-
   },
   "brand": {
     "title": "Darwinia Brand",
@@ -151,14 +150,16 @@
     "general_title_5": "Brand",
 
     "technology": "Technology",
-    "technology_title_1": "Testnet",
+    "technology_title_1": "Darwinia Crab Network",
     "technology_title_2": "Genepaper",
     "technology_title_3": "Github",
+    "technology_title_4": "Telemetry",
 
     "community": "Community",
     "community_title_1": "RFCS",
     "community_title_2": "Ambassador Program",
     "community_title_3": "Get involved",
+    "community_title_4": "FAQ",
 
     "contact": "Contact"
   }
