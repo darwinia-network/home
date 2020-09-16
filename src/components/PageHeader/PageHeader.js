@@ -145,7 +145,8 @@ class PageHeader extends Component {
                     <Row className={''}>
                         <Col xs={12} className={`${styles.ColSub} navbar--secondary`}>
                             <div className={`d-flex align-items-center justify-content-between ${styles.NavMenu}`}>
-                                <div>en</div>
+                                <div onClick={() => this.changeLng('en-us')}>en</div>
+                                <div onClick={() => this.changeLng('zh-cn')}>zh</div>
                                 <div className={`d-flex align-items-center ${styles.papers}`}>
                                     <div>{t('header:genepaper')}</div>
                                     <div>{t('header:techpaper')}</div>

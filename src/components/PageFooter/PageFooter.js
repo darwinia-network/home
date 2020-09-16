@@ -145,30 +145,31 @@ class PageFooter extends Component {
                         </Col>
                     </Row>
                     <Row className={`d-flex justify-content-between`}>
-                        <Col xs={6} md={4} lg={2}>
+                        <Col xs={6} md={4} lg={3}>
                             <h1>{t('footer:general')}</h1>
-                            {/* <p><a target="_blank" href={t('home_page:economic_url')}>{t('footer:general_title_1')}</a></p> */}
-                            <p><a href="/faq">{t('footer:general_title_1')}</a></p>
-                            <p><a target="_blank" rel="noopener noreferrer" href="https://docs.darwinia.network">{t('footer:general_title_2')}</a></p>
-                            <p><a target="_blank" rel="noopener noreferrer" href="https://www.evolution.land/land/1/bank/buy-ring">{t('footer:general_title_3')}</a></p>
+                            <p><a href="/#top">{t('footer:general_title_1')}</a></p>
+                            <p><a target="_blank" rel="noopener noreferrer" href="https://docs.darwinia.network/">{t('footer:general_title_2')}</a></p>
+                            <p><a target="_blank" rel="noopener noreferrer" href="https://www.itering.io/about">{t('footer:general_title_3')}</a></p>
                             <p><a target="_blank" rel="noopener noreferrer" href="mailto:hello@darwinia.network">{t('footer:general_title_4')}</a></p>
                             <p><a target="_blank" rel="noopener noreferrer" href="/brand">{t('footer:general_title_5')}</a></p>
                         </Col>
-                        <Col xs={6} md={4} lg={2}>
+                        <Col xs={6} md={4} lg={3}>
                             <h1>{t('footer:technology')}</h1>
                             <p><a target="_blank" rel="noopener noreferrer" href={t('header:testnet_url')}>{t('footer:technology_title_1')}</a></p>
-                            <p><a target="_blank" rel="noopener noreferrer" href="https://telemetry.polkadot.io/#list/Darwinia%20POC-1%20Testnet">{t('footer:technology_title_2')}</a></p>
                             {i18n.language.indexOf('en') > -1 ?
-                                <p><a target="_blank" rel="noopener noreferrer" href="https://evolution.l2me.com/darwinia/Darwinia_Genepaper_EN.pdf">{t('footer:technology_title_3')}</a></p>
+                                <p><a target="_blank" rel="noopener noreferrer" href="https://evolution.l2me.com/darwinia/Darwinia_Genepaper_EN.pdf">{t('footer:technology_title_2')}</a></p>
                                 :
-                                <p><a target="_blank" rel="noopener noreferrer" href="https://evolution.l2me.com/darwinia/Darwinia_Genepaper_CN.pdf">{t('footer:technology_title_3')}</a></p>
+                                <p><a target="_blank" rel="noopener noreferrer" href="https://evolution.l2me.com/darwinia/Darwinia_Genepaper_CN.pdf">{t('footer:technology_title_2')}</a></p>
                             }
+                            <p><a target="_blank" rel="noopener noreferrer" href="https://github.com/darwinia-network/darwinia">{t('footer:technology_title_3')}</a></p>
+                            <p><a target="_blank" rel="noopener noreferrer" href="https://telemetry.polkadot.io/#list/Polkadot">{t('footer:technology_title_4')}</a></p>
                         </Col>
-                        <Col xs={6} md={4} lg={2}>
+                        <Col xs={6} md={4} lg={3}>
                             <h1>{t('footer:community')}</h1>
                             <p><a target="_blank" rel="noopener noreferrer" href="https://rfcs.darwinia.network">{t('footer:community_title_1')}</a></p>
-                            <p><a target="_blank" rel="noopener noreferrer" href="https://github.com/darwinia-network">{t('footer:community_title_2')}</a></p>
-                            <p><a target="_blank" rel="noopener noreferrer" href="https://medium.com/@DarwiniaNetwork">{t('footer:community_title_3')}</a></p>
+                            <p><a target="_blank" rel="noopener noreferrer" href="/ambassador">{t('footer:community_title_2')}</a></p>
+                            <p><a target="_blank" rel="noopener noreferrer" href="/community">{t('footer:community_title_3')}</a></p>
+                            <p><a target="_blank" rel="noopener noreferrer" href="/faq">{t('footer:community_title_4')}</a></p>
                         </Col>
                         <Col xs={6} md={4} lg={2}>
                             <h1>{t('footer:contact')}</h1>
@@ -212,6 +213,7 @@ class PageFooter extends Component {
                                 </Col>
                             </Row>
                         </Col>
+                        <Col xs={0} md={0} lg={1}></Col>
                     </Row>
                     <Row>
                         <Col>

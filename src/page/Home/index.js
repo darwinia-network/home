@@ -284,6 +284,7 @@ class Home extends Component {
         const { email, info, hasMetamask } = this.state
         return (
             <div>
+                <a href="#top"></a>
                 <PageHeader transparent={true} />
                 <div className={styles.homeBannerArea}>
                     <Container>

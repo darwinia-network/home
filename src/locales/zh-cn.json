@@ -1,11 +1,17 @@
 {
   "header": {
     "home": "首页",
+    "tech": "Technology",
+    "community": "Community",
+    "economical_model": "Economical Model",
+    "media": "Media",
+    "hiring": "We Are Hiring",
     "genepaper": "Genepaper",
+    "techpaper": "Technical Paper",
     "gringotts": "古灵阁",
     "forum": "论坛",
     "testnet": "测试网络",
-    "testnet_url": "https://docs.darwinia.network/docs/zh-CN/crab-tut-node",
+    "testnet_url": "https://docs.darwinia.network/docs/zh-CN/crab-home",
     "explorer": "浏览器",
     "explorer_url": "https://crab.subscan.io/",
     "faq": "FAQs",
@@ -20,6 +26,10 @@
     "placeholder": "name@email.com",
     "subscribe_btn": "获取更新",
     "subscribe_tip": "订阅成功！请查看您的收件箱。",
+
+    "theme_title": "What is Darwinia Network?",
+    "theme_desc": "As an open cross-chain bridge protocol based on Substrate, Darwinia focuses on the construction of future Internet of Tokens, including decentralized tokens swap, exchange and market",
+    
     "highlight_title": "核心要素",
     "highlight_block_title_1": "桥接链",
     "highlight_block_content_1": "达尔文网络核心技术，跨链互操作解决方案",
@@ -57,6 +67,7 @@
 
     "dev_title": "开发团队",
     "dev_content": "Itering Tech 团队将支持达尔文网络的开发",
+    "dev_join": "Join the Community",
     "dev_link": "www.itering.io",
 
     "roadmap_title": "路线图",
@@ -127,23 +138,29 @@
   "footer": {
     "scan": "扫描二维码",
     "follow": "Follow Official Accounts",
+    "grant": "Granted by Web3 Foundation",
+    "copyright": "Copyright@2020 Darwinia Network",
+    "support": "Substrate Builder Program",
 
     "general": "概要",
-    "general_title_1": "Staking",
-    "general_title_2": "FAQ",
-    "general_title_3": "联系我们",
+    "general_title_1": "About",
+    "general_title_2": "WIKI",
+    "general_title_3": "Careers",
+    "general_title_4": "Cooperation",
+    "general_title_5": "Brand",
 
     "technology": "技术",
-    "technology_title_1": "测试网络",
-    "technology_title_2": "Telemetry",
-    "technology_title_3": "Genepaper",
+    "technology_title_1": "Darwinia Crab Network",
+    "technology_title_2": "Genepaper",
+    "technology_title_3": "Github",
+    "technology_title_4": "Telemetry",
 
     "community": "社区",
     "community_title_1": "RFCS",
-    "community_title_2": "GITHUB",
-    "community_title_3": "Medium",
-    "community_title_4": "Telegram",
-    "community_title_5": "Reddit"
+    "community_title_2": "Ambassador Program",
+    "community_title_3": "Get involved",
+    "community_title_4": "FAQ",
 
+    "contact": "联系我们"
   }
 }
