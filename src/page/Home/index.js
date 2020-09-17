@@ -36,6 +36,9 @@ import key5_mobile from './img/key/key-5-mobile.png'
 import eco1 from './img/economic/eco-1.png'
 import eco2 from './img/economic/eco-2.png'
 import eco3 from './img/economic/eco-3.png'
+import etherscan from './img/economic/etherscan.png'
+import tronscan from './img/economic/tronscan.png'
+import metamask from './img/economic/metamask.png'
 
 import partner1 from './img/partner/partner-1.png'
 import partner2 from './img/partner/partner-2.png'
@@ -207,7 +210,7 @@ class Home extends Component {
 
     addScrollReveal = () => {
         scrollreveal({
-            reset: true,
+            // reset: true,
             mobile: false
         }).reveal('.reveal-h1', { 
             distance: '50px'
@@ -225,7 +228,6 @@ class Home extends Component {
     subscribe = (text) => {
         axios.post('https://crab.subscan.io/api/subscribe?email=' + text)
             .then((response) => {
-                console.log(response);
                 if (response.data.code === 0) {
                     this.setState({
                         info: this.props.t('home_page:subscribe_tip')
@@ -286,65 +288,6 @@ class Home extends Component {
             <div>
                 <a href="#top"></a>
                 <PageHeader transparent={true} />
-                <div className={styles.homeBannerArea}>
-                    <Container>
-                        <Row className={`${styles.promoteContentArea} d-flex justify-content-center`}>
-                            <Col xs={{ order: 2, span: 11 }} sm={{ order: 1, span: 8 }}>
-                                {/* <img className={styles.slideLogo} src={dwSlideIcon}/> */}
-                                <p className={styles.slogan}>{t('home_page:slogan')}</p>
-                                <div className={styles.line} />
-                                <p className={`${styles.subTitle} mb-4`}>{t('home_page:subtitle')}</p>
-                                <InputGroup className={`mb-3 ${styles.subscribe} hidden-xs`}>
-                                    <FormControl
-                                        value={email}
-                                        onChange={(e) => {
-                                            this.changeTextValue('email', e)
-                                        }}
-                                        placeholder={t('home_page:placeholder')}
-                                        aria-label={t('home_page:placeholder')}
-                                        aria-describedby={t('home_page:placeholder')}
-                                    />
-                                    <InputGroup.Append>
-                                        <Button variant="outline-secondary" onClick={() => {
-                                            this.subscribe(email)
-                                        }}>{t('home_page:subscribe_btn')}</Button>
-                                    </InputGroup.Append>
-
-                                </InputGroup>
-                                <Form.Text className={`text-muted ${styles.subscribeTip} hidden-xs`}
-                                    dangerouslySetInnerHTML={{ __html: info || '&nbsp' }}>
-
-                                </Form.Text>
-                                <Form className={`${styles.subscribe} hidden-md`}>
-                                    <FormControl
-                                        value={email}
-                                        type={'email'}
-                                        onChange={(e) => {
-                                            this.changeTextValue('email', e)
-                                        }}
-                                        placeholder={t('home_page:placeholder')}
-                                        aria-label={t('home_page:placeholder')}
-                                        aria-describedby={t('home_page:placeholder')}
-                                    />
-
-                                    <Button block onClick={() => {
-                                        this.subscribe(email)
-                                    }}>
-                                        {t('home_page:subscribe_btn')}
-                                    </Button>
-                                    <Form.Text className={`text-muted ${styles.subscribeTip}`}
-                                        dangerouslySetInnerHTML={{ __html: info || '&nbsp' }} />
-
-                                </Form>
-                            </Col>
-                            <Col xs={{ order: 1 }} md={{ order: 2, span: 4 }}
-                                className={`d-none d-md-block d-lg-block`}>
-                                {/*<img src={dwIcon}/>*/}
-                            </Col>
-                        </Row>
-                    </Container>
-                </div>
-                
                 <div className={styles.launchBanner}>
                 </div>
 
@@ -493,13 +436,19 @@ class Home extends Component {
                                             <span>{t('home_page:economic_block_title_1')}</span>
                                         </div>
                                         <p>
-                                            <a href={`https://etherscan.io/token/${this.tokenInfo.ring.tokenAddress}`} target="_blank" rel="noopener noreferrer">{t('home_page:view_on_etherscan')}</a> / 
-                                            <a href="https://tronscan.org/#/token20/TL175uyihLqQD656aFx3uhHYe1tyGkmXaW" target="_blank" rel="noopener noreferrer">{t('home_page:view_on_tronscan')}</a>
+                                            <a href={`https://etherscan.io/token/${this.tokenInfo.ring.tokenAddress}`} target="_blank" rel="noopener noreferrer">
+                                                <img alt="etherscan" src={etherscan} />
+                                            </a>
+                                            <a href="https://tronscan.org/#/token20/TL175uyihLqQD656aFx3uhHYe1tyGkmXaW" target="_blank" rel="noopener noreferrer">
+                                                <img alt="tronscan" src={tronscan} />
+                                            </a>
+                                            {hasMetamask ? <a className={styles.addToken} href="javascript:void(0)" onClick={() => this.addToken('ring')}>
+                                                <img alt="metamask" src={metamask} />
+                                            </a> : null}
                                         </p>
                                     </div>
                                     <div className={styles.economicItemContent}>
                                         <p>{t('home_page:economic_block_content_1')}</p>
-                                        {hasMetamask ? <a className={styles.addToken} href="javascript:void(0)" onClick={() => this.addToken('ring')}>{t('home_page:watch_token', { token: 'RING' })}</a> : null}
                                     </div>
                                 </div>
                                 <div className={styles.economicItem}>
@@ -509,13 +458,19 @@ class Home extends Component {
                                             <span>{t('home_page:economic_block_title_2')}</span>
                                         </div>
                                         <p>
-                                            <a href={`https://etherscan.io/token/${this.tokenInfo.kton.tokenAddress}`} target="_blank" rel="noopener noreferrer">{t('home_page:view_on_etherscan')}</a> / 
-                                            <a href="https://tronscan.org/#/token20/TW3kTpVtYYQ5Ka1awZvLb9Yy6ZTDEC93dC" target="_blank" rel="noopener noreferrer">{t('home_page:view_on_tronscan')}</a>
+                                            <a href={`https://etherscan.io/token/${this.tokenInfo.kton.tokenAddress}`} target="_blank" rel="noopener noreferrer">
+                                                <img alt="etherscan" src={etherscan} />
+                                            </a>
+                                            <a href="https://tronscan.org/#/token20/TW3kTpVtYYQ5Ka1awZvLb9Yy6ZTDEC93dC" target="_blank" rel="noopener noreferrer">
+                                                <img alt="tronscan" src={tronscan} />
+                                            </a>
+                                            {hasMetamask ? <a className={styles.addToken} href="javascript:void(0)" onClick={() => this.addToken('kton')}>
+                                                <img alt="metamask" src={metamask} />
+                                            </a> : null}
                                         </p>
                                     </div>
                                     <div className={styles.economicItemContent}>
                                         <p>{t('home_page:economic_block_content_2')}</p>
-                                        {hasMetamask ? <a className={styles.addToken} href="javascript:void(0)" onClick={() => this.addToken('kton')}>{t('home_page:watch_token', { token: 'KTON' })}</a> : null}
                                     </div>
                                 </div>
                                 <div className={styles.economicItem}>

@@ -32,7 +32,7 @@ class Brand extends Component {
         const {t} = this.props
         return (
             <div>
-                <PageHeader/>
+                <PageHeader transparent={true}/>
                 <div className={`${styles.brand}`}>
                     <Container>
                         <div>
@@ -123,6 +123,15 @@ class Brand extends Component {
                                     </p>
                                     <p>
                                         {t('brand:note_2')}
+                                    </p>
+                                    <p>
+                                        {t('brand:note_3')}
+                                    </p>
+                                    <p>
+                                        {t('brand:note_4')}
+                                    </p>
+                                    <p>
+                                        {t('brand:note_5')}
                                     </p>
                                 </Col>
                             </Row>

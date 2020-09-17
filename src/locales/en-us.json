@@ -120,9 +120,9 @@
   },
   "brand": {
     "title": "Darwinia Brand",
-    "desc": "This page displays the official LOGO of Darwinia, RING, KTON and other design files",
+    "desc": "This page displays the LOGO, icons and other design files of Darwinia Network and Darwinia Crab Network tokens (included: RING, KTON, cRING, cKTON, etc.)",
     "about": "About Darwinia",
-    "about_desc": "As an open cross-chain bridge protocol based on Substrate, Darwinia focuses on the construction of future Internet of Tokens, including decentralized tokens swap, exchange and market.",
+    "about_desc": "Darwinia Network is a decentralized heterogeneous cross-chain bridge protocol developed using Substrate, focusing on decentralized cross-chain token swap, exchange, and market. Darwinia also serves as critical infrastructure for single-chain application upgrades to cross-chain versions, including Defi, Game, DEX, NFT market, etc. Our vision is to build the future Internet of Tokens.",
     "logos": "Logos",
     "download": "Download",
     "filename": "[ darwinia brand kit.zip ]",
@@ -132,8 +132,11 @@
     "ckton": "cKTON",
     "darwinia": "Darwinia",
     "note": "Note",
-    "note_1": "The use scenarios of Darwinia network graphic logo are divided into: use purple gradient logo on white/light background;",
-    "note_2": "use white logo on dark background; when the standard logo cannot be used in a comfortable way in monochrome application scenarios, it can be used according to the situation Grey/other color logo."
+    "note_1": "When using Darwin’s official design documents, please pay attention to the application scenarios:",
+    "note_2": "1. Use trendy gradation of the purple logo on white/light background;",
+    "note_3": "2. Use the white logo on a dark background;",
+    "note_4": "3. Use grey or other color logos if the standard logo is not adept at single color application scene.",
+    "note_5": "Thank you for your support to Darwinia Network, we hope for pleasant cooperation between us."
   },
   "footer": {
     "scan": "Scan QR",
