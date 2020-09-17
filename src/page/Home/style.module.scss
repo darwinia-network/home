@@ -98,7 +98,7 @@
 
   p {
     font-size: 16px;
-    color: #6330DD;
+    // color: #6330DD;
     // font-weight: bold;
     line-height: 20px;
   }
@@ -146,20 +146,18 @@
     .economicItemHeader {
       display: flex;
       margin-bottom: 10px;
-      justify-content: space-between;
       align-items: center;
 
-      img {
-        margin-bottom: 0;
-        margin-right: 20px;
-        width: 30px;
-        height: 30px;
-      }
-
       div {
-        flex: 1;
         display: flex;
         align-items: center;
+        margin-right: 20px;
+        > img {
+          margin-bottom: 0;
+          width: 30px;
+          height: 30px;
+          margin-right: 20px;
+        }
       }
 
       span {
@@ -171,8 +169,16 @@
         margin-bottom: 0;
 
         a {
-          margin-left: 7px;
-          margin-right: 7px;
+          margin-right: 10px;
+          img {
+            width: 21px;
+            height: 21px;
+            margin-bottom: 0;
+            opacity: .5;
+            &:hover {
+              opacity: 1;
+            }
+          }
         }
       }
     }
@@ -671,7 +677,7 @@
 
     p {
       font-size: 14px;
-      color: #6330DD;
+      // color: #6330DD;
       margin-bottom: 50px;
     }
 
