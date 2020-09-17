@@ -2,6 +2,7 @@ import React, {Component} from "react";
 import {Container, Row, Col, OverlayTrigger, Popover, InputGroup, FormControl, Button, Form} from 'react-bootstrap'
 import {withTranslation} from "react-i18next";
 import styles from './style.module.scss'
+import i18n from '../../locales/i18n';
 
 import share1 from './img/share-1.png'
 import share2 from './img/share-2.png'
@@ -90,7 +91,7 @@ class PageFooter extends Component {
 
     renderMap = () => {
         const { email, info } = this.state
-        const {t, i18n} = this.props
+        const {t} = this.props
 
         return (
             <div className={`${styles.map} d-none d-md-block d-lg-block`}>

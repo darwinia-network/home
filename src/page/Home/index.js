@@ -4,7 +4,7 @@ import React, { Component } from "react";
 import { Container, Row, Col, InputGroup, FormControl, Button, Form } from 'react-bootstrap'
 import { PageHeader } from '../../components/PageHeader'
 import { PageFooter } from '../../components/PageFooter'
-import { GradientHeading } from '../../components/GradientHeading'
+// import { GradientHeading } from '../../components/GradientHeading'
 import styles from './style.module.scss'
 import architecture from './img/architecture.png'
 import architecture_en from './img/architecture-en.png'
@@ -22,16 +22,16 @@ import application_2 from './img/application/application-2.png'
 import roadmap from './img/roadmap.png'
 import roadmapMobile from './img/roadmap-m.png'
 
-import key1 from './img/key/key-1.png'
-import key1_mobile from './img/key/key-1-mobile.png'
-import key2 from './img/key/key-2.png'
-import key2_mobile from './img/key/key-2-mobile.png'
-import key3 from './img/key/key-3.png'
-import key3_mobile from './img/key/key-3-mobile.png'
-import key4 from './img/key/key-4.png'
-import key4_mobile from './img/key/key-4-mobile.png'
-import key5 from './img/key/key-5.png'
-import key5_mobile from './img/key/key-5-mobile.png'
+// import key1 from './img/key/key-1.png'
+// import key1_mobile from './img/key/key-1-mobile.png'
+// import key2 from './img/key/key-2.png'
+// import key2_mobile from './img/key/key-2-mobile.png'
+// import key3 from './img/key/key-3.png'
+// import key3_mobile from './img/key/key-3-mobile.png'
+// import key4 from './img/key/key-4.png'
+// import key4_mobile from './img/key/key-4-mobile.png'
+// import key5 from './img/key/key-5.png'
+// import key5_mobile from './img/key/key-5-mobile.png'
 
 import eco1 from './img/economic/eco-1.png'
 import eco2 from './img/economic/eco-2.png'
@@ -286,8 +286,8 @@ class Home extends Component {
         const { email, info, hasMetamask } = this.state
         return (
             <div>
-                <a href="#top"></a>
-                <PageHeader transparent={true} />
+                {/* <a href="#top"></a> */}
+                <PageHeader href="#top" transparent={true} />
                 <div className={styles.launchBanner}>
                 </div>
 
@@ -677,26 +677,26 @@ class Home extends Component {
                         </div>
                         <Row className={`d-flex justify-content-center text-left`}>
                             <Col xs={10} md={4} lg={3}>
-                                <a className={styles.imgUrl} target="_blank" href={t('home_page:news_link_eth_relay')}>
-                                    <img src={newsEthRelay}/>
+                                <a className={styles.imgUrl} target="_blank" rel="noopener noreferrer" href={t('home_page:news_link_eth_relay')}>
+                                    <img alt="news" src={newsEthRelay}/>
                                     <h3>{t('home_page:news_title_eth_relay')}</h3>
                                 </a>
                             </Col>
                             <Col xs={10} md={4} lg={3}>
-                                <a className={styles.imgUrl} target="_blank" href={t('home_page:news_link_1')}>
-                                    <img src={news1}/>
+                                <a className={styles.imgUrl} target="_blank" rel="noopener noreferrer" href={t('home_page:news_link_1')}>
+                                    <img alt="news" src={news1}/>
                                     <h3>{t('home_page:news_title_1')}</h3>
                                 </a>
                             </Col>
                             <Col xs={10} md={4} lg={3}>
-                                <a className={styles.imgUrl} target="_blank" href={t('home_page:news_link_2')}>
-                                    <img src={news2}/>
+                                <a className={styles.imgUrl} target="_blank" rel="noopener noreferrer" href={t('home_page:news_link_2')}>
+                                    <img alt="news" src={news2}/>
                                     <h3>{t('home_page:news_title_2')}</h3>
                                 </a>
                             </Col>
                             <Col xs={10} md={4} lg={3}>
-                                <a className={styles.imgUrl} target="_blank" href={t('home_page:news_link_3')}>
-                                    <img src={news0}/>
+                                <a className={styles.imgUrl} target="_blank" rel="noopener noreferrer" href={t('home_page:news_link_3')}>
+                                    <img alt="news" src={news0}/>
                                     <h3>{t('home_page:news_title_3')}</h3>
                                 </a>
                             </Col>
