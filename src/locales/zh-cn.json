@@ -7,7 +7,7 @@
     "testnet": "测试网络",
     "testnet_url": "https://docs.darwinia.network/docs/zh-CN/crab-tut-node",
     "explorer": "浏览器",
-    "explorer_url": "http://crab.subscan.io/",
+    "explorer_url": "https://crab.subscan.io/",
     "faq": "FAQs",
     "rfc": "RFCs",
     "docs": "知识库",
