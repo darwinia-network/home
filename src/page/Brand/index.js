@@ -6,7 +6,7 @@ import {PageFooter} from '../../components/PageFooter'
 import archorsComponent from '../../components/anchorsComponent'
 import {withTranslation} from "react-i18next";
 import styles from "./style.module.scss";
-import GradientHeading from "../../components/GradientHeading/GradientHeading";
+// import GradientHeading from "../../components/GradientHeading/GradientHeading";
 
 import downloadBtn from './img/download.png'
 import darwiniaLogoWithText from './img/logo_text.png'
@@ -60,7 +60,7 @@ class Brand extends Component {
                                     <p>
                                         <img alt="download"  className={styles.downloadBtn} src={downloadBtn} />
                                         {t('brand:download')}
-                                        <a href="" className={styles.link}>{t('brand:filename')}</a>
+                                        <a href="/" className={styles.link}>{t('brand:filename')}</a>
                                     </p>
                                 </Col>
                                 <Col xs={12}>
