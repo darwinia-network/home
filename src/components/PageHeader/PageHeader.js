@@ -1,37 +1,37 @@
 import React, {Component} from "react";
-import {Navbar, Dropdown, Nav, Form, Container, Row, Col} from 'react-bootstrap'
+import {Navbar, Nav, Form, Container, Row, Col} from 'react-bootstrap'
 import {disableBodyScroll, enableBodyScroll, clearAllBodyScrollLocks} from 'body-scroll-lock';
 import {withTranslation} from "react-i18next";
 import $ from "jquery";
-
+import i18n from '../../locales/i18n';
 import styles from './style.module.scss'
 import logo from './img/logo-darwinia.png'
 import closeIcon from './img/close.png'
-import github from './img/github.svg'
+// import github from './img/github.svg'
 
-class CustomToggle extends React.Component {
-    constructor(props, context) {
-        super(props, context);
+// class CustomToggle extends React.Component {
+//     constructor(props, context) {
+//         super(props, context);
 
-        this.handleClick = this.handleClick.bind(this);
-    }
+//         this.handleClick = this.handleClick.bind(this);
+//     }
 
 
-    handleClick(e) {
-        document.querySelector('body').click()
-        e.preventDefault();
+//     handleClick(e) {
+//         document.querySelector('body').click()
+//         e.preventDefault();
 
-        this.props.onClick(e);
-    }
+//         this.props.onClick(e);
+//     }
 
-    render() {
-        return (
-            <div className="nav-link" onMouseEnter={this.handleClick} onClick={this.handleClick}>
-                {this.props.children}
-            </div>
-        );
-    }
-}
+//     render() {
+//         return (
+//             <div className="nav-link" onMouseEnter={this.handleClick} onClick={this.handleClick}>
+//                 {this.props.children}
+//             </div>
+//         );
+//     }
+// }
 
 class PageHeader extends Component {
     constructor(props, context) {
@@ -54,7 +54,6 @@ class PageHeader extends Component {
     }
 
     initScroll = () => {
-        let {didScroll} = this.state;
         $(window).scroll((event) =>{
             this.setState({
                 didScroll: true
@@ -136,7 +135,7 @@ class PageHeader extends Component {
     }
 
     render() {
-        const {t, transparent, i18n} = this.props
+        const {t, transparent} = this.props
         const {open} = this.state
         return (
             <div className={styles.NavBarWrapper}>
