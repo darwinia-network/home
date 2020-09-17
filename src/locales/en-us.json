@@ -1,11 +1,17 @@
 {
   "header": {
     "home": "Home",
-    "genepaper": "Genepaper",
+    "tech": "Technology",
+    "community": "Community",
+    "economical_model": "Economical Model",
+    "media": "Media",
+    "hiring": "We Are Hiring",
+    "genepaper": "GenePaper",
+    "techpaper": "Technical Paper",
     "gringotts": "Gringotts",
     "testnet": "Testnet",
     "forum": "Forum",
-    "testnet_url": "https://docs.darwinia.network/docs/en/crab-tut-node",
+    "testnet_url": "https://docs.darwinia.network/docs/en/crab-home",
     "explorer": "Explorer",
     "explorer_url": "https://crab.subscan.io/",
     "faq": "FAQs",
@@ -20,6 +26,10 @@
     "placeholder": "name@email.com",
     "subscribe_btn": "Get Updates",
     "subscribe_tip": "Subscription success! Please check your inbox.",
+
+    "theme_title": "What is Darwinia Network?",
+    "theme_desc": "As an open cross-chain bridge protocol based on Substrate, Darwinia focuses on the construction of future Internet of Tokens, including decentralized tokens swap, exchange and market",
+
     "highlight_title": "Key Features",
     "highlight_block_title_1": "Cross-Chain Bridge",
     "highlight_block_content_1": "Cross-chain interoperation solution",
@@ -39,7 +49,7 @@
     "architecture_solo": "Solo",
     "architecture_chain": "Parachain",
 
-    "economic_title": "Darwinia Economic Model",
+    "economic_title": "Economic Model",
     "economic_block_title_1": "RING",
     "economic_block_content_1": "The native tokens for Darwinia Network is RING, RING can be used as gas for transactions. Gas include transaction fees, contract execution fees, network bandwidth charges, storage fees, and more.",
     "economic_block_title_2": "KTON",
@@ -49,14 +59,15 @@
     "economic_btn": "How to staking?",
     "economic_url": "https://mp.weixin.qq.com/s/vSWn8Wz2C_f3_mxOiV-54g",
 
-    "application_title": "Ecological Applications",
+    "application_title": "Application Ecosystem",
     "application_block_title_1": "Token DEX",
     "application_block_content_1": "Token DEX is a decentralized application based on the Darwinia cross-chain bridge as the core technology, which can realize automatic cross-chain transactions between tokens",
     "application_block_title_2": "NFT Market",
     "application_block_content_2": "The decentralized nft auction market, which supports nft auctions of different blockchain networks through cross-chain auctions, creates a new NFT cross-chain circulation scenario",
 
-    "dev_title": "Dev team",
-    "dev_content": "Itering Tech is the Dev Team for Darwinia Network",
+    "dev_title": "Contributors",
+    "dev_content": "Do you want to get involved?",
+    "dev_join": "Join the Community",
     "dev_link": "www.itering.io",
 
     "roadmap_title": "Roadmap",
@@ -76,7 +87,7 @@
 
     "partners_title": "Partners",
 
-    "newest_title": "Latest Announcement",
+    "newest_title": "Newest Announcement",
 
     "news_title_1": "Darwinia sharing on Polkadot China row",
     "news_title_2": "How to buy/sell RING on uniswap? ",
@@ -106,28 +117,53 @@
     "faq_3_content": "RING is system token of Darwinia Network, the initial supply before Darwinia network mainnet release is 2 billion.<br/>KTON is the staking and governance credential of Darwinia Network, KTON can only obtained by locking RING, the initial supply is 0.<br/>At present, some RING and KTON exist in the Ethereum network and the Tron network in the form of ERC-20 and TRC-20. These TOKENs will be transferred to the Darwinia main network by 1:1 cross-chain conversion after the Darwinia main online.",
     "faq_4_title": "What is RING and KTON in Evolution Land?",
     "faq_4_content": "RING and KTON in Evolution Land is the ERC-20/TRC-20 token, Evolution Land will use RING in Darwinia Network as the payment token in game."
-
+  },
+  "brand": {
+    "title": "Darwinia Brand",
+    "desc": "This page displays the LOGO, icons and other design files of Darwinia Network and Darwinia Crab Network tokens (included: RING, KTON, cRING, cKTON, etc.)",
+    "about": "About Darwinia",
+    "about_desc": "Darwinia Network is a decentralized heterogeneous cross-chain bridge protocol developed using Substrate, focusing on decentralized cross-chain token swap, exchange, and market. Darwinia also serves as critical infrastructure for single-chain application upgrades to cross-chain versions, including Defi, Game, DEX, NFT market, etc. Our vision is to build the future Internet of Tokens.",
+    "logos": "Logos",
+    "download": "Download",
+    "filename": "[ darwinia brand kit.zip ]",
+    "ring": "RING",
+    "cring": "cRING",
+    "kton": "KTON",
+    "ckton": "cKTON",
+    "darwinia": "Darwinia",
+    "note": "Note",
+    "note_1": "When using Darwin’s official design documents, please pay attention to the application scenarios:",
+    "note_2": "1. Use trendy gradation of the purple logo on white/light background;",
+    "note_3": "2. Use the white logo on a dark background;",
+    "note_4": "3. Use grey or other color logos if the standard logo is not adept at single color application scene.",
+    "note_5": "Thank you for your support to Darwinia Network, we hope for pleasant cooperation between us."
   },
   "footer": {
     "scan": "Scan QR",
     "follow": "Follow Official Accounts",
+    "grant": "Granted by Web3 Foundation",
+    "copyright": "Copyright@2020 Darwinia Network",
+    "support": "Substrate Builder Program",
 
     "general": "General",
-    "general_title_1": "Staking",
-    "general_title_2": "FAQ",
-    "general_title_3": "Contact",
+    "general_title_1": "About",
+    "general_title_2": "WIKI",
+    "general_title_3": "Careers",
+    "general_title_4": "Cooperation",
+    "general_title_5": "Brand",
 
     "technology": "Technology",
-    "technology_title_1": "Testnet",
-    "technology_title_2": "Telemetry",
-    "technology_title_3": "Genepaper",
+    "technology_title_1": "Darwinia Crab Network",
+    "technology_title_2": "Genepaper",
+    "technology_title_3": "Github",
+    "technology_title_4": "Telemetry",
 
     "community": "Community",
     "community_title_1": "RFCS",
-    "community_title_2": "GITHUB",
-    "community_title_3": "Medium",
-    "community_title_4": "Telegram",
-    "community_title_5": "Reddit"
+    "community_title_2": "Ambassador Program",
+    "community_title_3": "Get involved",
+    "community_title_4": "FAQ",
 
+    "contact": "Contact"
   }
 }

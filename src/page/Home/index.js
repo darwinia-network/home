@@ -36,6 +36,9 @@ import key5_mobile from './img/key/key-5-mobile.png'
 import eco1 from './img/economic/eco-1.png'
 import eco2 from './img/economic/eco-2.png'
 import eco3 from './img/economic/eco-3.png'
+import etherscan from './img/economic/etherscan.png'
+import tronscan from './img/economic/tronscan.png'
+import metamask from './img/economic/metamask.png'
 
 import partner1 from './img/partner/partner-1.png'
 import partner2 from './img/partner/partner-2.png'
@@ -56,10 +59,16 @@ import partner16 from './img/partner/partner-16.png'
 import partner17 from './img/partner/partner-17.png'
 import partner18 from './img/partner/partner-18.png'
 
+import newsEthRelay from './img/news/news-eth-relay.png'
+import news1 from './img/news/news-1.jpg'
+import news2 from './img/news/news-2.jpg'
+import news0 from './img/news/news-0.jpg'
+
 import axios from 'axios'
 import archorsComponent from '../../components/anchorsComponent'
 import { withTranslation } from "react-i18next";
 import i18n from '../../locales/i18n';
+import scrollreveal from "scrollreveal";
 
 class Home extends Component {
     constructor(props, context) {
@@ -189,6 +198,7 @@ class Home extends Component {
 
     componentDidMount() {
         archorsComponent();
+        this.addScrollReveal();
         this.detectMetaMaskTimer = setTimeout(() => {
             this.detectMetaMask();
         }, 1500);
@@ -196,6 +206,15 @@ class Home extends Component {
 
     componentWillUnmount() {
         this.detectMetaMaskTimer && clearTimeout(this.detectMetaMaskTimer);
+    }
+
+    addScrollReveal = () => {
+        scrollreveal({
+            // reset: true,
+            mobile: false
+        }).reveal('.reveal-h1', { 
+            distance: '50px'
+        });
     }
 
     detectMetaMask = () => {
@@ -209,7 +228,6 @@ class Home extends Component {
     subscribe = (text) => {
         axios.post('https://crab.subscan.io/api/subscribe?email=' + text)
             .then((response) => {
-                console.log(response);
                 if (response.data.code === 0) {
                     this.setState({
                         info: this.props.t('home_page:subscribe_tip')
@@ -268,16 +286,18 @@ class Home extends Component {
         const { email, info, hasMetamask } = this.state
         return (
             <div>
-                <div className={styles.homeBannerArea}>
-                    <PageHeader transparent={true} />
+                <a href="#top"></a>
+                <PageHeader transparent={true} />
+                <div className={styles.launchBanner}>
+                </div>
+
+                <div className={styles.themeContainer}>
                     <Container>
                         <Row className={`${styles.promoteContentArea} d-flex justify-content-center`}>
-                            <Col xs={{ order: 2, span: 11 }} sm={{ order: 1, span: 8 }}>
-                                {/* <img className={styles.slideLogo} src={dwSlideIcon}/> */}
-                                <p className={styles.slogan}>{t('home_page:slogan')}</p>
-                                <div className={styles.line} />
-                                <p className={`${styles.subTitle} mb-4`}>{t('home_page:subtitle')}</p>
-                                <InputGroup className={`mb-3 ${styles.subscribe} hidden-xs`}>
+                            <Col xs={{ span: 12 }} sm={{ span: 12 }}>
+                                <h1 className={`text-center reveal-h1 ${styles.fontH1} ${styles.gradientText}`}>{t('home_page:theme_title')}</h1>
+                                <p>{t('home_page:theme_desc')}</p>
+                                <InputGroup className={`${styles.subscribe} hidden-xs`}>
                                     <FormControl
                                         value={email}
                                         onChange={(e) => {
@@ -296,7 +316,6 @@ class Home extends Component {
                                 </InputGroup>
                                 <Form.Text className={`text-muted ${styles.subscribeTip} hidden-xs`}
                                     dangerouslySetInnerHTML={{ __html: info || '&nbsp' }}>
-
                                 </Form.Text>
                                 <Form className={`${styles.subscribe} hidden-md`}>
                                     <FormControl
@@ -317,18 +336,13 @@ class Home extends Component {
                                     </Button>
                                     <Form.Text className={`text-muted ${styles.subscribeTip}`}
                                         dangerouslySetInnerHTML={{ __html: info || '&nbsp' }} />
-
                                 </Form>
-                            </Col>
-                            <Col xs={{ order: 1 }} md={{ order: 2, span: 4 }}
-                                className={`d-none d-md-block d-lg-block`}>
-                                {/*<img src={dwIcon}/>*/}
                             </Col>
                         </Row>
                     </Container>
                 </div>
 
-                <div className={`${styles.highlightContainer}`}>
+                {/* <div className={`${styles.highlightContainer}`}>
                     <Container>
                         <GradientHeading
                             className={`text-center ${styles.fontH1}`}>{t('home_page:highlight_title')}</GradientHeading>
@@ -376,13 +390,11 @@ class Home extends Component {
                             </Col>
                         </Row>
                     </Container>
-                </div>
+                </div> */}
 
                 <div className={`${styles.architectureContainer}`}>
                     <Container>
-                        <GradientHeading
-                            className={`text-center ${styles.fontH1}`}>{t('home_page:architecture_title')}</GradientHeading>
-                        {/* <h1 className={`text-center ${styles.fontH1}`}>{t('home_page:architecture_title')}</h1> */}
+                        <h1 className={`text-center reveal-h1 ${styles.fontH1}`}>{t('home_page:architecture_title')}</h1>
                         {/* {i18n.language.indexOf('en') > -1 ? <img src={architecture_en}/> :
                             <img src={architecture}/>} */}
                         <div className={`${styles.archWrapper}`}>
@@ -406,9 +418,10 @@ class Home extends Component {
 
                 <div className={`${styles.highlightContainer} ${styles.economicContainer}`}>
                     <Container>
-                        <GradientHeading
-                            className={`text-center ${styles.fontH1}`}>{t('home_page:economic_title')}</GradientHeading>
-                        <div className={styles.lineH1} />
+                        <div className={styles.title}>
+                            <h1 className={`reveal-h1 ${styles.fontH1} ${styles.gradientText}`}>{t('home_page:economic_title')}</h1>
+                        </div>
+                        {/* <div className={styles.lineH1} /> */}
                         <Row className={`d-flex justify-content-center`}>
                             <Col xs={12} md={12} lg={6} className={styles.economicImg}>
                                 {i18n.language.indexOf('en') > -1 ? <img alt="economic" className={styles.bridge} src={economic_en} /> :
@@ -423,13 +436,19 @@ class Home extends Component {
                                             <span>{t('home_page:economic_block_title_1')}</span>
                                         </div>
                                         <p>
-                                            <a href={`https://etherscan.io/token/${this.tokenInfo.ring.tokenAddress}`} target="_blank" rel="noopener noreferrer">{t('home_page:view_on_etherscan')}</a> / 
-                                            <a href="https://tronscan.org/#/token20/TL175uyihLqQD656aFx3uhHYe1tyGkmXaW" target="_blank" rel="noopener noreferrer">{t('home_page:view_on_tronscan')}</a>
+                                            <a href={`https://etherscan.io/token/${this.tokenInfo.ring.tokenAddress}`} target="_blank" rel="noopener noreferrer">
+                                                <img alt="etherscan" src={etherscan} />
+                                            </a>
+                                            <a href="https://tronscan.org/#/token20/TL175uyihLqQD656aFx3uhHYe1tyGkmXaW" target="_blank" rel="noopener noreferrer">
+                                                <img alt="tronscan" src={tronscan} />
+                                            </a>
+                                            {hasMetamask ? <a className={styles.addToken} href="javascript:void(0)" onClick={() => this.addToken('ring')}>
+                                                <img alt="metamask" src={metamask} />
+                                            </a> : null}
                                         </p>
                                     </div>
                                     <div className={styles.economicItemContent}>
                                         <p>{t('home_page:economic_block_content_1')}</p>
-                                        {hasMetamask ? <a className={styles.addToken} href="javascript:void(0)" onClick={() => this.addToken('ring')}>{t('home_page:watch_token', { token: 'RING' })}</a> : null}
                                     </div>
                                 </div>
                                 <div className={styles.economicItem}>
@@ -439,13 +458,19 @@ class Home extends Component {
                                             <span>{t('home_page:economic_block_title_2')}</span>
                                         </div>
                                         <p>
-                                            <a href={`https://etherscan.io/token/${this.tokenInfo.kton.tokenAddress}`} target="_blank" rel="noopener noreferrer">{t('home_page:view_on_etherscan')}</a> / 
-                                            <a href="https://tronscan.org/#/token20/TW3kTpVtYYQ5Ka1awZvLb9Yy6ZTDEC93dC" target="_blank" rel="noopener noreferrer">{t('home_page:view_on_tronscan')}</a>
+                                            <a href={`https://etherscan.io/token/${this.tokenInfo.kton.tokenAddress}`} target="_blank" rel="noopener noreferrer">
+                                                <img alt="etherscan" src={etherscan} />
+                                            </a>
+                                            <a href="https://tronscan.org/#/token20/TW3kTpVtYYQ5Ka1awZvLb9Yy6ZTDEC93dC" target="_blank" rel="noopener noreferrer">
+                                                <img alt="tronscan" src={tronscan} />
+                                            </a>
+                                            {hasMetamask ? <a className={styles.addToken} href="javascript:void(0)" onClick={() => this.addToken('kton')}>
+                                                <img alt="metamask" src={metamask} />
+                                            </a> : null}
                                         </p>
                                     </div>
                                     <div className={styles.economicItemContent}>
                                         <p>{t('home_page:economic_block_content_2')}</p>
-                                        {hasMetamask ? <a className={styles.addToken} href="javascript:void(0)" onClick={() => this.addToken('kton')}>{t('home_page:watch_token', { token: 'KTON' })}</a> : null}
                                     </div>
                                 </div>
                                 <div className={styles.economicItem}>
@@ -468,9 +493,9 @@ class Home extends Component {
 
                 <div className={`${styles.highlightContainer} ${styles.applicationContainer}`}>
                     <Container>
-                        <GradientHeading
-                            className={`text-center ${styles.fontH1}`}>{t('home_page:application_title')}</GradientHeading>
-                        <div className={styles.lineH1} />
+                        <div className={styles.title}>
+                            <h1 className={`reveal-h1 ${styles.fontH1}`}>{t('home_page:application_title')}</h1>
+                        </div>
                         <Row className={`d-flex justify-content-center`}>
                             <Col xs={12} md={6}>
                                 <img alt="Token DEX" src={application_1} />
@@ -488,9 +513,9 @@ class Home extends Component {
 
                 <div className={`${styles.roadmapContainer}`}>
                     <Container>
-                        <GradientHeading
-                            className={`text-center ${styles.fontH1}`}>{t('home_page:roadmap_title')}</GradientHeading>
-                        <div className={styles.lineH1} />
+                        <div className={styles.title}>
+                            <h1 className={`reveal-h1 ${styles.fontH1} ${styles.gradientText}`}>{t('home_page:roadmap_title')}</h1>
+                        </div>
                         <div className={`hidden-md`}>
                             <Row className={`d-flex justify-content-center align-items-between`}>
                                 <Col xs={4}>
@@ -620,12 +645,14 @@ class Home extends Component {
                     <Container className={'text-center'}>
                         <Row>
                             <Col>
-                                <h1 className={styles.fontH1}>{t('home_page:dev_title')}</h1>
+                                <h1 className={`reveal-h1 ${styles.fontH1}`}>{t('home_page:dev_title')}</h1>
                                 <div className={styles.lineH2}></div>
                                 <p>{t('home_page:dev_content')}</p>
-                                <p className={styles.link}>
+                                <Button variant="transparent" target="_blank" href={t('header:testnet_url')}
+                                    className={styles.button}>{t('home_page:dev_join')}</Button>
+                                {/* <p className={styles.link}>
                                     <a href="https://www.itering.io/">{t('home_page:dev_link')}</a>
-                                </p>
+                                </p> */}
 
                             </Col>
                         </Row>
@@ -634,20 +661,20 @@ class Home extends Component {
 
                 <div className={`${styles.partnersContainer}`}>
                     <Container>
-                        <GradientHeading
-                            className={`text-center ${styles.fontH1}`}>{t('home_page:partners_title')}</GradientHeading>
-                        <div className={styles.lineH1} />
+                        <div className={styles.title}>
+                            <h1 className={`reveal-h1 ${styles.fontH1} ${styles.gradientText}`}>{t('home_page:partners_title')}</h1>
+                        </div>
                         <Row className={`d-flex`}>
                             {this.renderPartner()}
                         </Row>
                     </Container>
                 </div>
 
-                {/* <div className={`${styles.highlightContainer}  ${styles.newContainer}`}>
+                <div className={`${styles.highlightContainer}  ${styles.newContainer}`}>
                     <Container>
-                        <GradientHeading
-                            className={`text-center ${styles.fontH1}`}>{t('home_page:newest_title')}</GradientHeading>
-                        <div className={styles.lineH1}/>
+                        <div className={styles.title}>
+                            <h1 className={`reveal-h1 ${styles.fontH1} ${styles.gradientText}`}>{t('home_page:newest_title')}</h1>
+                        </div>
                         <Row className={`d-flex justify-content-center text-left`}>
                             <Col xs={10} md={4} lg={3}>
                                 <a className={styles.imgUrl} target="_blank" href={t('home_page:news_link_eth_relay')}>
@@ -679,7 +706,7 @@ class Home extends Component {
                                     className={styles.button}>{t('home_page:news_btn')}</Button>
                         </div>
                     </Container>
-                </div> */}
+                </div>
 
                 <PageFooter></PageFooter>
             </div>

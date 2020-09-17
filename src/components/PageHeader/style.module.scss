@@ -47,11 +47,49 @@
 
 .Navbar{
   background: transparent;
-  padding: .5rem 40px;
+  padding: 0;
   font-size: 18px;
-    .logo{
-      width: 242px;
+  .logo{
+    width: 178px;
+  }
+}
+.NavBarWrapper {
+  .ColMain {
+    height: 88px;
+    .Navbar {
+      flex: 1 1 auto;
     }
+  }
+  .ColSub {
+    height: 57px;
+    .NavMenu {
+      height: 100%;
+      border-bottom: 1px solid #f0ebfc;
+    }
+    .papers {
+      > div {
+        margin-left: 25px;
+      }
+    }
+  }
+  .ColLine {
+    height: 1px;
+    background: #6330DD;
+    opacity: 0.1;
+  }
+  .NavBarContainer {
+    width: 100%;
+    background-color: white;
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    color: black;
+    transition: border 0.3s ease-in-out;
+  }
+  .NavBarBg {
+    height: 145px;
+    background: white;
+  }
 }
 
 .NavBg{
@@ -89,6 +127,24 @@
   padding: 3px 20px;
   &:hover {
     color: #3D30DD;
+  }
+}
+
+@media (min-width: 576px) {
+  .NavBarWrapper {
+    .NavBarContainer {
+      position: fixed;
+      top: 0;
+      transition: top 0.4s ease-in-out;
+    }
+  }
+  .Navbar{
+
+    a{
+      img {
+        width: 117px;
+      }
+    }
   }
 }
 

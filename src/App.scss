@@ -6,6 +6,10 @@
 
 body {
   color: $text-main;
+  line-height: 1.3;
+}
+html {
+  scroll-behavior: smooth;
 }
 
 #basic-navbar-nav .nav-link {
@@ -13,26 +17,26 @@ body {
 }
 
 .nav-link {
-  color: $text-fff;
+  color: $text-main;
   // font-weight: bold;
   padding: $nav-link-padding-y $nav-link-padding-x;
   cursor: pointer;
   &:hover {
-    color: #dddddd;
+    color: $text-main;
   }
 }
 
 @font-face {
   font-family: Rajdhani;
   //src: url('./style/font/pt-sans.regular.ttf') format('truetype');
-  src: url('./style/font/Rajdhani-SemiBold.ttf') format('truetype');
+  src: url('./style/font/Rajdhani-Medium.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: Rajdhani;
-  src: url('./style/font/Rajdhani-Bold.ttf') format('truetype');
+  src: url('./style/font/Rajdhani-SemiBold.ttf') format('truetype');
   font-weight: bold;
   font-style: normal;
 }
@@ -114,11 +118,24 @@ body {
 }
 
 .btn-dark {
+  color: #080C20;
+  background-color: #fff;
+  border-color: #080C20;
+  padding-left: 55px;
+  padding-right: 55px;
+}
+.btn-white {
   color: #fff;
   background-color: #201550;
   border-color: #201550;
   padding-left: 60px;
   padding-right: 60px;
+}
+@media (min-width: 576px) {
+  .nav-primary-fixed {
+    top: -57px !important;
+    border-bottom: 1px solid #f0ebfc;
+  }
 }
 @media (min-width: 768px) {
   .visible-xs {
