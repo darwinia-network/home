@@ -12,13 +12,17 @@
     "testnet": "Testnet",
     "forum": "Forum",
     "testnet_url": "https://docs.darwinia.network/docs/en/crab-home",
+    "genepaper_url": "",
     "explorer": "Explorer",
     "explorer_url": "https://crab.subscan.io/",
     "faq": "FAQs",
     "rfc": "RFCs",
     "docs": "Docs",
     "wallet": "Wallet",
-    "comingsoon": "Coming Soon"
+    "comingsoon": "Coming Soon",
+    "lang_demo": "en",
+    "en": "English",
+    "zh": "中文"
   },
   "home_page": {
     "slogan": "INTERNET OF TOKENS, CONNECTED!",
@@ -137,6 +141,37 @@
     "note_3": "2. Use the white logo on a dark background;",
     "note_4": "3. Use grey or other color logos if the standard logo is not adept at single color application scene.",
     "note_5": "Thank you for your support to Darwinia Network, we hope for pleasant cooperation between us."
+  },
+  "community": {
+    "dive_title": "Dive into the Community",
+    "dive_subtitle": "Internet of tokens, Connected!",
+    "dive_slogan": "Become an Ambassador",
+
+    "general": "General",
+    "twitter": "Twitter followers",
+    "telegram": "Telegram members",
+    "medium": "Blog subscribers",
+    "wechat": "Wechat followers",
+    "github": "Github stars",
+
+    "contribute": "How to contribute",
+    "new": "Newbie",
+    "grant_program": "Grant Program",
+    "bounty_program": "Bounty Program",
+    "technology": "Technology",
+    "education": "Education",
+    "content_creator": "Content Creator",
+    "meetup_organizer": "Meetup Organizer",
+    "translator": "Translator",
+    "moderator": "Moderator",
+    "experience_officer": "Experience Officer",
+    "get_started": "Get Started",
+    "darwinia_wiki": "Darwinia Wiki",
+    "faq": "FAQ",
+
+    "contributors": "Contributors",
+    "invite": "Do you went to get involved ?",
+    "join_community": "Join the community"
   },
   "footer": {
     "scan": "Scan QR",
