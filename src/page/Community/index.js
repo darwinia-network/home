@@ -1,5 +1,5 @@
 import React, {Component} from "react";
-import {Container, Row, Col, Button} from 'react-bootstrap'
+import {Container, Row, Col, Button, Popover, OverlayTrigger} from 'react-bootstrap'
 import {PageHeader} from '../../components/PageHeader'
 import {PageFooter} from '../../components/PageFooter'
 
@@ -18,6 +18,7 @@ import twitter from './img/twitter.png'
 import twitter_white from './img/twitter_white.png'
 import wechat from './img/wechat.png'
 import wechat_white from './img/wechat_white.png'
+import wx from './img/wx.jpg'
 
 import newPerson from "./img/new.png"
 import eduPerson from "./img/education.png"
@@ -40,6 +41,15 @@ class Brand extends Component {
 
     componentDidMount() {
         archorsComponent()
+    }
+
+    renderTooltip = props => {
+        const {t} = this.props
+        return <Popover {...props} className={styles.wxContainer}>
+            <img alt="wx" src={wx}/>
+            <p>{t("footer:scan")}</p>
+            <p>{t("footer:follow")}</p>
+        </Popover>
     }
 
 
@@ -115,18 +125,24 @@ class Brand extends Component {
                                                 {t('community:medium')}
                                             </div>
                                         </a>
-                                        <a className={`${styles.mediaBlock} ${styles.wechat}`}>
-                                            <div className={styles.mediaLogo}>
-                                                <img alt="wechat" src={wechat_white}/>
-                                                <img className={styles.hoverImg} alt="wechat" src={wechat}/>
+                                        <OverlayTrigger
+                                            placement="top"
+                                            delay={{show: 100, hide: 1000}}
+                                            overlay={this.renderTooltip}
+                                        >
+                                            <div className={`${styles.mediaBlock} ${styles.wechat}`}>
+                                                <div className={styles.mediaLogo}>
+                                                    <img alt="wechat" src={wechat_white}/>
+                                                    <img className={styles.hoverImg} alt="wechat" src={wechat}/>
+                                                </div>
+                                                <div className={styles.mediaNum}>
+                                                    9,645
+                                                </div>
+                                                <div className={styles.mediaName}>
+                                                    {t('community:wechat')}
+                                                </div>
                                             </div>
-                                            <div className={styles.mediaNum}>
-                                                9,645
-                                            </div>
-                                            <div className={styles.mediaName}>
-                                                {t('community:wechat')}
-                                            </div>
-                                        </a>
+                                        </OverlayTrigger>
                                         <a target="_blank" rel="noopener noreferrer" href="https://github.com/darwinia-network" className={`${styles.mediaBlock} ${styles.github}`}>
                                             <div className={styles.mediaLogo}>
                                                 <img alt="github" src={github_white}/>
@@ -159,7 +175,7 @@ class Brand extends Component {
                                 <div className={styles.contributeBlocks}>
                                     <div className={`${styles.contributeBlock} ${styles.new}`}>
                                         <div className={styles.avatar}>
-                                            <img src={newPerson}/>
+                                            <img alt="new" src={newPerson}/>
                                             <div>{t('community:new')}</div>
                                         </div>
                                         <div className={styles.section}>
@@ -169,7 +185,7 @@ class Brand extends Component {
                                     </div>
                                     <div className={`${styles.contributeBlock} ${styles.technology}`}>
                                         <div className={styles.avatar}>
-                                            <img src={techPerson}/>
+                                            <img alt="technology" src={techPerson}/>
                                             <div>{t('community:technology')}</div>
                                         </div>
                                         <div className={styles.section}>
@@ -179,7 +195,7 @@ class Brand extends Component {
                                     </div>
                                     <div className={`${styles.contributeBlock} ${styles.education}`}>
                                         <div className={styles.avatar}>
-                                            <img src={eduPerson}/>
+                                            <img alt="educator" src={eduPerson}/>
                                             <div>{t('community:education')}</div>
                                         </div>
                                         <div className={styles.section}>
@@ -202,13 +218,13 @@ class Brand extends Component {
                                     {t('community:contributors')}
                                 </h1>
                                 <div className={`${styles.persons}`}>
-                                    <img src={person_1}/>
-                                    <img src={person_2}/>
-                                    <img src={person_3}/>
-                                    <img src={person_4}/>
-                                    <img src={person_5}/>
-                                    <img src={person_6}/>
-                                    <img src={person_7}/>
+                                    <img alt="person" src={person_1}/>
+                                    <img alt="person" src={person_2}/>
+                                    <img alt="person" src={person_3}/>
+                                    <img alt="person" src={person_4}/>
+                                    <img alt="person" src={person_5}/>
+                                    <img alt="person" src={person_6}/>
+                                    <img alt="person" src={person_7}/>
                                 </div>
                                 <p>
                                     {t('community:invite')}
