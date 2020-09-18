@@ -12,13 +12,17 @@
     "forum": "论坛",
     "testnet": "测试网络",
     "testnet_url": "https://docs.darwinia.network/docs/zh-CN/crab-home",
+    "genepaper_url": "",
     "explorer": "浏览器",
     "explorer_url": "http://crab.subscan.io/",
     "faq": "FAQs",
     "rfc": "RFCs",
     "docs": "知识库",
     "wallet": "钱包",
-    "comingsoon": "即将到来"
+    "comingsoon": "即将到来",
+    "lang_demo": "zh",
+    "en": "English",
+    "zh": "中文"
   },
   "home_page": {
     "slogan": "资产互联网络，已接通！",
