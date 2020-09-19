@@ -1,70 +1,104 @@
 @import "../../style/index";
 
-.brand {
+.article {
   text-align: left;
-  padding: 60px 0 100px 0;
-  min-height: calc(100vh - 132px);
-  background-color: #f0f2f5;
+  padding: 40px 0 50px 0;
+  font-family: "SFUIDisplay-Regular", "SFUIDisplay";
+  // min-height: calc(100vh - 132px);
   h1 {
     display: inline-block;
-    margin-bottom: 45px;
+    margin-bottom: 30px;
+    letter-spacing: 2.5px;
+    font-family: "Rajdhani";
+  }
+  h2 {
+    display: inline-block;
+    margin-bottom: 30px;
+    font-size: 30px;
+    letter-spacing: 1.5px;
+    font-family: "Rajdhani";
   }
 
+  h3 {
+    font-size: 26px;
+    font-weight: 500;
+    margin: 30px 0;
+  }
+  h4 {
+    font-size: 22px;
+    margin: 30px 0;
+  }
   .title {
     text-align: left;
   }
   .subTitle {
-    font-size: 40px;
+    margin: 30px 0;
+    font-size: 30px;
+    font-family: "SFUIDisplay-Semibold", "SFUIDisplay";
     font-weight: bold;
-    margin-bottom: 20px;
   }
-  h3 {
+  .subContent {
+    margin-left: 30px;
+    margin-bottom: 30px;
+  }
+  .author {
     font-size: 20px;
-    display: -webkit-box;
-    -webkit-line-clamp: 3;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-    margin-bottom: 20px;
-  }
-  p {
-    font-size: 20px;
-  }
-  .downloadBtn {
-    width: 15px;
-    margin-right: 10px;
-  }
-  .margin {
-    height: 50px;
-  }
-  .logoItem {
-    height: 90px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 28px 0 20px;
-    background-color: #FBFBFB;
-    .logo {
-      height: 30px;
-    }
-    .ring {
-      height: 56px;
-    }
-    .kton {
-      height: 45px;
-    }
     span {
-      font-size: 30px;
+      margin-right: 20px;
     }
   }
-  .link {
-    font-weight: bold;
-    color: #6330DD;
-    text-decoration: underline;
-    margin-left: 10px;
+  .banner {
+    width: 100%;
+    // background: url("./img/banner.png") top center no-repeat;
+    // background-size: cover;
+    // height: 573px;
   }
   .content {
-    // padding: 0 25px 70px 35px;
-    box-sizing: border-box;
+    p {
+      margin-bottom: 5px;
+    }
+    .howDesc {
+      margin-bottom: 30px;
+    }
+    .button {
+      margin-top: 30px;
+      font-weight: 600;
+      font-size: 14px;
+      padding: 10px 75px;
+      border-radius: 0;
+    }
+    .link {
+      color: #3859FF;
+      text-decoration: underline;
+    }
+    .mediaBlocks {
+      padding: 0;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+    .mediaBlock {
+      list-style-type: none;
+      width: 270px;
+      .mediaInfo {
+        margin: 10px 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        color: #6330DD;
+        .mediaTime {
+          font-size: 12px;
+          color: #201550;
+        }
+      }
+      .mediaDesc {
+        font-family: "Rajdhani";
+        font-size: 16px;
+      }
+      img {
+        width: 100%;
+      }
+    }
   }
 }
 
@@ -74,10 +108,9 @@
 
 .lineH1 {
   height: 1px;
-  margin-bottom: 60px;
-  margin-top: 60px;
+  margin-bottom: 30px;
+  margin-top: 30px;
   background: linear-gradient(315deg, #FE3876 0%, #7C30DD 72%, #3A30DD 100%);
-  opacity: 0.2;
 }
 
 .gradientText {
