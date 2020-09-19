@@ -37,6 +37,7 @@
       // max-width: 970px;
       margin: 100px 0;
       display: flex;
+      flex-wrap: wrap;
       justify-content: space-between;
     }
     .mediaBlock {
@@ -51,6 +52,7 @@
       flex-direction: column;
       align-items: center;
       transition: all ease-in 300ms;
+      margin-bottom: 10px;
       &:hover {
         .mediaLogo {
           .hoverImg {

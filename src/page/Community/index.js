@@ -69,7 +69,7 @@ class Brand extends Component {
                                     <p>
                                         {t('community:dive_subtitle')}
                                     </p>
-                                    <Button variant="transparent" target="_blank" href="/ambassador"
+                                    <Button variant="transparent" target="_blank" href={t('ambassador:form')}
                                     className={styles.button}>{t('community:dive_slogan')}</Button>
                                 </Col>
                             </Row>
