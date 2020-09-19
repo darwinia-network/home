@@ -237,6 +237,22 @@
     "more_time": "2020.09.01",
     "more_subtitle": "Darwinia Network is the first game chain of the Polkadot."
   },
+  "media": {
+    "carousel_1_author": "Announcements",
+    "carousel_1_time": "2020.09.01",
+    "carousel_1_title": "Darwinia Network is the first game chain of the Polkadot.",
+    "carousel_1_content": "Darwinia Network is the first game chain of the Polkadot. Darwinia Network is the first game chain of the Polkadot. Darwinia Network is the first game chain of the Polkadot.",
+
+    "more_title": "Announcements",
+    "more_time": "2020.09.01",
+    "more_subtitle": "Darwinia Network is the first game chain of the Polkadot.",
+    
+    "reports": "Reports",
+    "news": "News",
+    "events": "Events",
+    "videos": "Videos/ Darwinia show",
+    "view_all": "View all"
+  },
   "footer": {
     "scan": "Scan QR",
     "follow": "Follow Official Accounts",
