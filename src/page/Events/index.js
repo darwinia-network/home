@@ -7,7 +7,7 @@ import archorsComponent from '../../components/anchorsComponent'
 import {withTranslation} from "react-i18next";
 import styles from "./style.module.scss";
 
-import news from "../Media/img/news.png"
+import events from "../Media/img/events.png"
 import news1 from '../Home/img/news/news-1.jpg'
 import news2 from '../Home/img/news/news-2.jpg'
 import news0 from '../Home/img/news/news-0.jpg'
@@ -32,8 +32,8 @@ class News extends Component {
                 <div className={`${styles.news}`}>
                     <Container>
                         <div className={styles.title}>
-                            <img src={news}  alt="news"/>
-                            <h1 className={`${styles.gradientText}`}>{t('media:news')}</h1>
+                            <img src={events}  alt="events"/>
+                            <h1 className={`${styles.gradientText}`}>{t('media:events')}</h1>
                         </div>
                         <Row>
                             <Col md={3} className={styles.content}>
