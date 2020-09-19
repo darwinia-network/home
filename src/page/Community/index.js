@@ -179,8 +179,16 @@ class Brand extends Component {
                                             <div>{t('community:new')}</div>
                                         </div>
                                         <div className={styles.section}>
-                                            <div className={styles.title}></div>
-                                            <p>Welcome to Darwinia Community! You can start from Darwinia Wiki and FAQ</p>
+                                            {/* <div className={styles.title}>{t('community:technology')}</div> */}
+                                            <p>{t('community:new_intro')}</p>
+                                            <div className={styles.buttons}>
+                                                <Button variant="dark" target="_blank" href="/wiki"
+                                                    className={styles.button}>{t('community:darwinia_wiki')}</Button>
+                                                <Button variant="dark" target="_blank" href="/faq"
+                                                    className={styles.button}>{t('community:faq')}</Button>
+                                                <Button variant="white" target="_blank" href={t('ambassador:form')}
+                                                    className={`${styles.button} ${styles.buttonWhite}`}>{t('community:get_started')}</Button>
+                                            </div>
                                         </div>
                                     </div>
                                     <div className={`${styles.contributeBlock} ${styles.technology}`}>
@@ -189,8 +197,19 @@ class Brand extends Component {
                                             <div>{t('community:technology')}</div>
                                         </div>
                                         <div className={styles.section}>
-                                            <div className={styles.title}></div>
-                                            <p>Welcome to Darwinia Community! You can start from Darwinia Wiki and FAQ</p>
+                                            <div className={styles.title}>{t('community:grant_program')}</div>
+                                            <p>{t('community:grant_intro')}</p>
+                                            <div className={styles.buttons}>
+                                                <Button variant="white" target="_blank" href={t('ambassador:form')}
+                                                    className={`${styles.button} ${styles.buttonWhite}`}>{t('community:get_started')}</Button>
+                                            </div>
+
+                                            <div className={styles.title}>{t('community:bounty_program')}</div>
+                                            <p>{t('community:bounty_intro')}</p>
+                                            <div className={styles.buttons}>
+                                                <Button variant="white" target="_blank" href={t('ambassador:form')}
+                                                    className={`${styles.button} ${styles.buttonWhite}`}>{t('community:get_started')}</Button>
+                                            </div>
                                         </div>
                                     </div>
                                     <div className={`${styles.contributeBlock} ${styles.education}`}>
@@ -199,8 +218,25 @@ class Brand extends Component {
                                             <div>{t('community:education')}</div>
                                         </div>
                                         <div className={styles.section}>
-                                            <div className={styles.title}></div>
-                                            <p>Welcome to Darwinia Community! You can start from Darwinia Wiki and FAQ</p>
+                                            <div className={styles.title}>{t('community:content_creator')}</div>
+                                            <p>{t('community:content_intro')}</p>
+
+                                            <div className={styles.title}>{t('community:meetup_organizer')}</div>
+                                            <p>{t('community:meetup_intro')}</p>
+
+                                            <div className={styles.title}>{t('community:translator')}</div>
+                                            <p>{t('community:translator_intro')}</p>
+
+                                            <div className={styles.title}>{t('community:moderator')}</div>
+                                            <p>{t('community:moderator_intro')}</p>
+
+                                            <div className={styles.title}>{t('community:experience_officer')}</div>
+                                            <p>{t('community:experience_intro')}</p>
+
+                                            <div className={styles.buttons}>
+                                                <Button variant="white" target="_blank" href={t('ambassador:form')}
+                                                    className={`${styles.button} ${styles.buttonWhite}`}>{t('community:get_started')}</Button>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
