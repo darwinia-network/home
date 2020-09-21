@@ -3,8 +3,8 @@
 .brand {
   text-align: left;
   padding: 60px 0 100px 0;
-  min-height: calc(100vh - 132px);
-  background-color: #f0f2f5;
+  // min-height: calc(100vh - 132px);
+  // background-color: #f0f2f5;
   h1 {
     display: inline-block;
     margin-bottom: 45px;
@@ -57,7 +57,7 @@
     }
   }
   .link {
-    font-weight: bold;
+    font-weight: 600;
     color: #6330DD;
     text-decoration: underline;
     margin-left: 10px;

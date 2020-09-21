@@ -60,7 +60,7 @@ class Brand extends Component {
                                     <p>
                                         <img alt="download"  className={styles.downloadBtn} src={downloadBtn} />
                                         {t('brand:download')}
-                                        <a href="/" className={styles.link}>{t('brand:filename')}</a>
+                                        <a href="/darwinia_brand.zip" download="darwinia_brand.zip" className={styles.link}>{t('brand:filename')}</a>
                                     </p>
                                 </Col>
                                 <Col xs={12}>
