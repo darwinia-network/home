@@ -41,6 +41,13 @@ html {
   font-style: normal;
 }
 
+@font-face {
+  font-family: Rajdhani;
+  src: url('./style/font/Rajdhani-Bold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+}
+
 .navbar-toggler {
   border: none;
 
@@ -123,6 +130,7 @@ html {
   border-color: #080C20;
   padding-left: 55px;
   padding-right: 55px;
+  font-weight: bold;
 }
 .btn-white {
   color: #fff;
@@ -130,6 +138,25 @@ html {
   border-color: #201550;
   padding-left: 60px;
   padding-right: 60px;
+  font-weight: bold;
+}
+
+.carousel {
+  .carousel-indicators {
+    margin-left: 76%;
+    margin-right: 0;
+    justify-content: flex-start;
+    li {
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background-color: #6330DD;
+      opacity: 0.3;
+      &.active {
+        opacity: 1;
+      }
+    }
+  }
 }
 @media (min-width: 576px) {
   .nav-primary-fixed {

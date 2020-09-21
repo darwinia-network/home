@@ -1,10 +1,26 @@
 /* eslint-disable no-script-url */
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { Component } from "react";
-import { Container, Row, Col, InputGroup, FormControl, Button, Form } from 'react-bootstrap'
+import { Container, Row, Col, InputGroup, FormControl, Button, Form, Carousel } from 'react-bootstrap'
 import { PageHeader } from '../../components/PageHeader'
 import { PageFooter } from '../../components/PageFooter'
 // import { GradientHeading } from '../../components/GradientHeading'
+
+import carousel_1 from "./img/carousel/carousel-1.png"
+import carousel_1_en from "./img/carousel/carousel-1-en.png"
+import carousel_2 from "./img/carousel/carousel-2.png"
+import carousel_2_en from "./img/carousel/carousel-2-en.png"
+import carousel_3 from "./img/carousel/carousel-3.png"
+import carousel_3_en from "./img/carousel/carousel-3-en.png"
+
+import person_1 from "../Community/img/person_1.png"
+import person_2 from "../Community/img/person_2.png"
+import person_3 from "../Community/img/person_3.png"
+import person_4 from "../Community/img/person_4.png"
+import person_5 from "../Community/img/person_5.png"
+import person_6 from "../Community/img/person_6.png"
+import person_7 from "../Community/img/person_7.png"
+
 import styles from './style.module.scss'
 import architecture from './img/architecture.png'
 import architecture_en from './img/architecture-en.png'
@@ -12,12 +28,13 @@ import architecture_mobile from './img/architecture-mobile.png'
 import architecture_mobile_en from './img/architecture-mobile-en.png'
 import architecture_solo from './img/architecture-solo.svg'
 import architecture_chain from './img/architecture-chain.svg'
-
 import economic from './img/economic.png'
 import economic_en from './img/economic-en.png'
 
-import application_1 from './img/application/application-1.png'
-import application_2 from './img/application/application-2.png'
+import app_1 from "./img/application/app-1.png"
+import app_2 from "./img/application/app-2.png"
+// import application_1 from './img/application/application-1.png'
+// import application_2 from './img/application/application-2.png'
 
 import roadmap from './img/roadmap.png'
 import roadmapMobile from './img/roadmap-m.png'
@@ -59,10 +76,10 @@ import partner16 from './img/partner/partner-16.png'
 import partner17 from './img/partner/partner-17.png'
 import partner18 from './img/partner/partner-18.png'
 
-import newsEthRelay from './img/news/news-eth-relay.png'
-import news1 from './img/news/news-1.jpg'
-import news2 from './img/news/news-2.jpg'
-import news0 from './img/news/news-0.jpg'
+import news6 from "../Media/img/news6.png"
+import news7 from "../Media/img/news7.png"
+import news8 from "../Media/img/news8.png"
+import news9 from "../Media/img/news9.png"
 
 import axios from 'axios'
 import archorsComponent from '../../components/anchorsComponent'
@@ -288,7 +305,36 @@ class Home extends Component {
             <div>
                 {/* <a href="#top"></a> */}
                 <PageHeader href="#top" transparent={true} />
-                <div className={styles.launchBanner}>
+                {/* <div className={styles.launchBanner}>
+                    <img src={launchBanner} alt="banner"/>
+                </div> */}
+                <div className={styles.carousel}>
+                    <Carousel controls={false} interval={5000} indicators={false}>
+                        <Carousel.Item>
+                            <div className={styles.carouselItem}>
+                                <a target="_blank" rel="noopener noreferrer" className={styles.imgRatio} href={t('media:recom_3_link')}>
+                                    {i18n.language.indexOf('en') > -1 ? <img alt="news" src={carousel_1_en}/> :
+                                    <img alt="news" src={carousel_1}/>}
+                                </a>   
+                            </div>
+                        </Carousel.Item>
+                        <Carousel.Item>
+                            <div className={styles.carouselItem}>
+                                <a target="_blank" rel="noopener noreferrer" className={styles.imgRatio} href={t('media:recom_3_link')}>
+                                    {i18n.language.indexOf('en') > -1 ? <img alt="news" src={carousel_2_en}/> :
+                                    <img alt="news" src={carousel_2}/>}
+                                </a>   
+                            </div>
+                        </Carousel.Item>
+                        <Carousel.Item>
+                            <div className={styles.carouselItem}>
+                                <a target="_blank" rel="noopener noreferrer" className={styles.imgRatio} href={t('media:recom_3_link')}>
+                                    {i18n.language.indexOf('en') > -1 ? <img alt="news" src={carousel_3_en}/> :
+                                    <img alt="news" src={carousel_3}/>}
+                                </a>   
+                            </div>
+                        </Carousel.Item>
+                    </Carousel>
                 </div>
 
                 <div className={styles.themeContainer}>
@@ -498,12 +544,12 @@ class Home extends Component {
                         </div>
                         <Row className={`d-flex justify-content-center`}>
                             <Col xs={12} md={6}>
-                                <img alt="Token DEX" src={application_1} />
+                                <img alt="Token DEX" src={app_1} />
                                 <h3>{t('home_page:application_block_title_1')}</h3>
                                 <p>{t('home_page:application_block_content_1')}</p>
                             </Col>
                             <Col xs={12} md={6}>
-                                <img alt="NFT Market" src={application_2} />
+                                <img alt="NFT Market" src={app_2} className={styles.secondImg}/>
                                 <h3>{t('home_page:application_block_title_2')}</h3>
                                 <p>{t('home_page:application_block_content_2')}</p>
                             </Col>
@@ -641,19 +687,28 @@ class Home extends Component {
                     </Container>
                 </div>
 
-                <div className={`${styles.teamContainer} d-flex justify-content-center align-items-center`}>
-                    <Container className={'text-center'}>
+                <div className={styles.teamContainer}>
+                    <Container>
                         <Row>
-                            <Col>
-                                <h1 className={`reveal-h1 ${styles.fontH1}`}>{t('home_page:dev_title')}</h1>
-                                <div className={styles.lineH2}></div>
-                                <p>{t('home_page:dev_content')}</p>
-                                <Button variant="transparent" target="_blank" href={t('header:testnet_url')}
-                                    className={styles.button}>{t('home_page:dev_join')}</Button>
-                                {/* <p className={styles.link}>
-                                    <a href="https://www.itering.io/">{t('home_page:dev_link')}</a>
-                                </p> */}
-
+                            <Col xs={1}></Col>
+                            <Col xs={10} className={`${styles.content}`}>
+                                <h1 className={`reveal-h1 ${styles.title} ${styles.fontH1}`}>
+                                    {t('community:contributors')}
+                                </h1>
+                                <div className={`${styles.persons}`}>
+                                    <img alt="person" src={person_1}/>
+                                    <img alt="person" src={person_2}/>
+                                    <img alt="person" src={person_3}/>
+                                    <img alt="person" src={person_4}/>
+                                    <img alt="person" src={person_5}/>
+                                    <img alt="person" src={person_6}/>
+                                    <img alt="person" src={person_7}/>
+                                </div>
+                                <p>
+                                    {t('community:invite')}
+                                </p>
+                                <Button variant="transparent" target="_blank" href="/ambassador"
+                                className={styles.button}>{t('community:join_community')}</Button>
                             </Col>
                         </Row>
                     </Container>
@@ -677,27 +732,59 @@ class Home extends Component {
                         </div>
                         <Row className={`d-flex justify-content-center text-left`}>
                             <Col xs={10} md={4} lg={3}>
-                                <a className={styles.imgUrl} target="_blank" rel="noopener noreferrer" href={t('home_page:news_link_eth_relay')}>
-                                    <img alt="news" src={newsEthRelay}/>
-                                    <h3>{t('home_page:news_title_eth_relay')}</h3>
+                                <a className={styles.imgUrl} target="_blank" rel="noopener noreferrer" href={t('media:news_9_link')}>
+                                    <div className={styles.imgRatio}>
+                                        <img alt="news" src={news9}/>
+                                    </div>
+                                    <div className={styles.mediaInfo}>
+                                        <span>{t('media:more_title')}</span>
+                                        <span className={styles.mediaTime}>{t('media:news_9_time')}</span>
+                                    </div>
+                                    <div className={styles.mediaDesc}>
+                                        {t('media:news_9_title')}
+                                    </div>
                                 </a>
                             </Col>
                             <Col xs={10} md={4} lg={3}>
-                                <a className={styles.imgUrl} target="_blank" rel="noopener noreferrer" href={t('home_page:news_link_1')}>
-                                    <img alt="news" src={news1}/>
-                                    <h3>{t('home_page:news_title_1')}</h3>
+                                <a className={styles.imgUrl} target="_blank" rel="noopener noreferrer" href={t('media:news_8_link')}>
+                                    <div className={styles.imgRatio}>
+                                        <img alt="news" src={news8}/>
+                                    </div>
+                                    <div className={styles.mediaInfo}>
+                                        <span>{t('media:more_title')}</span>
+                                        <span className={styles.mediaTime}>{t('media:news_8_time')}</span>
+                                    </div>
+                                    <div className={styles.mediaDesc}>
+                                        {t('media:news_8_title')}
+                                    </div>
                                 </a>
                             </Col>
                             <Col xs={10} md={4} lg={3}>
-                                <a className={styles.imgUrl} target="_blank" rel="noopener noreferrer" href={t('home_page:news_link_2')}>
-                                    <img alt="news" src={news2}/>
-                                    <h3>{t('home_page:news_title_2')}</h3>
+                                <a className={styles.imgUrl} target="_blank" rel="noopener noreferrer" href={t('media:news_7_link')}>
+                                    <div className={styles.imgRatio}>
+                                        <img alt="news" src={news7}/>
+                                    </div>
+                                    <div className={styles.mediaInfo}>
+                                        <span>{t('media:more_title')}</span>
+                                        <span className={styles.mediaTime}>{t('media:news_7_time')}</span>
+                                    </div>
+                                    <div className={styles.mediaDesc}>
+                                        {t('media:news_7_title')}
+                                    </div>
                                 </a>
                             </Col>
                             <Col xs={10} md={4} lg={3}>
-                                <a className={styles.imgUrl} target="_blank" rel="noopener noreferrer" href={t('home_page:news_link_3')}>
-                                    <img alt="news" src={news0}/>
-                                    <h3>{t('home_page:news_title_3')}</h3>
+                                <a className={styles.imgUrl} target="_blank" rel="noopener noreferrer" href={t('media:news_6_link')}>
+                                    <div className={styles.imgRatio}>
+                                        <img alt="news" src={news6}/>
+                                    </div>
+                                    <div className={styles.mediaInfo}>
+                                        <span>{t('media:more_title')}</span>
+                                        <span className={styles.mediaTime}>{t('media:news_6_time')}</span>
+                                    </div>
+                                    <div className={styles.mediaDesc}>
+                                        {t('media:news_6_title')}
+                                    </div>
                                 </a>
                             </Col>
                         </Row>

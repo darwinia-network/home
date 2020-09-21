@@ -48,12 +48,49 @@
 }
 
 .launchBanner {
-  background: url("./img/launch-banner.png") top center no-repeat;
-  background-size: cover;
-  height: 412px;
+  // background: url("./img/launch-banner.png") top center no-repeat;
+  // background-size: cover;
+  // height: 412px;
+  img {
+    width: 100%;
+  }
+}
+.carousel {
+  // margin: 100px 0;
+  .carouselItem {
+    .imgRatio {
+      display: block;
+      padding-bottom: 26%;
+      position: relative;
+      img {
+        position: absolute;
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+      }
+    }
+    .mediaInfo {
+      margin: 10px 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: #6330DD;
+      .mediaTime {
+        font-size: 12px;
+        color: #201550;
+      }
+    }
+    .mediaDesc {
+      font-family: "Rajdhani";
+      font-size: 16px;
+    }
+  }
 }
 
 .themeContainer {
+  background: url("./img/theme-bg.png") top center no-repeat;
+  background-size: cover;
+  // height: 412px;
   .promoteContentArea {
     padding: 200px 0;
 
@@ -253,6 +290,36 @@
   .imgUrl {
     display: inline-block;
     color: $text-main;
+    width: 100%;
+    &:hover {
+      text-decoration: none;
+    }
+  }
+
+  .imgRatio {
+    padding-bottom: 70%;
+    position: relative;
+    img {
+      position: absolute;
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+    }
+  }
+  .mediaInfo {
+    margin: 10px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #6330DD;
+    .mediaTime {
+      font-size: 12px;
+      color: #201550;
+    }
+  }
+  .mediaDesc {
+    font-family: "Rajdhani";
+    font-size: 16px;
   }
 
   .button {
@@ -275,8 +342,21 @@
 .subscribe {
   width: 50%;
 
+  input {
+    border-radius: 0;
+    background-clip: initial;
+    font-weight: bold;
+    font-size: 14px;
+    &::placeholder {
+      color: #6330DD;
+      opacity: 0.3;
+    }
+  }
+
   button {
+    line-height: initial;
     border: 0;
+    border-radius: 0;
     padding-left: 20px;
     padding-right: 20px;
     font-size: 14px;
@@ -289,12 +369,6 @@
 .Landscape {
   width: 100%;
   padding: 1rem;
-}
-
-.homeBannerArea {
-  background: url("./img/banner.png") top center no-repeat;
-  //background-size: auto 100%;
-  background-size: cover;
 }
 
 .fontH1 {
@@ -353,8 +427,11 @@
 }
 
 .architectureContainer {
-  background: url("./img/architecture-bg.svg");
+  background: url("./img/application-bg.png");
   padding: 60px 0 88px 0;
+  // background: url("./img/architecture-bg.png");
+  // background-size: cover;
+  // padding: 70px 0 110px 0;
 
   // height: 782px;
   .fontH1 {
@@ -369,6 +446,10 @@
 
   .archWrapper {
     position: relative;
+    // padding: 0 10%;
+    .opacityBg {
+      position: absolute;
+    }
   }
 
   .anime {
@@ -590,27 +671,39 @@
 .teamContainer {
   background: url("./img/dev-team.png") top center no-repeat;
   background-size: cover;
-  color: #fff;
-  height: 500px;
-
-  p {
-    font-size: 24px;
+  color: #F9FAFC;
+  height: 540px;
+  .content {
+    text-align: center;
   }
-
-  .link {
-    a {
-      color: #fff;
-      text-decoration: underline;
-    }
+  .title {
+    margin-top: 84px;
+    margin-bottom: 40px;
   }
-
+  h1 {
+    font-size: 50px;
+  }
   .button {
+    margin-top: 0;
     background: transparent;
     border: 1px solid #fff;
     color: #fff;
     font-size: 14px;
     padding: 10px 40px;
     border-radius: 0;
+  }
+  .persons {
+    display: flex;
+    justify-content: space-between;
+    img {
+      width: 100px;
+      height: 100px;
+    }
+  }
+  p {
+    font-size: 24px;
+    margin-top: 53px;
+    margin-bottom: 43px;
   }
 }
 
@@ -748,6 +841,7 @@
     width: 100%;
 
     button {
+      line-height: initial;
       margin-top: 20px;
       background: linear-gradient(315deg, rgba(254, 56, 118, 1) 0%, rgba(124, 48, 221, 1) 71%, rgba(58, 48, 221, 1) 100%);
       border-radius: 4px;
