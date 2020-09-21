@@ -253,6 +253,9 @@
   .imgUrl {
     display: inline-block;
     color: $text-main;
+    &:hover {
+      text-decoration: none;
+    }
   }
 
   .button {

@@ -22,6 +22,10 @@
   .imgUrl{
     display: inline-block;
     color: $text-main;
+    width: 100%;
+    &:hover {
+      text-decoration: none;
+    }
   }
   .title {
     margin-bottom: 50px;
@@ -34,9 +38,31 @@
     }
   }
   .content {
-    img {
-      width: 100%;
-      margin-bottom: 30px;
+    margin-bottom: 50px;
+    .imgRatio {
+      padding-bottom: 70%;
+      position: relative;
+      img {
+        position: absolute;
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+      }
+    }
+    .mediaInfo {
+      margin: 10px 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: #6330DD;
+      .mediaTime {
+        font-size: 12px;
+        color: #201550;
+      }
+    }
+    .mediaDesc {
+      font-family: "Rajdhani";
+      font-size: 16px;
     }
     // padding: 0 25px 70px 35px;
     box-sizing: border-box;
