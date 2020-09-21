@@ -6,13 +6,22 @@
 }
 
 .lngBtn{
-  width: 24px;
-  height: 24px;
-  background: url("./img/lng.svg") top center no-repeat;
-  background-size: contain;
-  padding: $nav-link-padding-y 0 $nav-link-padding-y $nav-link-padding-x;
-  @extend .extend-link:hover;
-  margin-top: 0px;
+  cursor: pointer;
+  padding: 5px 0;
+  font-size: 18px;
+  font-weight: 600;
+  color: #6330DD;
+  opacity: 0.5;
+  &:hover {
+    opacity: 1;
+  }
+  // width: 24px;
+  // height: 24px;
+  // background: url("./img/lng.svg") top center no-repeat;
+  // background-size: contain;
+  // padding: $nav-link-padding-y 0 $nav-link-padding-y $nav-link-padding-x;
+  // @extend .extend-link:hover;
+  // margin-top: 0px;
 }
 
 .navDraw{
@@ -59,6 +68,14 @@
     .Navbar {
       flex: 1 1 auto;
     }
+    .navTab {
+      color: #6330DD;
+    }
+    .navButton {
+      padding: 7px 17px;
+      background: #6330DD;
+      color: #fff;
+    }
   }
   .ColSub {
     height: 57px;
@@ -67,8 +84,31 @@
       border-bottom: 1px solid #f0ebfc;
     }
     .papers {
-      > div {
+      .paper {
+        display: flex;
+        align-items: center;
+        opacity: 0.5;
         margin-left: 25px;
+        cursor: pointer;
+        color: #6330DD;
+        text-decoration: none;
+        &:hover {
+          opacity: 1;
+        }
+        .tIcon {
+          width: 25px;
+          height: 28px;
+          background: url("./img/t-logo.png") top center no-repeat;
+          background-size: cover;
+          margin-right: 8px;
+        }
+        .gIcon {
+          width: 25px;
+          height: 28px;
+          background: url("./img/g-logo.png") top center no-repeat;
+          background-size: cover;
+          margin-right: 8px;
+        }
       }
     }
   }
