@@ -140,6 +140,24 @@ html {
   padding-right: 60px;
   font-weight: bold;
 }
+
+.carousel {
+  .carousel-indicators {
+    margin-left: 76%;
+    margin-right: 0;
+    justify-content: flex-start;
+    li {
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background-color: #6330DD;
+      opacity: 0.3;
+      &.active {
+        opacity: 1;
+      }
+    }
+  }
+}
 @media (min-width: 576px) {
   .nav-primary-fixed {
     top: -57px !important;
