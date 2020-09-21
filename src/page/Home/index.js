@@ -64,11 +64,6 @@ import news6 from "../Media/img/news6.png"
 import news7 from "../Media/img/news7.png"
 import news8 from "../Media/img/news8.png"
 
-import newsEthRelay from './img/news/news-eth-relay.png'
-import news1 from './img/news/news-1.jpg'
-import news2 from './img/news/news-2.jpg'
-import news0 from './img/news/news-0.jpg'
-
 import axios from 'axios'
 import archorsComponent from '../../components/anchorsComponent'
 import { withTranslation } from "react-i18next";

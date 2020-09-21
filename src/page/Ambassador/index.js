@@ -12,7 +12,10 @@ import styles from "./style.module.scss";
 import banner from './img/banner.png'
 import flow_zh from './img/flow_zh.png'
 import flow from './img/flow.png'
-import media from './img/media.png'
+
+import report8 from "../Media/img/report8.png"
+import news8 from "../Media/img/news8.png"
+import event3 from "../Media/img/event3.jpeg"
 
 class Brand extends Component {
     constructor(props, context) {
@@ -128,34 +131,46 @@ class Brand extends Component {
                                 </div>
                                 <ul className={styles.mediaBlocks}>
                                     <li className={styles.mediaBlock}>
-                                        <img src={media} alt="media" />
-                                        <div className={styles.mediaInfo}>
-                                            <span>{t('ambassador:more_title')}</span>
-                                            <span className={styles.mediaTime}>{t('ambassador:more_time')}</span>
-                                        </div>
-                                        <div className={styles.mediaDesc}>
-                                            {t('ambassador:more_subtitle')}
-                                        </div>
+                                        <a className={styles.imgUrl} rel="noopener noreferrer" target="_blank" href={t('media:report_8_link')}>
+                                            <div className={styles.imgRatio}>
+                                                <img alt="reports" src={report8}/>
+                                            </div>
+                                            <div className={styles.mediaInfo}>
+                                                <span>{t('media:more_title')}</span>
+                                                <span className={styles.mediaTime}>{t('media:report_8_time')}</span>
+                                            </div>
+                                            <div className={styles.mediaDesc}>
+                                                {t('media:report_8_title')}
+                                            </div>
+                                        </a>
                                     </li>
                                     <li className={styles.mediaBlock}>
-                                        <img src={media} alt="media" />
-                                        <div className={styles.mediaInfo}>
-                                            <span>{t('ambassador:more_title')}</span>
-                                            <span className={styles.mediaTime}>{t('ambassador:more_time')}</span>
-                                        </div>
-                                        <div className={styles.mediaDesc}>
-                                            {t('ambassador:more_subtitle')}
-                                        </div>
+                                        <a className={styles.imgUrl} rel="noopener noreferrer" target="_blank" href={t('media:news_8_link')}>
+                                            <div className={styles.imgRatio}>
+                                                <img alt="news" src={news8}/>
+                                            </div>
+                                            <div className={styles.mediaInfo}>
+                                                <span>{t('media:more_title')}</span>
+                                                <span className={styles.mediaTime}>{t('media:news_8_time')}</span>
+                                            </div>
+                                            <div className={styles.mediaDesc}>
+                                                {t('media:news_8_title')}
+                                            </div>
+                                        </a>
                                     </li>
                                     <li className={styles.mediaBlock}>
-                                        <img src={media} alt="media" />
-                                        <div className={styles.mediaInfo}>
-                                            <span>{t('ambassador:more_title')}</span>
-                                            <span className={styles.mediaTime}>{t('ambassador:more_time')}</span>
-                                        </div>
-                                        <div className={styles.mediaDesc}>
-                                            {t('ambassador:more_subtitle')}
-                                        </div>
+                                        <a className={styles.imgUrl} rel="noopener noreferrer" target="_blank" href={t('media:event_3_link')}>
+                                            <div className={styles.imgRatio}>
+                                                <img alt="events" src={event3}/>
+                                            </div>
+                                            <div className={styles.mediaInfo}>
+                                                <span>{t('media:more_title')}</span>
+                                                <span className={styles.mediaTime}>{t('media:event_3_time')}</span>
+                                            </div>
+                                            <div className={styles.mediaDesc}>
+                                                {t('media:event_3_title')}
+                                            </div>
+                                        </a>
                                     </li>
                                 </ul>
                             </Col>
