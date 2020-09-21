@@ -1,5 +1,5 @@
 import React, {Component} from "react";
-import {Navbar, Nav, Form, Container, Row, Col} from 'react-bootstrap'
+import {Navbar, Nav, Form, Container, Row, Col, Dropdown} from 'react-bootstrap'
 import {disableBodyScroll, enableBodyScroll, clearAllBodyScrollLocks} from 'body-scroll-lock';
 import {withTranslation} from "react-i18next";
 import $ from "jquery";
@@ -9,29 +9,29 @@ import logo from './img/logo-darwinia.png'
 import closeIcon from './img/close.png'
 // import github from './img/github.svg'
 
-// class CustomToggle extends React.Component {
-//     constructor(props, context) {
-//         super(props, context);
+class CustomToggle extends React.Component {
+    constructor(props, context) {
+        super(props, context);
 
-//         this.handleClick = this.handleClick.bind(this);
-//     }
+        this.handleClick = this.handleClick.bind(this);
+    }
 
 
-//     handleClick(e) {
-//         document.querySelector('body').click()
-//         e.preventDefault();
+    handleClick(e) {
+        document.querySelector('body').click()
+        e.preventDefault();
 
-//         this.props.onClick(e);
-//     }
+        this.props.onClick(e);
+    }
 
-//     render() {
-//         return (
-//             <div className="nav-link" onMouseEnter={this.handleClick} onClick={this.handleClick}>
-//                 {this.props.children}
-//             </div>
-//         );
-//     }
-// }
+    render() {
+        return (
+            <div onClick={this.handleClick}>
+                {this.props.children}
+            </div>
+        );
+    }
+}
 
 class PageHeader extends Component {
     constructor(props, context) {
@@ -144,11 +144,21 @@ class PageHeader extends Component {
                     <Row className={''}>
                         <Col xs={12} className={`${styles.ColSub} navbar--secondary`}>
                             <div className={`d-flex align-items-center justify-content-between ${styles.NavMenu}`}>
-                                <div onClick={() => this.changeLng('en-us')}>en</div>
-                                <div onClick={() => this.changeLng('zh-cn')}>zh</div>
+                                <Dropdown>
+                                    <Dropdown.Toggle as={CustomToggle} id="dropdown-custom-components">
+                                        <div className={styles.lngBtn}>{t('header:lang_demo')}</div>
+                                    </Dropdown.Toggle>
+                                    <Dropdown.Menu className=' animated fadeIn faster'>
+                                        <Dropdown.Item onClick={() => this.changeLng('zh-cn')} eventKey="4.1">
+                                            简体中文
+                                        </Dropdown.Item>
+                                        <Dropdown.Item eventKey="4.2"
+                                                    onClick={() => this.changeLng('en-us')}>English</Dropdown.Item>
+                                    </Dropdown.Menu>
+                                </Dropdown>
                                 <div className={`d-flex align-items-center ${styles.papers}`}>
-                                    <div>{t('header:genepaper')}</div>
-                                    <div>{t('header:techpaper')}</div>
+                                    <a target="_blank" rel="noopener noreferrer" href={t('header:genepaper_url')} className={styles.paper}><div className={styles.gIcon}/>{t('header:genepaper')}</a>
+                                    <a target="_blank" rel="noopener noreferrer" href={t('header:techpaper_url')} className={styles.paper}><div className={styles.tIcon}/>{t('header:techpaper')}</a>
                                 </div>
                             </div>
                             {/* <div className={`${styles.ColLine}`}></div> */}
@@ -167,11 +177,11 @@ class PageHeader extends Component {
                                     </Nav>
                                     <Form inline>
                                         {/* <Nav.Link href="/">{t('header:home')}</Nav.Link> */}
-                                        <Nav.Link href="/tech">{t('header:tech')}</Nav.Link>
-                                        <Nav.Link href="/community">{t('header:community')}</Nav.Link>
-                                        <Nav.Link href="/model">{t('header:economical_model')}</Nav.Link>
-                                        <Nav.Link href="/media">{t('header:media')}</Nav.Link>
-                                        <Nav.Link target={'_blank'} href="https://www.itering.io/about">{t('header:hiring')}</Nav.Link>
+                                        <Nav.Link className={styles.navTab} href="/tech">{t('header:tech')}</Nav.Link>
+                                        <Nav.Link className={styles.navTab} href="/community">{t('header:community')}</Nav.Link>
+                                        <Nav.Link className={styles.navTab} href="/model">{t('header:economical_model')}</Nav.Link>
+                                        <Nav.Link className={styles.navTab} href="/media">{t('header:media')}</Nav.Link>
+                                        <Nav.Link className={styles.navButton} target={'_blank'} href="https://www.itering.io/about">{t('header:hiring')}</Nav.Link>
                                         {/* {i18n.language.indexOf('en') > -1 ?
                                         <Nav.Link target={'_blank'}
                                         href="https://evolution.l2me.com/darwinia/Darwinia_Genepaper_EN.pdf">{t('header:genepaper')}</Nav.Link>

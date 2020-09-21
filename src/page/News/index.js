@@ -16,6 +16,7 @@ import news5 from "../Media/img/news5.png"
 import news6 from "../Media/img/news6.png"
 import news7 from "../Media/img/news7.png"
 import news8 from "../Media/img/news8.png"
+import news9 from "../Media/img/news9.png"
 
 class News extends Component {
     constructor(props, context) {
@@ -40,6 +41,20 @@ class News extends Component {
                             <h1 className={`${styles.gradientText}`}>{t('media:news')}</h1>
                         </div>
                         <Row>
+                            <Col md={3} className={styles.content}>
+                                <a className={styles.imgUrl} rel="noopener noreferrer" target="_blank" href={t('media:news_9_link')}>
+                                    <div className={styles.imgRatio}>
+                                        <img alt="news" src={news9}/>
+                                    </div>
+                                    <div className={styles.mediaInfo}>
+                                        <span>{t('media:more_title')}</span>
+                                        <span className={styles.mediaTime}>{t('media:news_9_time')}</span>
+                                    </div>
+                                    <div className={styles.mediaDesc}>
+                                        {t('media:news_9_title')}
+                                    </div>
+                                </a>
+                            </Col>
                             <Col md={3} className={styles.content}>
                                 <a className={styles.imgUrl} rel="noopener noreferrer" target="_blank" href={t('media:news_8_link')}>
                                     <div className={styles.imgRatio}>
