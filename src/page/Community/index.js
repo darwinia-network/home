@@ -270,7 +270,6 @@ class Brand extends Component {
                             </Col>
                         </Row>
                     </Container>
-
                 </div>
 
                 <PageFooter/>
