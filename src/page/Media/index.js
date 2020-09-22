@@ -51,7 +51,7 @@ class Brand extends Component {
                         <Row>
                             <Col xs={12} className={`${styles.content}`}>
                                 <div className={`media-carousel ${styles.carousel}`}>
-                                    <Carousel controls={false} interval={0}>
+                                    <Carousel controls={false} interval={5000}>
                                         <Carousel.Item>
                                             <div className={styles.carouselItem}>
                                                 <Container>
