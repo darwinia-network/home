@@ -6,12 +6,12 @@ import { PageHeader } from '../../components/PageHeader'
 import { PageFooter } from '../../components/PageFooter'
 // import { GradientHeading } from '../../components/GradientHeading'
 
-import carousel_1 from "./img/carousel/carousel-1.png"
-import carousel_1_en from "./img/carousel/carousel-1-en.png"
-import carousel_2 from "./img/carousel/carousel-2.png"
-import carousel_2_en from "./img/carousel/carousel-2-en.png"
-import carousel_3 from "./img/carousel/carousel-3.png"
-import carousel_3_en from "./img/carousel/carousel-3-en.png"
+import carousel_1 from "./img/carousel/carousel-1.jpg"
+import carousel_1_en from "./img/carousel/carousel-1-en.jpg"
+import carousel_2 from "./img/carousel/carousel-2.jpg"
+import carousel_2_en from "./img/carousel/carousel-2-en.jpg"
+import carousel_3 from "./img/carousel/carousel-3.jpg"
+import carousel_3_en from "./img/carousel/carousel-3-en.jpg"
 
 import person_1 from "../Community/img/person_1.png"
 import person_2 from "../Community/img/person_2.png"
@@ -309,7 +309,7 @@ class Home extends Component {
                     <img src={launchBanner} alt="banner"/>
                 </div> */}
                 <div className={styles.carousel}>
-                    <Carousel controls={false} interval={5000} indicators={false}>
+                    <Carousel controls={false} interval={5000} indicators={true}>
                         <Carousel.Item>
                             <div className={styles.carouselItem}>
                                 <a target="_blank" rel="noopener noreferrer" className={styles.imgRatio} href={t('media:recom_3_link')}>
