@@ -37,6 +37,14 @@ import app_2 from "./img/application/app-2.png"
 // import application_2 from './img/application/application-2.png'
 
 import roadmap from './img/roadmap.png'
+import roadmapCur from './img/roadmap/roadmap-cur.png'
+import roadmapLine from './img/roadmap/roadmap-line.png'
+import roadmapItem1 from './img/roadmap/roadmap-item-1.png'
+import roadmapItem2 from './img/roadmap/roadmap-item-2.png'
+import roadmapItem3 from './img/roadmap/roadmap-item-3.png'
+import roadmapItem4 from './img/roadmap/roadmap-item-4.png'
+import roadmapItem5 from './img/roadmap/roadmap-item-5.png'
+import roadmapItem6 from './img/roadmap/roadmap-item-6.png'
 import roadmapMobile from './img/roadmap-m.png'
 
 // import key1 from './img/key/key-1.png'
@@ -227,10 +235,17 @@ class Home extends Component {
 
     addScrollReveal = () => {
         scrollreveal({
-            // reset: true,
             mobile: false
         }).reveal('.reveal-h1', { 
-            distance: '50px'
+            distance: '50px',
+            // // reset: true,
+            // duration: 1000,
+            useDelay: "onload",
+            delay: 500,
+            easing: 'ease-in-out',
+            viewFactor: 0.33,
+            // reset: true,
+            // init: true
         });
     }
 
@@ -626,55 +641,93 @@ class Home extends Component {
                             </Row>
                         </div>
                         <div className={`${styles.content} hidden-xs`}>
-                            <Row className={`text-center ${styles.label} ${styles.status}`}>
+                            <Row className={`text-center ${styles.status}`}>
                                 <Col>
                                     <p>2019-07</p>
-                                    <p>Launched</p>
                                 </Col>
+                                <Col className={styles.holderCol}></Col>
                                 <Col className={styles.crayfishCol}>
                                     <p>2019-09</p>
-                                    <p>Launched</p>
                                 </Col>
+                                <Col className={styles.holderCol}></Col>
                                 <Col>
                                     <p>2019-11</p>
-                                    <p>Launched</p>
                                 </Col>
+                                <Col className={styles.holderCol}></Col>
                                 <Col>
-                                    <p>2020-Q1</p>
-                                    <p>Launched</p>
+                                    <p>2020-Q2</p>
                                 </Col>
+                                <Col className={styles.holderCol}></Col>
                                 <Col className={styles.mainnetCol}>
                                     <p>2020-Q3</p>
-                                    <p></p>
                                 </Col>
+                                <Col className={styles.holderCol}></Col>
                                 <Col className={styles.lastCol}>
-                                    <p>2020 Q3-Q4</p>
-                                    <p></p>
+                                    <p>2020-Q4</p>
                                 </Col>
                             </Row>
-                            <img alt="roadmap" src={roadmap} />
+                            <Row className={`text-center ${styles.roadmapRow}`}>
+                                <Col>
+                                    <img alt="roadmap" src={roadmapItem1} />
+                                </Col>
+                                <Col className={styles.holderCol}>
+                                    <img alt="roadmap" src={roadmapLine} />
+                                </Col>
+                                <Col className={styles.crayfishCol}>
+                                    <img alt="roadmap" src={roadmapItem2} />
+                                </Col>
+                                <Col className={styles.holderCol}>
+                                    <img alt="roadmap" src={roadmapLine} />
+                                </Col>
+                                <Col>
+                                    <img alt="roadmap" src={roadmapItem3} />
+                                </Col>
+                                <Col className={styles.holderCol}>
+                                    <img alt="roadmap" src={roadmapLine} />
+                                </Col>
+                                <Col>
+                                    <img alt="roadmap" src={roadmapItem4} />
+                                </Col>
+                                <Col className={styles.holderCol}>
+                                    <img alt="roadmap" src={roadmapLine} />
+                                </Col>
+                                <Col className={styles.mainnetCol}>
+                                    <img alt="roadmap" src={roadmapItem5} />
+                                </Col>
+                                <Col className={`${styles.curCol} ${styles.holderCol}`}>
+                                    <img alt="roadmap" src={roadmapCur} />
+                                </Col>
+                                <Col className={styles.lastCol}>
+                                    <img alt="roadmap" src={roadmapItem6} />
+                                </Col>
+                            </Row>
                             <Row className={`text-center ${styles.label}`}>
                                 <Col>
                                     <p>{t('home_page:roadmap_1_name')}</p>
                                     <p>{t('home_page:roadmap_1_milestone')}</p>
                                 </Col>
+                                <Col className={styles.holderCol}></Col>
                                 <Col className={styles.crayfishCol}>
                                     <p>{t('home_page:roadmap_2_name')}</p>
                                     <p>{t('home_page:roadmap_2_milestone')}</p>
                                 </Col>
+                                <Col className={styles.holderCol}></Col>
                                 <Col>
                                     <p>{t('home_page:roadmap_3_name')}</p>
                                     <p>{t('home_page:roadmap_3_milestone')}</p>
                                 </Col>
+                                <Col className={styles.holderCol}></Col>
                                 <Col>
                                     <p>{t('home_page:roadmap_4_name')}</p>
                                     <p>{t('home_page:roadmap_4_milestone')}</p>
                                 </Col>
+                                <Col className={styles.holderCol}></Col>
                                 <Col className={styles.mainnetCol}>
                                     <p>{t('home_page:roadmap_5_name')}</p>
                                     <p>{t('home_page:roadmap_5_milestone')}</p>
                                 </Col>
-                                <Col className={`${styles.lastCol} d-flex justify-content-center align-items-center`}>
+                                <Col className={styles.holderCol}></Col>
+                                <Col className={`${styles.lastCol}`}>
                                     <p>{t('home_page:roadmap_6_name')}</p>
                                     <p>{t('home_page:roadmap_6_milestone')}</p>
                                 </Col>
