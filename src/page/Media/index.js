@@ -30,7 +30,6 @@ import videos from "../Media/img/videos.png"
 import video11 from "../Media/img/video11.jpg"
 import video10 from "../Media/img/video10.jpg"
 import video9 from "../Media/img/video9.jpg"
-import placeholder2 from "./img/placeholder_2.png"
 class Brand extends Component {
     constructor(props, context) {
         super(props, context);
@@ -51,7 +50,7 @@ class Brand extends Component {
                     <Container>
                         <Row>
                             <Col xs={12} className={`${styles.content}`}>
-                                <div className={styles.carousel}>
+                                <div className={`media-carousel ${styles.carousel}`}>
                                     <Carousel controls={false} interval={0}>
                                         <Carousel.Item>
                                             <div className={styles.carouselItem}>

@@ -143,9 +143,6 @@ html {
 
 .carousel {
   .carousel-indicators {
-    margin-left: 76%;
-    margin-right: 0;
-    justify-content: flex-start;
     li {
       width: 14px;
       height: 14px;
@@ -157,6 +154,16 @@ html {
       }
     }
   }
+}
+.media-carousel {
+  .carousel {
+    .carousel-indicators {
+      margin-left: 76%;
+      margin-right: 0;
+      justify-content: flex-start;
+    }
+  }
+
 }
 @media (min-width: 576px) {
   .nav-primary-fixed {
