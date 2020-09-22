@@ -6,8 +6,6 @@ import {PageFooter} from '../../components/PageFooter'
 import archorsComponent from '../../components/anchorsComponent'
 import {withTranslation} from "react-i18next";
 import styles from "./style.module.scss";
-import GradientHeading from "../../components/GradientHeading/GradientHeading";
-
 
 import report8 from "../Media/img/report8.png"
 import news8 from "../Media/img/news8.png"
