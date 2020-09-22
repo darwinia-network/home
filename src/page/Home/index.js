@@ -36,7 +36,6 @@ import app_2 from "./img/application/app-2.png"
 // import application_1 from './img/application/application-1.png'
 // import application_2 from './img/application/application-2.png'
 
-import roadmap from './img/roadmap.png'
 import roadmapCur from './img/roadmap/roadmap-cur.png'
 import roadmapLine from './img/roadmap/roadmap-line.png'
 import roadmapItem1 from './img/roadmap/roadmap-item-1.png'
