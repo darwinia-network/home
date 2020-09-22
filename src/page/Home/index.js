@@ -309,7 +309,7 @@ class Home extends Component {
                     <img src={launchBanner} alt="banner"/>
                 </div> */}
                 <div className={styles.carousel}>
-                    <Carousel controls={false} interval={5000} indicators={false}>
+                    <Carousel controls={false} interval={5000} indicators={true}>
                         <Carousel.Item>
                             <div className={styles.carouselItem}>
                                 <a target="_blank" rel="noopener noreferrer" className={styles.imgRatio} href={t('media:recom_3_link')}>
