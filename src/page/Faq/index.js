@@ -40,12 +40,73 @@ class Faq extends Component {
                                 <div className={styles.lineH1}></div>
 
                                 <h4>{t('faq_page:faq_1_title')}</h4>
-                                <p>{t('faq_page:faq_1_content')}</p>
-                                <p>{t('faq_page:faq_1_content')}</p>
+                                <p>{t('faq_page:faq_1_content_1')}</p>
+                                <p>{t('faq_page:faq_1_content_2')}</p>
 
-                                <h4>{t('faq_page:faq_1_title')}</h4>
-                                <p>{t('faq_page:faq_1_content')}</p>
-                                <p>{t('faq_page:faq_1_content')}</p>
+                                <h4>{t('faq_page:faq_2_title')}</h4>
+                                <p>{t('faq_page:faq_2_content_1')}</p>
+                                <p>{t('faq_page:faq_2_content_2')}</p>
+                                <p>{t('faq_page:faq_2_content_3')}</p>
+
+                                <h4>{t('faq_page:faq_3_title')}</h4>
+                                <p>{t('faq_page:faq_3_content')}</p>
+
+                                <h4>{t('faq_page:faq_4_title')}</h4>
+                                <p>{t('faq_page:faq_4_content')}</p>
+                                
+                                <h4>{t('faq_page:faq_5_title')}</h4>
+                                <p>{t('faq_page:faq_5_content_1')}</p>
+                                <p>{t('faq_page:faq_5_content_2')}</p>
+                                
+                                <h4>{t('faq_page:faq_6_title')}</h4>
+                                <p>{t('faq_page:faq_6_content')}</p>
+
+                                <h4>{t('faq_page:faq_7_title')}</h4>
+                                <p>{t('faq_page:faq_7_content')}</p>
+
+                                <h4>{t('faq_page:faq_8_title')}</h4>
+                                <p>{t('faq_page:faq_8_content')}</p>
+
+                                <h4>{t('faq_page:faq_9_title')}</h4>
+                                <p>{t('faq_page:faq_9_content_1')}</p>
+                                <p>{t('faq_page:faq_9_content_2')}</p>
+
+                                <h4>{t('faq_page:faq_10_title')}</h4>
+                                <p>{t('faq_page:faq_10_content_1')}</p>
+                                <p>{t('faq_page:faq_10_content_2')}</p>
+                                <p>{t('faq_page:faq_10_content_3')}</p>
+
+                                <h4>{t('faq_page:faq_11_title')}</h4>
+                                <p>{t('faq_page:faq_11_content')}</p>
+
+                                <h4>{t('faq_page:faq_12_title')}</h4>
+                                <p>{t('faq_page:faq_12_content')}</p>
+
+                                <h4>{t('faq_page:faq_13_title')}</h4>
+                                <p>{t('faq_page:faq_13_content')}</p>
+
+                                <h4>{t('faq_page:faq_14_title')}</h4>
+                                <p>{t('faq_page:faq_14_content')}</p>
+                                <p><a target="_blank" rel="noopener noreferrer" href={t('faq_page:faq_14_content_link')}>{t('faq_page:faq_14_content_link')}</a></p>
+
+                                <h4>{t('faq_page:faq_15_title')}</h4>
+                                <p>{t('faq_page:faq_15_content')}</p>
+
+                                <h4>{t('faq_page:faq_16_title')}</h4>
+                                <p>{t('faq_page:faq_16_content_1')}</p>
+                                <p>{t('faq_page:faq_16_content_2')}</p>
+                                <p>{t('faq_page:faq_16_content_3')}</p>
+                                <p>{t('faq_page:faq_16_content_4')}</p>
+                                <p>{t('faq_page:faq_16_content_5')}</p>
+                                <p>{t('faq_page:faq_16_content_6')}</p>
+                                <p>{t('faq_page:faq_16_content_7')}</p>
+                                <p>{t('faq_page:faq_16_content_8')}</p>
+                                <p>{t('faq_page:faq_16_content_9')}</p>
+                                <p>{t('faq_page:faq_16_content_10')}</p>
+                                <p>{t('faq_page:faq_16_content_11')}</p>
+
+                                <h4>{t('faq_page:faq_17_title')}</h4>
+                                <p>{t('faq_page:faq_17_content')}</p>
 
                                 <div className={styles.lineH1}></div>
                                 <div>
