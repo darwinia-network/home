@@ -1,7 +1,7 @@
 /* eslint-disable no-script-url */
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { Component } from "react";
-import { Container, Row, Col, InputGroup, FormControl, Button, Form, Carousel } from 'react-bootstrap'
+import { Container, Row, Col, InputGroup, FormControl, Button, Form, Carousel, OverlayTrigger, Tooltip } from 'react-bootstrap'
 import { PageHeader } from '../../components/PageHeader'
 import { PageFooter } from '../../components/PageFooter'
 // import { GradientHeading } from '../../components/GradientHeading'
@@ -81,7 +81,6 @@ import partner14 from './img/partner/partner-14.png'
 import partner15 from './img/partner/partner-15.png'
 import partner16 from './img/partner/partner-16.png'
 import partner17 from './img/partner/partner-17.png'
-import partner18 from './img/partner/partner-18.png'
 
 import news6 from "../Media/img/news6.png"
 import news7 from "../Media/img/news7.png"
@@ -109,88 +108,83 @@ class Home extends Component {
                 name: 'Polkadot',
                 url: 'https://polkadot.network'
             },
-            'web3': {
-                logo: partner2,
-                name: 'Web3 Foundation',
-                url: 'https://web3.foundation'
-            },
             'parity': {
-                logo: partner3,
+                logo: partner2,
                 name: 'Parity',
                 url: 'https://www.parity.io'
             },
             'maker': {
-                logo: partner4,
+                logo: partner3,
                 name: 'MAKER',
                 url: 'https://makerdao.com'
             },
             'snz': {
-                logo: partner5,
+                logo: partner4,
                 name: 'SNZ Holding',
                 url: 'https://snzholding.com'
             },
             'hashkey': {
-                logo: partner6,
+                logo: partner5,
                 name: 'HashKey',
                 url: 'https://www.hashkey.com'
             },
             'polkabase': {
-                logo: partner7,
+                logo: partner6,
                 name: 'Polkabase',
                 url: 'https://www.polkabase.com'
             },
             'bihu': {
-                logo: partner8,
+                logo: partner7,
                 name: 'Bihu',
                 url: 'https://bihu.com'
             },
             'evolutionland': {
-                logo: partner9,
+                logo: partner8,
                 name: 'Evolution Land',
                 url: 'https://www.evolution.land'
             },
             'polkaworld': {
-                logo: partner10,
+                logo: partner9,
                 name: 'Polka World',
                 url: 'https://www.polkaworld.org'
             },
             'imtoken': {
-                logo: partner11,
+                logo: partner10,
                 name: 'imToken',
                 url: 'https://token.im'
             },
             'mathwallet': {
-                logo: partner12,
+                logo: partner11,
                 name: 'Math Wallet',
                 url: 'https://www.mathwallet.org'
             },
             'cobowallet': {
-                logo: partner13,
+                logo: partner12,
                 name: 'Cobo Wallet',
                 url: 'https://cobo.com'
             },
             'polkawallet': {
-                logo: partner14,
+                logo: partner13,
                 name: 'Polka Wallet',
                 url: 'https://polkawallet.io'
             },
             'sssnodes': {
-                logo: partner15,
+                logo: partner14,
                 name: 'SSSnodes',
                 url: 'http://sssnodes.com'
             },
             'digital': {
-                logo: partner16,
+                logo: partner15,
                 name: 'Digital Renaissance',
                 url: 'http://drf.ee'
             },
             'ddex': {
-                logo: partner17,
+                logo: partner16,
                 name: 'DDEX',
                 url: 'https://ddex.io'
             },
             'otcmaker': {
-                logo: partner18,
+                logo: partner17,
                 name: 'OTCMAKER',
                 url: 'https://www.otcmaker.com'
             }
@@ -222,7 +216,7 @@ class Home extends Component {
 
     componentDidMount() {
         archorsComponent();
-        this.addScrollReveal();
+        // this.addScrollReveal();
         this.detectMetaMaskTimer = setTimeout(() => {
             this.detectMetaMask();
         }, 1500);
@@ -322,7 +316,7 @@ class Home extends Component {
                 {/* <div className={styles.launchBanner}>
                     <img src={launchBanner} alt="banner"/>
                 </div> */}
-                <div className={styles.carousel}>
+                <div className={`home-carousel ${styles.carousel}`}>
                     <Carousel controls={false} interval={5000} indicators={true}>
                         <Carousel.Item>
                             <div className={styles.carouselItem}>
@@ -496,15 +490,42 @@ class Home extends Component {
                                             <span>{t('home_page:economic_block_title_1')}</span>
                                         </div>
                                         <p>
-                                            <a href={`https://etherscan.io/token/${this.tokenInfo.ring.tokenAddress}`} target="_blank" rel="noopener noreferrer">
-                                                <img alt="etherscan" src={etherscan} />
-                                            </a>
-                                            <a href="https://tronscan.org/#/token20/TL175uyihLqQD656aFx3uhHYe1tyGkmXaW" target="_blank" rel="noopener noreferrer">
-                                                <img alt="tronscan" src={tronscan} />
-                                            </a>
-                                            {hasMetamask ? <a className={styles.addToken} href="javascript:void(0)" onClick={() => this.addToken('ring')}>
-                                                <img alt="metamask" src={metamask} />
-                                            </a> : null}
+                                            <OverlayTrigger
+                                                placement={'top'}
+                                                overlay={
+                                                    <Tooltip>
+                                                        etherscan
+                                                    </Tooltip>
+                                                }
+                                            >
+                                                <a href={`https://etherscan.io/token/${this.tokenInfo.ring.tokenAddress}`} target="_blank" rel="noopener noreferrer">
+                                                    <img alt="etherscan" src={etherscan} />
+                                                </a>
+                                            </OverlayTrigger>
+                                            <OverlayTrigger
+                                                placement={'top'}
+                                                overlay={
+                                                    <Tooltip>
+                                                        metamask
+                                                    </Tooltip>
+                                                }
+                                            >
+                                                <span>{hasMetamask ? <a className={styles.addToken} href="javascript:void(0)" onClick={() => this.addToken('ring')}>
+                                                    <img alt="metamask" src={metamask} />
+                                                </a> : null}</span>
+                                            </OverlayTrigger>
+                                            <OverlayTrigger
+                                                placement={'top'}
+                                                overlay={
+                                                    <Tooltip>
+                                                        tronscan
+                                                    </Tooltip>
+                                                }
+                                            >
+                                                <a href="https://tronscan.org/#/token20/TL175uyihLqQD656aFx3uhHYe1tyGkmXaW" target="_blank" rel="noopener noreferrer">
+                                                    <img alt="tronscan" src={tronscan} />
+                                                </a>
+                                            </OverlayTrigger>
                                         </p>
                                     </div>
                                     <div className={styles.economicItemContent}>
@@ -518,15 +539,42 @@ class Home extends Component {
                                             <span>{t('home_page:economic_block_title_2')}</span>
                                         </div>
                                         <p>
-                                            <a href={`https://etherscan.io/token/${this.tokenInfo.kton.tokenAddress}`} target="_blank" rel="noopener noreferrer">
-                                                <img alt="etherscan" src={etherscan} />
-                                            </a>
-                                            <a href="https://tronscan.org/#/token20/TW3kTpVtYYQ5Ka1awZvLb9Yy6ZTDEC93dC" target="_blank" rel="noopener noreferrer">
-                                                <img alt="tronscan" src={tronscan} />
-                                            </a>
-                                            {hasMetamask ? <a className={styles.addToken} href="javascript:void(0)" onClick={() => this.addToken('kton')}>
+                                            <OverlayTrigger
+                                                placement={'top'}
+                                                overlay={
+                                                    <Tooltip>
+                                                        etherscan
+                                                    </Tooltip>
+                                                }
+                                            >   
+                                                <a href={`https://etherscan.io/token/${this.tokenInfo.kton.tokenAddress}`} target="_blank" rel="noopener noreferrer">
+                                                    <img alt="etherscan" src={etherscan} />
+                                                </a>
+                                            </OverlayTrigger>
+                                            <OverlayTrigger
+                                                placement={'top'}
+                                                overlay={
+                                                    <Tooltip>
+                                                        metamask
+                                                    </Tooltip>
+                                                }
+                                            >
+                                                <span>{hasMetamask ? <a className={styles.addToken} href="javascript:void(0)" onClick={() => this.addToken('kton')}>
                                                 <img alt="metamask" src={metamask} />
-                                            </a> : null}
+                                                </a> : null}</span>
+                                            </OverlayTrigger>
+                                            <OverlayTrigger
+                                                placement={'top'}
+                                                overlay={
+                                                    <Tooltip>
+                                                        tronscan
+                                                    </Tooltip>
+                                                }
+                                            >   
+                                                <a href="https://tronscan.org/#/token20/TW3kTpVtYYQ5Ka1awZvLb9Yy6ZTDEC93dC" target="_blank" rel="noopener noreferrer">
+                                                    <img alt="tronscan" src={tronscan} />
+                                                </a>
+                                            </OverlayTrigger>
                                         </p>
                                     </div>
                                     <div className={styles.economicItemContent}>
@@ -557,12 +605,12 @@ class Home extends Component {
                             <h1 className={`reveal-h1 ${styles.fontH1}`}>{t('home_page:application_title')}</h1>
                         </div>
                         <Row className={`d-flex justify-content-center`}>
-                            <Col xs={12} md={6}>
+                            <Col xs={12} md={6} className={styles.appItem}>
                                 <img alt="Token DEX" src={app_1} />
                                 <h3>{t('home_page:application_block_title_1')}</h3>
                                 <p>{t('home_page:application_block_content_1')}</p>
                             </Col>
-                            <Col xs={12} md={6}>
+                            <Col xs={12} md={6} className={styles.appItem}>
                                 <img alt="NFT Market" src={app_2} className={styles.secondImg}/>
                                 <h3>{t('home_page:application_block_title_2')}</h3>
                                 <p>{t('home_page:application_block_content_2')}</p>
