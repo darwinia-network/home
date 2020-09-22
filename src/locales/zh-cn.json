@@ -1,13 +1,13 @@
 {
   "header": {
     "home": "首页",
-    "tech": "Technology",
-    "community": "Community",
-    "economical_model": "Economical Model",
-    "media": "Media",
-    "hiring": "We Are Hiring",
+    "tech": "技术",
+    "community": "社区",
+    "economical_model": "经济模型",
+    "media": "资讯",
+    "hiring": "加入达尔文",
     "genepaper": "Genepaper",
-    "techpaper": "Technical Paper",
+    "techpaper": "技术白皮书",
     "gringotts": "古灵阁",
     "forum": "论坛",
     "testnet": "测试网络",
@@ -21,7 +21,7 @@
     "docs": "知识库",
     "wallet": "钱包",
     "comingsoon": "即将到来",
-    "lang_demo": "zh",
+    "lang_demo": "CN",
     "en": "English",
     "zh": "中文"
   },
@@ -235,7 +235,7 @@
     "benefit_desc_5": "5. Accept the reward and the applause from the Darwinia community!",
     "benefit_desc_6": "6. 达尔文周边：文化衫，贴纸，证书，NFT，勋章。",
     "more": "More From Darwinia",
-    "more_title": "Announcements",
+    "more_title": "",
     "more_time": "2020.09.01",
     "more_subtitle": "Darwinia Network is the first game chain of the Polkadot."
   },
@@ -245,7 +245,7 @@
     "carousel_1_title": "Darwinia Network is the first game chain of the Polkadot.",
     "carousel_1_content": "Darwinia Network is the first game chain of the Polkadot. Darwinia Network is the first game chain of the Polkadot. Darwinia Network is the first game chain of the Polkadot.",
 
-    "more_title": "ANNOUNCEMENTS",
+    "more_title": "",
     "more_time": "2020.09.01",
     "more_subtitle": "Darwinia Network is the first game chain of the Polkadot.",
     

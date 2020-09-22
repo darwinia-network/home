@@ -125,6 +125,10 @@ class Brand extends Component {
                                 <p>{t('ambassador:benefit_desc_5')}</p>
                                 <p>{t('ambassador:benefit_desc_6')}</p>
 
+
+                                <Button variant="dark" target="_blank" href={t('ambassador:form')}
+                                    className={styles.button}>{t('community:dive_slogan')}</Button>
+
                                 <div className={styles.lineH1}></div>
                                 <div>
                                     <h2 className={`${styles.gradientText}`}>
