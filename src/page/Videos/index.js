@@ -16,6 +16,7 @@ import video5 from "../Media/img/video5.jpg"
 import video4 from "../Media/img/video4.jpg"
 import video3 from "../Media/img/video3.jpg"
 import videos from "../Media/img/videos.png"
+import videoIcon from "../Media/img/video-icon.png"
 
 class News extends Component {
     constructor(props, context) {
@@ -36,7 +37,7 @@ class News extends Component {
                 <div className={`${styles.news}`}>
                     <Container>
                         <div className={styles.title}>
-                            <img src={videos}  alt="videos"/>
+                            <img src={videoIcon}  alt="videos"/>
                             <h1 className={`${styles.gradientText}`}>{t('media:videos')}</h1>
                         </div>
                         <Row>

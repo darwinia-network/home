@@ -144,7 +144,7 @@ class PageHeader extends Component {
                     <Row className={''}>
                         <Col xs={12} className={`${styles.ColSub} navbar--secondary`}>
                             <div className={`d-flex align-items-center justify-content-between ${styles.NavMenu}`}>
-                                <Dropdown>
+                                <Dropdown alignRight>
                                     <Dropdown.Toggle as={CustomToggle} id="dropdown-custom-components">
                                         <div className={styles.lngBtn}>{t('header:lang_demo')}</div>
                                     </Dropdown.Toggle>
@@ -176,7 +176,7 @@ class PageHeader extends Component {
                                     <Nav className="mr-auto">
                                     </Nav>
                                     <Form inline>
-                                        {/* <Nav.Link href="/">{t('header:home')}</Nav.Link> */}
+                                        <Nav.Link className={styles.navTab} href="/">{t('header:home')}</Nav.Link>
                                         <Nav.Link className={styles.navTab} href="/tech">{t('header:tech')}</Nav.Link>
                                         <Nav.Link className={styles.navTab} href="/community">{t('header:community')}</Nav.Link>
                                         <Nav.Link className={styles.navTab} href="/model">{t('header:economical_model')}</Nav.Link>

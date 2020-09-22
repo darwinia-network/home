@@ -140,7 +140,11 @@ html {
   padding-right: 60px;
   font-weight: bold;
 }
-
+.tooltip-inner {
+  // color: #333;
+  // background-color: #fff;
+  // box-shadow: 0px 2px 6px 0px rgba(0, 0, 0, 0.08);
+}
 .carousel {
   .carousel-indicators {
     li {
@@ -155,12 +159,38 @@ html {
     }
   }
 }
+.home-carousel {
+  .carousel {
+    .carousel-indicators {
+      left: 50%;
+      transform: translate(-50%, 0);
+      margin: 0 0 15px 0;
+      width: fit-content;
+      background: #6330DD4D;
+      border-radius: 11px;
+      padding: 2px 12px;
+      li {
+        border-width: 1px;
+        width: 10px;
+        height: 10px;
+        background-color: #fff;
+        &.active {
+          opacity: 1;
+        }
+      }
+    }
+  }
+}
 .media-carousel {
   .carousel {
     .carousel-indicators {
-      margin-left: 76%;
+      margin-left: 77%;
       margin-right: 0;
       justify-content: flex-start;
+      margin-bottom: 0;
+      li {
+        border-width: 1px;
+      }
     }
   }
 
