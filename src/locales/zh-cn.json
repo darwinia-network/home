@@ -13,7 +13,7 @@
     "testnet": "测试网络",
     "testnet_url": "https://docs.darwinia.network/docs/zh-CN/crab-home",
     "genepaper_url": "https://evolution.l2me.com/darwinia/Darwinia_Genepaper_CN.pdf",
-    "techpaper_url": "https://github.com/darwinia-network/research/blob/master/Darwinia_ChainRelay_Draft.pdf",
+    "techpaper_url": "http://evolution.oss-cn-hangzhou.aliyuncs.com/darwinia/ChainRelay_Technical_Paper(Preview)_EN.pdf",
     "explorer": "浏览器",
     "explorer_url": "http://crab.subscan.io/",
     "faq": "FAQs",
