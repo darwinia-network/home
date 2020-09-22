@@ -604,12 +604,12 @@
 }
 
 .roadmapContainer {
-  padding: 60px 0 100px 0;
+  padding: 200px 0;
   color: #5430DD;
 
   h1 {
     display: inline-block;
-    margin-bottom: 90px;
+    margin-bottom: 80px;
   }
 
   .title {
@@ -617,20 +617,29 @@
   }
 
   .content {
-    margin: 35px;
     text-align: center;
   }
 
   img {
-    width: 92%;
+    width: 100%;
   }
-
+  .holderCol {
+    display: flex;
+    align-items: center;
+    max-width: 68px;
+  }
+  .curCol {
+    padding: 0;
+  }
+  .roadmapRow {
+    margin-top: 30px;
+  }
   .label {
-    margin-left: 5px;
-    margin-right: 5px;
-    margin-top: 53px;
-
-    // font-weight: bold;
+    margin-top: 30px;
+    font-size: 20px;
+    > div {
+      padding: 0;
+    }
     p {
       margin-bottom: 0;
     }
@@ -638,23 +647,11 @@
 
   .status {
     color: #E93787;
-    margin-bottom: 2.5rem;
+    font-size: 24px;
 
     p {
       margin-bottom: 0;
     }
-  }
-
-  .crayfishCol {
-    margin-right: 1%;
-  }
-
-  .mainnetCol {
-    margin-left: 1%;
-  }
-
-  .lastCol {
-    padding-right: 5px;
   }
 
   .button {
