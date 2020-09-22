@@ -107,7 +107,11 @@ class Brand extends Component {
                                 <div className={styles.subTitle}>
                                     {t('ambassador:how_title')}
                                 </div>
-                                <p className={styles.howDesc}>{t('ambassador:how_desc')}</p>
+                                <p className={styles.howDesc}>
+                                    <span>{t('ambassador:how_desc_1')}</span>
+                                    <a className={styles.link} target="_blank" rel="noopener noreferrer" href={t('ambassador:form')}>{t('ambassador:how_desc_2')}</a>
+                                    <span>{t('ambassador:how_desc_3')}</span>
+                                </p>
                                 {i18n.language.indexOf('en') > -1 ?
                                     <img alt="banner" className={styles.banner} src={flow_en}/>
                                     :
