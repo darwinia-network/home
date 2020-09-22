@@ -392,7 +392,7 @@
 
 
 .applicationContainer {
-  background: url("./img/application-bg.png");
+  background: url("./img/application/app-bg.jpg") top center no-repeat;
   background-size: cover;
   height: 770px;
   padding-top: 68px;
@@ -427,17 +427,18 @@
 }
 
 .architectureContainer {
-  background: url("./img/application-bg.png");
-  padding: 60px 0 88px 0;
+  background: url("./img/architecture-bg.png") top center no-repeat;
+  // padding: 60px 0 88px 0;
   // background: url("./img/architecture-bg.png");
-  // background-size: cover;
-  // padding: 70px 0 110px 0;
+  background-size: cover;
+  padding: 70px 0 110px 0;
 
   // height: 782px;
   .fontH1 {
     // padding-top: 70px;
     // font-size: 50px;
-    // color: #fff;
+    margin-bottom: 73px;
+    color: #fff;
   }
 
   img {
@@ -460,7 +461,7 @@
     right: 0;
 
     >div {
-      padding-top: 38.5%;
+      padding-top: 32%;
       position: relative;
     }
 
@@ -489,25 +490,23 @@
     button {
       cursor: default;
       pointer-events: none;
-      height: 10%;
+      height: 11%;
       line-height: 1;
+      border: none;
       text-align: center;
-      font-size: 14px;
-      font-weight: bold;
+      font-size: 20px;
+      border-radius: 0;
     }
 
     .soloBtn {
-      margin-left: 30.7%;
-      // border: 1px solid transparent;
-      border: none;
+      margin-left: 28.5%;
       background: linear-gradient(315deg, rgba(254, 56, 118, 1) 0%, rgba(124, 48, 221, 1) 71%, rgba(58, 48, 221, 1) 100%);
       color: #fff;
-      width: 8.8%;
+      width: 9.2%;
       position: absolute;
     }
 
     .soloWhiteBtn {
-      border: 1px solid #d4d4d4;
       background: white;
       color: #d4d4d4;
 
@@ -517,10 +516,9 @@
     }
 
     .chainBtn {
-      margin-left: 57%;
+      margin-left: 58%;
       width: 13.8%;
       position: absolute;
-      border: 1px solid #d4d4d4;
       background: white;
       color: #d4d4d4;
     }
@@ -528,7 +526,6 @@
     .chainPinkBtn {
       border: 0;
       color: #fff;
-      border: none;
       background: linear-gradient(315deg, rgba(254, 56, 118, 1) 0%, rgba(124, 48, 221, 1) 71%, rgba(58, 48, 221, 1) 100%);
 
       :global {
@@ -607,12 +604,12 @@
 }
 
 .roadmapContainer {
-  padding: 60px 0 100px 0;
+  padding: 200px 0;
   color: #5430DD;
 
   h1 {
     display: inline-block;
-    margin-bottom: 90px;
+    margin-bottom: 80px;
   }
 
   .title {
@@ -620,20 +617,29 @@
   }
 
   .content {
-    margin: 35px;
     text-align: center;
   }
 
   img {
-    width: 92%;
+    width: 100%;
   }
-
+  .holderCol {
+    display: flex;
+    align-items: center;
+    max-width: 68px;
+  }
+  .curCol {
+    padding: 0;
+  }
+  .roadmapRow {
+    margin-top: 30px;
+  }
   .label {
-    margin-left: 5px;
-    margin-right: 5px;
-    margin-top: 53px;
-
-    // font-weight: bold;
+    margin-top: 30px;
+    font-size: 20px;
+    > div {
+      padding: 0;
+    }
     p {
       margin-bottom: 0;
     }
@@ -641,23 +647,11 @@
 
   .status {
     color: #E93787;
-    margin-bottom: 2.5rem;
+    font-size: 24px;
 
     p {
       margin-bottom: 0;
     }
-  }
-
-  .crayfishCol {
-    margin-right: 1%;
-  }
-
-  .mainnetCol {
-    margin-left: 1%;
-  }
-
-  .lastCol {
-    padding-right: 5px;
   }
 
   .button {

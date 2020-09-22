@@ -9,6 +9,11 @@ import styles from "./style.module.scss";
 import GradientHeading from "../../components/GradientHeading/GradientHeading";
 
 
+import report8 from "../Media/img/report8.png"
+import news8 from "../Media/img/news8.png"
+import event3 from "../Media/img/event3.jpeg"
+
+
 class Faq extends Component {
     constructor(props, context) {
         super(props, context);
@@ -25,35 +30,77 @@ class Faq extends Component {
         const {t} = this.props
         return (
             <div>
-                <PageHeader/>
+                <PageHeader transparent={true}/>
                 <div className={`${styles.faq}`}>
                     <Container>
-                        <GradientHeading className={`text-center ${styles.fontH1}`}>FAQs</GradientHeading>
-                        <div className={styles.lineH1}/>
-                        <div>
-                            <Row>
-                                <Col md={6} className={styles.content}>
-                                    <h3>{t('faq_page:faq_1_title')}</h3>
-                                    <p>{t('faq_page:faq_1_content')}</p>
-                                </Col>
+                        <Row>
+                            <Col xs={1}></Col>
+                            <Col xs={10}>
+                                <div className={styles.title}>
+                                    <h1 className={`${styles.fontH1} ${styles.gradientText}`}>{t('faq_page:title')}</h1>
+                                </div>
+                                <div className={styles.lineH1}></div>
 
-                                <Col  md={6}  className={styles.content}>
-                                    <h3>{t('faq_page:faq_2_title')}</h3>
-                                    <p>{t('faq_page:faq_2_content')}</p>
-                                </Col>
-                            </Row>
-                            <Row>
-                                <Col md={6} className={styles.content}>
-                                    <h3>{t('faq_page:faq_3_title')}</h3>
-                                    <p dangerouslySetInnerHTML={{__html: t('faq_page:faq_3_content')}}/>
-                                </Col>
+                                <h4>{t('faq_page:faq_1_title')}</h4>
+                                <p>{t('faq_page:faq_1_content')}</p>
+                                <p>{t('faq_page:faq_1_content')}</p>
 
-                                <Col  md={6}  className={styles.content}>
-                                    <h3>{t('faq_page:faq_4_title')}</h3>
-                                    <p>{t('faq_page:faq_4_content')}</p>
-                                </Col>
-                            </Row>
-                        </div>
+                                <h4>{t('faq_page:faq_1_title')}</h4>
+                                <p>{t('faq_page:faq_1_content')}</p>
+                                <p>{t('faq_page:faq_1_content')}</p>
+
+                                <div className={styles.lineH1}></div>
+                                <div>
+                                    <h2 className={`${styles.gradientText}`}>
+                                        {t('ambassador:more')}
+                                    </h2>
+                                </div>
+                                <ul className={styles.mediaBlocks}>
+                                    <li className={styles.mediaBlock}>
+                                        <a className={styles.imgUrl} rel="noopener noreferrer" target="_blank" href={t('media:report_8_link')}>
+                                            <div className={styles.imgRatio}>
+                                                <img alt="reports" src={report8}/>
+                                            </div>
+                                            <div className={styles.mediaInfo}>
+                                                <span>{t('media:more_title')}</span>
+                                                <span className={styles.mediaTime}>{t('media:report_8_time')}</span>
+                                            </div>
+                                            <div className={styles.mediaDesc}>
+                                                {t('media:report_8_title')}
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li className={styles.mediaBlock}>
+                                        <a className={styles.imgUrl} rel="noopener noreferrer" target="_blank" href={t('media:news_8_link')}>
+                                            <div className={styles.imgRatio}>
+                                                <img alt="news" src={news8}/>
+                                            </div>
+                                            <div className={styles.mediaInfo}>
+                                                <span>{t('media:more_title')}</span>
+                                                <span className={styles.mediaTime}>{t('media:news_8_time')}</span>
+                                            </div>
+                                            <div className={styles.mediaDesc}>
+                                                {t('media:news_8_title')}
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li className={styles.mediaBlock}>
+                                        <a className={styles.imgUrl} rel="noopener noreferrer" target="_blank" href={t('media:event_3_link')}>
+                                            <div className={styles.imgRatio}>
+                                                <img alt="events" src={event3}/>
+                                            </div>
+                                            <div className={styles.mediaInfo}>
+                                                <span>{t('media:more_title')}</span>
+                                                <span className={styles.mediaTime}>{t('media:event_3_time')}</span>
+                                            </div>
+                                            <div className={styles.mediaDesc}>
+                                                {t('media:event_3_title')}
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </Col>
+                        </Row>
                     </Container>
                 </div>
 
