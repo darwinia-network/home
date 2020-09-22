@@ -69,7 +69,7 @@ class Brand extends Component {
                                     <p>
                                         {t('community:dive_subtitle')}
                                     </p>
-                                    <Button variant="transparent" target="_blank" href={t('ambassador:form')}
+                                    <Button variant="transparent" target="_blank" href="/ambassador"
                                     className={styles.button}>{t('community:dive_slogan')}</Button>
                                 </Col>
                             </Row>
@@ -186,7 +186,7 @@ class Brand extends Component {
                                                     className={styles.button}>{t('community:darwinia_wiki')}</Button>
                                                 <Button variant="dark" target="_blank" href="/faq"
                                                     className={styles.button}>{t('community:faq')}</Button>
-                                                <Button variant="white" target="_blank" href={t('ambassador:form')}
+                                                <Button variant="white" target="_blank" href="/ambassador"
                                                     className={`${styles.button} ${styles.buttonWhite}`}>{t('community:get_started')}</Button>
                                             </div>
                                         </div>

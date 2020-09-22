@@ -26,7 +26,10 @@ import events from "./img/events.png"
 import event1 from "../Media/img/event1.png"
 import event2 from "../Media/img/event2.jpeg"
 import event3 from "../Media/img/event3.jpeg"
-import videos from "./img/videos.png"
+import videos from "../Media/img/videos.png"
+import video11 from "../Media/img/video11.jpg"
+import video10 from "../Media/img/video10.jpg"
+import video9 from "../Media/img/video9.jpg"
 import placeholder2 from "./img/placeholder_2.png"
 class Brand extends Component {
     constructor(props, context) {
@@ -369,30 +372,58 @@ class Brand extends Component {
                                     </div>
                                     <Row>
                                         <Col md={3} className={styles.mediaContent}>
-                                            <a className={styles.imgUrl} rel="noopener noreferrer" target="_blank" href={t('media:video_2_link')}>
+                                            <a className={styles.imgUrl} rel="noopener noreferrer" target="_blank" href={t('media:video_11_link')}>
                                                 <div className={styles.imgRatio}>
-                                                    <img alt="videos" src={placeholder2}/>
+                                                    <img alt="videos" src={video11}/>
                                                 </div>
                                                 <div className={styles.mediaInfo}>
                                                     <span>{t('media:more_title')}</span>
-                                                    <span className={styles.mediaTime}>{t('media:video_2_time')}</span>
+                                                    <span className={styles.mediaTime}>{t('media:video_11_time')}</span>
                                                 </div>
                                                 <div className={styles.mediaDesc}>
-                                                    {t('media:video_2_title')}
+                                                    {t('media:video_11_title')}
                                                 </div>
                                             </a>
                                         </Col>
                                         <Col md={3} className={styles.mediaContent}>
-                                            <a className={styles.imgUrl} rel="noopener noreferrer" target="_blank" href={t('media:video_1_link')}>
+                                            <a className={styles.imgUrl} rel="noopener noreferrer" target="_blank" href={t('media:video_10_link')}>
                                                 <div className={styles.imgRatio}>
-                                                    <img alt="videos" src={placeholder2}/>
+                                                    <img alt="videos" src={video10}/>
                                                 </div>
                                                 <div className={styles.mediaInfo}>
                                                     <span>{t('media:more_title')}</span>
-                                                    <span className={styles.mediaTime}>{t('media:video_1_time')}</span>
+                                                    <span className={styles.mediaTime}>{t('media:video_10_time')}</span>
                                                 </div>
                                                 <div className={styles.mediaDesc}>
-                                                    {t('media:video_1_title')}
+                                                    {t('media:video_10_title')}
+                                                </div>
+                                            </a>
+                                        </Col>
+                                        <Col md={3} className={styles.mediaContent}>
+                                            <a className={styles.imgUrl} rel="noopener noreferrer" target="_blank" href={t('media:video_9_link')}>
+                                                <div className={styles.imgRatio}>
+                                                    <img alt="videos" src={video9}/>
+                                                </div>
+                                                <div className={styles.mediaInfo}>
+                                                    <span>{t('media:more_title')}</span>
+                                                    <span className={styles.mediaTime}>{t('media:video_9_time')}</span>
+                                                </div>
+                                                <div className={styles.mediaDesc}>
+                                                    {t('media:video_9_title')}
+                                                </div>
+                                            </a>
+                                        </Col>
+                                        <Col md={3} className={styles.mediaContent}>
+                                            <a className={styles.imgUrl} rel="noopener noreferrer" target="_blank" href={t('media:video_8_link')}>
+                                                <div className={styles.imgRatio}>
+                                                    <img alt="videos" src={videos}/>
+                                                </div>
+                                                <div className={styles.mediaInfo}>
+                                                    <span>{t('media:more_title')}</span>
+                                                    <span className={styles.mediaTime}>{t('media:video_8_time')}</span>
+                                                </div>
+                                                <div className={styles.mediaDesc}>
+                                                    {t('media:video_8_title')}
                                                 </div>
                                             </a>
                                         </Col>
