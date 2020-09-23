@@ -9,8 +9,8 @@ import styles from "./style.module.scss";
 
 import events from "../Media/img/events.png"
 import event1 from "../Media/img/event1.png"
-import event2 from "../Media/img/event2.jpeg"
-import event3 from "../Media/img/event3.jpeg"
+import event2 from "../Media/img/event2.png"
+import event3 from "../Media/img/event3.png"
 
 class News extends Component {
     constructor(props, context) {

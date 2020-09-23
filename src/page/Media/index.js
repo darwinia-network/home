@@ -24,12 +24,12 @@ import news8 from "../Media/img/news8.png"
 import news9 from "../Media/img/news9.png"
 import events from "./img/events.png"
 import event1 from "../Media/img/event1.png"
-import event2 from "../Media/img/event2.jpeg"
-import event3 from "../Media/img/event3.jpeg"
-import videos from "../Media/img/videos.png"
-import video11 from "../Media/img/video11.jpg"
-import video10 from "../Media/img/video10.jpg"
-import video9 from "../Media/img/video9.jpg"
+import event2 from "../Media/img/event2.png"
+import event3 from "../Media/img/event3.png"
+import video11 from "../Media/img/video11.png"
+import video10 from "../Media/img/video10.png"
+import video9 from "../Media/img/video9.png"
+import video8 from "../Media/img/video8.png"
 import videoIcon from "../Media/img/video-icon.png"
 class Brand extends Component {
     constructor(props, context) {
@@ -406,7 +406,7 @@ class Brand extends Component {
                                         <Col md={3} className={styles.mediaContent}>
                                             <a className={styles.imgUrl} rel="noopener noreferrer" target="_blank" href={t('media:video_8_link')}>
                                                 <div className={styles.imgRatio}>
-                                                    <img alt="videos" src={videos}/>
+                                                    <img alt="videos" src={video8}/>
                                                 </div>
                                                 <div className={styles.mediaInfo}>
                                                     <span>{t('media:more_title')}</span>

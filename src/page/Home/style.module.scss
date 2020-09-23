@@ -354,6 +354,7 @@
   }
 
   button {
+    box-shadow: none !important;
     line-height: initial;
     border: 0;
     border-radius: 0;
@@ -691,6 +692,7 @@
   .persons {
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
     img {
       width: 100px;
       height: 100px;

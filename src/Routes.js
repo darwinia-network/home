@@ -13,6 +13,8 @@ const AsyncNews = asyncComponent(import("./page/News"));
 const AsyncEvents = asyncComponent(import("./page/Events"));
 const AsyncReports = asyncComponent(import("./page/Reports"));
 const AsyncVideos = asyncComponent(import("./page/Videos"));
+const AsyncTech = asyncComponent(import("./page/Tech"));
+const AsyncModel = asyncComponent(import("./page/EcoModel"));
 const history = createBrowserHistory();
 
 
@@ -76,6 +78,18 @@ export default () =>
                 exact
                 component={AsyncNews}
                 path='/news'
+            />
+
+            <Route
+                exact
+                component={AsyncTech}
+                path='/tech'
+            />
+
+            <Route
+                exact
+                component={AsyncModel}
+                path='/economic_model'
             />
 
             <Route component={AsyncNotFound}/>

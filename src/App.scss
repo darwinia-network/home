@@ -201,6 +201,11 @@ html {
     // border-bottom: 1px solid #f0ebfc;
   }
 }
+@media (max-width: 575.98px) {
+  .nav-primary-fixed {
+    background: #fff !important;
+  }
+}
 @media (min-width: 768px) {
   .visible-xs {
     display: none;

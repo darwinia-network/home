@@ -7,15 +7,17 @@ import archorsComponent from '../../components/anchorsComponent'
 import {withTranslation} from "react-i18next";
 import styles from "./style.module.scss";
 
-import video11 from "../Media/img/video11.jpg"
-import video10 from "../Media/img/video10.jpg"
-import video9 from "../Media/img/video9.jpg"
+import video11 from "../Media/img/video11.png"
+import video10 from "../Media/img/video10.png"
+import video9 from "../Media/img/video9.png"
+import video8 from "../Media/img/video8.png"
 import video7 from "../Media/img/video7.png"
 import video6 from "../Media/img/video6.png"
-import video5 from "../Media/img/video5.jpg"
-import video4 from "../Media/img/video4.jpg"
-import video3 from "../Media/img/video3.jpg"
-import videos from "../Media/img/videos.png"
+import video5 from "../Media/img/video5.png"
+import video4 from "../Media/img/video4.png"
+import video3 from "../Media/img/video3.png"
+import video2 from "../Media/img/video2.png"
+import video1 from "../Media/img/video1.png"
 import videoIcon from "../Media/img/video-icon.png"
 
 class News extends Component {
@@ -86,7 +88,7 @@ class News extends Component {
                             <Col md={3} className={styles.content}>
                                 <a className={styles.imgUrl} rel="noopener noreferrer" target="_blank" href={t('media:video_8_link')}>
                                     <div className={styles.imgRatio}>
-                                        <img alt="videos" src={videos}/>
+                                        <img alt="videos" src={video8}/>
                                     </div>
                                     <div className={styles.mediaInfo}>
                                         <span>{t('media:more_title')}</span>
@@ -170,7 +172,7 @@ class News extends Component {
                             <Col md={3} className={styles.content}>
                                 <a className={styles.imgUrl} rel="noopener noreferrer" target="_blank" href={t('media:video_2_link')}>
                                     <div className={styles.imgRatio}>
-                                        <img alt="videos" src={videos}/>
+                                        <img alt="videos" src={video2}/>
                                     </div>
                                     <div className={styles.mediaInfo}>
                                         <span>{t('media:more_title')}</span>
@@ -184,7 +186,7 @@ class News extends Component {
                             <Col md={3} className={styles.content}>
                                 <a className={styles.imgUrl} rel="noopener noreferrer" target="_blank" href={t('media:video_1_link')}>
                                     <div className={styles.imgRatio}>
-                                        <img alt="videos" src={videos}/>
+                                        <img alt="videos" src={video1}/>
                                     </div>
                                     <div className={styles.mediaInfo}>
                                         <span>{t('media:more_title')}</span>
