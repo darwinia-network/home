@@ -10,8 +10,11 @@ import styles from './style.module.scss'
 import themeBg from "./img/theme-bg.png"
 import archBg from "./img/theme-bg.png"
 import relayBg from "./img/relay-bg.png"
+import relayBgM from "./img/relay-bg-m.png"
 import mmrBg from "./img/mmr-bg.png"
+import mmrBgM from "./img/mmr-bg-m.png"
 import gameBg from "./img/game-bg.png"
+import gameBgM from "./img/game-bg-m.png"
 
 import theme1 from "./img/theme-1.png"
 import theme2 from "./img/theme-2.png"
@@ -40,7 +43,7 @@ class Home extends Component {
         const { t } = this.props
         return (
             <div className={styles.tech}>
-                <PageHeader href="#top" transparent={true} />
+                <PageHeader href="#top" transparent={true}/>
                 <div className={styles.themeContainer}>
                     {/* <img src={themeBg} alt="banner"/> */}
                     <div className={styles.content}>
@@ -184,7 +187,7 @@ class Home extends Component {
                         <Row>
                             <Col xs={12}>
                                 <p>{t('tech:relay_desc')}</p>
-                                <div className={styles.relaySection}>
+                                <div className={`hidden-xs ${styles.relaySection}`}>
                                     <img src={relayBg} alt="relay"/>
                                     <div className={styles.content}>
                                         <div className={styles.trust}>
@@ -210,17 +213,41 @@ class Home extends Component {
                             </Col>
                         </Row>
                     </Container>
+                    <div className={`hidden-md ${styles.relaySection}`}>
+                        <img src={relayBgM} alt="relay"/>
+                        <div className={styles.content}>
+                            <div className={styles.trust}>
+                                <div className={styles.title}>
+                                    {t('tech:trust')}
+                                </div>
+                                <div className={styles.item}>
+                                    <p>{t('tech:trust_1')}</p>
+                                    <p>{t('tech:trust_2')}</p>
+                                    <p>{t('tech:trust_3')}</p>
+                                </div>
+                            </div>
+                            <div className={styles.truth}>
+                                <div className={styles.title}>
+                                    {t('tech:truth')}
+                                </div>
+                                <div className={styles.item}>
+                                    <p>{t('tech:truth_1')}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
                 <div className={styles.mmrContainer}>
                     <Container>
                         <div className={styles.title}>
-                            <h1 className={`reveal-h1 ${styles.fontH1} ${styles.gradientText}`}>{t('tech:mmr')}</h1>
+                            <h1 className={`${styles.fontH1} ${styles.gradientText}`}>{t('tech:mmr')}</h1>
                         </div>
                         <Row>
                             <Col xs={12}>
                                 <p>{t('tech:mmr_desc')}</p>
-                                <img src={mmrBg} alt="mmr"/>
+                                <img className={'hidden-xs'} src={mmrBg} alt="mmr"/>
+                                <img className={'hidden-md'} src={mmrBgM} alt="mmr"/>
                             </Col>
                         </Row>
                     </Container>
@@ -234,7 +261,8 @@ class Home extends Component {
                         <Row>
                             <Col xs={12}>
                                 <div className={styles.section}>
-                                    <img src={gameBg} alt="game"/>
+                                    <img className={'hidden-xs'} src={gameBg} alt="game"/>
+                                    <img className={'hidden-md'} src={gameBgM} alt="game"/>
                                     <p>{t('tech:game_desc')}</p>
                                 </div>
                             </Col>
