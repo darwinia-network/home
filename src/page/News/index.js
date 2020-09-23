@@ -8,8 +8,8 @@ import {withTranslation} from "react-i18next";
 import styles from "./style.module.scss";
 
 import news from "../Media/img/news.png"
-import news1 from "../Media/img/news1.jpeg"
-import news2 from "../Media/img/news2.jpeg"
+import news1 from "../Media/img/news1.png"
+import news2 from "../Media/img/news2.png"
 import news3 from "../Media/img/news3.png"
 import news4 from "../Media/img/news4.png"
 import news5 from "../Media/img/news5.png"

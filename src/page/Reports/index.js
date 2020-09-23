@@ -8,7 +8,7 @@ import {withTranslation} from "react-i18next";
 import styles from "./style.module.scss";
 
 import reports from "../Media/img/reports.png"
-import report1 from "../Media/img/report1.jpeg"
+import report1 from "../Media/img/report1.png"
 import report2 from "../Media/img/report2.png"
 import report3 from "../Media/img/report3.png"
 import report4 from "../Media/img/report4.png"
