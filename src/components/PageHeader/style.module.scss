@@ -200,7 +200,7 @@
     }
   }
   .NavBarWrapper {
-    position: fixed;
+    // position: fixed;
     width: 100%;
     z-index: 100;
     .ColMain {
@@ -210,10 +210,13 @@
       display: none;
     }
     .NavBarContainer {
+      position: fixed;
       background: transparent;
+      transition: all ease-in 160ms;
     }
     .NavBarBg {
-      display: none;
+      // display: none;
+      height: 50px;
       
     }
   }
