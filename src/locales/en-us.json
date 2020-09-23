@@ -410,8 +410,11 @@
   "tech": {
     "theme_desc": "Decentralized Heterogeneous Cross-chain Protocol & Application Chain Development Framework",
     "theme_1": "Darwinia Wallet",
+    "theme_1_link": "https://apps.darwinia.network/",
     "theme_2": "Darwinia WIKI",
+    "theme_2_link": "https://docs.darwinia.network/docs/en/wiki-intro",
     "theme_3": "Crab network",
+    "theme_3_link": "https://docs.darwinia.network/docs/en/crab-home",
     "architecture": "Architecture",
     "architecture_desc": "Darwinia ChainRelay is a super light-client ChainRelay. It allows us to upgrade the single-chain application protocols to cross-chain versions, which include but not limited to Defi, Game, DEX, NFT Market, etc.",
     "mainnet_stage": "Mainnet Stage",
@@ -432,8 +435,8 @@
     "relay_desc": "Darwinia Bridge takes Chain Relay approach because it's trust-based. With innovations like Merkle Mountain Range and Optimistic Verification Game, we get a sub-linear relay which means we don't need to have each and every block of foreign chains relayed, and even we can achieve \"Relay on Demand\".",
     "trust": "TRUST relied",
     "trust_1": "Custodian Model",
-    "trust_2": "Multi-sig Pledge",
-    "trust_3": "Collateral based",
+    "trust_2": "Multi-sig",
+    "trust_3": "Pledge / Collateral based",
     "truth": "TRUTH based",
     "truth_1": "A Super Light-client Protocol Chain Header Commitment MMR (Merkle Mountain Range) Optimistic Verification Game Relayer (Prover vs Verifier) Economic Feasibility Sub-linear Relay Relay on Demand",
     "mmr": "MMR Block Header Digest",
@@ -441,7 +444,7 @@
     "game": "Optimistic Verification Game",
     "game_desc": "Probabilistic sampling will greatly increase the difficulty and decrease the probability that an attack can forge a series of blocks without being detected and therefore punished.",
     "read_more": "Read more",
-    "read_more_link": ""
+    "read_more_link": "https://telemetry.polkadot.io/#list/Polkadot"
   },
   "model": {
     "theme": "Internet of Tokens, Connected!",
