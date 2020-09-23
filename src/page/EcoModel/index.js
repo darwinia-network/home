@@ -11,6 +11,7 @@ import eco1 from './img/eco-1.png'
 import eco2 from './img/eco-2.png'
 import styles from './style.module.scss'
 import tokenBg from "./img/token-bg.png"
+import tokenBgM from "./img/token-bg-m.png"
 import inflation1 from "./img/inflation-1.png"
 import inflation2 from "./img/inflation-2.png"
 import model1 from "./img/model-1.png"
@@ -60,10 +61,11 @@ class Home extends Component {
                             <h1 className={`reveal-h1 ${styles.fontH1} ${styles.gradientText}`}>{t('model:token')}</h1>
                         </div>
                         <Row>
-                            <Col xs={9}>
-                                <img src={tokenBg} alt="token"/>
+                            <Col xs={12} md={9}>
+                                <img className={'hidden-xs'} src={tokenBg} alt="token"/>
+                                <img className={'hidden-md'} src={tokenBgM} alt="token"/>
                             </Col>
-                            <Col xs={3} className={styles.economicCol}>
+                            <Col xs={12} md={3} className={styles.economicCol}>
                                 <div className={styles.economicItem}>
                                     <div className={styles.economicItemHeader}>
                                         <div>
@@ -111,13 +113,13 @@ class Home extends Component {
                         </div>
                         <p>{t('model:staking_desc')}</p>
                         <Row>
-                            <Col xs={6}>
+                            <Col xs={12} md={6}>
                                 <div className={styles.chart}>
                                     <div>{t('model:staking_1')}</div>
                                     <img src={staking1} alt="staking"/>
                                 </div>
                             </Col>
-                            <Col xs={6}>
+                            <Col xs={12} md={6}>
                                 <div className={styles.chart}>
                                     <div>{t('model:staking_2')}</div>
                                     <img src={staking2} alt="staking"/>
@@ -134,13 +136,13 @@ class Home extends Component {
                         </div>
                         <p>{t('model:inflation_content')}</p>
                         <Row>
-                            <Col xs={6}>
+                            <Col xs={12} md={6}>
                                 <div className={styles.chart}>
                                     <div>{t('model:inflation_1')}</div>
                                     <img src={inflation1} alt="inflation"/>
                                 </div>
                             </Col>
-                            <Col xs={6}>
+                            <Col xs={12} md={6}>
                                 <div className={styles.chart}>
                                     <div>{t('model:inflation_2')}</div>
                                     <img src={inflation2} alt="inflation"/>
@@ -156,7 +158,7 @@ class Home extends Component {
                 <div className={styles.circulationContainer}>
                     <Container>
                         <Row>
-                            <Col xs={6} className={styles.textCol}>
+                            <Col xs={12} md={6} className={styles.textCol}>
                                 <div className={styles.title}>
                                     <h1 className={`${styles.fontH1} ${styles.gradientText}`}>{t('model:circulation')}</h1>
                                 </div>
@@ -167,7 +169,7 @@ class Home extends Component {
                                 <p>{t('model:circulation_desc_2')}</p>
                                 <p>{t('model:circulation_desc_3')}</p>
                             </Col>
-                            <Col xs={6}>
+                            <Col xs={12} md={6}>
                                 <div className={styles.chart}>
                                     <img src={circulation} alt="circulation"/>
                                     <div>{t('model:circulation_chart_desc')}</div>
@@ -183,9 +185,11 @@ class Home extends Component {
                             <h1 className={`${styles.fontH1} ${styles.gradientText}`}>{t('model:revenue')}</h1>
                         </div>
                         <Row>
-                            <Col xs={6}>
+                            <Col xs={12} md={6}>
                                 <div className={styles.chart}>
-                                    <img src={model1} alt="model"/>
+                                    <div className={styles.imgWrapper}>
+                                        <img src={model1} alt="model"/>
+                                    </div>
                                     <div className={styles.chartSection}>
                                         <div className={styles.title}>
                                             {t('model:revenue_1')}
@@ -199,9 +203,11 @@ class Home extends Component {
                                     </div>
                                 </div>
                             </Col>
-                            <Col xs={6}>
+                            <Col xs={12} md={6}>
                                 <div className={styles.chart}>
-                                    <img src={model2} alt="model"/>
+                                    <div className={styles.imgWrapper}>
+                                        <img src={model2} alt="model"/>
+                                    </div>
                                     <div className={styles.chartSection}>
                                         <div className={styles.title}>
                                             {t('model:revenue_2')}
