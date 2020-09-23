@@ -1,48 +1,197 @@
 @import "../../style/index";
 
-
-.launchBanner {
-  // background: url("./img/launch-banner.png") top center no-repeat;
-  // background-size: cover;
-  // height: 412px;
-  img {
-    width: 100%;
+.economic {
+  h1 {
+    display: inline-block;
+    margin-bottom: 30px;
+  }
+  p {
+    line-height: 25px;
+  }
+}
+.themeContainer {
+  background: url("./img/banner-bg.png") top center no-repeat;
+  background-size: cover;
+  height: 390px;
+  h1 {
+    margin-top: 117px;
+    margin-bottom: 0;
+    font-weight: 600;
+  }
+  .content {
+    text-align: center;
+  }
+  h3 {
+    display: inline-block;
+    font-size: 30px;
   }
 }
 
-.themeContainer {
-  background: url("./img/theme-bg.png") top center no-repeat;
-  background-size: cover;
-  // height: 412px;
-  .promoteContentArea {
-    padding: 200px 0;
+.tokenContainer {
+  margin: 200px 0 100px;
+  img {
+    width: 100%;
+  }
+  .economicItemHeader {
+    display: flex;
+    margin-bottom: 15px;
+    align-items: center;
 
     div {
-      h1 {
-        margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      margin-right: 20px;
+      > img {
+        margin-bottom: 0;
+        width: 30px;
+        height: 30px;
+        margin-right: 20px;
       }
+      > span {
+        font-size: 26px;
+        line-height: 30px;
+      }
+    }
 
-      p {
-        text-align: center;
-        font-size: 24px;
-        color: #333;
-        padding: 0 40px;
-        margin-bottom: 30px;
+    p {
+      margin-bottom: 0;
+      a {
+        margin-right: 10px;
+        img {
+          width: 21px;
+          height: 21px;
+          margin-bottom: 0;
+          opacity: .5;
+          &:hover {
+            opacity: 1;
+          }
+        }
       }
+    }
+  }
 
-      .subscribe {
-        margin: 0 auto;
-        width: 30%;
-      }
-
-      .subscribeTip {
-        text-align: center;
-      }
+  .economicItemContent {
+    text-align: left;
+    line-height: 22px;
+    margin-bottom: 15px;
+    ul {
+      margin: 0;
+      padding-left: 20px;
+    }
+    li {
+      margin-bottom: 5px;
+    }
+    p {
+      margin-bottom: 5px;
+    }
+    &.kton {
+      margin-bottom: 0;
     }
   }
 }
 
+.stakingContainer {
+  margin: 200px 0 100px;
+  img {
+    width: 100%;
+  }
+  p {
+    margin-bottom: 30px;
+  }
+  .chart {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #F9FAFC;
+    div {
+      font-size: 26px;
+      color: #201550;
+      line-height: 32px;
+      padding-top: 30px;
+    }
+  }
+}
 
+.inflationContainer {
+  margin: 200px 0 100px;
+  img {
+    width: 100%;
+  }
+  p {
+    margin-bottom: 30px;
+  }
+  .chart {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #F9FAFC;
+    div {
+      font-size: 26px;
+      color: #201550;
+      line-height: 32px;
+      padding-top: 30px;
+    }
+  }
+  .chartDesc {
+    margin-top: 30px;
+    text-align: center;
+    font-weight: bold;
+    color: #333333;
+    line-height: 18px;
+  }
+}
+
+.circulationContainer {
+  margin: 200px 0 100px;
+  img {
+    width: 100%;
+  }
+  .textCol {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .subTitle {
+    margin-bottom: 20px;
+    font-size: 26px;
+    color: #201550;
+    line-height: 1.2;
+  }
+  .chart {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #F9FAFC;
+    padding: 30px 35px 20px;
+    div {
+      font-size: 14px;
+      font-weight: 500;
+      color: #333333;
+      line-height: 18px;
+      padding-top: 25px;
+    }
+  }
+}
+.modelContainer {
+  margin: 200px 0 100px;
+  img {
+    width: 170px;
+    height: 170px;
+    margin-right: 32px;
+  }
+  .chart {
+    display: flex;
+    .title {
+      font-size: 26px;
+      color: #201550;
+      line-height: 32px;
+      margin-bottom: 12px;
+    }
+  }
+  p {
+    margin-bottom: 10px;
+  }
+}
 .line {
   display: inline-block;
   height: 2px;
@@ -81,16 +230,81 @@
 }
 
 @media (max-width: 767.98px) {
+  .economic {
+    .title {
+      text-align: center;
+    }
+    p {
+      line-height: 21px;
+    }
+  }
   .themeContainer {
-    .promoteContentArea {
+    background: url("./img/banner-bg-m.png") top center no-repeat;
+    background-size: cover;
+    height: 228px;
+    h3 {
+      font-size: 14px;
+    }
+    .content {
+      padding: 0;
+    }
+    h1 {
+      margin-top: 84px;
+    }
+  }
+  .tokenContainer {
+    margin: 50px 0;
+    .economicCol {
+      padding: 30px 70px;
+    }
+  }
+  .stakingContainer {
+    margin: 50px 0;
+    .chart {
+      margin-bottom: 20px;
       div {
-        .subscribe {
-          width: 100%;
-        }
+        font-size: 16px;
       }
     }
   }
-
+  .inflationContainer {
+    margin: 50px 0;
+    .chart {
+      margin-bottom: 20px;
+      div {
+        font-size: 16px;
+      }
+    }
+  }
+  .circulationContainer {
+    margin: 50px 0;
+    .subTitle {
+      font-size: 20px;
+    }
+    .chart {
+      background-color: initial;
+      padding: 0;
+      img {
+        padding: 10px 15px;
+        background-color: #F9FAFC;
+      }
+    }
+  }
+  .modelContainer {
+    margin: 50px 0 20px;
+    .chart {
+      flex-direction: column;
+      margin-bottom: 15px;
+    }
+    .imgWrapper {
+      text-align: center;
+      background-color: #F9FAFC;
+      margin-bottom: 20px;
+    }
+    img {
+      margin: 3px 70px;
+    }
+  }
   .lineH1 {
     height: 2px;
     background: #EFEFEF;
@@ -105,9 +319,8 @@
   }
 
   .fontH1 {
-    font-size: 20px;
-    margin-bottom: 15px;
-    // font-weight: bold;
+    font-size: 24px;
+    margin-bottom: 10px;
   }
 
   .line {
