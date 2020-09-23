@@ -179,7 +179,7 @@ class PageHeader extends Component {
                                         <Nav.Link className={styles.navTab} href="/">{t('header:home')}</Nav.Link>
                                         <Nav.Link className={styles.navTab} href="/tech">{t('header:tech')}</Nav.Link>
                                         <Nav.Link className={styles.navTab} href="/community">{t('header:community')}</Nav.Link>
-                                        <Nav.Link className={styles.navTab} href="/model">{t('header:economical_model')}</Nav.Link>
+                                        <Nav.Link className={styles.navTab} href="/economic_model">{t('header:economical_model')}</Nav.Link>
                                         <Nav.Link className={styles.navTab} href="/media">{t('header:media')}</Nav.Link>
                                         <Nav.Link className={styles.navButton} target={'_blank'} href="https://www.itering.io/about">{t('header:hiring')}</Nav.Link>
                                         {/* {i18n.language.indexOf('en') > -1 ?

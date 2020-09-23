@@ -16,7 +16,7 @@ import flow_en from './img/flow_en.png'
 
 import report8 from "../Media/img/report8.png"
 import news8 from "../Media/img/news8.png"
-import event3 from "../Media/img/event3.jpeg"
+import event3 from "../Media/img/event3.png"
 
 class Brand extends Component {
     constructor(props, context) {

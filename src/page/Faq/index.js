@@ -9,7 +9,7 @@ import styles from "./style.module.scss";
 
 import report8 from "../Media/img/report8.png"
 import news8 from "../Media/img/news8.png"
-import event3 from "../Media/img/event3.jpeg"
+import event3 from "../Media/img/event3.png"
 
 
 class Faq extends Component {
