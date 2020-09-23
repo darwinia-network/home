@@ -7,11 +7,11 @@ import archorsComponent from '../../components/anchorsComponent'
 import {withTranslation} from "react-i18next";
 import styles from "./style.module.scss";
 // import GradientHeading from "../../components/GradientHeading/GradientHeading";
-import recom1 from "../Media/img/recom1.jpeg"
+import recom1 from "../Media/img/recom1.png"
 import recom2 from "../Media/img/recom2.png"
 import recom3 from "../Media/img/recom3.png"
 import recom4 from "../Media/img/recom4.png"
-import recom5 from "../Media/img/recom5.jpeg"
+import recom5 from "../Media/img/recom5.png"
 import reports from "./img/reports.png"
 import report5 from "../Media/img/report5.png"
 import report6 from "../Media/img/report6.png"
