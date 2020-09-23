@@ -7,7 +7,7 @@ import { PageFooter } from '../../components/PageFooter'
 // import { GradientHeading } from '../../components/GradientHeading'
 
 import styles from './style.module.scss'
-import themeBg from "./img/theme-bg.png"
+// import themeBg from "./img/theme-bg.png"
 import archBg from "./img/theme-bg.png"
 import relayBg from "./img/relay-bg.png"
 import relayBgM from "./img/relay-bg-m.png"
@@ -19,7 +19,7 @@ import gameBgM from "./img/game-bg-m.png"
 import theme1 from "./img/theme-1.png"
 import theme2 from "./img/theme-2.png"
 import theme3 from "./img/theme-3.png"
-import roadmapCur from './img/roadmap/roadmap-cur.png'
+// import roadmapCur from './img/roadmap/roadmap-cur.png'
 import roadmapLine from './img/roadmap/roadmap-line.png'
 import roadmapItem1 from './img/roadmap/roadmap-item-1.png'
 import roadmapItem2 from './img/roadmap/roadmap-item-2.png'
