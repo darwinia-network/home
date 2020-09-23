@@ -135,10 +135,10 @@ class PageHeader extends Component {
     }
 
     render() {
-        const {t, transparent} = this.props
+        const {t, transparent, hasHeightinMobile} = this.props
         const {open} = this.state
         return (
-            <div className={styles.NavBarWrapper}>
+            <div className={`${styles.NavBarWrapper} ${hasHeightinMobile ? styles.hasHeight: null}`}>
                 <div className={`nav-down collapse-header ${styles.NavBarContainer}`}>
                 <Container>
                     <Row className={''}>
@@ -283,7 +283,7 @@ class PageHeader extends Component {
                     </Row>
                 </Container>
                 </div>
-                <div className={styles.NavBarBg}></div>
+                <div className={`${styles.NavBarBg}`}></div>
             </div>
 
         );

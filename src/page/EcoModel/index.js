@@ -34,7 +34,7 @@ class Home extends Component {
         const { t } = this.props
         return (
             <div className={styles.economic}>
-                <PageHeader href="#top" transparent={true} />
+                <PageHeader href="#top" transparent={true} hasHeightinMobile={true}/>
                 
                 <div className={styles.themeContainer}>
                     <Container>
