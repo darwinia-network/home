@@ -6,6 +6,11 @@
   }
   .carousel {
     margin: 100px 0;
+    > div {
+      > a {
+        display: none;
+      }
+    }
     .carouselItem {
       .imgRatio {
         display: block;
@@ -130,6 +135,29 @@
 
 @media (max-width: 575.98px) {
   .media {
+    .carousel {
+      margin: 0 0 40px;
+      .carouselItem {
+        .imgRatio {
+          padding-bottom: 52%;
+        }
+        .mediaTitle {
+          color: #080C20;
+          font-size: 24px;
+          margin-bottom: 20px;
+        }
+        .mediaDetail {
+          height: 270px;
+          margin: 20px 20px 40px;
+        }
+      }
+      > div {
+        > a {
+          display: flex;
+          height: 52vw;
+        }
+      }
+    }
     h1 {
       font-size: 26px;
     }
