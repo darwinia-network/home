@@ -349,6 +349,7 @@
 
   input {
     border-radius: 0;
+    height: 40px;
     border: 1px solid #3E30DD;
     background-clip: initial;
     font-weight: bold;
@@ -990,24 +991,28 @@
 
   .teamContainer {
     color: #fff;
-    height: 700px;
+    height: 555px;
     .persons {
+      margin-left: 15px;
       img {
         width: 80px;
         height: 80px;
-        margin: 0 5px 40px;
+        margin-right: 15px;
+        margin-bottom: 40px;
       }
     }
 
     h1 {
-      font-size: 26px;
+      font-size: 24px;
     }
     p {
-      font-size: 16px;
+      font-size: 20px;
+      margin-top: 20px;
       margin-bottom: 20px;
     }
     a {
       width: 100%;
+      font-weight: bold;
     }
   }
   .partnersContainer {
@@ -1025,8 +1030,20 @@
     }
     > div {
       > div {
+        // &:nth-child(odd) {
+        //   padding: 0 5px 0 10px;
+        // }
+        // &:nth-child(even) {
+        //   padding: 0 10px 0 5px;
+        // }
         > div {
           margin-bottom: 20px;
+          &:nth-child(odd) {
+            padding: 0 5px 0 10px;
+          }
+          &:nth-child(even) {
+            padding: 0 10px 0 5px;
+          }
         }
       }
     }

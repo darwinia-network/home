@@ -6,14 +6,14 @@ import { PageHeader } from '../../components/PageHeader'
 import { PageFooter } from '../../components/PageFooter'
 // import { GradientHeading } from '../../components/GradientHeading'
 
-import carousel_1 from "./img/carousel/carousel-1.jpg"
-import carousel_1_en from "./img/carousel/carousel-1-en.jpg"
+// import carousel_1 from "./img/carousel/carousel-1.jpg"
+// import carousel_1_en from "./img/carousel/carousel-1-en.jpg"
 import carousel_2 from "./img/carousel/carousel-2.jpg"
 import carousel_2_en from "./img/carousel/carousel-2-en.jpg"
 import carousel_3 from "./img/carousel/carousel-3.jpg"
 import carousel_3_en from "./img/carousel/carousel-3-en.jpg"
-import carousel_1_m from "./img/carousel/carousel-1-m.jpg"
-import carousel_1_en_m from "./img/carousel/carousel-1-m-en.jpg"
+// import carousel_1_m from "./img/carousel/carousel-1-m.jpg"
+// import carousel_1_en_m from "./img/carousel/carousel-1-m-en.jpg"
 import carousel_2_m from "./img/carousel/carousel-2-m.jpg"
 import carousel_2_en_m from "./img/carousel/carousel-2-m-en.jpg"
 import carousel_3_m from "./img/carousel/carousel-3-m.jpg"

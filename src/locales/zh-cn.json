@@ -28,7 +28,7 @@
   "home_page": {
     "slogan": "资产互联网络，已接通！",
     "subtitle": "达尔文网络是基于Substrate开发的跨链桥接网络，专注于建设未来资产互联网络，包括非标资产拍卖市场、稳定币跨链、资产交易兑换等领域",
-    "placeholder": "name@email.com",
+    "placeholder": "Email Address",
     "subscribe_btn": "获取更新",
     "subscribe_tip": "订阅成功！请查看您的收件箱。",
 
