@@ -171,7 +171,7 @@ class Home extends Component {
                             </Col>
                             <Col xs={12} md={6}>
                                 <div className={styles.chart}>
-                                    <img src={circulation} alt="circulation"/>
+                                    <div className={styles.chartImg}><img src={circulation} alt="circulation"/></div>
                                     <div>{t('model:circulation_chart_desc')}</div>
                                 </div>
                             </Col>
