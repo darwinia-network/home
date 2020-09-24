@@ -3,7 +3,7 @@ import {Navbar, Nav, Form, Container, Row, Col, Dropdown} from 'react-bootstrap'
 import {disableBodyScroll, enableBodyScroll, clearAllBodyScrollLocks} from 'body-scroll-lock';
 import {withTranslation} from "react-i18next";
 import $ from "jquery";
-import i18n from '../../locales/i18n';
+// import i18n from '../../locales/i18n';
 import styles from './style.module.scss'
 import logo from './img/logo-darwinia.png'
 import logoWhite from './img/logo-darwinia-white.png'
