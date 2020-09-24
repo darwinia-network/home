@@ -175,6 +175,7 @@ html {
         border-width: 1px;
         width: 10px;
         height: 10px;
+        flex: none;
         background-color: #fff;
         &.active {
           opacity: 1;
@@ -191,6 +192,7 @@ html {
       justify-content: flex-start;
       margin-bottom: 0;
       li {
+        flex: none;
         border-width: 1px;
         width: 10px;
         height: 10px;
