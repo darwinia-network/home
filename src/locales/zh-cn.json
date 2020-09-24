@@ -32,6 +32,9 @@
     "subscribe_btn": "获取更新",
     "subscribe_tip": "订阅成功！请查看您的收件箱。",
 
+    "recom_2_link": "http://darwinia.network.com/ambassador",
+    "recom_3_link": "https://medium.com/@DarwiniaNetwork/must-read-darwinia-mainnet-progressive-launch-announcement-ff20a04a8bdd",
+
     "theme_title": "什么是达尔文网络?",
     "theme_desc": "达尔文网络（Darwinia Network）是基于Substrate开发的去中心化异构链跨链桥网络，专注于实现去信任模式下的资产跨链业务，包括令牌兑换，交易和市场等。",
     
@@ -449,7 +452,7 @@
     "game": "Optimistic Verification Game",
     "game_desc": "通过概率抽样极大提高攻击者难度，以及通过乐观博弈机制使得最新块头能够最快的得到确认。",
     "read_more": "Read more",
-    "read_more_link": "https://telemetry.polkadot.io/#list/Polkadot"
+    "read_more_link": "https://docs.darwinia.network/docs/zh-CN/wiki-intro"
   },
   "model": {
     "economic": "Darwinia Economical Model",
