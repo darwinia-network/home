@@ -3,9 +3,10 @@ import {Navbar, Nav, Form, Container, Row, Col, Dropdown} from 'react-bootstrap'
 import {disableBodyScroll, enableBodyScroll, clearAllBodyScrollLocks} from 'body-scroll-lock';
 import {withTranslation} from "react-i18next";
 import $ from "jquery";
-import i18n from '../../locales/i18n';
+// import i18n from '../../locales/i18n';
 import styles from './style.module.scss'
 import logo from './img/logo-darwinia.png'
+import logoWhite from './img/logo-darwinia-white.png'
 import closeIcon from './img/close.png'
 // import github from './img/github.svg'
 
@@ -38,6 +39,7 @@ class PageHeader extends Component {
         super(props, context);
 
         this.state = {
+            hasFixed: false,
             didScroll: false,
             lastScrollTop: 0,
             delta: 5,
@@ -77,9 +79,15 @@ class PageHeader extends Component {
         if ($(window).scrollTop() > navbarSecondaryHeight) {
             if (!$(".collapse-header").hasClass("nav-primary-fixed")) {
                 $(".collapse-header").addClass("nav-primary-fixed");
+                this.setState({
+                    hasFixed: true
+                })
             }
         } else {
             $(".collapse-header").removeClass("nav-primary-fixed");
+            this.setState({
+                hasFixed: false
+            })
         }
     }
 
@@ -136,9 +144,9 @@ class PageHeader extends Component {
 
     render() {
         const {t, transparent, hasHeightinMobile} = this.props
-        const {open} = this.state
+        const {open, hasFixed} = this.state
         return (
-            <div className={`${styles.NavBarWrapper} ${hasHeightinMobile ? styles.hasHeight: null}`}>
+            <div className={`${styles.NavBarWrapper} ${hasHeightinMobile ? styles.hasHeight: null} ${hasFixed ? styles.hasFixed: null}`}>
                 <div className={`nav-down collapse-header ${styles.NavBarContainer}`}>
                 <Container>
                     <Row className={''}>
@@ -166,7 +174,10 @@ class PageHeader extends Component {
                         <Col xs={12} className={`${styles.ColMain}  navbar--primary d-flex justify-content-between align-items-center`}>
                             <Navbar bg="white" expand="lg" className={`${styles.Navbar} ${transparent ? null : styles.NavBg} cs-header`}>
                                 <Navbar.Brand href="/">
-                                    <img alt="darwinia logo" className={styles.logo} src={logo}/>
+                                    <div className={'hidden-xs'}>{hasFixed ? <img alt="darwinia logo" className={styles.logo} src={logo}/> :
+                                    <img alt="darwinia logo" className={styles.logo} src={logo}/>}</div>
+                                    <div className={'hidden-md'}>{(!hasFixed && !hasHeightinMobile) ? <img alt="darwinia logo" className={styles.logo} src={logoWhite}/> :
+                                    <img alt="darwinia logo" className={styles.logo} src={logo}/>}</div>
                                 </Navbar.Brand>
                                 <Navbar.Toggle onClick={() => {
                                     this.showTargetElement()
@@ -216,6 +227,18 @@ class PageHeader extends Component {
                             {open ? <div id="basic-navbar-nav"
                                         className={`${styles.navDraw} d-flex flex-column animated fadeInRight faster`}>
                                 <div className={`${styles.closeBox} d-flex`}>
+                                    <Dropdown alignRight>
+                                        <Dropdown.Toggle as={CustomToggle} id="dropdown-custom-components">
+                                            <div className={styles.lngBtn}>{t('header:lang_demo')}</div>
+                                        </Dropdown.Toggle>
+                                        <Dropdown.Menu className=' animated fadeIn faster'>
+                                            <Dropdown.Item onClick={() => this.changeLng('zh-cn')} eventKey="4.1">
+                                                简体中文
+                                            </Dropdown.Item>
+                                            <Dropdown.Item eventKey="4.2"
+                                                        onClick={() => this.changeLng('en-us')}>English</Dropdown.Item>
+                                        </Dropdown.Menu>
+                                    </Dropdown>
                                     <div className={'spacer'}></div>
                                     <div onClick={() => {
                                         this.hideTargetElement()
@@ -225,46 +248,32 @@ class PageHeader extends Component {
                                 </div>
 
                                 <Container className={'text-center spacer d-flex flex-column justify-content-center'}>
-                                    <Row>
-                                        {/* <Col md={12}>
+                                    <Row className={styles.navDrawList}>
+                                        <Col md={12}>
                                             <Nav.Link href="/">{t('header:home')}</Nav.Link>
-                                        </Col> */}
-                                        <Col md={12}>
-                                            <Nav.Link target="_blank" href="/tech">{t('header:tech')}</Nav.Link>
                                         </Col>
                                         <Col md={12}>
-                                            <Nav.Link target="_blank" href="https://github.com/darwinia-network">{t('footer:community_title_2')}</Nav.Link>
+                                            <Nav.Link href="/tech">{t('header:tech')}</Nav.Link>
                                         </Col>
                                         <Col md={12}>
-                                        {i18n.language.indexOf('en') > -1 ?
-                                        <Nav.Link target={'_blank'}
-                                        href="https://evolution.l2me.com/darwinia/Darwinia_Genepaper_EN.pdf">{t('header:genepaper')}</Nav.Link>
-                                        :
-                                        <Nav.Link target={'_blank'}
-                                        href="https://evolution.l2me.com/darwinia/Darwinia_Genepaper_CN.pdf">{t('header:genepaper')}</Nav.Link>
-                                        }
+                                            <Nav.Link href="/community">{t('header:community')}</Nav.Link>
                                         </Col>
                                         <Col md={12}>
-                                            <Nav.Link target="_blank" href="https://talk.darwinia.network">{t('header:forum')}</Nav.Link>
+                                            <Nav.Link href="/economic_model">{t('header:economical_model')}</Nav.Link>
                                         </Col>
                                         <Col md={12}>
-                                            <Nav.Link target="_blank" href="https://github.com/darwinia-network/darwinia/wiki/How-To-Join-Darwinia-POC-1-Testnet---Trilobita">{t('header:testnet')}</Nav.Link>
+                                            <Nav.Link href="/media">{t('header:media')}</Nav.Link>
                                         </Col>
                                         <Col md={12}>
-                                            <Nav.Link target="_blank" href={t('header:explorer_url')}>{t('header:explorer')}</Nav.Link>
+                                            <a target="_blank" rel="noopener noreferrer" href={t('header:genepaper_url')} className={styles.paper}><div className={styles.gIcon}/>{t('header:genepaper')}</a>
                                         </Col>
-
                                         <Col md={12}>
-                                            <Nav.Link target={'_blank'} href="https://rfcs.darwinia.network/">{t('header:rfc')}</Nav.Link>
-                                        </Col>
-
-                                        <Col md={12}>
-                                            <Nav.Link href="/faq">{t('header:faq')}</Nav.Link>
+                                            <a target="_blank" rel="noopener noreferrer" href={t('header:techpaper_url')} className={styles.paper}><div className={styles.tIcon}/>{t('header:techpaper')}</a>
                                         </Col>
                                     </Row>
                                 </Container>
 
-                                <Container className={`${styles.lngBox} text-center`}>
+                                {/* <Container className={`${styles.lngBox} text-center`}>
                                     <Row>
                                         <Col md={12}>
                                             <Nav.Link onClick={() => this.changeLng('zh-cn')}>简体中文</Nav.Link>
@@ -273,7 +282,7 @@ class PageHeader extends Component {
                                             <Nav.Link onClick={() => this.changeLng('en-us')}>English</Nav.Link>
                                         </Col>
                                     </Row>
-                                </Container>
+                                </Container> */}
                             </div> : null}
 
                             {open ? <div onClick={() => {

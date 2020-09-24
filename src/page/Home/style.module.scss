@@ -57,6 +57,11 @@
 }
 .carousel {
   // margin: 100px 0;
+  > div {
+    > a {
+      display: none;
+    }
+  }
   .carouselItem {
     .imgRatio {
       display: block;
@@ -313,7 +318,8 @@
     color: #6330DD;
     .mediaTime {
       font-size: 12px;
-      color: #201550;
+      order: -1;
+      color: #6330DD;
     }
   }
   .mediaDesc {
@@ -741,11 +747,45 @@
     }
   }
 
+  .carousel {
+    > div {
+      > a {
+        display: flex;
+      }
+    }
+    .carouselItem {
+      .imgRatio {
+        padding-bottom: 170%;
+        img {
+        }
+      }
+      .mediaInfo {
+        .mediaTime {
+        }
+      }
+      .mediaDesc {
+        
+      }
+    }
+  }
+
   .themeContainer {
     .promoteContentArea {
+      padding: 120px 0 50px;
+      h1 {
+        letter-spacing: 1px;
+      }
       div {
+        p {
+          font-size: 16px;
+          padding: 0;
+          text-align: left;
+        }
         .subscribe {
           width: 100%;
+          button {
+            border-radius: 0;
+          }
         }
       }
     }
@@ -801,32 +841,38 @@
     }
   }
 
-  .newContainer {
-    background: #fff;
-
-    h3 {
-      font-size: 16px;
-      text-align: left;
-      margin-bottom: 40px;
-
-      a {
-        color: $text-main;
-      }
-    }
+  .architectureContainer {
+    background: url("./img/architecture-bg-m.png") top center no-repeat;
+    background-size: cover;
+    padding: 50px 0 60px 0;
   }
 
   .economicContainer {
+    padding: 100px 0 0;
     text-align: center;
-
+    .title {
+      text-align: center;
+    }
+    h1 {
+      margin-bottom: 30px;
+    }
     .economicImg {
       img {
         margin-bottom: 40px;
       }
     }
-
     .economicItem {
+      .economicItemHeader {
+        p {
+          display: none;
+        }
+      }
       .economicItemContent {
         margin-bottom: 40px;
+        p {
+          font-size: 16px;
+          line-height: 24px;
+        }
 
         .addToken {
           display: none;
@@ -834,67 +880,33 @@
       }
     }
   }
-
-  .subscribe {
-    width: 100%;
-
-    button {
-      line-height: initial;
-      margin-top: 20px;
-      background: linear-gradient(315deg, rgba(254, 56, 118, 1) 0%, rgba(124, 48, 221, 1) 71%, rgba(58, 48, 221, 1) 100%);
-      border-radius: 4px;
-      font-weight: bold;
-      padding: .59rem .75rem;
-      border: none;
-      outline: none;
+  .applicationContainer {
+    padding: 50px 0 0;
+    background: none;
+    .title {
+      text-align: center;
     }
-  }
-
-  .lineH1 {
-    height: 2px;
-    background: #EFEFEF;
-    margin-bottom: 30px;
-  }
-
-  .lineH2 {
-    height: 2px;
-    background: #fff;
-    width: 80px;
-    margin: 2rem auto;
-  }
-
-  .fontH1 {
-    font-size: 20px;
-    margin-bottom: 15px;
-    // font-weight: bold;
-  }
-
-  .line {
-    display: none;
-  }
-
-  .architectureContainer {
-    background: #F9F9F9;
-    padding: 60px 0 60px 0;
-  }
-
-  .teamContainer {
-    color: #fff;
-    height: 500px;
-
     h1 {
-      font-size: 26px;
+      margin-bottom: 30px;
     }
-
+    .appItem {
+      padding-right: 15px;
+    }
+    h3 {
+      color: #201550
+    }
     p {
+      color: #333;
       font-size: 16px;
     }
+
   }
-
   .roadmapContainer {
-    padding: 60px 0 60px 0;
+    padding: 100px 0 90px 0;
     text-align: left;
-
+    .title {
+      text-align: center;
+    }
     .nospace {
       padding-left: 0;
       padding-right: 0;
@@ -916,6 +928,7 @@
 
     img {
       width: 100%;
+      padding: 0 40px;
     }
 
     .roadMapImageBox {
@@ -975,8 +988,115 @@
     }
   }
 
+  .teamContainer {
+    color: #fff;
+    height: 700px;
+    .persons {
+      img {
+        width: 80px;
+        height: 80px;
+        margin: 0 5px 40px;
+      }
+    }
+
+    h1 {
+      font-size: 26px;
+    }
+    p {
+      font-size: 16px;
+      margin-bottom: 20px;
+    }
+    a {
+      width: 100%;
+    }
+  }
   .partnersContainer {
-    padding-top: 55px;
+    padding-top: 100px;
+    padding-bottom: 80px;
+    .title {
+      text-align: center;
+    }
+    h1 {
+      margin-bottom: 30px;
+    }
+    h3 {
+      font-size: 16px;
+      margin-bottom: 0;
+    }
+    > div {
+      > div {
+        > div {
+          margin-bottom: 20px;
+        }
+      }
+    }
+  }
+
+  .newContainer {
+    background: #fff;
+    padding: 0 0 70px;
+    .title {
+      text-align: center;
+    }
+    h3 {
+      font-size: 16px;
+      text-align: left;
+      margin-bottom: 40px;
+
+      a {
+        color: $text-main;
+      }
+    }
+    .button {
+      margin-top: 0;
+    }
+    .mediaInfo {
+      .mediaTime {
+        order: -1;
+        color: #6330DD;
+      }
+    }
+    .mediaDesc {
+      margin-bottom: 30px;
+    }
+  }
+
+  .subscribe {
+    width: 100%;
+
+    button {
+      line-height: initial;
+      margin-top: 20px;
+      background: linear-gradient(315deg, rgba(254, 56, 118, 1) 0%, rgba(124, 48, 221, 1) 71%, rgba(58, 48, 221, 1) 100%);
+      border-radius: 4px;
+      font-weight: bold;
+      padding: .59rem .75rem;
+      border: none;
+      outline: none;
+    }
+  }
+
+  .lineH1 {
+    height: 2px;
+    background: #EFEFEF;
+    margin-bottom: 30px;
+  }
+
+  .lineH2 {
+    height: 2px;
+    background: #fff;
+    width: 80px;
+    margin: 2rem auto;
+  }
+
+  .fontH1 {
+    font-size: 24px;
+    margin-bottom: 15px;
+    // font-weight: bold;
+  }
+
+  .line {
+    display: none;
   }
 
   .button {

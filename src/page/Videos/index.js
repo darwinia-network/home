@@ -35,7 +35,7 @@ class News extends Component {
         const {t} = this.props
         return (
             <div>
-                <PageHeader transparent={true}/>
+                <PageHeader transparent={true} hasHeightinMobile={true}/>
                 <div className={`${styles.news}`}>
                     <Container>
                         <div className={styles.title}>
