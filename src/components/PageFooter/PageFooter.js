@@ -70,7 +70,7 @@ class PageFooter extends Component {
                 return;
             case 'wx':
                 // window.open('https://medium.com/@DarwiniaNetwork');
-                console.log(e.pageX)
+                // console.log(e.pageX)
                 return;
             case 'email':
                 window.open('mailto:hello@darwinia.network');
@@ -250,32 +250,45 @@ class PageFooter extends Component {
                         <Row className={styles.xsContent}>
                             <Col className={`text-center  ${styles.shareLogo}`}>
                                 <div className={styles.logoContent}>
-                                    <img alt="Medium" onClick={() => {
-                                        this.goto('medium')
-                                    }} src={share1}/>
-                                    <img alt="telegram" onClick={() => {
-                                        this.goto('tg')
-                                    }} src={share2}/>
-                                    <img alt="twitter" onClick={() => {
-                                        this.goto('twitter')
-                                    }} src={share3}/>
-                                    <img alt="github" onClick={() => {
-                                        this.goto('github')
-                                    }} src={share4}/>
-                                </div>
-                                <div className={styles.logoContent}>
-                                    <img alt="bihu" onClick={() => {
-                                        this.goto('bihu')
-                                    }} src={share5}/>
-                                    <img alt="weibo" onClick={() => {
-                                        this.goto('weibo')
-                                    }} src={share6}/>
-                                    <img alt="wechat" onClick={() => {
-                                        this.goto('wx')
-                                    }} src={share7}/>
                                     <img alt="email" onClick={() => {
                                         this.goto('email')
                                     }} src={share8}/>
+                                    <OverlayTrigger
+                                        placement="top-end"
+                                        delay={{show: 100, hide: 1000}}
+                                        overlay={this.renderTooltip}
+                                    >
+                                        <img alt="wechat" onClick={(e) => {
+                                            this.goto('wx', e)
+                                        }} src={share7}/>
+                                    </OverlayTrigger>
+                                    <img alt="weibo" onClick={() => {
+                                        this.goto('weibo')
+                                    }} src={share6}/>
+                                    <img alt="bihu" onClick={() => {
+                                        this.goto('bihu')
+                                    }} src={share5}/>
+                                    
+                                    
+                                    
+                                    
+                                </div>
+                                <div className={styles.logoContent}>
+                                <img alt="github" onClick={() => {
+                                        this.goto('github')
+                                    }} src={share4}/>
+                                    <img alt="twitter" onClick={() => {
+                                        this.goto('twitter')
+                                    }} src={share3}/>
+                                    <img alt="telegram" onClick={() => {
+                                        this.goto('tg')
+                                    }} src={share2}/>
+                                    <img alt="Medium" onClick={() => {
+                                        this.goto('medium')
+                                    }} src={share1}/>
+                                    
+                                    
+                                    
                                 </div>
                             </Col>
                             <Col className={`text-center ${styles.copyright}`}>

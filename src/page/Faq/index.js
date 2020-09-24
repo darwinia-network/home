@@ -28,12 +28,12 @@ class Faq extends Component {
         const {t} = this.props
         return (
             <div>
-                <PageHeader transparent={true}/>
+                <PageHeader transparent={true} hasHeightinMobile={true}/>
                 <div className={`${styles.faq}`}>
                     <Container>
                         <Row>
-                            <Col xs={1}></Col>
-                            <Col xs={10}>
+                            <Col xs={0} md={1}></Col>
+                            <Col xs={12} md={10}>
                                 <div className={styles.title}>
                                     <h1 className={`${styles.fontH1} ${styles.gradientText}`}>{t('faq_page:title')}</h1>
                                 </div>
