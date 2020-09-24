@@ -61,6 +61,7 @@
   .slogan {
     color: #FFFFFF;
     padding-top: 90px;
+    font-size: 32px;
     p {
       font-weight: 600;
       font-size: 24px;
@@ -71,14 +72,14 @@
 }
 
 .architectureContainer {
-  margin: 200px 0 100px;
+  margin: 100px 0 100px;
   img {
     width: 100%;
   }
 }
 
 .stageContainer {
-  margin: 200px 0 100px;
+  margin: 100px 0 100px;
   img {
     width: 100%;
   }
@@ -135,7 +136,7 @@
 }
 
 .relayContainer {
-  margin: 200px 0 100px;
+  margin: 100px 0 100px;
   .relaySection {
     position: relative;
   }
@@ -185,14 +186,14 @@
 }
 
 .mmrContainer {
-  margin: 200px 0 100px;
+  margin: 100px 0 100px;
   img {
     width: 100%;
   }
 }
 
 .gameContainer {
-  margin: 200px 0 100px;
+  margin: 100px 0 100px;
   .section {
     background: #F9FAFC;
     padding: 30px 85px 30px 60px;
@@ -217,7 +218,7 @@
 
 .fontH1 {
   text-transform: uppercase;
-  font-size: 50px;
+  font-size: 40px;
 }
 
 .lineH1 {
@@ -236,7 +237,7 @@
 
 .gradientText {
   text-transform: uppercase;
-  font-size: 50px;
+  font-size: 40px;
   color: rgba(8, 12, 32, 1);
   letter-spacing: 2px;
   background: linear-gradient(315deg, rgba(254, 56, 118, 1) 0%, rgba(124, 48, 221, 1) 71%, rgba(58, 48, 221, 1) 100%);
