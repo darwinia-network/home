@@ -195,7 +195,6 @@ html {
       }
     }
   }
-
 }
 @media (min-width: 576px) {
   .nav-primary-fixed {
@@ -224,6 +223,21 @@ html {
 
   .hidden-md {
     display: block;
+  }
+  .media-carousel {
+    .carousel {
+      .carousel-indicators {
+        left: 50%;
+        transform: translate(-50%, 0);
+        margin: 0 0 15px 0;
+        width: fit-content;
+        li {
+          border-width: 1px;
+          width: 10px;
+          height: 10px;
+        }
+      }
+    }
   }
 
 }
