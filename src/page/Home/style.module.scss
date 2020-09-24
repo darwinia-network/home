@@ -8,7 +8,7 @@
 
   .slogan {
     text-transform: uppercase;
-    font-size: 50px;
+    font-size: 40px;
     font-weight: 600;
   }
 
@@ -39,7 +39,7 @@
 
 .gradientText {
   text-transform: uppercase;
-  font-size: 50px;
+  font-size: 40px;
   color: rgba(8, 12, 32, 1);
   letter-spacing: 2px;
   background: linear-gradient(315deg, rgba(254, 56, 118, 1) 0%, rgba(124, 48, 221, 1) 71%, rgba(58, 48, 221, 1) 100%);
@@ -65,7 +65,7 @@
   .carouselItem {
     .imgRatio {
       display: block;
-      padding-bottom: 26%;
+      padding-bottom: 16%;
       position: relative;
       img {
         position: absolute;
@@ -386,7 +386,7 @@
 
 .fontH1 {
   text-transform: uppercase;
-  font-size: 50px;
+  font-size: 40px;
 }
 
 .lineH1 {
@@ -451,7 +451,7 @@
   // height: 782px;
   .fontH1 {
     // padding-top: 70px;
-    // font-size: 50px;
+    // font-size: 40px;
     margin-bottom: 73px;
     color: #fff;
   }
@@ -690,7 +690,7 @@
     margin-bottom: 40px;
   }
   h1 {
-    font-size: 50px;
+    font-size: 40px;
   }
   .button {
     margin-top: 0;
@@ -761,7 +761,7 @@
     }
     .carouselItem {
       .imgRatio {
-        padding-bottom: 170%;
+        padding-bottom: 137%;
         img {
         }
       }
@@ -936,7 +936,7 @@
 
     img {
       width: 100%;
-      padding: 0 40px;
+      padding: 0 60px;
     }
 
     .roadMapImageBox {
