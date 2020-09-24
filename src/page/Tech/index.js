@@ -27,7 +27,7 @@ import roadmapItem3 from './img/roadmap/roadmap-item-3.png'
 import roadmapItem4 from './img/roadmap/roadmap-item-4.png'
 import roadmapItem5 from './img/roadmap/roadmap-item-5.png'
 import roadmapItem6 from './img/roadmap/roadmap-item-6.png'
-// import roadmapMobile from './img/roadmap/roadmap-m.png'
+import roadmapMobile from './img/roadmap/roadmap-m.png'
 
 import archorsComponent from '../../components/anchorsComponent'
 import { withTranslation } from "react-i18next";
@@ -86,7 +86,7 @@ class Home extends Component {
                         <div className={styles.title}>
                             <h1 className={`reveal-h1 ${styles.fontH1} ${styles.gradientText}`}>{t('tech:mainnet_stage')}</h1>
                         </div>
-                        <Row>
+                        <Row className={'hidden-xs'}>
                             <Col xs={12}>
                                 <p>{t('tech:mainnet_stage_desc')}</p>
                                 <Row className={`text-center ${styles.roadmapRow}`}>
@@ -176,6 +176,7 @@ class Home extends Component {
                                 </Row>
                             </Col>
                         </Row>
+                        <img className={'hidden-md'} src={roadmapMobile} alt="roadmap"/>
                     </Container>
                 </div>
 
