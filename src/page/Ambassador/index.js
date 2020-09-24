@@ -34,12 +34,12 @@ class Brand extends Component {
         const {t} = this.props
         return (
             <div>
-                <PageHeader transparent={true}/>
+                <PageHeader transparent={true} hasHeightinMobile={true}/>
                 <div className={`${styles.article}`}>
                     <Container>
                         <Row>
-                            <Col xs={1}></Col>
-                            <Col xs={10} className={`${styles.content}`}>
+                            <Col xs={0} md={1}></Col>
+                            <Col xs={12} md={10} className={`${styles.content}`}>
                                 <h1>{t('ambassador:title')}</h1>
                                 <div className={styles.author}>
                                     <span>{t('ambassador:time')}</span>

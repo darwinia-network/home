@@ -323,7 +323,7 @@ class Home extends Component {
                     <img src={launchBanner} alt="banner"/>
                 </div> */}
                 <div className={`home-carousel ${styles.carousel}`}>
-                    <Carousel controls={true}  indicators={true}>
+                    <Carousel controls={false}  indicators={true}>
                         <Carousel.Item>
                             <div className={styles.carouselItem}>
                                 <a target="_blank" rel="noopener noreferrer" className={`${styles.imgRatio}`} href={t('media:recom_3_link')}>
@@ -836,7 +836,7 @@ class Home extends Component {
                                     <img alt="person" src={person_4}/>
                                     <img alt="person" src={person_5}/>
                                     <img alt="person" src={person_6}/>
-                                    <img alt="person" src={person_7}/>
+                                    <img className={'hidden-xs'} alt="person" src={person_7}/>
                                 </div>
                                 <p>
                                     {t('community:invite')}
