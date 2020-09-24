@@ -97,16 +97,17 @@
   background-size: cover;
   // height: 412px;
   .promoteContentArea {
-    padding: 200px 0;
+    padding: 100px 0;
 
     div {
       h1 {
+        font-size: 40px;
         margin-bottom: 20px;
       }
 
       p {
         text-align: center;
-        font-size: 24px;
+        font-size: 20px;
         color: #333;
         padding: 0 40px;
         margin-bottom: 30px;
@@ -237,8 +238,8 @@
 }
 
 .partnersContainer {
-  padding-top: 200px;
-  padding-bottom: 100px;
+  padding-top: 100px;
+  // padding-bottom: 100px;
   // background: #f8f8f8;
 
   h1 {
@@ -275,7 +276,7 @@
 
 .newContainer {
   padding-top: 60px;
-  padding-bottom: 200px;
+  padding-bottom: 100px;
   background: #fff;
 
   h1 {
@@ -317,8 +318,12 @@
     align-items: center;
     color: #6330DD;
     .mediaTime {
+      font-weight: bold;
+      letter-spacing: 0.5px;
+      line-height: 20px;
       font-size: 12px;
       order: -1;
+      opacity: .5;
       color: #6330DD;
     }
   }
@@ -614,7 +619,7 @@
 }
 
 .roadmapContainer {
-  padding: 200px 0;
+  padding: 100px 0;
   color: #5430DD;
 
   h1 {
@@ -1021,6 +1026,9 @@
     .title {
       text-align: center;
     }
+    img {
+      max-height: initial;
+    }
     h1 {
       margin-bottom: 30px;
     }
@@ -1039,10 +1047,10 @@
         > div {
           margin-bottom: 20px;
           &:nth-child(odd) {
-            padding: 0 5px 0 10px;
+            padding: 0 10px 0 20px;
           }
           &:nth-child(even) {
-            padding: 0 10px 0 5px;
+            padding: 0 20px 0 10px;
           }
         }
       }
@@ -1064,12 +1072,20 @@
         color: $text-main;
       }
     }
+    h1 {
+      margin-bottom: 30px;
+    }
     .button {
       margin-top: 0;
     }
     .mediaInfo {
       .mediaTime {
+        font-weight: bold;
+        letter-spacing: 0.5px;
+        line-height: 20px;
+        font-size: 12px;
         order: -1;
+        opacity: .5;
         color: #6330DD;
       }
     }
