@@ -47,7 +47,7 @@
       text-decoration: none;
       list-style-type: none;
       width: 170px;
-      background-color: #F9FAFC;
+      background-color: #fff;
       box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.05);
       display: flex;
       flex-direction: column;
@@ -125,6 +125,9 @@
       display: flex;
       &.new {
         // min-height: 215px;
+        .section {
+          padding: 68px 30px;
+        }
       }
       &.technology {
         // min-height: 408px;
@@ -281,14 +284,127 @@
 @media (max-width: 575.98px) {
   .community {
     h1 {
-      font-size: 26px;
+      font-size: 24px;
     }
     h3 {
       margin-bottom: 20px;
     }
+    .dive {
+      background: url("./img/dive_banner_m.png") top center no-repeat;
+      background-size: cover;
+      height: 378px;
+      h1 {
+        font-size: 26px;
+        font-weight: 600;
+        margin-top: 130px;
+        margin-bottom: 16px;
+      }
+      p {
+        font-size: 16px;
+      }
+    }
+    .general {
+      .content {
+        padding: 0 15px 50px;
+      }
+      .mediaBlocks {
+        margin: 30px 0 0;
+      }
+      .mediaBlock {
+        width: 100%;
+        flex-direction: row;
+        padding: 2px 15px;
+        margin-bottom: 20px;
+        .mediaName {
+          flex: 1 1 auto;
+          margin-bottom: 0;
+          color: #6330DD;
+        }
+        .mediaLogo {
+          margin-right: 15px;
+        }
+        .mediaNum {
+          order: 3;
+        }
+      }
+    }
+    .contribute {
+      h1 {
+        margin-bottom: 0;
+      }
+      .contributeBlocks {
+        margin-bottom: 40px;
+      }
+      .contributeBlock {
+        margin-top: 30px;
+        flex-direction: column;
+        &.new {
+          // min-height: 215px;
+          .section {
+            padding: 30px;
+          }
+        }
+        .avatar {
+          padding: 12px 20px;
+          display: flex;
+          align-items: center;
+          img {
+            width: 50px;
+            height: 50px;
+            margin-right: 15px;
+          }
+          div {
+            margin: 0;
+            font-size: 24px;
+            font-weight: normal;
+          }
+        }
+        .section {
+          padding: 20px 20px 0;
+          .title {
+            font-weight: 600;
+            text-align: center;
+          }
+          div + .title {
+            margin-top: 20px;
+          }
+          p + .title {
+            margin-top: 20px;
+          }
+          p {
+            text-align: center;
+          }
+          .button {
+            padding: 10px 0;
+            width: 100%;
+            margin: 0 0 20px 0;
+            margin-bottom: 20px;
+          }
+        }
+      }
+    }
+    .contributors {
+      .title {
+        margin-top: 60px;
+        margin-bottom: 50px;
+        font-size: 24px;
+      }
+      p {
+        margin: 20px 0;
+      }
+      a {
+        width: 100%;
+      }
+      .persons {
+        margin-left: 15px;
+        img {
+          width: 80px;
+          height: 80px;
+          margin-right: 15px;
+          margin-bottom: 40px;
+        }
+      }
 
-    .content {
-      padding: 0 25px 50px 35px;
     }
   }
 

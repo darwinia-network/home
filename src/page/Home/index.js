@@ -32,8 +32,8 @@ import architecture from './img/architecture.png'
 import architecture_en from './img/architecture-en.png'
 import architecture_mobile from './img/architecture-mobile.png'
 import architecture_mobile_en from './img/architecture-mobile.png'
-import architecture_solo from './img/architecture-solo.svg'
-import architecture_chain from './img/architecture-chain.svg'
+import architecture_solo from './img/architecture-solo.png'
+import architecture_chain from './img/architecture-chain.png'
 import economic from './img/economic.png'
 import economic_en from './img/economic-en.png'
 
@@ -323,10 +323,10 @@ class Home extends Component {
                     <img src={launchBanner} alt="banner"/>
                 </div> */}
                 <div className={`home-carousel ${styles.carousel}`}>
-                    <Carousel controls={true}  indicators={true}>
+                    <Carousel controls={false}  indicators={true}>
                         <Carousel.Item>
                             <div className={styles.carouselItem}>
-                                <a target="_blank" rel="noopener noreferrer" className={`${styles.imgRatio}`} href={t('media:recom_3_link')}>
+                                <a target="_blank" rel="noopener noreferrer" className={`${styles.imgRatio}`} href={t('home_page:recom_3_link')}>
                                     <div className={`hidden-xs`}>
                                         {i18n.language.indexOf('en') > -1 ? <img alt="news" src={carousel_3_en}/> :
                                         <img alt="news" src={carousel_3}/>}
@@ -340,7 +340,7 @@ class Home extends Component {
                         </Carousel.Item>
                         <Carousel.Item>
                             <div className={styles.carouselItem}>
-                                <a target="_blank" rel="noopener noreferrer" className={`${styles.imgRatio}`} href={t('media:recom_2_link')}>
+                                <a target="_blank" rel="noopener noreferrer" className={`${styles.imgRatio}`} href={t('home_page:recom_2_link')}>
                                     <div className={`hidden-xs`}>
                                         {i18n.language.indexOf('en') > -1 ? <img alt="news" src={carousel_2_en}/> :
                                         <img alt="news" src={carousel_2}/>}
@@ -348,20 +348,6 @@ class Home extends Component {
                                     <div className={`hidden-md`}>
                                         {i18n.language.indexOf('en') > -1 ? <img alt="news" src={carousel_2_en_m}/> :
                                         <img alt="news" src={carousel_2_m}/>}
-                                    </div>
-                                </a> 
-                            </div>
-                        </Carousel.Item>
-                        <Carousel.Item>
-                            <div className={styles.carouselItem}>
-                            <a target="_blank" rel="noopener noreferrer" className={`${styles.imgRatio}`} href={t('media:recom_1_link')}>
-                                    <div className={`hidden-xs`}>
-                                        {i18n.language.indexOf('en') > -1 ? <img alt="news" src={carousel_1_en}/> :
-                                        <img alt="news" src={carousel_1}/>}
-                                    </div>
-                                    <div className={`hidden-md`}>
-                                        {i18n.language.indexOf('en') > -1 ? <img alt="news" src={carousel_1_en_m}/> :
-                                        <img alt="news" src={carousel_1_m}/>}
                                     </div>
                                 </a> 
                             </div>
@@ -836,7 +822,7 @@ class Home extends Component {
                                     <img alt="person" src={person_4}/>
                                     <img alt="person" src={person_5}/>
                                     <img alt="person" src={person_6}/>
-                                    <img alt="person" src={person_7}/>
+                                    <img className={'hidden-xs'} alt="person" src={person_7}/>
                                 </div>
                                 <p>
                                     {t('community:invite')}
@@ -923,7 +909,7 @@ class Home extends Component {
                             </Col>
                         </Row>
                         <div className="text-center">
-                            <Button variant="dark" href="/news"
+                            <Button variant="dark" href="/media"
                                     className={styles.button}>{t('home_page:news_btn')}</Button>
                         </div>
                     </Container>

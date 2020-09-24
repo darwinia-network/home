@@ -70,7 +70,7 @@ class Brand extends Component {
                                         {t('community:dive_subtitle')}
                                     </p>
                                     <Button variant="transparent" target="_blank" href="/ambassador"
-                                    className={styles.button}>{t('community:dive_slogan')}</Button>
+                                    className={`hidden-xs ${styles.button}`}>{t('community:dive_slogan')}</Button>
                                 </Col>
                             </Row>
                         </div>
@@ -81,8 +81,8 @@ class Brand extends Component {
                     <Container>
                         <div>
                             <Row>
-                                <Col xs={1}></Col>
-                                <Col xs={10} className={`${styles.content}`}>
+                                <Col md={1} xs={0}></Col>
+                                <Col md={10} xs={12} className={`${styles.content}`}>
                                     {/* <div className={'text-center'}>
                                         <h1 className={`${styles.title} ${styles.gradientText}`}>
                                             {t('community:general')}
@@ -95,7 +95,7 @@ class Brand extends Component {
                                                 <img className={styles.hoverImg} alt="twitter" src={twitter}/>
                                             </div>
                                             <div className={styles.mediaNum}>
-                                                11,824
+                                                12,266
                                             </div>
                                             <div className={styles.mediaName}>
                                                 {t('community:twitter')}
@@ -107,7 +107,7 @@ class Brand extends Component {
                                                 <img className={styles.hoverImg} alt="telegram" src={telegram}/>
                                             </div>
                                             <div className={styles.mediaNum}>
-                                                11,478
+                                                11,464
                                             </div>
                                             <div className={styles.mediaName}>
                                                 {t('community:telegram')}
@@ -119,7 +119,7 @@ class Brand extends Component {
                                                 <img className={styles.hoverImg} alt="medium" src={medium}/>
                                             </div>
                                             <div className={styles.mediaNum}>
-                                                281
+                                                300
                                             </div>
                                             <div className={styles.mediaName}>
                                                 {t('community:medium')}
@@ -165,8 +165,8 @@ class Brand extends Component {
                 <div className={`${styles.contribute}`}>
                     <Container>
                         <Row>
-                            <Col xs={1}></Col>
-                            <Col xs={10} className={`${styles.content}`}>
+                            <Col md={1} xs={0}></Col>
+                            <Col md={10} xs={12} className={`${styles.content}`}>
                                 <div className={'text-center'}>
                                     <h1 className={`${styles.gradientText}`}>
                                         {t('community:contribute')}
@@ -248,8 +248,8 @@ class Brand extends Component {
                 <div className={styles.contributors}>
                     <Container>
                         <Row>
-                            <Col xs={1}></Col>
-                            <Col xs={10} className={`${styles.content}`}>
+                            <Col xs={0} md={1}></Col>
+                            <Col xs={12} md={10} className={`${styles.content}`}>
                                 <h1 className={styles.title}>
                                     {t('community:contributors')}
                                 </h1>
@@ -260,7 +260,7 @@ class Brand extends Component {
                                     <img alt="person" src={person_4}/>
                                     <img alt="person" src={person_5}/>
                                     <img alt="person" src={person_6}/>
-                                    <img alt="person" src={person_7}/>
+                                    <img className={'hidden-xs'} alt="person" src={person_7}/>
                                 </div>
                                 <p>
                                     {t('community:invite')}
