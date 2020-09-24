@@ -47,7 +47,7 @@
       text-decoration: none;
       list-style-type: none;
       width: 170px;
-      background-color: #F9FAFC;
+      background-color: #fff;
       box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.05);
       display: flex;
       flex-direction: column;
@@ -125,6 +125,9 @@
       display: flex;
       &.new {
         // min-height: 215px;
+        .section {
+          padding: 68px 30px;
+        }
       }
       &.technology {
         // min-height: 408px;
@@ -335,6 +338,12 @@
       .contributeBlock {
         margin-top: 30px;
         flex-direction: column;
+        &.new {
+          // min-height: 215px;
+          .section {
+            padding: 30px;
+          }
+        }
         .avatar {
           padding: 12px 20px;
           display: flex;
