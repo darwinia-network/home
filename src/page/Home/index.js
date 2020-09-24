@@ -12,6 +12,12 @@ import carousel_2 from "./img/carousel/carousel-2.jpg"
 import carousel_2_en from "./img/carousel/carousel-2-en.jpg"
 import carousel_3 from "./img/carousel/carousel-3.jpg"
 import carousel_3_en from "./img/carousel/carousel-3-en.jpg"
+import carousel_1_m from "./img/carousel/carousel-1-m.jpg"
+import carousel_1_en_m from "./img/carousel/carousel-1-m-en.jpg"
+import carousel_2_m from "./img/carousel/carousel-2-m.jpg"
+import carousel_2_en_m from "./img/carousel/carousel-2-m-en.jpg"
+import carousel_3_m from "./img/carousel/carousel-3-m.jpg"
+import carousel_3_en_m from "./img/carousel/carousel-3-m-en.jpg"
 
 import person_1 from "../Community/img/person_1.png"
 import person_2 from "../Community/img/person_2.png"
@@ -25,7 +31,7 @@ import styles from './style.module.scss'
 import architecture from './img/architecture.png'
 import architecture_en from './img/architecture-en.png'
 import architecture_mobile from './img/architecture-mobile.png'
-import architecture_mobile_en from './img/architecture-mobile-en.png'
+import architecture_mobile_en from './img/architecture-mobile.png'
 import architecture_solo from './img/architecture-solo.svg'
 import architecture_chain from './img/architecture-chain.svg'
 import economic from './img/economic.png'
@@ -33,8 +39,8 @@ import economic_en from './img/economic-en.png'
 
 import app_1 from "./img/application/app-1.png"
 import app_2 from "./img/application/app-2.png"
-// import application_1 from './img/application/application-1.png'
-// import application_2 from './img/application/application-2.png'
+import application_1 from './img/application/application-1.png'
+import application_2 from './img/application/application-2.png'
 
 import roadmapCur from './img/roadmap/roadmap-cur.png'
 import roadmapLine from './img/roadmap/roadmap-line.png'
@@ -44,7 +50,7 @@ import roadmapItem3 from './img/roadmap/roadmap-item-3.png'
 import roadmapItem4 from './img/roadmap/roadmap-item-4.png'
 import roadmapItem5 from './img/roadmap/roadmap-item-5.png'
 import roadmapItem6 from './img/roadmap/roadmap-item-6.png'
-import roadmapMobile from './img/roadmap-m.png'
+import roadmapMobile from './img/roadmap/roadmap-m.png'
 
 // import key1 from './img/key/key-1.png'
 // import key1_mobile from './img/key/key-1-mobile.png'
@@ -317,29 +323,47 @@ class Home extends Component {
                     <img src={launchBanner} alt="banner"/>
                 </div> */}
                 <div className={`home-carousel ${styles.carousel}`}>
-                    <Carousel controls={false} interval={5000} indicators={true}>
+                    <Carousel controls={true}  indicators={true}>
                         <Carousel.Item>
                             <div className={styles.carouselItem}>
-                                <a target="_blank" rel="noopener noreferrer" className={styles.imgRatio} href={t('media:recom_3_link')}>
-                                    {i18n.language.indexOf('en') > -1 ? <img alt="news" src={carousel_1_en}/> :
-                                    <img alt="news" src={carousel_1}/>}
-                                </a>   
+                                <a target="_blank" rel="noopener noreferrer" className={`${styles.imgRatio}`} href={t('media:recom_3_link')}>
+                                    <div className={`hidden-xs`}>
+                                        {i18n.language.indexOf('en') > -1 ? <img alt="news" src={carousel_3_en}/> :
+                                        <img alt="news" src={carousel_3}/>}
+                                    </div>
+                                    <div className={`hidden-md`}>
+                                        {i18n.language.indexOf('en') > -1 ? <img alt="news" src={carousel_3_en_m}/> :
+                                        <img alt="news" src={carousel_3_m}/>}
+                                    </div>
+                                </a> 
                             </div>
                         </Carousel.Item>
                         <Carousel.Item>
                             <div className={styles.carouselItem}>
-                                <a target="_blank" rel="noopener noreferrer" className={styles.imgRatio} href={t('media:recom_3_link')}>
-                                    {i18n.language.indexOf('en') > -1 ? <img alt="news" src={carousel_2_en}/> :
-                                    <img alt="news" src={carousel_2}/>}
-                                </a>   
+                                <a target="_blank" rel="noopener noreferrer" className={`${styles.imgRatio}`} href={t('media:recom_2_link')}>
+                                    <div className={`hidden-xs`}>
+                                        {i18n.language.indexOf('en') > -1 ? <img alt="news" src={carousel_2_en}/> :
+                                        <img alt="news" src={carousel_2}/>}
+                                    </div>
+                                    <div className={`hidden-md`}>
+                                        {i18n.language.indexOf('en') > -1 ? <img alt="news" src={carousel_2_en_m}/> :
+                                        <img alt="news" src={carousel_2_m}/>}
+                                    </div>
+                                </a> 
                             </div>
                         </Carousel.Item>
                         <Carousel.Item>
                             <div className={styles.carouselItem}>
-                                <a target="_blank" rel="noopener noreferrer" className={styles.imgRatio} href={t('media:recom_3_link')}>
-                                    {i18n.language.indexOf('en') > -1 ? <img alt="news" src={carousel_3_en}/> :
-                                    <img alt="news" src={carousel_3}/>}
-                                </a>   
+                            <a target="_blank" rel="noopener noreferrer" className={`${styles.imgRatio}`} href={t('media:recom_1_link')}>
+                                    <div className={`hidden-xs`}>
+                                        {i18n.language.indexOf('en') > -1 ? <img alt="news" src={carousel_1_en}/> :
+                                        <img alt="news" src={carousel_1}/>}
+                                    </div>
+                                    <div className={`hidden-md`}>
+                                        {i18n.language.indexOf('en') > -1 ? <img alt="news" src={carousel_1_en_m}/> :
+                                        <img alt="news" src={carousel_1_m}/>}
+                                    </div>
+                                </a> 
                             </div>
                         </Carousel.Item>
                     </Carousel>
@@ -601,17 +625,22 @@ class Home extends Component {
 
                 <div className={`${styles.highlightContainer} ${styles.applicationContainer}`}>
                     <Container>
-                        <div className={styles.title}>
+                        <div className={`hidden-xs ${styles.title}`}>
                             <h1 className={`reveal-h1 ${styles.fontH1}`}>{t('home_page:application_title')}</h1>
+                        </div>
+                        <div className={`hidden-md ${styles.title}`}>
+                            <h1 className={`reveal-h1 ${styles.gradientText} ${styles.fontH1}`}>{t('home_page:application_title')}</h1>
                         </div>
                         <Row className={`d-flex justify-content-center`}>
                             <Col xs={12} md={6} className={styles.appItem}>
-                                <img alt="Token DEX" src={app_1} />
+                                <img className={`hidden-xs`} alt="Token DEX" src={app_1} />
+                                <img className={`hidden-md`} alt="Token DEX" src={application_1} />
                                 <h3>{t('home_page:application_block_title_1')}</h3>
                                 <p>{t('home_page:application_block_content_1')}</p>
                             </Col>
                             <Col xs={12} md={6} className={styles.appItem}>
-                                <img alt="NFT Market" src={app_2} className={styles.secondImg}/>
+                                <img alt="NFT Market" src={app_2} className={`hidden-xs ${styles.secondImg}`}/>
+                                <img alt="NFT Market" src={application_2} className={`hidden-md ${styles.secondImg}`}/>
                                 <h3>{t('home_page:application_block_title_2')}</h3>
                                 <p>{t('home_page:application_block_content_2')}</p>
                             </Col>
@@ -625,7 +654,7 @@ class Home extends Component {
                             <h1 className={`reveal-h1 ${styles.fontH1} ${styles.gradientText}`}>{t('home_page:roadmap_title')}</h1>
                         </div>
                         <div className={`hidden-md`}>
-                            <Row className={`d-flex justify-content-center align-items-between`}>
+                            {/* <Row className={`d-flex justify-content-center align-items-between`}>
                                 <Col xs={4}>
                                     <Row className={`text-center ${styles.label} ${styles.status}`}>
                                         <Col>
@@ -685,7 +714,12 @@ class Home extends Component {
                                         </div>
                                     </div>
                                 </Col>
-                            </Row>
+                            </Row> */}
+                            <img src={roadmapMobile} alt="roadmap"/>
+                            <div className={`text-center`}>
+                                <Button variant="dark" target="_blank" href={t('header:testnet_url')}
+                                    className={styles.button}>{t('home_page:roadmap_btn')}</Button>
+                            </div>
                         </div>
                         <div className={`${styles.content} hidden-xs`}>
                             <Row className={`text-center ${styles.status}`}>
@@ -790,8 +824,8 @@ class Home extends Component {
                 <div className={styles.teamContainer}>
                     <Container>
                         <Row>
-                            <Col xs={1}></Col>
-                            <Col xs={10} className={`${styles.content}`}>
+                            <Col md={1} xs={0}></Col>
+                            <Col md={10} xs={12} className={`${styles.content}`}>
                                 <h1 className={`reveal-h1 ${styles.title} ${styles.fontH1}`}>
                                     {t('community:contributors')}
                                 </h1>
