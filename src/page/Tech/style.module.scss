@@ -272,6 +272,9 @@
       padding-top: 110px;
       margin: 0 40px;
       text-align: center;
+      p {
+        min-height: 40px;
+      }
     }
   }
   .architectureContainer {
