@@ -851,7 +851,7 @@ class Home extends Component {
                             <h1 className={`reveal-h1 ${styles.fontH1} ${styles.gradientText}`}>{t('home_page:newest_title')}</h1>
                         </div>
                         <Row className={`d-flex justify-content-center text-left`}>
-                            <Col xs={10} md={4} lg={3}>
+                            <Col xs={12} md={4} lg={3}>
                                 <a className={styles.imgUrl} target="_blank" rel="noopener noreferrer" href={t('media:news_9_link')}>
                                     <div className={styles.imgRatio}>
                                         <img alt="news" src={news9}/>
@@ -865,7 +865,7 @@ class Home extends Component {
                                     </div>
                                 </a>
                             </Col>
-                            <Col xs={10} md={4} lg={3}>
+                            <Col xs={12} md={4} lg={3}>
                                 <a className={styles.imgUrl} target="_blank" rel="noopener noreferrer" href={t('media:news_8_link')}>
                                     <div className={styles.imgRatio}>
                                         <img alt="news" src={news8}/>
@@ -879,7 +879,7 @@ class Home extends Component {
                                     </div>
                                 </a>
                             </Col>
-                            <Col xs={10} md={4} lg={3}>
+                            <Col xs={12} md={4} lg={3}>
                                 <a className={styles.imgUrl} target="_blank" rel="noopener noreferrer" href={t('media:news_7_link')}>
                                     <div className={styles.imgRatio}>
                                         <img alt="news" src={news7}/>
@@ -893,7 +893,7 @@ class Home extends Component {
                                     </div>
                                 </a>
                             </Col>
-                            <Col xs={10} md={4} lg={3}>
+                            <Col xs={12} md={4} lg={3}>
                                 <a className={styles.imgUrl} target="_blank" rel="noopener noreferrer" href={t('media:news_6_link')}>
                                     <div className={styles.imgRatio}>
                                         <img alt="news" src={news6}/>
