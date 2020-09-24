@@ -300,10 +300,15 @@
       align-items: center;
     }
     .truth {
-      margin: 200px 0 0;
+      margin: 220px 0 0;
       display: flex;
       flex-direction: column;
       align-items: center;
+      .item {
+        p {
+          line-height: 34px;
+        }
+      }
     }
 
   }

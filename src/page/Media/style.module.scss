@@ -151,14 +151,34 @@
           margin-bottom: 20px;
         }
         .mediaDetail {
-          height: 270px;
+          height: 230px;
           margin: 20px 20px 40px;
+        }
+        .mediaDesc {
+          width: 100%;
+          overflow : hidden;
+          text-overflow: ellipsis;
+          display: -webkit-box;
+          -webkit-line-clamp: 4;
+          /* autoprefixer: ignore next */
+          -webkit-box-orient: vertical;
         }
       }
       > div {
         > a {
           display: flex;
           height: 52vw;
+        }
+      }
+    }
+    .section {
+      margin-bottom: 70px;
+      .title {
+        justify-content: center;
+        img {
+          width: 26px;
+          height: 26px;
+          margin-right: 5px;
         }
       }
     }
