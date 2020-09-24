@@ -417,6 +417,11 @@
   },
   "tech": {
     "theme_desc": "Decentralized Heterogeneous Cross-chain Protocol & Application Chain Development Framework",
+    "theme_desc_1": "Decentralized",
+    "theme_desc_2": "Heterogeneous Cross-chain Protocol",
+    "theme_desc_3": "&",
+    "theme_desc_4": "Application Chain",
+    "theme_desc_5": "Development Framework",
     "theme_1": "Darwinia Wallet",
     "theme_1_link": "https://apps.darwinia.network/",
     "theme_2": "Darwinia WIKI",

@@ -47,8 +47,14 @@ class Home extends Component {
                 <div className={styles.themeContainer}>
                     {/* <img src={themeBg} alt="banner"/> */}
                     <div className={styles.content}>
-                        <div className={styles.slogan}>
+                        <div className={`hidden-xs ${styles.slogan}`}>
                             {t('tech:theme_desc')}
+                        </div>
+                        <div className={`hidden-md ${styles.slogan}`}>
+                            <p>{t('tech:theme_desc_1')}</p>
+                            <p>{t('tech:theme_desc_2')}</p>
+                            <p>{t('tech:theme_desc_3')}</p>
+                            <p>{t('tech:theme_desc_4')}</p>
                         </div>
                         <div className={styles.items}>
                             <a target="_blank" rel="noopener noreferrer" href={t('tech:theme_1_link')}>
