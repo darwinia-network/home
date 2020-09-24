@@ -428,7 +428,7 @@
     "theme_2_link": "https://docs.darwinia.network/docs/zh-CN/wiki-intro",
     "theme_3": "Crab network",
     "theme_3_link": "https://docs.darwinia.network/docs/zh-CN/crab-home",
-    "architecture": "Architecture",
+    "architecture": "技术架构",
     "architecture_desc": "达尔文ChainRelay是超级轻客户端。它使我们能够将单链应用程序协议升级到跨链版本，包括但不限于Defi，Game，DEX，NFT Market等。",
     "mainnet_stage": "主网上线步骤",
     "mainnet_stage_desc": "Darwinia 主网将预计在9月25日至10月15日之间上线，Darwinia的主网上线将会以渐进的方式分为几个阶段来逐渐解锁主要的功能模块来完成。",

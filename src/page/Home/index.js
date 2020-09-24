@@ -598,7 +598,9 @@ class Home extends Component {
                                             <span>{t('home_page:economic_block_title_3')}</span>
                                         </div>
                                     </div>
-                                    <p>{t('home_page:economic_block_content_3')}</p>
+                                    <div className={styles.economicItemContent}>
+                                        <p>{t('home_page:economic_block_content_3')}</p>
+                                    </div>
                                 </div>
                             </Col>
                         </Row>
