@@ -139,6 +139,11 @@
   .relaySection {
     position: relative;
   }
+  .title {
+    .gradientText {
+      text-transform: initial;
+    }
+  }
   img {
     width: 100%;
   }
