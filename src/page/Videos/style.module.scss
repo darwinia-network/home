@@ -50,7 +50,7 @@
       }
     }
     .mediaInfo {
-      margin: 10px 0;
+      margin: 10px 0 0;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -102,6 +102,7 @@
     padding: 50px 0;
     .title {
       justify-content: center;
+      margin-bottom: 25px;
       img {
         width: 26px;
         height: 26px;

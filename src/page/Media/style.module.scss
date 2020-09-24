@@ -87,7 +87,7 @@
       }
     }
     .mediaInfo {
-      margin: 10px 0;
+      margin: 10px 0 0;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -175,6 +175,7 @@
       margin-bottom: 70px;
       .title {
         justify-content: center;
+        margin-bottom: 25px;
         img {
           width: 26px;
           height: 26px;
@@ -190,7 +191,7 @@
     }
 
     .content {
-      padding: 0 25px 50px 35px;
+      padding: 0 25px 0 35px;
     }
   }
 
