@@ -55,6 +55,7 @@ class Home extends Component {
                             <p>{t('tech:theme_desc_2')}</p>
                             <p>{t('tech:theme_desc_3')}</p>
                             <p>{t('tech:theme_desc_4')}</p>
+                            <p>{t('tech:theme_desc_5')}</p>
                         </div>
                         <div className={styles.items}>
                             <a target="_blank" rel="noopener noreferrer" href={t('tech:theme_1_link')}>
