@@ -244,7 +244,7 @@ class PageHeader extends Component {
                                         <Dropdown.Toggle as={CustomToggle} id="dropdown-custom-components">
                                             <div className={styles.lngBtn}>{t('header:lang_demo')}</div>
                                         </Dropdown.Toggle>
-                                        <Dropdown.Menu className=' animated fadeIn faster'>
+                                        <Dropdown.Menu className={`animated fadeIn faster ${styles.dropdownMenu}`}>
                                             <Dropdown.Item onClick={() => this.changeLng('zh-cn')} eventKey="4.1">
                                                 简体中文
                                             </Dropdown.Item>

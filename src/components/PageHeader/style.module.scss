@@ -146,6 +146,9 @@
   padding: 11px 15px;
   background: #E4378A;
   align-items: center;
+  .dropdownMenu {
+    // left: 40px !important;
+  }
 }
 
 .lngBox{
@@ -199,6 +202,9 @@
   .lngBtn {
     color: #fff;
     opacity: 1;
+    margin-left: 0;
+    padding-right: 60px;
+    border: none;
   }
   .Navbar{
     background: transparent !important;
