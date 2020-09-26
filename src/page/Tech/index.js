@@ -183,7 +183,52 @@ class Home extends Component {
                                 </Row>
                             </Col>
                         </Row>
-                        <img className={'hidden-md'} src={roadmapMobile} alt="roadmap"/>
+                        <div className={`hidden-md`}>
+                            <p className={styles.desc}>{t('tech:mainnet_stage_desc')}</p>
+                            <Row className={`d-flex justify-content-center align-items-between`}>
+                                <Col xs={1} className={styles.placeholderCol}></Col>
+                                <Col xs={4} className={styles.imgCol}>
+                                    <img src={roadmapMobile} alt="roadmap"/>
+                                </Col>
+                                <Col xs={6} className={styles.nospace}>
+                                    <div className={`d-flex ${styles.label}`}>
+                                        <div xs={12}>
+                                            <p className={styles.time}>{t('tech:stage_0')}</p>
+                                            <p>{t('tech:stage_0_title')}</p>
+                                        </div>
+                                        <div></div>
+                                        <div xs={12} className={styles.crayfishCol}>
+                                            <p className={styles.time}>{t('tech:stage_1')}</p>
+                                            <p>{t('tech:stage_1_title')}</p>
+                                        </div>
+                                        <div></div>
+                                        <div xs={12} className={styles.icefrogCol}>
+                                            <p className={styles.time}>{t('tech:stage_2')}</p>
+                                            <p>{t('tech:stage_2_title_1')}</p>
+                                            <p>{t('tech:stage_2_title_2')}</p>
+                                        </div>
+                                        <div></div>
+                                        <div xs={12} className={styles.crabCol}>
+                                            <p className={styles.time}>{t('tech:stage_3')}</p>
+                                            <p>{t('tech:stage_3_title_1')}</p>
+                                            <p>{t('tech:stage_3_title_2')}</p>
+                                        </div>
+                                        <div></div>
+                                        <div xs={12} className={styles.mainnetCol}>
+                                            <p className={styles.time}>{t('tech:stage_4')}</p>
+                                            <p>{t('tech:stage_4_title')}</p>
+                                        </div>
+                                        <div></div>
+                                        <div xs={12} className={`${styles.lastCol}`}>
+                                            <p className={styles.time}>{t('tech:stage_5')}</p>
+                                            <p>{t('tech:stage_5_title_1')}</p>
+                                            <p>{t('tech:stage_5_title_2')}</p>
+                                        </div>
+                                    </div>
+                                </Col>
+                                <Col xs={1} className={styles.placeholderCol}></Col>
+                            </Row>
+                            </div>
                     </Container>
                 </div>
 
