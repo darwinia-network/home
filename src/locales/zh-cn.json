@@ -32,7 +32,7 @@
     "subscribe_btn": "获取更新",
     "subscribe_tip": "订阅成功！请查看您的收件箱。",
 
-    "recom_2_link": "http://darwinia.network.com/ambassador",
+    "recom_2_link": "/ambassador",
     "recom_3_link": "https://medium.com/@DarwiniaNetwork/must-read-darwinia-mainnet-progressive-launch-announcement-ff20a04a8bdd",
 
     "theme_title": "什么是达尔文网络?",
@@ -506,6 +506,7 @@
     "grant": "Granted by Web3 Foundation",
     "copyright": "Copyright@2020 Darwinia Network",
     "support": "Substrate Builder Program",
+    "rfcs_link": "https://docs.darwinia.network/docs/zh-CN/wiki-rfc-index",
 
     "general": "概要",
     "general_title_1": "关于达尔文",
