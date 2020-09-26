@@ -152,7 +152,7 @@ class PageHeader extends Component {
                     <Row className={''}>
                         <Col xs={12} className={`${styles.ColSub} navbar--secondary`}>
                             <div className={`d-flex align-items-center justify-content-between ${styles.NavMenu}`}>
-                                <Dropdown alignRight>
+                                {/* <Dropdown alignRight>
                                     <Dropdown.Toggle as={CustomToggle} id="dropdown-custom-components">
                                         <div className={styles.lngBtn}>{t('header:lang_demo')}</div>
                                     </Dropdown.Toggle>
@@ -163,10 +163,23 @@ class PageHeader extends Component {
                                         <Dropdown.Item eventKey="4.2"
                                                     onClick={() => this.changeLng('en-us')}>English</Dropdown.Item>
                                     </Dropdown.Menu>
-                                </Dropdown>
+                                </Dropdown> */}
+                                <div className={styles.placeholder}></div>
                                 <div className={`d-flex align-items-center ${styles.papers}`}>
                                     <a target="_blank" rel="noopener noreferrer" href={t('header:genepaper_url')} className={styles.paper}><div className={styles.gIcon}/>{t('header:genepaper')}</a>
                                     <a target="_blank" rel="noopener noreferrer" href={t('header:techpaper_url')} className={styles.paper}><div className={styles.tIcon}/>{t('header:techpaper')}</a>
+                                    <Dropdown className={styles.dropdown}>
+                                    <Dropdown.Toggle as={CustomToggle} id="dropdown-custom-components">
+                                        <div className={styles.lngBtn}>{t('header:lang_demo')}</div>
+                                    </Dropdown.Toggle>
+                                    <Dropdown.Menu className={`animated fadeIn faster ${styles.dropdownMenu}`}>
+                                        <Dropdown.Item onClick={() => this.changeLng('zh-cn')} eventKey="4.1">
+                                            简体中文
+                                        </Dropdown.Item>
+                                        <Dropdown.Item eventKey="4.2"
+                                                    onClick={() => this.changeLng('en-us')}>English</Dropdown.Item>
+                                    </Dropdown.Menu>
+                                </Dropdown>
                                 </div>
                             </div>
                             {/* <div className={`${styles.ColLine}`}></div> */}
@@ -192,7 +205,7 @@ class PageHeader extends Component {
                                         <Nav.Link className={styles.navTab} href="/community">{t('header:community')}</Nav.Link>
                                         <Nav.Link className={styles.navTab} href="/economic_model">{t('header:economical_model')}</Nav.Link>
                                         <Nav.Link className={styles.navTab} href="/media">{t('header:media')}</Nav.Link>
-                                        <Nav.Link className={styles.navButton} target={'_blank'} href="https://www.itering.io/about">{t('header:hiring')}</Nav.Link>
+                                        {/* <Nav.Link className={styles.navButton} target={'_blank'} href="https://www.itering.io/about">{t('header:hiring')}</Nav.Link> */}
                                         {/* {i18n.language.indexOf('en') > -1 ?
                                         <Nav.Link target={'_blank'}
                                         href="https://evolution.l2me.com/darwinia/Darwinia_Genepaper_EN.pdf">{t('header:genepaper')}</Nav.Link>
