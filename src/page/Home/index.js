@@ -642,68 +642,52 @@ class Home extends Component {
                             <h1 className={`reveal-h1 ${styles.fontH1} ${styles.gradientText}`}>{t('home_page:roadmap_title')}</h1>
                         </div>
                         <div className={`hidden-md`}>
-                            {/* <Row className={`d-flex justify-content-center align-items-between`}>
-                                <Col xs={4}>
-                                    <Row className={`text-center ${styles.label} ${styles.status}`}>
-                                        <Col>
-                                            <p>2019-07</p>
-                                            <p>Launched</p>
-                                        </Col>
-                                        <Col className={styles.crayfishCol}>
-                                            <p>2019-09</p>
-                                            <p>Launched</p>
-                                        </Col>
-                                        <Col className={styles.icefrogCol}>
-                                            <p>2019-11</p>
-                                            <p>Launched</p>
-                                        </Col>
-                                        <Col className={styles.crabCol}>
-                                            <p>2020-Q1</p>
-                                            <p>Launched</p>
-                                        </Col>
-                                        <Col className={styles.mainnetCol}>
-                                            <p>2020-Q3</p>
-                                            <p></p>
-                                        </Col>
-                                        <Col className={styles.lastCol}>
-                                            <p>2020 Q3-Q4</p>
-                                            <p></p>
-                                        </Col>
-                                    </Row>
-                                </Col>
-                                <Col xs={3} className={`${styles.roadMapImageBox}`}>
-                                    <img alt="roadmap" src={roadmapMobile} />
+                            <Row className={`d-flex justify-content-center align-items-between`}>
+                                <Col xs={1} className={styles.placeholderCol}></Col>
+                                <Col xs={5}>
+                                    <img src={roadmapMobile} alt="roadmap"/>
                                 </Col>
                                 <Col xs={5} className={styles.nospace}>
-                                    <div className={`text-center d-flex ${styles.label}`}>
+                                    <div className={`d-flex ${styles.label}`}>
                                         <div xs={12}>
+                                            <p className={styles.time}>2019-07</p>
                                             <p>{t('home_page:roadmap_1_name')}</p>
                                             <p>{t('home_page:roadmap_1_milestone')}</p>
                                         </div>
+                                        <div></div>
                                         <div xs={12} className={styles.crayfishCol}>
+                                            <p className={styles.time}>2019-09</p>
                                             <p>{t('home_page:roadmap_2_name')}</p>
                                             <p>{t('home_page:roadmap_2_milestone')}</p>
                                         </div>
+                                        <div></div>
                                         <div xs={12} className={styles.icefrogCol}>
+                                            <p className={styles.time}>2019-11</p>
                                             <p>{t('home_page:roadmap_3_name')}</p>
                                             <p>{t('home_page:roadmap_3_milestone')}</p>
                                         </div>
+                                        <div></div>
                                         <div xs={12} className={styles.crabCol}>
+                                            <p className={styles.time}>2020-Q2</p>
                                             <p>{t('home_page:roadmap_4_name')}</p>
                                             <p>{t('home_page:roadmap_4_milestone')}</p>
                                         </div>
+                                        <div></div>
                                         <div xs={12} className={styles.mainnetCol}>
+                                            <p className={styles.time}>2020-Q3</p>
                                             <p>{t('home_page:roadmap_5_name')}</p>
                                             <p>{t('home_page:roadmap_5_milestone')}</p>
                                         </div>
-                                        <div xs={12} className={`${styles.lastCol} d-flex justify-content-center align-items-center`}>
+                                        <div></div>
+                                        <div xs={12} className={`${styles.lastCol}`}>
+                                            <p className={styles.time}>2020-Q4</p>
                                             <p>{t('home_page:roadmap_6_name')}</p>
                                             <p>{t('home_page:roadmap_6_milestone')}</p>
                                         </div>
                                     </div>
                                 </Col>
-                            </Row> */}
-                            <img src={roadmapMobile} alt="roadmap"/>
+                                <Col xs={1} className={styles.placeholderCol}></Col>
+                            </Row>
                             <div className={`text-center`}>
                                 <Button variant="dark" target="_blank" href={t('header:testnet_url')}
                                     className={styles.button}>{t('home_page:roadmap_btn')}</Button>
