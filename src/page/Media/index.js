@@ -180,7 +180,7 @@ class Brand extends Component {
                     <Container>
                         <Row>
                             <Col xs={12} className={`${styles.content}`}>
-                            <div className={`hidden-xs media-carousel ${styles.carousel}`}>
+                            <div className={`hidden-xs media-carousel ${styles.carousel} ${styles.pcCarousel}`}>
                         <Carousel controls={false} interval={0}>
                             <Carousel.Item>
                                 <div className={styles.carouselItem}>
@@ -188,6 +188,9 @@ class Brand extends Component {
                                         <Col xs={12} md={9}>
                                             <a target="_blank" rel="noopener noreferrer" className={styles.imgRatio} href={t('media:recom_5_link')}>
                                                 <img alt="news" src={recom5}/>
+                                                <div className={styles.mediaTitle}>
+                                                    {t('media:recom_5_title')}
+                                                </div>
                                             </a>
                                         </Col>
                                         <Col xs={12} md={3}>
@@ -195,9 +198,6 @@ class Brand extends Component {
                                                 <div className={styles.mediaInfo}>
                                                     <span>{t('media:recom_5_tag')}</span>
                                                     <span className={styles.mediaTime}>{t('media:recom_5_time')}</span>
-                                                </div>
-                                                <div className={styles.mediaTitle}>
-                                                    {t('media:recom_5_title')}
                                                 </div>
                                                 <div className={styles.mediaDesc}>
                                                     {t('media:recom_5_desc')}
@@ -213,6 +213,9 @@ class Brand extends Component {
                                         <Col xs={12} md={9}>
                                             <a target="_blank" rel="noopener noreferrer" className={styles.imgRatio} href={t('media:recom_4_link')}>
                                                 <img alt="news" src={recom4}/>
+                                                <div className={styles.mediaTitle}>
+                                                    {t('media:recom_4_title')}
+                                                </div>
                                             </a>
                                         </Col>
                                         <Col xs={12} md={3}>
@@ -220,9 +223,6 @@ class Brand extends Component {
                                                 <div className={styles.mediaInfo}>
                                                     <span>{t('media:recom_4_tag')}</span>
                                                     <span className={styles.mediaTime}>{t('media:recom_4_time')}</span>
-                                                </div>
-                                                <div className={styles.mediaTitle}>
-                                                    {t('media:recom_4_title')}
                                                 </div>
                                                 <div className={styles.mediaDesc}>
                                                     {t('media:recom_4_desc')}
@@ -238,6 +238,9 @@ class Brand extends Component {
                                         <Col xs={12} md={9}>
                                             <a target="_blank" rel="noopener noreferrer" className={styles.imgRatio} href={t('media:recom_3_link')}>
                                                 <img alt="news" src={recom3}/>
+                                                <div className={styles.mediaTitle}>
+                                                    {t('media:recom_3_title')}
+                                                </div>
                                             </a>
                                         </Col>
                                         <Col xs={12} md={3}>
@@ -245,9 +248,6 @@ class Brand extends Component {
                                                 <div className={styles.mediaInfo}>
                                                     <span>{t('media:recom_3_tag')}</span>
                                                     <span className={styles.mediaTime}>{t('media:recom_3_time')}</span>
-                                                </div>
-                                                <div className={styles.mediaTitle}>
-                                                    {t('media:recom_3_title')}
                                                 </div>
                                                 <div className={styles.mediaDesc}>
                                                     {t('media:recom_3_desc')}
@@ -263,6 +263,9 @@ class Brand extends Component {
                                         <Col xs={12} md={9}>
                                             <a target="_blank" rel="noopener noreferrer" className={styles.imgRatio} href={t('media:recom_2_link')}>
                                                 <img alt="news" src={recom2}/>
+                                                <div className={styles.mediaTitle}>
+                                                    {t('media:recom_2_title')}
+                                                </div>
                                             </a>
                                         </Col>
                                         <Col xs={12} md={3}>
@@ -270,9 +273,6 @@ class Brand extends Component {
                                                 <div className={styles.mediaInfo}>
                                                     <span>{t('media:recom_2_tag')}</span>
                                                     <span className={styles.mediaTime}>{t('media:recom_2_time')}</span>
-                                                </div>
-                                                <div className={styles.mediaTitle}>
-                                                    {t('media:recom_2_title')}
                                                 </div>
                                                 <div className={styles.mediaDesc}>
                                                     {t('media:recom_2_desc')}
@@ -288,6 +288,9 @@ class Brand extends Component {
                                         <Col xs={12} md={9}>
                                         <a target="_blank" rel="noopener noreferrer" className={styles.imgRatio} href={t('media:recom_1_link')}>
                                                 <img alt="news" src={recom1}/>
+                                                <div className={styles.mediaTitle}>
+                                                    {t('media:recom_1_title')}
+                                                </div>
                                             </a>
                                         </Col>
                                         <Col xs={12} md={3}>
@@ -295,9 +298,6 @@ class Brand extends Component {
                                                 <div className={styles.mediaInfo}>
                                                     <span>{t('media:recom_1_tag')}</span>
                                                     <span className={styles.mediaTime}>{t('media:recom_1_time')}</span>
-                                                </div>
-                                                <div className={styles.mediaTitle}>
-                                                    {t('media:recom_1_title')}
                                                 </div>
                                                 <div className={styles.mediaDesc}>
                                                     {t('media:recom_1_desc')}
