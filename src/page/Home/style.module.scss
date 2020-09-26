@@ -65,7 +65,8 @@
   .carouselItem {
     .imgRatio {
       display: block;
-      padding-bottom: 26%;
+      // padding-bottom: 26%;
+      height: 412px;
       position: relative;
       img {
         position: absolute;
@@ -761,6 +762,7 @@
     }
     .carouselItem {
       .imgRatio {
+        height: initial;
         padding-bottom: 137%;
         img {
         }
