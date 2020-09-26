@@ -167,7 +167,7 @@ class PageFooter extends Component {
                         </Col>
                         <Col xs={6} md={4} lg={3}>
                             <h1>{t('footer:community')}</h1>
-                            <p><a target="_blank" rel="noopener noreferrer" href="https://rfcs.darwinia.network">{t('footer:community_title_1')}</a></p>
+                            <p><a target="_blank" rel="noopener noreferrer" href={t('footer:rfcs_link')}>{t('footer:community_title_1')}</a></p>
                             <p><a target="_blank" rel="noopener noreferrer" href="/ambassador">{t('footer:community_title_2')}</a></p>
                             <p><a target="_blank" rel="noopener noreferrer" href="/community">{t('footer:community_title_3')}</a></p>
                             <p><a target="_blank" rel="noopener noreferrer" href="/faq">{t('footer:community_title_4')}</a></p>
