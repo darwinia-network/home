@@ -7,11 +7,13 @@
 
 .lngBtn{
   cursor: pointer;
-  padding: 5px 70px 5px 0;
+  padding: 3px 7px;
   font-size: 18px;
   font-weight: 600;
   color: #6330DD;
+  border: 1px solid #6330DD;
   opacity: 0.5;
+  margin-left: 20px;
   &:hover {
     opacity: 1;
   }
@@ -110,6 +112,9 @@
           background-size: cover;
           margin-right: 8px;
         }
+      }
+      .dropdownMenu {
+        left: -40px !important;
       }
     }
   }
