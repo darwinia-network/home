@@ -40,6 +40,26 @@
         font-size: 16px;
       }
     }
+    &.pcCarousel {
+      .carouselItem {
+        .imgRatio {
+          .mediaTitle {
+            position: absolute;
+            display: flex;
+            align-items: center;
+            padding: 0 30px;
+            width: 100%;
+            height: 47%;
+            margin-top: 22%;
+            font-size: 32px;
+            font-family: "PangMenZhengDao";
+            color: #FFFFFF;
+            line-height: 37px;
+            background: linear-gradient(180deg, rgba(99, 48, 221, 0) 0%, #DE378F 100%, #DE378F 100%);
+          }
+        }
+      }
+    }
   }
   h1 {
     display: inline-block;
