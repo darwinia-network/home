@@ -524,6 +524,7 @@
       color: #fff;
       width: 9.2%;
       position: absolute;
+      padding: 0;
     }
 
     .soloWhiteBtn {
@@ -1013,7 +1014,18 @@
         &.lastCol {
           padding-bottom: 20px;
         }
-
+        &.Col1 {
+          padding-top: 5px;
+        }
+        &.Col2 {
+          padding-top: 10px;
+        }
+        &.Col3 {
+          padding-top: 10px;
+        }
+        &.Col5 {
+          padding-bottom: 15px;
+        }
         p+p {
           margin-bottom: 0
         }

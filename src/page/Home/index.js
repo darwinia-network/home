@@ -649,37 +649,37 @@ class Home extends Component {
                                 </Col>
                                 <Col xs={5} className={styles.nospace}>
                                     <div className={`d-flex ${styles.label}`}>
-                                        <div xs={12}>
+                                        <div xs={12} className={styles.Col1}>
                                             <p className={styles.time}>2019-07</p>
                                             <p>{t('home_page:roadmap_1_name')}</p>
                                             <p>{t('home_page:roadmap_1_milestone')}</p>
                                         </div>
                                         <div></div>
-                                        <div xs={12} className={styles.crayfishCol}>
+                                        <div xs={12} className={styles.Col2}>
                                             <p className={styles.time}>2019-09</p>
                                             <p>{t('home_page:roadmap_2_name')}</p>
                                             <p>{t('home_page:roadmap_2_milestone')}</p>
                                         </div>
                                         <div></div>
-                                        <div xs={12} className={styles.icefrogCol}>
+                                        <div xs={12} className={styles.Col3}>
                                             <p className={styles.time}>2019-11</p>
                                             <p>{t('home_page:roadmap_3_name')}</p>
                                             <p>{t('home_page:roadmap_3_milestone')}</p>
                                         </div>
                                         <div></div>
-                                        <div xs={12} className={styles.crabCol}>
+                                        <div xs={12} className={styles.Col4}>
                                             <p className={styles.time}>2020-Q2</p>
                                             <p>{t('home_page:roadmap_4_name')}</p>
                                             <p>{t('home_page:roadmap_4_milestone')}</p>
                                         </div>
                                         <div></div>
-                                        <div xs={12} className={styles.mainnetCol}>
+                                        <div xs={12} className={styles.Col5}>
                                             <p className={styles.time}>2020-Q3</p>
                                             <p>{t('home_page:roadmap_5_name')}</p>
                                             <p>{t('home_page:roadmap_5_milestone')}</p>
                                         </div>
                                         <div></div>
-                                        <div xs={12} className={`${styles.lastCol}`}>
+                                        <div xs={12} className={`${styles.Col6}`}>
                                             <p className={styles.time}>2020-Q4</p>
                                             <p>{t('home_page:roadmap_6_name')}</p>
                                             <p>{t('home_page:roadmap_6_milestone')}</p>
