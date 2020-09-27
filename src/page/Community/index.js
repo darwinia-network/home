@@ -46,9 +46,9 @@ class Brand extends Component {
     renderTooltip = props => {
         const {t} = this.props
         return <Popover {...props} className={styles.wxContainer}>
-            <img alt="wx" src={wx}/>
+            <div class="popover-body"><img alt="wx" src={wx}/>
             <p>{t("footer:scan")}</p>
-            <p>{t("footer:follow")}</p>
+            <p>{t("footer:follow")}</p></div>
         </Popover>
     }
 
@@ -127,7 +127,7 @@ class Brand extends Component {
                                         </a>
                                         <OverlayTrigger
                                             placement="top"
-                                            delay={{show: 100, hide: 1000000}}
+                                            delay={{show: 100, hide: 100}}
                                             overlay={this.renderTooltip}
                                         >
                                             <div className={`${styles.mediaBlock} ${styles.wechat}`}>
