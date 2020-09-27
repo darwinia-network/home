@@ -127,7 +127,7 @@ class Brand extends Component {
                                         </a>
                                         <OverlayTrigger
                                             placement="top"
-                                            delay={{show: 100, hide: 1000}}
+                                            delay={{show: 100, hide: 1000000}}
                                             overlay={this.renderTooltip}
                                         >
                                             <div className={`${styles.mediaBlock} ${styles.wechat}`}>

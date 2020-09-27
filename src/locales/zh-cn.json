@@ -28,7 +28,7 @@
   "home_page": {
     "slogan": "资产互联网络，已接通！",
     "subtitle": "达尔文网络是基于Substrate开发的跨链桥接网络，专注于建设未来资产互联网络，包括非标资产拍卖市场、稳定币跨链、资产交易兑换等领域",
-    "placeholder": "Email Address",
+    "placeholder": "输入你的邮箱",
     "subscribe_btn": "获取更新",
     "subscribe_tip": "订阅成功！请查看您的收件箱。",
 
@@ -36,7 +36,7 @@
     "recom_3_link": "https://medium.com/@DarwiniaNetwork/must-read-darwinia-mainnet-progressive-launch-announcement-ff20a04a8bdd",
 
     "theme_title": "什么是达尔文网络?",
-    "theme_desc": "达尔文网络（Darwinia Network）是基于Substrate开发的去中心化异构链跨链桥网络，专注于实现去信任模式下的资产跨链业务，包括令牌兑换，交易和市场等。",
+    "theme_desc": "达尔文网络（Darwinia Network）是基于Substrate开发的去中心化异构链跨链桥网络，专注于实现去信任模式下的资产跨链业务，包括令牌兑换，交易和市场等",
     
     "highlight_title": "核心要素",
     "highlight_block_title_1": "桥接链",
@@ -59,11 +59,11 @@
 
     "economic_title": "达尔文经济模型",
     "economic_block_title_1": "RING",
-    "economic_block_content_1": "RING是达尔文网络的原生资产，RING可以作为交易的燃料费。燃料费包括交易费用，合约执行费用，网络带宽费用，存储费用等等。",
+    "economic_block_content_1": "RING是达尔文网络的原生资产，RING可以作为交易的燃料费。燃料费包括交易费用，合约执行费用，网络带宽费用，存储费用等等",
     "economic_block_title_2": "KTON",
-    "economic_block_content_2": "为了鼓励用户进行长期锁定和承诺投入，用户在Staking RING的过程中，可以承诺锁定RING 3 - 36个月，系统会给参与Staking的用户一个氪石的通证进行奖励。",
+    "economic_block_content_2": "为了鼓励用户进行长期锁定和承诺投入，用户在Staking RING的过程中，可以承诺锁定RING 3 - 36个月，系统会给参与Staking的用户一个氪石的通证进行奖励",
     "economic_block_title_3": "Staking",
-    "economic_block_content_3": "达尔文网络将会把主要收入作为激励分发给Staking的参与者。Staking的过程也可以理解为POS挖矿过程，挖矿者通过质押资产来获得Staking能量来进行POS挖矿。",
+    "economic_block_content_3": "达尔文网络将会把主要收入作为激励分发给Staking的参与者。Staking的过程也可以理解为POS挖矿过程，挖矿者通过质押资产来获得Staking能量来进行POS挖矿",
     "economic_btn": "如何 Staking?",
     "economic_url": "https://mp.weixin.qq.com/s/vSWn8Wz2C_f3_mxOiV-54g",
 
