@@ -116,6 +116,17 @@
           margin-right: 8px;
         }
       }
+      button {
+        color: #fff;
+        background-color:initial !important;
+        border: none !important;
+        box-shadow: none !important;
+        padding: 0 !important;
+        display: flex;
+        &::after {
+          display: none;
+        }
+      }
       .dropdownMenu {
         left: -40px !important;
       }
@@ -149,6 +160,15 @@
   padding: 11px 15px;
   background: #E4378A;
   align-items: center;
+  button {
+    color: #fff;
+    border: none  !important;
+    background: initial !important;
+    box-shadow: none !important;
+    &::after {
+      display: none;
+    }
+  }
   .dropdownMenu {
     // left: 40px !important;
   }

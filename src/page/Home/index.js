@@ -406,55 +406,6 @@ class Home extends Component {
                     </Container>
                 </div>
 
-                {/* <div className={`${styles.highlightContainer}`}>
-                    <Container>
-                        <GradientHeading
-                            className={`text-center ${styles.fontH1}`}>{t('home_page:highlight_title')}</GradientHeading>
-                        <div className={styles.lineH1}></div>
-                        <Row className={`d-flex justify-content-center text-center`}>
-                            <Col xs={12} md={4} className={styles.lg5}>
-                                <img alt="Cross-Chain Bridge" src={key1} className={`hidden-xs`} />
-                                <img alt="Cross-Chain Bridge" src={key1_mobile} className={`visible-xs`} />
-                                <div className={styles.keyItem}>
-                                    <h3>{t('home_page:highlight_block_title_1')}</h3>
-                                    <p>{t('home_page:highlight_block_content_1')}</p>
-                                </div>
-                            </Col>
-                            <Col xs={12} md={4} className={styles.lg5}>
-                                <img alt="Polkadot Ecosystem" src={key2} className={`hidden-xs`} />
-                                <img alt="Polkadot Ecosystem" src={key2_mobile} className={`visible-xs`} />
-                                <div className={styles.keyItem}>
-                                    <h3>{t('home_page:highlight_block_title_2')}</h3>
-                                    <p>{t('home_page:highlight_block_content_2')}</p>
-                                </div>
-                            </Col>
-                            <Col xs={12} md={4} className={styles.lg5}>
-                                <img alt="Decentralized Backing" src={key3} className={`hidden-xs`} />
-                                <img alt="Decentralized Backing" src={key3_mobile} className={`visible-xs`} />
-                                <div className={styles.keyItem}>
-                                    <h3>{t('home_page:highlight_block_title_3')}</h3>
-                                    <p>{t('home_page:highlight_block_content_3')}</p>
-                                </div>
-                            </Col>
-                            <Col xs={12} md={4} className={styles.lg5}>
-                                <img alt="Token DEX" src={key4} className={`hidden-xs`} />
-                                <img alt="Token DEX" src={key4_mobile} className={`visible-xs`} />
-                                <div className={styles.keyItem}>
-                                    <h3>{t('home_page:highlight_block_title_4')}</h3>
-                                    <p>{t('home_page:highlight_block_content_4')}</p>
-                                </div>
-                            </Col>
-                            <Col xs={12} md={4} className={styles.lg5}>
-                                <img alt="NFT Market" src={key5} className={`hidden-xs`} />
-                                <img alt="NFT Market" src={key5_mobile} className={`visible-xs`} />
-                                <div className={styles.keyItem}>
-                                    <h3>{t('home_page:highlight_block_title_5')}</h3>
-                                    <p>{t('home_page:highlight_block_content_5')}</p>
-                                </div>
-                            </Col>
-                        </Row>
-                    </Container>
-                </div> */}
 
                 <div className={`${styles.architectureContainer}`}>
                     <Container>
