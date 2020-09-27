@@ -49,7 +49,7 @@ class Brand extends Component {
                 <PageHeader transparent={true} hasHeightinMobile={true}/>
                 <div className={`${styles.media}`}>
                     <div className={`hidden-md media-carousel ${styles.carousel}`}>
-                        <Carousel controls={false} interval={0}>
+                        <Carousel controls={false} interval={4000}>
                             <Carousel.Item>
                                 <div className={styles.carouselItem}>
                                     <Row>
@@ -181,7 +181,7 @@ class Brand extends Component {
                         <Row>
                             <Col xs={12} className={`${styles.content}`}>
                             <div className={`hidden-xs media-carousel ${styles.carousel} ${styles.pcCarousel}`}>
-                        <Carousel controls={false} interval={0}>
+                        <Carousel controls={false} interval={4000}>
                             <Carousel.Item>
                                 <div className={styles.carouselItem}>
                                     <Row>
