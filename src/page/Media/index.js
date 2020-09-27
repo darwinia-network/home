@@ -65,7 +65,7 @@ class Brand extends Component {
                                                     <span className={styles.mediaTime}>{t('media:recom_5_time')}</span>
                                                 </div>
                                                 <div className={styles.mediaTitle}>
-                                                    {t('media:recom_5_title')}
+                                                    <div className={styles.text}>{t('media:recom_5_title')}</div>
                                                 </div>
                                                 <div className={styles.mediaDesc}>
                                                     {t('media:recom_5_desc')}
@@ -189,7 +189,8 @@ class Brand extends Component {
                                             <a target="_blank" rel="noopener noreferrer" className={styles.imgRatio} href={t('media:recom_5_link')}>
                                                 <img alt="news" src={recom5}/>
                                                 <div className={styles.mediaTitle}>
-                                                    {t('media:recom_5_title')}
+                                                    <div className={styles.bg}></div>
+                                                    <div className={styles.text}>{t('media:recom_5_title')}</div>
                                                 </div>
                                             </a>
                                         </Col>
@@ -214,7 +215,8 @@ class Brand extends Component {
                                             <a target="_blank" rel="noopener noreferrer" className={styles.imgRatio} href={t('media:recom_4_link')}>
                                                 <img alt="news" src={recom4}/>
                                                 <div className={styles.mediaTitle}>
-                                                    {t('media:recom_4_title')}
+                                                    <div className={styles.bg}></div>
+                                                    <div className={styles.text}>{t('media:recom_4_title')}</div>
                                                 </div>
                                             </a>
                                         </Col>
@@ -239,7 +241,8 @@ class Brand extends Component {
                                             <a target="_blank" rel="noopener noreferrer" className={styles.imgRatio} href={t('media:recom_3_link')}>
                                                 <img alt="news" src={recom3}/>
                                                 <div className={styles.mediaTitle}>
-                                                    {t('media:recom_3_title')}
+                                                    <div className={styles.bg}></div>
+                                                    <div className={styles.text}>{t('media:recom_3_title')}</div>
                                                 </div>
                                             </a>
                                         </Col>
@@ -264,7 +267,8 @@ class Brand extends Component {
                                             <a target="_blank" rel="noopener noreferrer" className={styles.imgRatio} href={t('media:recom_2_link')}>
                                                 <img alt="news" src={recom2}/>
                                                 <div className={styles.mediaTitle}>
-                                                    {t('media:recom_2_title')}
+                                                    <div className={styles.bg}></div>
+                                                    <div className={styles.text}>{t('media:recom_2_title')}</div>
                                                 </div>
                                             </a>
                                         </Col>
@@ -289,7 +293,8 @@ class Brand extends Component {
                                         <a target="_blank" rel="noopener noreferrer" className={styles.imgRatio} href={t('media:recom_1_link')}>
                                                 <img alt="news" src={recom1}/>
                                                 <div className={styles.mediaTitle}>
-                                                    {t('media:recom_1_title')}
+                                                    <div className={styles.bg}></div>
+                                                    <div className={styles.text}>{t('media:recom_1_title')}</div>
                                                 </div>
                                             </a>
                                         </Col>

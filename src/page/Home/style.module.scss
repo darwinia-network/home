@@ -108,9 +108,10 @@
 
       p {
         text-align: center;
-        font-size: 20px;
+        font-size: 18px;
         color: #333;
-        padding: 0 40px;
+        padding: 0 100px;
+        line-height: 24px;
         margin-bottom: 30px;
       }
 
@@ -408,8 +409,9 @@
 .applicationContainer {
   background: url("./img/application/app-bg.jpg") top center no-repeat;
   background-size: cover;
-  height: 770px;
+  // height: 720px;
   padding-top: 68px;
+  padding-bottom: 68px;
 
   h1 {
     color: #fff;
@@ -430,7 +432,7 @@
   h3 {
     color: #fff;
     font-size: 30px;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     text-align: left;
     font-weight: bold;
   }
@@ -894,6 +896,7 @@
   .applicationContainer {
     padding: 50px 0 0;
     background: none;
+    height: initial;
     .title {
       text-align: center;
     }
@@ -914,7 +917,7 @@
 
   }
   .roadmapContainer {
-    padding: 100px 0 90px 0;
+    padding: 50px 0 90px 0;
     text-align: left;
     .title {
       text-align: center;
