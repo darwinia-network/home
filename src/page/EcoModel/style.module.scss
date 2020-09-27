@@ -24,6 +24,8 @@
   h3 {
     display: inline-block;
     font-size: 30px;
+    font-weight: 400;
+    margin-top: 10px;
   }
 }
 
@@ -295,6 +297,9 @@
     .chart {
       flex-direction: column;
       margin-bottom: 15px;
+      .title {
+        font-size: 20px;
+      }
     }
     .imgWrapper {
       text-align: center;

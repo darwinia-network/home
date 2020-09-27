@@ -192,34 +192,34 @@ class Home extends Component {
                                 </Col>
                                 <Col xs={6} className={styles.nospace}>
                                     <div className={`d-flex ${styles.label}`}>
-                                        <div xs={12}>
+                                        <div xs={12} className={styles.Col1}>
                                             <p className={styles.time}>{t('tech:stage_0')}</p>
                                             <p>{t('tech:stage_0_title')}</p>
                                         </div>
                                         <div></div>
-                                        <div xs={12} className={styles.crayfishCol}>
+                                        <div xs={12} className={styles.Col2}>
                                             <p className={styles.time}>{t('tech:stage_1')}</p>
                                             <p>{t('tech:stage_1_title')}</p>
                                         </div>
                                         <div></div>
-                                        <div xs={12} className={styles.icefrogCol}>
+                                        <div xs={12} className={styles.Col3}>
                                             <p className={styles.time}>{t('tech:stage_2')}</p>
                                             <p>{t('tech:stage_2_title_1')}</p>
                                             <p>{t('tech:stage_2_title_2')}</p>
                                         </div>
                                         <div></div>
-                                        <div xs={12} className={styles.crabCol}>
+                                        <div xs={12} className={styles.Col4}>
                                             <p className={styles.time}>{t('tech:stage_3')}</p>
                                             <p>{t('tech:stage_3_title_1')}</p>
                                             <p>{t('tech:stage_3_title_2')}</p>
                                         </div>
                                         <div></div>
-                                        <div xs={12} className={styles.mainnetCol}>
+                                        <div xs={12} className={styles.Col5}>
                                             <p className={styles.time}>{t('tech:stage_4')}</p>
                                             <p>{t('tech:stage_4_title')}</p>
                                         </div>
                                         <div></div>
-                                        <div xs={12} className={`${styles.lastCol}`}>
+                                        <div xs={12} className={`${styles.Col6}`}>
                                             <p className={styles.time}>{t('tech:stage_5')}</p>
                                             <p>{t('tech:stage_5_title_1')}</p>
                                             <p>{t('tech:stage_5_title_2')}</p>

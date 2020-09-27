@@ -76,6 +76,7 @@
   .pcSlogan {
     min-height: 150px;
     display: flex;
+    font-weight: 600;
     align-items: center;
     justify-content: center;
   }
@@ -338,11 +339,11 @@
       margin-right: 0px;
       font-weight: bold;
       flex-direction: column;
-      justify-content: space-between;
       align-items: stretch;
+      font-size: 16px;
       .time {
         color: #E93787;
-        font-size: 24px;
+        font-size: 20px;
         line-height: 30px;
         margin-bottom: 5px;
       }
@@ -360,11 +361,14 @@
         align-items: flex-start;
         // align-items: center;
         flex: 1;
-        &.mainnetCol {
-          // padding-bottom: 10px;
+        &.Col1 {
+          padding-top: 5px;
         }
-        &.lastCol {
-          // padding-bottom: 20px;
+        &.Col2 {
+          padding-top: 5px;
+        }
+        &.Col5 {
+          padding-bottom: 12px;
         }
 
         p+p {
