@@ -933,7 +933,8 @@
       padding-right: 0;
 
       p {
-        text-align: center;
+        // text-align: center;
+        text-align: left;
         margin-bottom: 0px;
       }
 
@@ -985,11 +986,12 @@
       flex-direction: column;
       justify-content: space-between;
       align-items: stretch;
+      font-size: 16px;
       .time {
         color: #E93787;
-        font-size: 24px;
+        font-size: 20px;
         line-height: 30px;
-        margin-bottom: 16px;
+        margin-bottom: 5px;
       }
 
       p {
