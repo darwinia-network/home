@@ -53,6 +53,19 @@ class PageHeader extends Component {
         // 2. Get a target element that you want to persist scrolling for (such as a modal/lightbox/flyout/nav).
         this.targetElement = document.querySelector('body');
         this.initScroll();
+        this.initFontStyle();
+    }
+
+    initFontStyle = ()=> {
+        const {i18n} = this.props;
+        let isZh = i18n.language.indexOf('en') === -1;
+        let app = document.getElementsByClassName('App')[0];
+        if (isZh) {
+            app.setAttribute('class', 'App zh-font');
+        } else {
+            app.setAttribute('class', 'App');
+        }
+
     }
 
     initScroll = () => {
@@ -124,6 +137,12 @@ class PageHeader extends Component {
 
         i18n.changeLanguage(lng);
         localStorage.setItem("lng", lng);
+        let app = document.getElementsByClassName('App')[0];
+        if (lng === 'zh-cn') {
+            app.setAttribute('class', 'App zh-font');
+        } else {
+            app.setAttribute('class', 'App');
+        }
     }
 
     showTargetElement = () => {
