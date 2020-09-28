@@ -68,7 +68,11 @@
       // padding-bottom: 26%;
       height: 412px;
       position: relative;
+      // > div > div {
+      //   width: 100%;
+      // }
       img {
+        background-color: #f7f7f7;
         position: absolute;
         object-fit: cover;
         width: 100%;

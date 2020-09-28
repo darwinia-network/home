@@ -6,7 +6,6 @@ import {PageFooter} from '../../components/PageFooter'
 import archorsComponent from '../../components/anchorsComponent'
 import {withTranslation} from "react-i18next";
 import styles from "./style.module.scss";
-
 import news from "../Media/img/news.png"
 import news1 from "../Media/img/news1.png"
 import news2 from "../Media/img/news2.png"

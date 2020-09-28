@@ -5,7 +5,8 @@ import { Container, Row, Col, Button } from 'react-bootstrap'
 import { PageHeader } from '../../components/PageHeader'
 import { PageFooter } from '../../components/PageFooter'
 // import { GradientHeading } from '../../components/GradientHeading'
-
+import LazyBackground from "../../components/lazyBackground"
+import MediaQuery from 'react-responsive'
 import styles from './style.module.scss'
 // import themeBg from "./img/theme-bg.png"
 import archBg from "./img/theme-bg.png"
@@ -15,7 +16,8 @@ import mmrBg from "./img/mmr-bg.png"
 import mmrBgM from "./img/mmr-bg-m.png"
 import gameBg from "./img/game-bg.png"
 import gameBgM from "./img/game-bg-m.png"
-
+import bannerBg from "./img/banner-bg.png"
+import bannerBgM from "./img/banner-bg-m.png"
 import theme1 from "./img/theme-1.png"
 import theme2 from "./img/theme-2.png"
 import theme3 from "./img/theme-3.png"
@@ -38,15 +40,10 @@ class Home extends Component {
     componentDidMount() {
         archorsComponent();
     }
-
-    render() {
+    renderContainer() {
         const { t } = this.props
         return (
-            <div className={styles.tech}>
-                <PageHeader href="#top" transparent={true}/>
-                <div className={styles.themeContainer}>
-                    {/* <img src={themeBg} alt="banner"/> */}
-                    <div className={styles.content}>
+            <div className={styles.content}>
                         <div className={`hidden-xs ${styles.slogan} ${styles.pcSlogan}`}>
                             {t('tech:theme_desc')}
                         </div>
@@ -72,7 +69,24 @@ class Home extends Component {
                             </a>
                         </div>
                     </div>
-                </div>
+        )
+    }
+
+    render() {
+        const { t } = this.props
+        return (
+            <div className={styles.tech}>
+                <PageHeader href="#top" transparent={true}/>
+                <MediaQuery minDeviceWidth={768}>
+                    <LazyBackground src={bannerBg } className={styles.themeContainer}>
+                        {this.renderContainer()}
+                    </LazyBackground>
+                </MediaQuery>
+                <MediaQuery maxDeviceWidth={767.98}>
+                    <LazyBackground src={bannerBgM } className={styles.themeContainer}>
+                        {this.renderContainer()}
+                    </LazyBackground>
+                </MediaQuery>
 
                 <div className={styles.architectureContainer}>
                     <Container>
