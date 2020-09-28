@@ -1,6 +1,7 @@
 /* eslint-disable no-script-url */
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { Component } from "react";
+import { Image } from 'antd';
 import { Container, Row, Col, InputGroup, FormControl, Button, Form, Carousel, OverlayTrigger, Tooltip } from 'react-bootstrap'
 import { PageHeader } from '../../components/PageHeader'
 import { PageFooter } from '../../components/PageFooter'
@@ -330,6 +331,14 @@ class Home extends Component {
                                     <div className={`hidden-xs`}>
                                         {i18n.language.indexOf('en') > -1 ? <img alt="news" src={carousel_3_en}/> :
                                         <img alt="news" src={carousel_3}/>}
+                                        <Image
+                                            src={carousel_3}
+                                            placeholder={
+                                            <Image
+                                                src={carousel_3}
+                                            />
+                                            }
+                                        />
                                     </div>
                                     <div className={`hidden-md`}>
                                         {i18n.language.indexOf('en') > -1 ? <img alt="news" src={carousel_3_en_m}/> :
