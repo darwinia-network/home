@@ -22,7 +22,7 @@ class CustomToggle extends React.Component {
         document.querySelector('body').click()
         e.preventDefault();
 
-        this.props.onClick(e);
+        // this.props.onClick(e);
     }
 
     render() {
@@ -188,8 +188,10 @@ class PageHeader extends Component {
                                     <a target="_blank" rel="noopener noreferrer" href={t('header:genepaper_url')} className={styles.paper}><div className={styles.gIcon}/>{t('header:genepaper')}</a>
                                     <a target="_blank" rel="noopener noreferrer" href={t('header:techpaper_url')} className={styles.paper}><div className={styles.tIcon}/>{t('header:techpaper')}</a>
                                     <Dropdown className={styles.dropdown}>
-                                    <Dropdown.Toggle as={CustomToggle} id="dropdown-custom-components">
-                                        <div className={styles.lngBtn}>{t('header:lang_demo')}</div>
+                                    <Dropdown.Toggle className={styles.dropdownToggle} id="dropdown-custom-components">
+                                        <CustomToggle>
+                                            <div className={styles.lngBtn}>{t('header:lang_demo')}</div>
+                                        </CustomToggle>
                                     </Dropdown.Toggle>
                                     <Dropdown.Menu className={`animated fadeIn faster ${styles.dropdownMenu}`}>
                                         <Dropdown.Item onClick={() => this.changeLng('zh-cn')} eventKey="4.1">
@@ -260,8 +262,11 @@ class PageHeader extends Component {
                                         className={`${styles.navDraw} d-flex flex-column animated fadeInRight faster`}>
                                 <div className={`${styles.closeBox} d-flex`}>
                                     <Dropdown alignRight>
-                                        <Dropdown.Toggle as={CustomToggle} id="dropdown-custom-components">
-                                            <div className={styles.lngBtn}>{t('header:lang_demo')}</div>
+                                        <Dropdown.Toggle id="dropdown-custom-components">
+                                            {/* <div className={styles.lngBtn}>{t('header:lang_demo')}</div> */}
+                                            <CustomToggle>
+                                                <div className={styles.lngBtn}>{t('header:lang_demo')}</div>
+                                            </CustomToggle>
                                         </Dropdown.Toggle>
                                         <Dropdown.Menu className={`animated fadeIn faster ${styles.dropdownMenu}`}>
                                             <Dropdown.Item onClick={() => this.changeLng('zh-cn')} eventKey="4.1">

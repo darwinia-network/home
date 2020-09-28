@@ -5,8 +5,9 @@ import React, { Component } from "react";
 import { Container, Row, Col } from 'react-bootstrap'
 import { PageHeader } from '../../components/PageHeader'
 import { PageFooter } from '../../components/PageFooter'
+import LazyBackground from "../../components/lazyBackground"
+import MediaQuery from 'react-responsive'
 // import { GradientHeading } from '../../components/GradientHeading'
-
 import eco1 from './img/eco-1.png'
 import eco2 from './img/eco-2.png'
 import styles from './style.module.scss'
@@ -19,15 +20,43 @@ import model2 from "./img/model-2.png"
 import staking1 from "./img/staking-1.png"
 import staking2 from "./img/staking-2.png"
 import circulation from "./img/circulation.png"
-
+import bannerBg from "./img/banner-bg.png"
+import bannerBgM from "./img/banner-bg-m.png"
 import archorsComponent from '../../components/anchorsComponent'
 import { withTranslation } from "react-i18next";
 // import i18n from '../../locales/i18n';
 
 class Home extends Component {
+    constructor(props) {
+        super(props);
+        this.myRef = React.createRef();
+      }
 
     componentDidMount() {
         archorsComponent();
+    }
+
+    renderContainer() {
+        const { t } = this.props
+        return (
+            <Container>
+                <div>
+                    <Row>
+                        <Col xs={12} className={`${styles.content}`}>
+                            <div className={styles.title}>
+                                <h1 className={` ${styles.fontH1} ${styles.gradientText}`}>{t('model:economic')}</h1>
+                            </div>
+                            <div className={styles.title}>
+                                <h3 className={` ${styles.gradientText}`}>
+                                    {t('model:theme')}
+                                </h3>
+                            </div>
+                        </Col>
+                    </Row>
+                </div>
+            </Container>
+
+        )
     }
 
     render() {
@@ -35,25 +64,16 @@ class Home extends Component {
         return (
             <div className={styles.economic}>
                 <PageHeader href="#top" transparent={true} hasHeightinMobile={true}/>
-                
-                <div className={styles.themeContainer}>
-                    <Container>
-                        <div>
-                            <Row>
-                                <Col xs={12} className={`${styles.content}`}>
-                                    <div className={styles.title}>
-                                        <h1 className={` ${styles.fontH1} ${styles.gradientText}`}>{t('model:economic')}</h1>
-                                    </div>
-                                    <div className={styles.title}>
-                                        <h3 className={` ${styles.gradientText}`}>
-                                            {t('model:theme')}
-                                        </h3>
-                                    </div>
-                                </Col>
-                            </Row>
-                        </div>
-                    </Container>
-                </div>
+                <MediaQuery minDeviceWidth={768}>
+                    <LazyBackground src={bannerBg } className={styles.themeContainer}>
+                        {this.renderContainer()}
+                    </LazyBackground>
+                </MediaQuery>
+                <MediaQuery maxDeviceWidth={767.98}>
+                    <LazyBackground src={bannerBgM } className={styles.themeContainer}>
+                        {this.renderContainer()}
+                    </LazyBackground>
+                </MediaQuery>
 
                 <div className={styles.tokenContainer}>
                     <Container>

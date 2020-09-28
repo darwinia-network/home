@@ -83,9 +83,10 @@ class PageFooter extends Component {
     renderTooltip = props => {
         const {t} = this.props
         return <Popover {...props} className={styles.wxContainer}>
+            <div className="popover-body">
             <img alt="wx" src={wx}/>
             <p>{t("footer:scan")}</p>
-            <p>{t("footer:follow")}</p>
+            <p>{t("footer:follow")}</p></div>
         </Popover>
     }
 
@@ -183,7 +184,7 @@ class PageFooter extends Component {
                                         }} src={share8}/>
                                         <OverlayTrigger
                                             placement="top-end"
-                                            delay={{show: 100, hide: 1000}}
+                                            delay={{show: 100, hide: 100}}
                                             overlay={this.renderTooltip}
                                         >
                                             <img alt="wechat" onClick={(e) => {

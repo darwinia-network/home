@@ -2,12 +2,14 @@ import React, {Component} from "react";
 import {Container, Row, Col, Button, Popover, OverlayTrigger} from 'react-bootstrap'
 import {PageHeader} from '../../components/PageHeader'
 import {PageFooter} from '../../components/PageFooter'
-
+import LazyBackground from "../../components/lazyBackground"
+import MediaQuery from 'react-responsive'
 import archorsComponent from '../../components/anchorsComponent'
 import {withTranslation} from "react-i18next";
 import styles from "./style.module.scss";
 // import GradientHeading from "../../components/GradientHeading/GradientHeading";
-
+import bannerBg from "./img/banner-bg.png"
+import bannerBgM from "./img/banner-bg-m.png"
 import github from './img/github.png'
 import github_white from './img/github_white.png'
 import medium from './img/medium.png'
@@ -46,20 +48,16 @@ class Brand extends Component {
     renderTooltip = props => {
         const {t} = this.props
         return <Popover {...props} className={styles.wxContainer}>
-            <img alt="wx" src={wx}/>
+            <div class="popover-body"><img alt="wx" src={wx}/>
             <p>{t("footer:scan")}</p>
-            <p>{t("footer:follow")}</p>
+            <p>{t("footer:follow")}</p></div>
         </Popover>
     }
 
-
-    render() {
+    renderContainer() {
         const {t} = this.props
         return (
-            <div className={`${styles.community}`}>
-                <PageHeader transparent={true}/>
-                <div className={`${styles.dive}`}>
-                    <Container>
+            <Container>
                         <div>
                             <Row>
                                 <Col xs={12} className={`${styles.content}`}>
@@ -75,7 +73,24 @@ class Brand extends Component {
                             </Row>
                         </div>
                     </Container>
-                </div>
+        )
+    }
+
+    render() {
+        const {t} = this.props
+        return (
+            <div className={`${styles.community}`}>
+                <PageHeader transparent={true}/>
+                <MediaQuery minDeviceWidth={768}>
+                    <LazyBackground src={bannerBg } className={styles.dive}>
+                        {this.renderContainer()}
+                    </LazyBackground>
+                </MediaQuery>
+                <MediaQuery maxDeviceWidth={767.98}>
+                    <LazyBackground src={bannerBgM } className={styles.dive}>
+                        {this.renderContainer()}
+                    </LazyBackground>
+                </MediaQuery>
 
                 <div className={`${styles.general}`}>
                     <Container>
@@ -127,7 +142,7 @@ class Brand extends Component {
                                         </a>
                                         <OverlayTrigger
                                             placement="top"
-                                            delay={{show: 100, hide: 1000000}}
+                                            delay={{show: 100, hide: 100}}
                                             overlay={this.renderTooltip}
                                         >
                                             <div className={`${styles.mediaBlock} ${styles.wechat}`}>
