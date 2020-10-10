@@ -22,9 +22,19 @@ import wechat from './img/wechat.png'
 import wechat_white from './img/wechat_white.png'
 import wx from './img/wx.jpg'
 
-import newPerson from "./img/new.png"
-import eduPerson from "./img/education.png"
-import techPerson from "./img/technology.png"
+import new_bg from './img/new-bg.png'
+import new_bg_m from './img/new-bg-m.png'
+import technology_bg from './img/technology-bg.png'
+import technology_bg_m from './img/technology-bg-m.png'
+import education_bg from './img/education-bg.png'
+import education_bg_m from './img/education-bg-m.png'
+import grant from './img/grant.png'
+import bounty from './img/bounty.png'
+import creator from './img/creator.png'
+import experience from './img/experience.png'
+import meetup from './img/meetup.png'
+import moderator from './img/moderator.png'
+import translator from './img/translator.png'
 
 import person_1 from "./img/person_1.png"
 import person_2 from "./img/person_2.png"
@@ -178,47 +188,60 @@ class Brand extends Component {
                 </div>
 
                 <div className={`${styles.contribute}`}>
-                    <Container>
-                        <Row>
-                            <Col md={1} xs={0}></Col>
-                            <Col md={10} xs={12} className={`${styles.content}`}>
-                                <div className={'text-center'}>
-                                    <h1 className={`${styles.gradientText}`}>
-                                        {t('community:contribute')}
-                                    </h1>
-                                </div>
-                                <div className={styles.contributeBlocks}>
-                                    <div className={`${styles.contributeBlock} ${styles.new}`}>
-                                        <div className={styles.avatar}>
-                                            <img alt="new" src={newPerson}/>
-                                            <div>{t('community:new')}</div>
-                                        </div>
-                                        <div className={styles.section}>
-                                            {/* <div className={styles.title}>{t('community:technology')}</div> */}
-                                            <p>{t('community:new_intro')}</p>
-                                            <div className={styles.buttons}>
-                                                <Button variant="dark" target="_blank" href={t('community:darwinia_wiki_link')}
-                                                    className={styles.button}>{t('community:darwinia_wiki')}</Button>
-                                                <Button variant="dark" target="_blank" href="/faq"
-                                                    className={styles.button}>{t('community:faq')}</Button>
-                                                <Button variant="white" target="_blank" href="/ambassador"
-                                                    className={`${styles.button} ${styles.buttonWhite}`}>{t('community:get_started')}</Button>
-                                            </div>
+                    <div className={styles.new}>
+                        <img className={'hidden-xs'} alt="new-bg" src={new_bg}/>
+                        <img className={'hidden-md'} alt="new-bg" src={new_bg_m}/>
+                        <Container className={styles.container}>
+                            <Row className={styles.newRow}>
+                                <Col md={12} xs={12}>
+                                    <div className={'text-center'}>
+                                        <h1 className={styles.sectionTitle}>
+                                            {t('community:contribute')}
+                                        </h1>
+                                    </div>
+                                    <div className={styles.lineH1}></div>
+                                </Col>
+                            </Row>
+                            <Row>
+                                <Col md={2}></Col>
+                                <Col md={8} xs={12} className={`${styles.content}`}>
+                                    <div className={'text-center'}>
+                                        <div className={`${styles.contentTitle}`}>{t('community:new')}</div>
+                                        <p>{t('community:new_intro')}</p>
+                                        <div className={styles.buttons}>
+                                            <Button variant="transparent" target="_blank" href={t('community:darwinia_wiki_link')}
+                                                className={styles.button}>{t('community:darwinia_wiki')}</Button>
+                                            <Button variant="transparent" target="_blank" href="/faq"
+                                                className={styles.button}>{t('community:faq')}</Button>
+                                            <Button variant="transparent" target="_blank" href="/ambassador"
+                                                className={`${styles.button} ${styles.buttonWhite}`}>{t('community:get_started')}</Button>
                                         </div>
                                     </div>
-                                    <div className={`${styles.contributeBlock} ${styles.technology}`}>
-                                        <div className={styles.avatar}>
-                                            <img alt="technology" src={techPerson}/>
-                                            <div>{t('community:technology')}</div>
-                                        </div>
-                                        <div className={styles.section}>
+                                </Col>
+                            </Row>
+                        </Container>
+                    </div>
+                    <div className={styles.technology}>
+                        <img className={'hidden-xs'} alt="technology-bg" src={technology_bg}/>
+                        <img className={'hidden-md'} alt="technology-bg" src={technology_bg_m}/>
+                        <Container className={styles.container}>
+                            <Row>
+                                <Col md={9} xs={12} className={`${styles.content}`}>
+                                    <div className={styles.section}>
+                                        <img alt="grant" src={grant}/>
+                                        <div className={styles.text}>
                                             <div className={styles.title}>{t('community:grant_program')}</div>
                                             <p>{t('community:grant_intro')}</p>
                                             <div className={styles.buttons}>
                                                 <Button variant="white" target="_blank" href={t('ambassador:form')}
                                                     className={`${styles.button} ${styles.buttonWhite}`}>{t('community:get_started')}</Button>
                                             </div>
+                                        </div>
+                                    </div>
 
+                                    <div className={styles.section}>
+                                        <img alt="bounty" src={bounty}/>
+                                        <div className={styles.text}>
                                             <div className={styles.title}>{t('community:bounty_program')}</div>
                                             <p>{t('community:bounty_intro')}</p>
                                             <div className={styles.buttons}>
@@ -227,37 +250,74 @@ class Brand extends Component {
                                             </div>
                                         </div>
                                     </div>
-                                    <div className={`${styles.contributeBlock} ${styles.education}`}>
-                                        <div className={styles.avatar}>
-                                            <img alt="educator" src={eduPerson}/>
-                                            <div>{t('community:education')}</div>
-                                        </div>
-                                        <div className={styles.section}>
+                                </Col>
+                                <Col md={3} xs={12}>
+                                    <div className={`text-center ${styles.contentTitle}`}>
+                                        {t('community:technology')}
+                                    </div>
+                                </Col>
+                            </Row>
+                        </Container>
+                    </div>
+                    <div className={styles.education}>
+                        <img className={'hidden-xs'} alt="education-bg" src={education_bg}/>
+                        <img className={'hidden-md'} alt="education-bg" src={education_bg_m}/>
+                        <Container className={styles.container}>
+                            <Row>
+                                <Col md={3} xs={12}>
+                                    <div className={`${styles.contentTitle}`}>
+                                        {t('community:education')}
+                                    </div>
+                                </Col>
+                                <Col md={9} xs={12} className={`${styles.content}`}>
+                                    <div className={styles.section}>
+                                        <img alt="creator" src={creator}/>
+                                        <div className={styles.text}>
                                             <div className={styles.title}>{t('community:content_creator')}</div>
                                             <p>{t('community:content_intro')}</p>
-
-                                            <div className={styles.title}>{t('community:meetup_organizer')}</div>
-                                            <p>{t('community:meetup_intro')}</p>
-
-                                            <div className={styles.title}>{t('community:translator')}</div>
-                                            <p>{t('community:translator_intro')}</p>
-
-                                            <div className={styles.title}>{t('community:moderator')}</div>
-                                            <p>{t('community:moderator_intro')}</p>
-
-                                            <div className={styles.title}>{t('community:experience_officer')}</div>
-                                            <p>{t('community:experience_intro')}</p>
-
-                                            <div className={styles.buttons}>
-                                                <Button variant="white" target="_blank" href={t('ambassador:form')}
-                                                    className={`${styles.button} ${styles.buttonWhite}`}>{t('community:get_started')}</Button>
-                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                            </Col>
-                        </Row>
-                    </Container>
+
+                                    <div className={styles.section}>
+                                        <img alt="meetup" src={meetup}/>
+                                        <div className={styles.text}>
+                                            <div className={styles.title}>{t('community:meetup_organizer')}</div>
+                                            <p>{t('community:meetup_intro')}</p>
+                                        </div>
+                                    </div>
+
+                                    <div className={styles.section}>
+                                        <img alt="translator" src={translator}/>
+                                        <div className={styles.text}>
+                                            <div className={styles.title}>{t('community:translator')}</div>
+                                            <p>{t('community:translator_intro')}</p>
+                                        </div>
+                                    </div>
+
+                                    <div className={styles.section}>
+                                        <img alt="moderator" src={moderator}/>
+                                        <div className={styles.text}>
+                                            <div className={styles.title}>{t('community:moderator')}</div>
+                                            <p>{t('community:moderator_intro')}</p>
+                                        </div>
+                                    </div>
+
+                                    <div className={styles.section}>
+                                        <img alt="experience" src={experience}/>
+                                        <div className={styles.text}>
+                                            <div className={styles.title}>{t('community:experience_officer')}</div>
+                                            <p>{t('community:experience_intro')}</p>
+                                        </div>
+                                    </div>
+
+                                    <div className={styles.buttons}>
+                                        <Button variant="white" target="_blank" href={t('ambassador:form')}
+                                            className={`${styles.button} ${styles.buttonWhite}`}>{t('community:get_started')}</Button>
+                                    </div>
+                                </Col>
+                            </Row>
+                        </Container>
+                    </div>
                 </div>
 
                 <div className={styles.contributors}>
