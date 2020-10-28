@@ -1,63 +1,63 @@
 self.__precacheManifest = [
   {
-    "revision": "1c00267b11fa3996815566eae58075ac",
-    "url": "/static/media/architecture-mobile.1c00267b.png"
+    "revision": "126a8d88a8e89a0d041f",
+    "url": "/static/js/0.7ce92d5c.chunk.js"
   },
   {
-    "revision": "e1cc423605ee3fd0dda0",
-    "url": "/static/js/0.df16fb25.chunk.js"
+    "revision": "f39966aa39d1325309bb",
+    "url": "/static/css/1.08c8c881.chunk.css"
   },
   {
-    "revision": "95f0824f473a5d169a17",
-    "url": "/static/js/1.e0cd1108.chunk.js"
+    "revision": "f39966aa39d1325309bb",
+    "url": "/static/js/1.ace294a3.chunk.js"
   },
   {
-    "revision": "631e1a1e24e6254102cb78d90025bd79",
-    "url": "/static/media/news-eth-relay.631e1a1e.png"
+    "revision": "d3ae9ad482977bcd45d4",
+    "url": "/static/css/main.b590c506.chunk.css"
   },
   {
-    "revision": "8c9d29bab353318d03ba",
-    "url": "/static/js/main.121bbe78.chunk.js"
+    "revision": "d3ae9ad482977bcd45d4",
+    "url": "/static/js/main.bc796475.chunk.js"
   },
   {
-    "revision": "21b2a66e2315a6405f1a",
-    "url": "/static/js/runtime~main.f5507e43.js"
+    "revision": "5dd0de89d30fad1dfb10",
+    "url": "/static/js/runtime~main.9fe576f0.js"
   },
   {
-    "revision": "2945a1d81c90d84708cf",
-    "url": "/static/js/4.e014ca62.chunk.js"
+    "revision": "2f46996159599f7a85e5",
+    "url": "/static/js/4.ed47c613.chunk.js"
   },
   {
-    "revision": "95fb2146cba37df0b764",
-    "url": "/static/js/5.87482475.chunk.js"
+    "revision": "f76eb39eebd25263c6d2",
+    "url": "/static/css/5.dd311f87.chunk.css"
   },
   {
-    "revision": "d0aeb0bb8d2661056e509f28ee7378b5",
-    "url": "/static/media/news-2.d0aeb0bb.jpg"
+    "revision": "f76eb39eebd25263c6d2",
+    "url": "/static/js/5.e18d3a45.chunk.js"
   },
   {
-    "revision": "4c47c2f1a620472df62f",
-    "url": "/static/js/6.d8402f0e.chunk.js"
+    "revision": "10bb457cf066e3a27fc9",
+    "url": "/static/js/6.c112aad8.chunk.js"
   },
   {
-    "revision": "123dc5d84fb45b769028e37a37a8ced6",
-    "url": "/static/media/news-1.123dc5d8.jpg"
+    "revision": "c91308e0adc8d45e7c3e",
+    "url": "/static/css/7.461ba7e8.chunk.css"
   },
   {
-    "revision": "af19f66b32d16cc56d80",
-    "url": "/static/js/7.93934ff8.chunk.js"
+    "revision": "c91308e0adc8d45e7c3e",
+    "url": "/static/js/7.90db3ba7.chunk.js"
   },
   {
-    "revision": "100d9db5de865a3f9a58d1c2606c50f2",
-    "url": "/static/media/partner-7.100d9db5.png"
+    "revision": "428b0f399a14810bafe9",
+    "url": "/static/css/8.9e0fe227.chunk.css"
   },
   {
-    "revision": "048d0b77cbf47728d288",
-    "url": "/static/js/8.30a149f1.chunk.js"
+    "revision": "428b0f399a14810bafe9",
+    "url": "/static/js/8.25dcb5c0.chunk.js"
   },
   {
-    "revision": "5b5dd635429d708e45ee",
-    "url": "/static/js/9.c13627cd.chunk.js"
+    "revision": "1ccc803e5449300eb91b",
+    "url": "/static/js/9.981e9cb9.chunk.js"
   },
   {
     "revision": "199e3623690bf2235928af1c7cc69514",
@@ -100,8 +100,8 @@ self.__precacheManifest = [
     "url": "/static/media/architecture-en.47622991.png"
   },
   {
-    "revision": "73bbe608389535212dc03e6b7f35f47a",
-    "url": "/static/media/partner-3.73bbe608.png"
+    "revision": "1c00267b11fa3996815566eae58075ac",
+    "url": "/static/media/architecture-mobile.1c00267b.png"
   },
   {
     "revision": "e482ba082933d30e4110b15a57f7c2cb",
@@ -180,27 +180,27 @@ self.__precacheManifest = [
     "url": "/static/media/key-5-mobile.66832b56.png"
   },
   {
-    "revision": "8c9d29bab353318d03ba",
-    "url": "/static/css/main.8d19eca9.chunk.css"
+    "revision": "73bbe608389535212dc03e6b7f35f47a",
+    "url": "/static/media/partner-3.73bbe608.png"
   },
   {
-    "revision": "048d0b77cbf47728d288",
-    "url": "/static/css/8.d9724f0d.chunk.css"
+    "revision": "100d9db5de865a3f9a58d1c2606c50f2",
+    "url": "/static/media/partner-7.100d9db5.png"
   },
   {
-    "revision": "af19f66b32d16cc56d80",
-    "url": "/static/css/7.51b4885d.chunk.css"
+    "revision": "123dc5d84fb45b769028e37a37a8ced6",
+    "url": "/static/media/news-1.123dc5d8.jpg"
   },
   {
-    "revision": "4c47c2f1a620472df62f",
-    "url": "/static/css/6.2c282063.chunk.css"
+    "revision": "d0aeb0bb8d2661056e509f28ee7378b5",
+    "url": "/static/media/news-2.d0aeb0bb.jpg"
   },
   {
-    "revision": "95f0824f473a5d169a17",
-    "url": "/static/css/1.18302d42.chunk.css"
+    "revision": "631e1a1e24e6254102cb78d90025bd79",
+    "url": "/static/media/news-eth-relay.631e1a1e.png"
   },
   {
-    "revision": "a780872bd9a1999eea93a2a956450328",
+    "revision": "aa5c3afaa8e1f448f3114b1d0c797d8a",
     "url": "/index.html"
   }
 ];
