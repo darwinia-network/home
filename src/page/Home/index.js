@@ -207,7 +207,7 @@ class Home extends Component {
     }
 
     subscribe = (text) => {
-        axios.post('http://api.darwinia.network/api/subscribe?email=' + text)
+        axios.post('https://api.darwinia.network/api/subscribe?email=' + text)
             .then((response) => {
                 console.log(response);
                 if (response.data.code === 0) {
