@@ -278,7 +278,7 @@
   .contributors {
     background: url("./img/contributors.jpg") top center no-repeat;
     background-size: cover;
-    height: 573px;
+    height: 710px;
     color: #F9FAFC;
     .content {
       text-align: center;
@@ -286,6 +286,7 @@
     .title {
       margin-top: 100px;
       margin-bottom: 40px;
+      text-transform: uppercase;
     }
     h1 {
       font-size: 40px;
@@ -300,11 +301,13 @@
     }
     .persons {
       display: flex;
-      justify-content: space-between;
+      justify-content: center;
       flex-wrap: wrap;
+      margin: -20px 0;
       img {
         width: 100px;
         height: 100px;
+        margin: 20px;
       }
     }
     p {
@@ -560,6 +563,7 @@
       }
     }
     .contributors {
+      height: 765px;
       .title {
         margin-top: 60px;
         margin-bottom: 50px;
@@ -572,12 +576,11 @@
         width: 100%;
       }
       .persons {
-        margin-left: 15px;
+        margin: -15px 0;
         img {
           width: 80px;
           height: 80px;
-          margin-right: 15px;
-          margin-bottom: 40px;
+          margin: 15px;
         }
       }
 

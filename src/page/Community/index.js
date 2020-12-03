@@ -43,6 +43,9 @@ import person_4 from "./img/person_4.png"
 import person_5 from "./img/person_5.png"
 import person_6 from "./img/person_6.png"
 import person_7 from "./img/person_7.png"
+import person_8 from "./img/person_8.png"
+import person_9 from "./img/person_9.png"
+import person_10 from "./img/person_10.png"
 
 class Brand extends Component {
     constructor(props, context) {
@@ -323,8 +326,8 @@ class Brand extends Component {
                 <div className={styles.contributors}>
                     <Container>
                         <Row>
-                            <Col xs={0} md={1}></Col>
-                            <Col xs={12} md={10} className={`${styles.content}`}>
+                            {/* <Col xs={0} md={1}></Col> */}
+                            <Col xs={12} md={12} className={`${styles.content}`}>
                                 <h1 className={styles.title}>
                                     {t('community:contributors')}
                                 </h1>
@@ -335,7 +338,10 @@ class Brand extends Component {
                                     <img alt="person" src={person_4}/>
                                     <img alt="person" src={person_5}/>
                                     <img alt="person" src={person_6}/>
-                                    <img className={'hidden-xs'} alt="person" src={person_7}/>
+                                    <img alt="person" src={person_7}/>
+                                    <img alt="person" src={person_8}/>
+                                    <img alt="person" src={person_9}/>
+                                    <img alt="person" src={person_10}/>
                                 </div>
                                 <p>
                                     {t('community:invite')}
