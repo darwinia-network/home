@@ -26,6 +26,9 @@ import person_4 from "../Community/img/person_4.png"
 import person_5 from "../Community/img/person_5.png"
 import person_6 from "../Community/img/person_6.png"
 import person_7 from "../Community/img/person_7.png"
+import person_8 from "../Community/img/person_8.png"
+import person_9 from "../Community/img/person_9.png"
+import person_10 from "../Community/img/person_10.png"
 
 import styles from './style.module.scss'
 import architecture from './img/architecture.png'
@@ -747,8 +750,8 @@ class Home extends Component {
                 <div className={styles.teamContainer}>
                     <Container>
                         <Row>
-                            <Col md={1} xs={0}></Col>
-                            <Col md={10} xs={12} className={`${styles.content}`}>
+                            {/* <Col md={1} xs={0}></Col> */}
+                            <Col md={12} xs={12} className={`${styles.content}`}>
                                 <h1 className={`reveal-h1 ${styles.title} ${styles.fontH1}`}>
                                     {t('community:contributors')}
                                 </h1>
@@ -759,7 +762,10 @@ class Home extends Component {
                                     <img alt="person" src={person_4}/>
                                     <img alt="person" src={person_5}/>
                                     <img alt="person" src={person_6}/>
-                                    <img className={'hidden-xs'} alt="person" src={person_7}/>
+                                    <img alt="person" src={person_7}/>
+                                    <img alt="person" src={person_8}/>
+                                    <img alt="person" src={person_9}/>
+                                    <img alt="person" src={person_10}/>
                                 </div>
                                 <p>
                                     {t('community:invite')}
