@@ -1,0 +1,9 @@
+/.git
+/.vscode
+/.yarn/cache
+/Dockerfile
+
+build/
+coverage/
+node_modules/
+tmp/
