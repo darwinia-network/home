@@ -19,17 +19,6 @@ import carousel_2_en_m from "./img/carousel/carousel-2-m-en.jpg"
 import carousel_3_m from "./img/carousel/carousel-3-m.jpg"
 import carousel_3_en_m from "./img/carousel/carousel-3-m-en.jpg"
 
-import person_1 from "../Community/img/person_1.png"
-import person_2 from "../Community/img/person_2.png"
-import person_3 from "../Community/img/person_3.png"
-import person_4 from "../Community/img/person_4.png"
-import person_5 from "../Community/img/person_5.png"
-import person_6 from "../Community/img/person_6.png"
-import person_7 from "../Community/img/person_7.png"
-import person_8 from "../Community/img/person_8.png"
-import person_9 from "../Community/img/person_9.png"
-import person_10 from "../Community/img/person_10.png"
-
 import styles from './style.module.scss'
 import architecture from './img/architecture.png'
 import architecture_en from './img/architecture-en.png'
@@ -40,10 +29,12 @@ import architecture_chain from './img/architecture-chain.png'
 import economic from './img/economic.png'
 import economic_en from './img/economic-en.png'
 
-import app_1 from "./img/application/app-1.png"
-import app_2 from "./img/application/app-2.png"
-import application_1 from './img/application/application-1.png'
-import application_2 from './img/application/application-2.png'
+import app_token from "./img/application/app-token.png"
+import app_nft from "./img/application/app-nft.png"
+import app_evo from './img/application/app-evo.png'
+import app_subscan from './img/application/app-subscan.png'
+import application_token from './img/application/application-token.png'
+import application_nft from './img/application/application-nft.png'
 
 import roadmapCur from './img/roadmap/roadmap-cur.png'
 import roadmapLine from './img/roadmap/roadmap-line.png'
@@ -90,11 +81,21 @@ import partner14 from './img/partner/partner-14.png'
 import partner15 from './img/partner/partner-15.png'
 import partner16 from './img/partner/partner-16.png'
 import partner17 from './img/partner/partner-17.png'
+import partner18 from './img/partner/partner-18.png'
+import partner19 from './img/partner/partner-19.png'
+import partner20 from './img/partner/partner-20.png'
+import partner21 from './img/partner/partner-21.png'
+import partner22 from './img/partner/partner-22.png'
 
-import news6 from "../Media/img/news6.png"
-import news7 from "../Media/img/news7.png"
-import news8 from "../Media/img/news8.png"
-import news9 from "../Media/img/news9.png"
+import news12 from "../Media/img/news12.png"
+import news14 from "../Media/img/news14.png"
+import news16 from "../Media/img/news16.png"
+import news17 from "../Media/img/news17.png"
+
+import band1 from "./img/band/band-1.png"
+import band2 from "./img/band/band-2.png"
+import band3 from "./img/band/band-3.png"
+import band4 from "./img/band/band-4.png"
 
 import axios from 'axios'
 import archorsComponent from '../../components/anchorsComponent'
@@ -137,63 +138,88 @@ class Home extends Component {
                 name: 'HashKey',
                 url: 'https://www.hashkey.com'
             },
-            'polkabase': {
+            'chainlink': {
                 logo: partner6,
+                name: 'Chainlink',
+                url: ''
+            },
+            'ankr': {
+                logo: partner7,
+                name: 'Ankr',
+                url: ''
+            },
+            'bondly': {
+                logo: partner8,
+                name: 'Bondly',
+                url: ''
+            },
+            'crust': {
+                logo: partner9,
+                name: 'Crust',
+                url: ''
+            },
+            'reef': {
+                logo: partner10,
+                name: 'Reef',
+                url: ''
+            },
+            'polkabase': {
+                logo: partner21,
                 name: 'Polkabase',
                 url: 'https://www.polkabase.com'
             },
             'bihu': {
-                logo: partner7,
+                logo: partner11,
                 name: 'Bihu',
                 url: 'https://bihu.com'
             },
             'evolutionland': {
-                logo: partner8,
+                logo: partner12,
                 name: 'Evolution Land',
                 url: 'https://www.evolution.land'
             },
             'polkaworld': {
-                logo: partner9,
+                logo: partner22,
                 name: 'Polka World',
                 url: 'https://www.polkaworld.org'
             },
             'imtoken': {
-                logo: partner10,
+                logo: partner13,
                 name: 'imToken',
                 url: 'https://token.im'
             },
             'mathwallet': {
-                logo: partner11,
+                logo: partner14,
                 name: 'Math Wallet',
                 url: 'https://www.mathwallet.org'
             },
             'cobowallet': {
-                logo: partner12,
+                logo: partner15,
                 name: 'Cobo Wallet',
                 url: 'https://cobo.com'
             },
             'polkawallet': {
-                logo: partner13,
+                logo: partner16,
                 name: 'Polka Wallet',
                 url: 'https://polkawallet.io'
             },
             'sssnodes': {
-                logo: partner14,
+                logo: partner17,
                 name: 'SSSnodes',
                 url: 'http://sssnodes.com'
             },
             'digital': {
-                logo: partner15,
+                logo: partner18,
                 name: 'Digital Renaissance',
                 url: 'http://drf.ee'
             },
             'ddex': {
-                logo: partner16,
+                logo: partner19,
                 name: 'DDEX',
                 url: 'https://ddex.io'
             },
             'otcmaker': {
-                logo: partner17,
+                logo: partner20,
                 name: 'OTCMAKER',
                 url: 'https://www.otcmaker.com'
             }
@@ -215,9 +241,10 @@ class Home extends Component {
         }
 
         this.partners = [
-            'polkadot', 'parity', 'maker', 'snz', 'hashkey', 'polkabase', 'bihu',
-            'evolutionland', 'polkaworld', 'imtoken', 'mathwallet', 'cobowallet', 'polkawallet',
-            'sssnodes', 'digital', 'ddex', 'otcmaker'
+            'polkadot', 'parity', 'maker', 'snz', 'hashkey', 'chainlink', 
+            'ankr', 'bondly', 'crust', 'reef', 'bihu', 'evolutionland', 
+            'imtoken', 'mathwallet', 'cobowallet', 'polkawallet', 'sssnodes', 'digital', 
+            'ddex', 'otcmaker', 'polkabase', 'polkaworld'
         ]
 
         this.detectMetaMaskTimer = null;
@@ -364,6 +391,40 @@ class Home extends Component {
                             <Col xs={{ span: 12 }} sm={{ span: 12 }}>
                                 <h1 className={`text-center reveal-h1 ${styles.fontH1} ${styles.gradientText}`}>{t('home_page:theme_title')}</h1>
                                 <p>{t('home_page:theme_desc')}</p>
+                                <Row className={`${styles.bands}`}>
+                                    <Col xs={12} md={4} lg={3}>
+                                        <div className={styles.imgRatio}>
+                                            <img alt="web3" src={band1}/>
+                                        </div>
+                                        <div className={styles.bandDesc}>
+                                            {t('home_page:band_1_desc')}
+                                        </div>
+                                    </Col>
+                                    <Col xs={12} md={4} lg={3}>
+                                        <div className={styles.imgRatio}>
+                                            <img alt="substrate builder program" src={band2}/>
+                                        </div>
+                                        <div className={styles.bandDesc}>
+                                            {t('home_page:band_2_desc')}
+                                        </div>
+                                    </Col>
+                                    <Col xs={12} md={4} lg={3}>
+                                        <div className={styles.imgRatio}>
+                                            <img alt="web3.0 bootcamp" src={band3}/>
+                                        </div>
+                                        <div className={styles.bandDesc}>
+                                            {t('home_page:band_3_desc')}
+                                        </div>
+                                    </Col>
+                                    <Col xs={12} md={4} lg={3}>
+                                        <div className={styles.imgRatio}>
+                                            <img alt="polkadot" src={band4}/>
+                                        </div>
+                                        <div className={styles.bandDesc}>
+                                            {t('home_page:band_4_desc')}
+                                        </div>
+                                    </Col>
+                                </Row>
                                 <InputGroup className={`${styles.subscribe} hidden-xs`}>
                                     <FormControl
                                         value={email}
@@ -451,7 +512,7 @@ class Home extends Component {
                                     <div className={styles.economicItemHeader}>
                                         <div>
                                             <img alt="economic" className={styles.economicIcon} src={eco1} />
-                                            <span>{t('home_page:economic_block_title_1')}</span>
+                                            <span className={styles.gradientText}>{t('home_page:economic_block_title_1')}</span>
                                         </div>
                                         <p>
                                             <OverlayTrigger
@@ -500,7 +561,7 @@ class Home extends Component {
                                     <div className={styles.economicItemHeader}>
                                         <div>
                                             <img alt="economic" className={styles.economicIcon} src={eco2} />
-                                            <span>{t('home_page:economic_block_title_2')}</span>
+                                            <span className={styles.gradientText}>{t('home_page:economic_block_title_2')}</span>
                                         </div>
                                         <p>
                                             <OverlayTrigger
@@ -549,7 +610,7 @@ class Home extends Component {
                                     <div className={styles.economicItemHeader}>
                                         <div>
                                             <img alt="economic" className={styles.economicIcon} src={eco3} />
-                                            <span>{t('home_page:economic_block_title_3')}</span>
+                                            <span className={styles.gradientText}>{t('home_page:economic_block_title_3')}</span>
                                         </div>
                                     </div>
                                     <div className={styles.economicItemContent}>
@@ -575,16 +636,28 @@ class Home extends Component {
                         </div>
                         <Row className={`d-flex justify-content-center`}>
                             <Col xs={12} md={6} className={styles.appItem}>
-                                <img className={`hidden-xs`} alt="Token DEX" src={app_1} />
-                                <img className={`hidden-md`} alt="Token DEX" src={application_1} />
+                                <img className={`hidden-xs`} alt="Token DEX" src={app_evo} />
+                                <img className={`hidden-md`} alt="Token DEX" src={application_nft} />
                                 <h3>{t('home_page:application_block_title_1')}</h3>
                                 <p>{t('home_page:application_block_content_1')}</p>
                             </Col>
                             <Col xs={12} md={6} className={styles.appItem}>
-                                <img alt="NFT Market" src={app_2} className={`hidden-xs ${styles.secondImg}`}/>
-                                <img alt="NFT Market" src={application_2} className={`hidden-md ${styles.secondImg}`}/>
+                                <img className={`hidden-xs`} alt="Token DEX" src={app_subscan} />
+                                <img className={`hidden-md`} alt="Token DEX" src={application_token} />
                                 <h3>{t('home_page:application_block_title_2')}</h3>
                                 <p>{t('home_page:application_block_content_2')}</p>
+                            </Col>
+                            <Col xs={12} md={6} className={styles.appItem}>
+                                <img className={`hidden-xs`} alt="Token DEX" src={app_token} />
+                                <img className={`hidden-md`} alt="Token DEX" src={application_token} />
+                                <h3>{t('home_page:application_block_title_3')}</h3>
+                                <p>{t('home_page:application_block_content_3')}</p>
+                            </Col>
+                            <Col xs={12} md={6} className={styles.appItem}>
+                                <img alt="NFT Market" src={app_nft} className={`hidden-xs ${styles.secondImg}`}/>
+                                <img alt="NFT Market" src={application_nft} className={`hidden-md ${styles.secondImg}`}/>
+                                <h3>{t('home_page:application_block_title_4')}</h3>
+                                <p>{t('home_page:application_block_content_4')}</p>
                             </Col>
                         </Row>
                     </Container>
@@ -750,28 +823,18 @@ class Home extends Component {
                 <div className={styles.teamContainer}>
                     <Container>
                         <Row>
-                            {/* <Col md={1} xs={0}></Col> */}
-                            <Col md={12} xs={12} className={`${styles.content}`}>
+                            <Col md={1} xs={0}></Col>
+                            <Col md={10} xs={12} className={`${styles.content}`}>
                                 <h1 className={`reveal-h1 ${styles.title} ${styles.fontH1}`}>
-                                    {t('community:contributors')}
+                                    {t('home_page:dev_title')}
                                 </h1>
-                                <div className={`${styles.persons}`}>
-                                    <img alt="person" src={person_1}/>
-                                    <img alt="person" src={person_2}/>
-                                    <img alt="person" src={person_3}/>
-                                    <img alt="person" src={person_4}/>
-                                    <img alt="person" src={person_5}/>
-                                    <img alt="person" src={person_6}/>
-                                    <img alt="person" src={person_7}/>
-                                    <img alt="person" src={person_8}/>
-                                    <img alt="person" src={person_9}/>
-                                    <img alt="person" src={person_10}/>
-                                </div>
                                 <p>
-                                    {t('community:invite')}
+                                    {t('home_page:dev_content_1')}
+                                    <br/>
+                                    {t('home_page:dev_content_2')}
                                 </p>
-                                <Button variant="transparent" target="_blank" href="/ambassador"
-                                className={styles.button}>{t('community:join_community')}</Button>
+                                <Button variant="transparent" target="_blank" href="https://www.itering.io/"
+                                className={styles.button}>{t('home_page:dev_join')}</Button>
                             </Col>
                         </Row>
                     </Container>
@@ -795,58 +858,58 @@ class Home extends Component {
                         </div>
                         <Row className={`d-flex justify-content-center text-left`}>
                             <Col xs={12} md={4} lg={3}>
-                                <a className={styles.imgUrl} target="_blank" rel="noopener noreferrer" href={t('media:news_9_link')}>
+                                <a className={styles.imgUrl} target="_blank" rel="noopener noreferrer" href={t('media:news_17_link')}>
                                     <div className={styles.imgRatio}>
-                                        <img alt="news" src={news9}/>
+                                        <img alt="news" src={news17}/>
                                     </div>
                                     <div className={styles.mediaInfo}>
                                         <span>{t('media:more_title')}</span>
-                                        <span className={styles.mediaTime}>{t('media:news_9_time')}</span>
+                                        <span className={styles.mediaTime}>{t('media:news_17_time')}</span>
                                     </div>
                                     <div className={styles.mediaDesc}>
-                                        {t('media:news_9_title')}
+                                        {t('media:news_17_title')}
                                     </div>
                                 </a>
                             </Col>
                             <Col xs={12} md={4} lg={3}>
-                                <a className={styles.imgUrl} target="_blank" rel="noopener noreferrer" href={t('media:news_8_link')}>
+                                <a className={styles.imgUrl} target="_blank" rel="noopener noreferrer" href={t('media:news_12_link')}>
                                     <div className={styles.imgRatio}>
-                                        <img alt="news" src={news8}/>
+                                        <img alt="news" src={news12}/>
                                     </div>
                                     <div className={styles.mediaInfo}>
                                         <span>{t('media:more_title')}</span>
-                                        <span className={styles.mediaTime}>{t('media:news_8_time')}</span>
+                                        <span className={styles.mediaTime}>{t('media:news_12_time')}</span>
                                     </div>
                                     <div className={styles.mediaDesc}>
-                                        {t('media:news_8_title')}
+                                        {t('media:news_12_title')}
                                     </div>
                                 </a>
                             </Col>
                             <Col xs={12} md={4} lg={3}>
-                                <a className={styles.imgUrl} target="_blank" rel="noopener noreferrer" href={t('media:news_7_link')}>
+                                <a className={styles.imgUrl} target="_blank" rel="noopener noreferrer" href={t('media:news_14_link')}>
                                     <div className={styles.imgRatio}>
-                                        <img alt="news" src={news7}/>
+                                        <img alt="news" src={news14}/>
                                     </div>
                                     <div className={styles.mediaInfo}>
                                         <span>{t('media:more_title')}</span>
-                                        <span className={styles.mediaTime}>{t('media:news_7_time')}</span>
+                                        <span className={styles.mediaTime}>{t('media:news_14_time')}</span>
                                     </div>
                                     <div className={styles.mediaDesc}>
-                                        {t('media:news_7_title')}
+                                        {t('media:news_14_title')}
                                     </div>
                                 </a>
                             </Col>
                             <Col xs={12} md={4} lg={3}>
-                                <a className={styles.imgUrl} target="_blank" rel="noopener noreferrer" href={t('media:news_6_link')}>
+                                <a className={styles.imgUrl} target="_blank" rel="noopener noreferrer" href={t('media:news_16_link')}>
                                     <div className={styles.imgRatio}>
-                                        <img alt="news" src={news6}/>
+                                        <img alt="news" src={news16}/>
                                     </div>
                                     <div className={styles.mediaInfo}>
                                         <span>{t('media:more_title')}</span>
-                                        <span className={styles.mediaTime}>{t('media:news_6_time')}</span>
+                                        <span className={styles.mediaTime}>{t('media:news_16_time')}</span>
                                     </div>
                                     <div className={styles.mediaDesc}>
-                                        {t('media:news_6_title')}
+                                        {t('media:news_16_title')}
                                     </div>
                                 </a>
                             </Col>
