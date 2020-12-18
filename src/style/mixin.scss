@@ -8,3 +8,6 @@
   cursor: pointer;
   text-decoration: none;
 }
+@function fontSize($size) {
+  @return calc(#{$size} + var(--font-base));
+}
