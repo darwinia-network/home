@@ -24,8 +24,8 @@ import architecture from './img/architecture.png'
 import architecture_en from './img/architecture-en.png'
 import architecture_mobile from './img/architecture-mobile.png'
 import architecture_mobile_en from './img/architecture-mobile.png'
-import architecture_solo from './img/architecture-solo.png'
-import architecture_chain from './img/architecture-chain.png'
+// import architecture_solo from './img/architecture-solo.png'
+// import architecture_chain from './img/architecture-chain.png'
 import economic from './img/economic.png'
 import economic_en from './img/economic-en.png'
 
@@ -481,7 +481,7 @@ class Home extends Component {
                                 <img alt="architecture" className={`hidden-xs`} src={architecture} />}
                             {i18n.language.indexOf('en') > -1 ? <img alt="architecture" className={`visible-xs`} src={architecture_mobile_en} /> :
                                 <img alt="architecture" className={`visible-xs`} src={architecture_mobile} />}
-                            <div className={`hidden-xs ${styles.anime}`}>
+                            {/* <div className={`hidden-xs ${styles.anime}`}>
                                 <div>
                                     <Button className={styles.soloBtn}>{t('home_page:architecture_solo')}</Button>
                                     <Button className={`${styles.soloBtn} ${styles.soloWhiteBtn}`}>{t('home_page:architecture_solo')}</Button>
@@ -490,7 +490,7 @@ class Home extends Component {
                                     <img alt="chain" src={architecture_chain} className={styles.chain} />
                                     <img alt="solo" src={architecture_solo} className={styles.solo} />
                                 </div>
-                            </div>
+                            </div> */}
                         </div>
                     </Container>
                 </div>
