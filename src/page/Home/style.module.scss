@@ -646,7 +646,7 @@
 
   h1 {
     display: inline-block;
-    margin-bottom: 80px;
+    margin-bottom: 30px;
   }
 
   .title {
@@ -660,42 +660,49 @@
   img {
     width: 100%;
   }
-  .holderCol {
-    display: flex;
-    align-items: center;
-    max-width: 68px;
-  }
-  .curCol {
-    padding: 0;
+  .roadmap {
+    padding: 0 15px;
   }
   .roadmapRow {
-    margin-top: 30px;
-  }
-  .label {
-    margin-top: 30px;
-    font-size: 20px;
-    > div {
-      padding: 0;
-    }
+    background: #FBFBFB;
+    height: 1213px;
+    // padding: 50px 0 60px 0;
     p {
-      margin-bottom: 0;
+      margin-bottom: 27px;
+    }
+    .roadmap2019 {
+      margin-top: 8px;
+    }
+    .roadmap2020 {
+      margin-top: 70px;
+    }
+    .roadmap2020Q4 {
+      margin-top: 34px;
+    }
+    .roadmap2021 {
+      margin-top: 74px;
+      p {
+        margin-bottom: 38px;
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+    .note {
+      font-size: 12px;
     }
   }
-
-  .status {
-    color: #E93787;
-    font-size: 24px;
-
-    p {
-      margin-bottom: 0;
-    }
+  .roadmapImgCol {
+    margin: 70px 105px 80px 85px;
   }
-
-  .button {
-    font-weight: 600;
-    font-size: 14px;
-    padding: 10px 50px;
-    border-radius: 0;
+  .roadmapImgRow {
+    background: url("./img/roadmap-new.png") top center no-repeat;
+    background-size: cover;
+    height: 100%;
+  }
+  .roadmapTextCol {
+    margin-top: 54px;
+    margin-left: 20px;
   }
 }
 

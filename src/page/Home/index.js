@@ -24,8 +24,8 @@ import architecture from './img/architecture.png'
 import architecture_en from './img/architecture-en.png'
 import architecture_mobile from './img/architecture-mobile.png'
 import architecture_mobile_en from './img/architecture-mobile.png'
-import architecture_solo from './img/architecture-solo.png'
-import architecture_chain from './img/architecture-chain.png'
+// import architecture_solo from './img/architecture-solo.png'
+// import architecture_chain from './img/architecture-chain.png'
 import economic from './img/economic.png'
 import economic_en from './img/economic-en.png'
 
@@ -35,27 +35,6 @@ import app_evo from './img/application/app-evo.png'
 import app_subscan from './img/application/app-subscan.png'
 import application_token from './img/application/application-token.png'
 import application_nft from './img/application/application-nft.png'
-
-import roadmapCur from './img/roadmap/roadmap-cur.png'
-import roadmapLine from './img/roadmap/roadmap-line.png'
-import roadmapItem1 from './img/roadmap/roadmap-item-1.png'
-import roadmapItem2 from './img/roadmap/roadmap-item-2.png'
-import roadmapItem3 from './img/roadmap/roadmap-item-3.png'
-import roadmapItem4 from './img/roadmap/roadmap-item-4.png'
-import roadmapItem5 from './img/roadmap/roadmap-item-5.png'
-import roadmapItem6 from './img/roadmap/roadmap-item-6.png'
-import roadmapMobile from './img/roadmap/roadmap-m.png'
-
-// import key1 from './img/key/key-1.png'
-// import key1_mobile from './img/key/key-1-mobile.png'
-// import key2 from './img/key/key-2.png'
-// import key2_mobile from './img/key/key-2-mobile.png'
-// import key3 from './img/key/key-3.png'
-// import key3_mobile from './img/key/key-3-mobile.png'
-// import key4 from './img/key/key-4.png'
-// import key4_mobile from './img/key/key-4-mobile.png'
-// import key5 from './img/key/key-5.png'
-// import key5_mobile from './img/key/key-5-mobile.png'
 
 import eco1 from './img/economic/eco-1.png'
 import eco2 from './img/economic/eco-2.png'
@@ -481,7 +460,7 @@ class Home extends Component {
                                 <img alt="architecture" className={`hidden-xs`} src={architecture} />}
                             {i18n.language.indexOf('en') > -1 ? <img alt="architecture" className={`visible-xs`} src={architecture_mobile_en} /> :
                                 <img alt="architecture" className={`visible-xs`} src={architecture_mobile} />}
-                            <div className={`hidden-xs ${styles.anime}`}>
+                            {/* <div className={`hidden-xs ${styles.anime}`}>
                                 <div>
                                     <Button className={styles.soloBtn}>{t('home_page:architecture_solo')}</Button>
                                     <Button className={`${styles.soloBtn} ${styles.soloWhiteBtn}`}>{t('home_page:architecture_solo')}</Button>
@@ -490,7 +469,7 @@ class Home extends Component {
                                     <img alt="chain" src={architecture_chain} className={styles.chain} />
                                     <img alt="solo" src={architecture_solo} className={styles.solo} />
                                 </div>
-                            </div>
+                            </div> */}
                         </div>
                     </Container>
                 </div>
@@ -668,154 +647,90 @@ class Home extends Component {
                         <div className={styles.title}>
                             <h1 className={`reveal-h1 ${styles.fontH1} ${styles.gradientText}`}>{t('home_page:roadmap_title')}</h1>
                         </div>
-                        <div className={`hidden-md`}>
-                            <Row className={`d-flex justify-content-center align-items-between`}>
-                                <Col xs={1} className={styles.placeholderCol}></Col>
-                                <Col xs={5}>
-                                    <img src={roadmapMobile} alt="roadmap"/>
-                                </Col>
-                                <Col xs={5} className={styles.nospace}>
-                                    <div className={`d-flex ${styles.label}`}>
-                                        <div xs={12} className={styles.Col1}>
-                                            <p className={styles.time}>2019-07</p>
-                                            <p>{t('home_page:roadmap_1_name')}</p>
-                                            <p>{t('home_page:roadmap_1_milestone')}</p>
-                                        </div>
-                                        <div></div>
-                                        <div xs={12} className={styles.Col2}>
-                                            <p className={styles.time}>2019-09</p>
-                                            <p>{t('home_page:roadmap_2_name')}</p>
-                                            <p>{t('home_page:roadmap_2_milestone')}</p>
-                                        </div>
-                                        <div></div>
-                                        <div xs={12} className={styles.Col3}>
-                                            <p className={styles.time}>2019-11</p>
-                                            <p>{t('home_page:roadmap_3_name')}</p>
-                                            <p>{t('home_page:roadmap_3_milestone')}</p>
-                                        </div>
-                                        <div></div>
-                                        <div xs={12} className={styles.Col4}>
-                                            <p className={styles.time}>2020-Q2</p>
-                                            <p>{t('home_page:roadmap_4_name')}</p>
-                                            <p>{t('home_page:roadmap_4_milestone')}</p>
-                                        </div>
-                                        <div></div>
-                                        <div xs={12} className={styles.Col5}>
-                                            <p className={styles.time}>2020-Q3</p>
-                                            <p>{t('home_page:roadmap_5_name')}</p>
-                                            <p>{t('home_page:roadmap_5_milestone')}</p>
-                                        </div>
-                                        <div></div>
-                                        <div xs={12} className={`${styles.Col6}`}>
-                                            <p className={styles.time}>2020-Q4</p>
-                                            <p>{t('home_page:roadmap_6_name')}</p>
-                                            <p>{t('home_page:roadmap_6_milestone')}</p>
-                                        </div>
-                                    </div>
-                                </Col>
-                                <Col xs={1} className={styles.placeholderCol}></Col>
-                            </Row>
-                            <div className={`text-center`}>
-                                <Button variant="dark" target="_blank" href={t('header:testnet_url')}
-                                    className={styles.button}>{t('home_page:roadmap_btn')}</Button>
-                            </div>
-                        </div>
-                        <div className={`${styles.content} hidden-xs`}>
-                            <Row className={`text-center ${styles.status}`}>
-                                <Col>
-                                    <p>2019-07</p>
-                                </Col>
-                                <Col className={styles.holderCol}></Col>
-                                <Col className={styles.crayfishCol}>
-                                    <p>2019-09</p>
-                                </Col>
-                                <Col className={styles.holderCol}></Col>
-                                <Col>
-                                    <p>2019-11</p>
-                                </Col>
-                                <Col className={styles.holderCol}></Col>
-                                <Col>
-                                    <p>2020-Q2</p>
-                                </Col>
-                                <Col className={styles.holderCol}></Col>
-                                <Col className={styles.mainnetCol}>
-                                    <p>2020-Q3</p>
-                                </Col>
-                                <Col className={styles.holderCol}></Col>
-                                <Col className={styles.lastCol}>
-                                    <p>2020-Q4</p>
-                                </Col>
-                            </Row>
-                            <Row className={`text-center ${styles.roadmapRow}`}>
-                                <Col>
-                                    <img alt="roadmap" src={roadmapItem1} />
-                                </Col>
-                                <Col className={styles.holderCol}>
-                                    <img alt="roadmap" src={roadmapLine} />
-                                </Col>
-                                <Col className={styles.crayfishCol}>
-                                    <img alt="roadmap" src={roadmapItem2} />
-                                </Col>
-                                <Col className={styles.holderCol}>
-                                    <img alt="roadmap" src={roadmapLine} />
-                                </Col>
-                                <Col>
-                                    <img alt="roadmap" src={roadmapItem3} />
-                                </Col>
-                                <Col className={styles.holderCol}>
-                                    <img alt="roadmap" src={roadmapLine} />
-                                </Col>
-                                <Col>
-                                    <img alt="roadmap" src={roadmapItem4} />
-                                </Col>
-                                <Col className={styles.holderCol}>
-                                    <img alt="roadmap" src={roadmapLine} />
-                                </Col>
-                                <Col className={styles.mainnetCol}>
-                                    <img alt="roadmap" src={roadmapItem5} />
-                                </Col>
-                                <Col className={`${styles.curCol} ${styles.holderCol}`}>
-                                    <img alt="roadmap" src={roadmapCur} />
-                                </Col>
-                                <Col className={styles.lastCol}>
-                                    <img alt="roadmap" src={roadmapItem6} />
+                        <div className={styles.roadmap}>
+                            <Row className={styles.roadmapRow}>
+                                <Col className={styles.roadmapImgCol}>
+                                    <Row className={styles.roadmapImgRow}>
+                                        <Col md={6} xs={0}></Col>
+                                        <Col className={styles.roadmapTextCol}>
+                                            <div className={styles.roadmap2019}>
+                                                <p>
+                                                    {t('home_page:roadmap_2018')}
+                                                </p>
+                                                <p>
+                                                    {t('home_page:roadmap_2019_q1')}
+                                                </p>
+                                                <p>
+                                                    {t('home_page:roadmap_2019_q2')}
+                                                </p>
+                                                <p>
+                                                    {t('home_page:roadmap_2019_q3_1')}
+                                                    <br/>
+                                                    {t('home_page:roadmap_2019_q3_2')}
+                                                </p>
+                                                <p>
+                                                    {t('home_page:roadmap_2019_q4')}
+                                                </p>
+                                            </div>
+                                            <div className={styles.roadmap2020}>
+                                                <p>
+                                                    {t('home_page:roadmap_2020_q1')}
+                                                </p>
+                                                <p>
+                                                    {t('home_page:roadmap_2020_q2_1')}
+                                                    <br/>
+                                                    {t('home_page:roadmap_2020_q2_2')}
+                                                </p>
+                                                <p>
+                                                    {t('home_page:roadmap_2020_q3_1')}
+                                                    <br/>
+                                                    {t('home_page:roadmap_2020_q3_2')}
+                                                    <br/>
+                                                    {t('home_page:roadmap_2020_q3_3')}
+                                                </p>
+                                                <p className={styles.roadmap2020Q4}>
+                                                    {t('home_page:roadmap_2020_q4_1')}
+                                                    <br/>
+                                                    {t('home_page:roadmap_2020_q4_2')}
+                                                    <br/>
+                                                    {t('home_page:roadmap_2020_q4_3')}
+                                                    <br/>
+                                                    {t('home_page:roadmap_2020_q4_4')}
+                                                    <br/>
+                                                    {t('home_page:roadmap_2020_q4_5')}
+                                                </p>
+                                            </div>
+                                            <div className={styles.roadmap2021}>
+                                                <p>
+                                                    {t('home_page:roadmap_2021_q1_1')}
+                                                    <br/>
+                                                    {t('home_page:roadmap_2021_q1_2')}
+                                                    <br/>
+                                                    {t('home_page:roadmap_2021_q1_3')}
+                                                    <br/>
+                                                    <span className={styles.note}>{t('home_page:roadmap_2021_q1_4')}</span>
+                                                    <br/>
+                                                    {t('home_page:roadmap_2021_q1_5')}
+                                                </p>
+                                                <p>
+                                                    {t('home_page:roadmap_2021_q2_1')}
+                                                    <br/>
+                                                    {t('home_page:roadmap_2021_q2_2')}
+                                                    <br/>
+                                                    {t('home_page:roadmap_2021_q2_3')}
+                                                </p>
+                                                <p>
+                                                    {t('home_page:roadmap_2021_q3_1')}
+                                                    <br/>
+                                                    {t('home_page:roadmap_2021_q3_2')}
+                                                    <br/>
+                                                    <span className={styles.note}>{t('home_page:roadmap_2021_q3_3')}</span>
+                                                </p>
+                                            </div>
+                                        </Col>
+                                    </Row>
                                 </Col>
                             </Row>
-                            <Row className={`text-center ${styles.label}`}>
-                                <Col>
-                                    <p>{t('home_page:roadmap_1_name')}</p>
-                                    <p>{t('home_page:roadmap_1_milestone')}</p>
-                                </Col>
-                                <Col className={styles.holderCol}></Col>
-                                <Col className={styles.crayfishCol}>
-                                    <p>{t('home_page:roadmap_2_name')}</p>
-                                    <p>{t('home_page:roadmap_2_milestone')}</p>
-                                </Col>
-                                <Col className={styles.holderCol}></Col>
-                                <Col>
-                                    <p>{t('home_page:roadmap_3_name')}</p>
-                                    <p>{t('home_page:roadmap_3_milestone')}</p>
-                                </Col>
-                                <Col className={styles.holderCol}></Col>
-                                <Col>
-                                    <p>{t('home_page:roadmap_4_name')}</p>
-                                    <p>{t('home_page:roadmap_4_milestone')}</p>
-                                </Col>
-                                <Col className={styles.holderCol}></Col>
-                                <Col className={styles.mainnetCol}>
-                                    <p>{t('home_page:roadmap_5_name')}</p>
-                                    <p>{t('home_page:roadmap_5_milestone')}</p>
-                                </Col>
-                                <Col className={styles.holderCol}></Col>
-                                <Col className={`${styles.lastCol}`}>
-                                    <p>{t('home_page:roadmap_6_name')}</p>
-                                    <p>{t('home_page:roadmap_6_milestone')}</p>
-                                </Col>
-                            </Row>
-                            <div className={`text-center`}>
-                                <Button variant="dark" target="_blank" href={t('header:testnet_url')}
-                                    className={styles.button}>{t('home_page:roadmap_btn')}</Button>
-                            </div>
                         </div>
                     </Container>
                 </div>
