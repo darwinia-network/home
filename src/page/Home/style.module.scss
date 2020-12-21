@@ -124,7 +124,7 @@
       p {
         text-align: center;
         font-size: 16px;
-        color: #333;
+        color: #6330DD;
         // padding: 0 100px;
         line-height: 21px;
         margin-bottom: 50px;
@@ -247,9 +247,9 @@
       text-align: left;
       line-height: 24px;
       margin-bottom: 10px;
-
       p {
         margin-bottom: 7px;
+        color: #6330DD;
       }
     }
   }
@@ -405,6 +405,7 @@
 .fontH1 {
   text-transform: uppercase;
   font-size: 40px;
+  font-weight: 500;
 }
 
 .lineH1 {
@@ -749,6 +750,17 @@
 }
 
 @media (max-width: 767.98px) {
+  .fontH1 {
+    font-size: 24px;
+    font-weight: bold;
+  }
+  .generalGradientText {
+    display: inline-block;
+    color: rgba(8, 12, 32, 1);
+    background: linear-gradient(315deg, rgba(254, 56, 118, 1) 0%, rgba(124, 48, 221, 1) 71%, rgba(58, 48, 221, 1) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
   .promoteContentArea {
     padding-top: 90px;
     padding-bottom: 70px;
@@ -799,16 +811,24 @@
 
   .themeContainer {
     .promoteContentArea {
-      padding: 100px 0 100px;
+      padding: 50px 0 20px;
+      .bands {
+        margin-bottom: 0;
+        .bandDesc {
+          margin-bottom: 20px;
+        }
+      }
       div {
         h1 {
           font-size: 24px;
           letter-spacing: 1px;
+          margin-bottom: 12px;
         }
         p {
-          font-size: 16px;
+          font-size: 14px;
+          line-height: 25px;
           padding: 0;
-          text-align: left;
+          margin-bottom: 20px;
         }
         .subscribe {
           width: 100%;
@@ -874,10 +894,13 @@
     background: url("./img/architecture-bg-m.png") top center no-repeat;
     background-size: cover;
     padding: 50px 0 60px 0;
+    .fontH1 {
+      margin-bottom: 32px;
+    }
   }
 
   .economicContainer {
-    padding: 100px 0 0;
+    padding: 50px 0 0;
     text-align: center;
     .title {
       text-align: center;
@@ -892,8 +915,13 @@
     }
     .economicItem {
       .economicItemHeader {
+        > div {
+          flex: 1 1 auto;
+        }
         p {
-          display: none;
+          > span {
+            display: none;
+          }
         }
       }
       .economicItemContent {
@@ -913,27 +941,36 @@
     padding: 50px 0 0;
     background: none;
     height: initial;
+    img  {
+      margin-bottom: 10px;
+    }
     .title {
       text-align: center;
     }
     h1 {
-      margin-bottom: 30px;
+      margin-bottom: 12px;
     }
     .appItem {
       padding-right: 15px;
+      text-align: center;
+    }
+    .generalGradientText {
+      font-weight: bold;
     }
     h3 {
       color: #201550;
-      margin-bottom: .5rem;
+      margin-bottom: 10px;
     }
     p {
-      color: #333;
-      font-size: 16px;
+      font-size: 14px;
+      line-height: 18px;
+      color: #6330DD;
+      text-align: center;
+      margin-bottom: 20px;
     }
-
   }
   .roadmapContainer {
-    padding: 50px 0 90px 0;
+    padding: 50px 0 40px 0;
     text-align: left;
     .title {
       text-align: center;
@@ -968,96 +1005,101 @@
       width: 100%;
       // padding: 0 60px;
     }
-
-    .roadMapImageBox {
-      margin: 4% 0;
-      margin-bottom: 6%;
-    }
-
-    // .crayfishCol {
-    //   margin-top: 10px;
-    // }
-
-    // .icefrogCol {
-    //   margin: 30px 0 0;
-    // }
-
-    // .crabCol {
-    //   margin: 30px 0 0;
-    // }
-
-    
-
-    // .lastCol {
-      // margin-top: -10px;
-      // padding-right: 15px;
-    // }
-
-    .label {
-      height: 100%;
-      margin-top: 0;
-      margin-left: 0px;
-      margin-right: 0px;
-      font-weight: bold;
-      flex-direction: column;
-      justify-content: space-between;
-      align-items: stretch;
-      font-size: 16px;
-      .time {
-        color: #E93787;
-        font-size: 20px;
-        line-height: 30px;
-        margin-bottom: 5px;
+    .roadmapRow {
+      height: initial;
+      background-color: initial;
+      h6 {
+        font-weight: 600;
       }
-
       p {
-        margin-bottom: 0;
-        min-height: 26px;
+        margin-bottom: 23px;
+        line-height: 24px;
+        font-size: 14px;
       }
-
-      div {
-        text-align: left;
+      .h6_2018 {
+        width: 70px;
+      }
+      .roadmap2019 {
+        margin-top: 36px;
+      }
+      .roadmap2020 {
+        margin-top: 30px;
+      }
+      .roadmap2020Q4 {
+        margin-top: 23px;
+      }
+      .roadmap2021 {
+        margin-top: 20px;
+        p {
+          margin-bottom: 23px;
+          &:last-child {
+            margin-bottom: 0;
+          }
+        }
+      }
+      .transBtn {
+        width: 63px;
+        text-align: center;
+      }
+      .colorBtn, .whiteBtn {
+        width: 63px;
+        height: 35px;
         display: flex;
-        flex-direction: column;
         justify-content: center;
-        align-items: flex-start;
-        // align-items: center;
-        flex: 1;
-        &.mainnetCol {
-          padding-bottom: 10px;
-        }
-        &.lastCol {
-          padding-bottom: 20px;
-        }
-        &.Col1 {
-          padding-top: 5px;
-        }
-        &.Col2 {
-          padding-top: 10px;
-        }
-        &.Col3 {
-          padding-top: 10px;
-        }
-        &.Col5 {
-          padding-bottom: 15px;
-        }
-        p+p {
-          margin-bottom: 0
-        }
+        align-items: center;
+        font-weight: 600;
+      }
+      .colorBtn {
+        color: #fff;
+        background: linear-gradient(315deg, #FE3876 0%, #7C30DD 71%, #3A30DD 100%);
+      }
+      .whiteBtn {
+        color: #6330DD;
+        border: 2px solid #A633BD;
+      }
+      .colorBtn1 {
+        margin-bottom: 12px;
+      }
+      .colorBtn2 {
+        margin-bottom: 14px;
+      }
+      .colorBtn3 {
+        margin-bottom: 24px;
+      }
+      .colorBtn4 {
+        margin-bottom: 24px;
+      }
+      .colorBtn6 {
+        margin-bottom: 134px;
+      }
+      .colorBtn7 {
+        margin-bottom: 60px;
+      }
+      .whiteBtn1 {
+        margin-bottom: 23px;
+      }
+      .whiteBtn2 {
+        margin-bottom: 36px;
+      }
+      .whiteBtn3 {
+        margin-bottom: 60px;
       }
     }
   }
 
   .teamContainer {
     color: #fff;
-
+    height: 390px;
+    .title {
+      margin: 60px 0;
+    }
     h1 {
       font-size: 24px;
     }
     p {
-      font-size: 20px;
+      font-size: 14px;
       margin-top: 20px;
-      margin-bottom: 20px;
+      margin-bottom: 50px;
     }
     a {
       width: 100%;
@@ -1065,8 +1107,8 @@
     }
   }
   .partnersContainer {
-    padding-top: 100px;
-    padding-bottom: 80px;
+    padding-top: 50px;
+    padding-bottom: 50px;
     .title {
       text-align: center;
     }
@@ -1103,7 +1145,7 @@
 
   .newContainer {
     background: #fff;
-    padding: 0 0 70px;
+    padding: 0 0 20px;
     .title {
       text-align: center;
     }

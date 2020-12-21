@@ -35,6 +35,8 @@ import app_evo from './img/application/app-evo.png'
 import app_subscan from './img/application/app-subscan.png'
 import application_token from './img/application/application-token.png'
 import application_nft from './img/application/application-nft.png'
+import application_evo from './img/application/application-evo.png'
+import application_subscan from './img/application/application-subscan.png'
 
 import eco1 from './img/economic/eco-1.png'
 import eco2 from './img/economic/eco-2.png'
@@ -616,26 +618,26 @@ class Home extends Component {
                         <Row className={`d-flex justify-content-center`}>
                             <Col xs={12} md={6} className={styles.appItem}>
                                 <img className={`hidden-xs`} alt="Token DEX" src={app_evo} />
-                                <img className={`hidden-md`} alt="Token DEX" src={application_nft} />
-                                <h3>{t('home_page:application_block_title_1')}</h3>
+                                <img className={`hidden-md`} alt="Token DEX" src={application_evo} />
+                                <h3 className={styles.generalGradientText}>{t('home_page:application_block_title_1')}</h3>
                                 <p>{t('home_page:application_block_content_1')}</p>
                             </Col>
                             <Col xs={12} md={6} className={styles.appItem}>
                                 <img className={`hidden-xs`} alt="Token DEX" src={app_subscan} />
-                                <img className={`hidden-md`} alt="Token DEX" src={application_token} />
-                                <h3>{t('home_page:application_block_title_2')}</h3>
+                                <img className={`hidden-md`} alt="Token DEX" src={application_subscan} />
+                                <h3 className={styles.generalGradientText}>{t('home_page:application_block_title_2')}</h3>
                                 <p>{t('home_page:application_block_content_2')}</p>
                             </Col>
                             <Col xs={12} md={6} className={styles.appItem}>
                                 <img className={`hidden-xs`} alt="Token DEX" src={app_token} />
                                 <img className={`hidden-md`} alt="Token DEX" src={application_token} />
-                                <h3>{t('home_page:application_block_title_3')}</h3>
+                                <h3 className={styles.generalGradientText}>{t('home_page:application_block_title_3')}</h3>
                                 <p>{t('home_page:application_block_content_3')}</p>
                             </Col>
                             <Col xs={12} md={6} className={styles.appItem}>
                                 <img alt="NFT Market" src={app_nft} className={`hidden-xs ${styles.secondImg}`}/>
                                 <img alt="NFT Market" src={application_nft} className={`hidden-md ${styles.secondImg}`}/>
-                                <h3>{t('home_page:application_block_title_4')}</h3>
+                                <h3 className={styles.generalGradientText}>{t('home_page:application_block_title_4')}</h3>
                                 <p>{t('home_page:application_block_content_4')}</p>
                             </Col>
                         </Row>
@@ -647,7 +649,7 @@ class Home extends Component {
                         <div className={styles.title}>
                             <h1 className={`reveal-h1 ${styles.fontH1} ${styles.gradientText}`}>{t('home_page:roadmap_title')}</h1>
                         </div>
-                        <div className={styles.roadmap}>
+                        <div className={`hidden-xs ${styles.roadmap}`}>
                             <Row className={styles.roadmapRow}>
                                 <Col className={styles.roadmapImgCol}>
                                     <Row className={styles.roadmapImgRow}>
@@ -729,6 +731,125 @@ class Home extends Component {
                                             </div>
                                         </Col>
                                     </Row>
+                                </Col>
+                            </Row>
+                        </div>
+                        <div className={`hidden-md`}>
+                            <Row className={styles.roadmapRow}>
+                                <Col xs={3}>
+                                    <h6 className={`${styles.generalGradientText} ${styles.h6_2018}`}>2018-2019</h6>
+                                    <div className={`${styles.colorBtn} ${styles.colorBtn1}`}>2018</div>
+                                    <div className={`${styles.colorBtn} ${styles.colorBtn2}`}>Q1</div>
+                                    <div className={`${styles.colorBtn} ${styles.colorBtn3}`}>Q2</div>
+                                    <div className={`${styles.colorBtn} ${styles.colorBtn4}`}>Q3</div>
+                                    <div className={`${styles.colorBtn} ${styles.colorBtn5}`}>Q4</div>
+                                </Col>
+                                <Col xs={9}>
+                                    <div className={styles.roadmap2019}>
+                                        <p>
+                                            {t('home_page:roadmap_2018')}
+                                        </p>
+                                        <p>
+                                            {t('home_page:roadmap_2019_q1')}
+                                        </p>
+                                        <p>
+                                            {t('home_page:roadmap_2019_q2')}
+                                        </p>
+                                        <p>
+                                            {t('home_page:roadmap_2019_q3_1')}
+                                            <br/>
+                                            {t('home_page:roadmap_2019_q3_2')}
+                                        </p>
+                                        <p>
+                                            {t('home_page:roadmap_2019_q4')}
+                                        </p>
+                                    </div>
+                                </Col>
+                            </Row>
+                            <Row>
+                                <Col>
+                                    <img />
+                                </Col>
+                            </Row>
+                            <Row className={styles.roadmapRow}>
+                                <Col xs={3}>
+                                    <h6 className={`${styles.transBtn} ${styles.generalGradientText}`}>2020</h6>
+                                    <div className={`${styles.whiteBtn} ${styles.whiteBtn1}`}>Q1</div>
+                                    <div className={`${styles.whiteBtn} ${styles.whiteBtn2}`}>Q2</div>
+                                    <div className={`${styles.whiteBtn} ${styles.whiteBtn3}`}>Q3</div>
+                                    <div className={`${styles.whiteBtn} ${styles.whiteBtn4}`}>Q4</div>
+                                </Col>
+                                <Col xs={9}>
+                                    <div className={styles.roadmap2020}>
+                                        <p>
+                                            {t('home_page:roadmap_2020_q1')}
+                                        </p>
+                                        <p>
+                                            {t('home_page:roadmap_2020_q2_1')}
+                                            <br/>
+                                            {t('home_page:roadmap_2020_q2_2')}
+                                        </p>
+                                        <p>
+                                            {t('home_page:roadmap_2020_q3_1')}
+                                            <br/>
+                                            {t('home_page:roadmap_2020_q3_2')}
+                                            <br/>
+                                            {t('home_page:roadmap_2020_q3_3')}
+                                        </p>
+                                        <p className={styles.roadmap2020Q4}>
+                                            {t('home_page:roadmap_2020_q4_1')}
+                                            <br/>
+                                            {t('home_page:roadmap_2020_q4_2')}
+                                            <br/>
+                                            {t('home_page:roadmap_2020_q4_3')}
+                                            <br/>
+                                            {t('home_page:roadmap_2020_q4_4')}
+                                            <br/>
+                                            {t('home_page:roadmap_2020_q4_5')}
+                                        </p>
+                                    </div>
+                                </Col>
+                            </Row>
+                            <Row>
+                                <Col>
+                                    <img />
+                                </Col>
+                            </Row>
+                            <Row className={styles.roadmapRow}>
+                                <Col xs={3}>
+                                    <h6 className={`${styles.transBtn} ${styles.generalGradientText}`}>2021</h6>
+                                    <div className={`${styles.colorBtn} ${styles.colorBtn6}`}>Q1</div>
+                                    <div className={`${styles.colorBtn} ${styles.colorBtn7}`}>Q2</div>
+                                    <div className={`${styles.colorBtn} ${styles.colorBtn8}`}>Q3-Q4</div>
+                                </Col>
+                                <Col xs={9}>
+                                    <div className={styles.roadmap2021}>
+                                        <p>
+                                            {t('home_page:roadmap_2021_q1_1')}
+                                            <br/>
+                                            {t('home_page:roadmap_2021_q1_2')}
+                                            <br/>
+                                            {t('home_page:roadmap_2021_q1_3')}
+                                            <br/>
+                                            <span className={styles.note}>{t('home_page:roadmap_2021_q1_4')}</span>
+                                            <br/>
+                                            {t('home_page:roadmap_2021_q1_5')}
+                                        </p>
+                                        <p>
+                                            {t('home_page:roadmap_2021_q2_1')}
+                                            <br/>
+                                            {t('home_page:roadmap_2021_q2_2')}
+                                            <br/>
+                                            {t('home_page:roadmap_2021_q2_3')}
+                                        </p>
+                                        <p>
+                                            {t('home_page:roadmap_2021_q3_1')}
+                                            <br/>
+                                            {t('home_page:roadmap_2021_q3_2')}
+                                            <br/>
+                                            <span className={styles.note}>{t('home_page:roadmap_2021_q3_3')}</span>
+                                        </p>
+                                    </div>
                                 </Col>
                             </Row>
                         </div>
