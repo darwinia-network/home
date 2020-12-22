@@ -21,6 +21,14 @@ import bannerBgM from "./img/banner-bg-m.png"
 import theme1 from "./img/theme-1.png"
 import theme2 from "./img/theme-2.png"
 import theme3 from "./img/theme-3.png"
+
+import architecture from './img/architecture/architecture.png'
+import architecture_en from './img/architecture/architecture-en.png'
+import architecture_mobile from './img/architecture/architecture-mobile.png'
+import architecture_mobile_en from './img/architecture/architecture-mobile.png'
+import architecture_solo from './img/architecture/architecture-solo.png'
+import architecture_chain from './img/architecture/architecture-chain.png'
+
 // import roadmapCur from './img/roadmap/roadmap-cur.png'
 import roadmapLine from './img/roadmap/roadmap-line.png'
 import roadmapItem1 from './img/roadmap/roadmap-item-1.png'
@@ -33,7 +41,7 @@ import roadmapMobile from './img/roadmap/roadmap-m.png'
 
 import archorsComponent from '../../components/anchorsComponent'
 import { withTranslation } from "react-i18next";
-// import i18n from '../../locales/i18n';
+import i18n from '../../locales/i18n';
 
 class Home extends Component {
 
@@ -96,7 +104,23 @@ class Home extends Component {
                         <Row>
                             <Col xs={12}>
                                 <p>{t('tech:architecture_desc')}</p>
-                                <img src={archBg} alt="architecture"/>
+                                {/* <img src={archBg} alt="architecture"/> */}
+                                <div className={`${styles.archWrapper}`}>
+                                    {i18n.language.indexOf('en') > -1 ? <img alt="architecture" className={`hidden-xs`} src={architecture_en} /> :
+                                        <img alt="architecture" className={`hidden-xs`} src={architecture} />}
+                                    {i18n.language.indexOf('en') > -1 ? <img alt="architecture" className={`visible-xs`} src={architecture_mobile_en} /> :
+                                        <img alt="architecture" className={`visible-xs`} src={architecture_mobile} />}
+                                    <div className={`hidden-xs ${styles.anime}`}>
+                                        <div>
+                                            <Button className={styles.soloBtn}>{t('home_page:architecture_solo')}</Button>
+                                            <Button className={`${styles.soloBtn} ${styles.soloWhiteBtn}`}>{t('home_page:architecture_solo')}</Button>
+                                            <Button className={styles.chainBtn}>{t('home_page:architecture_chain')}</Button>
+                                            <Button className={`${styles.chainBtn} ${styles.chainPinkBtn}`}>{t('home_page:architecture_chain')}</Button>
+                                            <img alt="chain" src={architecture_chain} className={styles.chain} />
+                                            <img alt="solo" src={architecture_solo} className={styles.solo} />
+                                        </div>
+                                    </div>
+                                </div>
                             </Col>
                         </Row>
                     </Container>
