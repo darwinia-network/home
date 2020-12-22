@@ -3,7 +3,7 @@
 .tech {
   h1 {
     display: inline-block;
-    margin-bottom: 15px;
+    margin-bottom: 30px;
   }
   p {
     line-height: 25px;
@@ -88,10 +88,19 @@
     width: 100%;
   }
   .archWrapper {
+    background: url("./img/architecture/architecture-bg.png") top center no-repeat;
+    // padding: 60px 0 88px 0;
+    // background: url("./img/architecture-bg.png");
+    background-size: cover;
+    padding: 70px 0 70px 0;
     position: relative;
     // padding: 0 10%;
     .opacityBg {
       position: absolute;
+    }
+    > img {
+      width: 81%;
+      margin-left: 10%;
     }
   }
 
@@ -305,6 +314,23 @@
   }
 }
 
+.innovationContainer {
+  margin: 100px 0 100px;
+  img {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  h6 {
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+  .innoRow {
+    p {
+      margin-bottom: 0;
+    }
+  }
+}
+
 .relayContainer {
   margin: 100px 0 100px;
   .relaySection {
@@ -381,6 +407,20 @@
   }
 }
 
+.nftContainer {
+  margin: 100px 0 100px;
+  .section {
+    background: #F9FAFC;
+    padding: 30px 85px 30px 60px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 100px;
+  }
+  img {
+    width: 50%;
+    margin-right: 10%;
+  }
+}
 
 .line {
   display: inline-block;
@@ -414,6 +454,12 @@
   font-size: 40px;
   color: rgba(8, 12, 32, 1);
   letter-spacing: 2px;
+  background: linear-gradient(315deg, rgba(254, 56, 118, 1) 0%, rgba(124, 48, 221, 1) 71%, rgba(58, 48, 221, 1) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.generalGradientText {
+  color: rgba(8, 12, 32, 1);
   background: linear-gradient(315deg, rgba(254, 56, 118, 1) 0%, rgba(124, 48, 221, 1) 71%, rgba(58, 48, 221, 1) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;

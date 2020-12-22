@@ -9,13 +9,17 @@ import LazyBackground from "../../components/lazyBackground"
 import MediaQuery from 'react-responsive'
 import styles from './style.module.scss'
 // import themeBg from "./img/theme-bg.png"
-import archBg from "./img/theme-bg.png"
+// import archBg from "./img/theme-bg.png"
 import relayBg from "./img/relay-bg.png"
 import relayBgM from "./img/relay-bg-m.png"
 import mmrBg from "./img/mmr-bg.png"
 import mmrBgM from "./img/mmr-bg-m.png"
+import inno1 from "./img/innovation-1.png"
+import inno2 from "./img/innovation-2.png"
 import gameBg from "./img/game-bg.png"
 import gameBgM from "./img/game-bg-m.png"
+import nftBg from "./img/nft-bg.png"
+import nftBgM from "./img/nft-bg-m.png"
 import bannerBg from "./img/banner-bg.png"
 import bannerBgM from "./img/banner-bg-m.png"
 import theme1 from "./img/theme-1.png"
@@ -270,6 +274,30 @@ class Home extends Component {
                     </Container>
                 </div>
 
+                <div className={styles.innovationContainer}>
+                    <Container>
+                        <div className={styles.title}>
+                            <h1 className={`${styles.fontH1} ${styles.gradientText}`}>{t('tech:innovation')}</h1>
+                        </div>
+                        <Row>
+                            <Col xs={12}>
+                                <p>{t('tech:innovation_desc')}</p>
+                                <h6 className={styles.generalGradientText}>{t('tech:innovation_transfer')}</h6>
+                            </Col>
+                        </Row>
+                        <Row className={styles.innoRow}>
+                            <Col md={6} xs={12}>
+                                <img src={inno1} alt="darwinia to ethereum"/>
+                                <p>{t('tech:innovation_transfer_1')}</p>
+                            </Col>
+                            <Col md={6} xs={12}>
+                                <img src={inno2} alt="ethereum to darwinia"/>
+                                <p>{t('tech:innovation_transfer_2')}</p>
+                            </Col>
+                        </Row>
+                    </Container>
+                </div>
+
                 <div className={styles.relayContainer}>
                     <Container>
                         <div className={styles.title}>
@@ -355,6 +383,23 @@ class Home extends Component {
                                     <img className={'hidden-xs'} src={gameBg} alt="game"/>
                                     <img className={'hidden-md'} src={gameBgM} alt="game"/>
                                     <p>{t('tech:game_desc')}</p>
+                                </div>
+                            </Col>
+                        </Row>
+                    </Container>
+                </div>
+
+                <div className={styles.nftContainer}>
+                    <Container>
+                        <div className={styles.title}>
+                            <h1 className={`reveal-h1 ${styles.fontH1} ${styles.gradientText}`}>{t('tech:nft')}</h1>
+                        </div>
+                        <Row>
+                            <Col xs={12}>
+                                <div className={styles.section}>
+                                    <img className={'hidden-xs'} src={nftBg} alt="nft"/>
+                                    <img className={'hidden-md'} src={nftBgM} alt="nft"/>
+                                    <p>{t('tech:nft_desc')}</p>
                                 </div>
                             </Col>
                         </Row>
