@@ -2,7 +2,7 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { Component } from "react";
 // import { Container, Row, Col, InputGroup, FormControl, Button, Form, Carousel, OverlayTrigger, Tooltip } from 'react-bootstrap'
-import { Container, Row, Col } from 'react-bootstrap'
+import { Container, Row, Col, Button } from 'react-bootstrap'
 import { PageHeader } from '../../components/PageHeader'
 import { PageFooter } from '../../components/PageFooter'
 import LazyBackground from "../../components/lazyBackground"
@@ -50,6 +50,11 @@ class Home extends Component {
                                 <h3 className={` ${styles.gradientText}`}>
                                     {t('model:theme')}
                                 </h3>
+                            </div>
+                            <div className={styles.buttonSection}>
+                                <Button target="_blank" href={t('model:how_to_stake_link')}>
+                                    {t('model:how_to_stake')}
+                                </Button>
                             </div>
                         </Col>
                     </Row>

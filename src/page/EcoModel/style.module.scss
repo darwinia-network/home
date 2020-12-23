@@ -28,6 +28,21 @@
     font-weight: 400;
     margin-top: 10px;
   }
+  .buttonSection {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    a {
+      line-height: initial;
+      margin-top: 20px;
+      background: linear-gradient(315deg, rgba(254, 56, 118, 1) 0%, rgba(124, 48, 221, 1) 71%, rgba(58, 48, 221, 1) 100%);
+      font-weight: bold;
+      padding: 10px 64px;
+      border-radius: 0;
+      border: none;
+      outline: none;
+    }
+  }
 }
 
 .tokenContainer {
@@ -253,6 +268,11 @@
     }
     h1 {
       margin-top: 84px;
+    }
+    .buttonSection {
+      a {
+        padding: 8px 44px;
+      }
     }
   }
   .tokenContainer {

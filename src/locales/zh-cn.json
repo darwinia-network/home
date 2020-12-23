@@ -36,7 +36,7 @@
     "recom_3_link": "https://medium.com/@DarwiniaNetwork/must-read-darwinia-mainnet-progressive-launch-announcement-ff20a04a8bdd",
 
     "theme_title": "什么是达尔文网络?",
-    "theme_desc": "Darwin Network is a decentralized cross-chain bridge protocol building on Substrate, which is the \"Golden Gate Bridge\" of the cross-chain ecology. It provides the safest heterogeneous cross-chain solution that does not rely on third-party multi-signatures, connecting Polkadot, Ethereum, TRON and other heterogeneous chains. Also, its main application areas include Defi, cross-chain NFT trading market, games, etc.",
+    "theme_desc": "Darwinia Network is a decentralized cross-chain bridge protocol building on Substrate, which is the \"Golden Gate Bridge\" of the cross-chain ecology. It provides the safest heterogeneous cross-chain solution that does not rely on third-party multi-signatures, connecting Polkadot, Ethereum, TRON and other heterogeneous chains. Also, its main application areas include Defi, cross-chain NFT trading market, games, etc.",
 
     "band_1_desc": "Won three Web3 Foundation Grant, One of the first four projects connected to the Polkadot parachain testnet Rococo",
     "band_2_desc": "Joined Substrate Builder Program",
@@ -245,6 +245,7 @@
     "new_intro": "欢迎来到达尔文社区，请先从Darwinia Wiki 和FAQ开启你的达尔文之旅吧！",
     "grant_program": "资助计划",
     "grant_intro": "为达尔文生态的优质项目及相关的理论研究项目提供资助。",
+    "grant_link": "https://docs.darwinia.network/docs/en/dev-bounty#grant-program",
     "bounty_program": "悬赏计划",
     "bounty_intro": "邀请社区开发者贡献代码。",
     "technology": "技术",
@@ -530,15 +531,19 @@
     "truth_1": "A Super Light-client Protocol Chain Header Commitment MMR (Merkle Mountain Range) Optimistic Verification Game Relayer (Prover vs Verifier) Economic Feasibility Sub-linear Relay Relay on Demand",
     "mmr": "Merkle Mountain Range (MMR)承诺",
     "mmr_desc": "使用了MMR进行的区块头承诺，每个块头中包含之前历史链上所有块头进行MMR计算后的根植，MMR是默克尔树的一种变体。使得我们确认一个最新块头即可校验历史上任何一个块头。",
+    "nft": "Support NFT cross-chain transfer",
+    "nft_desc": "Darwinia heterogeneous cross-chain bridge does not rely on collateral, so it supports small and high-frequency transfers such as NFT. It provides an important infrastructure for NFT to take over the Defi hotspot.",
     "game": "乐观博弈机制",
     "game_desc": "通过概率抽样极大提高攻击者难度，以及通过乐观博弈机制使得最新块头能够最快的得到确认。",
     "read_more": "了解更多",
-    "read_more_link": "https://telemetry.polkadot.io/#list/Polkadot"
+    "read_more_link": "https://docs.darwinia.network/docs/en/dev-home"
   },
   "model": {
     "economic": "达尔文经济模型",
     "theme": "资产互联网络，已接通",
     "token": "达尔文通证",
+    "how_to_stake": "How to Stake",
+    "how_to_stake_link": "https://docs.darwinia.network/docs/en/wiki-us-staking-basic",
     "ring": "RING",
     "ring_1": "达尔文网络原生基础通证",
     "ring_2": "网络服务应用场景",
