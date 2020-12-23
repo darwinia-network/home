@@ -223,7 +223,7 @@ class Brand extends Component {
                                                 className={styles.button}>{t('community:darwinia_wiki')}</Button>
                                             <Button variant="transparent" target="_blank" href="/faq"
                                                 className={styles.button}>{t('community:faq')}</Button>
-                                            <Button variant="transparent" target="_blank" href="/ambassador"
+                                            <Button variant="transparent" target="_blank" href={t('ambassador:form')}
                                                 className={`${styles.button} ${styles.buttonWhite}`}>{t('community:get_started')}</Button>
                                         </div>
                                     </div>
@@ -243,7 +243,7 @@ class Brand extends Component {
                                             <div className={styles.title}>{t('community:grant_program')}</div>
                                             <p>{t('community:grant_intro')}</p>
                                             <div className={styles.buttons}>
-                                                <Button variant="white" target="_blank" href={t('ambassador:form')}
+                                                <Button variant="white" target="_blank" href={t('community:grant_link')}
                                                     className={`${styles.button} ${styles.buttonWhite}`}>{t('community:get_started')}</Button>
                                             </div>
                                         </div>
@@ -255,7 +255,7 @@ class Brand extends Component {
                                             <div className={styles.title}>{t('community:bounty_program')}</div>
                                             <p>{t('community:bounty_intro')}</p>
                                             <div className={styles.buttons}>
-                                                <Button variant="white" target="_blank" href={t('ambassador:form')}
+                                                <Button variant="white" target="_blank" href={t('community:grant_link')}
                                                     className={`${styles.button} ${styles.buttonWhite}`}>{t('community:get_started')}</Button>
                                             </div>
                                         </div>

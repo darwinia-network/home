@@ -133,7 +133,7 @@
 
     "partners_title": "Partners",
 
-    "newest_title": "Newest Announcement",
+    "newest_title": "Latest News",
 
     "news_title_1": "Darwinia sharing on Polkadot China row",
     "news_title_2": "How to buy/sell RING on uniswap? ",
@@ -245,6 +245,7 @@
     "new_intro": "Welcome to Darwinia Community! You can start from Darwinia Wiki and FAQ.",
     "grant_program": "Grant Program",
     "grant_intro": "Focus on funding the development of the Darwinia ecosystem, such as Darwinia Appchain, and related theoretical research.",
+    "grant_link": "https://docs.darwinia.network/docs/en/dev-bounty#grant-program",
     "bounty_program": "Bounty Program",
     "bounty_intro": "Invite community developers to help fix technical issues.",
     "technology": "Technology",
@@ -535,12 +536,14 @@
     "nft": "Support NFT cross-chain transfer",
     "nft_desc": "Darwinia heterogeneous cross-chain bridge does not rely on collateral, so it supports small and high-frequency transfers such as NFT. It provides an important infrastructure for NFT to take over the Defi hotspot.",
     "read_more": "Read more",
-    "read_more_link": "https://docs.darwinia.network/docs/en/wiki-intro"
+    "read_more_link": "https://docs.darwinia.network/docs/en/dev-home"
   },
   "model": {
     "economic": "Darwinia Economical Model",
     "theme": "Internet of Tokens, Connected!",
     "token": "Cross-chain Tokens",
+    "how_to_stake": "How to Stake",
+    "how_to_stake_link": "https://docs.darwinia.network/docs/en/wiki-us-staking-basic",
     "ring": "RING",
     "ring_1": "Network Native Token",
     "ring_2": "Utility Token for Network Services",
