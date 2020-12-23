@@ -584,6 +584,15 @@
     }
 
   }
+  .innovationContainer {
+    margin: 50px 0;
+    h6 {
+      font-size: 16px;
+    }
+    .innoCol1 {
+      margin-bottom: 20px;
+    }
+  }
   .relayContainer {
     margin: 40px 0;
     h1 {
@@ -617,11 +626,9 @@
         }
       }
     }
-
   }
   .mmrContainer {
     margin: 50px 0;
-
   }
   .gameContainer {
     margin: 50px 0;
@@ -640,14 +647,33 @@
     a {
       width: 100%;
     }
-
+  }
+  .nftContainer {
+    margin: 50px 0;
+    .section {
+      background: initial;
+      flex-direction: column;
+      padding: 0;
+      margin: 0;
+      img {
+        width: 100%;
+        margin: 20px 0 40px;
+      }
+      p {
+        order: -1;
+        margin-bottom: 0;
+      }
+    }
+    a {
+      width: 100%;
+      padding: 10px 0;
+    }
   }
   .lineH1 {
     height: 2px;
     background: #EFEFEF;
     margin-bottom: 30px;
   }
-
   .lineH2 {
     height: 2px;
     background: #fff;
@@ -660,7 +686,6 @@
     margin-bottom: 15px;
     // font-weight: bold;
   }
-
   .line {
     display: none;
   }
