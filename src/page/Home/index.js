@@ -19,6 +19,8 @@ import carousel_2_en_m from "./img/carousel/carousel-2-m-en.jpg"
 import carousel_3_m from "./img/carousel/carousel-3-m.jpg"
 import carousel_3_en_m from "./img/carousel/carousel-3-m-en.jpg"
 
+import roadmapSplit from "./img/roadmap/roadmap-split.png"
+
 import styles from './style.module.scss'
 import architecture from './img/architecture.png'
 import architecture_en from './img/architecture-en.png'
@@ -768,7 +770,7 @@ class Home extends Component {
                             </Row>
                             <Row>
                                 <Col>
-                                    <img />
+                                    <img src={roadmapSplit} alt="roadmap split line"/>
                                 </Col>
                             </Row>
                             <Row className={styles.roadmapRow}>
@@ -812,7 +814,7 @@ class Home extends Component {
                             </Row>
                             <Row>
                                 <Col>
-                                    <img />
+                                    <img src={roadmapSplit} alt="roadmap split line"/>
                                 </Col>
                             </Row>
                             <Row className={styles.roadmapRow}>

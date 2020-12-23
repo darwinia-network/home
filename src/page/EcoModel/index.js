@@ -81,15 +81,13 @@ class Home extends Component {
                             <h1 className={`reveal-h1 ${styles.fontH1} ${styles.gradientText}`}>{t('model:token')}</h1>
                         </div>
                         <Row>
-                            <Col xs={12} md={9}>
-                                <img className={'hidden-xs'} src={tokenBg} alt="token"/>
-                                <img className={'hidden-md'} src={tokenBgM} alt="token"/>
+                            <Col xs={12} md={3}>
+                                <img src={eco1} alt="ring"/>
                             </Col>
-                            <Col xs={12} md={3} className={styles.economicCol}>
+                            <Col xs={12} md={3}>
                                 <div className={styles.economicItem}>
                                     <div className={styles.economicItemHeader}>
                                         <div>
-                                            <img alt="economic" className={styles.economicIcon} src={eco1} />
                                             <span>{t('home_page:economic_block_title_1')}</span>
                                         </div>
                                     </div>
@@ -105,10 +103,14 @@ class Home extends Component {
                                         <p>{t('model:ring_4')}</p>
                                     </div>
                                 </div>
+                            </Col>
+                            <Col xs={12} md={3}>
+                                <img src={eco2} alt="kton"/>
+                            </Col>
+                            <Col xs={12} md={3}>
                                 <div className={`${styles.economicItem} ${styles.kton}`}>
                                     <div className={styles.economicItemHeader}>
                                         <div>
-                                            <img alt="economic" className={styles.economicIcon} src={eco2} />
                                             <span>{t('home_page:economic_block_title_2')}</span>
                                         </div>
                                         <p>
@@ -121,6 +123,12 @@ class Home extends Component {
                                         <p>{t('model:kton_4')}</p>
                                     </div>
                                 </div>
+                            </Col>
+                        </Row>
+                        <Row>
+                            <Col xs={12}>
+                                <img className={'hidden-xs'} src={tokenBg} alt="token"/>
+                                <img className={'hidden-md'} src={tokenBgM} alt="token"/>
                             </Col>
                         </Row>
                     </Container>

@@ -9,18 +9,30 @@ import LazyBackground from "../../components/lazyBackground"
 import MediaQuery from 'react-responsive'
 import styles from './style.module.scss'
 // import themeBg from "./img/theme-bg.png"
-import archBg from "./img/theme-bg.png"
+// import archBg from "./img/theme-bg.png"
 import relayBg from "./img/relay-bg.png"
 import relayBgM from "./img/relay-bg-m.png"
 import mmrBg from "./img/mmr-bg.png"
 import mmrBgM from "./img/mmr-bg-m.png"
+import inno1 from "./img/innovation-1.png"
+import inno2 from "./img/innovation-2.png"
 import gameBg from "./img/game-bg.png"
 import gameBgM from "./img/game-bg-m.png"
+import nftBg from "./img/nft-bg.png"
+import nftBgM from "./img/nft-bg-m.png"
 import bannerBg from "./img/banner-bg.png"
 import bannerBgM from "./img/banner-bg-m.png"
 import theme1 from "./img/theme-1.png"
 import theme2 from "./img/theme-2.png"
 import theme3 from "./img/theme-3.png"
+
+import architecture from './img/architecture/architecture.png'
+import architecture_en from './img/architecture/architecture-en.png'
+import architecture_mobile from './img/architecture/architecture-mobile.png'
+import architecture_mobile_en from './img/architecture/architecture-mobile.png'
+import architecture_solo from './img/architecture/architecture-solo.png'
+import architecture_chain from './img/architecture/architecture-chain.png'
+
 // import roadmapCur from './img/roadmap/roadmap-cur.png'
 import roadmapLine from './img/roadmap/roadmap-line.png'
 import roadmapItem1 from './img/roadmap/roadmap-item-1.png'
@@ -33,7 +45,7 @@ import roadmapMobile from './img/roadmap/roadmap-m.png'
 
 import archorsComponent from '../../components/anchorsComponent'
 import { withTranslation } from "react-i18next";
-// import i18n from '../../locales/i18n';
+import i18n from '../../locales/i18n';
 
 class Home extends Component {
 
@@ -96,7 +108,23 @@ class Home extends Component {
                         <Row>
                             <Col xs={12}>
                                 <p>{t('tech:architecture_desc')}</p>
-                                <img src={archBg} alt="architecture"/>
+                                {/* <img src={archBg} alt="architecture"/> */}
+                                <div className={`${styles.archWrapper}`}>
+                                    {i18n.language.indexOf('en') > -1 ? <img alt="architecture" className={`hidden-xs`} src={architecture_en} /> :
+                                        <img alt="architecture" className={`hidden-xs`} src={architecture} />}
+                                    {i18n.language.indexOf('en') > -1 ? <img alt="architecture" className={`visible-xs`} src={architecture_mobile_en} /> :
+                                        <img alt="architecture" className={`visible-xs`} src={architecture_mobile} />}
+                                    <div className={`hidden-xs ${styles.anime}`}>
+                                        <div>
+                                            <Button className={styles.soloBtn}>{t('home_page:architecture_solo')}</Button>
+                                            <Button className={`${styles.soloBtn} ${styles.soloWhiteBtn}`}>{t('home_page:architecture_solo')}</Button>
+                                            <Button className={styles.chainBtn}>{t('home_page:architecture_chain')}</Button>
+                                            <Button className={`${styles.chainBtn} ${styles.chainPinkBtn}`}>{t('home_page:architecture_chain')}</Button>
+                                            <img alt="chain" src={architecture_chain} className={styles.chain} />
+                                            <img alt="solo" src={architecture_solo} className={styles.solo} />
+                                        </div>
+                                    </div>
+                                </div>
                             </Col>
                         </Row>
                     </Container>
@@ -246,6 +274,30 @@ class Home extends Component {
                     </Container>
                 </div>
 
+                <div className={styles.innovationContainer}>
+                    <Container>
+                        <div className={styles.title}>
+                            <h1 className={`${styles.fontH1} ${styles.gradientText}`}>{t('tech:innovation')}</h1>
+                        </div>
+                        <Row>
+                            <Col xs={12}>
+                                <p>{t('tech:innovation_desc')}</p>
+                                <h6 className={styles.generalGradientText}>{t('tech:innovation_transfer')}</h6>
+                            </Col>
+                        </Row>
+                        <Row className={styles.innoRow}>
+                            <Col md={6} xs={12}>
+                                <img src={inno1} alt="darwinia to ethereum"/>
+                                <p>{t('tech:innovation_transfer_1')}</p>
+                            </Col>
+                            <Col md={6} xs={12}>
+                                <img src={inno2} alt="ethereum to darwinia"/>
+                                <p>{t('tech:innovation_transfer_2')}</p>
+                            </Col>
+                        </Row>
+                    </Container>
+                </div>
+
                 <div className={styles.relayContainer}>
                     <Container>
                         <div className={styles.title}>
@@ -331,6 +383,23 @@ class Home extends Component {
                                     <img className={'hidden-xs'} src={gameBg} alt="game"/>
                                     <img className={'hidden-md'} src={gameBgM} alt="game"/>
                                     <p>{t('tech:game_desc')}</p>
+                                </div>
+                            </Col>
+                        </Row>
+                    </Container>
+                </div>
+
+                <div className={styles.nftContainer}>
+                    <Container>
+                        <div className={styles.title}>
+                            <h1 className={`reveal-h1 ${styles.fontH1} ${styles.gradientText}`}>{t('tech:nft')}</h1>
+                        </div>
+                        <Row>
+                            <Col xs={12}>
+                                <div className={styles.section}>
+                                    <img className={'hidden-xs'} src={nftBg} alt="nft"/>
+                                    <img className={'hidden-md'} src={nftBgM} alt="nft"/>
+                                    <p>{t('tech:nft_desc')}</p>
                                 </div>
                             </Col>
                         </Row>

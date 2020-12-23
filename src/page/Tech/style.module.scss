@@ -3,7 +3,7 @@
 .tech {
   h1 {
     display: inline-block;
-    margin-bottom: 15px;
+    margin-bottom: 30px;
   }
   p {
     line-height: 25px;
@@ -87,6 +87,174 @@
   img {
     width: 100%;
   }
+  .archWrapper {
+    background: url("./img/architecture/architecture-bg.png") top center no-repeat;
+    // padding: 60px 0 88px 0;
+    // background: url("./img/architecture-bg.png");
+    background-size: cover;
+    padding: 70px 0 70px 0;
+    position: relative;
+    // padding: 0 10%;
+    .opacityBg {
+      position: absolute;
+    }
+    > img {
+      width: 81%;
+      margin-left: 10%;
+    }
+  }
+
+  .anime {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    >div {
+      padding-top: 32%;
+      position: relative;
+    }
+
+    img {
+      position: absolute;
+    }
+
+    .solo {
+      // width: 2.5%;
+      width: 28px;
+      margin-left: 45.7%;
+
+      :global {
+        animation: solo 6s ease-in-out infinite both;
+      }
+    }
+
+    .chain {
+      // width: 3.0%;
+      width: 34px;
+      margin-left: 49.4%;
+
+      :global {
+        animation: chain 6s ease-in-out infinite both;
+      }
+    }
+
+    button {
+      cursor: default;
+      pointer-events: none;
+      height: 11%;
+      line-height: 1;
+      border: none;
+      text-align: center;
+      font-size: 20px;
+      border-radius: 0;
+    }
+
+    .soloBtn {
+      margin-left: 28.5%;
+      background: linear-gradient(315deg, rgba(254, 56, 118, 1) 0%, rgba(124, 48, 221, 1) 71%, rgba(58, 48, 221, 1) 100%);
+      color: #fff;
+      width: 9.2%;
+      position: absolute;
+      padding: 0;
+    }
+
+    .soloWhiteBtn {
+      background: white;
+      color: #1e1e1e;
+
+      :global {
+        animation: 6s ease-in-out infinite both soloWhiteBtn;
+      }
+    }
+
+    .chainBtn {
+      margin-left: 58%;
+      width: 13.8%;
+      position: absolute;
+      background: white;
+      color: #1e1e1e;
+    }
+
+    .chainPinkBtn {
+      border: 0;
+      color: #fff;
+      background: linear-gradient(315deg, rgba(254, 56, 118, 1) 0%, rgba(124, 48, 221, 1) 71%, rgba(58, 48, 221, 1) 100%);
+
+      :global {
+        animation: 6s ease-in-out infinite both chainPinkBtn;
+      }
+    }
+
+    @keyframes :global(chainPinkBtn) {
+
+      0%,
+      33% {
+        opacity: 0;
+      }
+
+      50%,
+      83% {
+        opacity: 1;
+      }
+
+      100% {
+        opacity: 0;
+      }
+    }
+
+    @keyframes :global(soloWhiteBtn) {
+
+      0%,
+      33% {
+        opacity: 0;
+      }
+
+      50%,
+      83% {
+        opacity: 1;
+      }
+
+      100% {
+        opacity: 0;
+      }
+    }
+
+    @keyframes :global(chain) {
+
+      0%,
+      33% {
+        transform: translate(0, 0);
+      }
+
+      50%,
+      83% {
+        transform: translate(-30%, 0);
+      }
+
+      100% {
+        transform: translate(0, 0);
+      }
+    }
+
+    @keyframes :global(solo) {
+
+      0%,
+      33% {
+        transform: translate(0, 0);
+      }
+
+      50%,
+      83% {
+        transform: translate(32%, 0);
+      }
+
+      100% {
+        transform: translate(0, 0);
+      }
+    }
+  }
 }
 
 .stageContainer {
@@ -142,6 +310,23 @@
       &.holderCol {
         padding: 0 15px;
       }
+    }
+  }
+}
+
+.innovationContainer {
+  margin: 100px 0 100px;
+  img {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  h6 {
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+  .innoRow {
+    p {
+      margin-bottom: 0;
     }
   }
 }
@@ -222,6 +407,20 @@
   }
 }
 
+.nftContainer {
+  margin: 100px 0 100px;
+  .section {
+    background: #F9FAFC;
+    padding: 30px 85px 30px 60px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 100px;
+  }
+  img {
+    width: 50%;
+    margin-right: 10%;
+  }
+}
 
 .line {
   display: inline-block;
@@ -255,6 +454,12 @@
   font-size: 40px;
   color: rgba(8, 12, 32, 1);
   letter-spacing: 2px;
+  background: linear-gradient(315deg, rgba(254, 56, 118, 1) 0%, rgba(124, 48, 221, 1) 71%, rgba(58, 48, 221, 1) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.generalGradientText {
+  color: rgba(8, 12, 32, 1);
   background: linear-gradient(315deg, rgba(254, 56, 118, 1) 0%, rgba(124, 48, 221, 1) 71%, rgba(58, 48, 221, 1) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
