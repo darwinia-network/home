@@ -404,7 +404,7 @@ class Home extends Component {
                             </Col>
                         </Row>
                         <div className="text-center">
-                            <Button variant="dark" target="_blank" rel="noopener noreferrer" href={t('tech:read_more_link')}
+                            <Button variant="dark" target="_blank" rel="noopener noreferrer" href={t('tech:theme_2_link')}
                                     className={styles.button}>{t('tech:read_more')}</Button>
                         </div>
                     </Container>
