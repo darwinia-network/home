@@ -46,6 +46,13 @@ import person_7 from "./img/person_7.png"
 import person_8 from "./img/person_8.png"
 import person_9 from "./img/person_9.png"
 import person_10 from "./img/person_10.png"
+import person_11 from "./img/person_11.png"
+import person_12 from "./img/person_12.png"
+import person_13 from "./img/person_13.png"
+import person_14 from "./img/person_14.png"
+import person_15 from "./img/person_15.png"
+import person_16 from "./img/person_16.png"
+import person_17 from "./img/person_17.png"
 
 class Brand extends Component {
     constructor(props, context) {
@@ -123,7 +130,7 @@ class Brand extends Component {
                                                 <img className={styles.hoverImg} alt="twitter" src={twitter}/>
                                             </div>
                                             <div className={styles.mediaNum}>
-                                                12,266
+                                                14,498
                                             </div>
                                             <div className={styles.mediaName}>
                                                 {t('community:twitter')}
@@ -135,7 +142,7 @@ class Brand extends Component {
                                                 <img className={styles.hoverImg} alt="telegram" src={telegram}/>
                                             </div>
                                             <div className={styles.mediaNum}>
-                                                11,464
+                                                11,264
                                             </div>
                                             <div className={styles.mediaName}>
                                                 {t('community:telegram')}
@@ -147,7 +154,7 @@ class Brand extends Component {
                                                 <img className={styles.hoverImg} alt="medium" src={medium}/>
                                             </div>
                                             <div className={styles.mediaNum}>
-                                                300
+                                                405
                                             </div>
                                             <div className={styles.mediaName}>
                                                 {t('community:medium')}
@@ -164,7 +171,7 @@ class Brand extends Component {
                                                     <img className={styles.hoverImg} alt="wechat" src={wechat}/>
                                                 </div>
                                                 <div className={styles.mediaNum}>
-                                                    9,645
+                                                    10,545
                                                 </div>
                                                 <div className={styles.mediaName}>
                                                     {t('community:wechat')}
@@ -177,7 +184,7 @@ class Brand extends Component {
                                                 <img className={styles.hoverImg} alt="github" src={github}/>
                                             </div>
                                             <div className={styles.mediaNum}>
-                                                68
+                                                78
                                             </div>
                                             <div className={styles.mediaName}>
                                                 {t('community:github')}
@@ -342,6 +349,13 @@ class Brand extends Component {
                                     <img alt="person" src={person_8}/>
                                     <img alt="person" src={person_9}/>
                                     <img alt="person" src={person_10}/>
+                                    <img alt="person" src={person_11}/>
+                                    <img alt="person" src={person_12}/>
+                                    <img alt="person" src={person_13}/>
+                                    <img alt="person" src={person_14}/>
+                                    <img alt="person" src={person_15}/>
+                                    <img alt="person" src={person_16}/>
+                                    <img alt="person" src={person_17}/>
                                 </div>
                                 <p>
                                     {t('community:invite')}
