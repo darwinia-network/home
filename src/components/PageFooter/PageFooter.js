@@ -159,9 +159,9 @@ class PageFooter extends Component {
                             <h1>{t('footer:technology')}</h1>
                             <p><a target="_blank" rel="noopener noreferrer" href={t('header:testnet_url')}>{t('footer:technology_title_1')}</a></p>
                             {i18n.language.indexOf('en') > -1 ?
-                                <p><a target="_blank" rel="noopener noreferrer" href="https://evolution.l2me.com/darwinia/Darwinia_Genepaper_EN.pdf">{t('footer:technology_title_2')}</a></p>
+                                <p><a target="_blank" rel="noopener noreferrer" href="/static/paper/Darwinia_Genepaper_EN.pdf">{t('footer:technology_title_2')}</a></p>
                                 :
-                                <p><a target="_blank" rel="noopener noreferrer" href="https://evolution.l2me.com/darwinia/Darwinia_Genepaper_CN.pdf">{t('footer:technology_title_2')}</a></p>
+                                <p><a target="_blank" rel="noopener noreferrer" href="/static/paper/Darwinia_Genepaper_CN.pdf">{t('footer:technology_title_2')}</a></p>
                             }
                             <p><a target="_blank" rel="noopener noreferrer" href="https://github.com/darwinia-network/darwinia">{t('footer:technology_title_3')}</a></p>
                             <p><a target="_blank" rel="noopener noreferrer" href="https://telemetry.polkadot.io/#list/Polkadot">{t('footer:technology_title_4')}</a></p>
