@@ -124,27 +124,27 @@ class Home extends Component {
             'chainlink': {
                 logo: partner6,
                 name: 'Chainlink',
-                url: ''
+                url: 'https://chain.link/'
             },
             'ankr': {
                 logo: partner7,
                 name: 'Ankr',
-                url: ''
+                url: 'https://www.ankr.com/'
             },
             'bondly': {
                 logo: partner8,
                 name: 'Bondly',
-                url: ''
+                url: 'https://bondly.finance/'
             },
             'crust': {
                 logo: partner9,
                 name: 'Crust',
-                url: ''
+                url: 'https://crust.network/'
             },
             'reef': {
                 logo: partner10,
                 name: 'Reef',
-                url: ''
+                url: 'https://reef.finance/'
             },
             'polkabase': {
                 logo: partner21,
@@ -619,14 +619,18 @@ class Home extends Component {
                         </div>
                         <Row className={`d-flex justify-content-center`}>
                             <Col xs={12} md={6} className={styles.appItem}>
-                                <img className={`hidden-xs`} alt="Token DEX" src={app_evo} />
-                                <img className={`hidden-md`} alt="Token DEX" src={application_evo} />
+                                <a target="_blank" href="https://www.evolution.land/">
+                                    <img className={`hidden-xs`} alt="evoland" src={app_evo} />
+                                    <img className={`hidden-md`} alt="evoland" src={application_evo} />
+                                </a>
                                 <h3 className={styles.generalGradientText}>{t('home_page:application_block_title_1')}</h3>
                                 <p>{t('home_page:application_block_content_1')}</p>
                             </Col>
                             <Col xs={12} md={6} className={styles.appItem}>
-                                <img className={`hidden-xs`} alt="Token DEX" src={app_subscan} />
-                                <img className={`hidden-md`} alt="Token DEX" src={application_subscan} />
+                                <a target="_blank" href="https://www.subscan.io">
+                                    <img className={`hidden-xs`} alt="subscan" src={app_subscan} />
+                                    <img className={`hidden-md`} alt="subscan" src={application_subscan} />
+                                </a>
                                 <h3 className={styles.generalGradientText}>{t('home_page:application_block_title_2')}</h3>
                                 <p>{t('home_page:application_block_content_2')}</p>
                             </Col>
