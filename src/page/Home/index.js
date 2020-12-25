@@ -124,27 +124,27 @@ class Home extends Component {
             'chainlink': {
                 logo: partner6,
                 name: 'Chainlink',
-                url: ''
+                url: 'https://chain.link/'
             },
             'ankr': {
                 logo: partner7,
                 name: 'Ankr',
-                url: ''
+                url: 'https://www.ankr.com/'
             },
             'bondly': {
                 logo: partner8,
                 name: 'Bondly',
-                url: ''
+                url: 'https://bondly.finance/'
             },
             'crust': {
                 logo: partner9,
                 name: 'Crust',
-                url: ''
+                url: 'https://crust.network/'
             },
             'reef': {
                 logo: partner10,
                 name: 'Reef',
-                url: ''
+                url: 'https://reef.finance/'
             },
             'polkabase': {
                 logo: partner21,
@@ -329,7 +329,7 @@ class Home extends Component {
         const { t } = this.props
         const { email, info, hasMetamask } = this.state
         return (
-            <div>
+            <div className={styles.homePage}>
                 {/* <a href="#top"></a> */}
                 <PageHeader href="#top" transparent={true} />
                 {/* <div className={styles.launchBanner}>
@@ -379,33 +379,33 @@ class Home extends Component {
                                         <div className={styles.imgRatio}>
                                             <img alt="web3" src={band1}/>
                                         </div>
-                                        <div className={styles.bandDesc}>
+                                        <p className={styles.bandDesc}>
                                             {t('home_page:band_1_desc')}
-                                        </div>
+                                        </p>
                                     </Col>
                                     <Col xs={12} md={4} lg={3}>
                                         <div className={styles.imgRatio}>
                                             <img alt="substrate builder program" src={band2}/>
                                         </div>
-                                        <div className={styles.bandDesc}>
+                                        <p className={styles.bandDesc}>
                                             {t('home_page:band_2_desc')}
-                                        </div>
+                                        </p>
                                     </Col>
                                     <Col xs={12} md={4} lg={3}>
                                         <div className={styles.imgRatio}>
                                             <img alt="web3.0 bootcamp" src={band3}/>
                                         </div>
-                                        <div className={styles.bandDesc}>
+                                        <p className={styles.bandDesc}>
                                             {t('home_page:band_3_desc')}
-                                        </div>
+                                        </p>
                                     </Col>
                                     <Col xs={12} md={4} lg={3}>
                                         <div className={styles.imgRatio}>
                                             <img alt="polkadot" src={band4}/>
                                         </div>
-                                        <div className={styles.bandDesc}>
+                                        <p className={styles.bandDesc}>
                                             {t('home_page:band_4_desc')}
-                                        </div>
+                                        </p>
                                     </Col>
                                 </Row>
                                 <InputGroup className={`${styles.subscribe} hidden-xs`}>
@@ -619,14 +619,18 @@ class Home extends Component {
                         </div>
                         <Row className={`d-flex justify-content-center`}>
                             <Col xs={12} md={6} className={styles.appItem}>
-                                <img className={`hidden-xs`} alt="Token DEX" src={app_evo} />
-                                <img className={`hidden-md`} alt="Token DEX" src={application_evo} />
+                                <a target="_blank" href="https://www.evolution.land/">
+                                    <img className={`hidden-xs`} alt="evoland" src={app_evo} />
+                                    <img className={`hidden-md`} alt="evoland" src={application_evo} />
+                                </a>
                                 <h3 className={styles.generalGradientText}>{t('home_page:application_block_title_1')}</h3>
                                 <p>{t('home_page:application_block_content_1')}</p>
                             </Col>
                             <Col xs={12} md={6} className={styles.appItem}>
-                                <img className={`hidden-xs`} alt="Token DEX" src={app_subscan} />
-                                <img className={`hidden-md`} alt="Token DEX" src={application_subscan} />
+                                <a target="_blank" href="https://www.subscan.io">
+                                    <img className={`hidden-xs`} alt="subscan" src={app_subscan} />
+                                    <img className={`hidden-md`} alt="subscan" src={application_subscan} />
+                                </a>
                                 <h3 className={styles.generalGradientText}>{t('home_page:application_block_title_2')}</h3>
                                 <p>{t('home_page:application_block_content_2')}</p>
                             </Col>
@@ -904,9 +908,9 @@ class Home extends Component {
                                         <span>{t('media:more_title')}</span>
                                         <span className={styles.mediaTime}>{t('media:news_17_time')}</span>
                                     </div>
-                                    <div className={styles.mediaDesc}>
+                                    <p className={styles.mediaDesc}>
                                         {t('media:news_17_title')}
-                                    </div>
+                                    </p>
                                 </a>
                             </Col>
                             <Col xs={12} md={4} lg={3}>
@@ -918,9 +922,9 @@ class Home extends Component {
                                         <span>{t('media:more_title')}</span>
                                         <span className={styles.mediaTime}>{t('media:news_12_time')}</span>
                                     </div>
-                                    <div className={styles.mediaDesc}>
+                                    <p className={styles.mediaDesc}>
                                         {t('media:news_12_title')}
-                                    </div>
+                                    </p>
                                 </a>
                             </Col>
                             <Col xs={12} md={4} lg={3}>
@@ -932,9 +936,9 @@ class Home extends Component {
                                         <span>{t('media:more_title')}</span>
                                         <span className={styles.mediaTime}>{t('media:news_14_time')}</span>
                                     </div>
-                                    <div className={styles.mediaDesc}>
+                                    <p className={styles.mediaDesc}>
                                         {t('media:news_14_title')}
-                                    </div>
+                                    </p>
                                 </a>
                             </Col>
                             <Col xs={12} md={4} lg={3}>
@@ -946,9 +950,9 @@ class Home extends Component {
                                         <span>{t('media:more_title')}</span>
                                         <span className={styles.mediaTime}>{t('media:news_16_time')}</span>
                                     </div>
-                                    <div className={styles.mediaDesc}>
+                                    <p className={styles.mediaDesc}>
                                         {t('media:news_16_title')}
-                                    </div>
+                                    </p>
                                 </a>
                             </Col>
                         </Row>

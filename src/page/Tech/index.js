@@ -286,7 +286,7 @@ class Home extends Component {
                             </Col>
                         </Row>
                         <Row className={styles.innoRow}>
-                            <Col md={6} xs={12}>
+                            <Col md={6} xs={12} className={styles.innoCol1}>
                                 <img src={inno1} alt="darwinia to ethereum"/>
                                 <p>{t('tech:innovation_transfer_1')}</p>
                             </Col>
