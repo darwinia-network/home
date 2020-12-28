@@ -636,7 +636,9 @@ class Home extends Component {
                                     <img className={`hidden-xs`} alt="evoland" src={app_evo} />
                                     <img className={`hidden-md`} alt="evoland" src={application_evo} />
                                 </a>
-                                <h3 className={styles.generalGradientText}>{t('home_page:application_block_title_1')}</h3>
+                                <a target="_blank" rel="noopener noreferrer" href="https://www.evolution.land/">
+                                    <h3 className={styles.generalGradientText}>{t('home_page:application_block_title_1')}</h3>
+                                </a>
                                 <p>{t('home_page:application_block_content_1')}</p>
                             </Col>
                             <Col xs={12} md={6} className={styles.appItem}>
@@ -644,7 +646,9 @@ class Home extends Component {
                                     <img className={`hidden-xs`} alt="subscan" src={app_subscan} />
                                     <img className={`hidden-md`} alt="subscan" src={application_subscan} />
                                 </a>
-                                <h3 className={styles.generalGradientText}>{t('home_page:application_block_title_2')}</h3>
+                                <a target="_blank" rel="noopener noreferrer" href="https://www.subscan.io">
+                                    <h3 className={styles.generalGradientText}>{t('home_page:application_block_title_2')}</h3>
+                                </a>
                                 <p>{t('home_page:application_block_content_2')}</p>
                             </Col>
                             <Col xs={12} md={6} className={styles.appItem}>

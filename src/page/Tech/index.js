@@ -148,28 +148,28 @@ class Home extends Component {
                                     <Col className={styles.crayfishCol}>
                                         <img alt="roadmap" src={roadmapItem2} />
                                     </Col>
-                                    <Col className={styles.holderCol}>
+                                    <Col className={`${styles.holderCol}`}>
                                         <img alt="roadmap" src={roadmapLine} />
                                     </Col>
                                     <Col>
                                         <img alt="roadmap" src={roadmapItem3} />
                                     </Col>
-                                    <Col className={styles.holderCol}>
+                                    <Col className={`${styles.waiting} ${styles.holderCol}`}>
                                         <img alt="roadmap" src={roadmapLine} />
                                     </Col>
-                                    <Col>
+                                    <Col className={`${styles.waiting}`}>
                                         <img alt="roadmap" src={roadmapItem4} />
                                     </Col>
-                                    <Col className={styles.holderCol}>
+                                    <Col className={`${styles.waiting} ${styles.holderCol}`}>
                                         <img alt="roadmap" src={roadmapLine} />
                                     </Col>
-                                    <Col className={styles.mainnetCol}>
+                                    <Col className={`${styles.waiting} ${styles.mainnetCol}`}>
                                         <img alt="roadmap" src={roadmapItem5} />
                                     </Col>
-                                    <Col className={`${styles.holderCol}`}>
+                                    <Col className={`${styles.waiting} ${styles.holderCol}`}>
                                         <img alt="roadmap" src={roadmapLine} />
                                     </Col>
-                                    <Col className={styles.lastCol}>
+                                    <Col className={`${styles.waiting} ${styles.lastCol}`}>
                                         <img alt="roadmap" src={roadmapItem6} />
                                     </Col>
                                 </Row>

@@ -425,6 +425,9 @@
   // height: 720px;
   padding-top: 68px;
   padding-bottom: 68px;
+  a {
+    @extend .extend-link;
+  }
 
   h1 {
     color: #fff;

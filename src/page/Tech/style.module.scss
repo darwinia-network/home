@@ -276,6 +276,11 @@
   }
   .roadmapRow {
     margin-top: 30px;
+    .waiting {
+      img {
+        filter: opacity(40%) saturate(0%);
+      }
+    }
     > div {
       padding: 0 30px;
       &.holderCol {
