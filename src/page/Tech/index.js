@@ -325,6 +325,13 @@ class Home extends Component {
                                             </div>
                                             <div className={styles.item}>
                                                 <p>{t('tech:truth_1')}</p>
+                                                <p>{t('tech:truth_2')}</p>
+                                                <p>{t('tech:truth_3')}</p>
+                                                <p>{t('tech:truth_4')}</p>
+                                                <p>{t('tech:truth_5')}</p>
+                                                <p>{t('tech:truth_6')}</p>
+                                                <p>{t('tech:truth_7')}</p>
+                                                <p>{t('tech:truth_8')}</p>
                                             </div>
                                         </div>
                                     </div>
@@ -351,6 +358,13 @@ class Home extends Component {
                                 </div>
                                 <div className={styles.item}>
                                     <p>{t('tech:truth_1')}</p>
+                                    <p>{t('tech:truth_2')}</p>
+                                    <p>{t('tech:truth_3')}</p>
+                                    <p>{t('tech:truth_4')}</p>
+                                    <p>{t('tech:truth_5')}</p>
+                                    <p>{t('tech:truth_6')}</p>
+                                    <p>{t('tech:truth_7')}</p>
+                                    <p>{t('tech:truth_8')}</p>
                                 </div>
                             </div>
                         </div>
