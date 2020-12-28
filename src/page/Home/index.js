@@ -4,6 +4,7 @@ import React, { Component } from "react";
 import { Container, Row, Col, InputGroup, FormControl, Button, Form, Carousel, OverlayTrigger, Tooltip } from 'react-bootstrap'
 import { PageHeader } from '../../components/PageHeader'
 import { PageFooter } from '../../components/PageFooter'
+import Fade from 'react-reveal/Fade';
 // import { GradientHeading } from '../../components/GradientHeading'
 
 // import carousel_1 from "./img/carousel/carousel-1.jpg"
@@ -249,13 +250,18 @@ class Home extends Component {
         scrollreveal({
             mobile: false
         }).reveal('.reveal-h1', { 
-            distance: '50px',
-            // // reset: true,
-            // duration: 1000,
-            useDelay: "onload",
-            delay: 500,
-            easing: 'ease-in-out',
-            viewFactor: 0.33,
+            distance: '100px',
+            reset: true,
+            duration: 500,
+            // interval: 300,
+            // useDelay: 'onload',
+            // opacity: 0.5,
+            // delay: 500,
+            // easing: 'ease-in-out',
+            // viewOffset: {
+            //     top: 145
+            // },
+            viewFactor: 0.8,
             // reset: true,
             // init: true
         });
@@ -368,11 +374,12 @@ class Home extends Component {
                     </Carousel>
                 </div>
 
-                <div className={styles.themeContainer}>
+                <Fade bottom fraction={0.1} duration={1000}>
+                <div className={`reveal-h1 ${styles.themeContainer}`}>
                     <Container>
                         <Row className={`${styles.promoteContentArea} d-flex justify-content-center`}>
                             <Col xs={{ span: 12 }} sm={{ span: 12 }}>
-                                <h1 className={`text-center reveal-h1 ${styles.fontH1} ${styles.gradientText}`}>{t('home_page:theme_title')}</h1>
+                                <h1 className={`text-center ${styles.fontH1} ${styles.gradientText}`}>{t('home_page:theme_title')}</h1>
                                 <p>{t('home_page:theme_desc')}</p>
                                 <Row className={`${styles.bands}`}>
                                     <Col xs={12} md={4} lg={3}>
@@ -452,11 +459,13 @@ class Home extends Component {
                         </Row>
                     </Container>
                 </div>
+                </Fade>
 
 
                 <div className={`${styles.architectureContainer}`}>
-                    <Container>
-                        <h1 className={`text-center reveal-h1 ${styles.fontH1}`}>{t('home_page:architecture_title')}</h1>
+                    <Fade bottom fraction={0.1} duration={1000}>
+                    <Container className={`reveal-h1`}>
+                        <h1 className={`text-center  ${styles.fontH1}`}>{t('home_page:architecture_title')}</h1>
                         {/* {i18n.language.indexOf('en') > -1 ? <img src={architecture_en}/> :
                             <img src={architecture}/>} */}
                         <div className={`${styles.archWrapper}`}>
@@ -476,12 +485,14 @@ class Home extends Component {
                             </div> */}
                         </div>
                     </Container>
+                    </Fade>
                 </div>
 
-                <div className={`${styles.highlightContainer} ${styles.economicContainer}`}>
+                <Fade bottom fraction={0.1} duration={1000}>           
+                <div className={`reveal-h1 ${styles.highlightContainer} ${styles.economicContainer}`}>
                     <Container>
                         <div className={styles.title}>
-                            <h1 className={`reveal-h1 ${styles.fontH1} ${styles.gradientText}`}>{t('home_page:economic_title')}</h1>
+                            <h1 className={`${styles.fontH1} ${styles.gradientText}`}>{t('home_page:economic_title')}</h1>
                         </div>
                         {/* <div className={styles.lineH1} /> */}
                         <Row className={`d-flex justify-content-center`}>
@@ -608,14 +619,16 @@ class Home extends Component {
                         </div> */}
                     </Container>
                 </div>
+                </Fade>
 
                 <div className={`${styles.highlightContainer} ${styles.applicationContainer}`}>
-                    <Container>
+                    <Fade bottom fraction={0.1} duration={1000}>
+                    <Container className={`reveal-h1`}>
                         <div className={`hidden-xs ${styles.title}`}>
-                            <h1 className={`reveal-h1 ${styles.fontH1}`}>{t('home_page:application_title')}</h1>
+                            <h1 className={` ${styles.fontH1}`}>{t('home_page:application_title')}</h1>
                         </div>
                         <div className={`hidden-md ${styles.title}`}>
-                            <h1 className={`reveal-h1 ${styles.gradientText} ${styles.fontH1}`}>{t('home_page:application_title')}</h1>
+                            <h1 className={` ${styles.gradientText} ${styles.fontH1}`}>{t('home_page:application_title')}</h1>
                         </div>
                         <Row className={`d-flex justify-content-center`}>
                             <Col xs={12} md={6} className={styles.appItem}>
@@ -648,12 +661,14 @@ class Home extends Component {
                             </Col>
                         </Row>
                     </Container>
+                    </Fade>
                 </div>
 
-                <div className={`${styles.roadmapContainer}`}>
+                <Fade bottom fraction={0.1} duration={1000}>        
+                <div className={`reveal-h1 ${styles.roadmapContainer}`}>
                     <Container>
                         <div className={styles.title}>
-                            <h1 className={`reveal-h1 ${styles.fontH1} ${styles.gradientText}`}>{t('home_page:roadmap_title')}</h1>
+                            <h1 className={` ${styles.fontH1} ${styles.gradientText}`}>{t('home_page:roadmap_title')}</h1>
                         </div>
                         <div className={`hidden-xs ${styles.roadmap}`}>
                             <Row className={styles.roadmapRow}>
@@ -861,13 +876,15 @@ class Home extends Component {
                         </div>
                     </Container>
                 </div>
+                </Fade>
 
-                <div className={styles.teamContainer}>
-                    <Container>
+                <div className={`${styles.teamContainer}`}>
+                    <Fade bottom fraction={0.1} duration={1000}>
+                    <Container className={`reveal-h1`}>
                         <Row>
                             <Col md={1} xs={0}></Col>
                             <Col md={10} xs={12} className={`${styles.content}`}>
-                                <h1 className={`reveal-h1 ${styles.title} ${styles.fontH1}`}>
+                                <h1 className={` ${styles.title} ${styles.fontH1}`}>
                                     {t('home_page:dev_title')}
                                 </h1>
                                 <p>
@@ -880,88 +897,93 @@ class Home extends Component {
                             </Col>
                         </Row>
                     </Container>
+                    </Fade>
                 </div>
 
-                <div className={`${styles.partnersContainer}`}>
-                    <Container>
-                        <div className={styles.title}>
-                            <h1 className={`reveal-h1 ${styles.fontH1} ${styles.gradientText}`}>{t('home_page:partners_title')}</h1>
-                        </div>
-                        <Row className={`d-flex`}>
-                            {this.renderPartner()}
-                        </Row>
-                    </Container>
-                </div>
+                <Fade bottom fraction={0.1} duration={1000}>
+                    <div className={`reveal-h1 ${styles.partnersContainer}`}>
+                        <Container>
+                            <div className={styles.title}>
+                                <h1 className={` ${styles.fontH1} ${styles.gradientText}`}>{t('home_page:partners_title')}</h1>
+                            </div>
+                            <Row className={`d-flex`}>
+                                {this.renderPartner()}
+                            </Row>
+                        </Container>
+                    </div>
+                </Fade>
 
-                <div className={`${styles.highlightContainer}  ${styles.newContainer}`}>
-                    <Container>
-                        <div className={styles.title}>
-                            <h1 className={`reveal-h1 ${styles.fontH1} ${styles.gradientText}`}>{t('home_page:newest_title')}</h1>
-                        </div>
-                        <Row className={`d-flex justify-content-center text-left`}>
-                            <Col xs={12} md={4} lg={3}>
-                                <a className={styles.imgUrl} target="_blank" rel="noopener noreferrer" href={t('media:news_17_link')}>
-                                    <div className={styles.imgRatio}>
-                                        <img alt="news" src={news17}/>
-                                    </div>
-                                    <div className={styles.mediaInfo}>
-                                        <span>{t('media:more_title')}</span>
-                                        <span className={styles.mediaTime}>{t('media:news_17_time')}</span>
-                                    </div>
-                                    <p className={styles.mediaDesc}>
-                                        {t('media:news_17_title')}
-                                    </p>
-                                </a>
-                            </Col>
-                            <Col xs={12} md={4} lg={3}>
-                                <a className={styles.imgUrl} target="_blank" rel="noopener noreferrer" href={t('media:news_12_link')}>
-                                    <div className={styles.imgRatio}>
-                                        <img alt="news" src={news12}/>
-                                    </div>
-                                    <div className={styles.mediaInfo}>
-                                        <span>{t('media:more_title')}</span>
-                                        <span className={styles.mediaTime}>{t('media:news_12_time')}</span>
-                                    </div>
-                                    <p className={styles.mediaDesc}>
-                                        {t('media:news_12_title')}
-                                    </p>
-                                </a>
-                            </Col>
-                            <Col xs={12} md={4} lg={3}>
-                                <a className={styles.imgUrl} target="_blank" rel="noopener noreferrer" href={t('media:news_14_link')}>
-                                    <div className={styles.imgRatio}>
-                                        <img alt="news" src={news14}/>
-                                    </div>
-                                    <div className={styles.mediaInfo}>
-                                        <span>{t('media:more_title')}</span>
-                                        <span className={styles.mediaTime}>{t('media:news_14_time')}</span>
-                                    </div>
-                                    <p className={styles.mediaDesc}>
-                                        {t('media:news_14_title')}
-                                    </p>
-                                </a>
-                            </Col>
-                            <Col xs={12} md={4} lg={3}>
-                                <a className={styles.imgUrl} target="_blank" rel="noopener noreferrer" href={t('media:news_16_link')}>
-                                    <div className={styles.imgRatio}>
-                                        <img alt="news" src={news16}/>
-                                    </div>
-                                    <div className={styles.mediaInfo}>
-                                        <span>{t('media:more_title')}</span>
-                                        <span className={styles.mediaTime}>{t('media:news_16_time')}</span>
-                                    </div>
-                                    <p className={styles.mediaDesc}>
-                                        {t('media:news_16_title')}
-                                    </p>
-                                </a>
-                            </Col>
-                        </Row>
-                        <div className="text-center">
-                            <Button variant="dark" href="/media"
-                                    className={styles.button}>{t('home_page:news_btn')}</Button>
-                        </div>
-                    </Container>
-                </div>
+                <Fade bottom fraction={0.1} duration={1000}>
+                    <div className={`reveal-h1 ${styles.highlightContainer}  ${styles.newContainer}`}>
+                        <Container>
+                            <div className={styles.title}>
+                                <h1 className={` ${styles.fontH1} ${styles.gradientText}`}>{t('home_page:newest_title')}</h1>
+                            </div>
+                            <Row className={`d-flex justify-content-center text-left`}>
+                                <Col xs={12} md={4} lg={3}>
+                                    <a className={styles.imgUrl} target="_blank" rel="noopener noreferrer" href={t('media:news_17_link')}>
+                                        <div className={styles.imgRatio}>
+                                            <img alt="news" src={news17}/>
+                                        </div>
+                                        <div className={styles.mediaInfo}>
+                                            <span>{t('media:more_title')}</span>
+                                            <span className={styles.mediaTime}>{t('media:news_17_time')}</span>
+                                        </div>
+                                        <p className={styles.mediaDesc}>
+                                            {t('media:news_17_title')}
+                                        </p>
+                                    </a>
+                                </Col>
+                                <Col xs={12} md={4} lg={3}>
+                                    <a className={styles.imgUrl} target="_blank" rel="noopener noreferrer" href={t('media:news_12_link')}>
+                                        <div className={styles.imgRatio}>
+                                            <img alt="news" src={news12}/>
+                                        </div>
+                                        <div className={styles.mediaInfo}>
+                                            <span>{t('media:more_title')}</span>
+                                            <span className={styles.mediaTime}>{t('media:news_12_time')}</span>
+                                        </div>
+                                        <p className={styles.mediaDesc}>
+                                            {t('media:news_12_title')}
+                                        </p>
+                                    </a>
+                                </Col>
+                                <Col xs={12} md={4} lg={3}>
+                                    <a className={styles.imgUrl} target="_blank" rel="noopener noreferrer" href={t('media:news_14_link')}>
+                                        <div className={styles.imgRatio}>
+                                            <img alt="news" src={news14}/>
+                                        </div>
+                                        <div className={styles.mediaInfo}>
+                                            <span>{t('media:more_title')}</span>
+                                            <span className={styles.mediaTime}>{t('media:news_14_time')}</span>
+                                        </div>
+                                        <p className={styles.mediaDesc}>
+                                            {t('media:news_14_title')}
+                                        </p>
+                                    </a>
+                                </Col>
+                                <Col xs={12} md={4} lg={3}>
+                                    <a className={styles.imgUrl} target="_blank" rel="noopener noreferrer" href={t('media:news_16_link')}>
+                                        <div className={styles.imgRatio}>
+                                            <img alt="news" src={news16}/>
+                                        </div>
+                                        <div className={styles.mediaInfo}>
+                                            <span>{t('media:more_title')}</span>
+                                            <span className={styles.mediaTime}>{t('media:news_16_time')}</span>
+                                        </div>
+                                        <p className={styles.mediaDesc}>
+                                            {t('media:news_16_title')}
+                                        </p>
+                                    </a>
+                                </Col>
+                            </Row>
+                            <div className="text-center">
+                                <Button variant="dark" href="/media"
+                                        className={styles.button}>{t('home_page:news_btn')}</Button>
+                            </div>
+                        </Container>
+                    </div>
+                </Fade>
 
                 <PageFooter></PageFooter>
             </div>
