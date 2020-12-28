@@ -619,7 +619,7 @@ class Home extends Component {
                         </div>
                         <Row className={`d-flex justify-content-center`}>
                             <Col xs={12} md={6} className={styles.appItem}>
-                                <a target="_blank" href="https://www.evolution.land/">
+                                <a target="_blank" rel="noopener noreferrer" href="https://www.evolution.land/">
                                     <img className={`hidden-xs`} alt="evoland" src={app_evo} />
                                     <img className={`hidden-md`} alt="evoland" src={application_evo} />
                                 </a>
@@ -627,7 +627,7 @@ class Home extends Component {
                                 <p>{t('home_page:application_block_content_1')}</p>
                             </Col>
                             <Col xs={12} md={6} className={styles.appItem}>
-                                <a target="_blank" href="https://www.subscan.io">
+                                <a target="_blank" rel="noopener noreferrer" href="https://www.subscan.io">
                                     <img className={`hidden-xs`} alt="subscan" src={app_subscan} />
                                     <img className={`hidden-md`} alt="subscan" src={application_subscan} />
                                 </a>
