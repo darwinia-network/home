@@ -114,7 +114,6 @@
     }
     div {
       h1 {
-        font-size: 40px;
         margin-bottom: 20px;
       }
       p {
@@ -464,8 +463,6 @@
 
   // height: 782px;
   .fontH1 {
-    // padding-top: 70px;
-    // font-size: 40px;
     margin-bottom: 73px;
     color: #fff;
   }
@@ -714,9 +711,6 @@
     margin-top: 80px;
     margin-bottom: 30px;
   }
-  h1 {
-    font-size: 40px;
-  }
   .button {
     margin-top: 0;
     background: transparent;
@@ -744,10 +738,6 @@
 }
 
 @media (max-width: 767.98px) {
-  .fontH1 {
-    font-size: 24px;
-    font-weight: bold;
-  }
   .generalGradientText {
     display: inline-block;
     color: rgba(8, 12, 32, 1);
