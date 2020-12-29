@@ -6,6 +6,7 @@ import {PageFooter} from '../../components/PageFooter'
 import archorsComponent from '../../components/anchorsComponent'
 import {withTranslation} from "react-i18next";
 import styles from "./style.module.scss";
+import Fade from 'react-reveal/Fade';
 // import GradientHeading from "../../components/GradientHeading/GradientHeading";
 
 import downloadBtn from './img/download.png'
@@ -38,22 +39,27 @@ class Brand extends Component {
                         <div>
                             <Row>
                                 <Col xs={12}>
+                                    <Fade bottom fraction={0.1} duration={1000} distance={"50px"}>
                                     <div className={styles.title}>
                                         <h1 className={`${styles.fontH1} ${styles.gradientText}`}>{t('brand:title')}</h1>
                                     </div>
                                     <p>{t('brand:desc')}</p>
+                                    </Fade>
                                     <div className={styles.lineH1}/>
                                 </Col>
                                 <Col xs={12}>
+                                    <Fade bottom fraction={0.1} duration={1000} distance={"50px"}>
                                     <div className={styles.subTitle}>
                                         {t('brand:about')}
                                     </div>
                                     <p>
                                         {t('brand:about_desc')}
                                     </p>
+                                    </Fade>
                                     <div className={styles.lineH1}/>
                                 </Col>
                                 <Col xs={12}>
+                                    <Fade bottom fraction={0.1} duration={1000} distance={"50px"}>
                                     <div className={styles.subTitle}>
                                         {t('brand:logos')}
                                     </div>
@@ -62,6 +68,7 @@ class Brand extends Component {
                                         {t('brand:download')}
                                         <a href="/darwinia_brand.zip" download="darwinia_brand.zip" className={styles.link}>{t('brand:filename')}</a>
                                     </p>
+                                    </Fade>
                                 </Col>
                                 <Col xs={12}>
                                     <div className={styles.margin}></div>
@@ -115,6 +122,7 @@ class Brand extends Component {
                                     <div className={styles.lineH1}/>
                                 </Col>
                                 <Col xs={12}>
+                                    <Fade bottom fraction={0.1} duration={1000} distance={"50px"}>
                                     <div className={styles.subTitle}>
                                         {t('brand:note')}
                                     </div>
@@ -133,6 +141,7 @@ class Brand extends Component {
                                     <p>
                                         {t('brand:note_5')}
                                     </p>
+                                    </Fade>
                                 </Col>
                             </Row>
                         </div>

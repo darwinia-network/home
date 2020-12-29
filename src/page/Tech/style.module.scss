@@ -270,13 +270,17 @@
     align-items: center;
     max-width: 68px;
     padding: 0 15px;
-    // padding: 0 30px;
   }
   .curCol {
     padding: 0;
   }
   .roadmapRow {
     margin-top: 30px;
+    .waiting {
+      img {
+        filter: opacity(40%) saturate(0%);
+      }
+    }
     > div {
       padding: 0 30px;
       &.holderCol {
@@ -356,19 +360,15 @@
     right: 0;
     display: flex;
     .title {
-      text-align: center;
-      max-width: 200px;
       font-size: 26px;
       font-weight: 600;
-      margin-bottom: 3vw;
+      margin-bottom: 2vw;
     }
     .item {
-      text-align: center;
-      max-width: 200px;
       p {
         font-size: 16px;
         font-weight: 600;
-        margin-bottom: 10px;
+        margin-bottom: 4px;
       }
     }
   }
@@ -601,6 +601,7 @@
       flex-direction: column;
       .title {
         margin-bottom: 40px;
+        text-align: left;
       }
       .item {
         p {
@@ -609,19 +610,13 @@
       }
     }
     .trust {
-      margin: 100px 0 0;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
+      margin: 100px auto 0;
     }
     .truth {
-      margin: 220px 0 0;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
+      margin: 220px auto 0;
       .item {
         p {
-          line-height: 34px;
+          line-height: 24px;
         }
       }
     }

@@ -7,6 +7,8 @@ import { PageHeader } from '../../components/PageHeader'
 import { PageFooter } from '../../components/PageFooter'
 import LazyBackground from "../../components/lazyBackground"
 import MediaQuery from 'react-responsive'
+import Fade from 'react-reveal/Fade';
+
 // import { GradientHeading } from '../../components/GradientHeading'
 import eco1 from './img/eco-1.png'
 import eco2 from './img/eco-2.png'
@@ -80,6 +82,7 @@ class Home extends Component {
                     </LazyBackground>
                 </MediaQuery>
 
+                <Fade bottom fraction={0.1} duration={1000} distance={"50px"}>
                 <div className={styles.tokenContainer}>
                     <Container>
                         <div className={styles.title}>
@@ -138,7 +141,9 @@ class Home extends Component {
                         </Row>
                     </Container>
                 </div>
+                </Fade>
 
+                <Fade bottom fraction={0.1} duration={1000} distance={"50px"}>
                 <div className={styles.stakingContainer}>
                     <Container>
                         <div className={styles.title}>
@@ -161,7 +166,9 @@ class Home extends Component {
                         </Row>
                     </Container>
                 </div>
+                </Fade>
 
+                <Fade bottom fraction={0.1} duration={1000} distance={"50px"}>
                 <div className={styles.inflationContainer}>
                     <Container>
                         <div className={styles.title}>
@@ -187,7 +194,9 @@ class Home extends Component {
                         </div>
                     </Container>
                 </div>
+                </Fade>
 
+                <Fade bottom fraction={0.1} duration={1000} distance={"50px"}>
                 <div className={styles.circulationContainer}>
                     <Container>
                         <Row>
@@ -211,7 +220,9 @@ class Home extends Component {
                         </Row>
                     </Container>
                 </div>
+                </Fade>
 
+                <Fade bottom fraction={0.1} duration={1000} distance={"50px"}>
                 <div className={styles.modelContainer}>
                     <Container>
                         <div className={styles.title}>
@@ -260,6 +271,7 @@ class Home extends Component {
                         </Row>
                     </Container>
                 </div>
+                </Fade>
 
                 <PageFooter></PageFooter>
             </div>

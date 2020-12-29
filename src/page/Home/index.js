@@ -374,7 +374,7 @@ class Home extends Component {
                     </Carousel>
                 </div>
 
-                <Fade bottom fraction={0.1} duration={1000}>
+                <Fade bottom fraction={0.1} duration={1000} distance={"50px"}>
                 <div className={`reveal-h1 ${styles.themeContainer}`}>
                     <Container>
                         <Row className={`${styles.promoteContentArea} d-flex justify-content-center`}>
@@ -463,7 +463,7 @@ class Home extends Component {
 
 
                 <div className={`${styles.architectureContainer}`}>
-                    <Fade bottom fraction={0.1} duration={1000}>
+                    <Fade bottom fraction={0.1} duration={1000} distance={"50px"}>
                     <Container className={`reveal-h1`}>
                         <h1 className={`text-center  ${styles.fontH1}`}>{t('home_page:architecture_title')}</h1>
                         {/* {i18n.language.indexOf('en') > -1 ? <img src={architecture_en}/> :
@@ -488,7 +488,7 @@ class Home extends Component {
                     </Fade>
                 </div>
 
-                <Fade bottom fraction={0.1} duration={1000}>           
+                <Fade bottom fraction={0.1} duration={1000} distance={"50px"}>           
                 <div className={`reveal-h1 ${styles.highlightContainer} ${styles.economicContainer}`}>
                     <Container>
                         <div className={styles.title}>
@@ -622,7 +622,7 @@ class Home extends Component {
                 </Fade>
 
                 <div className={`${styles.highlightContainer} ${styles.applicationContainer}`}>
-                    <Fade bottom fraction={0.1} duration={1000}>
+                    <Fade bottom fraction={0.1} duration={1000} distance={"50px"}>
                     <Container className={`reveal-h1`}>
                         <div className={`hidden-xs ${styles.title}`}>
                             <h1 className={` ${styles.fontH1}`}>{t('home_page:application_title')}</h1>
@@ -636,7 +636,9 @@ class Home extends Component {
                                     <img className={`hidden-xs`} alt="evoland" src={app_evo} />
                                     <img className={`hidden-md`} alt="evoland" src={application_evo} />
                                 </a>
-                                <h3 className={styles.generalGradientText}>{t('home_page:application_block_title_1')}</h3>
+                                <a target="_blank" rel="noopener noreferrer" href="https://www.evolution.land/">
+                                    <h3 className={styles.generalGradientText}>{t('home_page:application_block_title_1')}</h3>
+                                </a>
                                 <p>{t('home_page:application_block_content_1')}</p>
                             </Col>
                             <Col xs={12} md={6} className={styles.appItem}>
@@ -644,7 +646,9 @@ class Home extends Component {
                                     <img className={`hidden-xs`} alt="subscan" src={app_subscan} />
                                     <img className={`hidden-md`} alt="subscan" src={application_subscan} />
                                 </a>
-                                <h3 className={styles.generalGradientText}>{t('home_page:application_block_title_2')}</h3>
+                                <a target="_blank" rel="noopener noreferrer" href="https://www.subscan.io">
+                                    <h3 className={styles.generalGradientText}>{t('home_page:application_block_title_2')}</h3>
+                                </a>
                                 <p>{t('home_page:application_block_content_2')}</p>
                             </Col>
                             <Col xs={12} md={6} className={styles.appItem}>
@@ -664,7 +668,7 @@ class Home extends Component {
                     </Fade>
                 </div>
 
-                <Fade bottom fraction={0.1} duration={1000}>        
+                <Fade bottom fraction={0.1} duration={1000} distance={"50px"}>        
                 <div className={`reveal-h1 ${styles.roadmapContainer}`}>
                     <Container>
                         <div className={styles.title}>
@@ -879,7 +883,7 @@ class Home extends Component {
                 </Fade>
 
                 <div className={`${styles.teamContainer}`}>
-                    <Fade bottom fraction={0.1} duration={1000}>
+                    <Fade bottom fraction={0.1} duration={1000} distance={"50px"}>
                     <Container className={`reveal-h1`}>
                         <Row>
                             <Col md={1} xs={0}></Col>
@@ -900,7 +904,7 @@ class Home extends Component {
                     </Fade>
                 </div>
 
-                <Fade bottom fraction={0.1} duration={1000}>
+                <Fade bottom fraction={0.1} duration={1000} distance={"50px"}>
                     <div className={`reveal-h1 ${styles.partnersContainer}`}>
                         <Container>
                             <div className={styles.title}>
@@ -913,7 +917,7 @@ class Home extends Component {
                     </div>
                 </Fade>
 
-                <Fade bottom fraction={0.1} duration={1000}>
+                <Fade bottom fraction={0.1} duration={1000} distance={"50px"}>
                     <div className={`reveal-h1 ${styles.highlightContainer}  ${styles.newContainer}`}>
                         <Container>
                             <div className={styles.title}>
