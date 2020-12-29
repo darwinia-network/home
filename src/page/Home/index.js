@@ -70,6 +70,10 @@ import partner19 from './img/partner/partner-19.png'
 import partner20 from './img/partner/partner-20.png'
 import partner21 from './img/partner/partner-21.png'
 import partner22 from './img/partner/partner-22.png'
+import partner23 from './img/partner/partner-23.png'
+import partner24 from './img/partner/partner-24.png'
+import partner25 from './img/partner/partner-25.png'
+import partner26 from './img/partner/partner-26.png'
 
 import news12 from "../Media/img/news12.png"
 import news14 from "../Media/img/news14.png"
@@ -148,7 +152,7 @@ class Home extends Component {
                 url: 'https://reef.finance/'
             },
             'polkabase': {
-                logo: partner21,
+                logo: partner25,
                 name: 'Polkabase',
                 url: 'https://www.polkabase.com'
             },
@@ -163,7 +167,7 @@ class Home extends Component {
                 url: 'https://www.evolution.land'
             },
             'polkaworld': {
-                logo: partner22,
+                logo: partner26,
                 name: 'Polka World',
                 url: 'https://www.polkaworld.org'
             },
@@ -192,18 +196,38 @@ class Home extends Component {
                 name: 'SSSnodes',
                 url: 'http://sssnodes.com'
             },
-            'digital': {
+            'waterdrip': {
                 logo: partner18,
+                name: 'Waterdrip Capital',
+                url: 'http://waterdrip.io/index_cn.html'
+            },
+            'consensus': {
+                logo: partner19,
+                name: 'Consensus Lab',
+                url: 'http://www.consensus-lab.com/index.aspx'
+            },
+            'bitrise': {
+                logo: partner20,
+                name: 'Bitrise Capital',
+                url: 'http://bitrisevc.com/'
+            },
+            'seven': {
+                logo: partner21,
+                name: 'Seven X',
+                url: 'http://jyjtx.com/'
+            },
+            'digital': {
+                logo: partner22,
                 name: 'Digital Renaissance',
                 url: 'http://drf.ee'
             },
             'ddex': {
-                logo: partner19,
+                logo: partner23,
                 name: 'DDEX',
                 url: 'https://ddex.io'
             },
             'otcmaker': {
-                logo: partner20,
+                logo: partner24,
                 name: 'OTCMAKER',
                 url: 'https://www.otcmaker.com'
             }
@@ -227,10 +251,10 @@ class Home extends Component {
         this.partners = [
             'polkadot', 'parity', 'maker', 'snz', 'hashkey', 'chainlink', 
             'ankr', 'bondly', 'crust', 'reef', 'bihu', 'evolutionland', 
-            'imtoken', 'mathwallet', 'cobowallet', 'polkawallet', 'sssnodes', 'digital', 
-            'ddex', 'otcmaker', 'polkabase', 'polkaworld'
+            'imtoken', 'mathwallet', 'cobowallet', 'polkawallet', 'sssnodes', 'waterdrip',
+            'consensus', 'bitrise', 'seven', 'digital', 'ddex', 'otcmaker', 
+            'polkabase', 'polkaworld'
         ]
-
         this.detectMetaMaskTimer = null;
     }
 
