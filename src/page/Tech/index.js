@@ -236,6 +236,9 @@ class Home extends Component {
                                 <Col xs={1} className={styles.placeholderCol}></Col>
                                 <Col xs={4} className={styles.imgCol}>
                                     <img src={roadmapMobile} alt="roadmap"/>
+                                    <div className={styles.waiting}>
+                                        <img src={roadmapMobile} alt="roadmap"/>
+                                    </div>
                                 </Col>
                                 <Col xs={6} className={styles.nospace}>
                                     <div className={`d-flex ${styles.label}`}>
