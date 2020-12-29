@@ -7,6 +7,9 @@ import MediaQuery from 'react-responsive'
 import archorsComponent from '../../components/anchorsComponent'
 import {withTranslation} from "react-i18next";
 import styles from "./style.module.scss";
+import Fade from 'react-reveal/Fade';
+
+
 // import GradientHeading from "../../components/GradientHeading/GradientHeading";
 import bannerBg from "./img/banner-bg.png"
 import bannerBgM from "./img/banner-bg-m.png"
@@ -201,6 +204,7 @@ class Brand extends Component {
                     <div className={styles.new}>
                         <img className={'hidden-xs'} alt="new-bg" src={new_bg}/>
                         <img className={'hidden-md'} alt="new-bg" src={new_bg_m}/>
+                        <Fade bottom fraction={0.1} duration={1000} distance={"50px"}>
                         <Container className={styles.container}>
                             <Row className={styles.newRow}>
                                 <Col md={12} xs={12}>
@@ -230,10 +234,12 @@ class Brand extends Component {
                                 </Col>
                             </Row>
                         </Container>
+                        </Fade>
                     </div>
                     <div className={styles.technology}>
                         <img className={'hidden-xs'} alt="technology-bg" src={technology_bg}/>
                         <img className={'hidden-md'} alt="technology-bg" src={technology_bg_m}/>
+                        <Fade bottom fraction={0.1} duration={1000} distance={"50px"}>
                         <Container className={styles.container}>
                             <Row>
                                 <Col md={9} xs={12} className={`${styles.content}`}>
@@ -268,10 +274,12 @@ class Brand extends Component {
                                 </Col>
                             </Row>
                         </Container>
+                        </Fade>
                     </div>
                     <div className={styles.education}>
                         <img className={'hidden-xs'} alt="education-bg" src={education_bg}/>
                         <img className={'hidden-md'} alt="education-bg" src={education_bg_m}/>
+                        <Fade bottom fraction={0.1} duration={1000} distance={"50px"}>
                         <Container className={styles.container}>
                             <Row>
                                 <Col md={3} xs={12}>
@@ -327,10 +335,12 @@ class Brand extends Component {
                                 </Col>
                             </Row>
                         </Container>
+                        </Fade>
                     </div>
                 </div>
 
                 <div className={styles.contributors}>
+                    <Fade bottom fraction={0.1} duration={1000} distance={"50px"}>
                     <Container>
                         <Row>
                             {/* <Col xs={0} md={1}></Col> */}
@@ -365,6 +375,7 @@ class Brand extends Component {
                             </Col>
                         </Row>
                     </Container>
+                    </Fade>
                 </div>
 
                 <PageFooter/>

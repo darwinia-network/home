@@ -8,6 +8,8 @@ import { PageFooter } from '../../components/PageFooter'
 import LazyBackground from "../../components/lazyBackground"
 import MediaQuery from 'react-responsive'
 import styles from './style.module.scss'
+import Fade from 'react-reveal/Fade';
+
 // import themeBg from "./img/theme-bg.png"
 // import archBg from "./img/theme-bg.png"
 import relayBg from "./img/relay-bg.png"
@@ -100,6 +102,7 @@ class Home extends Component {
                     </LazyBackground>
                 </MediaQuery>
 
+                <Fade bottom fraction={0.1} duration={1000} distance={"50px"}>
                 <div className={styles.architectureContainer}>
                     <Container>
                         <div className={styles.title}>
@@ -129,7 +132,9 @@ class Home extends Component {
                         </Row>
                     </Container>
                 </div>
+                </Fade>
 
+                <Fade bottom fraction={0.1} duration={1000} distance={"50px"}>
                 <div className={styles.stageContainer}>
                     <Container>
                         <div className={styles.title}>
@@ -273,7 +278,9 @@ class Home extends Component {
                             </div>
                     </Container>
                 </div>
+                </Fade>
 
+                <Fade bottom fraction={0.1} duration={1000} distance={"50px"}>
                 <div className={styles.innovationContainer}>
                     <Container>
                         <div className={styles.title}>
@@ -297,7 +304,9 @@ class Home extends Component {
                         </Row>
                     </Container>
                 </div>
+                </Fade>
 
+                <Fade bottom fraction={0.1} duration={1000} distance={"50px"}>
                 <div className={styles.relayContainer}>
                     <Container>
                         <div className={styles.title}>
@@ -370,7 +379,9 @@ class Home extends Component {
                         </div>
                     </div>
                 </div>
+                </Fade>
 
+                <Fade bottom fraction={0.1} duration={1000} distance={"50px"}>
                 <div className={styles.mmrContainer}>
                     <Container>
                         <div className={styles.title}>
@@ -385,7 +396,9 @@ class Home extends Component {
                         </Row>
                     </Container>
                 </div>
+                </Fade>
 
+                <Fade bottom fraction={0.1} duration={1000} distance={"50px"}>
                 <div className={styles.gameContainer}>
                     <Container>
                         <div className={styles.title}>
@@ -402,7 +415,9 @@ class Home extends Component {
                         </Row>
                     </Container>
                 </div>
+                </Fade>
 
+                <Fade bottom fraction={0.1} duration={1000} distance={"50px"}>
                 <div className={styles.nftContainer}>
                     <Container>
                         <div className={styles.title}>
@@ -423,6 +438,7 @@ class Home extends Component {
                         </div>
                     </Container>
                 </div>
+                </Fade>
 
                 <PageFooter></PageFooter>
             </div>

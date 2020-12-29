@@ -6,6 +6,8 @@ import {PageFooter} from '../../components/PageFooter'
 import archorsComponent from '../../components/anchorsComponent'
 import {withTranslation} from "react-i18next";
 import styles from "./style.module.scss";
+import Fade from 'react-reveal/Fade';
+
 // import GradientHeading from "../../components/GradientHeading/GradientHeading";
 import recom1 from "../Media/img/recom1.png"
 import recom2 from "../Media/img/recom2.png"
@@ -314,6 +316,7 @@ class Brand extends Component {
                                         </Carousel.Item>
                                     </Carousel>
                                 </div>
+                                <Fade bottom fraction={0.1} duration={1000} distance={"50px"}>
                                 <div className={`${styles.section} ${styles.news}`}>
                                     <div className={styles.title}>
                                         <img src={news}  alt="news"/>
@@ -382,6 +385,8 @@ class Brand extends Component {
                                         className={styles.button}>{t('media:view_all')}</Button>
                                     </div>
                                 </div>
+                                </Fade>
+                                <Fade bottom fraction={0.1} duration={1000} distance={"50px"}>
                                 <div className={`${styles.section} ${styles.reports}`}>
                                     <div className={styles.title}>
                                         <img src={reports}  alt="reports"/>
@@ -450,6 +455,8 @@ class Brand extends Component {
                                         className={styles.button}>{t('media:view_all')}</Button>
                                     </div>
                                 </div>
+                                </Fade>
+                                <Fade bottom fraction={0.1} duration={1000} distance={"50px"}>
                                 <div className={`${styles.section} ${styles.events}`}>
                                     <div className={styles.title}>
                                         <img src={events}  alt="events"/>
@@ -504,6 +511,8 @@ class Brand extends Component {
                                         className={styles.button}>{t('media:view_all')}</Button>
                                     </div>
                                 </div>
+                                </Fade>
+                                <Fade bottom fraction={0.1} duration={1000} distance={"50px"}>
                                 <div className={`${styles.section} ${styles.videos}`}>
                                     <div className={styles.title}>
                                         <img src={videoIcon}  alt="videos"/>
@@ -572,6 +581,7 @@ class Brand extends Component {
                                         className={styles.button}>{t('media:view_all')}</Button>
                                     </div>
                                 </div>
+                                </Fade>
                             </Col>
                         </Row>
                     </Container>
