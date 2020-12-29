@@ -128,6 +128,12 @@
       padding-top: 30px;
     }
   }
+  .btn {
+    margin-top: 20px;
+    a {
+      padding: 9px 90px;
+    }
+  }
 }
 
 .inflationContainer {
@@ -156,6 +162,12 @@
     font-weight: bold;
     color: #333333;
     line-height: 18px;
+  }
+  .btn {
+    margin-top: 20px;
+    a {
+      padding: 9px 130px;
+    }
   }
 }
 
@@ -289,10 +301,18 @@
   }
   .stakingContainer {
     margin: 50px 0;
+    .col {
+      margin-bottom: 20px;
+    }
     .chart {
       margin-bottom: 20px;
       div {
         font-size: 16px;
+      }
+    }
+    .btn {
+      a {
+        width: 100%;
       }
     }
   }
@@ -302,6 +322,11 @@
       margin-bottom: 20px;
       div {
         font-size: 16px;
+      }
+    }
+    .btn {
+      a {
+        width: 100%;
       }
     }
   }

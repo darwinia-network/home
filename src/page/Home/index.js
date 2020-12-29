@@ -751,7 +751,7 @@ class Home extends Component {
                                                     <br/>
                                                     {t('home_page:roadmap_2021_q3_2')}
                                                     <br/>
-                                                    <span className={styles.note}>{t('home_page:roadmap_2021_q3_3')}</span>
+                                                    {t('home_page:roadmap_2021_q3_3')}
                                                 </p>
                                             </div>
                                         </Col>
@@ -872,7 +872,7 @@ class Home extends Component {
                                             <br/>
                                             {t('home_page:roadmap_2021_q3_2')}
                                             <br/>
-                                            <span className={styles.note}>{t('home_page:roadmap_2021_q3_3')}</span>
+                                            {t('home_page:roadmap_2021_q3_3')}
                                         </p>
                                     </div>
                                 </Col>
