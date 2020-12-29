@@ -3,7 +3,7 @@
     "home": "Home",
     "tech": "Technology",
     "community": "Community",
-    "economical_model": "Economical Model",
+    "economic_model": "Economic Model",
     "media": "Media",
     "hiring": "We Are Hiring",
     "genepaper": "GenePaper",
@@ -546,7 +546,7 @@
     "read_more_link": "https://docs.darwinia.network/docs/en/dev-home"
   },
   "model": {
-    "economic": "Darwinia Economical Model",
+    "economic": "Darwinia Economic Model",
     "theme": "Internet of Tokens, Connected!",
     "token": "Cross-chain Tokens",
     "how_to_stake": "How to Stake",
