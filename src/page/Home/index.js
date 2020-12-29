@@ -24,7 +24,7 @@ import roadmapSplit from "./img/roadmap/roadmap-split.png"
 
 import styles from './style.module.scss'
 import architecture from './img/architecture.png'
-import architecture_en from './img/architecture-en.png'
+import architecture_en from './img/architecture.png'
 import architecture_mobile from './img/architecture-mobile.png'
 import architecture_mobile_en from './img/architecture-mobile.png'
 // import architecture_solo from './img/architecture-solo.png'
