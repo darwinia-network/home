@@ -151,16 +151,24 @@ class Home extends Component {
                         </div>
                         <p>{t('model:staking_desc')}</p>
                         <Row>
-                            <Col xs={12} md={6}>
+                            <Col xs={12} md={6} className={styles.col}>
                                 <div className={styles.chart}>
                                     <div>{t('model:staking_1')}</div>
                                     <img src={staking1} alt="staking"/>
+                                </div>
+                                <div className={`text-center ${styles.btn}`}>
+                                    <Button variant="dark" target="_blank"  href={t("model:read_more_link_1")}
+                                            className={styles.button}>{t('model:read_more')}</Button>
                                 </div>
                             </Col>
                             <Col xs={12} md={6}>
                                 <div className={styles.chart}>
                                     <div>{t('model:staking_2')}</div>
                                     <img src={staking2} alt="staking"/>
+                                </div>
+                                <div className={`text-center ${styles.btn}`}>
+                                    <Button variant="dark" target="_blank"  href={t("model:read_more_link_2")}
+                                            className={styles.button}>{t('model:read_more')}</Button>
                                 </div>
                             </Col>
                         </Row>
@@ -191,6 +199,10 @@ class Home extends Component {
                         </Row>
                         <div className={styles.chartDesc}>
                             {t('model:inflation_desc')}
+                        </div>
+                        <div className={`text-center ${styles.btn}`}>
+                            <Button variant="dark" target="_blank"  href={t("model:read_more_link_3")}
+                                    className={styles.button}>{t('model:read_more')}</Button>
                         </div>
                     </Container>
                 </div>
