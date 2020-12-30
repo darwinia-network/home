@@ -56,16 +56,24 @@ import person_14 from "./img/person_14.png"
 import person_15 from "./img/person_15.png"
 import person_16 from "./img/person_16.png"
 import person_17 from "./img/person_17.png"
+import person_18 from "./img/person_18.png"
+import person_more from "./img/person_more.png"
 
 class Brand extends Component {
     constructor(props, context) {
         super(props, context);
 
-        this.state = {}
+        this.state = {
+            showMore: false
+        }
     }
 
     componentDidMount() {
         archorsComponent()
+    }
+
+    showMoreAvatar() {
+        this.setState({showMore: true})
     }
 
     renderTooltip = props => {
@@ -101,6 +109,7 @@ class Brand extends Component {
 
     render() {
         const {t} = this.props
+        const {showMore} = this.state
         return (
             <div className={`${styles.community}`}>
                 <PageHeader transparent={true}/>
@@ -348,25 +357,54 @@ class Brand extends Component {
                                 <h1 className={styles.title}>
                                     {t('community:contributors')}
                                 </h1>
-                                <div className={`${styles.persons}`}>
-                                    <img alt="person" src={person_1}/>
-                                    <img alt="person" src={person_2}/>
-                                    <img alt="person" src={person_3}/>
-                                    <img alt="person" src={person_4}/>
-                                    <img alt="person" src={person_5}/>
-                                    <img alt="person" src={person_6}/>
-                                    <img alt="person" src={person_7}/>
-                                    <img alt="person" src={person_8}/>
-                                    <img alt="person" src={person_9}/>
-                                    <img alt="person" src={person_10}/>
-                                    <img alt="person" src={person_11}/>
-                                    <img alt="person" src={person_12}/>
-                                    <img alt="person" src={person_13}/>
-                                    <img alt="person" src={person_14}/>
-                                    <img alt="person" src={person_15}/>
-                                    <img alt="person" src={person_16}/>
-                                    <img alt="person" src={person_17}/>
-                                </div>
+                                <MediaQuery minDeviceWidth={768}>
+                                    <div className={`hidden-xs ${styles.persons}`}>
+                                        <img alt="person" src={person_1}/>
+                                        <img alt="person" src={person_2}/>
+                                        <img alt="person" src={person_3}/>
+                                        <img alt="person" src={person_4}/>
+                                        <img alt="person" src={person_5}/>
+                                        <img alt="person" src={person_6}/>
+                                        <img alt="person" src={person_7}/>
+                                        <img alt="person" src={person_8}/>
+                                        <img alt="person" src={person_9}/>
+                                        <img alt="person" src={person_10}/>
+                                        <img alt="person" src={person_11}/>
+                                        <img alt="person" src={person_12}/>
+                                        <img alt="person" src={person_13}/>
+                                        {showMore ? (<>
+                                        <img alt="person" src={person_14}/>
+                                        <img alt="person" src={person_15}/>
+                                        <img alt="person" src={person_16}/>
+                                        <img alt="person" src={person_17}/>
+                                        <img alt="person" src={person_18}/>
+                                        </>) : <img alt="person" className={`${styles.personMore}`} src={person_more} onClick={() => this.showMoreAvatar()}/>}
+                                    </div>
+                                </MediaQuery>
+                                <MediaQuery maxDeviceWidth={767.98}>
+                                    <div className={`hidden-md ${styles.persons}`}>
+                                        <img alt="person" src={person_1}/>
+                                        <img alt="person" src={person_2}/>
+                                        <img alt="person" src={person_3}/>
+                                        <img alt="person" src={person_4}/>
+                                        <img alt="person" src={person_5}/>
+                                        <img alt="person" src={person_6}/>
+                                        <img alt="person" src={person_7}/>
+                                        <img alt="person" src={person_8}/>
+                                        {showMore ? (<>
+                                        <img alt="person" src={person_9}/>
+                                        <img alt="person" src={person_10}/>
+                                        <img alt="person" src={person_11}/>
+                                        <img alt="person" src={person_12}/>
+                                        <img alt="person" src={person_13}/>
+                                        <img alt="person" src={person_14}/>
+                                        <img alt="person" src={person_15}/>
+                                        <img alt="person" src={person_16}/>
+                                        <img alt="person" src={person_17}/>
+                                        <img alt="person" src={person_18}/>
+                                        </>) : <img alt="person" className={`${styles.personMore}`} src={person_more} onClick={() => this.showMoreAvatar()}/>}
+                                    </div>
+                                </MediaQuery>
                                 <p>
                                     {t('community:invite')}
                                 </p>
