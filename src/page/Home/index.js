@@ -637,10 +637,10 @@ class Home extends Component {
                                 </div>
                             </Col>
                         </Row>
-                        {/* <div>
-                            <Button variant="dark" target="_blank" href={t('home_page:economic_url')}
-                                    className={styles.button}>{t('home_page:economic_btn')}</Button>
-                        </div> */}
+                        <div>
+                            <Button variant="transparent" href="/economic_model"
+                                    className={`${styles.button} ${styles.colorBtn}`}>{t('home_page:read_more')}</Button>
+                        </div>
                     </Container>
                 </div>
                 </Fade>
