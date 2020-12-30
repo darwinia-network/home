@@ -249,6 +249,14 @@
       }
     }
   }
+  .colorBtn {
+    margin-top: 50px;
+    padding: 12px 62px;
+    border-radius: 0;
+    border: none;
+    color: #fff;
+    background: linear-gradient(315deg, #FE3876 0%, #7C30DD 71%, #3A30DD 100%);
+  }
 }
 
 .partnersContainer {
@@ -680,6 +688,9 @@
       margin-top: 50px;
       p {
         // margin-bottom: 22px;
+        &:first-child {
+          margin-bottom: 0px;
+        }
         &:last-child {
           margin-bottom: 0;
         }
@@ -927,6 +938,10 @@
         }
       }
     }
+    .colorBtn {
+      width: 100%;
+      margin: 0;
+    }
   }
   .applicationContainer {
     padding: 50px 0 0;
@@ -1009,7 +1024,7 @@
         font-size: 14px;
       }
       .h6_2018 {
-        width: 70px;
+        width: 90px;
       }
       .roadmap2019 {
         margin-top: 36px;
