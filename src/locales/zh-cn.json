@@ -245,7 +245,7 @@
     "new_intro": "欢迎来到达尔文社区，请先从Darwinia Wiki 和FAQ开启你的达尔文之旅吧！",
     "grant_program": "资助计划",
     "grant_intro": "为达尔文生态的优质项目及相关的理论研究项目提供资助。",
-    "grant_link": "https://docs.darwinia.network/docs/en/dev-bounty#grant-program",
+    "grant_link": "https://docs.darwinia.network/docs/zh-CN/dev-bounty",
     "bounty_program": "悬赏计划",
     "bounty_intro": "邀请社区开发者贡献代码。",
     "technology": "技术",
@@ -543,7 +543,7 @@
     "game": "乐观博弈机制",
     "game_desc": "通过概率抽样极大提高攻击者难度，以及通过乐观博弈机制使得最新块头能够最快的得到确认。",
     "read_more": "了解更多",
-    "read_more_link": "https://docs.darwinia.network/docs/en/dev-home"
+    "read_more_link": "https://docs.darwinia.network/docs/zh-CN/dev-home"
   },
   "model": {
     "economic": "达尔文经济模型",
