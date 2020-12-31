@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="28px" height="38px" viewBox="0 0 28 38" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 63.1 (92452) - https://sketch.com -->
+    <title>路径</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="100%" y1="77.1468144%" x2="12.8624356%" y2="14.0112303%" id="linearGradient-1">
+            <stop stop-color="#FE3876" offset="0%"></stop>
+            <stop stop-color="#7C30DD" offset="71.4447846%"></stop>
+            <stop stop-color="#3A30DD" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Home" transform="translate(-750.000000, -1844.000000)" fill="url(#linearGradient-1)">
+            <path d="M745.000841,1877 L745,1867.61222 C745.003475,1858.15525 752.128347,1850.1785 761.624578,1849 L766.374581,1849.00083 C775.87082,1850.1789 782.996065,1858.15528 783,1867.61222 L783,1876.99919 L745.000841,1877 Z" id="路径" transform="translate(764.000000, 1863.000000) rotate(-90.000000) translate(-764.000000, -1863.000000) "></path>
+        </g>
+    </g>
+</svg>

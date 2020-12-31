@@ -4,7 +4,10 @@
 }
 
 .extend-link:hover{
-  color: #0056b3;
+  // color: #0056b3;
   cursor: pointer;
   text-decoration: none;
+}
+@function fontSize($size) {
+  @return calc(#{$size} + var(--font-base));
 }

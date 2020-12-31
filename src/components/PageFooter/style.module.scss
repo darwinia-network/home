@@ -6,7 +6,7 @@
 }
 
 .navFooter {
-  background: #000000;
+  background: #201550;
   position: relative;
   color: #7B70AE;
   padding: 24px;
@@ -19,6 +19,40 @@
 
 .shareLogo {
   cursor: pointer;
+}
+
+.subscribe {
+  width: 30%;
+
+  input {
+    border-radius: 0;
+    border: 1px solid #3E30DD;
+    background-clip: initial;
+    font-weight: bold;
+    font-size: 14px;
+    &::placeholder {
+      color: #6330DD;
+      opacity: 0.3;
+    }
+  }
+
+  button {
+    box-shadow: none !important;
+    line-height: initial;
+    border: 0;
+    border-radius: 0;
+    padding-left: 20px;
+    padding-right: 20px;
+    font-size: 14px;
+    color: #fff;
+    font-weight: bold;
+    background: linear-gradient(315deg, rgba(254, 56, 118, 1) 0%, rgba(124, 48, 221, 1) 71%, rgba(58, 48, 221, 1) 100%);
+  }
+}
+
+.subscribeTip {
+  font-size: 16px !important;
+  // color: #fff !important;
 }
 
 .wxContainer {
@@ -49,27 +83,34 @@
 
 .map{
   background: #201550;
-  padding-top: 50px;
-  padding-bottom: 50px;
+  padding-top: 70px;
   width: 100%;
+  small {
+    margin-top: 50px;
+  }
+  .line {
+    margin-top: 40px;
+    height: 2px;
+    background-color: #34295f;
+  }
   h1{
-    font-size: 14px;
+    font-size: 18px;
     font-weight: bold;
     color: #fff;
-    margin-bottom: 32px;
+    margin-bottom: 26px;
+    text-transform: uppercase;
   }
   p{
     color: #7B70AE;
   }
   a{
     color: #7B70AE;
-    font-size: 14px;
-    font-weight: bold;
+    font-size: fontSize(16px);
   }
   .footerIcon{
     width: 100%;
-    max-width: 180px;
-    margin-bottom: 37px;
+    max-width: 220px;
+    margin-bottom: 20px;
   }
   .shareLogo{
     &>div{
@@ -121,6 +162,8 @@
 
     img {
       margin-left: 0;
+      width: 28px;
+      height: 28px;
     }
   }
 }

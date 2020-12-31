@@ -1,7 +1,8 @@
 import React, {Component} from "react";
-import {Container, Row, Col, OverlayTrigger, Popover} from 'react-bootstrap'
+import {Container, Row, Col, OverlayTrigger, Popover, InputGroup, FormControl, Button, Form} from 'react-bootstrap'
 import {withTranslation} from "react-i18next";
 import styles from './style.module.scss'
+import i18n from '../../locales/i18n';
 
 import share1 from './img/share-1.png'
 import share2 from './img/share-2.png'
@@ -14,8 +15,38 @@ import share8 from './img/share-8.png'
 import dwSlideIcon from './img/slide-logo.png'
 
 import wx from './img/wx.jpg'
+import axios from 'axios'
 
 class PageFooter extends Component {
+    constructor(props, context) {
+        super(props, context);
+
+        this.state = {
+            email: '',
+            info: '',
+        }
+    }
+
+    subscribe = (text) => {
+        axios.post('https://api.darwinia.network/api/subscribe?email=' + text)
+            .then((response) => {
+                console.log(response);
+                if (response.data.code === 0) {
+                    this.setState({
+                        info: this.props.t('home_page:subscribe_tip')
+                    })
+                }
+            })
+            .catch((error) => {
+                // console.log(error);
+            });
+    }
+
+    changeTextValue = (k, e) => {
+        this.setState({
+            [k]: e.target.value
+        })
+    }
 
     goto = (type, e) => {
         switch (type) {
@@ -39,7 +70,7 @@ class PageFooter extends Component {
                 return;
             case 'wx':
                 // window.open('https://medium.com/@DarwiniaNetwork');
-                console.log(e.pageX)
+                // console.log(e.pageX)
                 return;
             case 'email':
                 window.open('mailto:hello@darwinia.network');
@@ -52,86 +83,143 @@ class PageFooter extends Component {
     renderTooltip = props => {
         const {t} = this.props
         return <Popover {...props} className={styles.wxContainer}>
+            <div className="popover-body">
             <img alt="wx" src={wx}/>
             <p>{t("footer:scan")}</p>
-            <p>{t("footer:follow")}</p>
+            <p>{t("footer:follow")}</p></div>
         </Popover>
     }
 
     renderMap = () => {
-        const {t, i18n} = this.props
+        const { email, info } = this.state
+        const {t} = this.props
 
         return (
             <div className={`${styles.map} d-none d-md-block d-lg-block`}>
-                <Container>
-                    <Row className={`d-flex justify-content-center`}>
-                        <Col xs={6} md={4} lg={2}>
-                            <h1>{t('footer:general')}</h1>
-                            {/* <p><a target="_blank" href={t('home_page:economic_url')}>{t('footer:general_title_1')}</a></p> */}
-                            <p><a href="/faq">{t('footer:general_title_2')}</a></p>
-                            <p><a target="_blank" rel="noopener noreferrer" href="https://docs.darwinia.network">{t('header:docs')}</a></p>
-                            <p><a target="_blank" rel="noopener noreferrer" href="https://www.evolution.land/land/1/bank/buy-ring">{t('header:gringotts')}</a></p>
-                            <p><a target="_blank" rel="noopener noreferrer" href="mailto:hello@darwinia.network">{t('footer:general_title_3')}</a></p>
+                <Container className={styles.mapContainer}>
+                    <Row>
+                        <Col xs={12} md={12} lg={12}>
+                            <img alt="dwSlideIcon" className={styles.footerIcon} src={dwSlideIcon}/>
                         </Col>
-                        <Col xs={6} md={4} lg={2}>
+                        <Col>
+                        <InputGroup className={`mb-3 ${styles.subscribe} hidden-xs`}>
+                        <FormControl
+                            value={email}
+                            onChange={(e) => {
+                                this.changeTextValue('email', e)
+                            }}
+                            placeholder={t('home_page:placeholder')}
+                            aria-label={t('home_page:placeholder')}
+                            aria-describedby={t('home_page:placeholder')}
+                        />
+                        <InputGroup.Append>
+                            <Button variant="outline-secondary" onClick={() => {
+                                this.subscribe(email)
+                            }}>{t('home_page:subscribe_btn')}</Button>
+                        </InputGroup.Append>
+
+                        </InputGroup>
+                        <Form.Text className={`text-muted ${styles.subscribeTip} hidden-xs`}
+                            dangerouslySetInnerHTML={{ __html: info || '&nbsp' }}>
+
+                        </Form.Text>
+                        <Form className={`${styles.subscribe} hidden-md`}>
+                                    <FormControl
+                                        value={email}
+                                        type={'email'}
+                                        onChange={(e) => {
+                                            this.changeTextValue('email', e)
+                                        }}
+                                        placeholder={t('home_page:placeholder')}
+                                        aria-label={t('home_page:placeholder')}
+                                        aria-describedby={t('home_page:placeholder')}
+                                    />
+
+                                    <Button block onClick={() => {
+                                        this.subscribe(email)
+                                    }}>
+                                        {t('home_page:subscribe_btn')}
+                                    </Button>
+                                    <Form.Text className={`text-muted ${styles.subscribeTip}`}
+                                        dangerouslySetInnerHTML={{ __html: info || '&nbsp' }} />
+
+                                </Form>
+                        </Col>
+                    </Row>
+                    <Row className={`d-flex justify-content-between`}>
+                        <Col xs={6} md={4} lg={3}>
+                            <h1>{t('footer:general')}</h1>
+                            <p><a href="/#top">{t('footer:general_title_1')}</a></p>
+                            <p><a target="_blank" rel="noopener noreferrer" href="https://docs.darwinia.network/">{t('footer:general_title_2')}</a></p>
+                            <p><a target="_blank" rel="noopener noreferrer" href="https://www.itering.io/about">{t('footer:general_title_3')}</a></p>
+                            <p><a target="_blank" rel="noopener noreferrer" href="mailto:hello@darwinia.network">{t('footer:general_title_4')}</a></p>
+                            <p><a target="_blank" rel="noopener noreferrer" href="/brand">{t('footer:general_title_5')}</a></p>
+                        </Col>
+                        <Col xs={6} md={4} lg={3}>
                             <h1>{t('footer:technology')}</h1>
                             <p><a target="_blank" rel="noopener noreferrer" href={t('header:testnet_url')}>{t('footer:technology_title_1')}</a></p>
-                            <p><a target="_blank" rel="noopener noreferrer" href="https://telemetry.polkadot.io/#list/Darwinia%20POC-1%20Testnet">{t('footer:technology_title_2')}</a></p>
                             {i18n.language.indexOf('en') > -1 ?
-                                <p><a target="_blank" rel="noopener noreferrer" href="https://evolution.l2me.com/darwinia/Darwinia_Genepaper_EN.pdf">{t('footer:technology_title_3')}</a></p>
+                                <p><a target="_blank" rel="noopener noreferrer" href="/static/paper/Darwinia_Genepaper_EN.pdf">{t('footer:technology_title_2')}</a></p>
                                 :
-                                <p><a target="_blank" rel="noopener noreferrer" href="https://evolution.l2me.com/darwinia/Darwinia_Genepaper_CN.pdf">{t('footer:technology_title_3')}</a></p>
+                                <p><a target="_blank" rel="noopener noreferrer" href="/static/paper/Darwinia_Genepaper_CN.pdf">{t('footer:technology_title_2')}</a></p>
                             }
+                            <p><a target="_blank" rel="noopener noreferrer" href="https://github.com/darwinia-network/darwinia">{t('footer:technology_title_3')}</a></p>
+                            <p><a target="_blank" rel="noopener noreferrer" href="https://telemetry.polkadot.io/#list/Polkadot">{t('footer:technology_title_4')}</a></p>
                         </Col>
-                        <Col xs={6} md={4} lg={2}>
+                        <Col xs={6} md={4} lg={3}>
                             <h1>{t('footer:community')}</h1>
-                            <p><a target="_blank" rel="noopener noreferrer" href="https://rfcs.darwinia.network">{t('footer:community_title_1')}</a></p>
-                            <p><a target="_blank" rel="noopener noreferrer" href="https://github.com/darwinia-network">{t('footer:community_title_2')}</a></p>
-                            <p><a target="_blank" rel="noopener noreferrer" href="https://medium.com/@DarwiniaNetwork">{t('footer:community_title_3')}</a></p>
-                            <p><a target="_blank" rel="noopener noreferrer" href="https://t.me/DarwiniaNetwork">{t('footer:community_title_4')}</a></p>
-                            <p><a target="_blank" rel="noopener noreferrer" href="https://www.reddit.com/r/DarwiniaFans/">{t('footer:community_title_5')}</a></p>
+                            <p><a target="_blank" rel="noopener noreferrer" href={t('footer:rfcs_link')}>{t('footer:community_title_1')}</a></p>
+                            <p><a target="_blank" rel="noopener noreferrer" href="/ambassador">{t('footer:community_title_2')}</a></p>
+                            <p><a target="_blank" rel="noopener noreferrer" href="/community">{t('footer:community_title_3')}</a></p>
+                            <p><a target="_blank" rel="noopener noreferrer" href={t('footer:faq_link')}>{t('footer:community_title_4')}</a></p>
                         </Col>
                         <Col xs={6} md={4} lg={2}>
-                            <img alt="dwSlideIcon" className={styles.footerIcon} src={dwSlideIcon}/>
+                            <h1>{t('footer:contact')}</h1>
                             <Row className={styles.mdContent}>
                                 <Col md={{order: 3}}
                                      className={`text-right ${styles.shareLogo}`}>
                                     <div>
-                                        <img alt="Medium" onClick={() => {
-                                            this.goto('medium')
-                                        }} src={share1}/>
-                                        <img alt="telegram" onClick={() => {
-                                            this.goto('tg')
-                                        }} src={share2}/>
-                                        <img alt="twitter" onClick={() => {
-                                            this.goto('twitter')
-                                        }} src={share3}/>
-                                        <img alt="github" onClick={() => {
-                                            this.goto('github')
-                                        }} src={share4}/>
-                                    </div>
-                                    <div>
-                                        <img alt="bihu" onClick={() => {
-                                            this.goto('bihu')
-                                        }} src={share5}/>
-                                        <img alt="weibo" onClick={() => {
-                                            this.goto('weibo')
-                                        }} src={share6}/>
+                                        <img alt="email" onClick={() => {
+                                            this.goto('email')
+                                        }} src={share8}/>
                                         <OverlayTrigger
                                             placement="top-end"
-                                            delay={{show: 100, hide: 1000}}
+                                            delay={{show: 100, hide: 100}}
                                             overlay={this.renderTooltip}
                                         >
                                             <img alt="wechat" onClick={(e) => {
                                                 this.goto('wx', e)
                                             }} src={share7}/>
                                         </OverlayTrigger>
-                                        <img alt="email" onClick={() => {
-                                            this.goto('email')
-                                        }} src={share8}/>
+                                        <img alt="weibo" onClick={() => {
+                                            this.goto('weibo')
+                                        }} src={share6}/>
+                                        <img alt="bihu" onClick={() => {
+                                            this.goto('bihu')
+                                        }} src={share5}/>
+                                    </div>
+                                    <div>
+                                        <img alt="github" onClick={() => {
+                                            this.goto('github')
+                                        }} src={share4}/>
+                                        <img alt="twitter" onClick={() => {
+                                            this.goto('twitter')
+                                        }} src={share3}/>
+                                        <img alt="telegram" onClick={() => {
+                                            this.goto('tg')
+                                        }} src={share2}/>
+                                        <img alt="Medium" onClick={() => {
+                                            this.goto('medium')
+                                        }} src={share1}/>
                                     </div>
                                 </Col>
                             </Row>
+                        </Col>
+                        <Col xs={0} md={0} lg={1}></Col>
+                    </Row>
+                    <Row>
+                        <Col>
+                            <div className={styles.line}></div>
                         </Col>
                     </Row>
                 </Container>
@@ -140,50 +228,72 @@ class PageFooter extends Component {
     }
 
     render() {
+        const { t } = this.props
         return (
             <>
                 {this.renderMap()}
                 <div className={styles.navFooter}>
                     <Container>
                         <Row className={styles.mdContent}>
-                            <Col className="text-center">
-                                &#169;2019-2020 darwinia.network
+                            <Col className={`d-flex justify-content-between`}>
+                                <div>
+                                {t('footer:grant')}
+                                </div>
+                                <div>
+                                {t('footer:copyright')}
+                                </div>
+                                <div>
+                                {t('footer:support')}
+                                </div>
                             </Col>
                         </Row>
 
                         <Row className={styles.xsContent}>
                             <Col className={`text-center  ${styles.shareLogo}`}>
                                 <div className={styles.logoContent}>
-                                    <img alt="Medium" onClick={() => {
-                                        this.goto('medium')
-                                    }} src={share1}/>
-                                    <img alt="telegram" onClick={() => {
-                                        this.goto('tg')
-                                    }} src={share2}/>
-                                    <img alt="twitter" onClick={() => {
-                                        this.goto('twitter')
-                                    }} src={share3}/>
-                                    <img alt="github" onClick={() => {
-                                        this.goto('github')
-                                    }} src={share4}/>
-                                </div>
-                                <div className={styles.logoContent}>
-                                    <img alt="bihu" onClick={() => {
-                                        this.goto('bihu')
-                                    }} src={share5}/>
-                                    <img alt="weibo" onClick={() => {
-                                        this.goto('weibo')
-                                    }} src={share6}/>
-                                    <img alt="wechat" onClick={() => {
-                                        this.goto('wx')
-                                    }} src={share7}/>
                                     <img alt="email" onClick={() => {
                                         this.goto('email')
                                     }} src={share8}/>
+                                    <OverlayTrigger
+                                        placement="top-end"
+                                        delay={{show: 100, hide: 1000}}
+                                        overlay={this.renderTooltip}
+                                    >
+                                        <img alt="wechat" onClick={(e) => {
+                                            this.goto('wx', e)
+                                        }} src={share7}/>
+                                    </OverlayTrigger>
+                                    <img alt="weibo" onClick={() => {
+                                        this.goto('weibo')
+                                    }} src={share6}/>
+                                    <img alt="bihu" onClick={() => {
+                                        this.goto('bihu')
+                                    }} src={share5}/>
+                                    
+                                    
+                                    
+                                    
+                                </div>
+                                <div className={styles.logoContent}>
+                                <img alt="github" onClick={() => {
+                                        this.goto('github')
+                                    }} src={share4}/>
+                                    <img alt="twitter" onClick={() => {
+                                        this.goto('twitter')
+                                    }} src={share3}/>
+                                    <img alt="telegram" onClick={() => {
+                                        this.goto('tg')
+                                    }} src={share2}/>
+                                    <img alt="Medium" onClick={() => {
+                                        this.goto('medium')
+                                    }} src={share1}/>
+                                    
+                                    
+                                    
                                 </div>
                             </Col>
                             <Col className={`text-center ${styles.copyright}`}>
-                                &#169;2019-2020 darwinia.network
+                            {t('footer:copyright')}
                             </Col>
                         </Row>
 
