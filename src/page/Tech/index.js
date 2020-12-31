@@ -14,6 +14,7 @@ import Fade from 'react-reveal/Fade';
 // import archBg from "./img/theme-bg.png"
 import relayBg from "./img/relay-bg.png"
 import relayBgM from "./img/relay-bg-m.png"
+import bridgeBg from "./img/bridge-bg.png"
 import mmrBg from "./img/mmr-bg.png"
 import mmrBgM from "./img/mmr-bg-m.png"
 import inno1 from "./img/innovation-1.png"
@@ -106,7 +107,7 @@ class Home extends Component {
                 <div className={styles.architectureContainer}>
                     <Container>
                         <div className={styles.title}>
-                            <h1 className={`reveal-h1 ${styles.fontH1} ${styles.gradientText}`}>{t('tech:architecture')}</h1>
+                            <h1 className={`${styles.fontH1} ${styles.gradientText}`}>{t('tech:architecture')}</h1>
                         </div>
                         <Row>
                             <Col xs={12}>
@@ -138,7 +139,7 @@ class Home extends Component {
                 <div className={styles.stageContainer}>
                     <Container>
                         <div className={styles.title}>
-                            <h1 className={`reveal-h1 ${styles.fontH1} ${styles.gradientText}`}>{t('tech:mainnet_stage')}</h1>
+                            <h1 className={`${styles.fontH1} ${styles.gradientText}`}>{t('tech:mainnet_stage')}</h1>
                         </div>
                         <Row className={'hidden-xs'}>
                             <Col xs={12}>
@@ -292,17 +293,24 @@ class Home extends Component {
                         <Row>
                             <Col xs={12}>
                                 <p>{t('tech:innovation_desc')}</p>
-                                <h6 className={styles.generalGradientText}>{t('tech:innovation_transfer')}</h6>
                             </Col>
                         </Row>
-                        <Row className={styles.innoRow}>
-                            <Col md={6} xs={12} className={styles.innoCol1}>
-                                <img src={inno1} alt="darwinia to ethereum"/>
-                                <p>{t('tech:innovation_transfer_1')}</p>
-                            </Col>
-                            <Col md={6} xs={12}>
-                                <img src={inno2} alt="ethereum to darwinia"/>
-                                <p>{t('tech:innovation_transfer_2')}</p>
+                    </Container>
+                </div>
+                </Fade>
+
+                <Fade bottom fraction={0.1} duration={1000} distance={"50px"}>
+                <div className={styles.bridgeContainer}>
+                    <Container>
+                        <div className={styles.title}>
+                            <h2 className={`${styles.gradientText}`}>{t('tech:bridge')}</h2>
+                            <p>{t('tech:bridge_desc')}</p>
+                        </div>
+                        <Row>
+                            <Col xs={12}>
+                                <div className={styles.section}>
+                                    <img src={bridgeBg} alt="bridge"/>
+                                </div>
                             </Col>
                         </Row>
                     </Container>
@@ -313,7 +321,7 @@ class Home extends Component {
                 <div className={styles.relayContainer}>
                     <Container>
                         <div className={styles.title}>
-                            <h1 className={`reveal-h1 ${styles.fontH1} ${styles.gradientText}`}>{t('tech:relay')}</h1>
+                            <h2 className={`${styles.gradientText}`}>{t('tech:relay')}</h2>
                         </div>
                         <Row>
                             <Col xs={12}>
@@ -388,7 +396,7 @@ class Home extends Component {
                 <div className={styles.mmrContainer}>
                     <Container>
                         <div className={styles.title}>
-                            <h1 className={`${styles.fontH1} ${styles.gradientText}`}>{t('tech:mmr')}</h1>
+                            <h2 className={`${styles.gradientText}`}>{t('tech:mmr')}</h2>
                         </div>
                         <Row>
                             <Col xs={12}>
@@ -405,7 +413,7 @@ class Home extends Component {
                 <div className={styles.gameContainer}>
                     <Container>
                         <div className={styles.title}>
-                            <h1 className={`reveal-h1 ${styles.fontH1} ${styles.gradientText}`}>{t('tech:game')}</h1>
+                            <h2 className={`${styles.gradientText}`}>{t('tech:game')}</h2>
                         </div>
                         <Row>
                             <Col xs={12}>
@@ -424,7 +432,7 @@ class Home extends Component {
                 <div className={styles.nftContainer}>
                     <Container>
                         <div className={styles.title}>
-                            <h1 className={`reveal-h1 ${styles.fontH1} ${styles.gradientText}`}>{t('tech:nft')}</h1>
+                            <h2 className={`${styles.gradientText}`}>{t('tech:nft')}</h2>
                         </div>
                         <Row>
                             <Col xs={12}>

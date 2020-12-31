@@ -5,6 +5,13 @@
     display: inline-block;
     margin-bottom: 30px;
   }
+  h2 {
+    display: inline-block;
+    font-weight: 400;
+    font-size: 30px;
+    margin-bottom: 20px;
+    text-transform: none;
+  }
   p {
     line-height: 25px;
     margin-bottom: 30px;
@@ -319,7 +326,7 @@
 }
 
 .innovationContainer {
-  margin: 100px 0 100px;
+  margin: 100px 0 50px;
   img {
     width: 100%;
     margin-bottom: 20px;
@@ -335,8 +342,21 @@
   }
 }
 
+.bridgeContainer {
+  margin: 50px 0;
+  .section {
+    background: #F9FAFC;
+    padding: 20px 130px;
+    display: flex;
+    align-items: center;
+  }
+  img {
+    width: 100%;
+  }
+}
+
 .relayContainer {
-  margin: 100px 0 100px;
+  margin: 50px 0;
   .relaySection {
     position: relative;
   }
@@ -386,14 +406,14 @@
 }
 
 .mmrContainer {
-  margin: 100px 0 100px;
+  margin: 50px 0;
   img {
     width: 100%;
   }
 }
 
 .gameContainer {
-  margin: 100px 0 100px;
+  margin: 50px 0;
   .section {
     background: #F9FAFC;
     padding: 30px 85px 30px 60px;
@@ -407,13 +427,13 @@
 }
 
 .nftContainer {
-  margin: 100px 0 100px;
+  margin: 50px 0;
   .section {
     background: #F9FAFC;
     padding: 30px 85px 30px 60px;
     display: flex;
     align-items: center;
-    margin-bottom: 100px;
+    margin-bottom: 50px;
   }
   img {
     width: 50%;
@@ -471,6 +491,11 @@
     }
     p {
       line-height: 24px;
+      margin-bottom: 10px;
+    }
+    h2 {
+      font-size: 16px;
+      margin-bottom: 10px;
     }
   }
   .themeContainer {
@@ -507,7 +532,9 @@
   }
   .architectureContainer {
     margin: 50px 0;
-
+    p {
+      margin-bottom: 20px;
+    }
   }
   .stageContainer {
     margin: 50px 0;
@@ -608,8 +635,22 @@
       margin-bottom: 20px;
     }
   }
+  .bridgeContainer {
+    margin: 40px 0;
+    .title {
+      text-align: left;
+    }
+    .section {
+      padding: 4px 30px;
+      display: flex;
+      flex-direction: column;
+    }
+  }
   .relayContainer {
     margin: 40px 0;
+    .title {
+      text-align: left;
+    }
     h1 {
       margin-bottom: 15px;
     }
@@ -638,10 +679,16 @@
     }
   }
   .mmrContainer {
-    margin: 50px 0;
+    margin: 40px 0;
+    .title {
+      text-align: left;
+    }
   }
   .gameContainer {
-    margin: 50px 0;
+    margin: 40px 0;
+    .title {
+      text-align: left;
+    }
     .section {
       padding: 0;
       display: flex;
@@ -659,7 +706,10 @@
     }
   }
   .nftContainer {
-    margin: 50px 0;
+    margin: 40px 0;
+    .title {
+      text-align: left;
+    }
     .section {
       background: initial;
       flex-direction: column;
