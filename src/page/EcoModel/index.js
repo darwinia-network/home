@@ -26,16 +26,55 @@ import bannerBg from "./img/banner-bg.png"
 import bannerBgM from "./img/banner-bg-m.png"
 import archorsComponent from '../../components/anchorsComponent'
 import { withTranslation } from "react-i18next";
+import axios from 'axios'
 // import i18n from '../../locales/i18n';
 
 class Home extends Component {
     constructor(props) {
         super(props);
         this.myRef = React.createRef();
+        this.state = {
+            ring: '',
+            kton: ''
+        }
       }
 
     componentDidMount() {
         archorsComponent();
+        this.getTokenDetail();
+    }
+
+    getTokenDetail = (text) => {
+        axios.get('https://api.darwinia.network/supply/kton')
+            .then((response) => {
+                if (response.data.code === 0) {
+                    let data = response.data.data;
+                    this.setState({
+                        kton: {
+                            circulatingSupply: parseInt(data.circulatingSupply).toLocaleString("en-US"),
+                            totalSupply: parseInt(data.totalSupply).toLocaleString("en-US")
+                        }
+                    })
+                }
+            })
+            .catch((error) => {
+                // console.log(error);
+            });
+        axios.get('https://api.darwinia.network/supply/ring')
+            .then((response) => {
+                if (response.data.code === 0) {
+                    let data = response.data.data;
+                    this.setState({
+                        ring: {
+                            circulatingSupply: parseInt(data.circulatingSupply).toLocaleString("en-US"),
+                            totalSupply: parseInt(data.totalSupply).toLocaleString("en-US")
+                        }
+                    })
+                }
+            })
+            .catch((error) => {
+                // console.log(error);
+            });
     }
 
     renderContainer() {
@@ -68,6 +107,7 @@ class Home extends Component {
 
     render() {
         const { t } = this.props
+        const { ring, kton} = this.state
         return (
             <div className={styles.economic}>
                 <PageHeader href="#top" transparent={true} hasHeightinMobile={true}/>
@@ -89,46 +129,53 @@ class Home extends Component {
                             <h1 className={`reveal-h1 ${styles.fontH1} ${styles.gradientText}`}>{t('model:token')}</h1>
                         </div>
                         <Row>
-                            <Col xs={12} md={3}>
-                                <img src={eco1} alt="ring"/>
-                            </Col>
-                            <Col xs={12} md={3}>
-                                <div className={styles.economicItem}>
-                                    <div className={styles.economicItemHeader}>
-                                        <div>
-                                            <span>{t('home_page:economic_block_title_1')}</span>
-                                        </div>
+                            <Col xs={12} md={6} className={`${styles.col} ${styles.colRing}`}>
+                                <div>
+                                    <div className={`${styles.symbol}`}>
+                                        <img src={eco1} alt="ring"/>
+                                        <span>{t('model:ring')}</span>
                                     </div>
-                                    <div className={styles.economicItemContent}>
-                                        <p>{t('model:ring_1')}</p>
-                                        <p>{t('model:ring_2')}</p>
-                                        <ul>
-                                            <li>{t('model:ring_2_1')}</li>
-                                            <li>{t('model:ring_2_2')}</li>
-                                            <li>{t('model:ring_2_3')}</li>
-                                        </ul>
-                                        <p>{t('model:ring_3')}</p>
-                                        <p>{t('model:ring_4')}</p>
+                                    <div className={`${styles.content}`}>
+                                        <div className={`${styles.item} ${styles.itemTitle}`}>
+                                            <span className={`${styles.desc}`}>{t('model:ring_desc')}</span>
+                                        </div>
+                                        <div className={`${styles.item}`}>
+                                            <span className={`${styles.desc}`}>{t('model:max_supply')}</span>
+                                            <span className={`${styles.number}`}>10,000,000,000</span>
+                                        </div>
+                                        <div className={`${styles.item}`}>
+                                            <span className={`${styles.desc}`}>{t('model:cirsulating_supply')}</span>
+                                            <span className={`${styles.number}`}>{ring.circulatingSupply || ""}</span>
+                                        </div>
+                                        <div className={`${styles.item}`}>
+                                            <span className={`${styles.desc}`}>{t('model:total_supply')}</span>
+                                            <span className={`${styles.number}`}>{ring.totalSupply || ""}</span>
+                                        </div>
                                     </div>
                                 </div>
                             </Col>
-                            <Col xs={12} md={3}>
-                                <img src={eco2} alt="kton"/>
-                            </Col>
-                            <Col xs={12} md={3}>
-                                <div className={`${styles.economicItem} ${styles.kton}`}>
-                                    <div className={styles.economicItemHeader}>
-                                        <div>
-                                            <span>{t('home_page:economic_block_title_2')}</span>
-                                        </div>
-                                        <p>
-                                        </p>
+                            <Col xs={12} md={6} className={`${styles.col} ${styles.colKton}`}>
+                                <div>
+                                    <div className={`${styles.symbol}`}>
+                                        <img src={eco2} alt="kton"/>
+                                        <span>{t('model:kton')}</span>
                                     </div>
-                                    <div className={styles.economicItemContent}>
-                                        <p>{t('model:kton_1')}</p>
-                                        <p>{t('model:kton_2')}</p>
-                                        <p>{t('model:kton_3')}</p>
-                                        <p>{t('model:kton_4')}</p>
+                                    <div className={`${styles.content}`}>
+                                        <div className={`${styles.item} ${styles.itemTitle}`}>
+                                            <span className={`${styles.desc}`}>{t('model:kton_desc')}</span>
+                                        </div>
+                                        <div className={`${styles.item}`}>
+                                            <span className={`${styles.desc}`}>{t('model:max_supply')}</span>
+                                            <span className={`${styles.number}`}>{t('model:none')}</span>
+                                        </div>
+                                        <div className={`${styles.item}`}>
+                                            <span className={`${styles.desc}`}>{t('model:cirsulating_supply')}</span>
+                                            <span className={`${styles.number}`}>{kton.circulatingSupply || ""}</span>
+                                        </div>
+                                        <div className={`${styles.item}`}>
+                                            <span className={`${styles.desc}`}>{t('model:total_supply')}</span>
+                                            <span className={`${styles.number}`}>{kton.totalSupply || ""}</span>
+                                        </div>
                                     </div>
                                 </div>
                             </Col>

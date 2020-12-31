@@ -555,6 +555,7 @@
     "max_supply": "Max Supply",
     "cirsulating_supply": "Cirsulating Supply",
     "total_supply": "Total Supply",
+    "none": "None",
     "ring": "RING",
     "ring_desc": "RING is the native token of Darwinia Network",
     "ring_1": "Network Native Token",
