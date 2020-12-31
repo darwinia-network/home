@@ -233,7 +233,7 @@ class Brand extends Component {
                                         <div className={styles.buttons}>
                                             <Button variant="transparent" target="_blank" href={t('community:darwinia_wiki_link')}
                                                 className={styles.button}>{t('community:darwinia_wiki')}</Button>
-                                            <Button variant="transparent" target="_blank" href="/faq"
+                                            <Button variant="transparent" target="_blank" href={t('footer:faq_link')}
                                                 className={styles.button}>{t('community:faq')}</Button>
                                             <Button variant="transparent" target="_blank" href={t('ambassador:form')}
                                                 className={`${styles.button} ${styles.buttonWhite}`}>{t('community:get_started')}</Button>
