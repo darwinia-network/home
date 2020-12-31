@@ -171,7 +171,7 @@ class PageFooter extends Component {
                             <p><a target="_blank" rel="noopener noreferrer" href={t('footer:rfcs_link')}>{t('footer:community_title_1')}</a></p>
                             <p><a target="_blank" rel="noopener noreferrer" href="/ambassador">{t('footer:community_title_2')}</a></p>
                             <p><a target="_blank" rel="noopener noreferrer" href="/community">{t('footer:community_title_3')}</a></p>
-                            <p><a target="_blank" rel="noopener noreferrer" href="/faq">{t('footer:community_title_4')}</a></p>
+                            <p><a target="_blank" rel="noopener noreferrer" href={t('footer:faq_link')}>{t('footer:community_title_4')}</a></p>
                         </Col>
                         <Col xs={6} md={4} lg={2}>
                             <h1>{t('footer:contact')}</h1>
