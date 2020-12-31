@@ -704,80 +704,160 @@ class Home extends Component {
                                     <Row className={styles.roadmapImgRow}>
                                         <Col md={6} xs={0}></Col>
                                         <Col className={styles.roadmapTextCol}>
-                                            <div className={styles.roadmap2019}>
-                                                <p>
-                                                    {t('home_page:roadmap_2018')}
-                                                </p>
-                                                <p>
-                                                    {t('home_page:roadmap_2019_q1')}
-                                                </p>
-                                                <p>
-                                                    {t('home_page:roadmap_2019_q2')}
-                                                </p>
-                                                <p>
-                                                    {t('home_page:roadmap_2019_q3_1')}
-                                                    <br/>
-                                                    {t('home_page:roadmap_2019_q3_2')}
-                                                </p>
-                                                <p>
-                                                    {t('home_page:roadmap_2019_q4')}
-                                                </p>
-                                            </div>
-                                            <div className={styles.roadmap2020}>
-                                                <p>
-                                                    {t('home_page:roadmap_2020_q1')}
-                                                </p>
-                                                <p>
-                                                    {t('home_page:roadmap_2020_q2_1')}
-                                                    <br/>
-                                                    {t('home_page:roadmap_2020_q2_2')}
-                                                </p>
-                                                <p>
-                                                    {t('home_page:roadmap_2020_q3_1')}
-                                                    <br/>
-                                                    {t('home_page:roadmap_2020_q3_2')}
-                                                    <br/>
-                                                    {t('home_page:roadmap_2020_q3_3')}
-                                                </p>
-                                                <p className={styles.roadmap2020Q4}>
-                                                    {t('home_page:roadmap_2020_q4_1')}
-                                                    <br/>
-                                                    {t('home_page:roadmap_2020_q4_2')}
-                                                    <br/>
-                                                    {t('home_page:roadmap_2020_q4_3')}
-                                                    <br/>
-                                                    {t('home_page:roadmap_2020_q4_4')}
-                                                    <br/>
-                                                    {t('home_page:roadmap_2020_q4_5')}
-                                                </p>
-                                            </div>
-                                            <div className={styles.roadmap2021}>
-                                                <p>
-                                                    {t('home_page:roadmap_2021_q1_1')}
-                                                    <br/>
-                                                    {t('home_page:roadmap_2021_q1_2')}
-                                                    <br/>
-                                                    {t('home_page:roadmap_2021_q1_3')}
-                                                    <br/>
-                                                    <span className={styles.note}>{t('home_page:roadmap_2021_q1_4')}</span>
-                                                    <br/>
-                                                    {t('home_page:roadmap_2021_q1_5')}
-                                                </p>
-                                                <p>
-                                                    {t('home_page:roadmap_2021_q2_1')}
-                                                    <br/>
-                                                    {t('home_page:roadmap_2021_q2_2')}
-                                                    <br/>
-                                                    {t('home_page:roadmap_2021_q2_3')}
-                                                </p>
-                                                <p>
-                                                    {t('home_page:roadmap_2021_q3_1')}
-                                                    <br/>
-                                                    {t('home_page:roadmap_2021_q3_2')}
-                                                    <br/>
-                                                    {t('home_page:roadmap_2021_q3_3')}
-                                                </p>
-                                            </div>
+                                            <Row className={styles.roadmap2018}>
+                                                <Col xs={2}>
+                                                    <div className={`${styles.colorBtn}`}>2018</div>
+                                                </Col>
+                                                <Col xs={10} className={styles.middleTextCol}>
+                                                    <p>
+                                                        {t('home_page:roadmap_2018')}
+                                                    </p>
+                                                </Col>
+                                            </Row>
+                                            <Row className={styles.roadmap2019q1}>
+                                                <Col xs={2}>
+                                                    <div className={`${styles.colorBtn}`}>Q1</div>
+                                                </Col>
+                                                <Col xs={10} className={styles.middleTextCol}>
+                                                    <p>
+                                                        {t('home_page:roadmap_2019_q1')}
+                                                    </p>
+                                                </Col>
+                                            </Row>
+                                            <Row className={styles.roadmap2019q2}>
+                                                <Col xs={2}>
+                                                    <div className={`${styles.colorBtn}`}>Q2</div>
+                                                </Col>
+                                                <Col xs={10} className={styles.middleTextCol}>
+                                                    <p>
+                                                        {t('home_page:roadmap_2019_q2')}
+                                                    </p>
+                                                </Col>
+                                            </Row>
+                                            <Row className={styles.roadmap2019q3}>
+                                                <Col xs={2}>
+                                                    <div className={`${styles.colorBtn}`}>Q3</div>
+                                                </Col>
+                                                <Col xs={10} className={styles.middleTextCol}>
+                                                    <p>
+                                                        {t('home_page:roadmap_2019_q3_1')}
+                                                        <br/>
+                                                        {t('home_page:roadmap_2019_q3_2')}
+                                                    </p>
+                                                </Col>
+                                            </Row>
+                                            <Row className={styles.roadmap2019q4}>
+                                                <Col xs={2}>
+                                                    <div className={`${styles.colorBtn}`}>Q4</div>
+                                                </Col>
+                                                <Col xs={10} className={styles.middleTextCol}>
+                                                    <p>
+                                                        {t('home_page:roadmap_2019_q4')}
+                                                    </p>
+                                                </Col>
+                                            </Row>
+
+                                            <Row className={styles.roadmap2020q1}>
+                                                <Col xs={2}>
+                                                    <div className={`${styles.whiteBtn}`}>Q1</div>
+                                                </Col>
+                                                <Col xs={10} className={styles.middleTextCol}>
+                                                    <p>
+                                                        {t('home_page:roadmap_2020_q1')}
+                                                    </p>
+                                                </Col>
+                                            </Row>
+                                            <Row className={styles.roadmap2020q2}>
+                                                <Col xs={2}>
+                                                    <div className={`${styles.whiteBtn}`}>Q2</div>
+                                                </Col>
+                                                <Col xs={10} className={styles.middleTextCol}>
+                                                    <p>
+                                                        {t('home_page:roadmap_2020_q2_1')}
+                                                        <br/>
+                                                        {t('home_page:roadmap_2020_q2_2')}
+                                                    </p>
+                                                </Col>
+                                            </Row>
+                                            <Row className={styles.roadmap2020q3}>
+                                                <Col xs={2}>
+                                                    <div className={`${styles.whiteBtn}`}>Q3</div>
+                                                </Col>
+                                                <Col xs={10} className={styles.middleTextCol}>
+                                                    <p>
+                                                        {t('home_page:roadmap_2020_q3_1')}
+                                                        <br/>
+                                                        {t('home_page:roadmap_2020_q3_2')}
+                                                        <br/>
+                                                        {t('home_page:roadmap_2020_q3_3')}
+                                                    </p>
+                                                </Col>
+                                            </Row>
+                                            <Row className={styles.roadmap2020q4}>
+                                                <Col xs={2}>
+                                                    <div className={`${styles.whiteBtn}`}>Q4</div>
+                                                </Col>
+                                                <Col xs={10} className={styles.middleTextCol}>
+                                                    <p className={styles.roadmap2020Q4}>
+                                                        {t('home_page:roadmap_2020_q4_1')}
+                                                        <br/>
+                                                        {t('home_page:roadmap_2020_q4_2')}
+                                                        <br/>
+                                                        {t('home_page:roadmap_2020_q4_3')}
+                                                        <br/>
+                                                        {t('home_page:roadmap_2020_q4_4')}
+                                                        <br/>
+                                                        {t('home_page:roadmap_2020_q4_5')}
+                                                    </p>
+                                                </Col>
+                                            </Row>
+
+                                            <Row className={styles.roadmap2021q1}>
+                                                <Col xs={2}>
+                                                    <div className={`${styles.colorBtn}`}>Q1</div>
+                                                </Col>
+                                                <Col xs={10} className={styles.middleTextCol}>
+                                                    <p>
+                                                        {t('home_page:roadmap_2021_q1_1')}
+                                                        <br/>
+                                                        {t('home_page:roadmap_2021_q1_2')}
+                                                        <br/>
+                                                        {t('home_page:roadmap_2021_q1_3')}
+                                                        <br/>
+                                                        <span className={styles.note}>{t('home_page:roadmap_2021_q1_4')}</span>
+                                                        <br/>
+                                                        {t('home_page:roadmap_2021_q1_5')}
+                                                    </p>
+                                                </Col>
+                                            </Row>
+                                            <Row className={styles.roadmap2021q2}>
+                                                <Col xs={2}>
+                                                    <div className={`${styles.colorBtn}`}>Q2</div>
+                                                </Col>
+                                                <Col xs={10} className={styles.middleTextCol}>
+                                                    <p>
+                                                        {t('home_page:roadmap_2021_q2_1')}
+                                                        <br/>
+                                                        {t('home_page:roadmap_2021_q2_2')}
+                                                        <br/>
+                                                        {t('home_page:roadmap_2021_q2_3')}
+                                                    </p>
+                                                </Col>
+                                            </Row>
+                                            <Row className={styles.roadmap2021q3}>
+                                                <Col xs={2}>
+                                                    <div className={`${styles.colorBtn}`}>Q3-Q4</div>
+                                                </Col>
+                                                <Col xs={10} className={styles.middleTextCol}>
+                                                    <p>
+                                                        {t('home_page:roadmap_2021_q3_1')}
+                                                        <br/>
+                                                        {t('home_page:roadmap_2021_q3_2')}
+                                                        <br/>
+                                                        {t('home_page:roadmap_2021_q3_3')}
+                                                    </p>
+                                                </Col>
+                                            </Row>
                                         </Col>
                                     </Row>
                                 </Col>
@@ -925,16 +1005,6 @@ class Home extends Component {
                                 </Col>
                                 <Col xs={9} className={styles.middleTextCol}>
                                     <p>
-                                        {t('home_page:roadmap_2020_q1')}
-                                    </p>
-                                </Col>
-                            </Row>
-                            <Row className={styles.roadmap2021q2}>
-                                <Col xs={3}>
-                                    <div className={`${styles.colorBtn}`}>Q2</div>
-                                </Col>
-                                <Col xs={9} className={styles.middleTextCol}>
-                                    <p>
                                         {t('home_page:roadmap_2021_q1_1')}
                                         <br/>
                                         {t('home_page:roadmap_2021_q1_2')}
@@ -944,6 +1014,20 @@ class Home extends Component {
                                         <span className={styles.note}>{t('home_page:roadmap_2021_q1_4')}</span>
                                         <br/>
                                         {t('home_page:roadmap_2021_q1_5')}
+                                    </p>
+                                </Col>
+                            </Row>
+                            <Row className={styles.roadmap2021q2}>
+                                <Col xs={3}>
+                                    <div className={`${styles.colorBtn}`}>Q2</div>
+                                </Col>
+                                <Col xs={9} className={styles.middleTextCol}>
+                                    <p>
+                                        {t('home_page:roadmap_2021_q2_1')}
+                                        <br/>
+                                        {t('home_page:roadmap_2021_q2_2')}
+                                        <br/>
+                                        {t('home_page:roadmap_2021_q2_3')}
                                     </p>
                                 </Col>
                             </Row>

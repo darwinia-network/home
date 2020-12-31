@@ -665,9 +665,6 @@
   img {
     width: 100%;
   }
-  .roadmap {
-    padding: 0 15px;
-  }
   .roadmapRow {
     background: #FBFBFB;
     height: 1213px;
@@ -700,6 +697,78 @@
       font-size: 12px;
     }
   }
+
+  .roadmap {
+    height: initial;
+    background-color: initial;
+    padding: 0 15px;
+    h6 {
+      font-weight: 600;
+    }
+    p {
+      margin-bottom: 0;
+      line-height: 24px;
+      font-size: 16px;
+      margin-top: -4px;
+    }
+    .middleTextCol {
+      display: flex;
+      align-items: center;
+    }
+    .roadmap2018 {
+      margin-bottom: 12px;
+    }
+    .roadmap2019q1 {
+      margin-bottom: 12px;
+    }
+    .roadmap2019q2 {
+      margin-bottom: 20px;
+    }
+    .roadmap2019q3 {
+      margin-bottom: 20px;
+    }
+    .roadmap2019q4 {
+      margin-bottom: 44px;
+    }
+    .roadmap2020q1 {
+      margin-bottom: 20px;
+    }
+    .roadmap2020q2 {
+      margin-bottom: 30px;
+    }
+    .roadmap2020q3 {
+      margin-bottom: 30px;
+    }
+    .roadmap2020q4 {
+      margin-bottom: 44px;
+    }
+    .roadmap2021q1 {
+      margin-bottom: 10px;
+    }
+    .roadmap2021q2 {
+      margin-bottom: 20px;
+    }
+    .transBtn {
+      width: 63px;
+      text-align: center;
+    }
+    .colorBtn, .whiteBtn {
+      width: 63px;
+      height: 35px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-weight: 600;
+    }
+    .colorBtn {
+      color: #fff;
+      background: linear-gradient(315deg, #FE3876 0%, #7C30DD 71%, #3A30DD 100%);
+    }
+    .whiteBtn {
+      color: #6330DD;
+      border: 2px solid #A633BD;
+    }
+  }
   .roadmapImgCol {
     margin: 70px 105px 80px 85px;
   }
@@ -711,7 +780,7 @@
   }
   .roadmapTextCol {
     margin-top: 54px;
-    margin-left: 20px;
+    // margin-left: 20px;
   }
 }
 

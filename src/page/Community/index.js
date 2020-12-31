@@ -399,7 +399,7 @@ class Brand extends Component {
                                         <img className={`${styles.avatar}`} alt="person" src={person_15}/>
                                         <img className={`${styles.avatar}`} alt="person" src={person_16}/>
                                         <img className={`${styles.avatar}`} alt="person" src={person_17}/>
-                                        </>) : <img className={`${styles.avatar}`} alt="person" className={`${styles.personMore}`} src={person_more} onClick={() => this.showMoreAvatar()}/>}
+                                        </>) : <img alt="person" className={`${styles.personMore}`} src={person_more} onClick={() => this.showMoreAvatar()}/>}
                                     </div>
                                 </MediaQuery>
                                 <p>
