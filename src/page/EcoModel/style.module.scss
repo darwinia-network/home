@@ -5,6 +5,13 @@
     display: inline-block;
     margin-bottom: 30px;
   }
+  h2 {
+    display: inline-block;
+    font-weight: 400;
+    font-size: 30px;
+    margin-bottom: 30px;
+    text-transform: none;
+  }
   p {
     line-height: 25px;
   }
@@ -105,6 +112,74 @@
     }
     &.kton {
       margin-bottom: 0;
+    }
+  }
+  .col {
+    height: 224px;
+    display: flex;
+    color: #fff;
+    margin-bottom: 30px;
+    > div {
+      flex: 1 1 auto;
+      display: flex;
+      padding: 0 60px;
+      justify-content: space-between;
+    }
+    img {
+      width: 56px;
+      height: 56px;
+      margin-bottom: 12px;
+    }
+    .symbol {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      span {
+        font-size: 22px;
+        font-weight: bold;
+        line-height: 28px;
+      }
+    }
+    .content {
+      // max-width: 330px;
+      flex: 0 1 330px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      // align-items: center;
+    }
+    .item {
+      display: flex;
+      justify-content: space-between;
+      font-size: 16px;
+      line-height: 22px;
+      margin-top: 10px;
+      .number {
+        font-size: 22px;
+        line-height: 28px;
+        font-weight: bold;
+      }
+    }
+    .itemTitle {
+      margin-bottom: 30px;
+      margin-top: 0;
+    }
+  }
+  .colRing {
+    > div {
+      background: linear-gradient(315deg, #FE3876 0%, #7C30DD 71%, #3A30DD 100%);
+    }
+    .itemTitle {
+      margin-bottom: 30px;
+    }
+  }
+  .colKton {
+    > div {
+      background: linear-gradient(90deg, #44CC6E 0%, #008F3F 100%);
+    }
+    .itemTitle {
+      margin-bottom: 10px;
     }
   }
 }
@@ -265,6 +340,10 @@
     .title {
       text-align: center;
     }
+    h2 {
+      font-size: 16px;
+      margin-bottom: 20px;
+    }
     p {
       line-height: 24px;
     }
@@ -299,6 +378,35 @@
     }
     .economicItemContent {
       margin-bottom: 20px;
+    }
+    .bridge {
+      text-align: left;
+    }
+    .col {
+      height: initial;
+      margin-bottom: 20px;
+      > div {
+        padding: 20px 20px 20px 30px;
+      }
+      .symbol {
+        justify-content: flex-start;
+      }
+      .content {
+        flex: 0 1 200px;
+      }
+      .item {
+        flex-direction: column;
+      }
+    }
+    .colRing {
+      .itemTitle {
+        margin-bottom: 10px;
+      }
+    }
+    .colKton {
+      .itemTitle {
+        margin-bottom: 10px;
+      }
     }
   }
   .stakingContainer {
