@@ -12,8 +12,8 @@
     "forum": "论坛",
     "testnet": "测试网络",
     "testnet_url": "https://docs.darwinia.network/docs/zh-CN/crab-home",
-    "genepaper_url": "https://darwinia.network.l2me.com/static/paper/Darwinia_Genepaper_CN.pdf",
-    "techpaper_url": "https://darwinia.network.l2me.com/static/paper/ChainRelay_Technical_Paper(Preview)_EN.pdf",
+    "genepaper_url": "https://darwinia.network/Darwinia_Genepaper_CN.pdf",
+    "techpaper_url": "https://darwinia.network/ChainRelay_Technical_Paper(Preview)_EN.pdf",
     "explorer": "浏览器",
     "explorer_url": "https://crab.subscan.io/",
     "faq": "FAQs",
@@ -480,6 +480,9 @@
     "video_11_time": "2020.04.29",
     "video_11_title": "链所反应第8期",
     "video_11_link": "https://www.bilibili.com/video/BV11g4y1z79z/",
+    "video_12_time": "2020.12.29",
+    "video_12_title": "达尔文大使项目kick-off会议",
+    "video_12_link": "https://www.youtube.com/watch?v=iX_RhiZMMKs",
     "view_all": "查看更多"
   },
   "tech": {
