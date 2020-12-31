@@ -144,7 +144,7 @@ class Home extends Component {
                                             <span className={`${styles.number}`}>10,000,000,000</span>
                                         </div>
                                         <div className={`${styles.item}`}>
-                                            <span className={`${styles.desc}`}>{t('model:cirsulating_supply')}</span>
+                                            <span className={`${styles.desc}`}>{t('model:circulating_supply')}</span>
                                             <span className={`${styles.number}`}>{ring.circulatingSupply || ""}</span>
                                         </div>
                                         <div className={`${styles.item}`}>
@@ -169,7 +169,7 @@ class Home extends Component {
                                             <span className={`${styles.number}`}>{t('model:none')}</span>
                                         </div>
                                         <div className={`${styles.item}`}>
-                                            <span className={`${styles.desc}`}>{t('model:cirsulating_supply')}</span>
+                                            <span className={`${styles.desc}`}>{t('model:circulating_supply')}</span>
                                             <span className={`${styles.number}`}>{kton.circulatingSupply || ""}</span>
                                         </div>
                                         <div className={`${styles.item}`}>
