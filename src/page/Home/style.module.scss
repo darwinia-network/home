@@ -982,7 +982,7 @@
       text-align: center;
     }
     h1 {
-      margin-bottom: 30px;
+      margin-bottom: 12px;
     }
     .placeholderCol {
       padding: 0;
@@ -1012,37 +1012,54 @@
       margin-bottom: 20px;
       // padding: 0 60px;
     }
-    .roadmapRow {
+    .roadmapM {
       height: initial;
       background-color: initial;
       h6 {
         font-weight: 600;
       }
       p {
-        margin-bottom: 23px;
-        line-height: 24px;
+        margin-bottom: 0;
+        line-height: 22px;
         font-size: 14px;
+        margin-top: -4px;
       }
-      .h6_2018 {
-        width: 90px;
+      .middleTextCol {
+        display: flex;
+        align-items: center;
       }
-      .roadmap2019 {
-        margin-top: 36px;
+      .roadmap2018 {
+        margin-bottom: 12px;
       }
-      .roadmap2020 {
-        margin-top: 30px;
+      .roadmap2019q1 {
+        margin-bottom: 14px;
       }
-      .roadmap2020Q4 {
-        margin-top: 23px;
+      .roadmap2019q2 {
+        margin-bottom: 24px;
       }
-      .roadmap2021 {
-        margin-top: 20px;
-        p {
-          margin-bottom: 23px;
-          &:last-child {
-            margin-bottom: 0;
-          }
-        }
+      .roadmap2019q3 {
+        margin-bottom: 24px;
+      }
+      .roadmap2019q4 {
+        margin-bottom: 20px;
+      }
+      .roadmap2020q1 {
+        margin-bottom: 23px;
+      }
+      .roadmap2020q2 {
+        margin-bottom: 36px;
+      }
+      .roadmap2020q3 {
+        margin-bottom: 40px;
+      }
+      .roadmap2020q4 {
+        margin-bottom: 20px;
+      }
+      .roadmap2021q1 {
+        margin-bottom: 30px;
+      }
+      .roadmap2021q2 {
+        margin-bottom: 30px;
       }
       .transBtn {
         width: 63px;
@@ -1063,33 +1080,6 @@
       .whiteBtn {
         color: #6330DD;
         border: 2px solid #A633BD;
-      }
-      .colorBtn1 {
-        margin-bottom: 12px;
-      }
-      .colorBtn2 {
-        margin-bottom: 14px;
-      }
-      .colorBtn3 {
-        margin-bottom: 24px;
-      }
-      .colorBtn4 {
-        margin-bottom: 24px;
-      }
-      .colorBtn6 {
-        margin-bottom: 134px;
-      }
-      .colorBtn7 {
-        margin-bottom: 60px;
-      }
-      .whiteBtn1 {
-        margin-bottom: 23px;
-      }
-      .whiteBtn2 {
-        margin-bottom: 36px;
-      }
-      .whiteBtn3 {
-        margin-bottom: 60px;
       }
     }
   }

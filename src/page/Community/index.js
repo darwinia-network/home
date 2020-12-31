@@ -39,24 +39,23 @@ import meetup from './img/meetup.png'
 import moderator from './img/moderator.png'
 import translator from './img/translator.png'
 
-import person_1 from "./img/person_1.png"
-import person_2 from "./img/person_2.png"
-import person_3 from "./img/person_3.png"
-import person_4 from "./img/person_4.png"
-import person_5 from "./img/person_5.png"
-import person_6 from "./img/person_6.png"
-import person_7 from "./img/person_7.png"
-import person_8 from "./img/person_8.png"
-import person_9 from "./img/person_9.png"
-import person_10 from "./img/person_10.png"
-import person_11 from "./img/person_11.png"
-import person_12 from "./img/person_12.png"
-import person_13 from "./img/person_13.png"
-import person_14 from "./img/person_14.png"
-import person_15 from "./img/person_15.png"
-import person_16 from "./img/person_16.png"
-import person_17 from "./img/person_17.png"
-import person_18 from "./img/person_18.png"
+import person_1 from "./img/person_1.jpg"
+import person_2 from "./img/person_2.jpg"
+import person_3 from "./img/person_3.jpg"
+import person_4 from "./img/person_4.jpg"
+import person_5 from "./img/person_5.jpg"
+import person_6 from "./img/person_6.jpg"
+import person_7 from "./img/person_7.jpg"
+import person_8 from "./img/person_8.jpg"
+import person_9 from "./img/person_9.jpg"
+import person_10 from "./img/person_10.jpg"
+import person_11 from "./img/person_11.jpg"
+import person_12 from "./img/person_12.jpg"
+import person_13 from "./img/person_13.jpg"
+import person_14 from "./img/person_14.jpg"
+import person_15 from "./img/person_15.jpg"
+import person_16 from "./img/person_16.jpg"
+import person_17 from "./img/person_17.jpg"
 import person_more from "./img/person_more.png"
 
 class Brand extends Component {
@@ -359,50 +358,48 @@ class Brand extends Component {
                                 </h1>
                                 <MediaQuery minDeviceWidth={768}>
                                     <div className={`hidden-xs ${styles.persons}`}>
-                                        <img alt="person" src={person_1}/>
-                                        <img alt="person" src={person_2}/>
-                                        <img alt="person" src={person_3}/>
-                                        <img alt="person" src={person_4}/>
-                                        <img alt="person" src={person_5}/>
-                                        <img alt="person" src={person_6}/>
-                                        <img alt="person" src={person_7}/>
-                                        <img alt="person" src={person_8}/>
-                                        <img alt="person" src={person_9}/>
-                                        <img alt="person" src={person_10}/>
-                                        <img alt="person" src={person_11}/>
-                                        <img alt="person" src={person_12}/>
-                                        <img alt="person" src={person_13}/>
+                                        <img className={`${styles.avatar}`} alt="person" src={person_1}/>
+                                        <img className={`${styles.avatar}`} alt="person" src={person_2}/>
+                                        <img className={`${styles.avatar}`} alt="person" src={person_3}/>
+                                        <img className={`${styles.avatar}`} alt="person" src={person_4}/>
+                                        <img className={`${styles.avatar}`} alt="person" src={person_5}/>
+                                        <img className={`${styles.avatar}`} alt="person" src={person_6}/>
+                                        <img className={`${styles.avatar}`} alt="person" src={person_7}/>
+                                        <img className={`${styles.avatar}`} alt="person" src={person_8}/>
+                                        <img className={`${styles.avatar}`} alt="person" src={person_9}/>
+                                        <img className={`${styles.avatar}`} alt="person" src={person_10}/>
+                                        <img className={`${styles.avatar}`} alt="person" src={person_11}/>
+                                        <img className={`${styles.avatar}`} alt="person" src={person_12}/>
+                                        <img className={`${styles.avatar}`} alt="person" src={person_13}/>
                                         {showMore ? (<>
-                                        <img alt="person" src={person_14}/>
-                                        <img alt="person" src={person_15}/>
-                                        <img alt="person" src={person_16}/>
-                                        <img alt="person" src={person_17}/>
-                                        <img alt="person" src={person_18}/>
+                                        <img className={`${styles.avatar}`} alt="person" src={person_14}/>
+                                        <img className={`${styles.avatar}`} alt="person" src={person_15}/>
+                                        <img className={`${styles.avatar}`} alt="person" src={person_16}/>
+                                        <img className={`${styles.avatar}`} alt="person" src={person_17}/>
                                         </>) : <img alt="person" className={`${styles.personMore}`} src={person_more} onClick={() => this.showMoreAvatar()}/>}
                                     </div>
                                 </MediaQuery>
                                 <MediaQuery maxDeviceWidth={767.98}>
                                     <div className={`hidden-md ${styles.persons}`}>
-                                        <img alt="person" src={person_1}/>
-                                        <img alt="person" src={person_2}/>
-                                        <img alt="person" src={person_3}/>
-                                        <img alt="person" src={person_4}/>
-                                        <img alt="person" src={person_5}/>
-                                        <img alt="person" src={person_6}/>
-                                        <img alt="person" src={person_7}/>
-                                        <img alt="person" src={person_8}/>
+                                        <img className={`${styles.avatar}`} alt="person" src={person_1}/>
+                                        <img className={`${styles.avatar}`} alt="person" src={person_2}/>
+                                        <img className={`${styles.avatar}`} alt="person" src={person_3}/>
+                                        <img className={`${styles.avatar}`} alt="person" src={person_4}/>
+                                        <img className={`${styles.avatar}`} alt="person" src={person_5}/>
+                                        <img className={`${styles.avatar}`} alt="person" src={person_6}/>
+                                        <img className={`${styles.avatar}`} alt="person" src={person_7}/>
+                                        <img className={`${styles.avatar}`} alt="person" src={person_8}/>
                                         {showMore ? (<>
-                                        <img alt="person" src={person_9}/>
-                                        <img alt="person" src={person_10}/>
-                                        <img alt="person" src={person_11}/>
-                                        <img alt="person" src={person_12}/>
-                                        <img alt="person" src={person_13}/>
-                                        <img alt="person" src={person_14}/>
-                                        <img alt="person" src={person_15}/>
-                                        <img alt="person" src={person_16}/>
-                                        <img alt="person" src={person_17}/>
-                                        <img alt="person" src={person_18}/>
-                                        </>) : <img alt="person" className={`${styles.personMore}`} src={person_more} onClick={() => this.showMoreAvatar()}/>}
+                                        <img className={`${styles.avatar}`} alt="person" src={person_9}/>
+                                        <img className={`${styles.avatar}`} alt="person" src={person_10}/>
+                                        <img className={`${styles.avatar}`} alt="person" src={person_11}/>
+                                        <img className={`${styles.avatar}`} alt="person" src={person_12}/>
+                                        <img className={`${styles.avatar}`} alt="person" src={person_13}/>
+                                        <img className={`${styles.avatar}`} alt="person" src={person_14}/>
+                                        <img className={`${styles.avatar}`} alt="person" src={person_15}/>
+                                        <img className={`${styles.avatar}`} alt="person" src={person_16}/>
+                                        <img className={`${styles.avatar}`} alt="person" src={person_17}/>
+                                        </>) : <img className={`${styles.avatar}`} alt="person" className={`${styles.personMore}`} src={person_more} onClick={() => this.showMoreAvatar()}/>}
                                     </div>
                                 </MediaQuery>
                                 <p>
