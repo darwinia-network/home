@@ -131,10 +131,12 @@ class Home extends Component {
                         <Row>
                             <Col xs={12} md={6} className={`${styles.col} ${styles.colRing}`}>
                                 <div>
+                                    <div className={styles.placeHolder}></div>
                                     <div className={`${styles.symbol}`}>
                                         <img src={eco1} alt="ring"/>
                                         <span>{t('model:ring')}</span>
                                     </div>
+                                    <div className={styles.placeHolder}></div>
                                     <div className={`${styles.content}`}>
                                         <div className={`${styles.item} ${styles.itemTitle}`}>
                                             <span className={`${styles.desc}`}>{t('model:ring_desc')}</span>
@@ -152,14 +154,17 @@ class Home extends Component {
                                             <span className={`${styles.number}`}>{ring.totalSupply || ""}</span>
                                         </div>
                                     </div>
+                                    <div className={styles.placeHolder}></div>
                                 </div>
                             </Col>
                             <Col xs={12} md={6} className={`${styles.col} ${styles.colKton}`}>
                                 <div>
+                                    <div className={styles.placeHolder}></div>
                                     <div className={`${styles.symbol}`}>
                                         <img src={eco2} alt="kton"/>
                                         <span>{t('model:kton')}</span>
                                     </div>
+                                    <div className={styles.placeHolder}></div>
                                     <div className={`${styles.content}`}>
                                         <div className={`${styles.item} ${styles.itemTitle}`}>
                                             <span className={`${styles.desc}`}>{t('model:kton_desc')}</span>
@@ -177,6 +182,7 @@ class Home extends Component {
                                             <span className={`${styles.number}`}>{kton.totalSupply || ""}</span>
                                         </div>
                                     </div>
+                                    <div className={styles.placeHolder}></div>
                                 </div>
                             </Col>
                         </Row>
