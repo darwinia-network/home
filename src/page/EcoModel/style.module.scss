@@ -122,8 +122,11 @@
     > div {
       flex: 1 1 auto;
       display: flex;
-      padding: 0 60px 0 0;
+      // padding: 0 60px 0 0;
       justify-content: space-between;
+    }
+    .placeHolder {
+      flex: 1 1 auto;
     }
     img {
       width: 56px;
@@ -131,7 +134,7 @@
       margin-bottom: 12px;
     }
     .symbol {
-      flex: 1 1 auto;
+      flex: 0 0 56px;
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -387,7 +390,7 @@
       height: initial;
       margin-bottom: 20px;
       > div {
-        padding: 20px 20px 20px 0;
+        padding: 20px 0;
       }
       .symbol {
         justify-content: flex-start;
