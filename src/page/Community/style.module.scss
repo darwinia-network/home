@@ -278,13 +278,14 @@
   .contributors {
     background: url("./img/contributors.jpg") top center no-repeat;
     background-size: cover;
-    height: 817px;
+    // height: 817px;
     color: #F9FAFC;
+    padding: 100px 0;
     .content {
       text-align: center;
     }
     .title {
-      margin-top: 100px;
+      // margin-top: 100px;
       margin-bottom: 40px;
       text-transform: uppercase;
     }
@@ -308,6 +309,13 @@
         width: 100px;
         height: 100px;
         margin: 20px;
+      }
+      .personMore {
+        cursor: pointer;
+      }
+      .avatar {
+        border: 2px solid #F9FAFC;
+        border-radius: 50%;
       }
     }
     p {
@@ -563,9 +571,10 @@
       }
     }
     .contributors {
-      height: 940px;
+      // height: 940px;
+      padding: 60px 0;
       .title {
-        margin-top: 60px;
+        // margin-top: 60px;
         margin-bottom: 50px;
         font-size: 24px;
       }
