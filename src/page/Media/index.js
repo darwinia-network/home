@@ -28,10 +28,10 @@ import events from "./img/events.png"
 import event1 from "../Media/img/event1.png"
 import event2 from "../Media/img/event2.png"
 import event3 from "../Media/img/event3.png"
+import video12 from "../Media/img/video12.png"
 import video11 from "../Media/img/video11.png"
 import video10 from "../Media/img/video10.png"
 import video9 from "../Media/img/video9.png"
-import video8 from "../Media/img/video8.png"
 import videoIcon from "../Media/img/video-icon.png"
 class Brand extends Component {
     constructor(props, context) {
@@ -520,6 +520,20 @@ class Brand extends Component {
                                     </div>
                                     <Row>
                                         <Col md={3} className={styles.mediaContent}>
+                                            <a className={styles.imgUrl} rel="noopener noreferrer" target="_blank" href={t('media:video_12_link')}>
+                                                <div className={styles.imgRatio}>
+                                                    <img alt="videos" src={video12}/>
+                                                </div>
+                                                <div className={styles.mediaInfo}>
+                                                    <span>{t('media:more_title')}</span>
+                                                    <span className={styles.mediaTime}>{t('media:video_12_time')}</span>
+                                                </div>
+                                                <div className={styles.mediaDesc}>
+                                                    {t('media:video_12_title')}
+                                                </div>
+                                            </a>
+                                        </Col>
+                                        <Col md={3} className={styles.mediaContent}>
                                             <a className={styles.imgUrl} rel="noopener noreferrer" target="_blank" href={t('media:video_11_link')}>
                                                 <div className={styles.imgRatio}>
                                                     <img alt="videos" src={video11}/>
@@ -558,20 +572,6 @@ class Brand extends Component {
                                                 </div>
                                                 <div className={styles.mediaDesc}>
                                                     {t('media:video_9_title')}
-                                                </div>
-                                            </a>
-                                        </Col>
-                                        <Col md={3} className={styles.mediaContent}>
-                                            <a className={styles.imgUrl} rel="noopener noreferrer" target="_blank" href={t('media:video_8_link')}>
-                                                <div className={styles.imgRatio}>
-                                                    <img alt="videos" src={video8}/>
-                                                </div>
-                                                <div className={styles.mediaInfo}>
-                                                    <span>{t('media:more_title')}</span>
-                                                    <span className={styles.mediaTime}>{t('media:video_8_time')}</span>
-                                                </div>
-                                                <div className={styles.mediaDesc}>
-                                                    {t('media:video_8_title')}
                                                 </div>
                                             </a>
                                         </Col>
