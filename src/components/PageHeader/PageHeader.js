@@ -229,10 +229,10 @@ class PageHeader extends Component {
                                         {/* <Nav.Link className={styles.navButton} target={'_blank'} href="https://www.itering.io/about">{t('header:hiring')}</Nav.Link> */}
                                         {/* {i18n.language.indexOf('en') > -1 ?
                                         <Nav.Link target={'_blank'}
-                                        href="/static/paper/Darwinia_Genepaper_EN.pdf">{t('header:genepaper')}</Nav.Link>
+                                        href="/Darwinia_Genepaper_EN.pdf">{t('header:genepaper')}</Nav.Link>
                                         :
                                         <Nav.Link target={'_blank'}
-                                        href="/static/paper/Darwinia_Genepaper_CN.pdf">{t('header:genepaper')}</Nav.Link>
+                                        href="/Darwinia_Genepaper_CN.pdf">{t('header:genepaper')}</Nav.Link>
                                         } */}
                                         {/* <Nav.Link target="_blank" href="https://talk.darwinia.network">{t('header:forum')}</Nav.Link> */}
                                         {/* <Nav.Link target="_blank" href={t('header:testnet_url')}>{t('header:testnet')}</Nav.Link> */}
