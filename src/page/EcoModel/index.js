@@ -135,6 +135,9 @@ class Home extends Component {
                         </Row>
                         <Row>
                             <Col xs={12}>
+                                <div className={`${styles.title} ${styles.bridge}`}>
+                                    <h2 className={`${styles.gradientText}`}>{t('model:token_bridge')}</h2>
+                                </div>
                                 <img className={'hidden-xs'} src={tokenBg} alt="token"/>
                                 <img className={'hidden-md'} src={tokenBgM} alt="token"/>
                             </Col>
