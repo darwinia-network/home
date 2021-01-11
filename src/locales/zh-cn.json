@@ -263,7 +263,7 @@
     "experience_intro": "体验达尔文生态应用，并根据实际需求提交详细报告。",
     "get_started": "开始吧",
     "darwinia_wiki": "Darwinia Wiki",
-    "darwinia_wiki_link": "https://docs.darwinia.network/docs/en/wiki-intro",
+    "darwinia_wiki_link": "https://docs.darwinia.network/docs/zh-CN/wiki-intro",
     "faq": "FAQ",
 
     "contributors": "社区贡献者",
@@ -609,7 +609,7 @@
     "copyright": "Copyright@2020 Darwinia Network",
     "support": "Substrate Builder Program",
     "rfcs_link": "https://docs.darwinia.network/docs/zh-CN/wiki-rfc-index",
-    "faq_link": "https://docs.darwinia.network/docs/en/wiki-faq",
+    "faq_link": "https://docs.darwinia.network/docs/zh-CN/wiki-faq-general",
 
     "general": "概要",
     "general_title_1": "关于达尔文",
