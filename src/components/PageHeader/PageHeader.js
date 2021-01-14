@@ -59,7 +59,7 @@ class PageHeader extends Component {
     initFontStyle = ()=> {
         const {i18n} = this.props;
         let isZh = i18n.language.indexOf('en') === -1;
-        let app = document.getElementsByClassName('App')[0];
+        let app = document.getElementsByTagName('body')[0];
         if (isZh) {
             app.setAttribute('class', 'App zh-font');
         } else {
@@ -137,7 +137,7 @@ class PageHeader extends Component {
 
         i18n.changeLanguage(lng);
         localStorage.setItem("lng", lng);
-        let app = document.getElementsByClassName('App')[0];
+        let app = document.getElementsByTagName('body')[0];
         if (lng === 'zh-cn') {
             app.setAttribute('class', 'App zh-font');
         } else {
