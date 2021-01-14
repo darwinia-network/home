@@ -36,10 +36,11 @@
     "recom_3_link": "https://darwinianetwork.medium.com/historical-momemt-darwinia-is-about-to-open-the-golden-gate-bridge-from-ethereum-to-polkadot-db4c0ef7687c",
 
     "theme_title": "什么是达尔文网络?",
-    "theme_desc": "达尔文网络是基于Substrate开发的去中心化桥接链，是跨链生态的金门大桥，提供最安全的不依赖第三方多签的异构跨链方案，连接波卡，以太坊，波场等异构链，主要应用领域包括Defi,跨链NFT交易市场，游戏等。",
+    "theme_desc_1": "达尔文网络是基于Substrate开发的去中心化桥接链，是跨链生态的金门大桥，提供最安全的不依赖第三方多签的异构跨链方案，连接波卡，以太坊，波场等异构链，主要应用领域包括Defi,跨链NFT交易市场，游戏等。",
+    "theme_desc_2": "达尔文网络在构建去中心化桥接链的道路上获得了很多荣誉和认可。",
 
-    "band_1_desc": "获得了3个W3F Grant,是首批接入波卡平行测试链Rococo的四个项目之一",
-    "band_2_desc": "加入了Substrate Builder Program",
+    "band_1_desc": "荣获Substrate Builder Program 2级勋章（高级阶段）",
+    "band_2_desc": "获得了3个W3F Grant,是首批接入波卡平行测试链Rococo的四个项目之一",
     "band_3_desc": "Web3 Foundation Bootcamp首期成员",
     "band_4_desc": "被写入波卡轻白皮书",
     

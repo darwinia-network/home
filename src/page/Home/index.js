@@ -1,7 +1,7 @@
 /* eslint-disable no-script-url */
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { Component } from "react";
-import { Container, Row, Col, InputGroup, FormControl, Button, Form, Carousel, OverlayTrigger, Tooltip } from 'react-bootstrap'
+import { Container, Row, Col, InputGroup, FormControl, Button, Form, Carousel, OverlayTrigger, Popover, Tooltip } from 'react-bootstrap'
 import { PageHeader } from '../../components/PageHeader'
 import { PageFooter } from '../../components/PageFooter'
 import Fade from 'react-reveal/Fade';
@@ -84,6 +84,7 @@ import band1 from "./img/band/band-1.png"
 import band2 from "./img/band/band-2.png"
 import band3 from "./img/band/band-3.png"
 import band4 from "./img/band/band-4.png"
+import bandAll from "./img/band/band-all.png"
 
 import axios from 'axios'
 import archorsComponent from '../../components/anchorsComponent'
@@ -319,6 +320,15 @@ class Home extends Component {
         })
     }
 
+    renderTooltip = (text) => {
+        const {t} = this.props
+        return <Popover className={styles.wxContainer}>
+            <div className={styles.wxContainerBody}>
+                <p>{text}</p>
+            </div>
+        </Popover>
+    }
+
     renderPartner = () => {
         return this.partners.map((partner, index) => {
             return (
@@ -404,8 +414,46 @@ class Home extends Component {
                         <Row className={`${styles.promoteContentArea} d-flex justify-content-center`}>
                             <Col xs={{ span: 12 }} sm={{ span: 12 }}>
                                 <h1 className={`text-center ${styles.fontH1} ${styles.gradientText}`}>{t('home_page:theme_title')}</h1>
-                                <p>{t('home_page:theme_desc')}</p>
-                                <Row className={`${styles.bands}`}>
+                                <p>{t('home_page:theme_desc_1')}</p>
+                                <p>{t('home_page:theme_desc_2')}</p>
+                                <Row className={`hidden-xs ${styles.bands} ${styles.bandsPc}`}>
+                                    <Col xs={12}>
+                                        <div className={styles.bandAll}>
+                                            <img alt="Wall of Honor" src={bandAll}/>
+                                            <ul>
+                                                <OverlayTrigger
+                                                    placement="top"
+                                                    delay={{show: 100, hide: 100}}
+                                                    overlay={this.renderTooltip(t('home_page:band_1_desc'))}
+                                                >
+                                                    <li></li>
+                                                </OverlayTrigger>
+                                                <OverlayTrigger
+                                                    placement="top"
+                                                    delay={{show: 100, hide: 100}}
+                                                    overlay={this.renderTooltip(t('home_page:band_2_desc'))}
+                                                >
+                                                    <li></li>
+                                                </OverlayTrigger>
+                                                <OverlayTrigger
+                                                    placement="top"
+                                                    delay={{show: 100, hide: 100}}
+                                                    overlay={this.renderTooltip(t('home_page:band_3_desc'))}
+                                                >
+                                                    <li></li>
+                                                </OverlayTrigger>
+                                                <OverlayTrigger
+                                                    placement="top"
+                                                    delay={{show: 100, hide: 100}}
+                                                    overlay={this.renderTooltip(t('home_page:band_4_desc'))}
+                                                >
+                                                    <li></li>
+                                                </OverlayTrigger>
+                                            </ul>
+                                        </div>
+                                    </Col>
+                                </Row>
+                                <Row className={`hidden-md ${styles.bands}`}>
                                     <Col xs={12} md={4} lg={3}>
                                         <div className={styles.imgRatio}>
                                             <img alt="web3" src={band1}/>
