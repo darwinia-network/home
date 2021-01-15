@@ -61,9 +61,9 @@ class PageHeader extends Component {
         let isZh = i18n.language.indexOf('en') === -1;
         let app = document.getElementsByTagName('body')[0];
         if (isZh) {
-            app.setAttribute('class', 'App zh-font');
+            app.setAttribute('class', 'zh-font');
         } else {
-            app.setAttribute('class', 'App');
+            app.setAttribute('class', '');
         }
 
     }
@@ -139,9 +139,9 @@ class PageHeader extends Component {
         localStorage.setItem("lng", lng);
         let app = document.getElementsByTagName('body')[0];
         if (lng === 'zh-cn') {
-            app.setAttribute('class', 'App zh-font');
+            app.setAttribute('class', 'zh-font');
         } else {
-            app.setAttribute('class', 'App');
+            app.setAttribute('class', '');
         }
     }
 
