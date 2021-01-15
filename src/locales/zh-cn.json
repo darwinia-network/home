@@ -32,7 +32,7 @@
     "subscribe_btn": "获取更新",
     "subscribe_tip": "订阅成功！请查看您的收件箱。",
 
-    "recom_2_link": "/ambassador",
+    "recom_2_link": "https://darwinianetwork.medium.com/congratulations-darwinia-won-the-level-2-badge-in-the-substrate-builder-program-59ca4270f695",
     "recom_3_link": "https://darwinianetwork.medium.com/historical-momemt-darwinia-is-about-to-open-the-golden-gate-bridge-from-ethereum-to-polkadot-db4c0ef7687c",
 
     "theme_title": "什么是达尔文网络?",
@@ -445,6 +445,12 @@
     "news_18_time": "2020.11.30",
     "news_18_title": "奖励领取教程",
     "news_18_link": "https://darwinianetwork.medium.com/unlock-your-fortune-tutorial-29b7e614843c",
+    "news_19_time": "2021.01.14",
+    "news_19_title": "Darwinia to partner with Cere on Polkadot Ecosystem Development, Joining SaaS-DeFi Alliance.",
+    "news_19_link": "https://darwinianetwork.medium.com/darwinia-to-partner-with-cere-on-polkadot-ecosystem-development-joining-saas-defi-alliance-61b9d950fb54",
+    "news_20_time": "2021.01.15",
+    "news_20_title": "Vote For Darwinia! JOIN Polkadot Ecosystem Carnival, Share 100,000 USDT!",
+    "news_20_link": "https://darwinianetwork.medium.com/vote-for-darwinia-join-polkadot-ecosystem-carnival-share-100-000-usdt-c7e87717a1f",
     "events": "活动",
     "event_1_time": "2018.12.28",
     "event_1_title": "Neutrino AMA: Itering 联合创始人Alex Chien：解码区块链游戏",
