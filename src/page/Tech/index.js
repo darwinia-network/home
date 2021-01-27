@@ -25,6 +25,7 @@ import nftBg from "./img/nft-bg.png"
 import nftBgM from "./img/nft-bg-m.png"
 import bannerBg from "./img/banner-bg.png"
 import bannerBgM from "./img/banner-bg-m.png"
+import theme0 from "./img/theme-0.png"
 import theme1 from "./img/theme-1.png"
 import theme2 from "./img/theme-2.png"
 import theme3 from "./img/theme-3.png"
@@ -70,6 +71,10 @@ class Home extends Component {
                             <p>{t('tech:theme_desc_5')}</p>
                         </div>
                         <div className={styles.items}>
+                            <a target="_blank" rel="noopener noreferrer" href={t('tech:theme_0_link')}>
+                                <img src={theme0} alt="icon"/>
+                                <span>{t('tech:theme_0')}</span>
+                            </a>
                             <a target="_blank" rel="noopener noreferrer" href={t('tech:theme_1_link')}>
                                 <img src={theme1} alt="icon"/>
                                 <span>{t('tech:theme_1')}</span>
