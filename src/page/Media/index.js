@@ -21,10 +21,10 @@ import report7 from "../Media/img/report7.png"
 import report8 from "../Media/img/report8.png"
 import report9 from "../Media/img/report9.png"
 import news from "./img/news.png"
-import news17 from "../Media/img/news17.png"
 import news18 from "../Media/img/news18.png"
 import news19 from "../Media/img/news19.png"
 import news20 from "../Media/img/news20.png"
+import news21 from "../Media/img/news21.png"
 import events from "./img/events.png"
 import event1 from "../Media/img/event1.png"
 import event2 from "../Media/img/event2.png"
@@ -325,6 +325,20 @@ class Brand extends Component {
                                     </div>
                                     <Row>
                                         <Col md={3} className={styles.mediaContent}>
+                                            <a className={styles.imgUrl} rel="noopener noreferrer" target="_blank" href={t('media:news_21_link')}>
+                                                <div className={styles.imgRatio}>
+                                                    <img alt="news" src={news21}/>
+                                                </div>
+                                                <div className={styles.mediaInfo}>
+                                                    <span>{t('media:more_title')}</span>
+                                                    <span className={styles.mediaTime}>{t('media:news_21_time')}</span>
+                                                </div>
+                                                <div className={styles.mediaDesc}>
+                                                    {t('media:news_21_title')}
+                                                </div>
+                                            </a>
+                                        </Col>
+                                        <Col md={3} className={styles.mediaContent}>
                                             <a className={styles.imgUrl} rel="noopener noreferrer" target="_blank" href={t('media:news_20_link')}>
                                                 <div className={styles.imgRatio}>
                                                     <img alt="news" src={news20}/>
@@ -363,20 +377,6 @@ class Brand extends Component {
                                                 </div>
                                                 <div className={styles.mediaDesc}>
                                                     {t('media:news_18_title')}
-                                                </div>
-                                            </a>
-                                        </Col>
-                                        <Col md={3} className={styles.mediaContent}>
-                                            <a className={styles.imgUrl} rel="noopener noreferrer" target="_blank" href={t('media:news_17_link')}>
-                                                <div className={styles.imgRatio}>
-                                                    <img alt="news" src={news17}/>
-                                                </div>
-                                                <div className={styles.mediaInfo}>
-                                                    <span>{t('media:more_title')}</span>
-                                                    <span className={styles.mediaTime}>{t('media:news_17_time')}</span>
-                                                </div>
-                                                <div className={styles.mediaDesc}>
-                                                    {t('media:news_17_title')}
                                                 </div>
                                             </a>
                                         </Col>
