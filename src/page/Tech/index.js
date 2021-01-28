@@ -165,10 +165,10 @@ class Home extends Component {
                                     <Col>
                                         <img alt="roadmap" src={roadmapItem3} />
                                     </Col>
-                                    <Col className={`${styles.waiting} ${styles.holderCol}`}>
+                                    <Col className={`${styles.holderCol}`}>
                                         <img alt="roadmap" src={roadmapLine} />
                                     </Col>
-                                    <Col className={`${styles.waiting}`}>
+                                    <Col>
                                         <img alt="roadmap" src={roadmapItem4} />
                                     </Col>
                                     <Col className={`${styles.waiting} ${styles.holderCol}`}>
