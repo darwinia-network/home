@@ -521,7 +521,7 @@
     "architecture": "Architecture",
     "architecture_desc": "Darwinia ChainRelay is a super light-client ChainRelay. It allows us to upgrade the single-chain application protocols to cross-chain versions, which include but not limited to Defi, Game, DEX, NFT Market, etc.",
     "mainnet_stage": "Mainnet Stage",
-    "mainnet_stage_desc": "The Darwinia mainnet is planned to launch between September 25 and October 15. The Darwinia mainnet launch will be a progressive process, divided into several stages to unlock main functional modules.",
+    "mainnet_stage_desc": "The Darwinia mainnet launch will be a progressive process, divided into several stages to unlock main functional modules.",
     "stage_0": "Stage 0",
     "stage_0_title": "Mainnet launched",
     "stage_1": "Stage 1",
