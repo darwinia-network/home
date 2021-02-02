@@ -76,9 +76,9 @@ import partner25 from './img/partner/partner-25.png'
 import partner26 from './img/partner/partner-26.png'
 
 import news20 from "../Media/img/news20.png"
-import news19 from "../Media/img/news19.png"
-import news14 from "../Media/img/news14.png"
-import news16 from "../Media/img/news16.png"
+import news21 from "../Media/img/news21.png"
+import news23 from "../Media/img/news23.png"
+import news24 from "../Media/img/news24.png"
 
 import band1 from "./img/band/band-1.png"
 import band2 from "./img/band/band-2.png"
@@ -1140,6 +1140,48 @@ class Home extends Component {
                             </div>
                             <Row className={`d-flex justify-content-center text-left`}>
                                 <Col xs={12} md={4} lg={3}>
+                                    <a className={styles.imgUrl} target="_blank" rel="noopener noreferrer" href={t('media:news_24_link')}>
+                                        <div className={styles.imgRatio}>
+                                            <img alt="news" src={news24}/>
+                                        </div>
+                                        <div className={styles.mediaInfo}>
+                                            <span>{t('media:more_title')}</span>
+                                            <span className={styles.mediaTime}>{t('media:news_24_time')}</span>
+                                        </div>
+                                        <p className={styles.mediaDesc}>
+                                            {t('media:news_24_title')}
+                                        </p>
+                                    </a>
+                                </Col>
+                                <Col xs={12} md={4} lg={3}>
+                                    <a className={styles.imgUrl} target="_blank" rel="noopener noreferrer" href={t('media:news_23_link')}>
+                                        <div className={styles.imgRatio}>
+                                            <img alt="news" src={news23}/>
+                                        </div>
+                                        <div className={styles.mediaInfo}>
+                                            <span>{t('media:more_title')}</span>
+                                            <span className={styles.mediaTime}>{t('media:news_23_time')}</span>
+                                        </div>
+                                        <p className={styles.mediaDesc}>
+                                            {t('media:news_23_title')}
+                                        </p>
+                                    </a>
+                                </Col>
+                                <Col xs={12} md={4} lg={3}>
+                                    <a className={styles.imgUrl} target="_blank" rel="noopener noreferrer" href={t('media:news_21_link')}>
+                                        <div className={styles.imgRatio}>
+                                            <img alt="news" src={news21}/>
+                                        </div>
+                                        <div className={styles.mediaInfo}>
+                                            <span>{t('media:more_title')}</span>
+                                            <span className={styles.mediaTime}>{t('media:news_21_time')}</span>
+                                        </div>
+                                        <p className={styles.mediaDesc}>
+                                            {t('media:news_21_title')}
+                                        </p>
+                                    </a>
+                                </Col>
+                                <Col xs={12} md={4} lg={3}>
                                     <a className={styles.imgUrl} target="_blank" rel="noopener noreferrer" href={t('media:news_20_link')}>
                                         <div className={styles.imgRatio}>
                                             <img alt="news" src={news20}/>
@@ -1150,48 +1192,6 @@ class Home extends Component {
                                         </div>
                                         <p className={styles.mediaDesc}>
                                             {t('media:news_20_title')}
-                                        </p>
-                                    </a>
-                                </Col>
-                                <Col xs={12} md={4} lg={3}>
-                                    <a className={styles.imgUrl} target="_blank" rel="noopener noreferrer" href={t('media:news_19_link')}>
-                                        <div className={styles.imgRatio}>
-                                            <img alt="news" src={news19}/>
-                                        </div>
-                                        <div className={styles.mediaInfo}>
-                                            <span>{t('media:more_title')}</span>
-                                            <span className={styles.mediaTime}>{t('media:news_19_time')}</span>
-                                        </div>
-                                        <p className={styles.mediaDesc}>
-                                            {t('media:news_19_title')}
-                                        </p>
-                                    </a>
-                                </Col>
-                                <Col xs={12} md={4} lg={3}>
-                                    <a className={styles.imgUrl} target="_blank" rel="noopener noreferrer" href={t('media:news_14_link')}>
-                                        <div className={styles.imgRatio}>
-                                            <img alt="news" src={news14}/>
-                                        </div>
-                                        <div className={styles.mediaInfo}>
-                                            <span>{t('media:more_title')}</span>
-                                            <span className={styles.mediaTime}>{t('media:news_14_time')}</span>
-                                        </div>
-                                        <p className={styles.mediaDesc}>
-                                            {t('media:news_14_title')}
-                                        </p>
-                                    </a>
-                                </Col>
-                                <Col xs={12} md={4} lg={3}>
-                                    <a className={styles.imgUrl} target="_blank" rel="noopener noreferrer" href={t('media:news_16_link')}>
-                                        <div className={styles.imgRatio}>
-                                            <img alt="news" src={news16}/>
-                                        </div>
-                                        <div className={styles.mediaInfo}>
-                                            <span>{t('media:more_title')}</span>
-                                            <span className={styles.mediaTime}>{t('media:news_16_time')}</span>
-                                        </div>
-                                        <p className={styles.mediaDesc}>
-                                            {t('media:news_16_title')}
                                         </p>
                                     </a>
                                 </Col>

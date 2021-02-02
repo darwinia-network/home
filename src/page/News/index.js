@@ -28,6 +28,10 @@ import news18 from "../Media/img/news18.png"
 import news19 from "../Media/img/news19.png"
 import news20 from "../Media/img/news20.png"
 import news21 from "../Media/img/news21.png"
+import news22 from "../Media/img/news22.png"
+import news23 from "../Media/img/news23.png"
+import news24 from "../Media/img/news24.png"
+import news25 from "../Media/img/news25.png"
 
 class News extends Component {
     constructor(props, context) {
@@ -38,6 +42,30 @@ class News extends Component {
         const {t} = this.props
 
         this.infos = [
+            {
+                link: t('media:news_25_link'),
+                time: t('media:news_25_time'),
+                title: t('media:news_25_title'),
+                src: news25
+            },
+            {
+                link: t('media:news_24_link'),
+                time: t('media:news_24_time'),
+                title: t('media:news_24_title'),
+                src: news24
+            },
+            {
+                link: t('media:news_23_link'),
+                time: t('media:news_23_time'),
+                title: t('media:news_23_title'),
+                src: news23
+            },
+            {
+                link: t('media:news_22_link'),
+                time: t('media:news_22_time'),
+                title: t('media:news_22_title'),
+                src: news22
+            },
             {
                 link: t('media:news_21_link'),
                 time: t('media:news_21_time'),
