@@ -27,12 +27,15 @@
   },
   "devDependencies": {
     "gh-pages": "^2.1.1",
-    "node-sass": "^4.12.0"
+    "node-sass": "^4.12.0",
+    "prerender-spa-plugin": "^3.4.0",
+    "react-app-rewired": "^2.1.8",
+    "serve": "^11.3.2"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "yarn && react-scripts build",
-    "test": "react-scripts test",
+    "start": "react-app-rewired start",
+    "build": "yarn && react-app-rewired build",
+    "test": "react-app-rewired test",
     "eject": "react-scripts eject",
     "render": "babel-node tools/run render",
     "serve": "serve -s build",
