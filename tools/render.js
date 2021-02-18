@@ -5,7 +5,15 @@ import { writeFile, makeDir } from './lib/fs';
 const routes = [
     '/faq',
     '/brand',
+    '/ambassador',
+    '/community',
+    '/media',
+    '/reports',
+    '/events',
+    '/videos',
     '/news',
+    '/tech',
+    '/economic_model',
     '/404'
 ];
 
