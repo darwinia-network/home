@@ -321,7 +321,6 @@ class Home extends Component {
     }
 
     renderTooltip = (text) => {
-        const {t} = this.props
         return <Popover className={styles.wxContainer}>
             <div className={styles.wxContainerBody}>
                 <p>{text}</p>
