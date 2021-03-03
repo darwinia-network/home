@@ -3,10 +3,10 @@
 body {
   color: $text-main;
   line-height: 1.3;
-  font-family: "Rajdhani", "-apple-system", "BlinkMacSystemFont", "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "sans-serif";
+  font-family: "IBMPlexSans", "-apple-system", "BlinkMacSystemFont", "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "sans-serif";
   --font-base: 0;
   &.zh-font {
-    font-family: "-apple-system", "BlinkMacSystemFont", "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "sans-serif";
+    // font-family: "-apple-system", "BlinkMacSystemFont", "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "sans-serif";
   }
 }
 html {
@@ -28,23 +28,23 @@ html {
 }
 
 @font-face {
-  font-family: Rajdhani;
+  font-family: IBMPlexSans;
   //src: url('./style/font/pt-sans.regular.ttf') format('truetype');
-  src: url('./style/font/Rajdhani-Medium.ttf') format('truetype');
+  src: url('./style/font/IBMPlexSans-Regular.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
-  font-family: Rajdhani;
-  src: url('./style/font/Rajdhani-SemiBold.ttf') format('truetype');
+  font-family: IBMPlexSans;
+  src: url('./style/font/IBMPlexSans-SemiBold.ttf') format('truetype');
   font-weight: bold;
   font-style: normal;
 }
 
 @font-face {
-  font-family: Rajdhani;
-  src: url('./style/font/Rajdhani-Bold.ttf') format('truetype');
+  font-family: IBMPlexSans;
+  src: url('./style/font/IBMPlexSans-Bold.ttf') format('truetype');
   font-weight: 600;
   font-style: normal;
 }
