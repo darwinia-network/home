@@ -16,6 +16,8 @@ import report5 from "../Media/img/report5.png"
 import report6 from "../Media/img/report6.png"
 import report7 from "../Media/img/report7.png"
 import report8 from "../Media/img/report8.png"
+import report9 from "../Media/img/report9.png"
+import report10 from "../Media/img/report10.png"
 
 class News extends Component {
     constructor(props, context) {
@@ -40,6 +42,34 @@ class News extends Component {
                             <h1 className={`${styles.gradientText}`}>{t('media:reports')}</h1>
                         </div>
                         <Row>
+                            <Col md={3} className={styles.content}>
+                                <a className={styles.imgUrl} rel="noopener noreferrer" target="_blank" href={t('media:report_10_link')}>
+                                    <div className={styles.imgRatio}>
+                                        <img alt="reports" src={report10}/>
+                                    </div>
+                                    <div className={styles.mediaInfo}>
+                                        <span>{t('media:more_title')}</span>
+                                        <span className={styles.mediaTime}>{t('media:report_10_time')}</span>
+                                    </div>
+                                    <div className={styles.mediaDesc}>
+                                        {t('media:report_10_title')}
+                                    </div>
+                                </a>
+                            </Col>
+                            <Col md={3} className={styles.content}>
+                                <a className={styles.imgUrl} rel="noopener noreferrer" target="_blank" href={t('media:report_9_link')}>
+                                    <div className={styles.imgRatio}>
+                                        <img alt="reports" src={report9}/>
+                                    </div>
+                                    <div className={styles.mediaInfo}>
+                                        <span>{t('media:more_title')}</span>
+                                        <span className={styles.mediaTime}>{t('media:report_9_time')}</span>
+                                    </div>
+                                    <div className={styles.mediaDesc}>
+                                        {t('media:report_9_title')}
+                                    </div>
+                                </a>
+                            </Col>
                             <Col md={3} className={styles.content}>
                                 <a className={styles.imgUrl} rel="noopener noreferrer" target="_blank" href={t('media:report_8_link')}>
                                     <div className={styles.imgRatio}>
