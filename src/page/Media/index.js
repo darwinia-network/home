@@ -14,17 +14,16 @@ import recom2 from "../Media/img/recom2.png"
 import recom3 from "../Media/img/recom3.png"
 import recom4 from "../Media/img/recom4.png"
 import recom5 from "../Media/img/recom5.png"
-import recom6 from "../Media/img/recom6.png"
 import reports from "./img/reports.png"
-import report6 from "../Media/img/report6.png"
 import report7 from "../Media/img/report7.png"
 import report8 from "../Media/img/report8.png"
 import report9 from "../Media/img/report9.png"
+import report10 from "../Media/img/report10.png"
 import news from "./img/news.png"
-import news27 from "../Media/img/news27.png"
 import news28 from "../Media/img/news28.png"
 import news29 from "../Media/img/news29.png"
 import news30 from "../Media/img/news30.png"
+import news31 from "../Media/img/news31.png"
 import events from "./img/events.png"
 import event1 from "../Media/img/event1.png"
 import event2 from "../Media/img/event2.png"
@@ -82,9 +81,9 @@ class Brand extends Component {
                                 <div className={styles.carouselItem}>
                                     <Row>
                                         <Col xs={12} md={9}>
-                                            <a target="_blank" rel="noopener noreferrer" className={styles.imgRatio} href={t('media:recom_4_link')}>
+                                            <div className={styles.imgRatio}>
                                                 <img alt="news" src={recom4}/>
-                                            </a>
+                                            </div>
                                         </Col>
                                         <Col xs={12} md={3}>
                                             <div className={styles.mediaDetail}>
@@ -185,32 +184,6 @@ class Brand extends Component {
                             <Col xs={12} className={`${styles.content}`}>
                                 <div className={`hidden-xs media-carousel ${styles.carousel} ${styles.pcCarousel}`}>
                                     <Carousel controls={false} interval={4000}>
-                                    <Carousel.Item>
-                                            <div className={styles.carouselItem}>
-                                                <Row>
-                                                    <Col xs={12} md={9}>
-                                                        <a target="_blank" rel="noopener noreferrer" className={styles.imgRatio} href={t('media:recom_6_link')}>
-                                                            <img alt="news" src={recom6}/>
-                                                            <div className={styles.mediaTitle}>
-                                                                <div className={styles.bg}></div>
-                                                                <div className={styles.text}>{t('media:recom_6_title')}</div>
-                                                            </div>
-                                                        </a>
-                                                    </Col>
-                                                    <Col xs={12} md={3}>
-                                                        <div className={styles.mediaDetail}>
-                                                            <div className={styles.mediaInfo}>
-                                                                <span>{t('media:recom_6_tag')}</span>
-                                                                <span className={styles.mediaTime}>{t('media:recom_6_time')}</span>
-                                                            </div>
-                                                            <div className={styles.mediaDesc}>
-                                                                {t('media:recom_6_desc')}
-                                                            </div>
-                                                        </div>
-                                                    </Col>
-                                                </Row>    
-                                            </div>
-                                        </Carousel.Item>
                                         <Carousel.Item>
                                             <div className={styles.carouselItem}>
                                                 <Row>
@@ -241,13 +214,13 @@ class Brand extends Component {
                                             <div className={styles.carouselItem}>
                                                 <Row>
                                                     <Col xs={12} md={9}>
-                                                        <a target="_blank" rel="noopener noreferrer" className={styles.imgRatio} href={t('media:recom_4_link')}>
+                                                        <div className={styles.imgRatio}>
                                                             <img alt="news" src={recom4}/>
                                                             <div className={styles.mediaTitle}>
                                                                 <div className={styles.bg}></div>
                                                                 <div className={styles.text}>{t('media:recom_4_title')}</div>
                                                             </div>
-                                                        </a>
+                                                        </div>
                                                     </Col>
                                                     <Col xs={12} md={3}>
                                                         <div className={styles.mediaDetail}>
@@ -293,6 +266,32 @@ class Brand extends Component {
                                             <div className={styles.carouselItem}>
                                                 <Row>
                                                     <Col xs={12} md={9}>
+                                                    <a target="_blank" rel="noopener noreferrer" className={styles.imgRatio} href={t('media:recom_2_link')}>
+                                                            <img alt="news" src={recom2}/>
+                                                            <div className={styles.mediaTitle}>
+                                                                <div className={styles.bg}></div>
+                                                                <div className={styles.text}>{t('media:recom_2_title')}</div>
+                                                            </div>
+                                                        </a>
+                                                    </Col>
+                                                    <Col xs={12} md={3}>
+                                                        <div className={styles.mediaDetail}>
+                                                            <div className={styles.mediaInfo}>
+                                                                <span>{t('media:recom_2_tag')}</span>
+                                                                <span className={styles.mediaTime}>{t('media:recom_2_time')}</span>
+                                                            </div>
+                                                            <div className={styles.mediaDesc}>
+                                                                {t('media:recom_2_desc')}
+                                                            </div>
+                                                        </div>
+                                                    </Col>
+                                                </Row>
+                                            </div>
+                                        </Carousel.Item>
+                                        <Carousel.Item>
+                                            <div className={styles.carouselItem}>
+                                                <Row>
+                                                    <Col xs={12} md={9}>
                                                     <a target="_blank" rel="noopener noreferrer" className={styles.imgRatio} href={t('media:recom_1_link')}>
                                                             <img alt="news" src={recom1}/>
                                                             <div className={styles.mediaTitle}>
@@ -324,6 +323,20 @@ class Brand extends Component {
                                         <h1 className={`${styles.gradientText}`}>{t('media:news')}</h1>
                                     </div>
                                     <Row>
+                                        <Col md={3} className={styles.mediaContent}>
+                                            <div className={styles.imgUrl}>
+                                                <div className={styles.imgRatio}>
+                                                    <img alt="news" src={news31}/>
+                                                </div>
+                                                <div className={styles.mediaInfo}>
+                                                    <span>{t('media:more_title')}</span>
+                                                    <span className={styles.mediaTime}>{t('media:news_31_time')}</span>
+                                                </div>
+                                                <div className={styles.mediaDesc}>
+                                                    {t('media:news_31_title')}
+                                                </div>
+                                            </div>
+                                        </Col>
                                         <Col md={3}  className={styles.mediaContent}>
                                             <a className={styles.imgUrl} rel="noopener noreferrer" target="_blank" href={t('media:news_30_link')}>
                                                 <div className={styles.imgRatio}>
@@ -366,20 +379,6 @@ class Brand extends Component {
                                                 </div>
                                             </a>
                                         </Col>
-                                        <Col md={3} className={styles.mediaContent}>
-                                            <a className={styles.imgUrl} rel="noopener noreferrer" target="_blank" href={t('media:news_27_link')}>
-                                                <div className={styles.imgRatio}>
-                                                    <img alt="news" src={news27}/>
-                                                </div>
-                                                <div className={styles.mediaInfo}>
-                                                    <span>{t('media:more_title')}</span>
-                                                    <span className={styles.mediaTime}>{t('media:news_27_time')}</span>
-                                                </div>
-                                                <div className={styles.mediaDesc}>
-                                                    {t('media:news_27_title')}
-                                                </div>
-                                            </a>
-                                        </Col>
                                     </Row>
                                     <div className={`text-center`}>
                                         <Button variant="dark" target="_blank" href="/news"
@@ -394,6 +393,20 @@ class Brand extends Component {
                                         <h1 className={`${styles.gradientText}`}>{t('media:reports')}</h1>
                                     </div>
                                     <Row>
+                                        <Col md={3}  className={styles.mediaContent}>
+                                            <a className={styles.imgUrl} rel="noopener noreferrer" target="_blank" href={t('media:report_10_link')}>
+                                                <div className={styles.imgRatio}>
+                                                    <img alt="reports" src={report10}/>
+                                                </div>
+                                                <div className={styles.mediaInfo}>
+                                                    <span>{t('media:more_title')}</span>
+                                                    <span className={styles.mediaTime}>{t('media:report_10_time')}</span>
+                                                </div>
+                                                <div className={styles.mediaDesc}>
+                                                    {t('media:report_10_title')}
+                                                </div>
+                                            </a>
+                                        </Col>
                                         <Col md={3} className={styles.mediaContent}>
                                             <a className={styles.imgUrl} rel="noopener noreferrer" target="_blank" href={t('media:report_9_link')}>
                                                 <div className={styles.imgRatio}>
@@ -433,20 +446,6 @@ class Brand extends Component {
                                                 </div>
                                                 <div className={styles.mediaDesc}>
                                                     {t('media:report_7_title')}
-                                                </div>
-                                            </a>
-                                        </Col>
-                                        <Col md={3}  className={styles.mediaContent}>
-                                            <a className={styles.imgUrl} rel="noopener noreferrer" target="_blank" href={t('media:report_6_link')}>
-                                                <div className={styles.imgRatio}>
-                                                    <img alt="reports" src={report6}/>
-                                                </div>
-                                                <div className={styles.mediaInfo}>
-                                                    <span>{t('media:more_title')}</span>
-                                                    <span className={styles.mediaTime}>{t('media:report_6_time')}</span>
-                                                </div>
-                                                <div className={styles.mediaDesc}>
-                                                    {t('media:report_6_title')}
                                                 </div>
                                             </a>
                                         </Col>

@@ -37,6 +37,7 @@ import news27 from "../Media/img/news27.png"
 import news28 from "../Media/img/news28.png"
 import news29 from "../Media/img/news29.png"
 import news30 from "../Media/img/news30.png"
+import news31 from "../Media/img/news31.png"
 
 class News extends Component {
     constructor(props, context) {
@@ -47,6 +48,12 @@ class News extends Component {
         const {t} = this.props
 
         this.infos = [
+            {
+                link: t('media:news_31_link'),
+                time: t('media:news_31_time'),
+                title: t('media:news_31_title'),
+                src: news31
+            },
             {
                 link: t('media:news_30_link'),
                 time: t('media:news_30_time'),
@@ -239,19 +246,35 @@ class News extends Component {
         return this.infos.map((partner, index) => {
             return (
                 <Col key={index} md={3} className={styles.content}>
-                <a className={styles.imgUrl} rel="noopener noreferrer" target="_blank" href={partner.link}>
-                    <div className={styles.imgRatio}>
-                        <img alt="news" src={partner.src}/>
-                    </div>
-                    <div className={styles.mediaInfo}>
-                        <span>{t('media:more_title')}</span>
-                        <span className={styles.mediaTime}>{partner.time}</span>
-                    </div>
-                    <div className={styles.mediaDesc}>
-                        {partner.title}
-                    </div>
-                </a>
-            </Col>
+                    {
+                        (partner.link) ? 
+                        <a className={styles.imgUrl} rel="noopener noreferrer" target="_blank" href={partner.link}>
+                            <div className={styles.imgRatio}>
+                                <img alt="news" src={partner.src}/>
+                            </div>
+                            <div className={styles.mediaInfo}>
+                                <span>{t('media:more_title')}</span>
+                                <span className={styles.mediaTime}>{partner.time}</span>
+                            </div>
+                            <div className={styles.mediaDesc}>
+                                {partner.title}
+                            </div>
+                        </a>
+                        : 
+                        <div className={styles.imgUrl}>
+                            <div className={styles.imgRatio}>
+                                <img alt="news" src={partner.src}/>
+                            </div>
+                            <div className={styles.mediaInfo}>
+                                <span>{t('media:more_title')}</span>
+                                <span className={styles.mediaTime}>{partner.time}</span>
+                            </div>
+                            <div className={styles.mediaDesc}>
+                                {partner.title}
+                            </div>
+                        </div>
+                    }
+                </Col>
             )
         })
     }
