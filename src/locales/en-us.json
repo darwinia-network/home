@@ -654,7 +654,7 @@
     "scan": "Scan QR",
     "follow": "Follow Official Accounts",
     "grant": "Granted by Web3 Foundation",
-    "copyright": "Copyright@2020 Darwinia Network",
+    "copyright": "Copyright@{{year}} Darwinia Network",
     "support": "Substrate Builder Program",
     "rfcs_link": "https://docs.darwinia.network/docs/en/wiki-rfc-index",
     "faq_link": "https://docs.darwinia.network/docs/en/wiki-faq-general",
