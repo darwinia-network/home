@@ -240,7 +240,7 @@ class PageFooter extends Component {
                                 {t('footer:grant')}
                                 </div>
                                 <div>
-                                {t('footer:copyright')}
+                                {t('footer:copyright', {year: new Date().getFullYear()})}
                                 </div>
                                 <div>
                                 {t('footer:support')}
@@ -293,7 +293,7 @@ class PageFooter extends Component {
                                 </div>
                             </Col>
                             <Col className={`text-center ${styles.copyright}`}>
-                            {t('footer:copyright')}
+                            {t('footer:copyright', {year: new Date().getFullYear()})}
                             </Col>
                         </Row>
 
