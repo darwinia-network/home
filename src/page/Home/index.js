@@ -47,6 +47,7 @@ import eco3 from './img/economic/eco-3.png'
 import etherscan from './img/economic/etherscan.png'
 import tronscan from './img/economic/tronscan.png'
 import metamask from './img/economic/metamask.png'
+import subscan from './img/economic/subscan.svg'
 
 import partner1 from './img/partner/partner-1.png'
 import partner2 from './img/partner/partner-2.png'
@@ -583,6 +584,18 @@ class Home extends Component {
                                                 placement={'top'}
                                                 overlay={
                                                     <Tooltip>
+                                                        subscan
+                                                    </Tooltip>
+                                                }
+                                            >
+                                                <a href={`https://darwinia.subscan.io/account`} target="_blank" rel="noopener noreferrer">
+                                                    <img alt="subscan" src={subscan} />
+                                                </a>
+                                            </OverlayTrigger>
+                                            <OverlayTrigger
+                                                placement={'top'}
+                                                overlay={
+                                                    <Tooltip>
                                                         etherscan
                                                     </Tooltip>
                                                 }
@@ -628,6 +641,18 @@ class Home extends Component {
                                             <span className={styles.gradientText}>{t('home_page:economic_block_title_2')}</span>
                                         </div>
                                         <p>
+                                            <OverlayTrigger
+                                                placement={'top'}
+                                                overlay={
+                                                    <Tooltip>
+                                                        subscan
+                                                    </Tooltip>
+                                                }
+                                            >   
+                                                <a href={`https://darwinia.subscan.io/account?currency=kton`} target="_blank" rel="noopener noreferrer">
+                                                    <img alt="subscan" src={subscan} />
+                                                </a>
+                                            </OverlayTrigger>
                                             <OverlayTrigger
                                                 placement={'top'}
                                                 overlay={
