@@ -141,7 +141,7 @@ class Brand extends Component {
                                                 <img className={styles.hoverImg} alt="twitter" src={twitter}/>
                                             </div>
                                             <div className={styles.mediaNum}>
-                                                22,889
+                                                26,334
                                             </div>
                                             <div className={styles.mediaName}>
                                                 {t('community:twitter')}
@@ -195,7 +195,7 @@ class Brand extends Component {
                                                 <img className={styles.hoverImg} alt="github" src={github}/>
                                             </div>
                                             <div className={styles.mediaNum}>
-                                                89
+                                                97
                                             </div>
                                             <div className={styles.mediaName}>
                                                 {t('community:github')}

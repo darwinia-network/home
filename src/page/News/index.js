@@ -41,6 +41,12 @@ import news31 from "../Media/img/news31.png"
 import news32 from "../Media/img/news32.png"
 import news33 from "../Media/img/news33.png"
 import news34 from "../Media/img/news34.png"
+import news35 from "../Media/img/news35.png"
+import news36 from "../Media/img/news36.png"
+import news37 from "../Media/img/news37.png"
+import news38 from "../Media/img/news38.png"
+import news39 from "../Media/img/news39.png"
+import news40 from "../Media/img/news40.png"
 
 class News extends Component {
     constructor(props, context) {
@@ -51,6 +57,42 @@ class News extends Component {
         const {t} = this.props
 
         this.infos = [
+            {
+                link: t('media:news_40_link'),
+                time: t('media:news_40_time'),
+                title: t('media:news_40_title'),
+                src: news40
+            },
+            {
+                link: t('media:news_39_link'),
+                time: t('media:news_39_time'),
+                title: t('media:news_39_title'),
+                src: news39
+            },
+            {
+                link: t('media:news_38_link'),
+                time: t('media:news_38_time'),
+                title: t('media:news_38_title'),
+                src: news38
+            },
+            {
+                link: t('media:news_37_link'),
+                time: t('media:news_37_time'),
+                title: t('media:news_37_title'),
+                src: news37
+            },
+            {
+                link: t('media:news_36_link'),
+                time: t('media:news_36_time'),
+                title: t('media:news_36_title'),
+                src: news36
+            },
+            {
+                link: t('media:news_35_link'),
+                time: t('media:news_35_time'),
+                title: t('media:news_35_title'),
+                src: news35
+            },
             {
                 link: t('media:news_34_link'),
                 time: t('media:news_34_time'),
