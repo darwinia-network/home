@@ -14,9 +14,9 @@ import banner_en from './img/banner_en.png'
 import flow from './img/flow.png'
 import flow_en from './img/flow_en.png'
 
-import report8 from "../Media/img/report8.png"
-import news8 from "../Media/img/news8.png"
-import event3 from "../Media/img/event3.png"
+import video12 from "../Media/img/video12.png"
+import report10 from "../Media/img/report10.png"
+import report9 from "../Media/img/report9.png"
 
 class Brand extends Component {
     constructor(props, context) {
@@ -141,44 +141,44 @@ class Brand extends Component {
                                 </div>
                                 <ul className={styles.mediaBlocks}>
                                     <li className={styles.mediaBlock}>
-                                        <a className={styles.imgUrl} rel="noopener noreferrer" target="_blank" href={t('media:report_8_link')}>
+                                        <a className={styles.imgUrl} rel="noopener noreferrer" target="_blank" href={t('media:video_12_link')}>
                                             <div className={styles.imgRatio}>
-                                                <img alt="reports" src={report8}/>
+                                                <img alt="video" src={video12}/>
                                             </div>
                                             <div className={styles.mediaInfo}>
                                                 <span>{t('media:more_title')}</span>
-                                                <span className={styles.mediaTime}>{t('media:report_8_time')}</span>
+                                                <span className={styles.mediaTime}>{t('media:video_12_time')}</span>
                                             </div>
                                             <div className={styles.mediaDesc}>
-                                                {t('media:report_8_title')}
+                                                {t('media:video_12_title')}
                                             </div>
                                         </a>
                                     </li>
                                     <li className={styles.mediaBlock}>
-                                        <a className={styles.imgUrl} rel="noopener noreferrer" target="_blank" href={t('media:news_8_link')}>
+                                        <a className={styles.imgUrl} rel="noopener noreferrer" target="_blank" href={t('media:report_10_link')}>
                                             <div className={styles.imgRatio}>
-                                                <img alt="news" src={news8}/>
+                                                <img alt="report" src={report10}/>
                                             </div>
                                             <div className={styles.mediaInfo}>
                                                 <span>{t('media:more_title')}</span>
-                                                <span className={styles.mediaTime}>{t('media:news_8_time')}</span>
+                                                <span className={styles.mediaTime}>{t('media:report_10_time')}</span>
                                             </div>
                                             <div className={styles.mediaDesc}>
-                                                {t('media:news_8_title')}
+                                                {t('media:report_10_title')}
                                             </div>
                                         </a>
                                     </li>
                                     <li className={styles.mediaBlock}>
-                                        <a className={styles.imgUrl} rel="noopener noreferrer" target="_blank" href={t('media:event_3_link')}>
+                                        <a className={styles.imgUrl} rel="noopener noreferrer" target="_blank" href={t('media:report_9_link')}>
                                             <div className={styles.imgRatio}>
-                                                <img alt="events" src={event3}/>
+                                                <img alt="report" src={report9}/>
                                             </div>
                                             <div className={styles.mediaInfo}>
                                                 <span>{t('media:more_title')}</span>
-                                                <span className={styles.mediaTime}>{t('media:event_3_time')}</span>
+                                                <span className={styles.mediaTime}>{t('media:report_9_time')}</span>
                                             </div>
                                             <div className={styles.mediaDesc}>
-                                                {t('media:event_3_title')}
+                                                {t('media:report_9_title')}
                                             </div>
                                         </a>
                                     </li>
