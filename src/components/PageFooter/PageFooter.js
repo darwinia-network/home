@@ -157,7 +157,7 @@ class PageFooter extends Component {
                         </Col>
                         <Col xs={6} md={4} lg={3}>
                             <h1>{t('footer:technology')}</h1>
-                            <p><a target="_blank" rel="noopener noreferrer" href={t('header:testnet_url')}>{t('footer:technology_title_1')}</a></p>
+                            <p><a target="_blank" rel="noopener noreferrer" href="https://crab.network/">{t('footer:technology_title_1')}</a></p>
                             {i18n.language.indexOf('en') > -1 ?
                                 <p><a target="_blank" rel="noopener noreferrer" href="/Darwinia_Genepaper_EN.pdf">{t('footer:technology_title_2')}</a></p>
                                 :
