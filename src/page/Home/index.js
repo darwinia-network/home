@@ -304,7 +304,7 @@ class Home extends Component {
     subscribe = (text) => {
         axios.post('https://api.darwinia.network/api/subscribe?email=' + text)
             .then((response) => {
-                if (response.data.code === 0) {
+                if (response.status === 200) {
                     this.setState({
                         info: this.props.t('home_page:subscribe_tip')
                     })
