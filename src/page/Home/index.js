@@ -76,10 +76,10 @@ import partner24 from './img/partner/partner-24.png'
 import partner25 from './img/partner/partner-25.png'
 import partner26 from './img/partner/partner-26.png'
 
-import news33 from "../Media/img/news33.png"
-import news37 from "../Media/img/news37.png"
-import news38 from "../Media/img/news38.png"
+import news39 from "../Media/img/news39.png"
 import news40 from "../Media/img/news40.png"
+import news41 from "../Media/img/news41.png"
+import news42 from "../Media/img/news42.png"
 
 import band1 from "./img/band/band-1.png"
 import band2 from "./img/band/band-2.png"
@@ -1164,30 +1164,30 @@ class Home extends Component {
                             </div>
                             <Row className={`d-flex justify-content-center text-left`}>
                                 <Col xs={12} md={4} lg={3}>
-                                    <a className={styles.imgUrl} rel="noopener noreferrer" target="_blank" href={t('media:news_38_link')}>
+                                    <a className={styles.imgUrl} rel="noopener noreferrer" target="_blank" href={t('media:news_42_link')}>
                                         <div className={styles.imgRatio}>
-                                            <img alt="news" src={news38}/>
+                                            <img alt="news" src={news42}/>
                                         </div>
                                         <div className={styles.mediaInfo}>
                                             <span>{t('media:more_title')}</span>
-                                            <span className={styles.mediaTime}>{t('media:news_38_time')}</span>
+                                            <span className={styles.mediaTime}>{t('media:news_42_time')}</span>
                                         </div>
                                         <div className={styles.mediaDesc}>
-                                            {t('media:news_38_title')}
+                                            {t('media:news_42_title')}
                                         </div>
                                     </a>
                                 </Col>
                                 <Col xs={12} md={4} lg={3}>
-                                    <a className={styles.imgUrl} rel="noopener noreferrer" target="_blank" href={t('media:news_37_link')}>
+                                    <a className={styles.imgUrl} rel="noopener noreferrer" target="_blank" href={t('media:news_41_link')}>
                                         <div className={styles.imgRatio}>
-                                            <img alt="news" src={news37}/>
+                                            <img alt="news" src={news41}/>
                                         </div>
                                         <div className={styles.mediaInfo}>
                                             <span>{t('media:more_title')}</span>
-                                            <span className={styles.mediaTime}>{t('media:news_37_time')}</span>
+                                            <span className={styles.mediaTime}>{t('media:news_41_time')}</span>
                                         </div>
                                         <div className={styles.mediaDesc}>
-                                            {t('media:news_37_title')}
+                                            {t('media:news_41_title')}
                                         </div>
                                     </a>
                                 </Col>
@@ -1206,16 +1206,16 @@ class Home extends Component {
                                     </a>
                                 </Col>
                                 <Col xs={12} md={4} lg={3}>
-                                    <a className={styles.imgUrl} rel="noopener noreferrer" target="_blank" href={t('media:news_33_link')}>
+                                    <a className={styles.imgUrl} rel="noopener noreferrer" target="_blank" href={t('media:news_39_link')}>
                                         <div className={styles.imgRatio}>
-                                            <img alt="news" src={news33}/>
+                                            <img alt="news" src={news39}/>
                                         </div>
                                         <div className={styles.mediaInfo}>
                                             <span>{t('media:more_title')}</span>
-                                            <span className={styles.mediaTime}>{t('media:news_33_time')}</span>
+                                            <span className={styles.mediaTime}>{t('media:news_39_time')}</span>
                                         </div>
                                         <div className={styles.mediaDesc}>
-                                            {t('media:news_33_title')}
+                                            {t('media:news_39_title')}
                                         </div>
                                     </a>
                                 </Col>
