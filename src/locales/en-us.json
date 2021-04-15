@@ -606,7 +606,7 @@
     "bridge": "Darwinia Bridge Protocol",
     "bridge_desc": "Darwinia’s cross-chain token bridge solution is a two-way cross-chain token bridge based on chain relay. The chain relay we are going to develop adopts the design of the Darwinia Sublinear Relay, which has better performance and economic feasibility.",
     "relay": "Darwinia ChainRelay",
-    "relay_desc": "Darwinia Bridge takes Chain Relay approach because it's trust based. With innovations like Merkle Mountain Range and Optimistic Verification Game, we get a sub-linear relay which means we don't need to have each and every block of foreign chains relayed, and even we can achieve \"Relay on Demand\".",
+    "relay_desc": "Darwinia Bridge takes Chain Relay approach because it's truth based. With innovations like Merkle Mountain Range and Optimistic Verification Game, we get a sub-linear relay which means we don't need to have each and every block of foreign chains relayed, and even we can achieve \"Relay on Demand\".",
     "trust": "TRUST relied",
     "trust_1": "Custodian Model",
     "trust_2": "Multi-sig",
