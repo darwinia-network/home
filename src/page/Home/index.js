@@ -75,6 +75,7 @@ import partner23 from './img/partner/partner-23.png'
 import partner24 from './img/partner/partner-24.png'
 import partner25 from './img/partner/partner-25.png'
 import partner26 from './img/partner/partner-26.png'
+import partner27 from './img/partner/partner-27.png'
 
 import news39 from "../Media/img/news39.png"
 import news40 from "../Media/img/news40.png"
@@ -232,7 +233,12 @@ class Home extends Component {
                 logo: partner24,
                 name: 'OTCMAKER',
                 url: 'https://www.otcmaker.com'
-            }
+            },
+            'tokeninsight': {
+                logo: partner27,
+                name: 'TokenInsight',
+                url: 'https://tokeninsight.com/'
+            },
         }
 
         this.tokenInfo = {
@@ -255,7 +261,7 @@ class Home extends Component {
             'ankr', 'bondly', 'crust', 'reef', 'bihu', 'evolutionland', 
             'imtoken', 'mathwallet', 'cobowallet', 'polkawallet', 'sssnodes', 'waterdrip',
             'consensus', 'bitrise', 'seven', 'digital', 'ddex', 'otcmaker', 
-            'polkabase', 'polkaworld'
+            'polkabase', 'polkaworld', 'tokeninsight'
         ]
         this.detectMetaMaskTimer = null;
     }
