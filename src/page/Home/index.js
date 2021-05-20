@@ -77,10 +77,10 @@ import partner25 from './img/partner/partner-25.png'
 import partner26 from './img/partner/partner-26.png'
 import partner27 from './img/partner/partner-27.png'
 
-import news39 from "../Media/img/news39.png"
 import news40 from "../Media/img/news40.png"
 import news41 from "../Media/img/news41.png"
 import news42 from "../Media/img/news42.png"
+import news43 from "../Media/img/news43.png"
 
 import band1 from "./img/band/band-1.png"
 import band2 from "./img/band/band-2.png"
@@ -1170,6 +1170,20 @@ class Home extends Component {
                             </div>
                             <Row className={`d-flex justify-content-center text-left`}>
                                 <Col xs={12} md={4} lg={3}>
+                                    <a className={styles.imgUrl} rel="noopener noreferrer" target="_blank" href={t('media:news_43_link')}>
+                                        <div className={styles.imgRatio}>
+                                            <img alt="news" src={news43}/>
+                                        </div>
+                                        <div className={styles.mediaInfo}>
+                                            <span>{t('media:more_title')}</span>
+                                            <span className={styles.mediaTime}>{t('media:news_43_time')}</span>
+                                        </div>
+                                        <div className={styles.mediaDesc}>
+                                            {t('media:news_43_title')}
+                                        </div>
+                                    </a>
+                                </Col>
+                                <Col xs={12} md={4} lg={3}>
                                     <a className={styles.imgUrl} rel="noopener noreferrer" target="_blank" href={t('media:news_42_link')}>
                                         <div className={styles.imgRatio}>
                                             <img alt="news" src={news42}/>
@@ -1208,20 +1222,6 @@ class Home extends Component {
                                         </div>
                                         <div className={styles.mediaDesc}>
                                             {t('media:news_40_title')}
-                                        </div>
-                                    </a>
-                                </Col>
-                                <Col xs={12} md={4} lg={3}>
-                                    <a className={styles.imgUrl} rel="noopener noreferrer" target="_blank" href={t('media:news_39_link')}>
-                                        <div className={styles.imgRatio}>
-                                            <img alt="news" src={news39}/>
-                                        </div>
-                                        <div className={styles.mediaInfo}>
-                                            <span>{t('media:more_title')}</span>
-                                            <span className={styles.mediaTime}>{t('media:news_39_time')}</span>
-                                        </div>
-                                        <div className={styles.mediaDesc}>
-                                            {t('media:news_39_title')}
                                         </div>
                                     </a>
                                 </Col>
