@@ -50,6 +50,7 @@ import news40 from "../Media/img/news40.png"
 import news41 from "../Media/img/news41.png"
 import news42 from "../Media/img/news42.png"
 import news43 from "../Media/img/news43.png"
+import news44 from "../Media/img/news44.png"
 
 class News extends Component {
     constructor(props, context) {
@@ -60,6 +61,12 @@ class News extends Component {
         const {t} = this.props
 
         this.infos = [
+            {
+                link: t('media:news_44_link'),
+                time: t('media:news_44_time'),
+                title: t('media:news_44_title'),
+                src: news44
+            },
             {
                 link: t('media:news_43_link'),
                 time: t('media:news_43_time'),
