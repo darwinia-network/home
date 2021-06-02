@@ -7,18 +7,20 @@ import { PageFooter } from '../../components/PageFooter'
 import Fade from 'react-reveal/Fade';
 // import { GradientHeading } from '../../components/GradientHeading'
 
-// import carousel_1 from "./img/carousel/carousel-1.jpg"
-// import carousel_1_en from "./img/carousel/carousel-1-en.jpg"
+
 import carousel_2 from "./img/carousel/carousel-2.jpg"
 import carousel_2_en from "./img/carousel/carousel-2-en.jpg"
-import carousel_3 from "./img/carousel/carousel-3.jpg"
-import carousel_3_en from "./img/carousel/carousel-3-en.jpg"
-// import carousel_1_m from "./img/carousel/carousel-1-m.jpg"
-// import carousel_1_en_m from "./img/carousel/carousel-1-m-en.jpg"
 import carousel_2_m from "./img/carousel/carousel-2-m.jpg"
 import carousel_2_en_m from "./img/carousel/carousel-2-m-en.jpg"
+import carousel_3 from "./img/carousel/carousel-3.jpg"
+import carousel_3_en from "./img/carousel/carousel-3-en.jpg"
 import carousel_3_m from "./img/carousel/carousel-3-m.jpg"
 import carousel_3_en_m from "./img/carousel/carousel-3-m-en.jpg"
+import carousel_4 from "./img/carousel/carousel-4.jpg"
+import carousel_4_en from "./img/carousel/carousel-4-en.jpg"
+import carousel_4_m from "./img/carousel/carousel-4-m.jpg"
+import carousel_4_en_m from "./img/carousel/carousel-4-m-en.jpg"
+
 
 import roadmapSplit from "./img/roadmap/roadmap-split.png"
 
@@ -77,10 +79,10 @@ import partner25 from './img/partner/partner-25.png'
 import partner26 from './img/partner/partner-26.png'
 import partner27 from './img/partner/partner-27.png'
 
-import news39 from "../Media/img/news39.png"
-import news40 from "../Media/img/news40.png"
 import news41 from "../Media/img/news41.png"
 import news42 from "../Media/img/news42.png"
+import news43 from "../Media/img/news43.png"
+import news44 from "../Media/img/news44.png"
 
 import band1 from "./img/band/band-1.png"
 import band2 from "./img/band/band-2.png"
@@ -383,6 +385,20 @@ class Home extends Component {
                 </div> */}
                 <div className={`home-carousel ${styles.carousel}`}>
                     <Carousel controls={false}  indicators={true} interval={4000}>
+                        <Carousel.Item>
+                            <div className={styles.carouselItem}>
+                                <a target="_blank" rel="noopener noreferrer" className={`${styles.imgRatio}`} href={t('home_page:recom_4_link')}>
+                                    <div className={`hidden-xs`}>
+                                        {i18n.language.indexOf('en') > -1 ? <img alt="news" src={carousel_4_en}/> :
+                                        <img alt="news" src={carousel_4}/>}
+                                    </div>
+                                    <div className={`hidden-md`}>
+                                        {i18n.language.indexOf('en') > -1 ? <img alt="news" src={carousel_4_en_m}/> :
+                                        <img alt="news" src={carousel_4_m}/>}
+                                    </div>
+                                </a> 
+                            </div>
+                        </Carousel.Item>
                         <Carousel.Item>
                             <div className={styles.carouselItem}>
                                 <a target="_blank" rel="noopener noreferrer" className={`${styles.imgRatio}`} href={t('home_page:recom_3_link')}>
@@ -1170,6 +1186,34 @@ class Home extends Component {
                             </div>
                             <Row className={`d-flex justify-content-center text-left`}>
                                 <Col xs={12} md={4} lg={3}>
+                                    <a className={styles.imgUrl} rel="noopener noreferrer" target="_blank" href={t('media:news_44_link')}>
+                                        <div className={styles.imgRatio}>
+                                            <img alt="news" src={news44}/>
+                                        </div>
+                                        <div className={styles.mediaInfo}>
+                                            <span>{t('media:more_title')}</span>
+                                            <span className={styles.mediaTime}>{t('media:news_44_time')}</span>
+                                        </div>
+                                        <div className={styles.mediaDesc}>
+                                            {t('media:news_44_title')}
+                                        </div>
+                                    </a>
+                                </Col>
+                                <Col xs={12} md={4} lg={3}>
+                                    <a className={styles.imgUrl} rel="noopener noreferrer" target="_blank" href={t('media:news_43_link')}>
+                                        <div className={styles.imgRatio}>
+                                            <img alt="news" src={news43}/>
+                                        </div>
+                                        <div className={styles.mediaInfo}>
+                                            <span>{t('media:more_title')}</span>
+                                            <span className={styles.mediaTime}>{t('media:news_43_time')}</span>
+                                        </div>
+                                        <div className={styles.mediaDesc}>
+                                            {t('media:news_43_title')}
+                                        </div>
+                                    </a>
+                                </Col>
+                                <Col xs={12} md={4} lg={3}>
                                     <a className={styles.imgUrl} rel="noopener noreferrer" target="_blank" href={t('media:news_42_link')}>
                                         <div className={styles.imgRatio}>
                                             <img alt="news" src={news42}/>
@@ -1194,34 +1238,6 @@ class Home extends Component {
                                         </div>
                                         <div className={styles.mediaDesc}>
                                             {t('media:news_41_title')}
-                                        </div>
-                                    </a>
-                                </Col>
-                                <Col xs={12} md={4} lg={3}>
-                                    <a className={styles.imgUrl} rel="noopener noreferrer" target="_blank" href={t('media:news_40_link')}>
-                                        <div className={styles.imgRatio}>
-                                            <img alt="news" src={news40}/>
-                                        </div>
-                                        <div className={styles.mediaInfo}>
-                                            <span>{t('media:more_title')}</span>
-                                            <span className={styles.mediaTime}>{t('media:news_40_time')}</span>
-                                        </div>
-                                        <div className={styles.mediaDesc}>
-                                            {t('media:news_40_title')}
-                                        </div>
-                                    </a>
-                                </Col>
-                                <Col xs={12} md={4} lg={3}>
-                                    <a className={styles.imgUrl} rel="noopener noreferrer" target="_blank" href={t('media:news_39_link')}>
-                                        <div className={styles.imgRatio}>
-                                            <img alt="news" src={news39}/>
-                                        </div>
-                                        <div className={styles.mediaInfo}>
-                                            <span>{t('media:more_title')}</span>
-                                            <span className={styles.mediaTime}>{t('media:news_39_time')}</span>
-                                        </div>
-                                        <div className={styles.mediaDesc}>
-                                            {t('media:news_39_title')}
                                         </div>
                                     </a>
                                 </Col>
