@@ -163,7 +163,7 @@ class Brand extends Component {
                                                 <Row>
                                                     <Col xs={12} md={9}>
                                                         <a target="_blank" rel="noopener noreferrer" className={styles.imgRatio} href={t('media:recom_7_link')}>
-                                                            <img alt="news" src={recom6}/>
+                                                            <img alt="news" src={recom7}/>
                                                             <div className={styles.mediaTitle}>
                                                                 <div className={styles.bg}></div>
                                                                 <div className={styles.text}>{t('media:recom_7_title')}</div>
