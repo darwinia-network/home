@@ -1,0 +1,22 @@
+name: CI
+on:
+  pull_request:
+    branches: [master]
+
+jobs:
+  build-and-test:
+    name: Build and Test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/checkout@v2
+        with:
+          repository: itering/actions
+          path: .github/actions
+          persist-credentials: false
+          ssh-key: "${{ secrets.ITERING_ACTIONS_DEPLOY_KEY }}"
+
+      - name: Build using Puppeteer
+        run: |
+          yarn install
+          yarn run build
