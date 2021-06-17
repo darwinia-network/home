@@ -7,6 +7,7 @@ import archorsComponent from '../../components/anchorsComponent'
 import {withTranslation} from "react-i18next";
 import styles from "./style.module.scss";
 
+import video13 from "../Media/img/video13.png"
 import video12 from "../Media/img/video12.png"
 import video11 from "../Media/img/video11.png"
 import video10 from "../Media/img/video10.png"
@@ -44,6 +45,20 @@ class News extends Component {
                             <h1 className={`${styles.gradientText}`}>{t('media:videos')}</h1>
                         </div>
                         <Row>
+                            <Col md={3} className={styles.content}>
+                                <a className={styles.imgUrl} rel="noopener noreferrer" target="_blank" href={t('media:video_13_link')}>
+                                    <div className={styles.imgRatio}>
+                                        <img alt="videos" src={video13}/>
+                                    </div>
+                                    <div className={styles.mediaInfo}>
+                                        <span>{t('media:more_title')}</span>
+                                        <span className={styles.mediaTime}>{t('media:video_13_time')}</span>
+                                    </div>
+                                    <div className={styles.mediaDesc}>
+                                        {t('media:video_13_title')}
+                                    </div>
+                                </a>
+                            </Col>
                             <Col md={3} className={styles.content}>
                                 <a className={styles.imgUrl} rel="noopener noreferrer" target="_blank" href={t('media:video_12_link')}>
                                     <div className={styles.imgRatio}>

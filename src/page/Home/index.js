@@ -8,18 +8,22 @@ import Fade from 'react-reveal/Fade';
 // import { GradientHeading } from '../../components/GradientHeading'
 
 
-import carousel_2 from "./img/carousel/carousel-2.jpg"
-import carousel_2_en from "./img/carousel/carousel-2-en.jpg"
-import carousel_2_m from "./img/carousel/carousel-2-m.jpg"
+import carousel_2      from "./img/carousel/carousel-2.jpg"
+import carousel_2_en   from "./img/carousel/carousel-2-en.jpg"
+import carousel_2_m    from "./img/carousel/carousel-2-m.jpg"
 import carousel_2_en_m from "./img/carousel/carousel-2-m-en.jpg"
-import carousel_3 from "./img/carousel/carousel-3.jpg"
-import carousel_3_en from "./img/carousel/carousel-3-en.jpg"
-import carousel_3_m from "./img/carousel/carousel-3-m.jpg"
+import carousel_3      from "./img/carousel/carousel-3.jpg"
+import carousel_3_en   from "./img/carousel/carousel-3-en.jpg"
+import carousel_3_m    from "./img/carousel/carousel-3-m.jpg"
 import carousel_3_en_m from "./img/carousel/carousel-3-m-en.jpg"
-import carousel_4 from "./img/carousel/carousel-4.jpg"
-import carousel_4_en from "./img/carousel/carousel-4-en.jpg"
-import carousel_4_m from "./img/carousel/carousel-4-m.jpg"
+import carousel_4      from "./img/carousel/carousel-4.jpg"
+import carousel_4_en   from "./img/carousel/carousel-4-en.jpg"
+import carousel_4_m    from "./img/carousel/carousel-4-m.jpg"
 import carousel_4_en_m from "./img/carousel/carousel-4-m-en.jpg"
+import carousel_5      from "./img/carousel/carousel-5.jpg"
+import carousel_5_en   from "./img/carousel/carousel-5-en.jpg"
+import carousel_5_m    from "./img/carousel/carousel-5-m.jpg"
+import carousel_5_en_m from "./img/carousel/carousel-5-m-en.jpg"
 
 
 import roadmapSplit from "./img/roadmap/roadmap-split.png"
@@ -79,10 +83,10 @@ import partner25 from './img/partner/partner-25.png'
 import partner26 from './img/partner/partner-26.png'
 import partner27 from './img/partner/partner-27.png'
 
-import news41 from "../Media/img/news41.png"
-import news42 from "../Media/img/news42.png"
-import news43 from "../Media/img/news43.png"
 import news44 from "../Media/img/news44.png"
+import news45 from "../Media/img/news45.png"
+import news46 from "../Media/img/news46.png"
+import news47 from "../Media/img/news47.png"
 
 import band1 from "./img/band/band-1.png"
 import band2 from "./img/band/band-2.png"
@@ -385,6 +389,20 @@ class Home extends Component {
                 </div> */}
                 <div className={`home-carousel ${styles.carousel}`}>
                     <Carousel controls={false}  indicators={true} interval={4000}>
+                        <Carousel.Item>
+                            <div className={styles.carouselItem}>
+                                <a target="_blank" rel="noopener noreferrer" className={`${styles.imgRatio}`} href={t('home_page:recom_5_link')}>
+                                    <div className={`hidden-xs`}>
+                                        {i18n.language.indexOf('en') > -1 ? <img alt="news" src={carousel_5_en}/> :
+                                        <img alt="news" src={carousel_5}/>}
+                                    </div>
+                                    <div className={`hidden-md`}>
+                                        {i18n.language.indexOf('en') > -1 ? <img alt="news" src={carousel_5_en_m}/> :
+                                        <img alt="news" src={carousel_5_m}/>}
+                                    </div>
+                                </a> 
+                            </div>
+                        </Carousel.Item>
                         <Carousel.Item>
                             <div className={styles.carouselItem}>
                                 <a target="_blank" rel="noopener noreferrer" className={`${styles.imgRatio}`} href={t('home_page:recom_4_link')}>
@@ -1200,44 +1218,44 @@ class Home extends Component {
                                     </a>
                                 </Col>
                                 <Col xs={12} md={4} lg={3}>
-                                    <a className={styles.imgUrl} rel="noopener noreferrer" target="_blank" href={t('media:news_43_link')}>
+                                    <a className={styles.imgUrl} rel="noopener noreferrer" target="_blank" href={t('media:news_47_link')}>
                                         <div className={styles.imgRatio}>
-                                            <img alt="news" src={news43}/>
+                                            <img alt="news" src={news47}/>
                                         </div>
                                         <div className={styles.mediaInfo}>
                                             <span>{t('media:more_title')}</span>
-                                            <span className={styles.mediaTime}>{t('media:news_43_time')}</span>
+                                            <span className={styles.mediaTime}>{t('media:news_47_time')}</span>
                                         </div>
                                         <div className={styles.mediaDesc}>
-                                            {t('media:news_43_title')}
+                                            {t('media:news_47_title')}
                                         </div>
                                     </a>
                                 </Col>
                                 <Col xs={12} md={4} lg={3}>
-                                    <a className={styles.imgUrl} rel="noopener noreferrer" target="_blank" href={t('media:news_42_link')}>
+                                    <a className={styles.imgUrl} rel="noopener noreferrer" target="_blank" href={t('media:news_46_link')}>
                                         <div className={styles.imgRatio}>
-                                            <img alt="news" src={news42}/>
+                                            <img alt="news" src={news46}/>
                                         </div>
                                         <div className={styles.mediaInfo}>
                                             <span>{t('media:more_title')}</span>
-                                            <span className={styles.mediaTime}>{t('media:news_42_time')}</span>
+                                            <span className={styles.mediaTime}>{t('media:news_46_time')}</span>
                                         </div>
                                         <div className={styles.mediaDesc}>
-                                            {t('media:news_42_title')}
+                                            {t('media:news_46_title')}
                                         </div>
                                     </a>
                                 </Col>
                                 <Col xs={12} md={4} lg={3}>
-                                    <a className={styles.imgUrl} rel="noopener noreferrer" target="_blank" href={t('media:news_41_link')}>
+                                    <a className={styles.imgUrl} rel="noopener noreferrer" target="_blank" href={t('media:news_45_link')}>
                                         <div className={styles.imgRatio}>
-                                            <img alt="news" src={news41}/>
+                                            <img alt="news" src={news45}/>
                                         </div>
                                         <div className={styles.mediaInfo}>
                                             <span>{t('media:more_title')}</span>
-                                            <span className={styles.mediaTime}>{t('media:news_41_time')}</span>
+                                            <span className={styles.mediaTime}>{t('media:news_45_time')}</span>
                                         </div>
                                         <div className={styles.mediaDesc}>
-                                            {t('media:news_41_title')}
+                                            {t('media:news_45_title')}
                                         </div>
                                     </a>
                                 </Col>
