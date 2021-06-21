@@ -82,6 +82,7 @@ import partner24 from './img/partner/partner-24.png'
 import partner25 from './img/partner/partner-25.png'
 import partner26 from './img/partner/partner-26.png'
 import partner27 from './img/partner/partner-27.png'
+import partner28 from './img/partner/partner-28.png'
 
 import news44 from "../Media/img/news44.png"
 import news45 from "../Media/img/news45.png"
@@ -245,6 +246,11 @@ class Home extends Component {
                 name: 'TokenInsight',
                 url: 'https://tokeninsight.com/'
             },
+            'blockspot': {
+                logo: partner28,
+                name: 'Blockspot',
+                url: 'https://blockspot.io/'
+            },
         }
 
         this.tokenInfo = {
@@ -267,7 +273,7 @@ class Home extends Component {
             'ankr', 'bondly', 'crust', 'reef', 'bihu', 'evolutionland', 
             'imtoken', 'mathwallet', 'cobowallet', 'polkawallet', 'sssnodes', 'waterdrip',
             'consensus', 'bitrise', 'seven', 'digital', 'ddex', 'otcmaker', 
-            'polkabase', 'polkaworld', 'tokeninsight'
+            'polkabase', 'polkaworld', 'tokeninsight', 'blockspot'
         ]
         this.detectMetaMaskTimer = null;
     }
