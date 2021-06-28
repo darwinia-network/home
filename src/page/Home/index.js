@@ -940,10 +940,6 @@ class Home extends Component {
                                                         {t('home_page:roadmap_2021_q1_2')}
                                                         <br/>
                                                         {t('home_page:roadmap_2021_q1_3')}
-                                                        <br/>
-                                                        <span className={styles.note}>{t('home_page:roadmap_2021_q1_4')}</span>
-                                                        <br/>
-                                                        {t('home_page:roadmap_2021_q1_5')}
                                                     </p>
                                                 </Col>
                                             </Row>
@@ -958,6 +954,12 @@ class Home extends Component {
                                                         {t('home_page:roadmap_2021_q2_2')}
                                                         <br/>
                                                         {t('home_page:roadmap_2021_q2_3')}
+                                                        <br/>
+                                                        {t('home_page:roadmap_2021_q2_4')}
+                                                        <br/>
+                                                        {t('home_page:roadmap_2021_q2_5')}
+                                                        <br/>
+                                                        {t('home_page:roadmap_2021_q2_6')}
                                                     </p>
                                                 </Col>
                                             </Row>
@@ -972,6 +974,14 @@ class Home extends Component {
                                                         {t('home_page:roadmap_2021_q3_2')}
                                                         <br/>
                                                         {t('home_page:roadmap_2021_q3_3')}
+                                                        <br/>
+                                                        {t('home_page:roadmap_2021_q3_4')}
+                                                        <br/>
+                                                        {t('home_page:roadmap_2021_q3_5')}
+                                                        <br/>
+                                                        {t('home_page:roadmap_2021_q3_6')}
+                                                        <br/>
+                                                        {t('home_page:roadmap_2021_q3_7')}
                                                     </p>
                                                 </Col>
                                             </Row>
@@ -1128,9 +1138,6 @@ class Home extends Component {
                                         <br/>
                                         {t('home_page:roadmap_2021_q1_3')}
                                         <br/>
-                                        <span className={styles.note}>{t('home_page:roadmap_2021_q1_4')}</span>
-                                        <br/>
-                                        {t('home_page:roadmap_2021_q1_5')}
                                     </p>
                                 </Col>
                             </Row>
@@ -1145,6 +1152,12 @@ class Home extends Component {
                                         {t('home_page:roadmap_2021_q2_2')}
                                         <br/>
                                         {t('home_page:roadmap_2021_q2_3')}
+                                        <br/>
+                                        {t('home_page:roadmap_2021_q2_4')}
+                                        <br/>
+                                        {t('home_page:roadmap_2021_q2_5')}
+                                        <br/>
+                                        {t('home_page:roadmap_2021_q2_6')}
                                     </p>
                                 </Col>
                             </Row>
@@ -1159,6 +1172,14 @@ class Home extends Component {
                                         {t('home_page:roadmap_2021_q3_2')}
                                         <br/>
                                         {t('home_page:roadmap_2021_q3_3')}
+                                        <br/>
+                                        {t('home_page:roadmap_2021_q3_4')}
+                                        <br/>
+                                        {t('home_page:roadmap_2021_q3_5')}
+                                        <br/>
+                                        {t('home_page:roadmap_2021_q3_6')}
+                                        <br/>
+                                        {t('home_page:roadmap_2021_q3_7')}
                                     </p>
                                 </Col>
                             </Row>
