@@ -150,6 +150,7 @@ class PageFooter extends Component {
                             <h1>{t('footer:general')}</h1>
                             <p><a href="/#top">{t('footer:general_title_1')}</a></p>
                             <p><a target="_blank" rel="noopener noreferrer" href="https://docs.darwinia.network/">{t('footer:general_title_2')}</a></p>
+                            <p><a target="_blank" rel="noopener noreferrer" href="https://www.notion.so/itering/9617e154ec884b07a7cee9a056374e42?v=0c3e4d9f257646c486a32a0425ee3a93">{t('footer:general_title_6')}</a></p>
                             <p><a target="_blank" rel="noopener noreferrer" href="https://www.itering.io/about">{t('footer:general_title_3')}</a></p>
                             <p><a target="_blank" rel="noopener noreferrer" href="mailto:hello@darwinia.network">{t('footer:general_title_4')}</a></p>
                             <p><a target="_blank" rel="noopener noreferrer" href="/brand">{t('footer:general_title_5')}</a></p>
