@@ -958,8 +958,6 @@ class Home extends Component {
                                                         {t('home_page:roadmap_2021_q2_4')}
                                                         <br/>
                                                         {t('home_page:roadmap_2021_q2_5')}
-                                                        <br/>
-                                                        {t('home_page:roadmap_2021_q2_6')}
                                                     </p>
                                                 </Col>
                                             </Row>
@@ -1156,8 +1154,6 @@ class Home extends Component {
                                         {t('home_page:roadmap_2021_q2_4')}
                                         <br/>
                                         {t('home_page:roadmap_2021_q2_5')}
-                                        <br/>
-                                        {t('home_page:roadmap_2021_q2_6')}
                                     </p>
                                 </Col>
                             </Row>
