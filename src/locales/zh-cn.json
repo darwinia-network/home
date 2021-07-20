@@ -723,7 +723,7 @@
     "grant": "Granted by Web3 Foundation",
     "copyright": "Copyright@{{year}} Darwinia Network",
     "support": "Substrate Builder Program",
-    "rfcs_link": "https://docs.darwinia.network/docs/zh-CN/wiki-rfc-index",
+    "rfcs_link": "https://docs.darwinia.network/docs/zh-CN/wiki-rfcs",
     "faq_link": "https://docs.darwinia.network/docs/zh-CN/wiki-faq-general",
 
     "general": "概要",
