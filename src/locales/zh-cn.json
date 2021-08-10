@@ -669,7 +669,7 @@
     "token": "达尔文通证",
     "token_bridge": "达尔文通证跨链",
     "how_to_stake": "参与质押",
-    "how_to_stake_link": "https://docs.darwinia.network/docs/en/wiki-us-staking-basic",
+    "how_to_stake_link": "https://docs.darwinia.network/docs/zh-CN/quick-start-staking-nominator",
     "none": "无",
     "max_supply": "最大发行量",
     "circulating_supply": "流通总量",
@@ -724,7 +724,7 @@
     "copyright": "Copyright@{{year}} Darwinia Network",
     "support": "Substrate Builder Program",
     "rfcs_link": "https://docs.darwinia.network/docs/zh-CN/wiki-rfcs",
-    "faq_link": "https://docs.darwinia.network/docs/zh-CN/wiki-faq-general",
+    "faq_link": "https://docs.darwinia.network/docs/zh-CN/wiki-faq",
 
     "general": "概要",
     "general_title_1": "关于达尔文",

@@ -669,7 +669,7 @@
     "token": "Cross-chain Tokens",
     "token_bridge": "Darwinia cross-chain token bridge",
     "how_to_stake": "How to Stake",
-    "how_to_stake_link": "https://docs.darwinia.network/docs/en/wiki-us-staking-basic",
+    "how_to_stake_link": "https://docs.darwinia.network/docs/en/quick-start-staking-nominator",
     "max_supply": "Max Supply",
     "circulating_supply": "Circulating Supply",
     "total_supply": "Total Supply",
@@ -724,7 +724,7 @@
     "copyright": "Copyright@{{year}} Darwinia Network",
     "support": "Substrate Builder Program",
     "rfcs_link": "https://docs.darwinia.network/docs/en/wiki-rfcs",
-    "faq_link": "https://docs.darwinia.network/docs/en/wiki-faq-general",
+    "faq_link": "https://docs.darwinia.network/docs/en/wiki-faq",
 
     "general": "General",
     "general_title_1": "About",
