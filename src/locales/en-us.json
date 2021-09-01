@@ -159,7 +159,13 @@
 
     "view_on_etherscan": "View on Etherscan",
     "view_on_tronscan": "Tronscan",
-    "watch_token": "Add {{token}} to the Metamask token list"
+    "watch_token": "Add {{token}} to the Metamask token list",
+
+    "slogan_title": "Darwinia Network",
+    "slogan_subtitle": "Web3.0 Cross-Chain Bridge Hub",
+
+    "get_started": "Get Started",
+    "build_onn_darwinia": "Build on Darwinia"
   },
   "faq_page": {
     "title": "FAQs",

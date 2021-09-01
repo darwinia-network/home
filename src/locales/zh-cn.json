@@ -159,7 +159,13 @@
 
     "view_on_etherscan": "Etherscan",
     "view_on_tronscan": "Tronscan",
-    "watch_token": "将 {{token}} 添加到 Metamask 通证列表中"
+    "watch_token": "将 {{token}} 添加到 Metamask 通证列表中",
+
+    "slogan_title": "Darwinia Network",
+    "slogan_subtitle": "Web3.0 Cross-Chain Bridge Hub",
+
+    "get_started": "开始吧",
+    "build_onn_darwinia": "Build on Darwinia"
   },
   "faq_page": {
     "title": "FAQs",

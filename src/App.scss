@@ -27,27 +27,6 @@ html {
   }
 }
 
-@font-face {
-  font-family: IBMPlexSans;
-  //src: url('./style/font/pt-sans.regular.ttf') format('truetype');
-  src: url('./style/font/IBMPlexSans-Regular.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: IBMPlexSans;
-  src: url('./style/font/IBMPlexSans-SemiBold.ttf') format('truetype');
-  font-weight: bold;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: IBMPlexSans;
-  src: url('./style/font/IBMPlexSans-Bold.ttf') format('truetype');
-  font-weight: 600;
-  font-style: normal;
-}
 
 h1 {
   font-weight: 400;

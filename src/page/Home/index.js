@@ -1,30 +1,11 @@
 /* eslint-disable no-script-url */
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { Component } from "react";
-import { Container, Row, Col, InputGroup, FormControl, Button, Form, Carousel, OverlayTrigger, Popover, Tooltip } from 'react-bootstrap'
+import { Container, Row, Col, InputGroup, FormControl, Button, Form, OverlayTrigger, Popover, Tooltip } from 'react-bootstrap'
 import { PageHeader } from '../../components/PageHeader'
 import { PageFooter } from '../../components/PageFooter'
 import Fade from 'react-reveal/Fade';
 // import { GradientHeading } from '../../components/GradientHeading'
-
-
-import carousel_2      from "./img/carousel/carousel-2.jpg"
-import carousel_2_en   from "./img/carousel/carousel-2-en.jpg"
-import carousel_2_m    from "./img/carousel/carousel-2-m.jpg"
-import carousel_2_en_m from "./img/carousel/carousel-2-m-en.jpg"
-import carousel_3      from "./img/carousel/carousel-3.jpg"
-import carousel_3_en   from "./img/carousel/carousel-3-en.jpg"
-import carousel_3_m    from "./img/carousel/carousel-3-m.jpg"
-import carousel_3_en_m from "./img/carousel/carousel-3-m-en.jpg"
-import carousel_4      from "./img/carousel/carousel-4.jpg"
-import carousel_4_en   from "./img/carousel/carousel-4-en.jpg"
-import carousel_4_m    from "./img/carousel/carousel-4-m.jpg"
-import carousel_4_en_m from "./img/carousel/carousel-4-m-en.jpg"
-import carousel_5      from "./img/carousel/carousel-5.jpg"
-import carousel_5_en   from "./img/carousel/carousel-5-en.jpg"
-import carousel_5_m    from "./img/carousel/carousel-5-m.jpg"
-import carousel_5_en_m from "./img/carousel/carousel-5-m-en.jpg"
-
 
 import roadmapSplit from "./img/roadmap/roadmap-split.png"
 
@@ -101,9 +82,11 @@ import { withTranslation } from "react-i18next";
 import i18n from '../../locales/i18n';
 import scrollreveal from "scrollreveal";
 
+import hero from "./img/hero.mp4";
+
 class Home extends Component {
-    constructor(props, context) {
-        super(props, context);
+    constructor(props) {
+        super(props);
 
         this.state = {
             email: '',
@@ -393,65 +376,17 @@ class Home extends Component {
                 {/* <div className={styles.launchBanner}>
                     <img src={launchBanner} alt="banner"/>
                 </div> */}
-                <div className={`home-carousel ${styles.carousel}`}>
-                    <Carousel controls={false}  indicators={true} interval={4000}>
-                        <Carousel.Item>
-                            <div className={styles.carouselItem}>
-                                <a target="_blank" rel="noopener noreferrer" className={`${styles.imgRatio}`} href={t('home_page:recom_5_link')}>
-                                    <div className={`hidden-xs`}>
-                                        {i18n.language.indexOf('en') > -1 ? <img alt="news" src={carousel_5_en}/> :
-                                        <img alt="news" src={carousel_5}/>}
-                                    </div>
-                                    <div className={`hidden-md`}>
-                                        {i18n.language.indexOf('en') > -1 ? <img alt="news" src={carousel_5_en_m}/> :
-                                        <img alt="news" src={carousel_5_m}/>}
-                                    </div>
-                                </a> 
-                            </div>
-                        </Carousel.Item>
-                        <Carousel.Item>
-                            <div className={styles.carouselItem}>
-                                <a target="_blank" rel="noopener noreferrer" className={`${styles.imgRatio}`} href={t('home_page:recom_4_link')}>
-                                    <div className={`hidden-xs`}>
-                                        {i18n.language.indexOf('en') > -1 ? <img alt="news" src={carousel_4_en}/> :
-                                        <img alt="news" src={carousel_4}/>}
-                                    </div>
-                                    <div className={`hidden-md`}>
-                                        {i18n.language.indexOf('en') > -1 ? <img alt="news" src={carousel_4_en_m}/> :
-                                        <img alt="news" src={carousel_4_m}/>}
-                                    </div>
-                                </a> 
-                            </div>
-                        </Carousel.Item>
-                        <Carousel.Item>
-                            <div className={styles.carouselItem}>
-                                <a target="_blank" rel="noopener noreferrer" className={`${styles.imgRatio}`} href={t('home_page:recom_3_link')}>
-                                    <div className={`hidden-xs`}>
-                                        {i18n.language.indexOf('en') > -1 ? <img alt="news" src={carousel_3_en}/> :
-                                        <img alt="news" src={carousel_3}/>}
-                                    </div>
-                                    <div className={`hidden-md`}>
-                                        {i18n.language.indexOf('en') > -1 ? <img alt="news" src={carousel_3_en_m}/> :
-                                        <img alt="news" src={carousel_3_m}/>}
-                                    </div>
-                                </a> 
-                            </div>
-                        </Carousel.Item>
-                        <Carousel.Item>
-                            <div className={styles.carouselItem}>
-                                <a target="_blank" rel="noopener noreferrer" className={`${styles.imgRatio}`} href={t('home_page:recom_2_link')}>
-                                    <div className={`hidden-xs`}>
-                                        {i18n.language.indexOf('en') > -1 ? <img alt="news" src={carousel_2_en}/> :
-                                        <img alt="news" src={carousel_2}/>}
-                                    </div>
-                                    <div className={`hidden-md`}>
-                                        {i18n.language.indexOf('en') > -1 ? <img alt="news" src={carousel_2_en_m}/> :
-                                        <img alt="news" src={carousel_2_m}/>}
-                                    </div>
-                                </a> 
-                            </div>
-                        </Carousel.Item>
-                    </Carousel>
+
+                <div className={styles.slogan}>
+                    <video src={hero} autoPlay="autoplay" loop="loop" muted />
+                    <Container>
+                        <h2 className={styles.sloganTitle}>{t("home_page:slogan_title")}</h2>
+                        <h5 className={styles.sloganSubtitle}>{t("home_page:slogan_subtitle")}</h5>
+                        <div className={styles.sloganBtnGround}>
+                            <Button variant="light" className={styles.slogonBtnText}><span>{t("home_page:get_started")}</span></Button>
+                            <Button variant="light" className={styles.slogonBtnText}><span>{t("home_page:build_onn_darwinia")}</span></Button>
+                        </div>
+                    </Container>
                 </div>
 
                 <Fade bottom fraction={0.1} duration={1000} distance={"50px"}>

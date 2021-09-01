@@ -34,6 +34,7 @@
   letter-spacing: 2px;
   background: linear-gradient(315deg, rgba(254, 56, 118, 1) 0%, rgba(124, 48, 221, 1) 71%, rgba(58, 48, 221, 1) 100%);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
@@ -1328,6 +1329,104 @@
   }
 }
 
+.slogan {
+  padding-top: 270px;
+  padding-bottom: 185px;
+  position: relative;
+
+  video {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+    z-index: -1;
+  }
+
+  @media screen and (max-width: 768px) {
+    video {
+      display: none;
+    }
+
+    background-image: url("./img/hero-m.svg");
+    background-size: cover;
+    padding-top: 358px;
+    padding-bottom: 60px;
+  }
+}
+
+.sloganTitle {
+  font-size: 49px;
+  font-weight: bold;
+  color: #FFFFFF;
+  line-height: 65px;
+
+  @media screen and (max-width: 768px) {
+    font-size: 40px;
+    line-height: 52px;
+  }
+}
+
+.sloganSubtitle {
+  font-size: 42px;
+  font-weight: normal;
+  color: #FFFFFF;
+  font-family: IBMPlexSans;
+  font-style: italic;
+  margin-top: 8px;
+
+  @media screen and (max-width: 768px) {
+    font-size: 29px;
+    line-height: 38px;
+  }
+}
+
+.sloganBtnGround {
+  margin-top: 30px;
+  display: flex;
+  align-items: center;
+
+  @media screen and (max-width: 768px) {
+    flex-direction: column;
+  }
+}
+
+.slogonBtnText {
+  margin-left: 18px;
+  padding: 10px 26px;
+
+  &:first-child {
+    margin-left: 0;
+  }
+
+  span {
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 23px;
+    color: #000000;
+    background: linear-gradient(315deg, #FE3876 0%, #7C30DD 71%, #3A30DD 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  @media screen and (max-width: 768px) {
+    width: 100%;
+    margin-left: 0;
+    margin-top: 18px;
+  
+    &:first-child {
+      margin-top: 0;
+    }
+
+    span {
+      font-size: 14px;
+      font-weight: 600;
+      line-height: 26px;
+    }
+  }
+}
 
 //@media (min-width: 576px) and(max-width: 768px) {
 //  .highlightContainer {
