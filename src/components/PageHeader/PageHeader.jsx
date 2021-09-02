@@ -28,49 +28,49 @@ const NavGrounp = ({ hasFixed = false }) => {
     icon: wikiIcon,
     title: t("header:wiki"),
     content: t("header:wiki_content"),
-    link: "https://www.baidu.com/",
+    link: "#",
   }, {
     icon: roadmapIcon,
     title: t("header:roadmap"),
     content: t("header:roadmap_content"),
-    link: "https://www.baidu.com/",
+    link: "#",
   }, {
     icon: techPaperIcon,
     title: t("header:techpaper"),
     content: t("header:techpaper_content"),
-    link: "https://www.baidu.com/",
+    link: "#",
   }, {
     icon: genePaperIcon,
     title: t("header:genepaper"),
     content: t("header:genepaper_content"),
-    link: "https://www.baidu.com/",
+    link: "#",
   }];
 
   const useDarwiniaData = [{
     icon: tokensIcon,
     title: t("header:tokens"),
     content: t("header:tokens_content"),
-    link: "https://www.baidu.com/",
+    link: "#",
   }, {
     icon: appsIcon,
     title: t("header:apps"),
     content: t("header:apps_content"),
-    link: "https://www.baidu.com/",
+    link: "#",
   }, {
     icon: wormholeIcon,
     title: t("header:whormhole"),
     content: t("header:whormhole_content"),
-    link: "https://www.baidu.com/",
+    link: "#",
   }, {
     icon: smartAppIcon,
     title: t("header:smart_app"),
     content: t("header:smart_app_content"),
-    link: "https://www.baidu.com/",
+    link: "#",
   }, {
     icon: crabNetIcon,
     title: t("header:crab_net"),
     content: t("header:crab_net_content"),
-    link: "https://www.baidu.com/",
+    link: "#",
   }];
 
   return (
@@ -100,7 +100,7 @@ const NavGrounp = ({ hasFixed = false }) => {
           {t("header:media")}
         </Nav.Link>
         <Button
-          href="https://www.baidu.com/"
+          href="#"
           rel="noopener noreferrer"
           target="_blank"
           variant="outline-light"
