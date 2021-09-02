@@ -146,7 +146,7 @@ const MobileMenu = ({ expanded, onClick }) => {
 
 const PageHeader = () => {
   const [hasFixed, setHasFixed] = useState(false);
-  const [expanded, setExpanded] = useState(true);
+  const [expanded, setExpanded] = useState(false);
 
   const handleClickToggle = () => {
     setExpanded((prev) => {
