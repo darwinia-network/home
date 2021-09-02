@@ -52,9 +52,7 @@ class Home extends Component {
           let data = response.data.data;
           this.setState({
             kton: {
-              circulatingSupply: parseInt(
-                data.circulatingSupply
-              ).toLocaleString("en-US"),
+              circulatingSupply: parseInt(data.circulatingSupply).toLocaleString("en-US"),
               totalSupply: parseInt(data.totalSupply).toLocaleString("en-US"),
             },
           });
@@ -70,9 +68,7 @@ class Home extends Component {
           let data = response.data.data;
           this.setState({
             ring: {
-              circulatingSupply: parseInt(
-                data.circulatingSupply
-              ).toLocaleString("en-US"),
+              circulatingSupply: parseInt(data.circulatingSupply).toLocaleString("en-US"),
               totalSupply: parseInt(data.totalSupply).toLocaleString("en-US"),
             },
           });
@@ -91,14 +87,10 @@ class Home extends Component {
           <Row>
             <Col xs={12} className={`${styles.content}`}>
               <div className={styles.title}>
-                <h1 className={` ${styles.fontH1} ${styles.gradientText}`}>
-                  {t("model:economic")}
-                </h1>
+                <h1 className={` ${styles.fontH1} ${styles.gradientText}`}>{t("model:economic")}</h1>
               </div>
               <div className={styles.title}>
-                <h3 className={` ${styles.gradientText}`}>
-                  {t("model:theme")}
-                </h3>
+                <h3 className={` ${styles.gradientText}`}>{t("model:theme")}</h3>
               </div>
               <div className={styles.buttonSection}>
                 <Button target="_blank" href={t("model:how_to_stake_link")}>
@@ -133,18 +125,10 @@ class Home extends Component {
           <div className={styles.tokenContainer}>
             <Container>
               <div className={styles.title}>
-                <h1
-                  className={`reveal-h1 ${styles.fontH1} ${styles.gradientText}`}
-                >
-                  {t("model:token")}
-                </h1>
+                <h1 className={`reveal-h1 ${styles.fontH1} ${styles.gradientText}`}>{t("model:token")}</h1>
               </div>
               <Row>
-                <Col
-                  xs={12}
-                  md={6}
-                  className={`${styles.col} ${styles.colRing}`}
-                >
+                <Col xs={12} md={6} className={`${styles.col} ${styles.colRing}`}>
                   <div>
                     <div className={styles.placeHolder}></div>
                     <div className={`${styles.symbol}`}>
@@ -154,43 +138,25 @@ class Home extends Component {
                     <div className={styles.placeHolder}></div>
                     <div className={`${styles.content}`}>
                       <div className={`${styles.item} ${styles.itemTitle}`}>
-                        <span className={`${styles.desc}`}>
-                          {t("model:ring_desc")}
-                        </span>
+                        <span className={`${styles.desc}`}>{t("model:ring_desc")}</span>
                       </div>
                       <div className={`${styles.item}`}>
-                        <span className={`${styles.desc}`}>
-                          {t("model:max_supply")}
-                        </span>
-                        <span className={`${styles.number}`}>
-                          10,000,000,000
-                        </span>
+                        <span className={`${styles.desc}`}>{t("model:max_supply")}</span>
+                        <span className={`${styles.number}`}>10,000,000,000</span>
                       </div>
                       <div className={`${styles.item}`}>
-                        <span className={`${styles.desc}`}>
-                          {t("model:circulating_supply")}
-                        </span>
-                        <span className={`${styles.number}`}>
-                          {ring.circulatingSupply || ""}
-                        </span>
+                        <span className={`${styles.desc}`}>{t("model:circulating_supply")}</span>
+                        <span className={`${styles.number}`}>{ring.circulatingSupply || ""}</span>
                       </div>
                       <div className={`${styles.item}`}>
-                        <span className={`${styles.desc}`}>
-                          {t("model:total_supply")}
-                        </span>
-                        <span className={`${styles.number}`}>
-                          {ring.totalSupply || ""}
-                        </span>
+                        <span className={`${styles.desc}`}>{t("model:total_supply")}</span>
+                        <span className={`${styles.number}`}>{ring.totalSupply || ""}</span>
                       </div>
                     </div>
                     <div className={styles.placeHolder}></div>
                   </div>
                 </Col>
-                <Col
-                  xs={12}
-                  md={6}
-                  className={`${styles.col} ${styles.colKton}`}
-                >
+                <Col xs={12} md={6} className={`${styles.col} ${styles.colKton}`}>
                   <div>
                     <div className={styles.placeHolder}></div>
                     <div className={`${styles.symbol}`}>
@@ -200,33 +166,19 @@ class Home extends Component {
                     <div className={styles.placeHolder}></div>
                     <div className={`${styles.content}`}>
                       <div className={`${styles.item} ${styles.itemTitle}`}>
-                        <span className={`${styles.desc}`}>
-                          {t("model:kton_desc")}
-                        </span>
+                        <span className={`${styles.desc}`}>{t("model:kton_desc")}</span>
                       </div>
                       <div className={`${styles.item}`}>
-                        <span className={`${styles.desc}`}>
-                          {t("model:max_supply")}
-                        </span>
-                        <span className={`${styles.number}`}>
-                          {t("model:none")}
-                        </span>
+                        <span className={`${styles.desc}`}>{t("model:max_supply")}</span>
+                        <span className={`${styles.number}`}>{t("model:none")}</span>
                       </div>
                       <div className={`${styles.item}`}>
-                        <span className={`${styles.desc}`}>
-                          {t("model:circulating_supply")}
-                        </span>
-                        <span className={`${styles.number}`}>
-                          {kton.circulatingSupply || ""}
-                        </span>
+                        <span className={`${styles.desc}`}>{t("model:circulating_supply")}</span>
+                        <span className={`${styles.number}`}>{kton.circulatingSupply || ""}</span>
                       </div>
                       <div className={`${styles.item}`}>
-                        <span className={`${styles.desc}`}>
-                          {t("model:total_supply")}
-                        </span>
-                        <span className={`${styles.number}`}>
-                          {kton.totalSupply || ""}
-                        </span>
+                        <span className={`${styles.desc}`}>{t("model:total_supply")}</span>
+                        <span className={`${styles.number}`}>{kton.totalSupply || ""}</span>
                       </div>
                     </div>
                     <div className={styles.placeHolder}></div>
@@ -236,9 +188,7 @@ class Home extends Component {
               <Row>
                 <Col xs={12}>
                   <div className={`${styles.title} ${styles.bridge}`}>
-                    <h2 className={`${styles.gradientText}`}>
-                      {t("model:token_bridge")}
-                    </h2>
+                    <h2 className={`${styles.gradientText}`}>{t("model:token_bridge")}</h2>
                   </div>
                   <img className={"hidden-xs"} src={tokenBg} alt="token" />
                   <img className={"hidden-md"} src={tokenBgM} alt="token" />
@@ -252,9 +202,7 @@ class Home extends Component {
           <div className={styles.stakingContainer}>
             <Container>
               <div className={styles.title}>
-                <h1 className={`${styles.fontH1} ${styles.gradientText}`}>
-                  {t("model:staking")}
-                </h1>
+                <h1 className={`${styles.fontH1} ${styles.gradientText}`}>{t("model:staking")}</h1>
               </div>
               <p>{t("model:staking_desc")}</p>
               <Row>
@@ -264,12 +212,7 @@ class Home extends Component {
                     <img src={staking1} alt="staking" />
                   </div>
                   <div className={`text-center ${styles.btn}`}>
-                    <Button
-                      variant="dark"
-                      target="_blank"
-                      href={t("model:read_more_link_1")}
-                      className={styles.button}
-                    >
+                    <Button variant="dark" target="_blank" href={t("model:read_more_link_1")} className={styles.button}>
                       {t("model:read_more")}
                     </Button>
                   </div>
@@ -280,12 +223,7 @@ class Home extends Component {
                     <img src={staking2} alt="staking" />
                   </div>
                   <div className={`text-center ${styles.btn}`}>
-                    <Button
-                      variant="dark"
-                      target="_blank"
-                      href={t("model:read_more_link_2")}
-                      className={styles.button}
-                    >
+                    <Button variant="dark" target="_blank" href={t("model:read_more_link_2")} className={styles.button}>
                       {t("model:read_more")}
                     </Button>
                   </div>
@@ -299,9 +237,7 @@ class Home extends Component {
           <div className={styles.inflationContainer}>
             <Container>
               <div className={styles.title}>
-                <h1 className={`${styles.fontH1} ${styles.gradientText}`}>
-                  {t("model:inflation")}
-                </h1>
+                <h1 className={`${styles.fontH1} ${styles.gradientText}`}>{t("model:inflation")}</h1>
               </div>
               <p>{t("model:inflation_content")}</p>
               <Row>
@@ -318,16 +254,9 @@ class Home extends Component {
                   </div>
                 </Col>
               </Row>
-              <div className={styles.chartDesc}>
-                {t("model:inflation_desc")}
-              </div>
+              <div className={styles.chartDesc}>{t("model:inflation_desc")}</div>
               <div className={`text-center ${styles.btn}`}>
-                <Button
-                  variant="dark"
-                  target="_blank"
-                  href={t("model:read_more_link_3")}
-                  className={styles.button}
-                >
+                <Button variant="dark" target="_blank" href={t("model:read_more_link_3")} className={styles.button}>
                   {t("model:read_more")}
                 </Button>
               </div>
@@ -341,13 +270,9 @@ class Home extends Component {
               <Row>
                 <Col xs={12} md={6} className={styles.textCol}>
                   <div className={styles.title}>
-                    <h1 className={`${styles.fontH1} ${styles.gradientText}`}>
-                      {t("model:circulation")}
-                    </h1>
+                    <h1 className={`${styles.fontH1} ${styles.gradientText}`}>{t("model:circulation")}</h1>
                   </div>
-                  <div className={styles.subTitle}>
-                    {t("model:circulation_title")}
-                  </div>
+                  <div className={styles.subTitle}>{t("model:circulation_title")}</div>
                   <p>{t("model:circulation_desc_1")}</p>
                   <p>{t("model:circulation_desc_2")}</p>
                   <p>{t("model:circulation_desc_3")}</p>
@@ -369,9 +294,7 @@ class Home extends Component {
           <div className={styles.modelContainer}>
             <Container>
               <div className={styles.title}>
-                <h1 className={`${styles.fontH1} ${styles.gradientText}`}>
-                  {t("model:revenue")}
-                </h1>
+                <h1 className={`${styles.fontH1} ${styles.gradientText}`}>{t("model:revenue")}</h1>
               </div>
               <Row>
                 <Col xs={12} md={6}>

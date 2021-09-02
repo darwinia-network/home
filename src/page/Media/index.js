@@ -69,18 +69,12 @@ class Brand extends Component {
                       <div className={styles.mediaDetail}>
                         <div className={styles.mediaInfo}>
                           <span>{t("media:recom_7_tag")}</span>
-                          <span className={styles.mediaTime}>
-                            {t("media:recom_7_time")}
-                          </span>
+                          <span className={styles.mediaTime}>{t("media:recom_7_time")}</span>
                         </div>
                         <div className={styles.mediaTitle}>
-                          <div className={styles.text}>
-                            {t("media:recom_7_title")}
-                          </div>
+                          <div className={styles.text}>{t("media:recom_7_title")}</div>
                         </div>
-                        <div className={styles.mediaDesc}>
-                          {t("media:recom_7_desc")}
-                        </div>
+                        <div className={styles.mediaDesc}>{t("media:recom_7_desc")}</div>
                       </div>
                     </Col>
                   </Row>
@@ -103,18 +97,12 @@ class Brand extends Component {
                       <div className={styles.mediaDetail}>
                         <div className={styles.mediaInfo}>
                           <span>{t("media:recom_6_tag")}</span>
-                          <span className={styles.mediaTime}>
-                            {t("media:recom_6_time")}
-                          </span>
+                          <span className={styles.mediaTime}>{t("media:recom_6_time")}</span>
                         </div>
                         <div className={styles.mediaTitle}>
-                          <div className={styles.text}>
-                            {t("media:recom_6_title")}
-                          </div>
+                          <div className={styles.text}>{t("media:recom_6_title")}</div>
                         </div>
-                        <div className={styles.mediaDesc}>
-                          {t("media:recom_6_desc")}
-                        </div>
+                        <div className={styles.mediaDesc}>{t("media:recom_6_desc")}</div>
                       </div>
                     </Col>
                   </Row>
@@ -137,18 +125,12 @@ class Brand extends Component {
                       <div className={styles.mediaDetail}>
                         <div className={styles.mediaInfo}>
                           <span>{t("media:recom_5_tag")}</span>
-                          <span className={styles.mediaTime}>
-                            {t("media:recom_5_time")}
-                          </span>
+                          <span className={styles.mediaTime}>{t("media:recom_5_time")}</span>
                         </div>
                         <div className={styles.mediaTitle}>
-                          <div className={styles.text}>
-                            {t("media:recom_5_title")}
-                          </div>
+                          <div className={styles.text}>{t("media:recom_5_title")}</div>
                         </div>
-                        <div className={styles.mediaDesc}>
-                          {t("media:recom_5_desc")}
-                        </div>
+                        <div className={styles.mediaDesc}>{t("media:recom_5_desc")}</div>
                       </div>
                     </Col>
                   </Row>
@@ -166,18 +148,12 @@ class Brand extends Component {
                       <div className={styles.mediaDetail}>
                         <div className={styles.mediaInfo}>
                           <span>{t("media:recom_4_tag")}</span>
-                          <span className={styles.mediaTime}>
-                            {t("media:recom_4_time")}
-                          </span>
+                          <span className={styles.mediaTime}>{t("media:recom_4_time")}</span>
                         </div>
                         <div className={styles.mediaTitle}>
-                          <div className={styles.text}>
-                            {t("media:recom_4_title")}
-                          </div>
+                          <div className={styles.text}>{t("media:recom_4_title")}</div>
                         </div>
-                        <div className={styles.mediaDesc}>
-                          {t("media:recom_4_desc")}
-                        </div>
+                        <div className={styles.mediaDesc}>{t("media:recom_4_desc")}</div>
                       </div>
                     </Col>
                   </Row>
@@ -200,18 +176,12 @@ class Brand extends Component {
                       <div className={styles.mediaDetail}>
                         <div className={styles.mediaInfo}>
                           <span>{t("media:recom_2_tag")}</span>
-                          <span className={styles.mediaTime}>
-                            {t("media:recom_2_time")}
-                          </span>
+                          <span className={styles.mediaTime}>{t("media:recom_2_time")}</span>
                         </div>
                         <div className={styles.mediaTitle}>
-                          <div className={styles.text}>
-                            {t("media:recom_2_title")}
-                          </div>
+                          <div className={styles.text}>{t("media:recom_2_title")}</div>
                         </div>
-                        <div className={styles.mediaDesc}>
-                          {t("media:recom_2_desc")}
-                        </div>
+                        <div className={styles.mediaDesc}>{t("media:recom_2_desc")}</div>
                       </div>
                     </Col>
                   </Row>
@@ -222,9 +192,7 @@ class Brand extends Component {
           <Container>
             <Row>
               <Col xs={12} className={`${styles.content}`}>
-                <div
-                  className={`hidden-xs media-carousel ${styles.carousel} ${styles.pcCarousel}`}
-                >
+                <div className={`hidden-xs media-carousel ${styles.carousel} ${styles.pcCarousel}`}>
                   <Carousel controls={false} interval={4000}>
                     <Carousel.Item>
                       <div className={styles.carouselItem}>
@@ -239,9 +207,7 @@ class Brand extends Component {
                               <img alt="news" src={recom7} />
                               <div className={styles.mediaTitle}>
                                 <div className={styles.bg}></div>
-                                <div className={styles.text}>
-                                  {t("media:recom_7_title")}
-                                </div>
+                                <div className={styles.text}>{t("media:recom_7_title")}</div>
                               </div>
                             </a>
                           </Col>
@@ -249,13 +215,9 @@ class Brand extends Component {
                             <div className={styles.mediaDetail}>
                               <div className={styles.mediaInfo}>
                                 <span>{t("media:recom_7_tag")}</span>
-                                <span className={styles.mediaTime}>
-                                  {t("media:recom_7_time")}
-                                </span>
+                                <span className={styles.mediaTime}>{t("media:recom_7_time")}</span>
                               </div>
-                              <div className={styles.mediaDesc}>
-                                {t("media:recom_7_desc")}
-                              </div>
+                              <div className={styles.mediaDesc}>{t("media:recom_7_desc")}</div>
                             </div>
                           </Col>
                         </Row>
@@ -274,9 +236,7 @@ class Brand extends Component {
                               <img alt="news" src={recom6} />
                               <div className={styles.mediaTitle}>
                                 <div className={styles.bg}></div>
-                                <div className={styles.text}>
-                                  {t("media:recom_6_title")}
-                                </div>
+                                <div className={styles.text}>{t("media:recom_6_title")}</div>
                               </div>
                             </a>
                           </Col>
@@ -284,13 +244,9 @@ class Brand extends Component {
                             <div className={styles.mediaDetail}>
                               <div className={styles.mediaInfo}>
                                 <span>{t("media:recom_6_tag")}</span>
-                                <span className={styles.mediaTime}>
-                                  {t("media:recom_6_time")}
-                                </span>
+                                <span className={styles.mediaTime}>{t("media:recom_6_time")}</span>
                               </div>
-                              <div className={styles.mediaDesc}>
-                                {t("media:recom_6_desc")}
-                              </div>
+                              <div className={styles.mediaDesc}>{t("media:recom_6_desc")}</div>
                             </div>
                           </Col>
                         </Row>
@@ -309,9 +265,7 @@ class Brand extends Component {
                               <img alt="news" src={recom5} />
                               <div className={styles.mediaTitle}>
                                 <div className={styles.bg}></div>
-                                <div className={styles.text}>
-                                  {t("media:recom_5_title")}
-                                </div>
+                                <div className={styles.text}>{t("media:recom_5_title")}</div>
                               </div>
                             </a>
                           </Col>
@@ -319,13 +273,9 @@ class Brand extends Component {
                             <div className={styles.mediaDetail}>
                               <div className={styles.mediaInfo}>
                                 <span>{t("media:recom_5_tag")}</span>
-                                <span className={styles.mediaTime}>
-                                  {t("media:recom_5_time")}
-                                </span>
+                                <span className={styles.mediaTime}>{t("media:recom_5_time")}</span>
                               </div>
-                              <div className={styles.mediaDesc}>
-                                {t("media:recom_5_desc")}
-                              </div>
+                              <div className={styles.mediaDesc}>{t("media:recom_5_desc")}</div>
                             </div>
                           </Col>
                         </Row>
@@ -339,9 +289,7 @@ class Brand extends Component {
                               <img alt="news" src={recom4} />
                               <div className={styles.mediaTitle}>
                                 <div className={styles.bg}></div>
-                                <div className={styles.text}>
-                                  {t("media:recom_4_title")}
-                                </div>
+                                <div className={styles.text}>{t("media:recom_4_title")}</div>
                               </div>
                             </div>
                           </Col>
@@ -349,13 +297,9 @@ class Brand extends Component {
                             <div className={styles.mediaDetail}>
                               <div className={styles.mediaInfo}>
                                 <span>{t("media:recom_4_tag")}</span>
-                                <span className={styles.mediaTime}>
-                                  {t("media:recom_4_time")}
-                                </span>
+                                <span className={styles.mediaTime}>{t("media:recom_4_time")}</span>
                               </div>
-                              <div className={styles.mediaDesc}>
-                                {t("media:recom_4_desc")}
-                              </div>
+                              <div className={styles.mediaDesc}>{t("media:recom_4_desc")}</div>
                             </div>
                           </Col>
                         </Row>
@@ -374,9 +318,7 @@ class Brand extends Component {
                               <img alt="news" src={recom2} />
                               <div className={styles.mediaTitle}>
                                 <div className={styles.bg}></div>
-                                <div className={styles.text}>
-                                  {t("media:recom_2_title")}
-                                </div>
+                                <div className={styles.text}>{t("media:recom_2_title")}</div>
                               </div>
                             </a>
                           </Col>
@@ -384,13 +326,9 @@ class Brand extends Component {
                             <div className={styles.mediaDetail}>
                               <div className={styles.mediaInfo}>
                                 <span>{t("media:recom_2_tag")}</span>
-                                <span className={styles.mediaTime}>
-                                  {t("media:recom_2_time")}
-                                </span>
+                                <span className={styles.mediaTime}>{t("media:recom_2_time")}</span>
                               </div>
-                              <div className={styles.mediaDesc}>
-                                {t("media:recom_2_desc")}
-                              </div>
+                              <div className={styles.mediaDesc}>{t("media:recom_2_desc")}</div>
                             </div>
                           </Col>
                         </Row>
@@ -402,9 +340,7 @@ class Brand extends Component {
                   <div className={`${styles.section} ${styles.news}`}>
                     <div className={styles.title}>
                       <img src={news} alt="news" />
-                      <h1 className={`${styles.gradientText}`}>
-                        {t("media:news")}
-                      </h1>
+                      <h1 className={`${styles.gradientText}`}>{t("media:news")}</h1>
                     </div>
                     <Row>
                       <Col md={3} className={styles.mediaContent}>
@@ -419,13 +355,9 @@ class Brand extends Component {
                           </div>
                           <div className={styles.mediaInfo}>
                             <span>{t("media:more_title")}</span>
-                            <span className={styles.mediaTime}>
-                              {t("media:news_47_time")}
-                            </span>
+                            <span className={styles.mediaTime}>{t("media:news_47_time")}</span>
                           </div>
-                          <div className={styles.mediaDesc}>
-                            {t("media:news_47_title")}
-                          </div>
+                          <div className={styles.mediaDesc}>{t("media:news_47_title")}</div>
                         </a>
                       </Col>
                       <Col md={3} className={styles.mediaContent}>
@@ -440,13 +372,9 @@ class Brand extends Component {
                           </div>
                           <div className={styles.mediaInfo}>
                             <span>{t("media:more_title")}</span>
-                            <span className={styles.mediaTime}>
-                              {t("media:news_46_time")}
-                            </span>
+                            <span className={styles.mediaTime}>{t("media:news_46_time")}</span>
                           </div>
-                          <div className={styles.mediaDesc}>
-                            {t("media:news_46_title")}
-                          </div>
+                          <div className={styles.mediaDesc}>{t("media:news_46_title")}</div>
                         </a>
                       </Col>
                       <Col md={3} className={styles.mediaContent}>
@@ -461,13 +389,9 @@ class Brand extends Component {
                           </div>
                           <div className={styles.mediaInfo}>
                             <span>{t("media:more_title")}</span>
-                            <span className={styles.mediaTime}>
-                              {t("media:news_45_time")}
-                            </span>
+                            <span className={styles.mediaTime}>{t("media:news_45_time")}</span>
                           </div>
-                          <div className={styles.mediaDesc}>
-                            {t("media:news_45_title")}
-                          </div>
+                          <div className={styles.mediaDesc}>{t("media:news_45_title")}</div>
                         </a>
                       </Col>
                       <Col md={3} className={styles.mediaContent}>
@@ -482,13 +406,9 @@ class Brand extends Component {
                           </div>
                           <div className={styles.mediaInfo}>
                             <span>{t("media:more_title")}</span>
-                            <span className={styles.mediaTime}>
-                              {t("media:news_44_time")}
-                            </span>
+                            <span className={styles.mediaTime}>{t("media:news_44_time")}</span>
                           </div>
-                          <div className={styles.mediaDesc}>
-                            {t("media:news_44_title")}
-                          </div>
+                          <div className={styles.mediaDesc}>{t("media:news_44_title")}</div>
                         </a>
                       </Col>
                       {/* <Col md={3} className={styles.mediaContent}>
@@ -507,12 +427,7 @@ class Brand extends Component {
                                         </Col> */}
                     </Row>
                     <div className={`text-center`}>
-                      <Button
-                        variant="dark"
-                        target="_blank"
-                        href="/news"
-                        className={styles.button}
-                      >
+                      <Button variant="dark" target="_blank" href="/news" className={styles.button}>
                         {t("media:view_all")}
                       </Button>
                     </div>
@@ -522,9 +437,7 @@ class Brand extends Component {
                   <div className={`${styles.section} ${styles.reports}`}>
                     <div className={styles.title}>
                       <img src={reports} alt="reports" />
-                      <h1 className={`${styles.gradientText}`}>
-                        {t("media:reports")}
-                      </h1>
+                      <h1 className={`${styles.gradientText}`}>{t("media:reports")}</h1>
                     </div>
                     <Row>
                       <Col md={3} className={styles.mediaContent}>
@@ -539,13 +452,9 @@ class Brand extends Component {
                           </div>
                           <div className={styles.mediaInfo}>
                             <span>{t("media:more_title")}</span>
-                            <span className={styles.mediaTime}>
-                              {t("media:report_10_time")}
-                            </span>
+                            <span className={styles.mediaTime}>{t("media:report_10_time")}</span>
                           </div>
-                          <div className={styles.mediaDesc}>
-                            {t("media:report_10_title")}
-                          </div>
+                          <div className={styles.mediaDesc}>{t("media:report_10_title")}</div>
                         </a>
                       </Col>
                       <Col md={3} className={styles.mediaContent}>
@@ -560,13 +469,9 @@ class Brand extends Component {
                           </div>
                           <div className={styles.mediaInfo}>
                             <span>{t("media:more_title")}</span>
-                            <span className={styles.mediaTime}>
-                              {t("media:report_9_time")}
-                            </span>
+                            <span className={styles.mediaTime}>{t("media:report_9_time")}</span>
                           </div>
-                          <div className={styles.mediaDesc}>
-                            {t("media:report_9_title")}
-                          </div>
+                          <div className={styles.mediaDesc}>{t("media:report_9_title")}</div>
                         </a>
                       </Col>
                       <Col md={3} className={styles.mediaContent}>
@@ -581,13 +486,9 @@ class Brand extends Component {
                           </div>
                           <div className={styles.mediaInfo}>
                             <span>{t("media:more_title")}</span>
-                            <span className={styles.mediaTime}>
-                              {t("media:report_8_time")}
-                            </span>
+                            <span className={styles.mediaTime}>{t("media:report_8_time")}</span>
                           </div>
-                          <div className={styles.mediaDesc}>
-                            {t("media:report_8_title")}
-                          </div>
+                          <div className={styles.mediaDesc}>{t("media:report_8_title")}</div>
                         </a>
                       </Col>
                       <Col md={3} className={styles.mediaContent}>
@@ -602,23 +503,14 @@ class Brand extends Component {
                           </div>
                           <div className={styles.mediaInfo}>
                             <span>{t("media:more_title")}</span>
-                            <span className={styles.mediaTime}>
-                              {t("media:report_7_time")}
-                            </span>
+                            <span className={styles.mediaTime}>{t("media:report_7_time")}</span>
                           </div>
-                          <div className={styles.mediaDesc}>
-                            {t("media:report_7_title")}
-                          </div>
+                          <div className={styles.mediaDesc}>{t("media:report_7_title")}</div>
                         </a>
                       </Col>
                     </Row>
                     <div className={`text-center`}>
-                      <Button
-                        variant="dark"
-                        target="_blank"
-                        href="/reports"
-                        className={styles.button}
-                      >
+                      <Button variant="dark" target="_blank" href="/reports" className={styles.button}>
                         {t("media:view_all")}
                       </Button>
                     </div>
@@ -628,9 +520,7 @@ class Brand extends Component {
                   <div className={`${styles.section} ${styles.events}`}>
                     <div className={styles.title}>
                       <img src={events} alt="events" />
-                      <h1 className={`${styles.gradientText}`}>
-                        {t("media:events")}
-                      </h1>
+                      <h1 className={`${styles.gradientText}`}>{t("media:events")}</h1>
                     </div>
                     <Row>
                       <Col md={3} className={styles.mediaContent}>
@@ -645,13 +535,9 @@ class Brand extends Component {
                           </div>
                           <div className={styles.mediaInfo}>
                             <span>{t("media:more_title")}</span>
-                            <span className={styles.mediaTime}>
-                              {t("media:event_3_time")}
-                            </span>
+                            <span className={styles.mediaTime}>{t("media:event_3_time")}</span>
                           </div>
-                          <div className={styles.mediaDesc}>
-                            {t("media:event_3_title")}
-                          </div>
+                          <div className={styles.mediaDesc}>{t("media:event_3_title")}</div>
                         </a>
                       </Col>
                       <Col md={3} className={styles.mediaContent}>
@@ -666,13 +552,9 @@ class Brand extends Component {
                           </div>
                           <div className={styles.mediaInfo}>
                             <span>{t("media:more_title")}</span>
-                            <span className={styles.mediaTime}>
-                              {t("media:event_2_time")}
-                            </span>
+                            <span className={styles.mediaTime}>{t("media:event_2_time")}</span>
                           </div>
-                          <div className={styles.mediaDesc}>
-                            {t("media:event_2_title")}
-                          </div>
+                          <div className={styles.mediaDesc}>{t("media:event_2_title")}</div>
                         </a>
                       </Col>
                       <Col md={3} className={styles.mediaContent}>
@@ -687,23 +569,14 @@ class Brand extends Component {
                           </div>
                           <div className={styles.mediaInfo}>
                             <span>{t("media:more_title")}</span>
-                            <span className={styles.mediaTime}>
-                              {t("media:event_1_time")}
-                            </span>
+                            <span className={styles.mediaTime}>{t("media:event_1_time")}</span>
                           </div>
-                          <div className={styles.mediaDesc}>
-                            {t("media:event_1_title")}
-                          </div>
+                          <div className={styles.mediaDesc}>{t("media:event_1_title")}</div>
                         </a>
                       </Col>
                     </Row>
                     <div className={`text-center`}>
-                      <Button
-                        variant="dark"
-                        target="_blank"
-                        href="/events"
-                        className={styles.button}
-                      >
+                      <Button variant="dark" target="_blank" href="/events" className={styles.button}>
                         {t("media:view_all")}
                       </Button>
                     </div>
@@ -713,9 +586,7 @@ class Brand extends Component {
                   <div className={`${styles.section} ${styles.videos}`}>
                     <div className={styles.title}>
                       <img src={videoIcon} alt="videos" />
-                      <h1 className={`${styles.gradientText}`}>
-                        {t("media:videos")}
-                      </h1>
+                      <h1 className={`${styles.gradientText}`}>{t("media:videos")}</h1>
                     </div>
                     <Row>
                       <Col md={3} className={styles.mediaContent}>
@@ -730,13 +601,9 @@ class Brand extends Component {
                           </div>
                           <div className={styles.mediaInfo}>
                             <span>{t("media:more_title")}</span>
-                            <span className={styles.mediaTime}>
-                              {t("media:video_13_time")}
-                            </span>
+                            <span className={styles.mediaTime}>{t("media:video_13_time")}</span>
                           </div>
-                          <div className={styles.mediaDesc}>
-                            {t("media:video_13_title")}
-                          </div>
+                          <div className={styles.mediaDesc}>{t("media:video_13_title")}</div>
                         </a>
                       </Col>
                       <Col md={3} className={styles.mediaContent}>
@@ -751,13 +618,9 @@ class Brand extends Component {
                           </div>
                           <div className={styles.mediaInfo}>
                             <span>{t("media:more_title")}</span>
-                            <span className={styles.mediaTime}>
-                              {t("media:video_12_time")}
-                            </span>
+                            <span className={styles.mediaTime}>{t("media:video_12_time")}</span>
                           </div>
-                          <div className={styles.mediaDesc}>
-                            {t("media:video_12_title")}
-                          </div>
+                          <div className={styles.mediaDesc}>{t("media:video_12_title")}</div>
                         </a>
                       </Col>
                       <Col md={3} className={styles.mediaContent}>
@@ -772,13 +635,9 @@ class Brand extends Component {
                           </div>
                           <div className={styles.mediaInfo}>
                             <span>{t("media:more_title")}</span>
-                            <span className={styles.mediaTime}>
-                              {t("media:video_11_time")}
-                            </span>
+                            <span className={styles.mediaTime}>{t("media:video_11_time")}</span>
                           </div>
-                          <div className={styles.mediaDesc}>
-                            {t("media:video_11_title")}
-                          </div>
+                          <div className={styles.mediaDesc}>{t("media:video_11_title")}</div>
                         </a>
                       </Col>
                       <Col md={3} className={styles.mediaContent}>
@@ -793,23 +652,14 @@ class Brand extends Component {
                           </div>
                           <div className={styles.mediaInfo}>
                             <span>{t("media:more_title")}</span>
-                            <span className={styles.mediaTime}>
-                              {t("media:video_10_time")}
-                            </span>
+                            <span className={styles.mediaTime}>{t("media:video_10_time")}</span>
                           </div>
-                          <div className={styles.mediaDesc}>
-                            {t("media:video_10_title")}
-                          </div>
+                          <div className={styles.mediaDesc}>{t("media:video_10_title")}</div>
                         </a>
                       </Col>
                     </Row>
                     <div className={`text-center`}>
-                      <Button
-                        variant="dark"
-                        target="_blank"
-                        href="/videos"
-                        className={styles.button}
-                      >
+                      <Button variant="dark" target="_blank" href="/videos" className={styles.button}>
                         {t("media:view_all")}
                       </Button>
                     </div>

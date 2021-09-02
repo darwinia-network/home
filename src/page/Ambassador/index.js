@@ -50,38 +50,25 @@ class Brand extends Component {
                 ) : (
                   <img alt="banner" className={styles.banner} src={banner} />
                 )}
-                <div className={styles.subTitle}>
-                  {t("ambassador:about_title")}
-                </div>
+                <div className={styles.subTitle}>{t("ambassador:about_title")}</div>
                 <p>{t("ambassador:about_desc")}</p>
 
-                <div className={styles.subTitle}>
-                  {t("ambassador:why_title")}
-                </div>
+                <div className={styles.subTitle}>{t("ambassador:why_title")}</div>
                 <p>{t("ambassador:why_desc_1")}</p>
                 <p>{t("ambassador:why_desc_2")}</p>
                 <p>{t("ambassador:why_desc_3")}</p>
 
-                <div className={styles.subTitle}>
-                  {t("ambassador:who_title")}
-                </div>
+                <div className={styles.subTitle}>{t("ambassador:who_title")}</div>
                 <p>{t("ambassador:who_desc_1")}</p>
                 <p>{t("ambassador:who_desc_2")}</p>
                 <p>{t("ambassador:who_desc_3")}</p>
                 <p>{t("ambassador:who_desc_4")}</p>
                 <p>{t("ambassador:who_desc_5")}</p>
-                <Button
-                  variant="dark"
-                  target="_blank"
-                  href={t("ambassador:form")}
-                  className={styles.button}
-                >
+                <Button variant="dark" target="_blank" href={t("ambassador:form")} className={styles.button}>
                   {t("community:dive_slogan")}
                 </Button>
 
-                <div className={styles.subTitle}>
-                  {t("ambassador:what_title")}
-                </div>
+                <div className={styles.subTitle}>{t("ambassador:what_title")}</div>
                 <p>{t("ambassador:what_desc_1")}</p>
                 <h3>{t("ambassador:tech")}</h3>
                 <p>{t("ambassador:tech_desc_1")}</p>
@@ -126,17 +113,10 @@ class Brand extends Component {
                   <li>{t("ambassador:experience_desc_3")}</li>
                 </div>
 
-                <div className={styles.subTitle}>
-                  {t("ambassador:how_title")}
-                </div>
+                <div className={styles.subTitle}>{t("ambassador:how_title")}</div>
                 <p className={styles.howDesc}>
                   <span>{t("ambassador:how_desc_1")}</span>
-                  <a
-                    className={styles.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    href={t("ambassador:form")}
-                  >
+                  <a className={styles.link} target="_blank" rel="noopener noreferrer" href={t("ambassador:form")}>
                     {t("ambassador:how_desc_2")}
                   </a>
                   <span>{t("ambassador:how_desc_3")}</span>
@@ -147,9 +127,7 @@ class Brand extends Component {
                   <img alt="banner" className={styles.banner} src={flow} />
                 )}
 
-                <div className={styles.subTitle}>
-                  {t("ambassador:benefit_title")}
-                </div>
+                <div className={styles.subTitle}>{t("ambassador:benefit_title")}</div>
                 <p>{t("ambassador:benefit_content")}</p>
                 <p>{t("ambassador:benefit_desc_1")}</p>
                 <p>{t("ambassador:benefit_desc_2")}</p>
@@ -158,20 +136,13 @@ class Brand extends Component {
                 <p>{t("ambassador:benefit_desc_5")}</p>
                 <p>{t("ambassador:benefit_desc_6")}</p>
 
-                <Button
-                  variant="dark"
-                  target="_blank"
-                  href={t("ambassador:form")}
-                  className={styles.button}
-                >
+                <Button variant="dark" target="_blank" href={t("ambassador:form")} className={styles.button}>
                   {t("community:dive_slogan")}
                 </Button>
 
                 <div className={styles.lineH1}></div>
                 <div>
-                  <h2 className={`${styles.gradientText}`}>
-                    {t("ambassador:more")}
-                  </h2>
+                  <h2 className={`${styles.gradientText}`}>{t("ambassador:more")}</h2>
                 </div>
                 <ul className={styles.mediaBlocks}>
                   <li className={styles.mediaBlock}>
@@ -186,13 +157,9 @@ class Brand extends Component {
                       </div>
                       <div className={styles.mediaInfo}>
                         <span>{t("media:more_title")}</span>
-                        <span className={styles.mediaTime}>
-                          {t("media:video_12_time")}
-                        </span>
+                        <span className={styles.mediaTime}>{t("media:video_12_time")}</span>
                       </div>
-                      <div className={styles.mediaDesc}>
-                        {t("media:video_12_title")}
-                      </div>
+                      <div className={styles.mediaDesc}>{t("media:video_12_title")}</div>
                     </a>
                   </li>
                   <li className={styles.mediaBlock}>
@@ -207,13 +174,9 @@ class Brand extends Component {
                       </div>
                       <div className={styles.mediaInfo}>
                         <span>{t("media:more_title")}</span>
-                        <span className={styles.mediaTime}>
-                          {t("media:report_10_time")}
-                        </span>
+                        <span className={styles.mediaTime}>{t("media:report_10_time")}</span>
                       </div>
-                      <div className={styles.mediaDesc}>
-                        {t("media:report_10_title")}
-                      </div>
+                      <div className={styles.mediaDesc}>{t("media:report_10_title")}</div>
                     </a>
                   </li>
                   <li className={styles.mediaBlock}>
@@ -228,13 +191,9 @@ class Brand extends Component {
                       </div>
                       <div className={styles.mediaInfo}>
                         <span>{t("media:more_title")}</span>
-                        <span className={styles.mediaTime}>
-                          {t("media:report_9_time")}
-                        </span>
+                        <span className={styles.mediaTime}>{t("media:report_9_time")}</span>
                       </div>
-                      <div className={styles.mediaDesc}>
-                        {t("media:report_9_title")}
-                      </div>
+                      <div className={styles.mediaDesc}>{t("media:report_9_title")}</div>
                     </a>
                   </li>
                 </ul>

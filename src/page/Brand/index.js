@@ -40,9 +40,7 @@ class Brand extends Component {
                 <Col xs={12}>
                   <Fade bottom fraction={0.1} duration={1000} distance={"50px"}>
                     <div className={styles.title}>
-                      <h1 className={`${styles.fontH1} ${styles.gradientText}`}>
-                        {t("brand:title")}
-                      </h1>
+                      <h1 className={`${styles.fontH1} ${styles.gradientText}`}>{t("brand:title")}</h1>
                     </div>
                     <p>{t("brand:desc")}</p>
                   </Fade>
@@ -59,17 +57,9 @@ class Brand extends Component {
                   <Fade bottom fraction={0.1} duration={1000} distance={"50px"}>
                     <div className={styles.subTitle}>{t("brand:logos")}</div>
                     <p>
-                      <img
-                        alt="download"
-                        className={styles.downloadBtn}
-                        src={downloadBtn}
-                      />
+                      <img alt="download" className={styles.downloadBtn} src={downloadBtn} />
                       {t("brand:download")}
-                      <a
-                        href="/darwinia_brand.zip"
-                        download="darwinia_brand.zip"
-                        className={styles.link}
-                      >
+                      <a href="/darwinia_brand.zip" download="darwinia_brand.zip" className={styles.link}>
                         {t("brand:filename")}
                       </a>
                     </p>
@@ -83,21 +73,13 @@ class Brand extends Component {
                 <Col xs={6}>
                   <div className={styles.logoItem}>
                     <span>{t("brand:darwinia")}</span>
-                    <img
-                      className={styles.logo}
-                      alt="darwinia_logo"
-                      src={darwiniaLogoWithText}
-                    ></img>
+                    <img className={styles.logo} alt="darwinia_logo" src={darwiniaLogoWithText}></img>
                   </div>
                 </Col>
                 <Col xs={6}>
                   <div className={styles.logoItem}>
                     <span>{t("brand:darwinia")}</span>
-                    <img
-                      className={styles.logo}
-                      alt="darwinia_logo"
-                      src={darwiniaLogo}
-                    ></img>
+                    <img className={styles.logo} alt="darwinia_logo" src={darwiniaLogo}></img>
                   </div>
                 </Col>
 

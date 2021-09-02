@@ -1,18 +1,6 @@
 import React, { Component } from "react";
-import {
-  Navbar,
-  Nav,
-  Form,
-  Container,
-  Row,
-  Col,
-  Dropdown,
-} from "react-bootstrap";
-import {
-  disableBodyScroll,
-  enableBodyScroll,
-  clearAllBodyScrollLocks,
-} from "body-scroll-lock";
+import { Navbar, Nav, Form, Container, Row, Col, Dropdown } from "react-bootstrap";
+import { disableBodyScroll, enableBodyScroll, clearAllBodyScrollLocks } from "body-scroll-lock";
 import { withTranslation } from "react-i18next";
 import $ from "jquery";
 // import i18n from '../../locales/i18n';
@@ -172,9 +160,9 @@ class PageHeader extends Component {
 
     return (
       <div
-        className={`${styles.NavBarWrapper} ${
-          hasHeightinMobile ? styles.hasHeight : null
-        } ${hasFixed ? styles.hasFixed : null}`}
+        className={`${styles.NavBarWrapper} ${hasHeightinMobile ? styles.hasHeight : null} ${
+          hasFixed ? styles.hasFixed : null
+        }`}
       >
         <div className={`nav-down collapse-header ${styles.NavBarContainer}`}>
           <Container>
@@ -209,39 +197,21 @@ class PageHeader extends Component {
                 <Navbar
                   bg="white"
                   expand="lg"
-                  className={`${styles.Navbar} ${
-                    transparent ? null : styles.NavBg
-                  } cs-header`}
+                  className={`${styles.Navbar} ${transparent ? null : styles.NavBg} cs-header`}
                 >
                   <Navbar.Brand href="/">
                     <div className={"hidden-xs"}>
                       {hasFixed ? (
-                        <img
-                          alt="darwinia logo"
-                          className={styles.logo}
-                          src={logo}
-                        />
+                        <img alt="darwinia logo" className={styles.logo} src={logo} />
                       ) : (
-                        <img
-                          alt="darwinia logo"
-                          className={styles.logo}
-                          src={logo}
-                        />
+                        <img alt="darwinia logo" className={styles.logo} src={logo} />
                       )}
                     </div>
                     <div className={"hidden-md"}>
                       {!hasFixed && !hasHeightinMobile ? (
-                        <img
-                          alt="darwinia logo"
-                          className={styles.logo}
-                          src={logoWhite}
-                        />
+                        <img alt="darwinia logo" className={styles.logo} src={logoWhite} />
                       ) : (
-                        <img
-                          alt="darwinia logo"
-                          className={styles.logo}
-                          src={logo}
-                        />
+                        <img alt="darwinia logo" className={styles.logo} src={logo} />
                       )}
                     </div>
                   </Navbar.Brand>
@@ -272,10 +242,7 @@ class PageHeader extends Component {
                       <Nav.Link className={styles.navTab} href="/community">
                         {t("header:community")}
                       </Nav.Link>
-                      <Nav.Link
-                        className={`${styles.navTab} ${styles.navMedia}`}
-                        href="/media"
-                      >
+                      <Nav.Link className={`${styles.navTab} ${styles.navMedia}`} href="/media">
                         {t("header:media")}
                       </Nav.Link>
                     </Form>
@@ -292,24 +259,14 @@ class PageHeader extends Component {
                         <Dropdown.Toggle id="dropdown-custom-components">
                           {/* <div className={styles.lngBtn}>{t('header:lang_demo')}</div> */}
                           <CustomToggle>
-                            <div className={styles.lngBtn}>
-                              {t("header:lang_demo")}
-                            </div>
+                            <div className={styles.lngBtn}>{t("header:lang_demo")}</div>
                           </CustomToggle>
                         </Dropdown.Toggle>
-                        <Dropdown.Menu
-                          className={`animated fadeIn faster ${styles.dropdownMenu}`}
-                        >
-                          <Dropdown.Item
-                            onClick={() => this.changeLng("zh-cn")}
-                            eventKey="4.1"
-                          >
+                        <Dropdown.Menu className={`animated fadeIn faster ${styles.dropdownMenu}`}>
+                          <Dropdown.Item onClick={() => this.changeLng("zh-cn")} eventKey="4.1">
                             简体中文
                           </Dropdown.Item>
-                          <Dropdown.Item
-                            eventKey="4.2"
-                            onClick={() => this.changeLng("en-us")}
-                          >
+                          <Dropdown.Item eventKey="4.2" onClick={() => this.changeLng("en-us")}>
                             English
                           </Dropdown.Item>
                         </Dropdown.Menu>
@@ -324,11 +281,7 @@ class PageHeader extends Component {
                       </div>
                     </div>
 
-                    <Container
-                      className={
-                        "text-center spacer d-flex flex-column justify-content-center"
-                      }
-                    >
+                    <Container className={"text-center spacer d-flex flex-column justify-content-center"}>
                       <Row className={styles.navDrawList}>
                         <Col md={12}>
                           <Nav.Link href="/">{t("header:home")}</Nav.Link>
@@ -337,14 +290,10 @@ class PageHeader extends Component {
                           <Nav.Link href="/tech">{t("header:tech")}</Nav.Link>
                         </Col>
                         <Col md={12}>
-                          <Nav.Link href="/community">
-                            {t("header:community")}
-                          </Nav.Link>
+                          <Nav.Link href="/community">{t("header:community")}</Nav.Link>
                         </Col>
                         <Col md={12}>
-                          <Nav.Link href="/economic_model">
-                            {t("header:economic_model")}
-                          </Nav.Link>
+                          <Nav.Link href="/economic_model">{t("header:economic_model")}</Nav.Link>
                         </Col>
                         <Col md={12}>
                           <Nav.Link href="/media">{t("header:media")}</Nav.Link>

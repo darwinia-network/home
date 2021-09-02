@@ -359,12 +359,7 @@ class News extends Component {
       return (
         <Col key={index} md={3} className={styles.content}>
           {partner.link ? (
-            <a
-              className={styles.imgUrl}
-              rel="noopener noreferrer"
-              target="_blank"
-              href={partner.link}
-            >
+            <a className={styles.imgUrl} rel="noopener noreferrer" target="_blank" href={partner.link}>
               <div className={styles.imgRatio}>
                 <img alt="news" src={partner.src} />
               </div>

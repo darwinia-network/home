@@ -374,15 +374,8 @@ class Home extends Component {
     return this.partners.map((partner, index) => {
       return (
         <Col key={index} xs={6} md={4} lg={2}>
-          <a
-            target="_blank"
-            rel="noopener noreferrer"
-            href={this.partnerInfo[partner].url}
-          >
-            <img
-              alt={this.partnerInfo[partner].name}
-              src={this.partnerInfo[partner].logo}
-            />
+          <a target="_blank" rel="noopener noreferrer" href={this.partnerInfo[partner].url}>
+            <img alt={this.partnerInfo[partner].name} src={this.partnerInfo[partner].logo} />
             <h3>{this.partnerInfo[partner].name}</h3>
           </a>
         </Col>
@@ -431,12 +424,8 @@ class Home extends Component {
         <div className={styles.slogan}>
           <video src={hero} autoPlay="autoplay" loop="loop" muted />
           <Container>
-            <h2 className={styles.sloganTitle}>
-              {t("home_page:slogan_title")}
-            </h2>
-            <h5 className={styles.sloganSubtitle}>
-              {t("home_page:slogan_subtitle")}
-            </h5>
+            <h2 className={styles.sloganTitle}>{t("home_page:slogan_title")}</h2>
+            <h5 className={styles.sloganSubtitle}>{t("home_page:slogan_subtitle")}</h5>
             <div className={styles.sloganBtnGround}>
               <Button variant="light" className={styles.slogonBtnText}>
                 <span>{t("home_page:get_started")}</span>
@@ -451,20 +440,14 @@ class Home extends Component {
         <Fade bottom fraction={0.1} duration={1000} distance={"50px"}>
           <div className={`reveal-h1 ${styles.themeContainer}`}>
             <Container>
-              <Row
-                className={`${styles.promoteContentArea} d-flex justify-content-center`}
-              >
+              <Row className={`${styles.promoteContentArea} d-flex justify-content-center`}>
                 <Col xs={{ span: 12 }} sm={{ span: 12 }}>
-                  <h1
-                    className={`text-center ${styles.fontH1} ${styles.gradientText}`}
-                  >
+                  <h1 className={`text-center ${styles.fontH1} ${styles.gradientText}`}>
                     {t("home_page:theme_title")}
                   </h1>
                   <p>{t("home_page:theme_desc_1")}</p>
                   <p>{t("home_page:theme_desc_2")}</p>
-                  <Row
-                    className={`hidden-xs ${styles.bands} ${styles.bandsPc}`}
-                  >
+                  <Row className={`hidden-xs ${styles.bands} ${styles.bandsPc}`}>
                     <Col xs={12}>
                       <div className={styles.bandAll}>
                         <img alt="Wall of Honor" src={bandAll} />
@@ -472,36 +455,28 @@ class Home extends Component {
                           <OverlayTrigger
                             placement="top"
                             delay={{ show: 100, hide: 100 }}
-                            overlay={this.renderTooltip(
-                              t("home_page:band_1_desc")
-                            )}
+                            overlay={this.renderTooltip(t("home_page:band_1_desc"))}
                           >
                             <li></li>
                           </OverlayTrigger>
                           <OverlayTrigger
                             placement="top"
                             delay={{ show: 100, hide: 100 }}
-                            overlay={this.renderTooltip(
-                              t("home_page:band_2_desc")
-                            )}
+                            overlay={this.renderTooltip(t("home_page:band_2_desc"))}
                           >
                             <li></li>
                           </OverlayTrigger>
                           <OverlayTrigger
                             placement="top"
                             delay={{ show: 100, hide: 100 }}
-                            overlay={this.renderTooltip(
-                              t("home_page:band_3_desc")
-                            )}
+                            overlay={this.renderTooltip(t("home_page:band_3_desc"))}
                           >
                             <li></li>
                           </OverlayTrigger>
                           <OverlayTrigger
                             placement="top"
                             delay={{ show: 100, hide: 100 }}
-                            overlay={this.renderTooltip(
-                              t("home_page:band_4_desc")
-                            )}
+                            overlay={this.renderTooltip(t("home_page:band_4_desc"))}
                           >
                             <li></li>
                           </OverlayTrigger>
@@ -514,33 +489,25 @@ class Home extends Component {
                       <div className={styles.imgRatio}>
                         <img alt="web3" src={band1} />
                       </div>
-                      <p className={styles.bandDesc}>
-                        {t("home_page:band_1_desc")}
-                      </p>
+                      <p className={styles.bandDesc}>{t("home_page:band_1_desc")}</p>
                     </Col>
                     <Col xs={12} md={4} lg={3}>
                       <div className={styles.imgRatio}>
                         <img alt="substrate builder program" src={band2} />
                       </div>
-                      <p className={styles.bandDesc}>
-                        {t("home_page:band_2_desc")}
-                      </p>
+                      <p className={styles.bandDesc}>{t("home_page:band_2_desc")}</p>
                     </Col>
                     <Col xs={12} md={4} lg={3}>
                       <div className={styles.imgRatio}>
                         <img alt="web3.0 bootcamp" src={band3} />
                       </div>
-                      <p className={styles.bandDesc}>
-                        {t("home_page:band_3_desc")}
-                      </p>
+                      <p className={styles.bandDesc}>{t("home_page:band_3_desc")}</p>
                     </Col>
                     <Col xs={12} md={4} lg={3}>
                       <div className={styles.imgRatio}>
                         <img alt="polkadot" src={band4} />
                       </div>
-                      <p className={styles.bandDesc}>
-                        {t("home_page:band_4_desc")}
-                      </p>
+                      <p className={styles.bandDesc}>{t("home_page:band_4_desc")}</p>
                     </Col>
                   </Row>
                   <InputGroup className={`${styles.subscribe} hidden-xs`}>
@@ -602,37 +569,19 @@ class Home extends Component {
         <div className={`${styles.architectureContainer}`}>
           <Fade bottom fraction={0.1} duration={1000} distance={"50px"}>
             <Container className={`reveal-h1`}>
-              <h1 className={`text-center  ${styles.fontH1}`}>
-                {t("home_page:architecture_title")}
-              </h1>
+              <h1 className={`text-center  ${styles.fontH1}`}>{t("home_page:architecture_title")}</h1>
               {/* {i18n.language.indexOf('en') > -1 ? <img src={architecture_en}/> :
                             <img src={architecture}/>} */}
               <div className={`${styles.archWrapper}`}>
                 {i18n.language.indexOf("en") > -1 ? (
-                  <img
-                    alt="architecture"
-                    className={`hidden-xs`}
-                    src={architecture_en}
-                  />
+                  <img alt="architecture" className={`hidden-xs`} src={architecture_en} />
                 ) : (
-                  <img
-                    alt="architecture"
-                    className={`hidden-xs`}
-                    src={architecture}
-                  />
+                  <img alt="architecture" className={`hidden-xs`} src={architecture} />
                 )}
                 {i18n.language.indexOf("en") > -1 ? (
-                  <img
-                    alt="architecture"
-                    className={`visible-xs`}
-                    src={architecture_mobile_en}
-                  />
+                  <img alt="architecture" className={`visible-xs`} src={architecture_mobile_en} />
                 ) : (
-                  <img
-                    alt="architecture"
-                    className={`visible-xs`}
-                    src={architecture_mobile}
-                  />
+                  <img alt="architecture" className={`visible-xs`} src={architecture_mobile} />
                 )}
                 {/* <div className={`hidden-xs ${styles.anime}`}>
                                 <div>
@@ -650,30 +599,18 @@ class Home extends Component {
         </div>
 
         <Fade bottom fraction={0.1} duration={1000} distance={"50px"}>
-          <div
-            className={`reveal-h1 ${styles.highlightContainer} ${styles.economicContainer}`}
-          >
+          <div className={`reveal-h1 ${styles.highlightContainer} ${styles.economicContainer}`}>
             <Container>
               <div className={styles.title}>
-                <h1 className={`${styles.fontH1} ${styles.gradientText}`}>
-                  {t("home_page:economic_title")}
-                </h1>
+                <h1 className={`${styles.fontH1} ${styles.gradientText}`}>{t("home_page:economic_title")}</h1>
               </div>
               {/* <div className={styles.lineH1} /> */}
               <Row className={`d-flex justify-content-center`}>
                 <Col xs={12} md={12} lg={6} className={styles.economicImg}>
                   {i18n.language.indexOf("en") > -1 ? (
-                    <img
-                      alt="economic"
-                      className={styles.bridge}
-                      src={economic_en}
-                    />
+                    <img alt="economic" className={styles.bridge} src={economic_en} />
                   ) : (
-                    <img
-                      alt="economic"
-                      className={styles.bridge}
-                      src={economic}
-                    />
+                    <img alt="economic" className={styles.bridge} src={economic} />
                   )}
                 </Col>
                 <Col xs={0} md={0} lg={1} />
@@ -681,32 +618,16 @@ class Home extends Component {
                   <div className={styles.economicItem}>
                     <div className={styles.economicItemHeader}>
                       <div>
-                        <img
-                          alt="economic"
-                          className={styles.economicIcon}
-                          src={eco1}
-                        />
-                        <span className={styles.gradientText}>
-                          {t("home_page:economic_block_title_1")}
-                        </span>
+                        <img alt="economic" className={styles.economicIcon} src={eco1} />
+                        <span className={styles.gradientText}>{t("home_page:economic_block_title_1")}</span>
                       </div>
                       <p>
-                        <OverlayTrigger
-                          placement={"top"}
-                          overlay={<Tooltip>subscan</Tooltip>}
-                        >
-                          <a
-                            href={`https://darwinia.subscan.io/account`}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                          >
+                        <OverlayTrigger placement={"top"} overlay={<Tooltip>subscan</Tooltip>}>
+                          <a href={`https://darwinia.subscan.io/account`} target="_blank" rel="noopener noreferrer">
                             <img alt="subscan" src={subscan} />
                           </a>
                         </OverlayTrigger>
-                        <OverlayTrigger
-                          placement={"top"}
-                          overlay={<Tooltip>etherscan</Tooltip>}
-                        >
+                        <OverlayTrigger placement={"top"} overlay={<Tooltip>etherscan</Tooltip>}>
                           <a
                             href={`https://etherscan.io/token/${this.tokenInfo.ring.tokenAddress}`}
                             target="_blank"
@@ -715,26 +636,16 @@ class Home extends Component {
                             <img alt="etherscan" src={etherscan} />
                           </a>
                         </OverlayTrigger>
-                        <OverlayTrigger
-                          placement={"top"}
-                          overlay={<Tooltip>metamask</Tooltip>}
-                        >
+                        <OverlayTrigger placement={"top"} overlay={<Tooltip>metamask</Tooltip>}>
                           <span>
                             {hasMetamask ? (
-                              <a
-                                className={styles.addToken}
-                                href="#s"
-                                onClick={() => this.addToken("ring")}
-                              >
+                              <a className={styles.addToken} href="#s" onClick={() => this.addToken("ring")}>
                                 <img alt="metamask" src={metamask} />
                               </a>
                             ) : null}
                           </span>
                         </OverlayTrigger>
-                        <OverlayTrigger
-                          placement={"top"}
-                          overlay={<Tooltip>tronscan</Tooltip>}
-                        >
+                        <OverlayTrigger placement={"top"} overlay={<Tooltip>tronscan</Tooltip>}>
                           <a
                             href="https://tronscan.org/#/token20/TL175uyihLqQD656aFx3uhHYe1tyGkmXaW"
                             target="_blank"
@@ -752,20 +663,11 @@ class Home extends Component {
                   <div className={styles.economicItem}>
                     <div className={styles.economicItemHeader}>
                       <div>
-                        <img
-                          alt="economic"
-                          className={styles.economicIcon}
-                          src={eco2}
-                        />
-                        <span className={styles.gradientText}>
-                          {t("home_page:economic_block_title_2")}
-                        </span>
+                        <img alt="economic" className={styles.economicIcon} src={eco2} />
+                        <span className={styles.gradientText}>{t("home_page:economic_block_title_2")}</span>
                       </div>
                       <p>
-                        <OverlayTrigger
-                          placement={"top"}
-                          overlay={<Tooltip>subscan</Tooltip>}
-                        >
+                        <OverlayTrigger placement={"top"} overlay={<Tooltip>subscan</Tooltip>}>
                           <a
                             href={`https://darwinia.subscan.io/account?currency=kton`}
                             target="_blank"
@@ -774,10 +676,7 @@ class Home extends Component {
                             <img alt="subscan" src={subscan} />
                           </a>
                         </OverlayTrigger>
-                        <OverlayTrigger
-                          placement={"top"}
-                          overlay={<Tooltip>etherscan</Tooltip>}
-                        >
+                        <OverlayTrigger placement={"top"} overlay={<Tooltip>etherscan</Tooltip>}>
                           <a
                             href={`https://etherscan.io/token/${this.tokenInfo.kton.tokenAddress}`}
                             target="_blank"
@@ -786,26 +685,16 @@ class Home extends Component {
                             <img alt="etherscan" src={etherscan} />
                           </a>
                         </OverlayTrigger>
-                        <OverlayTrigger
-                          placement={"top"}
-                          overlay={<Tooltip>metamask</Tooltip>}
-                        >
+                        <OverlayTrigger placement={"top"} overlay={<Tooltip>metamask</Tooltip>}>
                           <span>
                             {hasMetamask ? (
-                              <a
-                                className={styles.addToken}
-                                href="#"
-                                onClick={() => this.addToken("kton")}
-                              >
+                              <a className={styles.addToken} href="#" onClick={() => this.addToken("kton")}>
                                 <img alt="metamask" src={metamask} />
                               </a>
                             ) : null}
                           </span>
                         </OverlayTrigger>
-                        <OverlayTrigger
-                          placement={"top"}
-                          overlay={<Tooltip>tronscan</Tooltip>}
-                        >
+                        <OverlayTrigger placement={"top"} overlay={<Tooltip>tronscan</Tooltip>}>
                           <a
                             href="https://tronscan.org/#/token20/TW3kTpVtYYQ5Ka1awZvLb9Yy6ZTDEC93dC"
                             target="_blank"
@@ -823,14 +712,8 @@ class Home extends Component {
                   <div className={styles.economicItem}>
                     <div className={styles.economicItemHeader}>
                       <div>
-                        <img
-                          alt="economic"
-                          className={styles.economicIcon}
-                          src={eco3}
-                        />
-                        <span className={styles.gradientText}>
-                          {t("home_page:economic_block_title_3")}
-                        </span>
+                        <img alt="economic" className={styles.economicIcon} src={eco3} />
+                        <span className={styles.gradientText}>{t("home_page:economic_block_title_3")}</span>
                       </div>
                     </div>
                     <div className={styles.economicItemContent}>
@@ -840,11 +723,7 @@ class Home extends Component {
                 </Col>
               </Row>
               <div>
-                <Button
-                  variant="transparent"
-                  href="/economic_model"
-                  className={`${styles.button} ${styles.colorBtn}`}
-                >
+                <Button variant="transparent" href="/economic_model" className={`${styles.button} ${styles.colorBtn}`}>
                   {t("home_page:read_more")}
                 </Button>
               </div>
@@ -852,104 +731,46 @@ class Home extends Component {
           </div>
         </Fade>
 
-        <div
-          className={`${styles.highlightContainer} ${styles.applicationContainer}`}
-        >
+        <div className={`${styles.highlightContainer} ${styles.applicationContainer}`}>
           <Fade bottom fraction={0.1} duration={1000} distance={"50px"}>
             <Container className={`reveal-h1`}>
               <div className={`hidden-xs ${styles.title}`}>
-                <h1 className={` ${styles.fontH1}`}>
-                  {t("home_page:application_title")}
-                </h1>
+                <h1 className={` ${styles.fontH1}`}>{t("home_page:application_title")}</h1>
               </div>
               <div className={`hidden-md ${styles.title}`}>
-                <h1 className={` ${styles.gradientText} ${styles.fontH1}`}>
-                  {t("home_page:application_title")}
-                </h1>
+                <h1 className={` ${styles.gradientText} ${styles.fontH1}`}>{t("home_page:application_title")}</h1>
               </div>
               <Row className={`d-flex justify-content-center`}>
                 <Col xs={12} md={6} className={styles.appItem}>
-                  <a
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    href="https://www.evolution.land/"
-                  >
+                  <a target="_blank" rel="noopener noreferrer" href="https://www.evolution.land/">
                     <img className={`hidden-xs`} alt="evoland" src={app_evo} />
-                    <img
-                      className={`hidden-md`}
-                      alt="evoland"
-                      src={application_evo}
-                    />
+                    <img className={`hidden-md`} alt="evoland" src={application_evo} />
                   </a>
-                  <a
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    href="https://www.evolution.land/"
-                  >
-                    <h3 className={styles.generalGradientText}>
-                      {t("home_page:application_block_title_1")}
-                    </h3>
+                  <a target="_blank" rel="noopener noreferrer" href="https://www.evolution.land/">
+                    <h3 className={styles.generalGradientText}>{t("home_page:application_block_title_1")}</h3>
                   </a>
                   <p>{t("home_page:application_block_content_1")}</p>
                 </Col>
                 <Col xs={12} md={6} className={styles.appItem}>
-                  <a
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    href="https://www.subscan.io"
-                  >
-                    <img
-                      className={`hidden-xs`}
-                      alt="subscan"
-                      src={app_subscan}
-                    />
-                    <img
-                      className={`hidden-md`}
-                      alt="subscan"
-                      src={application_subscan}
-                    />
+                  <a target="_blank" rel="noopener noreferrer" href="https://www.subscan.io">
+                    <img className={`hidden-xs`} alt="subscan" src={app_subscan} />
+                    <img className={`hidden-md`} alt="subscan" src={application_subscan} />
                   </a>
-                  <a
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    href="https://www.subscan.io"
-                  >
-                    <h3 className={styles.generalGradientText}>
-                      {t("home_page:application_block_title_2")}
-                    </h3>
+                  <a target="_blank" rel="noopener noreferrer" href="https://www.subscan.io">
+                    <h3 className={styles.generalGradientText}>{t("home_page:application_block_title_2")}</h3>
                   </a>
                   <p>{t("home_page:application_block_content_2")}</p>
                 </Col>
                 <Col xs={12} md={6} className={styles.appItem}>
-                  <img
-                    className={`hidden-xs`}
-                    alt="Token DEX"
-                    src={app_token}
-                  />
-                  <img
-                    className={`hidden-md`}
-                    alt="Token DEX"
-                    src={application_token}
-                  />
-                  <h3 className={styles.generalGradientText}>
-                    {t("home_page:application_block_title_3")}
-                  </h3>
+                  <img className={`hidden-xs`} alt="Token DEX" src={app_token} />
+                  <img className={`hidden-md`} alt="Token DEX" src={application_token} />
+                  <h3 className={styles.generalGradientText}>{t("home_page:application_block_title_3")}</h3>
                   <p>{t("home_page:application_block_content_3")}</p>
                 </Col>
                 <Col xs={12} md={6} className={styles.appItem}>
-                  <img
-                    alt="NFT Market"
-                    src={app_nft}
-                    className={`hidden-xs ${styles.secondImg}`}
-                  />
-                  <img
-                    alt="NFT Market"
-                    src={application_nft}
-                    className={`hidden-md ${styles.secondImg}`}
-                  />
-                  <h3 className={styles.generalGradientText}>
-                    {t("home_page:application_block_title_4")}
-                  </h3>
+                  <img alt="NFT Market" src={app_nft} className={`hidden-xs ${styles.secondImg}`} />
+                  <img alt="NFT Market" src={application_nft} className={`hidden-md ${styles.secondImg}`} />
+                  <h3 className={styles.generalGradientText}>{t("home_page:application_block_title_4")}</h3>
                   <p>{t("home_page:application_block_content_4")}</p>
                 </Col>
               </Row>
@@ -961,9 +782,7 @@ class Home extends Component {
           <div className={`reveal-h1 ${styles.roadmapContainer}`}>
             <Container>
               <div className={styles.title}>
-                <h1 className={` ${styles.fontH1} ${styles.gradientText}`}>
-                  {t("home_page:roadmap_title")}
-                </h1>
+                <h1 className={` ${styles.fontH1} ${styles.gradientText}`}>{t("home_page:roadmap_title")}</h1>
               </div>
               <div className={`hidden-xs ${styles.roadmap}`}>
                 <Row className={styles.roadmapRow}>
@@ -1131,9 +950,7 @@ class Home extends Component {
               <div className={`hidden-md ${styles.roadmapM}`}>
                 <Row>
                   <Col>
-                    <h6 className={`${styles.generalGradientText}`}>
-                      2018-2019
-                    </h6>
+                    <h6 className={`${styles.generalGradientText}`}>2018-2019</h6>
                   </Col>
                 </Row>
                 <Row className={styles.roadmap2018}>
@@ -1189,11 +1006,7 @@ class Home extends Component {
 
                 <Row>
                   <Col>
-                    <h6
-                      className={`${styles.transBtn} ${styles.generalGradientText}`}
-                    >
-                      2020
-                    </h6>
+                    <h6 className={`${styles.transBtn} ${styles.generalGradientText}`}>2020</h6>
                   </Col>
                 </Row>
                 <Row className={styles.roadmap2020q1}>
@@ -1257,11 +1070,7 @@ class Home extends Component {
 
                 <Row>
                   <Col>
-                    <h6
-                      className={`${styles.transBtn} ${styles.generalGradientText}`}
-                    >
-                      2021
-                    </h6>
+                    <h6 className={`${styles.transBtn} ${styles.generalGradientText}`}>2021</h6>
                   </Col>
                 </Row>
                 <Row className={styles.roadmap2021q1}>
@@ -1330,9 +1139,7 @@ class Home extends Component {
               <Row>
                 <Col md={1} xs={0}></Col>
                 <Col md={10} xs={12} className={`${styles.content}`}>
-                  <h1 className={` ${styles.title} ${styles.fontH1}`}>
-                    {t("home_page:dev_title")}
-                  </h1>
+                  <h1 className={` ${styles.title} ${styles.fontH1}`}>{t("home_page:dev_title")}</h1>
                   <p>
                     {t("home_page:dev_content_1")}
                     <br />
@@ -1356,9 +1163,7 @@ class Home extends Component {
           <div className={`reveal-h1 ${styles.partnersContainer}`}>
             <Container>
               <div className={styles.title}>
-                <h1 className={` ${styles.fontH1} ${styles.gradientText}`}>
-                  {t("home_page:partners_title")}
-                </h1>
+                <h1 className={` ${styles.fontH1} ${styles.gradientText}`}>{t("home_page:partners_title")}</h1>
               </div>
               <Row className={`d-flex`}>{this.renderPartner()}</Row>
             </Container>
@@ -1366,98 +1171,58 @@ class Home extends Component {
         </Fade>
 
         <Fade bottom fraction={0.1} duration={1000} distance={"50px"}>
-          <div
-            className={`reveal-h1 ${styles.highlightContainer}  ${styles.newContainer}`}
-          >
+          <div className={`reveal-h1 ${styles.highlightContainer}  ${styles.newContainer}`}>
             <Container>
               <div className={styles.title}>
-                <h1 className={` ${styles.fontH1} ${styles.gradientText}`}>
-                  {t("home_page:newest_title")}
-                </h1>
+                <h1 className={` ${styles.fontH1} ${styles.gradientText}`}>{t("home_page:newest_title")}</h1>
               </div>
               <Row className={`d-flex justify-content-center text-left`}>
                 <Col xs={12} md={4} lg={3}>
-                  <a
-                    className={styles.imgUrl}
-                    rel="noopener noreferrer"
-                    target="_blank"
-                    href={t("media:news_44_link")}
-                  >
+                  <a className={styles.imgUrl} rel="noopener noreferrer" target="_blank" href={t("media:news_44_link")}>
                     <div className={styles.imgRatio}>
                       <img alt="news" src={news44} />
                     </div>
                     <div className={styles.mediaInfo}>
                       <span>{t("media:more_title")}</span>
-                      <span className={styles.mediaTime}>
-                        {t("media:news_44_time")}
-                      </span>
+                      <span className={styles.mediaTime}>{t("media:news_44_time")}</span>
                     </div>
-                    <div className={styles.mediaDesc}>
-                      {t("media:news_44_title")}
-                    </div>
+                    <div className={styles.mediaDesc}>{t("media:news_44_title")}</div>
                   </a>
                 </Col>
                 <Col xs={12} md={4} lg={3}>
-                  <a
-                    className={styles.imgUrl}
-                    rel="noopener noreferrer"
-                    target="_blank"
-                    href={t("media:news_47_link")}
-                  >
+                  <a className={styles.imgUrl} rel="noopener noreferrer" target="_blank" href={t("media:news_47_link")}>
                     <div className={styles.imgRatio}>
                       <img alt="news" src={news47} />
                     </div>
                     <div className={styles.mediaInfo}>
                       <span>{t("media:more_title")}</span>
-                      <span className={styles.mediaTime}>
-                        {t("media:news_47_time")}
-                      </span>
+                      <span className={styles.mediaTime}>{t("media:news_47_time")}</span>
                     </div>
-                    <div className={styles.mediaDesc}>
-                      {t("media:news_47_title")}
-                    </div>
+                    <div className={styles.mediaDesc}>{t("media:news_47_title")}</div>
                   </a>
                 </Col>
                 <Col xs={12} md={4} lg={3}>
-                  <a
-                    className={styles.imgUrl}
-                    rel="noopener noreferrer"
-                    target="_blank"
-                    href={t("media:news_46_link")}
-                  >
+                  <a className={styles.imgUrl} rel="noopener noreferrer" target="_blank" href={t("media:news_46_link")}>
                     <div className={styles.imgRatio}>
                       <img alt="news" src={news46} />
                     </div>
                     <div className={styles.mediaInfo}>
                       <span>{t("media:more_title")}</span>
-                      <span className={styles.mediaTime}>
-                        {t("media:news_46_time")}
-                      </span>
+                      <span className={styles.mediaTime}>{t("media:news_46_time")}</span>
                     </div>
-                    <div className={styles.mediaDesc}>
-                      {t("media:news_46_title")}
-                    </div>
+                    <div className={styles.mediaDesc}>{t("media:news_46_title")}</div>
                   </a>
                 </Col>
                 <Col xs={12} md={4} lg={3}>
-                  <a
-                    className={styles.imgUrl}
-                    rel="noopener noreferrer"
-                    target="_blank"
-                    href={t("media:news_45_link")}
-                  >
+                  <a className={styles.imgUrl} rel="noopener noreferrer" target="_blank" href={t("media:news_45_link")}>
                     <div className={styles.imgRatio}>
                       <img alt="news" src={news45} />
                     </div>
                     <div className={styles.mediaInfo}>
                       <span>{t("media:more_title")}</span>
-                      <span className={styles.mediaTime}>
-                        {t("media:news_45_time")}
-                      </span>
+                      <span className={styles.mediaTime}>{t("media:news_45_time")}</span>
                     </div>
-                    <div className={styles.mediaDesc}>
-                      {t("media:news_45_title")}
-                    </div>
+                    <div className={styles.mediaDesc}>{t("media:news_45_title")}</div>
                   </a>
                 </Col>
               </Row>

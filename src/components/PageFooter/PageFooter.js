@@ -1,15 +1,5 @@
 import React, { Component } from "react";
-import {
-  Container,
-  Row,
-  Col,
-  OverlayTrigger,
-  Popover,
-  InputGroup,
-  FormControl,
-  Button,
-  Form,
-} from "react-bootstrap";
+import { Container, Row, Col, OverlayTrigger, Popover, InputGroup, FormControl, Button, Form } from "react-bootstrap";
 import { withTranslation } from "react-i18next";
 import styles from "./style.module.scss";
 import i18n from "../../locales/i18n";
@@ -112,11 +102,7 @@ class PageFooter extends Component {
         <Container className={styles.mapContainer}>
           <Row>
             <Col xs={12} md={12} lg={12}>
-              <img
-                alt="dwSlideIcon"
-                className={styles.footerIcon}
-                src={dwSlideIcon}
-              />
+              <img alt="dwSlideIcon" className={styles.footerIcon} src={dwSlideIcon} />
             </Col>
             <Col>
               <InputGroup className={`mb-3 ${styles.subscribe} hidden-xs`}>
@@ -178,11 +164,7 @@ class PageFooter extends Component {
                 <a href="/#top">{t("footer:general_title_1")}</a>
               </p>
               <p>
-                <a
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  href="https://docs.darwinia.network/"
-                >
+                <a target="_blank" rel="noopener noreferrer" href="https://docs.darwinia.network/">
                   {t("footer:general_title_2")}
                 </a>
               </p>
@@ -196,20 +178,12 @@ class PageFooter extends Component {
                 </a>
               </p>
               <p>
-                <a
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  href="https://www.itering.io/about"
-                >
+                <a target="_blank" rel="noopener noreferrer" href="https://www.itering.io/about">
                   {t("footer:general_title_3")}
                 </a>
               </p>
               <p>
-                <a
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  href="mailto:hello@darwinia.network"
-                >
+                <a target="_blank" rel="noopener noreferrer" href="mailto:hello@darwinia.network">
                   {t("footer:general_title_4")}
                 </a>
               </p>
@@ -222,50 +196,30 @@ class PageFooter extends Component {
             <Col xs={6} md={4} lg={3}>
               <h1>{t("footer:technology")}</h1>
               <p>
-                <a
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  href="https://crab.network/"
-                >
+                <a target="_blank" rel="noopener noreferrer" href="https://crab.network/">
                   {t("footer:technology_title_1")}
                 </a>
               </p>
               {i18n.language.indexOf("en") > -1 ? (
                 <p>
-                  <a
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    href="/Darwinia_Genepaper_EN.pdf"
-                  >
+                  <a target="_blank" rel="noopener noreferrer" href="/Darwinia_Genepaper_EN.pdf">
                     {t("footer:technology_title_2")}
                   </a>
                 </p>
               ) : (
                 <p>
-                  <a
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    href="/Darwinia_Genepaper_CN.pdf"
-                  >
+                  <a target="_blank" rel="noopener noreferrer" href="/Darwinia_Genepaper_CN.pdf">
                     {t("footer:technology_title_2")}
                   </a>
                 </p>
               )}
               <p>
-                <a
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  href="https://github.com/darwinia-network/darwinia"
-                >
+                <a target="_blank" rel="noopener noreferrer" href="https://github.com/darwinia-network/darwinia">
                   {t("footer:technology_title_3")}
                 </a>
               </p>
               <p>
-                <a
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  href="https://telemetry.polkadot.io/#list/Polkadot"
-                >
+                <a target="_blank" rel="noopener noreferrer" href="https://telemetry.polkadot.io/#list/Polkadot">
                   {t("footer:technology_title_4")}
                 </a>
               </p>
@@ -273,11 +227,7 @@ class PageFooter extends Component {
             <Col xs={6} md={4} lg={3}>
               <h1>{t("footer:community")}</h1>
               <p>
-                <a
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  href={t("footer:rfcs_link")}
-                >
+                <a target="_blank" rel="noopener noreferrer" href={t("footer:rfcs_link")}>
                   {t("footer:community_title_1")}
                 </a>
               </p>
@@ -292,11 +242,7 @@ class PageFooter extends Component {
                 </a>
               </p>
               <p>
-                <a
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  href={t("footer:faq_link")}
-                >
+                <a target="_blank" rel="noopener noreferrer" href={t("footer:faq_link")}>
                   {t("footer:community_title_4")}
                 </a>
               </p>
@@ -304,10 +250,7 @@ class PageFooter extends Component {
             <Col xs={6} md={4} lg={2}>
               <h1>{t("footer:contact")}</h1>
               <Row className={styles.mdContent}>
-                <Col
-                  md={{ order: 3 }}
-                  className={`text-right ${styles.shareLogo}`}
-                >
+                <Col md={{ order: 3 }} className={`text-right ${styles.shareLogo}`}>
                   <div>
                     <img
                       alt="email"
@@ -316,11 +259,7 @@ class PageFooter extends Component {
                       }}
                       src={share8}
                     />
-                    <OverlayTrigger
-                      placement="top-end"
-                      delay={{ show: 100, hide: 100 }}
-                      overlay={this.renderTooltip}
-                    >
+                    <OverlayTrigger placement="top-end" delay={{ show: 100, hide: 100 }} overlay={this.renderTooltip}>
                       <img
                         alt="wechat"
                         onClick={(e) => {
@@ -399,9 +338,7 @@ class PageFooter extends Component {
             <Row className={styles.mdContent}>
               <Col className={`d-flex justify-content-between`}>
                 <div>{t("footer:grant")}</div>
-                <div>
-                  {t("footer:copyright", { year: new Date().getFullYear() })}
-                </div>
+                <div>{t("footer:copyright", { year: new Date().getFullYear() })}</div>
                 <div>{t("footer:support")}</div>
               </Col>
             </Row>
@@ -416,11 +353,7 @@ class PageFooter extends Component {
                     }}
                     src={share8}
                   />
-                  <OverlayTrigger
-                    placement="top-end"
-                    delay={{ show: 100, hide: 1000 }}
-                    overlay={this.renderTooltip}
-                  >
+                  <OverlayTrigger placement="top-end" delay={{ show: 100, hide: 1000 }} overlay={this.renderTooltip}>
                     <img
                       alt="wechat"
                       onClick={(e) => {

@@ -96,8 +96,7 @@
     width: 100%;
   }
   .archWrapper {
-    background: url("./img/architecture/architecture-bg.png") top center
-      no-repeat;
+    background: url("./img/architecture/architecture-bg.png") top center no-repeat;
     // padding: 60px 0 88px 0;
     // background: url("./img/architecture-bg.png");
     background-size: cover;
@@ -481,23 +480,13 @@
   font-size: 40px;
   color: rgba(8, 12, 32, 1);
   letter-spacing: 2px;
-  background: linear-gradient(
-    315deg,
-    rgba(254, 56, 118, 1) 0%,
-    rgba(124, 48, 221, 1) 71%,
-    rgba(58, 48, 221, 1) 100%
-  );
+  background: linear-gradient(315deg, rgba(254, 56, 118, 1) 0%, rgba(124, 48, 221, 1) 71%, rgba(58, 48, 221, 1) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 .generalGradientText {
   color: rgba(8, 12, 32, 1);
-  background: linear-gradient(
-    315deg,
-    rgba(254, 56, 118, 1) 0%,
-    rgba(124, 48, 221, 1) 71%,
-    rgba(58, 48, 221, 1) 100%
-  );
+  background: linear-gradient(315deg, rgba(254, 56, 118, 1) 0%, rgba(124, 48, 221, 1) 71%, rgba(58, 48, 221, 1) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }

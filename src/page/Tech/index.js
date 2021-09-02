@@ -59,9 +59,7 @@ class Home extends Component {
     const { t } = this.props;
     return (
       <div className={styles.content}>
-        <div className={`hidden-xs ${styles.slogan} ${styles.pcSlogan}`}>
-          {t("tech:theme_desc")}
-        </div>
+        <div className={`hidden-xs ${styles.slogan} ${styles.pcSlogan}`}>{t("tech:theme_desc")}</div>
         <div className={`hidden-md ${styles.slogan}`}>
           <p>{t("tech:theme_desc_1")}</p>
           <p>{t("tech:theme_desc_2")}</p>
@@ -70,35 +68,19 @@ class Home extends Component {
           <p>{t("tech:theme_desc_5")}</p>
         </div>
         <div className={styles.items}>
-          <a
-            target="_blank"
-            rel="noopener noreferrer"
-            href={t("tech:theme_0_link")}
-          >
+          <a target="_blank" rel="noopener noreferrer" href={t("tech:theme_0_link")}>
             <img src={theme0} alt="icon" />
             <span>{t("tech:theme_0")}</span>
           </a>
-          <a
-            target="_blank"
-            rel="noopener noreferrer"
-            href={t("tech:theme_1_link")}
-          >
+          <a target="_blank" rel="noopener noreferrer" href={t("tech:theme_1_link")}>
             <img src={theme1} alt="icon" />
             <span>{t("tech:theme_1")}</span>
           </a>
-          <a
-            target="_blank"
-            rel="noopener noreferrer"
-            href={t("tech:theme_2_link")}
-          >
+          <a target="_blank" rel="noopener noreferrer" href={t("tech:theme_2_link")}>
             <img src={theme2} alt="icon" />
             <span>{t("tech:theme_2")}</span>
           </a>
-          <a
-            target="_blank"
-            rel="noopener noreferrer"
-            href={t("tech:theme_3_link")}
-          >
+          <a target="_blank" rel="noopener noreferrer" href={t("tech:theme_3_link")}>
             <img src={theme3} alt="icon" />
             <span>{t("tech:theme_3")}</span>
           </a>
@@ -127,9 +109,7 @@ class Home extends Component {
           <div className={styles.architectureContainer}>
             <Container>
               <div className={styles.title}>
-                <h1 className={`${styles.fontH1} ${styles.gradientText}`}>
-                  {t("tech:architecture")}
-                </h1>
+                <h1 className={`${styles.fontH1} ${styles.gradientText}`}>{t("tech:architecture")}</h1>
               </div>
               <Row>
                 <Col xs={12}>
@@ -137,59 +117,27 @@ class Home extends Component {
                   {/* <img src={archBg} alt="architecture"/> */}
                   <div className={`${styles.archWrapper}`}>
                     {i18n.language.indexOf("en") > -1 ? (
-                      <img
-                        alt="architecture"
-                        className={`hidden-xs`}
-                        src={architecture_en}
-                      />
+                      <img alt="architecture" className={`hidden-xs`} src={architecture_en} />
                     ) : (
-                      <img
-                        alt="architecture"
-                        className={`hidden-xs`}
-                        src={architecture}
-                      />
+                      <img alt="architecture" className={`hidden-xs`} src={architecture} />
                     )}
                     {i18n.language.indexOf("en") > -1 ? (
-                      <img
-                        alt="architecture"
-                        className={`visible-xs`}
-                        src={architecture_mobile_en}
-                      />
+                      <img alt="architecture" className={`visible-xs`} src={architecture_mobile_en} />
                     ) : (
-                      <img
-                        alt="architecture"
-                        className={`visible-xs`}
-                        src={architecture_mobile}
-                      />
+                      <img alt="architecture" className={`visible-xs`} src={architecture_mobile} />
                     )}
                     <div className={`hidden-xs ${styles.anime}`}>
                       <div>
-                        <Button className={styles.soloBtn}>
+                        <Button className={styles.soloBtn}>{t("home_page:architecture_solo")}</Button>
+                        <Button className={`${styles.soloBtn} ${styles.soloWhiteBtn}`}>
                           {t("home_page:architecture_solo")}
                         </Button>
-                        <Button
-                          className={`${styles.soloBtn} ${styles.soloWhiteBtn}`}
-                        >
-                          {t("home_page:architecture_solo")}
-                        </Button>
-                        <Button className={styles.chainBtn}>
+                        <Button className={styles.chainBtn}>{t("home_page:architecture_chain")}</Button>
+                        <Button className={`${styles.chainBtn} ${styles.chainPinkBtn}`}>
                           {t("home_page:architecture_chain")}
                         </Button>
-                        <Button
-                          className={`${styles.chainBtn} ${styles.chainPinkBtn}`}
-                        >
-                          {t("home_page:architecture_chain")}
-                        </Button>
-                        <img
-                          alt="chain"
-                          src={architecture_chain}
-                          className={styles.chain}
-                        />
-                        <img
-                          alt="solo"
-                          src={architecture_solo}
-                          className={styles.solo}
-                        />
+                        <img alt="chain" src={architecture_chain} className={styles.chain} />
+                        <img alt="solo" src={architecture_solo} className={styles.solo} />
                       </div>
                     </div>
                   </div>
@@ -203,9 +151,7 @@ class Home extends Component {
           <div className={styles.stageContainer}>
             <Container>
               <div className={styles.title}>
-                <h1 className={`${styles.fontH1} ${styles.gradientText}`}>
-                  {t("tech:mainnet_stage")}
-                </h1>
+                <h1 className={`${styles.fontH1} ${styles.gradientText}`}>{t("tech:mainnet_stage")}</h1>
               </div>
               <Row className={"hidden-xs"}>
                 <Col xs={12}>
@@ -299,9 +245,7 @@ class Home extends Component {
               </Row>
               <div className={`hidden-md`}>
                 <p className={styles.desc}>{t("tech:mainnet_stage_desc")}</p>
-                <Row
-                  className={`d-flex justify-content-center align-items-between`}
-                >
+                <Row className={`d-flex justify-content-center align-items-between`}>
                   <Col xs={1} className={styles.placeholderCol}></Col>
                   <Col xs={4} className={styles.imgCol}>
                     <img src={roadmapMobile} alt="roadmap" />
@@ -356,9 +300,7 @@ class Home extends Component {
           <div className={styles.innovationContainer}>
             <Container>
               <div className={styles.title}>
-                <h1 className={`${styles.fontH1} ${styles.gradientText}`}>
-                  {t("tech:innovation")}
-                </h1>
+                <h1 className={`${styles.fontH1} ${styles.gradientText}`}>{t("tech:innovation")}</h1>
               </div>
               <Row>
                 <Col xs={12}>

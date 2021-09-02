@@ -1,12 +1,5 @@
 import React, { Component } from "react";
-import {
-  Container,
-  Row,
-  Col,
-  Button,
-  Popover,
-  OverlayTrigger,
-} from "react-bootstrap";
+import { Container, Row, Col, Button, Popover, OverlayTrigger } from "react-bootstrap";
 import { PageHeader } from "../../components/PageHeader";
 import { PageFooter } from "../../components/PageFooter";
 import LazyBackground from "../../components/lazyBackground";
@@ -103,12 +96,7 @@ class Brand extends Component {
             <Col xs={12} className={`${styles.content}`}>
               <h1 className={styles.title}>{t("community:dive_title")}</h1>
               <p>{t("community:dive_subtitle")}</p>
-              <Button
-                variant="transparent"
-                target="_blank"
-                href="/ambassador"
-                className={`hidden-xs ${styles.button}`}
-              >
+              <Button variant="transparent" target="_blank" href="/ambassador" className={`hidden-xs ${styles.button}`}>
                 {t("community:dive_slogan")}
               </Button>
             </Col>
@@ -155,16 +143,10 @@ class Brand extends Component {
                     >
                       <div className={styles.mediaLogo}>
                         <img alt="twitter" src={twitter_white} />
-                        <img
-                          className={styles.hoverImg}
-                          alt="twitter"
-                          src={twitter}
-                        />
+                        <img className={styles.hoverImg} alt="twitter" src={twitter} />
                       </div>
                       <div className={styles.mediaNum}>30,098</div>
-                      <div className={styles.mediaName}>
-                        {t("community:twitter")}
-                      </div>
+                      <div className={styles.mediaName}>{t("community:twitter")}</div>
                     </a>
                     <a
                       target="_blank"
@@ -174,16 +156,10 @@ class Brand extends Component {
                     >
                       <div className={styles.mediaLogo}>
                         <img alt="telegram" src={telegram_white} />
-                        <img
-                          className={styles.hoverImg}
-                          alt="telegram"
-                          src={telegram}
-                        />
+                        <img className={styles.hoverImg} alt="telegram" src={telegram} />
                       </div>
                       <div className={styles.mediaNum}>26,334</div>
-                      <div className={styles.mediaName}>
-                        {t("community:telegram")}
-                      </div>
+                      <div className={styles.mediaName}>{t("community:telegram")}</div>
                     </a>
                     <a
                       target="_blank"
@@ -193,35 +169,19 @@ class Brand extends Component {
                     >
                       <div className={styles.mediaLogo}>
                         <img alt="medium" src={medium_white} />
-                        <img
-                          className={styles.hoverImg}
-                          alt="medium"
-                          src={medium}
-                        />
+                        <img className={styles.hoverImg} alt="medium" src={medium} />
                       </div>
                       <div className={styles.mediaNum}>3,056</div>
-                      <div className={styles.mediaName}>
-                        {t("community:medium")}
-                      </div>
+                      <div className={styles.mediaName}>{t("community:medium")}</div>
                     </a>
-                    <OverlayTrigger
-                      placement="top"
-                      delay={{ show: 100, hide: 100 }}
-                      overlay={this.renderTooltip}
-                    >
+                    <OverlayTrigger placement="top" delay={{ show: 100, hide: 100 }} overlay={this.renderTooltip}>
                       <div className={`${styles.mediaBlock} ${styles.wechat}`}>
                         <div className={styles.mediaLogo}>
                           <img alt="wechat" src={wechat_white} />
-                          <img
-                            className={styles.hoverImg}
-                            alt="wechat"
-                            src={wechat}
-                          />
+                          <img className={styles.hoverImg} alt="wechat" src={wechat} />
                         </div>
                         <div className={styles.mediaNum}>11,545</div>
-                        <div className={styles.mediaName}>
-                          {t("community:wechat")}
-                        </div>
+                        <div className={styles.mediaName}>{t("community:wechat")}</div>
                       </div>
                     </OverlayTrigger>
                     <a
@@ -232,16 +192,10 @@ class Brand extends Component {
                     >
                       <div className={styles.mediaLogo}>
                         <img alt="github" src={github_white} />
-                        <img
-                          className={styles.hoverImg}
-                          alt="github"
-                          src={github}
-                        />
+                        <img className={styles.hoverImg} alt="github" src={github} />
                       </div>
                       <div className={styles.mediaNum}>115</div>
-                      <div className={styles.mediaName}>
-                        {t("community:github")}
-                      </div>
+                      <div className={styles.mediaName}>{t("community:github")}</div>
                     </a>
                   </div>
                 </Col>
@@ -259,9 +213,7 @@ class Brand extends Component {
                 <Row className={styles.newRow}>
                   <Col md={12} xs={12}>
                     <div className={"text-center"}>
-                      <h1 className={styles.sectionTitle}>
-                        {t("community:contribute")}
-                      </h1>
+                      <h1 className={styles.sectionTitle}>{t("community:contribute")}</h1>
                     </div>
                     <div className={styles.lineH1}></div>
                   </Col>
@@ -270,9 +222,7 @@ class Brand extends Component {
                   <Col md={2}></Col>
                   <Col md={8} xs={12} className={`${styles.content}`}>
                     <div className={"text-center"}>
-                      <div className={`${styles.contentTitle}`}>
-                        {t("community:new")}
-                      </div>
+                      <div className={`${styles.contentTitle}`}>{t("community:new")}</div>
                       <p>{t("community:new_intro")}</p>
                       <div className={styles.buttons}>
                         <Button
@@ -307,16 +257,8 @@ class Brand extends Component {
             </Fade>
           </div>
           <div className={styles.technology}>
-            <img
-              className={"hidden-xs"}
-              alt="technology-bg"
-              src={technology_bg}
-            />
-            <img
-              className={"hidden-md"}
-              alt="technology-bg"
-              src={technology_bg_m}
-            />
+            <img className={"hidden-xs"} alt="technology-bg" src={technology_bg} />
+            <img className={"hidden-md"} alt="technology-bg" src={technology_bg_m} />
             <Fade bottom fraction={0.1} duration={1000} distance={"50px"}>
               <Container className={styles.container}>
                 <Row>
@@ -324,9 +266,7 @@ class Brand extends Component {
                     <div className={styles.section}>
                       <img alt="grant" src={grant} />
                       <div className={styles.text}>
-                        <div className={styles.title}>
-                          {t("community:grant_program")}
-                        </div>
+                        <div className={styles.title}>{t("community:grant_program")}</div>
                         <p>{t("community:grant_intro")}</p>
                         <div className={styles.buttons}>
                           <Button
@@ -344,9 +284,7 @@ class Brand extends Component {
                     <div className={styles.section}>
                       <img alt="bounty" src={bounty} />
                       <div className={styles.text}>
-                        <div className={styles.title}>
-                          {t("community:bounty_program")}
-                        </div>
+                        <div className={styles.title}>{t("community:bounty_program")}</div>
                         <p>{t("community:bounty_intro")}</p>
                         <div className={styles.buttons}>
                           <Button
@@ -362,40 +300,26 @@ class Brand extends Component {
                     </div>
                   </Col>
                   <Col md={3} xs={12}>
-                    <div className={`text-center ${styles.contentTitle}`}>
-                      {t("community:technology")}
-                    </div>
+                    <div className={`text-center ${styles.contentTitle}`}>{t("community:technology")}</div>
                   </Col>
                 </Row>
               </Container>
             </Fade>
           </div>
           <div className={styles.education}>
-            <img
-              className={"hidden-xs"}
-              alt="education-bg"
-              src={education_bg}
-            />
-            <img
-              className={"hidden-md"}
-              alt="education-bg"
-              src={education_bg_m}
-            />
+            <img className={"hidden-xs"} alt="education-bg" src={education_bg} />
+            <img className={"hidden-md"} alt="education-bg" src={education_bg_m} />
             <Fade bottom fraction={0.1} duration={1000} distance={"50px"}>
               <Container className={styles.container}>
                 <Row>
                   <Col md={3} xs={12}>
-                    <div className={`${styles.contentTitle}`}>
-                      {t("community:education")}
-                    </div>
+                    <div className={`${styles.contentTitle}`}>{t("community:education")}</div>
                   </Col>
                   <Col md={9} xs={12} className={`${styles.content}`}>
                     <div className={styles.section}>
                       <img alt="creator" src={creator} />
                       <div className={styles.text}>
-                        <div className={styles.title}>
-                          {t("community:content_creator")}
-                        </div>
+                        <div className={styles.title}>{t("community:content_creator")}</div>
                         <p>{t("community:content_intro")}</p>
                       </div>
                     </div>
@@ -403,9 +327,7 @@ class Brand extends Component {
                     <div className={styles.section}>
                       <img alt="meetup" src={meetup} />
                       <div className={styles.text}>
-                        <div className={styles.title}>
-                          {t("community:meetup_organizer")}
-                        </div>
+                        <div className={styles.title}>{t("community:meetup_organizer")}</div>
                         <p>{t("community:meetup_intro")}</p>
                       </div>
                     </div>
@@ -413,9 +335,7 @@ class Brand extends Component {
                     <div className={styles.section}>
                       <img alt="translator" src={translator} />
                       <div className={styles.text}>
-                        <div className={styles.title}>
-                          {t("community:translator")}
-                        </div>
+                        <div className={styles.title}>{t("community:translator")}</div>
                         <p>{t("community:translator_intro")}</p>
                       </div>
                     </div>
@@ -423,9 +343,7 @@ class Brand extends Component {
                     <div className={styles.section}>
                       <img alt="moderator" src={moderator} />
                       <div className={styles.text}>
-                        <div className={styles.title}>
-                          {t("community:moderator")}
-                        </div>
+                        <div className={styles.title}>{t("community:moderator")}</div>
                         <p>{t("community:moderator_intro")}</p>
                       </div>
                     </div>
@@ -433,9 +351,7 @@ class Brand extends Component {
                     <div className={styles.section}>
                       <img alt="experience" src={experience} />
                       <div className={styles.text}>
-                        <div className={styles.title}>
-                          {t("community:experience_officer")}
-                        </div>
+                        <div className={styles.title}>{t("community:experience_officer")}</div>
                         <p>{t("community:experience_intro")}</p>
                       </div>
                     </div>
@@ -463,98 +379,28 @@ class Brand extends Component {
               <Row>
                 {/* <Col xs={0} md={1}></Col> */}
                 <Col xs={12} md={12} className={`${styles.content}`}>
-                  <h1 className={styles.title}>
-                    {t("community:contributors")}
-                  </h1>
+                  <h1 className={styles.title}>{t("community:contributors")}</h1>
                   <MediaQuery minDeviceWidth={768}>
                     <div className={`hidden-xs ${styles.persons}`}>
-                      <img
-                        className={`${styles.avatar}`}
-                        alt="person"
-                        src={person_1}
-                      />
-                      <img
-                        className={`${styles.avatar}`}
-                        alt="person"
-                        src={person_2}
-                      />
-                      <img
-                        className={`${styles.avatar}`}
-                        alt="person"
-                        src={person_3}
-                      />
-                      <img
-                        className={`${styles.avatar}`}
-                        alt="person"
-                        src={person_4}
-                      />
-                      <img
-                        className={`${styles.avatar}`}
-                        alt="person"
-                        src={person_5}
-                      />
-                      <img
-                        className={`${styles.avatar}`}
-                        alt="person"
-                        src={person_6}
-                      />
-                      <img
-                        className={`${styles.avatar}`}
-                        alt="person"
-                        src={person_7}
-                      />
-                      <img
-                        className={`${styles.avatar}`}
-                        alt="person"
-                        src={person_8}
-                      />
-                      <img
-                        className={`${styles.avatar}`}
-                        alt="person"
-                        src={person_9}
-                      />
-                      <img
-                        className={`${styles.avatar}`}
-                        alt="person"
-                        src={person_10}
-                      />
-                      <img
-                        className={`${styles.avatar}`}
-                        alt="person"
-                        src={person_11}
-                      />
-                      <img
-                        className={`${styles.avatar}`}
-                        alt="person"
-                        src={person_12}
-                      />
-                      <img
-                        className={`${styles.avatar}`}
-                        alt="person"
-                        src={person_13}
-                      />
+                      <img className={`${styles.avatar}`} alt="person" src={person_1} />
+                      <img className={`${styles.avatar}`} alt="person" src={person_2} />
+                      <img className={`${styles.avatar}`} alt="person" src={person_3} />
+                      <img className={`${styles.avatar}`} alt="person" src={person_4} />
+                      <img className={`${styles.avatar}`} alt="person" src={person_5} />
+                      <img className={`${styles.avatar}`} alt="person" src={person_6} />
+                      <img className={`${styles.avatar}`} alt="person" src={person_7} />
+                      <img className={`${styles.avatar}`} alt="person" src={person_8} />
+                      <img className={`${styles.avatar}`} alt="person" src={person_9} />
+                      <img className={`${styles.avatar}`} alt="person" src={person_10} />
+                      <img className={`${styles.avatar}`} alt="person" src={person_11} />
+                      <img className={`${styles.avatar}`} alt="person" src={person_12} />
+                      <img className={`${styles.avatar}`} alt="person" src={person_13} />
                       {showMore ? (
                         <>
-                          <img
-                            className={`${styles.avatar}`}
-                            alt="person"
-                            src={person_14}
-                          />
-                          <img
-                            className={`${styles.avatar}`}
-                            alt="person"
-                            src={person_15}
-                          />
-                          <img
-                            className={`${styles.avatar}`}
-                            alt="person"
-                            src={person_16}
-                          />
-                          <img
-                            className={`${styles.avatar}`}
-                            alt="person"
-                            src={person_17}
-                          />
+                          <img className={`${styles.avatar}`} alt="person" src={person_14} />
+                          <img className={`${styles.avatar}`} alt="person" src={person_15} />
+                          <img className={`${styles.avatar}`} alt="person" src={person_16} />
+                          <img className={`${styles.avatar}`} alt="person" src={person_17} />
                         </>
                       ) : (
                         <img
@@ -568,93 +414,25 @@ class Brand extends Component {
                   </MediaQuery>
                   <MediaQuery maxDeviceWidth={767.98}>
                     <div className={`hidden-md ${styles.persons}`}>
-                      <img
-                        className={`${styles.avatar}`}
-                        alt="person"
-                        src={person_1}
-                      />
-                      <img
-                        className={`${styles.avatar}`}
-                        alt="person"
-                        src={person_2}
-                      />
-                      <img
-                        className={`${styles.avatar}`}
-                        alt="person"
-                        src={person_3}
-                      />
-                      <img
-                        className={`${styles.avatar}`}
-                        alt="person"
-                        src={person_4}
-                      />
-                      <img
-                        className={`${styles.avatar}`}
-                        alt="person"
-                        src={person_5}
-                      />
-                      <img
-                        className={`${styles.avatar}`}
-                        alt="person"
-                        src={person_6}
-                      />
-                      <img
-                        className={`${styles.avatar}`}
-                        alt="person"
-                        src={person_7}
-                      />
-                      <img
-                        className={`${styles.avatar}`}
-                        alt="person"
-                        src={person_8}
-                      />
+                      <img className={`${styles.avatar}`} alt="person" src={person_1} />
+                      <img className={`${styles.avatar}`} alt="person" src={person_2} />
+                      <img className={`${styles.avatar}`} alt="person" src={person_3} />
+                      <img className={`${styles.avatar}`} alt="person" src={person_4} />
+                      <img className={`${styles.avatar}`} alt="person" src={person_5} />
+                      <img className={`${styles.avatar}`} alt="person" src={person_6} />
+                      <img className={`${styles.avatar}`} alt="person" src={person_7} />
+                      <img className={`${styles.avatar}`} alt="person" src={person_8} />
                       {showMore ? (
                         <>
-                          <img
-                            className={`${styles.avatar}`}
-                            alt="person"
-                            src={person_9}
-                          />
-                          <img
-                            className={`${styles.avatar}`}
-                            alt="person"
-                            src={person_10}
-                          />
-                          <img
-                            className={`${styles.avatar}`}
-                            alt="person"
-                            src={person_11}
-                          />
-                          <img
-                            className={`${styles.avatar}`}
-                            alt="person"
-                            src={person_12}
-                          />
-                          <img
-                            className={`${styles.avatar}`}
-                            alt="person"
-                            src={person_13}
-                          />
-                          <img
-                            className={`${styles.avatar}`}
-                            alt="person"
-                            src={person_14}
-                          />
-                          <img
-                            className={`${styles.avatar}`}
-                            alt="person"
-                            src={person_15}
-                          />
-                          <img
-                            className={`${styles.avatar}`}
-                            alt="person"
-                            src={person_16}
-                          />
-                          <img
-                            className={`${styles.avatar}`}
-                            alt="person"
-                            src={person_17}
-                          />
+                          <img className={`${styles.avatar}`} alt="person" src={person_9} />
+                          <img className={`${styles.avatar}`} alt="person" src={person_10} />
+                          <img className={`${styles.avatar}`} alt="person" src={person_11} />
+                          <img className={`${styles.avatar}`} alt="person" src={person_12} />
+                          <img className={`${styles.avatar}`} alt="person" src={person_13} />
+                          <img className={`${styles.avatar}`} alt="person" src={person_14} />
+                          <img className={`${styles.avatar}`} alt="person" src={person_15} />
+                          <img className={`${styles.avatar}`} alt="person" src={person_16} />
+                          <img className={`${styles.avatar}`} alt="person" src={person_17} />
                         </>
                       ) : (
                         <img
@@ -667,12 +445,7 @@ class Brand extends Component {
                     </div>
                   </MediaQuery>
                   <p>{t("community:invite")}</p>
-                  <Button
-                    variant="transparent"
-                    target="_blank"
-                    href="/ambassador"
-                    className={styles.button}
-                  >
+                  <Button variant="transparent" target="_blank" href="/ambassador" className={styles.button}>
                     {t("community:join_community")}
                   </Button>
                 </Col>

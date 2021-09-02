@@ -33,9 +33,7 @@ class Faq extends Component {
               <Col xs={0} md={1}></Col>
               <Col xs={12} md={10}>
                 <div className={styles.title}>
-                  <h1 className={`${styles.fontH1} ${styles.gradientText}`}>
-                    {t("faq_page:title")}
-                  </h1>
+                  <h1 className={`${styles.fontH1} ${styles.gradientText}`}>{t("faq_page:title")}</h1>
                 </div>
                 <div className={styles.lineH1}></div>
 
@@ -88,11 +86,7 @@ class Faq extends Component {
                 <h4>{t("faq_page:faq_14_title")}</h4>
                 <p>{t("faq_page:faq_14_content")}</p>
                 <p>
-                  <a
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    href={t("faq_page:faq_14_content_link")}
-                  >
+                  <a target="_blank" rel="noopener noreferrer" href={t("faq_page:faq_14_content_link")}>
                     {t("faq_page:faq_14_content_link")}
                   </a>
                 </p>
@@ -118,9 +112,7 @@ class Faq extends Component {
 
                 <div className={styles.lineH1}></div>
                 <div>
-                  <h2 className={`${styles.gradientText}`}>
-                    {t("ambassador:more")}
-                  </h2>
+                  <h2 className={`${styles.gradientText}`}>{t("ambassador:more")}</h2>
                 </div>
                 <ul className={styles.mediaBlocks}>
                   <li className={styles.mediaBlock}>
@@ -135,13 +127,9 @@ class Faq extends Component {
                       </div>
                       <div className={styles.mediaInfo}>
                         <span>{t("media:more_title")}</span>
-                        <span className={styles.mediaTime}>
-                          {t("media:report_8_time")}
-                        </span>
+                        <span className={styles.mediaTime}>{t("media:report_8_time")}</span>
                       </div>
-                      <div className={styles.mediaDesc}>
-                        {t("media:report_8_title")}
-                      </div>
+                      <div className={styles.mediaDesc}>{t("media:report_8_title")}</div>
                     </a>
                   </li>
                   <li className={styles.mediaBlock}>
@@ -156,13 +144,9 @@ class Faq extends Component {
                       </div>
                       <div className={styles.mediaInfo}>
                         <span>{t("media:more_title")}</span>
-                        <span className={styles.mediaTime}>
-                          {t("media:news_8_time")}
-                        </span>
+                        <span className={styles.mediaTime}>{t("media:news_8_time")}</span>
                       </div>
-                      <div className={styles.mediaDesc}>
-                        {t("media:news_8_title")}
-                      </div>
+                      <div className={styles.mediaDesc}>{t("media:news_8_title")}</div>
                     </a>
                   </li>
                   <li className={styles.mediaBlock}>
@@ -177,13 +161,9 @@ class Faq extends Component {
                       </div>
                       <div className={styles.mediaInfo}>
                         <span>{t("media:more_title")}</span>
-                        <span className={styles.mediaTime}>
-                          {t("media:event_3_time")}
-                        </span>
+                        <span className={styles.mediaTime}>{t("media:event_3_time")}</span>
                       </div>
-                      <div className={styles.mediaDesc}>
-                        {t("media:event_3_title")}
-                      </div>
+                      <div className={styles.mediaDesc}>{t("media:event_3_title")}</div>
                     </a>
                   </li>
                 </ul>

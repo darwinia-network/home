@@ -1,11 +1,7 @@
 import React, { useEffect, useState } from "react";
 import style from "./style.module.scss";
 
-import {
-  disableBodyScroll,
-  enableBodyScroll,
-  clearAllBodyScrollLocks,
-} from "body-scroll-lock";
+import { disableBodyScroll, enableBodyScroll, clearAllBodyScrollLocks } from "body-scroll-lock";
 import { useTranslation } from "react-i18next";
 import { Container, Nav, Navbar, NavDropdown, Button } from "react-bootstrap";
 
@@ -19,10 +15,7 @@ const NavGrounp = ({ hasFixed = false }) => {
   return (
     <>
       <Nav className="flex-column flex-lg-row align-items-start align-items-lg-center">
-        <Nav.Link
-          href="/tech"
-          className={`${style.navLinkText} ${hasFixed ? style.hasFixed : ""}`}
-        >
+        <Nav.Link href="/tech" className={`${style.navLinkText} ${hasFixed ? style.hasFixed : ""}`}>
           {t("header:tech")}
         </Nav.Link>
         <NavDropdown
@@ -35,16 +28,10 @@ const NavGrounp = ({ hasFixed = false }) => {
           id="collasible-nav-dropdown-use_darwinia"
           className={`${style.navLinkText} ${hasFixed ? style.hasFixed : ""}`}
         ></NavDropdown>
-        <Nav.Link
-          href="/community"
-          className={`${style.navLinkText} ${hasFixed ? style.hasFixed : ""}`}
-        >
+        <Nav.Link href="/community" className={`${style.navLinkText} ${hasFixed ? style.hasFixed : ""}`}>
           {t("header:community")}
         </Nav.Link>
-        <Nav.Link
-          href="/media"
-          className={`${style.navLinkText} ${hasFixed ? style.hasFixed : ""}`}
-        >
+        <Nav.Link href="/media" className={`${style.navLinkText} ${hasFixed ? style.hasFixed : ""}`}>
           {t("header:media")}
         </Nav.Link>
         <Button
@@ -73,10 +60,7 @@ const MobileNav = ({ expanded, onClick }) => {
   };
 
   return (
-    <div
-      className={`d-lg-none ${style.mask} ${expanded ? "" : style.hidden}`}
-      onClick={onClick}
-    >
+    <div className={`d-lg-none ${style.mask} ${expanded ? "" : style.hidden}`} onClick={onClick}>
       <div className={style.collapse} onClick={(e) => e.stopPropagation()}>
         <div className="d-flex justify-content-between align-items-center px-2 mt-1">
           <Button className={style.landBtn} onClick={handleClickLand}>
@@ -129,20 +113,13 @@ const PageHeader = () => {
   }, []);
 
   return (
-    <div
-      className={`${style.main} ${hasFixed ? style.hasFixed : ""}`}
-      id="header-main"
-    >
+    <div className={`${style.main} ${hasFixed ? style.hasFixed : ""}`} id="header-main">
       <MobileNav expanded={expanded} onClick={handleClickToggle} />
 
       <Container>
         <Navbar expand="lg" expanded={expanded} className="px-0">
           <Navbar.Brand href="/">
-            <img
-              alt="..."
-              src={hasFixed ? logoDarwinia : logoDarwiniaWhite}
-              className={style.logo}
-            />
+            <img alt="..." src={hasFixed ? logoDarwinia : logoDarwiniaWhite} className={style.logo} />
           </Navbar.Brand>
           <Navbar.Toggle
             onClick={handleClickToggle}

@@ -35,8 +35,8 @@
   width: 265px;
   right: 0;
   top: 0;
-  box-shadow: 0 8px 10px -5px rgba(0, 0, 0, 0.2),
-    0 16px 24px 2px rgba(0, 0, 0, 0.14), 0 6px 30px 5px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 8px 10px -5px rgba(0, 0, 0, 0.2), 0 16px 24px 2px rgba(0, 0, 0, 0.14),
+    0 6px 30px 5px rgba(0, 0, 0, 0.12);
   transition: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
   transition-property: width, -webkit-transform;
   transition-property: transform, width;
@@ -155,12 +155,7 @@
 }
 
 .NavBg {
-  background: linear-gradient(
-    315deg,
-    rgba(254, 56, 118, 1) 0%,
-    rgba(124, 48, 221, 1) 71%,
-    rgba(58, 48, 221, 1) 100%
-  );
+  background: linear-gradient(315deg, rgba(254, 56, 118, 1) 0%, rgba(124, 48, 221, 1) 71%, rgba(58, 48, 221, 1) 100%);
 }
 
 .closeBox {
