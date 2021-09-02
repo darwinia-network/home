@@ -1,328 +1,277 @@
-@import "../../style/index";
-
-.navLink {
-  color: $text-fff !important;
-  font-weight: bold;
-}
-
-.lngBtn {
-  cursor: pointer;
-  padding: 3px 7px;
-  font-size: 18px;
-  font-weight: 600;
-  color: #6330dd;
-  border: 1px solid #6330dd;
-  opacity: 0.5;
-  margin-left: 20px;
-  &:hover {
-    opacity: 1;
-  }
-  // width: 24px;
-  // height: 24px;
-  // background: url("./img/lng.svg") top center no-repeat;
-  // background-size: contain;
-  // padding: $nav-link-padding-y 0 $nav-link-padding-y $nav-link-padding-x;
-  // @extend .extend-link:hover;
-  // margin-top: 0px;
-}
-
-.navDraw {
-  position: absolute;
-  height: 100vh;
-  margin-top: 0px;
-  max-height: 100vh;
-  transform: translateX(0px);
-  width: 265px;
-  right: 0;
-  top: 0;
-  box-shadow: 0 8px 10px -5px rgba(0, 0, 0, 0.2), 0 16px 24px 2px rgba(0, 0, 0, 0.14),
-    0 6px 30px 5px rgba(0, 0, 0, 0.12);
-  transition: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-  transition-property: width, -webkit-transform;
-  transition-property: transform, width;
-  transition-property: transform, width, -webkit-transform;
-
-  background-color: #e4378a;
-  z-index: 1000;
-  opacity: 0.9;
-
-  // a{
-  //   color: #fff;
-  // }
-}
-
-.githubBox {
-  padding: 0.5rem 0rem 0.5rem 1.6rem;
-  font-size: 0;
-  margin-top: -2px;
-}
-
-.Navbar {
+.main {
   background: transparent;
-  padding: 0;
-  font-size: 18px;
-  .logo {
-    width: 178px;
-  }
-}
-.NavBarWrapper {
-  .ColMain {
-    height: 88px;
-    .Navbar {
-      flex: 1 1 auto;
-    }
-    .navTab {
-      color: #6330dd;
-      // font-weight: 600;
-    }
-    .navButton {
-      padding: 7px 17px;
-      background: #6330dd;
-      color: #fff;
-      margin-left: 14px;
-    }
-    .navMedia {
-      padding-right: 0;
-    }
-  }
-  .ColSub {
-    height: 57px;
-    .NavMenu {
-      height: 100%;
-      border-bottom: 1px solid #f0ebfc;
-    }
-    .papers {
-      .paper {
-        display: flex;
-        align-items: center;
-        opacity: 0.5;
-        margin-left: 25px;
-        cursor: pointer;
-        color: #6330dd;
-        text-decoration: none;
-        &:hover {
-          opacity: 1;
-        }
-        .tIcon {
-          width: 25px;
-          height: 28px;
-          background: url("./img/t-logo.png") top center no-repeat;
-          background-size: cover;
-          margin-right: 8px;
-        }
-        .gIcon {
-          width: 25px;
-          height: 28px;
-          background: url("./img/g-logo.png") top center no-repeat;
-          background-size: cover;
-          margin-right: 8px;
-        }
-      }
-      button {
-        color: #fff;
-        background-color: initial !important;
-        border: none !important;
-        box-shadow: none !important;
-        padding: 0 !important;
-        display: flex;
-        &::after {
-          display: none;
-        }
-      }
-      .dropdownMenu {
-        left: -40px !important;
-      }
-    }
-  }
-  .ColLine {
-    height: 1px;
-    background: #6330dd;
-    opacity: 0.1;
-  }
-  .NavBarContainer {
-    width: 100%;
-    background-color: white;
-    z-index: 20;
-    display: flex;
-    flex-direction: column;
-    color: black;
-    transition: border 0.3s ease-in-out;
-  }
-  .NavBarBg {
-    height: 145px;
-    background: white;
+  padding-top: 12px;
+  padding-bottom: 8px;
+  position: fixed;
+  width: 100%;
+  z-index: 1;
+  transition: all 0.8s;
+
+  &.hasFixed {
+    background-color: #ffffff;
   }
 }
 
-.NavBg {
-  background: linear-gradient(315deg, rgba(254, 56, 118, 1) 0%, rgba(124, 48, 221, 1) 71%, rgba(58, 48, 221, 1) 100%);
+.logo {
+  width: 178px;
 }
 
-.closeBox {
-  padding: 11px 15px;
-  background: #e4378a;
+.navToggle {
+  > span {
+    background-image: url("./img/menu-white.png");
+  }
+
+  &.hasFixed {
+    > span {
+      background-image: url("./img/menu.png");
+    }
+  }
+}
+
+.navLinkText {
+  :global {
+    .dropdown-menu {
+      top: 120%;
+
+      &:before {
+        content: "";
+        position: absolute;
+        border-left: 10px solid transparent;
+        border-right: 10px solid transparent;
+        border-bottom: 12px solid #ffffff;
+        bottom: 100%;
+        left: 50px;
+      }
+
+      @media screen and (max-width: 991.98px) {
+        position: relative !important;
+        transform: none !important;
+        background: transparent !important;
+
+        &:before {
+          border: none;
+        }
+      }
+    }
+  }
+
+  font-size: 16px !important;
+  font-weight: 600 !important;
+  color: #ffffff !important;
+  line-height: 20px !important;
+
+  > a {
+    font-size: 16px !important;
+    font-weight: 600 !important;
+    color: #ffffff !important;
+    line-height: 20px !important;
+  }
+
+  &.hasFixed {
+    color: #6330dd !important;
+
+    > a {
+      color: #6330dd !important;
+    }
+  }
+
+  @media screen and (max-width: 991.98px) {
+    padding: {
+      top: 18px;
+      bottom: 18px;
+    }
+
+    font-size: 18px !important;
+    line-height: 23px !important;
+
+    > a {
+      font-size: 18px !important;
+      line-height: 23px !important;
+    }
+  }
+}
+
+.apps {
+  width: 70px;
+  height: 34px;
+  background: #ffffff;
+  border-radius: 4px;
+  display: inline-flex;
+  justify-content: center;
   align-items: center;
-  button {
-    color: #fff;
-    border: none !important;
-    background: initial !important;
-    box-shadow: none !important;
-    &::after {
-      display: none;
+  margin-left: 14px;
+
+  > span {
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 26px;
+    color: #ffffff;
+    line-height: 26px;
+    background: linear-gradient(315deg, #ff1f65 0%, #811eff 71%, #2a1dff 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  &.hasFixed {
+    background: linear-gradient(315deg, #ff1f65 0%, #811eff 71%, #2a1dff 100%);
+
+    > span {
+      color: #ffffff;
+      -webkit-background-clip: unset;
+      background-clip: unset;
+      -webkit-text-fill-color: unset;
     }
   }
-  .dropdownMenu {
-    // left: 40px !important;
+
+  @media screen and (max-width: 991.98px) {
+    margin-top: 40px;
+    width: 80%;
+    height: 44px;
+
+    > span {
+      color: #ffffff;
+      background: linear-gradient(315deg, #ff1f65 0%, #811eff 71%, #2a1dff 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
   }
 }
 
-.lngBox {
-  padding-top: 25px;
-  padding-bottom: 25px;
-  background: #e4378a;
-}
+.mask {
+  background-color: rgba(0, 0, 0, 0.4);
+  height: 100vh;
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  right: 0;
+  left: auto;
+  transition: all 0.5s;
+  z-index: 1;
 
-.navLinkSub {
-  font-size: 14px;
-  font-weight: normal;
-  padding: 0.5rem 0;
-}
-
-.walletBtnBox {
-  & > div {
-    padding: 0.5rem 1.2rem;
+  &.hidden {
+    width: 0;
   }
 }
 
-.walletBtn {
-  margin-bottom: 0;
-  background: rgba(255, 255, 255, 1);
-  border-radius: 18px;
-  color: #3d30dd;
-  padding: 3px 20px;
+.collapse {
+  background-image: url("./img/collapse-bg.svg");
+  background-size: cover;
+  position: absolute;
+  top: 0;
+  left: auto;
+  right: 0;
+  width: 75%;
+  height: 100%;
+}
+
+.closeBtn {
+  border: none;
+  background: transparent;
+}
+
+.landBtn {
+  font-size: 20px;
+  font-weight: bold;
+  color: #ffffff;
+  line-height: 28px;
+  letter-spacing: 1px;
+  border: none;
+  background: transparent;
+
   &:hover {
-    color: #3d30dd;
-  }
-}
-
-@media (min-width: 576px) {
-  .NavBarWrapper {
-    .NavBarContainer {
-      position: fixed;
-      top: 0;
-      transition: top 0.4s ease-in-out;
-    }
-  }
-  .Navbar {
-    a {
-      img {
-        width: 117px;
-      }
-    }
-  }
-}
-
-@media (max-width: 575.98px) {
-  .lngBtn {
-    color: #fff;
-    opacity: 1;
-    margin-left: 0;
-    padding-right: 60px;
+    background: transparent;
     border: none;
   }
-  .Navbar {
-    background: transparent !important;
-    // padding: .5rem 1rem;
-    a {
-      img {
-        width: 117px;
-      }
-    }
+}
+
+// ================== DropdownCard Begin ==================
+.card {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 10px;
+  row-gap: 10px;
+  justify-items: center;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  padding: 0 10px;
+
+  @media screen and (max-width: 991.98px) {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 0;
+    padding-left: 20px;
   }
-  .NavBarWrapper {
-    // position: fixed;
-    &.hasHeight {
-      .NavBarBg {
-        display: block;
-        height: 50px;
-      }
-      .ColMain {
-        height: 50px;
-        button {
-          span {
-            background: url("./img/menu.png") top center no-repeat;
-            background-size: 22px 19px;
-          }
-        }
-      }
-    }
-    &.hasFixed {
-      .ColMain {
-        height: 50px;
-        button {
-          span {
-            background: url("./img/menu.png") top center no-repeat;
-            background-size: 22px 19px;
-          }
-        }
-      }
-    }
-    width: 100%;
-    z-index: 100;
-    .ColMain {
-      height: 50px;
-      .navDrawList {
-        height: 100%;
-        flex: 1 1 auto;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-around;
-        margin: 80px 0;
-        a {
-          color: #fff !important;
-          font-size: 18px;
-          text-align: left;
-          padding: 0.5rem 1rem;
-        }
-        > div + div {
-          // margin-top: 25px;
-        }
-        .paper {
-          font-size: 16px;
-          font-weight: 600;
-          display: flex;
-          align-items: center;
-        }
-        .tIcon {
-          width: 25px;
-          height: 28px;
-          background: url("./img/t-logo-m.png") top center no-repeat;
-          background-size: cover;
-          margin-right: 8px;
-        }
-        .gIcon {
-          width: 25px;
-          height: 28px;
-          background: url("./img/g-logo-m.png") top center no-repeat;
-          background-size: cover;
-          margin-right: 8px;
-        }
-      }
-      button {
-        padding: 0.25rem 0 0.25rem 0.75rem;
-      }
-    }
-    .ColSub {
+}
+
+.cardItem {
+  display: flex;
+  align-items: flex-start;
+  padding: 5px;
+  width: 280px;
+
+  &:hover {
+    cursor: pointer;
+    background: #F1E8FF;
+    border-radius: 4px;
+  }
+
+  img {
+    width: 55px;
+  }
+
+  h5 {
+    width: fit-content;
+    text-align: start;
+    font-size: 14px;
+    font-weight: 600;
+    color: #080C20;
+    line-height: 16px;
+    background: linear-gradient(315deg, #FE3876 0%, #7C30DD 71%, #3A30DD 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    padding: 0;
+    margin-bottom: 3px;
+    white-space: nowrap;
+  }
+
+  p {
+    width: fit-content;
+    text-align: start;
+    font-size: 12px;
+    color: #6330DD;
+    line-height: 15px;
+  }
+
+  @media screen and (max-width: 991.98px) {
+    img {
       display: none;
     }
-    .NavBarContainer {
-      position: fixed;
-      background: transparent;
-      transition: all ease-in 160ms;
+
+    h5 {
+      font-size: 16px;
+      color: rgba(255, 255, 255, 0.7);
+      line-height: 20px;
+      -webkit-background-clip: unset;
+      background-clip: unset;
+      -webkit-text-fill-color: unset;
+      background: unset;
     }
-    .NavBarBg {
+
+    p {
       display: none;
-      height: 50px;
+    }
+
+    &:hover {
+      background: none;
+      text-decoration: none;
     }
   }
 }
+// ================== DropdownCard End   ==================

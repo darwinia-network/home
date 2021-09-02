@@ -14,7 +14,6 @@ import {
   Tooltip,
 } from "react-bootstrap";
 import { PageHeader } from "../../components/PageHeader";
-import { PageHeader2 } from "../../components/PageHeader2";
 import { PageFooter } from "../../components/PageFooter";
 import Fade from "react-reveal/Fade";
 // import { GradientHeading } from '../../components/GradientHeading'
@@ -415,8 +414,7 @@ class Home extends Component {
     return (
       <div className={styles.homePage}>
         {/* <a href="#top"></a> */}
-        {/* <PageHeader href="#top" transparent={true} /> */}
-        <PageHeader2 />
+        <PageHeader href="#top" transparent={true} />
         {/* <div className={styles.launchBanner}>
                     <img src={launchBanner} alt="banner"/>
                 </div> */}

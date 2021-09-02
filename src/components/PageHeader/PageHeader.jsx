@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import style from "./style.module.scss";
 
+import DropdownCard from "./DropdownCard";
 import { disableBodyScroll, enableBodyScroll, clearAllBodyScrollLocks } from "body-scroll-lock";
 import { useTranslation } from "react-i18next";
 import { Container, Nav, Navbar, NavDropdown, Button } from "react-bootstrap";
@@ -9,8 +10,68 @@ import closeIcon from "./img/close.png";
 import logoDarwinia from "./img/logo-darwinia.png";
 import logoDarwiniaWhite from "./img/logo-darwinia-white.png";
 
+import wikiIcon from "./img/docs/wiki.svg";
+import roadmapIcon from './img/docs/roadmap.svg'
+import techPaperIcon from './img/docs/tech-paper.svg'
+import genePaperIcon from './img/docs/gene-paper.svg'
+
+import tokensIcon from './img/use-darwinia/tokens.svg'
+import appsIcon from './img/use-darwinia/apps.svg'
+import wormholeIcon from './img/use-darwinia/wormhole.svg'
+import smartAppIcon from './img/use-darwinia/smart-app.svg'
+import crabNetIcon from './img/use-darwinia/crab-net.png'
+
 const NavGrounp = ({ hasFixed = false }) => {
   const { t } = useTranslation();
+
+  const docsdata = [{
+    icon: wikiIcon,
+    title: t("header:wiki"),
+    content: t("header:wiki_content"),
+    link: "https://www.baidu.com/",
+  }, {
+    icon: roadmapIcon,
+    title: t("header:roadmap"),
+    content: t("header:roadmap_content"),
+    link: "https://www.baidu.com/",
+  }, {
+    icon: techPaperIcon,
+    title: t("header:techpaper"),
+    content: t("header:techpaper_content"),
+    link: "https://www.baidu.com/",
+  }, {
+    icon: genePaperIcon,
+    title: t("header:genepaper"),
+    content: t("header:genepaper_content"),
+    link: "https://www.baidu.com/",
+  }];
+
+  const useDarwiniaData = [{
+    icon: tokensIcon,
+    title: t("header:tokens"),
+    content: t("header:tokens_content"),
+    link: "https://www.baidu.com/",
+  }, {
+    icon: appsIcon,
+    title: t("header:apps"),
+    content: t("header:apps_content"),
+    link: "https://www.baidu.com/",
+  }, {
+    icon: wormholeIcon,
+    title: t("header:whormhole"),
+    content: t("header:whormhole_content"),
+    link: "https://www.baidu.com/",
+  }, {
+    icon: smartAppIcon,
+    title: t("header:smart_app"),
+    content: t("header:smart_app_content"),
+    link: "https://www.baidu.com/",
+  }, {
+    icon: crabNetIcon,
+    title: t("header:crab_net"),
+    content: t("header:crab_net_content"),
+    link: "https://www.baidu.com/",
+  }];
 
   return (
     <>
@@ -22,12 +83,16 @@ const NavGrounp = ({ hasFixed = false }) => {
           title={t("header:docs")}
           id="collasible-nav-dropdown-docs"
           className={`${style.navLinkText} ${hasFixed ? style.hasFixed : ""}`}
-        ></NavDropdown>
+        >
+          <DropdownCard data={docsdata} />
+        </NavDropdown>
         <NavDropdown
           title={t("header:use_darwinia")}
           id="collasible-nav-dropdown-use_darwinia"
           className={`${style.navLinkText} ${hasFixed ? style.hasFixed : ""}`}
-        ></NavDropdown>
+        >
+          <DropdownCard data={useDarwiniaData} />
+        </NavDropdown>
         <Nav.Link href="/community" className={`${style.navLinkText} ${hasFixed ? style.hasFixed : ""}`}>
           {t("header:community")}
         </Nav.Link>
@@ -48,7 +113,7 @@ const NavGrounp = ({ hasFixed = false }) => {
   );
 };
 
-const MobileNav = ({ expanded, onClick }) => {
+const MobileMenu = ({ expanded, onClick }) => {
   const { t, i18n } = useTranslation();
 
   const handleClickLand = () => {
@@ -114,7 +179,7 @@ const PageHeader = () => {
 
   return (
     <div className={`${style.main} ${hasFixed ? style.hasFixed : ""}`} id="header-main">
-      <MobileNav expanded={expanded} onClick={handleClickToggle} />
+      <MobileMenu expanded={expanded} onClick={handleClickToggle} />
 
       <Container>
         <Navbar expand="lg" expanded={expanded} className="px-0">
