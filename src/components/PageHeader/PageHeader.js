@@ -11,8 +11,8 @@ import closeIcon from './img/close.png'
 // import github from './img/github.svg'
 
 class CustomToggle extends React.Component {
-    constructor(props, context) {
-        super(props, context);
+    constructor(props) {
+        super(props);
 
         this.handleClick = this.handleClick.bind(this);
     }
@@ -35,8 +35,8 @@ class CustomToggle extends React.Component {
 }
 
 class PageHeader extends Component {
-    constructor(props, context) {
-        super(props, context);
+    constructor(props) {
+        super(props);
 
         this.state = {
             hasFixed: false,
@@ -88,7 +88,7 @@ class PageHeader extends Component {
     }
 
     AdjustHeader = () => {
-        var navbarSecondaryHeight = $(".navbar--secondary").outerHeight();
+        var navbarSecondaryHeight = $(".navbar--primary").outerHeight();
         if ($(window).scrollTop() > navbarSecondaryHeight) {
             if (!$(".collapse-header").hasClass("nav-primary-fixed")) {
                 $(".collapse-header").addClass("nav-primary-fixed");
@@ -162,27 +162,16 @@ class PageHeader extends Component {
     }
 
     render() {
-        const {t, transparent, hasHeightinMobile} = this.props
-        const {open, hasFixed} = this.state
+        const {t, transparent, hasHeightinMobile} = this.props;
+        const {open, hasFixed} = this.state;
+
         return (
             <div className={`${styles.NavBarWrapper} ${hasHeightinMobile ? styles.hasHeight: null} ${hasFixed ? styles.hasFixed: null}`}>
                 <div className={`nav-down collapse-header ${styles.NavBarContainer}`}>
                 <Container>
-                    <Row className={''}>
-                        <Col xs={12} className={`${styles.ColSub} navbar--secondary`}>
+                    <Row>
+                        {/* <Col xs={12} className={`${styles.ColSub} navbar--secondary`}>
                             <div className={`d-flex align-items-center justify-content-between ${styles.NavMenu}`}>
-                                {/* <Dropdown alignRight>
-                                    <Dropdown.Toggle as={CustomToggle} id="dropdown-custom-components">
-                                        <div className={styles.lngBtn}>{t('header:lang_demo')}</div>
-                                    </Dropdown.Toggle>
-                                    <Dropdown.Menu className=' animated fadeIn faster'>
-                                        <Dropdown.Item onClick={() => this.changeLng('zh-cn')} eventKey="4.1">
-                                            简体中文
-                                        </Dropdown.Item>
-                                        <Dropdown.Item eventKey="4.2"
-                                                    onClick={() => this.changeLng('en-us')}>English</Dropdown.Item>
-                                    </Dropdown.Menu>
-                                </Dropdown> */}
                                 <div className={styles.placeholder}></div>
                                 <div className={`d-flex align-items-center ${styles.papers}`}>
                                     <a target="_blank" rel="noopener noreferrer" href={t('header:genepaper_url')} className={styles.paper}><div className={styles.gIcon}/>{t('header:genepaper')}</a>
@@ -203,8 +192,7 @@ class PageHeader extends Component {
                                 </Dropdown>
                                 </div>
                             </div>
-                            {/* <div className={`${styles.ColLine}`}></div> */}
-                        </Col>
+                        </Col> */}
                         <Col xs={12} className={`${styles.ColMain}  navbar--primary d-flex justify-content-between align-items-center`}>
                             <Navbar bg="white" expand="lg" className={`${styles.Navbar} ${transparent ? null : styles.NavBg} cs-header`}>
                                 <Navbar.Brand href="/">
@@ -221,44 +209,16 @@ class PageHeader extends Component {
                                     <Nav className="mr-auto">
                                     </Nav>
                                     <Form inline>
-                                        <Nav.Link className={styles.navTab} href="/">{t('header:home')}</Nav.Link>
                                         <Nav.Link className={styles.navTab} href="/tech">{t('header:tech')}</Nav.Link>
+                                        <Nav.Link className={styles.navTab} href="https://www.baidu.com/" target="_blank" rel="noopener noreferrer">{t('header:docs')}</Nav.Link>
+                                        <Nav.Link className={styles.navTab} href="#">{t('header:use_darwinia')}</Nav.Link>
                                         <Nav.Link className={styles.navTab} href="/community">{t('header:community')}</Nav.Link>
-                                        <Nav.Link className={styles.navTab} href="/economic_model">{t('header:economic_model')}</Nav.Link>
                                         <Nav.Link className={`${styles.navTab} ${styles.navMedia}`} href="/media">{t('header:media')}</Nav.Link>
-                                        {/* <Nav.Link className={styles.navButton} target={'_blank'} href="https://www.itering.io/about">{t('header:hiring')}</Nav.Link> */}
-                                        {/* {i18n.language.indexOf('en') > -1 ?
-                                        <Nav.Link target={'_blank'}
-                                        href="/Darwinia_Genepaper_EN.pdf">{t('header:genepaper')}</Nav.Link>
-                                        :
-                                        <Nav.Link target={'_blank'}
-                                        href="/Darwinia_Genepaper_CN.pdf">{t('header:genepaper')}</Nav.Link>
-                                        } */}
-                                        {/* <Nav.Link target="_blank" href="https://talk.darwinia.network">{t('header:forum')}</Nav.Link> */}
-                                        {/* <Nav.Link target="_blank" href={t('header:testnet_url')}>{t('header:testnet')}</Nav.Link> */}
-                                        {/* <Nav.Link target="_blank" href={t('header:explorer_url')}>{t('header:explorer')}</Nav.Link> */}
-                                        {/* <Nav.Link target={'_blank'} href="https://docs.darwinia.network/">{t('header:docs')}</Nav.Link> */}
-                                        {/* <Nav.Link href="/faq">{t('header:faq')}</Nav.Link> */}
-                                        {/* <Nav.Link className={styles.walletBtn} href="https://apps.darwinia.network/">{t('header:wallet')}</Nav.Link> */}
-                                        {/* <Nav.Link target="_blank" href="https://github.com/darwinia-network" className={styles.githubBox}><img alt="github" width={24} src={github}/></Nav.Link> */}
-                                        {/* <Dropdown>
-                                            <Dropdown.Toggle as={CustomToggle} id="dropdown-custom-components">
-                                                <div className={styles.lngBtn}/>
-                                            </Dropdown.Toggle>
-                                            <Dropdown.Menu className=' animated fadeIn faster'>
-                                                <Dropdown.Item onClick={() => this.changeLng('zh-cn')} eventKey="4.1">
-                                                    简体中文
-                                                </Dropdown.Item>
-                                                <Dropdown.Item eventKey="4.2"
-                                                            onClick={() => this.changeLng('en-us')}>English</Dropdown.Item>
-                                            </Dropdown.Menu>
-                                        </Dropdown> */}
                                     </Form>
-
                                 </Navbar.Collapse>
                             </Navbar>
 
-                            {open ? <div id="basic-navbar-nav"
+                            {open && <div id="basic-navbar-nav"
                                         className={`${styles.navDraw} d-flex flex-column animated fadeInRight faster`}>
                                 <div className={`${styles.closeBox} d-flex`}>
                                     <Dropdown alignRight>
@@ -309,27 +269,16 @@ class PageHeader extends Component {
                                         </Col>
                                     </Row>
                                 </Container>
+                            </div>}
 
-                                {/* <Container className={`${styles.lngBox} text-center`}>
-                                    <Row>
-                                        <Col md={12}>
-                                            <Nav.Link onClick={() => this.changeLng('zh-cn')}>简体中文</Nav.Link>
-                                        </Col>
-                                        <Col md={12}>
-                                            <Nav.Link onClick={() => this.changeLng('en-us')}>English</Nav.Link>
-                                        </Col>
-                                    </Row>
-                                </Container> */}
-                            </div> : null}
-
-                            {open ? <div onClick={() => {
+                            {open && <div onClick={() => {
                                 this.hideTargetElement()
-                            }} className="overlay overlay--active  animated fadeIn faster"></div> : null}
+                            }} className="overlay overlay--active  animated fadeIn faster"></div>}
                         </Col>
                     </Row>
                 </Container>
                 </div>
-                <div className={`${styles.NavBarBg}`}></div>
+                {/* <div className={`${styles.NavBarBg}`}></div> */}
             </div>
 
         );
