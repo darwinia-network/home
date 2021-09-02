@@ -50,7 +50,7 @@ i18n
 
       // optional htmlTag with lang attribute, the default is:
     },
-    fallbackLng: "en",
+    fallbackLng: ["en", "zh"],
     keySeparator: false, // we do not use keys in form messages.welcome
 
     interpolation: {

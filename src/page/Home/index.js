@@ -14,6 +14,7 @@ import {
   Tooltip,
 } from "react-bootstrap";
 import { PageHeader } from "../../components/PageHeader";
+import { PageHeader2 } from "../../components/PageHeader2";
 import { PageFooter } from "../../components/PageFooter";
 import Fade from "react-reveal/Fade";
 // import { GradientHeading } from '../../components/GradientHeading'
@@ -421,7 +422,8 @@ class Home extends Component {
     return (
       <div className={styles.homePage}>
         {/* <a href="#top"></a> */}
-        <PageHeader href="#top" transparent={true} />
+        {/* <PageHeader href="#top" transparent={true} /> */}
+        <PageHeader2 />
         {/* <div className={styles.launchBanner}>
                     <img src={launchBanner} alt="banner"/>
                 </div> */}
@@ -721,7 +723,7 @@ class Home extends Component {
                             {hasMetamask ? (
                               <a
                                 className={styles.addToken}
-                                href="javascript:void(0)"
+                                href="#s"
                                 onClick={() => this.addToken("ring")}
                               >
                                 <img alt="metamask" src={metamask} />
@@ -792,7 +794,7 @@ class Home extends Component {
                             {hasMetamask ? (
                               <a
                                 className={styles.addToken}
-                                href="javascript:void(0)"
+                                href="#"
                                 onClick={() => this.addToken("kton")}
                               >
                                 <img alt="metamask" src={metamask} />
