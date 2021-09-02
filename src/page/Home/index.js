@@ -1,18 +1,7 @@
 /* eslint-disable no-script-url */
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { Component } from "react";
-import {
-  Container,
-  Row,
-  Col,
-  InputGroup,
-  FormControl,
-  Button,
-  Form,
-  OverlayTrigger,
-  Popover,
-  Tooltip,
-} from "react-bootstrap";
+import { Container, Row, Col, Button, OverlayTrigger, Popover, Tooltip } from "react-bootstrap";
 import { PageHeader } from "../../components/PageHeader";
 import { PageFooter } from "../../components/PageFooter";
 import Fade from "react-reveal/Fade";
@@ -21,10 +10,6 @@ import Fade from "react-reveal/Fade";
 import roadmapSplit from "./img/roadmap/roadmap-split.png";
 
 import styles from "./style.module.scss";
-import architecture from "./img/architecture.png";
-import architecture_en from "./img/architecture.png";
-import architecture_mobile from "./img/architecture-mobile.png";
-import architecture_mobile_en from "./img/architecture-mobile.png";
 // import architecture_solo from './img/architecture-solo.png'
 // import architecture_chain from './img/architecture-chain.png'
 import economic from "./img/economic.png";
@@ -81,11 +66,18 @@ import news45 from "../Media/img/news45.png";
 import news46 from "../Media/img/news46.png";
 import news47 from "../Media/img/news47.png";
 
-import band1 from "./img/band/band-1.png";
-import band2 from "./img/band/band-2.png";
-import band3 from "./img/band/band-3.png";
-import band4 from "./img/band/band-4.png";
-import bandAll from "./img/band/band-all.png";
+import interoperabilityIcon from "./img/darwinia-tech/interoperability.svg";
+import smartContractIcon from "./img/darwinia-tech/smart-contract.svg";
+import experienceIcon from "./img/darwinia-tech/experience.svg";
+import governanceIcon from "./img/darwinia-tech/governance.svg";
+
+import tokenRingIcon from "./img/powering/token-ring.svg";
+import tokenKtonIcon from "./img/powering/token-kton.svg";
+import subscanIcon from "./img/powering/subscan.svg";
+import etherscanIcon from "./img/powering/etherscan.svg";
+import metamaskIcon from "./img/powering/metamask.svg";
+import tronscanIcon from "./img/powering/tronscan.png";
+import comingSoonIcon from "./img/powering/coming-soon.png";
 
 import axios from "axios";
 import archorsComponent from "../../components/anchorsComponent";
@@ -295,6 +287,86 @@ class Home extends Component {
       "blockspot",
     ];
     this.detectMetaMaskTimer = null;
+
+    this.darwiniaTechData = [
+      {
+        icon: interoperabilityIcon,
+        title: this.props.t("home_page:interoperability"),
+        content: this.props.t("home_page:interoperability_content"),
+      },
+      {
+        icon: smartContractIcon,
+        title: this.props.t("home_page:smart_contract"),
+        content: this.props.t("home_page:smart_contract_content"),
+      },
+      {
+        icon: experienceIcon,
+        title: this.props.t("home_page:experience"),
+        content: this.props.t("home_page:experience_content"),
+      },
+      {
+        icon: governanceIcon,
+        title: this.props.t("home_page:smart_contract"),
+        content: this.props.t("home_page:smart_contract_content"),
+      },
+    ];
+
+    this.poweringCardData = [
+      {
+        token: tokenRingIcon,
+        name: "RING",
+        content: this.props.t("home_page:ring_content"),
+        chains: [
+          {
+            icon: subscanIcon,
+            link: "#",
+          },
+          {
+            icon: etherscanIcon,
+            link: "#",
+          },
+          {
+            icon: metamaskIcon,
+            link: "#",
+          },
+          {
+            icon: tronscanIcon,
+            link: "#",
+          },
+          {
+            icon: comingSoonIcon,
+            link: "#",
+          },
+        ],
+      },
+      {
+        token: tokenKtonIcon,
+        name: "KTON",
+        content: this.props.t("home_page:kton_content"),
+        chains: [
+          {
+            icon: subscanIcon,
+            link: "#",
+          },
+          {
+            icon: etherscanIcon,
+            link: "#",
+          },
+          {
+            icon: metamaskIcon,
+            link: "#",
+          },
+          {
+            icon: tronscanIcon,
+            link: "#",
+          },
+          {
+            icon: comingSoonIcon,
+            link: "#",
+          },
+        ],
+      },
+    ];
   }
 
   componentDidMount() {
@@ -410,15 +482,10 @@ class Home extends Component {
 
   render() {
     const { t } = this.props;
-    const { email, info, hasMetamask } = this.state;
+    const { hasMetamask } = this.state;
     return (
       <div className={styles.homePage}>
-        {/* <a href="#top"></a> */}
         <PageHeader href="#top" transparent={true} />
-        {/* <div className={styles.launchBanner}>
-                    <img src={launchBanner} alt="banner"/>
-                </div> */}
-
         <div className={styles.slogan}>
           <video src={hero} autoPlay="autoplay" loop="loop" muted />
           <Container>
@@ -436,161 +503,57 @@ class Home extends Component {
         </div>
 
         <Fade bottom fraction={0.1} duration={1000} distance={"50px"}>
-          <div className={`reveal-h1 ${styles.themeContainer}`}>
-            <Container>
-              <Row className={`${styles.promoteContentArea} d-flex justify-content-center`}>
-                <Col xs={{ span: 12 }} sm={{ span: 12 }}>
-                  <h1 className={`text-center ${styles.fontH1} ${styles.gradientText}`}>
-                    {t("home_page:theme_title")}
-                  </h1>
-                  <p>{t("home_page:theme_desc_1")}</p>
-                  <p>{t("home_page:theme_desc_2")}</p>
-                  <Row className={`hidden-xs ${styles.bands} ${styles.bandsPc}`}>
-                    <Col xs={12}>
-                      <div className={styles.bandAll}>
-                        <img alt="Wall of Honor" src={bandAll} />
-                        <ul>
-                          <OverlayTrigger
-                            placement="top"
-                            delay={{ show: 100, hide: 100 }}
-                            overlay={this.renderTooltip(t("home_page:band_1_desc"))}
-                          >
-                            <li></li>
-                          </OverlayTrigger>
-                          <OverlayTrigger
-                            placement="top"
-                            delay={{ show: 100, hide: 100 }}
-                            overlay={this.renderTooltip(t("home_page:band_2_desc"))}
-                          >
-                            <li></li>
-                          </OverlayTrigger>
-                          <OverlayTrigger
-                            placement="top"
-                            delay={{ show: 100, hide: 100 }}
-                            overlay={this.renderTooltip(t("home_page:band_3_desc"))}
-                          >
-                            <li></li>
-                          </OverlayTrigger>
-                          <OverlayTrigger
-                            placement="top"
-                            delay={{ show: 100, hide: 100 }}
-                            overlay={this.renderTooltip(t("home_page:band_4_desc"))}
-                          >
-                            <li></li>
-                          </OverlayTrigger>
-                        </ul>
-                      </div>
-                    </Col>
-                  </Row>
-                  <Row className={`hidden-md ${styles.bands}`}>
-                    <Col xs={12} md={4} lg={3}>
-                      <div className={styles.imgRatio}>
-                        <img alt="web3" src={band1} />
-                      </div>
-                      <p className={styles.bandDesc}>{t("home_page:band_1_desc")}</p>
-                    </Col>
-                    <Col xs={12} md={4} lg={3}>
-                      <div className={styles.imgRatio}>
-                        <img alt="substrate builder program" src={band2} />
-                      </div>
-                      <p className={styles.bandDesc}>{t("home_page:band_2_desc")}</p>
-                    </Col>
-                    <Col xs={12} md={4} lg={3}>
-                      <div className={styles.imgRatio}>
-                        <img alt="web3.0 bootcamp" src={band3} />
-                      </div>
-                      <p className={styles.bandDesc}>{t("home_page:band_3_desc")}</p>
-                    </Col>
-                    <Col xs={12} md={4} lg={3}>
-                      <div className={styles.imgRatio}>
-                        <img alt="polkadot" src={band4} />
-                      </div>
-                      <p className={styles.bandDesc}>{t("home_page:band_4_desc")}</p>
-                    </Col>
-                  </Row>
-                  <InputGroup className={`${styles.subscribe} hidden-xs`}>
-                    <FormControl
-                      value={email}
-                      onChange={(e) => {
-                        this.changeTextValue("email", e);
-                      }}
-                      placeholder={t("home_page:placeholder")}
-                      aria-label={t("home_page:placeholder")}
-                      aria-describedby={t("home_page:placeholder")}
-                    />
-                    <InputGroup.Append>
-                      <Button
-                        variant="outline-secondary"
-                        onClick={() => {
-                          this.subscribe(email);
-                        }}
-                      >
-                        {t("home_page:subscribe_btn")}
-                      </Button>
-                    </InputGroup.Append>
-                  </InputGroup>
-                  <Form.Text
-                    className={`text-muted ${styles.subscribeTip} hidden-xs`}
-                    dangerouslySetInnerHTML={{ __html: info || "&nbsp" }}
-                  ></Form.Text>
-                  <Form className={`${styles.subscribe} hidden-md`}>
-                    <FormControl
-                      value={email}
-                      type={"email"}
-                      onChange={(e) => {
-                        this.changeTextValue("email", e);
-                      }}
-                      placeholder={t("home_page:placeholder")}
-                      aria-label={t("home_page:placeholder")}
-                      aria-describedby={t("home_page:placeholder")}
-                    />
-
-                    <Button
-                      block
-                      onClick={() => {
-                        this.subscribe(email);
-                      }}
-                    >
-                      {t("home_page:subscribe_btn")}
-                    </Button>
-                    <Form.Text
-                      className={`text-muted ${styles.subscribeTip}`}
-                      dangerouslySetInnerHTML={{ __html: info || "&nbsp" }}
-                    />
-                  </Form>
-                </Col>
-              </Row>
-            </Container>
-          </div>
+          <Container className="py-5">
+            <div className={styles.darwiniaTech}>
+              {this.darwiniaTechData.map((item, index) => (
+                <div key={index} className={`${styles.darwiniaTechItem}`}>
+                  <img alt="..." src={item.icon} />
+                  <div className="d-flex flex-column align-items-center align-items-md-start ml-1 mt-3">
+                    <h5>{item.title}</h5>
+                    <p>{item.content}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+            <div className="d-flex justify-content-center mt-5">
+              <Button className={styles.btnGradient} target="_blank" rel="noopener noreferrer" href="#">
+                <span>Learn more about Darwinia’s Technology</span>
+              </Button>
+            </div>
+          </Container>
         </Fade>
 
-        <div className={`${styles.architectureContainer}`}>
+        <div className={styles.powering}>
           <Fade bottom fraction={0.1} duration={1000} distance={"50px"}>
-            <Container className={`reveal-h1`}>
-              <h1 className={`text-center  ${styles.fontH1}`}>{t("home_page:architecture_title")}</h1>
-              {/* {i18n.language.indexOf('en') > -1 ? <img src={architecture_en}/> :
-                            <img src={architecture}/>} */}
-              <div className={`${styles.archWrapper}`}>
-                {i18n.language.indexOf("en") > -1 ? (
-                  <img alt="architecture" className={`hidden-xs`} src={architecture_en} />
-                ) : (
-                  <img alt="architecture" className={`hidden-xs`} src={architecture} />
-                )}
-                {i18n.language.indexOf("en") > -1 ? (
-                  <img alt="architecture" className={`visible-xs`} src={architecture_mobile_en} />
-                ) : (
-                  <img alt="architecture" className={`visible-xs`} src={architecture_mobile} />
-                )}
-                {/* <div className={`hidden-xs ${styles.anime}`}>
-                                <div>
-                                    <Button className={styles.soloBtn}>{t('home_page:architecture_solo')}</Button>
-                                    <Button className={`${styles.soloBtn} ${styles.soloWhiteBtn}`}>{t('home_page:architecture_solo')}</Button>
-                                    <Button className={styles.chainBtn}>{t('home_page:architecture_chain')}</Button>
-                                    <Button className={`${styles.chainBtn} ${styles.chainPinkBtn}`}>{t('home_page:architecture_chain')}</Button>
-                                    <img alt="chain" src={architecture_chain} className={styles.chain} />
-                                    <img alt="solo" src={architecture_solo} className={styles.solo} />
-                                </div>
-                            </div> */}
+            <Container className="py-5">
+              <div className="d-flex flex-column align-items-center px-md-5 mx-md-5">
+                <h5 className={styles.poweringTitle}>{t("home_page:powering_title")}</h5>
+                <p className={styles.poweringDesc}>{t("home_page:powering_desc")}</p>
+                <div className={styles.poweringCardGrounp}>
+                  {this.poweringCardData.map((item, index) => (
+                    <div key={index} className={styles.poweringCard}>
+                      <div className="d-flex flex-column align-items-center">
+                        <img alt="..." src={item.token} className={styles.token} />
+                        <h5 className={styles.name}>{item.name}</h5>
+                      </div>
+                      <div className="d-flex flex-column ml-0 ml-md-4">
+                        <div className="d-flex align-items-center justify-content-center justify-centent-md-start">
+                          {item.chains.map((chain, idx) => (
+                            <a key={idx} target="_blank" rel="noopener noreferrer" href={chain.link}>
+                              <img alt="..." src={chain.icon} className={styles.chain} />
+                            </a>
+                          ))}
+                        </div>
+                        <p className={styles.content}>{item.content}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+                <div className="mt-5 w-100 d-flex justify-content-center">
+                  <Button className={styles.btnLight} target="_blank" rel="noopener noreferrer" href="#">
+                    <span>{t("home_page:learn_more")}</span>
+                  </Button>
+                </div>
               </div>
             </Container>
           </Fade>

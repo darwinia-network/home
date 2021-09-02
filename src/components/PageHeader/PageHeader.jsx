@@ -11,67 +11,78 @@ import logoDarwinia from "./img/logo-darwinia.png";
 import logoDarwiniaWhite from "./img/logo-darwinia-white.png";
 
 import wikiIcon from "./img/docs/wiki.svg";
-import roadmapIcon from './img/docs/roadmap.svg'
-import techPaperIcon from './img/docs/tech-paper.svg'
-import genePaperIcon from './img/docs/gene-paper.svg'
+import roadmapIcon from "./img/docs/roadmap.svg";
+import techPaperIcon from "./img/docs/tech-paper.svg";
+import genePaperIcon from "./img/docs/gene-paper.svg";
 
-import tokensIcon from './img/use-darwinia/tokens.svg'
-import appsIcon from './img/use-darwinia/apps.svg'
-import wormholeIcon from './img/use-darwinia/wormhole.svg'
-import smartAppIcon from './img/use-darwinia/smart-app.svg'
-import crabNetIcon from './img/use-darwinia/crab-net.png'
+import tokensIcon from "./img/use-darwinia/tokens.svg";
+import appsIcon from "./img/use-darwinia/apps.svg";
+import wormholeIcon from "./img/use-darwinia/wormhole.svg";
+import smartAppIcon from "./img/use-darwinia/smart-app.svg";
+import crabNetIcon from "./img/use-darwinia/crab-net.png";
 
 const NavGrounp = ({ hasFixed = false }) => {
   const { t } = useTranslation();
 
-  const docsdata = [{
-    icon: wikiIcon,
-    title: t("header:wiki"),
-    content: t("header:wiki_content"),
-    link: "#",
-  }, {
-    icon: roadmapIcon,
-    title: t("header:roadmap"),
-    content: t("header:roadmap_content"),
-    link: "#",
-  }, {
-    icon: techPaperIcon,
-    title: t("header:techpaper"),
-    content: t("header:techpaper_content"),
-    link: "#",
-  }, {
-    icon: genePaperIcon,
-    title: t("header:genepaper"),
-    content: t("header:genepaper_content"),
-    link: "#",
-  }];
+  const docsdata = [
+    {
+      icon: wikiIcon,
+      title: t("header:wiki"),
+      content: t("header:wiki_content"),
+      link: "#",
+    },
+    {
+      icon: roadmapIcon,
+      title: t("header:roadmap"),
+      content: t("header:roadmap_content"),
+      link: "#",
+    },
+    {
+      icon: techPaperIcon,
+      title: t("header:techpaper"),
+      content: t("header:techpaper_content"),
+      link: "#",
+    },
+    {
+      icon: genePaperIcon,
+      title: t("header:genepaper"),
+      content: t("header:genepaper_content"),
+      link: "#",
+    },
+  ];
 
-  const useDarwiniaData = [{
-    icon: tokensIcon,
-    title: t("header:tokens"),
-    content: t("header:tokens_content"),
-    link: "#",
-  }, {
-    icon: appsIcon,
-    title: t("header:apps"),
-    content: t("header:apps_content"),
-    link: "#",
-  }, {
-    icon: wormholeIcon,
-    title: t("header:whormhole"),
-    content: t("header:whormhole_content"),
-    link: "#",
-  }, {
-    icon: smartAppIcon,
-    title: t("header:smart_app"),
-    content: t("header:smart_app_content"),
-    link: "#",
-  }, {
-    icon: crabNetIcon,
-    title: t("header:crab_net"),
-    content: t("header:crab_net_content"),
-    link: "#",
-  }];
+  const useDarwiniaData = [
+    {
+      icon: tokensIcon,
+      title: t("header:tokens"),
+      content: t("header:tokens_content"),
+      link: "#",
+    },
+    {
+      icon: appsIcon,
+      title: t("header:apps"),
+      content: t("header:apps_content"),
+      link: "#",
+    },
+    {
+      icon: wormholeIcon,
+      title: t("header:whormhole"),
+      content: t("header:whormhole_content"),
+      link: "#",
+    },
+    {
+      icon: smartAppIcon,
+      title: t("header:smart_app"),
+      content: t("header:smart_app_content"),
+      link: "#",
+    },
+    {
+      icon: crabNetIcon,
+      title: t("header:crab_net"),
+      content: t("header:crab_net_content"),
+      link: "#",
+    },
+  ];
 
   return (
     <>

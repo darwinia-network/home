@@ -180,6 +180,21 @@
     "slogan_title": "Darwinia Network",
     "slogan_subtitle": "Web3.0 Cross-Chain Bridge Hub",
 
+    "interoperability": "跨链互操作性",
+    "interoperability_content": "Darwinia Network provides an entrance to the Polkadot ecology for projects that have been deployed on public blockchains such as Ethereum and BSC.",
+    "smart_contract": "智能合约解决方案",
+    "smart_contract_content": "Darwinia Smart App is compatible with the Ethereum virtual machine, and supports DApps such as Defi and NFT, which can be easily migrated to Polkadot.",
+    "experience": "更快和更易用的用户体验",
+    "experience_content": "Darwinia network can bring users a very high-quality experience, including very low transaction fees and ultra-fast transaction confirmation speed.",
+    "governance": "User-driven Network Governance ",
+    "governance_content": "Darwinia Network has a sound governance system where all token holders can submit proposals. Upgrades to the network are coordinated on-chain and enacted autonomously, ensuring that Darwinia’s development reflects the values of the community and avoids stagnation.",
+    "ring_content": "The native tokens for Darwinia Network is RING, RING can be used as gas for transactions. Gas include transaction fees, contract execution fees, network bandwidth charges, storage fees, and more.",
+    "kton_content": "To encourage users to make long term commitments and pledge, users can choose to lock RING for 3 - 36 months in the process of Staking, and the system will offer a KTON token as reward for users participating in Staking.",
+
+    "powering_title": "Powering the Darwinia Network",
+    "powering_desc": "The native tokens for Darwinia Network are RING, KTON. KTON is a derivative commitment token of RING, which encourages long-term involvement.",
+
+    "learn_more": "学习更多",
     "get_started": "开始吧",
     "build_onn_darwinia": "Build on Darwinia"
   },
