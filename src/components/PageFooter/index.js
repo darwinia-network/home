@@ -1,5 +1,3 @@
-import PageFooter from './PageFooter'
+import PageFooter from "./PageFooter";
 
-export {
-    PageFooter
-}
+export { PageFooter };

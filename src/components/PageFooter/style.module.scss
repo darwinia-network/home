@@ -8,7 +8,7 @@
 .navFooter {
   background: #201550;
   position: relative;
-  color: #7B70AE;
+  color: #7b70ae;
   padding: 24px;
   img {
     width: 25px;
@@ -26,12 +26,12 @@
 
   input {
     border-radius: 0;
-    border: 1px solid #3E30DD;
+    border: 1px solid #3e30dd;
     background-clip: initial;
     font-weight: bold;
     font-size: 14px;
     &::placeholder {
-      color: #6330DD;
+      color: #6330dd;
       opacity: 0.3;
     }
   }
@@ -46,7 +46,12 @@
     font-size: 14px;
     color: #fff;
     font-weight: bold;
-    background: linear-gradient(315deg, rgba(254, 56, 118, 1) 0%, rgba(124, 48, 221, 1) 71%, rgba(58, 48, 221, 1) 100%);
+    background: linear-gradient(
+      315deg,
+      rgba(254, 56, 118, 1) 0%,
+      rgba(124, 48, 221, 1) 71%,
+      rgba(58, 48, 221, 1) 100%
+    );
   }
 }
 
@@ -77,11 +82,10 @@
 
 .mdContent {
   img {
-
   }
 }
 
-.map{
+.map {
   background: #201550;
   padding-top: 70px;
   width: 100%;
@@ -93,32 +97,32 @@
     height: 2px;
     background-color: #34295f;
   }
-  h1{
+  h1 {
     font-size: 18px;
     font-weight: bold;
     color: #fff;
     margin-bottom: 26px;
     text-transform: uppercase;
   }
-  p{
-    color: #7B70AE;
+  p {
+    color: #7b70ae;
   }
-  a{
-    color: #7B70AE;
+  a {
+    color: #7b70ae;
     font-size: fontSize(16px);
   }
-  .footerIcon{
+  .footerIcon {
     width: 100%;
     max-width: 220px;
     margin-bottom: 20px;
   }
-  .shareLogo{
-    &>div{
+  .shareLogo {
+    & > div {
       display: flex;
       justify-content: space-between;
       margin-bottom: 20px;
     }
-    img{
+    img {
       width: 25px;
       height: 25px;
     }
@@ -137,7 +141,6 @@
   }
 
   img {
-
   }
 
   .copyright {
@@ -181,7 +184,3 @@
 //    }
 //  }
 //}
-
-
-
-

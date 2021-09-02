@@ -1,17 +1,17 @@
 @import "../../style/index";
 
 .navLink {
-  color: $text-fff!important;
+  color: $text-fff !important;
   font-weight: bold;
 }
 
-.lngBtn{
+.lngBtn {
   cursor: pointer;
   padding: 3px 7px;
   font-size: 18px;
   font-weight: 600;
-  color: #6330DD;
-  border: 1px solid #6330DD;
+  color: #6330dd;
+  border: 1px solid #6330dd;
   opacity: 0.5;
   margin-left: 20px;
   &:hover {
@@ -26,7 +26,7 @@
   // margin-top: 0px;
 }
 
-.navDraw{
+.navDraw {
   position: absolute;
   height: 100vh;
   margin-top: 0px;
@@ -35,13 +35,14 @@
   width: 265px;
   right: 0;
   top: 0;
-  box-shadow: 0 8px 10px -5px rgba(0,0,0,.2), 0 16px 24px 2px rgba(0,0,0,.14), 0 6px 30px 5px rgba(0,0,0,.12);
-  transition: .2s cubic-bezier(.4,0,.2,1);
-  transition-property: width,-webkit-transform;
-  transition-property: transform,width;
-  transition-property: transform,width,-webkit-transform;
+  box-shadow: 0 8px 10px -5px rgba(0, 0, 0, 0.2),
+    0 16px 24px 2px rgba(0, 0, 0, 0.14), 0 6px 30px 5px rgba(0, 0, 0, 0.12);
+  transition: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  transition-property: width, -webkit-transform;
+  transition-property: transform, width;
+  transition-property: transform, width, -webkit-transform;
 
-  background-color: #E4378A;
+  background-color: #e4378a;
   z-index: 1000;
   opacity: 0.9;
 
@@ -50,17 +51,17 @@
   // }
 }
 
-.githubBox{
+.githubBox {
   padding: 0.5rem 0rem 0.5rem 1.6rem;
   font-size: 0;
   margin-top: -2px;
 }
 
-.Navbar{
+.Navbar {
   background: transparent;
   padding: 0;
   font-size: 18px;
-  .logo{
+  .logo {
     width: 178px;
   }
 }
@@ -71,12 +72,12 @@
       flex: 1 1 auto;
     }
     .navTab {
-      color: #6330DD;
+      color: #6330dd;
       // font-weight: 600;
     }
     .navButton {
       padding: 7px 17px;
-      background: #6330DD;
+      background: #6330dd;
       color: #fff;
       margin-left: 14px;
     }
@@ -97,7 +98,7 @@
         opacity: 0.5;
         margin-left: 25px;
         cursor: pointer;
-        color: #6330DD;
+        color: #6330dd;
         text-decoration: none;
         &:hover {
           opacity: 1;
@@ -119,7 +120,7 @@
       }
       button {
         color: #fff;
-        background-color:initial !important;
+        background-color: initial !important;
         border: none !important;
         box-shadow: none !important;
         padding: 0 !important;
@@ -135,7 +136,7 @@
   }
   .ColLine {
     height: 1px;
-    background: #6330DD;
+    background: #6330dd;
     opacity: 0.1;
   }
   .NavBarContainer {
@@ -153,17 +154,22 @@
   }
 }
 
-.NavBg{
-  background:linear-gradient(315deg,rgba(254,56,118,1) 0%,rgba(124,48,221,1) 71%,rgba(58,48,221,1) 100%);
+.NavBg {
+  background: linear-gradient(
+    315deg,
+    rgba(254, 56, 118, 1) 0%,
+    rgba(124, 48, 221, 1) 71%,
+    rgba(58, 48, 221, 1) 100%
+  );
 }
 
-.closeBox{
+.closeBox {
   padding: 11px 15px;
-  background: #E4378A;
+  background: #e4378a;
   align-items: center;
   button {
     color: #fff;
-    border: none  !important;
+    border: none !important;
     background: initial !important;
     box-shadow: none !important;
     &::after {
@@ -175,32 +181,32 @@
   }
 }
 
-.lngBox{
+.lngBox {
   padding-top: 25px;
   padding-bottom: 25px;
-  background: #E4378A;
+  background: #e4378a;
 }
 
-.navLinkSub{
+.navLinkSub {
   font-size: 14px;
   font-weight: normal;
   padding: 0.5rem 0;
 }
 
-.walletBtnBox{
-  &>div{
+.walletBtnBox {
+  & > div {
     padding: 0.5rem 1.2rem;
   }
 }
 
-.walletBtn{
+.walletBtn {
   margin-bottom: 0;
-  background:rgba(255,255,255,1);
-  border-radius:18px;
-  color: #3D30DD;
+  background: rgba(255, 255, 255, 1);
+  border-radius: 18px;
+  color: #3d30dd;
   padding: 3px 20px;
   &:hover {
-    color: #3D30DD;
+    color: #3d30dd;
   }
 }
 
@@ -212,9 +218,8 @@
       transition: top 0.4s ease-in-out;
     }
   }
-  .Navbar{
-
-    a{
+  .Navbar {
+    a {
       img {
         width: 117px;
       }
@@ -230,10 +235,10 @@
     padding-right: 60px;
     border: none;
   }
-  .Navbar{
+  .Navbar {
     background: transparent !important;
     // padding: .5rem 1rem;
-    a{
+    a {
       img {
         width: 117px;
       }
@@ -250,7 +255,7 @@
         height: 50px;
         button {
           span {
-            background: url('./img/menu.png') top center no-repeat;
+            background: url("./img/menu.png") top center no-repeat;
             background-size: 22px 19px;
           }
         }
@@ -261,7 +266,7 @@
         height: 50px;
         button {
           span {
-            background: url('./img/menu.png') top center no-repeat;
+            background: url("./img/menu.png") top center no-repeat;
             background-size: 22px 19px;
           }
         }
@@ -309,7 +314,7 @@
         }
       }
       button {
-        padding: .25rem 0 .25rem .75rem;
+        padding: 0.25rem 0 0.25rem 0.75rem;
       }
     }
     .ColSub {
@@ -323,7 +328,6 @@
     .NavBarBg {
       display: none;
       height: 50px;
-      
     }
   }
 }

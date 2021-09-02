@@ -32,7 +32,7 @@
     "placeholder": "Email Address",
     "subscribe_btn": "Subscribe",
     "subscribe_tip": "Subscription success! Please check your inbox.",
-    
+
     "recom_2_link": "https://darwinianetwork.medium.com/congratulations-darwinia-won-the-level-2-badge-in-the-substrate-builder-program-59ca4270f695",
     "recom_3_link": "https://darwinianetwork.medium.com/darwinia-mainnet-transfer-is-now-live-612b3e44b7c",
     "recom_4_link": "https://docs.crab.network/dvm-intro/",
@@ -60,7 +60,6 @@
     "highlight_block_content_5": "Decentralized NFT cross-chain auction market",
     "highlight_block_title_6": "Onchain RNG",
     "highlight_block_content_6": "Onchain RNG solution",
-
 
     "architecture_title": "Architecture Design",
     "architecture_solo": "Solo",
@@ -322,7 +321,7 @@
     "moderator": "4. Moderator",
     "moderator_desc": "Keep Darwinia official social media channels (i.e., telegram, twitter, medium,etc.) informative, productive, and create a pleasant, sustained, and viable environment for community members in multiple languages across various platforms.",
     "experience": "5. Experience Officer",
-    "experience_desc_1": "Experience Darwinia Ecological Applications and submit detailed reports according to our requirements. Up to now, Darwinia tech team has created various products on the way leading to Web3.0. For instance:", 
+    "experience_desc_1": "Experience Darwinia Ecological Applications and submit detailed reports according to our requirements. Up to now, Darwinia tech team has created various products on the way leading to Web3.0. For instance:",
     "experience_desc_2": "Evolution Land: A cross-chain blockchain game to showcase blockchain capabilities and onboard new users.",
     "experience_desc_3": "Subscan: A high precision data explorer and visualization for substrate-based blockchains.",
     "how_title": "How to become a Darwinia Ambassador?",

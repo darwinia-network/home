@@ -29,6 +29,7 @@
     "gh-pages": "^2.1.1",
     "node-sass": "^4.12.0",
     "prerender-spa-plugin": "^3.4.0",
+    "prettier": "2.3.2",
     "react-app-rewired": "^2.1.8",
     "serve": "^11.3.2"
   },
@@ -39,7 +40,8 @@
     "eject": "react-scripts eject",
     "render": "babel-node tools/run render",
     "serve": "serve -s build",
-    "depoly": "babel-node tools/run depoly"
+    "depoly": "babel-node tools/run depoly",
+    "format": "yarn prettier --write ./src"
   },
   "eslintConfig": {
     "extends": "react-app"

@@ -32,7 +32,12 @@
   font-size: 40px;
   color: rgba(8, 12, 32, 1);
   letter-spacing: 2px;
-  background: linear-gradient(315deg, rgba(254, 56, 118, 1) 0%, rgba(124, 48, 221, 1) 71%, rgba(58, 48, 221, 1) 100%);
+  background: linear-gradient(
+    315deg,
+    rgba(254, 56, 118, 1) 0%,
+    rgba(124, 48, 221, 1) 71%,
+    rgba(58, 48, 221, 1) 100%
+  );
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -75,14 +80,13 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      color: #6330DD;
+      color: #6330dd;
       .mediaTime {
         font-size: 12px;
         color: #201550;
       }
     }
     .mediaDesc {
-       
       font-size: 16px;
     }
   }
@@ -104,7 +108,7 @@
     padding: 20px;
     p {
       margin: 0;
-      color: #6330DD;
+      color: #6330dd;
       font-size: 16px;
       font-weight: bold;
     }
@@ -125,7 +129,7 @@
   // height: 412px;
   .promoteContentArea {
     padding: 100px 0;
-    .bands {   
+    .bands {
       .imgRatio {
         padding-bottom: 40.7%;
         position: relative;
@@ -139,7 +143,7 @@
       .bandDesc {
         margin-top: 20px;
         text-align: center;
-        color: #6330DD;
+        color: #6330dd;
         font-size: 14px;
         margin-bottom: 36px;
       }
@@ -183,7 +187,7 @@
       p {
         // text-align: center;
         font-size: 16px;
-        color: #6330DD;
+        color: #6330dd;
         // padding: 0 100px;
       }
       .subscribe {
@@ -199,7 +203,6 @@
 }
 
 .highlightContainer {
-
   // padding: 60px 0 100px 0;
   img {
     width: 100%;
@@ -291,7 +294,7 @@
             width: 21px;
             height: 21px;
             margin-bottom: 0;
-            opacity: .5;
+            opacity: 0.5;
             &:hover {
               opacity: 1;
             }
@@ -306,7 +309,7 @@
       margin-bottom: 10px;
       p {
         margin-bottom: 7px;
-        color: #6330DD;
+        color: #6330dd;
       }
     }
   }
@@ -316,7 +319,7 @@
     border-radius: 0;
     border: none;
     color: #fff;
-    background: linear-gradient(315deg, #FE3876 0%, #7C30DD 71%, #3A30DD 100%);
+    background: linear-gradient(315deg, #fe3876 0%, #7c30dd 71%, #3a30dd 100%);
   }
 }
 
@@ -334,7 +337,7 @@
     text-align: left;
   }
 
-  &>div>div>div {
+  & > div > div > div {
     text-align: center;
     margin-bottom: 50px;
   }
@@ -399,19 +402,18 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    color: #6330DD;
+    color: #6330dd;
     .mediaTime {
       font-weight: bold;
       letter-spacing: 0.5px;
       line-height: 20px;
       font-size: 12px;
       order: -1;
-      opacity: .5;
-      color: #6330DD;
+      opacity: 0.5;
+      color: #6330dd;
     }
   }
   .mediaDesc {
-     
     font-size: 16px;
   }
 
@@ -422,7 +424,6 @@
     border-radius: 0;
   }
 }
-
 
 .line {
   display: inline-block;
@@ -438,12 +439,12 @@
   input {
     border-radius: 0;
     height: 40px;
-    border: 1px solid #3E30DD;
+    border: 1px solid #3e30dd;
     background-clip: initial;
     font-weight: bold;
     font-size: 14px;
     &::placeholder {
-      color: #6330DD;
+      color: #6330dd;
       opacity: 0.3;
     }
   }
@@ -458,7 +459,12 @@
     font-size: 14px;
     color: #fff;
     font-weight: bold;
-    background: linear-gradient(315deg, rgba(254, 56, 118, 1) 0%, rgba(124, 48, 221, 1) 71%, rgba(58, 48, 221, 1) 100%);
+    background: linear-gradient(
+      315deg,
+      rgba(254, 56, 118, 1) 0%,
+      rgba(124, 48, 221, 1) 71%,
+      rgba(58, 48, 221, 1) 100%
+    );
   }
 }
 
@@ -475,18 +481,17 @@
 
 .lineH1 {
   height: 1px;
-  background: #EFEFEF;
+  background: #efefef;
   margin-bottom: 70px;
   font-weight: bold;
 }
 
 .lineH2 {
   height: 1px;
-  background: #EFEFEF;
+  background: #efefef;
   width: 80px;
   margin: 2rem auto;
 }
-
 
 .applicationContainer {
   background: url("./img/application/app-bg.jpg") top center no-repeat;
@@ -560,7 +565,7 @@
     left: 0;
     right: 0;
 
-    >div {
+    > div {
       padding-top: 32%;
       position: relative;
     }
@@ -602,7 +607,12 @@
 
     .soloBtn {
       margin-left: 28.5%;
-      background: linear-gradient(315deg, rgba(254, 56, 118, 1) 0%, rgba(124, 48, 221, 1) 71%, rgba(58, 48, 221, 1) 100%);
+      background: linear-gradient(
+        315deg,
+        rgba(254, 56, 118, 1) 0%,
+        rgba(124, 48, 221, 1) 71%,
+        rgba(58, 48, 221, 1) 100%
+      );
       color: #fff;
       width: 9.2%;
       position: absolute;
@@ -629,7 +639,12 @@
     .chainPinkBtn {
       border: 0;
       color: #fff;
-      background: linear-gradient(315deg, rgba(254, 56, 118, 1) 0%, rgba(124, 48, 221, 1) 71%, rgba(58, 48, 221, 1) 100%);
+      background: linear-gradient(
+        315deg,
+        rgba(254, 56, 118, 1) 0%,
+        rgba(124, 48, 221, 1) 71%,
+        rgba(58, 48, 221, 1) 100%
+      );
 
       :global {
         animation: 6s ease-in-out infinite both chainPinkBtn;
@@ -637,7 +652,6 @@
     }
 
     @keyframes :global(chainPinkBtn) {
-
       0%,
       33% {
         opacity: 0;
@@ -654,7 +668,6 @@
     }
 
     @keyframes :global(soloWhiteBtn) {
-
       0%,
       33% {
         opacity: 0;
@@ -671,7 +684,6 @@
     }
 
     @keyframes :global(chain) {
-
       0%,
       33% {
         transform: translate(0, 0);
@@ -688,7 +700,6 @@
     }
 
     @keyframes :global(solo) {
-
       0%,
       33% {
         transform: translate(0, 0);
@@ -708,7 +719,7 @@
 
 .roadmapContainer {
   padding: 100px 0;
-  color: #5430DD;
+  color: #5430dd;
 
   h1 {
     display: inline-block;
@@ -727,7 +738,7 @@
     width: 100%;
   }
   .roadmapRow {
-    background: #FBFBFB;
+    background: #fbfbfb;
     height: 1213px;
     // padding: 50px 0 60px 0;
     p {
@@ -792,7 +803,8 @@
       width: 63px;
       text-align: center;
     }
-    .colorBtn, .whiteBtn {
+    .colorBtn,
+    .whiteBtn {
       width: 63px;
       height: 35px;
       display: flex;
@@ -802,11 +814,16 @@
     }
     .colorBtn {
       color: #fff;
-      background: linear-gradient(315deg, #FE3876 0%, #7C30DD 71%, #3A30DD 100%);
+      background: linear-gradient(
+        315deg,
+        #fe3876 0%,
+        #7c30dd 71%,
+        #3a30dd 100%
+      );
     }
     .whiteBtn {
-      color: #6330DD;
-      border: 2px solid #A633BD;
+      color: #6330dd;
+      border: 2px solid #a633bd;
     }
   }
   .roadmapImgCol {
@@ -827,7 +844,7 @@
 .teamContainer {
   background: url("./img/dev-team.png") top center no-repeat;
   background-size: cover;
-  color: #F9FAFC;
+  color: #f9fafc;
   height: 360px;
   .content {
     text-align: center;
@@ -857,7 +874,6 @@
   // color: #fff !important;
 }
 
-
 .button {
   margin-top: 60px;
 }
@@ -866,7 +882,12 @@
   .generalGradientText {
     display: inline-block;
     color: rgba(8, 12, 32, 1);
-    background: linear-gradient(315deg, rgba(254, 56, 118, 1) 0%, rgba(124, 48, 221, 1) 71%, rgba(58, 48, 221, 1) 100%);
+    background: linear-gradient(
+      315deg,
+      rgba(254, 56, 118, 1) 0%,
+      rgba(124, 48, 221, 1) 71%,
+      rgba(58, 48, 221, 1) 100%
+    );
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }
@@ -913,7 +934,6 @@
         }
       }
       .mediaDesc {
-        
       }
     }
   }
@@ -1056,7 +1076,7 @@
     padding: 50px 0 0;
     background: none;
     height: initial;
-    img  {
+    img {
       margin-bottom: 10px;
     }
     .title {
@@ -1079,7 +1099,7 @@
     p {
       font-size: 14px;
       line-height: 18px;
-      color: #6330DD;
+      color: #6330dd;
       text-align: center;
       margin-bottom: 20px;
     }
@@ -1106,7 +1126,7 @@
         margin-bottom: 0px;
       }
 
-      &>div>div {
+      & > div > div {
         padding-left: 0;
         padding-right: 0;
       }
@@ -1174,7 +1194,8 @@
         width: 63px;
         text-align: center;
       }
-      .colorBtn, .whiteBtn {
+      .colorBtn,
+      .whiteBtn {
         width: 63px;
         height: 35px;
         display: flex;
@@ -1184,11 +1205,16 @@
       }
       .colorBtn {
         color: #fff;
-        background: linear-gradient(315deg, #FE3876 0%, #7C30DD 71%, #3A30DD 100%);
+        background: linear-gradient(
+          315deg,
+          #fe3876 0%,
+          #7c30dd 71%,
+          #3a30dd 100%
+        );
       }
       .whiteBtn {
-        color: #6330DD;
-        border: 2px solid #A633BD;
+        color: #6330dd;
+        border: 2px solid #a633bd;
       }
     }
   }
@@ -1277,8 +1303,8 @@
         line-height: 20px;
         font-size: 12px;
         order: -1;
-        opacity: .5;
-        color: #6330DD;
+        opacity: 0.5;
+        color: #6330dd;
       }
     }
     .mediaDesc {
@@ -1292,10 +1318,15 @@
     button {
       line-height: initial;
       margin-top: 20px;
-      background: linear-gradient(315deg, rgba(254, 56, 118, 1) 0%, rgba(124, 48, 221, 1) 71%, rgba(58, 48, 221, 1) 100%);
+      background: linear-gradient(
+        315deg,
+        rgba(254, 56, 118, 1) 0%,
+        rgba(124, 48, 221, 1) 71%,
+        rgba(58, 48, 221, 1) 100%
+      );
       border-radius: 4px;
       font-weight: bold;
-      padding: .59rem .75rem;
+      padding: 0.59rem 0.75rem;
       border: none;
       outline: none;
     }
@@ -1303,7 +1334,7 @@
 
   .lineH1 {
     height: 2px;
-    background: #EFEFEF;
+    background: #efefef;
     margin-bottom: 30px;
   }
 
@@ -1359,7 +1390,7 @@
 .sloganTitle {
   font-size: 49px;
   font-weight: bold;
-  color: #FFFFFF;
+  color: #ffffff;
   line-height: 65px;
 
   @media screen and (max-width: 768px) {
@@ -1371,7 +1402,7 @@
 .sloganSubtitle {
   font-size: 42px;
   font-weight: normal;
-  color: #FFFFFF;
+  color: #ffffff;
   font-family: IBMPlexSans;
   font-style: italic;
   margin-top: 8px;
@@ -1405,7 +1436,7 @@
     font-weight: bold;
     line-height: 23px;
     color: #000000;
-    background: linear-gradient(315deg, #FE3876 0%, #7C30DD 71%, #3A30DD 100%);
+    background: linear-gradient(315deg, #fe3876 0%, #7c30dd 71%, #3a30dd 100%);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -1415,7 +1446,7 @@
     width: 100%;
     margin-left: 0;
     margin-top: 18px;
-  
+
     &:first-child {
       margin-top: 0;
     }

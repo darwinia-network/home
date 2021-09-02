@@ -46,7 +46,7 @@
     "band_2_desc": "获得了3个W3F Grant,是首批接入波卡平行测试链Rococo的四个项目之一",
     "band_3_desc": "Web3 Foundation Bootcamp首期成员",
     "band_4_desc": "被写入波卡轻白皮书",
-    
+
     "highlight_title": "核心要素",
     "highlight_block_title_1": "桥接链",
     "highlight_block_content_1": "达尔文网络核心技术，跨链互操作解决方案",
@@ -60,7 +60,6 @@
     "highlight_block_content_5": "去中心化非标资产交易中心，支持跨链交易，支持拍卖等多种交易方式",
     "highlight_block_title_6": "链上随机数",
     "highlight_block_content_6": "链上随机数解决方案",
-
 
     "architecture_title": "架构设计",
     "architecture_solo": "Solo模式",
@@ -322,7 +321,7 @@
     "moderator": "4. 协调者",
     "moderator_desc": "帮助管理达尔文各个官方社交媒体社区，为社区成员营造一个友善的，持久的和富有活力的社区氛围。",
     "experience": "5. 体验官",
-    "experience_desc_1": "体验达尔文网络生态应用，并根据团队需求提交详细的体验报告，截止目前，达尔文技术团队已经创造出各种极具Web3属性的产品：", 
+    "experience_desc_1": "体验达尔文网络生态应用，并根据团队需求提交详细的体验报告，截止目前，达尔文技术团队已经创造出各种极具Web3属性的产品：",
     "experience_desc_2": "进化星球: 跨链区块链游戏",
     "experience_desc_3": "Subscan: 聚合Substrate 生态网络的高精度Web3浏览器",
     "how_title": "如何成为达尔文大使?",
