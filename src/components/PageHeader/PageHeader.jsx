@@ -29,25 +29,25 @@ const NavGrounp = ({ hasFixed = false }) => {
       icon: wikiIcon,
       title: t("header:wiki"),
       content: t("header:wiki_content"),
-      link: "#",
+      link: t("header:wiki_link"),
     },
     {
       icon: roadmapIcon,
       title: t("header:roadmap"),
       content: t("header:roadmap_content"),
-      link: "#",
+      link: "https://www.notion.so/itering/9617e154ec884b07a7cee9a056374e42?v=0c3e4d9f257646c486a32a0425ee3a93",
     },
     {
       icon: techPaperIcon,
       title: t("header:techpaper"),
       content: t("header:techpaper_content"),
-      link: "#",
+      link: "https://darwinia.network/ChainRelay_Technical_Paper(Preview)_EN.pdf",
     },
     {
       icon: genePaperIcon,
       title: t("header:genepaper"),
       content: t("header:genepaper_content"),
-      link: "#",
+      link: t("header:genepaper_link"),
     },
   ];
 
@@ -62,25 +62,25 @@ const NavGrounp = ({ hasFixed = false }) => {
       icon: appsIcon,
       title: t("header:apps"),
       content: t("header:apps_content"),
-      link: "#",
+      link: "https://apps.darwinia.network/",
     },
     {
       icon: wormholeIcon,
       title: t("header:whormhole"),
       content: t("header:whormhole_content"),
-      link: "#",
+      link: t("header:wormhole_link"),
     },
     {
       icon: smartAppIcon,
       title: t("header:smart_app"),
       content: t("header:smart_app_content"),
-      link: "#",
+      link: t("header:smart_app_link"),
     },
     {
       icon: crabNetIcon,
       title: t("header:crab_net"),
       content: t("header:crab_net_content"),
-      link: "#",
+      link: "https://crab.network/",
     },
   ];
 

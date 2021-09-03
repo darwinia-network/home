@@ -132,11 +132,11 @@ class Home extends Component {
         chains: [
           {
             icon: subscanIcon,
-            link: "#",
+            link: "https://darwinia.subscan.io/account",
           },
           {
             icon: etherscanIcon,
-            link: "#",
+            link: "https://etherscan.io/token/0x9469D013805bFfB7D3DEBe5E7839237e535ec483",
           },
           {
             icon: metamaskIcon,
@@ -144,7 +144,7 @@ class Home extends Component {
           },
           {
             icon: tronscanIcon,
-            link: "#",
+            link: "https://tronscan.org/#/token20/TL175uyihLqQD656aFx3uhHYe1tyGkmXaW",
           },
           {
             icon: comingSoonIcon,
@@ -478,8 +478,8 @@ class Home extends Component {
               ))}
             </div>
             <div className="d-flex justify-content-center mt-5">
-              <Button className={styles.btnGradient} target="_blank" rel="noopener noreferrer" href="#">
-                <span>Learn more about Darwinia’s Technology</span>
+              <Button className={styles.btnGradient} href="/tech">
+                <span>{t("home_page:learn_more_darwinia_tech")}</span>
               </Button>
             </div>
           </Container>
@@ -500,7 +500,7 @@ class Home extends Component {
                         <h5 className={styles.name}>{item.name}</h5>
                       </div>
                       <div className="d-flex flex-column ml-0 ml-md-4">
-                        <div className="d-flex align-items-center justify-content-center justify-centent-md-start">
+                        <div className="d-flex align-items-center justify-content-center justify-content-md-start">
                           {item.chains.map((chain, idx) => (
                             <a key={idx} target="_blank" rel="noopener noreferrer" href={chain.link}>
                               <img alt="..." src={chain.icon} className={styles.chain} />
@@ -513,7 +513,7 @@ class Home extends Component {
                   ))}
                 </div>
                 <div className="mt-5 w-100 d-flex justify-content-center">
-                  <Button className={styles.btnLight} target="_blank" rel="noopener noreferrer" href="#">
+                  <Button className={styles.btnLight} href="/economic_model">
                     <span>{t("home_page:learn_more")}</span>
                   </Button>
                 </div>

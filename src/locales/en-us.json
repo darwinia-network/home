@@ -28,6 +28,10 @@
     "wiki": "Wiki",
     "roadmap": "Roadmap",
     "wiki_content": "Guides to interacting with core functionality.",
+    "wiki_link": "https://docs.darwinia.network/",
+    "genepaper_link": "https://darwinia.network/Darwinia_Genepaper_EN.pdf",
+    "wormhole_link": "https://wormhole-ui.vercel.app/",
+    "smart_app_link": "https://smart.darwinia.network/",
     "roadmap_content": "Keep up-to-date with the Darwinia Network's phased plan.",
     "techpaper_content": "A technical summary around one possible direction of implementing the Darwinia network. ",
     "genepaper_content": "A visual, easy-to-read introduction to Darwinia Network's blockchain technology.",
@@ -48,6 +52,8 @@
     "placeholder": "Email Address",
     "subscribe_btn": "Subscribe",
     "subscribe_tip": "Subscription success! Please check your inbox.",
+
+    "learn_more_darwinia_tech": "Learn more about Darwinia’s Technology",
 
     "recom_2_link": "https://darwinianetwork.medium.com/congratulations-darwinia-won-the-level-2-badge-in-the-substrate-builder-program-59ca4270f695",
     "recom_3_link": "https://darwinianetwork.medium.com/darwinia-mainnet-transfer-is-now-live-612b3e44b7c",
