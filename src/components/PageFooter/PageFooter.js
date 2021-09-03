@@ -4,6 +4,8 @@ import { withTranslation } from "react-i18next";
 import styles from "./style.module.scss";
 import i18n from "../../locales/i18n";
 
+import lngIcon from "./img/lngIcon.svg";
+
 import share1 from "./img/share-1.png";
 import share2 from "./img/share-2.png";
 import share3 from "./img/share-3.png";
@@ -93,9 +95,13 @@ class PageFooter extends Component {
     );
   };
 
+  handleClickLng = (lng) => {
+    i18n.changeLanguage(lng);
+  }
+
   renderMap = () => {
     const { email, info } = this.state;
-    const { t } = this.props;
+    const { t, i18n } = this.props;
 
     return (
       <div className={`${styles.map} d-none d-md-block d-lg-block`}>
@@ -161,20 +167,8 @@ class PageFooter extends Component {
             <Col xs={6} md={4} lg={3}>
               <h1>{t("footer:general")}</h1>
               <p>
-                <a href="/#top">{t("footer:general_title_1")}</a>
-              </p>
-              <p>
                 <a target="_blank" rel="noopener noreferrer" href="https://docs.darwinia.network/">
                   {t("footer:general_title_2")}
-                </a>
-              </p>
-              <p>
-                <a
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  href="https://www.notion.so/itering/9617e154ec884b07a7cee9a056374e42?v=0c3e4d9f257646c486a32a0425ee3a93"
-                >
-                  {t("footer:general_title_6")}
                 </a>
               </p>
               <p>
@@ -195,11 +189,6 @@ class PageFooter extends Component {
             </Col>
             <Col xs={6} md={4} lg={3}>
               <h1>{t("footer:technology")}</h1>
-              <p>
-                <a target="_blank" rel="noopener noreferrer" href="https://crab.network/">
-                  {t("footer:technology_title_1")}
-                </a>
-              </p>
               {i18n.language.indexOf("en") > -1 ? (
                 <p>
                   <a target="_blank" rel="noopener noreferrer" href="/Darwinia_Genepaper_EN.pdf">
@@ -214,6 +203,11 @@ class PageFooter extends Component {
                 </p>
               )}
               <p>
+                <a target="_blank" rel="noopener noreferrer" href="https://darwinia.network/ChainRelay_Technical_Paper(Preview)_EN.pdf">
+                  {t("footer:technology_title_5")}
+                </a>
+              </p>
+              <p>
                 <a target="_blank" rel="noopener noreferrer" href="https://github.com/darwinia-network/darwinia">
                   {t("footer:technology_title_3")}
                 </a>
@@ -223,27 +217,37 @@ class PageFooter extends Component {
                   {t("footer:technology_title_4")}
                 </a>
               </p>
+              <p>
+                <a target="_blank" rel="noopener noreferrer" href={t("footer:technology_title_6_link")}>
+                  {t("footer:technology_title_6")}
+                </a>
+              </p>
             </Col>
             <Col xs={6} md={4} lg={3}>
-              <h1>{t("footer:community")}</h1>
+              <h1>{t("footer:use_darwinia")}</h1>
               <p>
-                <a target="_blank" rel="noopener noreferrer" href={t("footer:rfcs_link")}>
-                  {t("footer:community_title_1")}
+                <a target="_self" href={t("footer:use_darwinia_title_1_link")}>
+                  {t("footer:use_darwinia_title_1")}
                 </a>
               </p>
               <p>
-                <a target="_blank" rel="noopener noreferrer" href="/ambassador">
-                  {t("footer:community_title_2")}
+                <a target="_blank" rel="noopener noreferrer" href={t("footer:use_darwinia_title_2_link")}>
+                  {t("footer:use_darwinia_title_2")}
                 </a>
               </p>
               <p>
-                <a target="_blank" rel="noopener noreferrer" href="/community">
-                  {t("footer:community_title_3")}
+                <a target="_blank" rel="noopener noreferrer" href={t("footer:use_darwinia_title_3_link")}>
+                  {t("footer:use_darwinia_title_3")}
                 </a>
               </p>
               <p>
-                <a target="_blank" rel="noopener noreferrer" href={t("footer:faq_link")}>
-                  {t("footer:community_title_4")}
+                <a target="_blank" rel="noopener noreferrer" href={t("footer:use_darwinia_title_4_link")}>
+                  {t("footer:use_darwinia_title_4")}
+                </a>
+              </p>
+              <p>
+                <a target="_blank" rel="noopener noreferrer" href={t("footer:use_darwinia_title_5_link")}>
+                  {t("footer:use_darwinia_title_5")}
                 </a>
               </p>
             </Col>
@@ -315,6 +319,12 @@ class PageFooter extends Component {
                   </div>
                 </Col>
               </Row>
+              <div className="d-flex align-items-center">
+                <img alt="..." src={lngIcon} />
+                <Button className={styles.lngBtn} onClick={() => this.handleClickLng("en")}>EN</Button>
+                <div className={styles.lngDivider} />
+                <Button className={styles.lngBtn} onClick={() => this.handleClickLng("zh")}>中文</Button>
+              </div>
             </Col>
             <Col xs={0} md={0} lg={1}></Col>
           </Row>

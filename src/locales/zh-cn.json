@@ -789,12 +789,28 @@
     "technology_title_2": "Genepaper",
     "technology_title_3": "Github",
     "technology_title_4": "Telemetry",
+    "technology_title_5": "Technical Paper",
+    "technology_title_6": "Build on Darwinia",
+    "technology_title_6_link": "https://docs.darwinia.network/docs/zh-CN/dev-home",
 
     "community": "社区",
     "community_title_1": "RFCS",
     "community_title_2": "大使计划",
     "community_title_3": "加入社区",
     "community_title_4": "FAQ",
+
+    "use_darwinia": "使用达尔文网络",
+    "use_darwinia_title_1": "Tokens",
+    "use_darwinia_title_2": "Apps",
+    "use_darwinia_title_3": "虫洞",
+    "use_darwinia_title_4": "Smart App",
+    "use_darwinia_title_5": "Crab Network",
+
+    "use_darwinia_title_1_link": "/#powering-the-darwinia-network",
+    "use_darwinia_title_2_link": "https://apps.darwinia.network/",
+    "use_darwinia_title_3_link": "https://wormhole.darwinia.network/?lng=zh",
+    "use_darwinia_title_4_link": "https://smart.darwinia.network?lng=zh",
+    "use_darwinia_title_5_link": "https://crab.network/",
 
     "contact": "联系我们"
   }

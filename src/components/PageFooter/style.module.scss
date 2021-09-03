@@ -164,6 +164,24 @@
   }
 }
 
+.lngBtn {
+  border: none;
+  background: transparent;
+  color: #7B70AE;
+
+  &:hover, &:active, &:focus, &:visited {
+    border: none;
+    background: transparent;
+    box-shadow: none;
+  }
+}
+
+.lngDivider {
+  height: 20px;
+  width: 2px;
+  background: #7B70AE;
+}
+
 //@media (max-width: 768px) {
 //  .mdContent{
 //    text-align: center;
