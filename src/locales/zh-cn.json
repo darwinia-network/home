@@ -30,7 +30,7 @@
     "wiki_content": "Guides to interacting with core functionality.",
     "wiki_link": "https://docs.darwinia.network/zh-CN",
     "genepaper_link": "https://darwinia.network/Darwinia_Genepaper_CN.pdf",
-    "wormhole_link": "https://wormhole-ui.vercel.app?lng=zh",
+    "wormhole_link": "https://wormhole.darwinia.network/?lng=zh",
     "smart_app_link": "https://smart.darwinia.network?lng=zh",
     "roadmap_content": "Keep up-to-date with the Darwinia Network's phased plan.",
     "techpaper_content": "A technical summary around one possible direction of implementing the Darwinia network. ",
@@ -54,6 +54,8 @@
     "subscribe_tip": "订阅成功！请查看您的收件箱。",
 
     "learn_more_darwinia_tech": "学习更多达尔文技术",
+    "get_started_link": "https://docs.darwinia.network/docs/zh-CN/wiki-intro",
+    "build_on_darwinia_link": "https://docs.darwinia.network/docs/zh-CN/dev-home",
 
     "recom_2_link": "https://darwinianetwork.medium.com/congratulations-darwinia-won-the-level-2-badge-in-the-substrate-builder-program-59ca4270f695",
     "recom_3_link": "https://darwinianetwork.medium.com/darwinia-mainnet-transfer-is-now-live-612b3e44b7c",
@@ -207,7 +209,7 @@
 
     "learn_more": "学习更多",
     "get_started": "开始吧",
-    "build_onn_darwinia": "Build on Darwinia"
+    "build_on_darwinia": "Build on Darwinia"
   },
   "faq_page": {
     "title": "FAQs",

@@ -24,30 +24,34 @@ import crabNetIcon from "./img/use-darwinia/crab-net.png";
 const NavGrounp = ({ hasFixed = false }) => {
   const { t } = useTranslation();
 
-  const docsdata = [
+  const docsData = [
     {
       icon: wikiIcon,
       title: t("header:wiki"),
       content: t("header:wiki_content"),
       link: t("header:wiki_link"),
+      target: "_blank",
     },
     {
       icon: roadmapIcon,
       title: t("header:roadmap"),
       content: t("header:roadmap_content"),
       link: "https://www.notion.so/itering/9617e154ec884b07a7cee9a056374e42?v=0c3e4d9f257646c486a32a0425ee3a93",
+      target: "_blank",
     },
     {
       icon: techPaperIcon,
       title: t("header:techpaper"),
       content: t("header:techpaper_content"),
       link: "https://darwinia.network/ChainRelay_Technical_Paper(Preview)_EN.pdf",
+      target: "_blank",
     },
     {
       icon: genePaperIcon,
       title: t("header:genepaper"),
       content: t("header:genepaper_content"),
       link: t("header:genepaper_link"),
+      target: "_blank",
     },
   ];
 
@@ -56,31 +60,36 @@ const NavGrounp = ({ hasFixed = false }) => {
       icon: tokensIcon,
       title: t("header:tokens"),
       content: t("header:tokens_content"),
-      link: "#",
+      link: "/#powering-the-darwinia-network",
+      target: "_self",
     },
     {
       icon: appsIcon,
       title: t("header:apps"),
       content: t("header:apps_content"),
       link: "https://apps.darwinia.network/",
+      target: "_blank",
     },
     {
       icon: wormholeIcon,
       title: t("header:whormhole"),
       content: t("header:whormhole_content"),
       link: t("header:wormhole_link"),
+      target: "_blank",
     },
     {
       icon: smartAppIcon,
       title: t("header:smart_app"),
       content: t("header:smart_app_content"),
       link: t("header:smart_app_link"),
+      target: "_blank",
     },
     {
       icon: crabNetIcon,
       title: t("header:crab_net"),
       content: t("header:crab_net_content"),
       link: "https://crab.network/",
+      target: "_blank",
     },
   ];
 
@@ -95,7 +104,7 @@ const NavGrounp = ({ hasFixed = false }) => {
           id="collasible-nav-dropdown-docs"
           className={`${style.navLinkText} ${hasFixed ? style.hasFixed : ""}`}
         >
-          <DropdownCard data={docsdata} />
+          <DropdownCard data={docsData} />
         </NavDropdown>
         <NavDropdown
           title={t("header:use_darwinia")}

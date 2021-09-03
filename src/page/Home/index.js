@@ -82,6 +82,7 @@ class Home extends Component {
     this.state = {
       email: "",
       info: "",
+      hasMetamask: false,
     };
 
     this.tokenInfo = {
@@ -140,7 +141,9 @@ class Home extends Component {
           },
           {
             icon: metamaskIcon,
-            link: "#",
+            // link: "#",
+            needMetamask: true,
+            type: "ring",
           },
           {
             icon: tronscanIcon,
@@ -148,7 +151,7 @@ class Home extends Component {
           },
           {
             icon: comingSoonIcon,
-            link: "#",
+            // link: "#",
           },
         ],
       },
@@ -167,7 +170,9 @@ class Home extends Component {
           },
           {
             icon: metamaskIcon,
-            link: "#",
+            // link: "#",
+            needMetamask: true,
+            type: "kton",
           },
           {
             icon: tronscanIcon,
@@ -175,7 +180,7 @@ class Home extends Component {
           },
           {
             icon: comingSoonIcon,
-            link: "#",
+            // link: "#",
           },
         ],
       },
@@ -373,11 +378,29 @@ class Home extends Component {
         link: "#",
       },
     ];
+
+    this.detectMetaMaskTimer = null;
   }
 
   componentDidMount() {
     archorsComponent();
+    // this.addScrollReveal();
+    this.detectMetaMaskTimer = setTimeout(() => {
+      this.detectMetaMask();
+    }, 1500);
   }
+
+  componentWillUnmount() {
+    this.detectMetaMaskTimer && clearTimeout(this.detectMetaMaskTimer);
+  }
+
+  detectMetaMask = () => {
+    if (typeof window.ethereum !== "undefined") {
+      this.setState({
+        hasMetamask: window.ethereum.isMetaMask,
+      });
+    }
+  };
 
   addScrollReveal = () => {
     scrollreveal({
@@ -444,6 +467,7 @@ class Home extends Component {
 
   render() {
     const { t } = this.props;
+    const { hasMetamask } = this.state;
 
     return (
       <div className={styles.homePage}>
@@ -454,11 +478,23 @@ class Home extends Component {
             <h2 className={styles.sloganTitle}>{t("home_page:slogan_title")}</h2>
             <h5 className={styles.sloganSubtitle}>{t("home_page:slogan_subtitle")}</h5>
             <div className={styles.sloganBtnGround}>
-              <Button variant="light" className={styles.slogonBtnText}>
+              <Button
+                variant="light"
+                className={styles.slogonBtnText}
+                target="_blank"
+                rel="noopener noreferrer"
+                href={t("home_page:get_started_link")}
+              >
                 <span>{t("home_page:get_started")}</span>
               </Button>
-              <Button variant="light" className={styles.slogonBtnText}>
-                <span>{t("home_page:build_onn_darwinia")}</span>
+              <Button
+                variant="light"
+                className={styles.slogonBtnText}
+                target="_blank"
+                rel="noopener noreferrer"
+                href={t("home_page:build_on_darwinia_link")}
+              >
+                <span>{t("home_page:build_on_darwinia")}</span>
               </Button>
             </div>
           </Container>
@@ -485,7 +521,7 @@ class Home extends Component {
           </Container>
         </Fade>
 
-        <div className={styles.powering}>
+        <div className={styles.powering} id="powering-the-darwinia-network">
           <Fade bottom fraction={0.1} duration={1000} distance={"50px"}>
             <Container className={styles.commonContainer}>
               <div className="d-flex flex-column align-items-center px-md-5 mx-md-5">
@@ -501,11 +537,23 @@ class Home extends Component {
                       </div>
                       <div className="d-flex flex-column ml-0 ml-md-4">
                         <div className="d-flex align-items-center justify-content-center justify-content-md-start">
-                          {item.chains.map((chain, idx) => (
-                            <a key={idx} target="_blank" rel="noopener noreferrer" href={chain.link}>
-                              <img alt="..." src={chain.icon} className={styles.chain} />
-                            </a>
-                          ))}
+                          {item.chains.map((chain, idx) => {
+                            if (chain.link) {
+                              return (
+                                <a key={idx} target="_blank" rel="noopener noreferrer" href={chain.link}>
+                                  <img alt="..." src={chain.icon} className={styles.chain} />
+                                </a>
+                              );
+                            }
+                            if (chain.needMetamask && chain.type && hasMetamask) {
+                              return (
+                                <button onClick={() => this.addToken(chain.type)}>
+                                  <img alt="..." src={chain.icon} className={styles.chain} />
+                                </button>
+                              );
+                            }
+                            return <img alt="..." src={chain.icon} className={styles.chain} />;
+                          })}
                         </div>
                         <p className={styles.content}>{item.content}</p>
                       </div>

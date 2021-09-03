@@ -30,7 +30,7 @@
     "wiki_content": "Guides to interacting with core functionality.",
     "wiki_link": "https://docs.darwinia.network/",
     "genepaper_link": "https://darwinia.network/Darwinia_Genepaper_EN.pdf",
-    "wormhole_link": "https://wormhole-ui.vercel.app/",
+    "wormhole_link": "https://wormhole.darwinia.network/",
     "smart_app_link": "https://smart.darwinia.network/",
     "roadmap_content": "Keep up-to-date with the Darwinia Network's phased plan.",
     "techpaper_content": "A technical summary around one possible direction of implementing the Darwinia network. ",
@@ -54,6 +54,8 @@
     "subscribe_tip": "Subscription success! Please check your inbox.",
 
     "learn_more_darwinia_tech": "Learn more about Darwinia’s Technology",
+    "get_started_link": "https://docs.darwinia.network/docs/en/wiki-intro",
+    "build_on_darwinia_link": "https://docs.darwinia.network/docs/en/dev-home",
 
     "recom_2_link": "https://darwinianetwork.medium.com/congratulations-darwinia-won-the-level-2-badge-in-the-substrate-builder-program-59ca4270f695",
     "recom_3_link": "https://darwinianetwork.medium.com/darwinia-mainnet-transfer-is-now-live-612b3e44b7c",
@@ -207,7 +209,7 @@
 
     "learn_more": "Learn more",
     "get_started": "Get Started",
-    "build_onn_darwinia": "Build on Darwinia"
+    "build_on_darwinia": "Build on Darwinia"
   },
   "faq_page": {
     "title": "FAQs",
