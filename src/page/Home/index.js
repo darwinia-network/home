@@ -1,70 +1,13 @@
 /* eslint-disable no-script-url */
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { Component } from "react";
-import { Container, Row, Col, Button, OverlayTrigger, Popover, Tooltip } from "react-bootstrap";
+import { Container, Row, Col, Button, OverlayTrigger, Popover } from "react-bootstrap";
 import { PageHeader } from "../../components/PageHeader";
 import { PageFooter } from "../../components/PageFooter";
 import Fade from "react-reveal/Fade";
-// import { GradientHeading } from '../../components/GradientHeading'
-
-import roadmapSplit from "./img/roadmap/roadmap-split.png";
 
 import styles from "./style.module.scss";
-// import architecture_solo from './img/architecture-solo.png'
-// import architecture_chain from './img/architecture-chain.png'
-import economic from "./img/economic.png";
-import economic_en from "./img/economic-en.png";
-
-import app_token from "./img/application/app-token.png";
-import app_nft from "./img/application/app-nft.png";
-import app_evo from "./img/application/app-evo.png";
-import app_subscan from "./img/application/app-subscan.png";
-import application_token from "./img/application/application-token.png";
-import application_nft from "./img/application/application-nft.png";
-import application_evo from "./img/application/application-evo.png";
-import application_subscan from "./img/application/application-subscan.png";
-
-import eco1 from "./img/economic/eco-1.png";
-import eco2 from "./img/economic/eco-2.png";
-import eco3 from "./img/economic/eco-3.png";
-import etherscan from "./img/economic/etherscan.png";
-import tronscan from "./img/economic/tronscan.png";
-import metamask from "./img/economic/metamask.png";
-import subscan from "./img/economic/subscan.svg";
-
-import partner1 from "./img/partner/partner-1.png";
-import partner2 from "./img/partner/partner-2.png";
-import partner3 from "./img/partner/partner-3.png";
-import partner4 from "./img/partner/partner-4.png";
-import partner5 from "./img/partner/partner-5.png";
-import partner6 from "./img/partner/partner-6.png";
-import partner7 from "./img/partner/partner-7.png";
-import partner8 from "./img/partner/partner-8.png";
-import partner9 from "./img/partner/partner-9.png";
-import partner10 from "./img/partner/partner-10.png";
-import partner11 from "./img/partner/partner-11.png";
-import partner12 from "./img/partner/partner-12.png";
-import partner13 from "./img/partner/partner-13.png";
-import partner14 from "./img/partner/partner-14.png";
-import partner15 from "./img/partner/partner-15.png";
-import partner16 from "./img/partner/partner-16.png";
-import partner17 from "./img/partner/partner-17.png";
-import partner18 from "./img/partner/partner-18.png";
-import partner19 from "./img/partner/partner-19.png";
-import partner20 from "./img/partner/partner-20.png";
-import partner21 from "./img/partner/partner-21.png";
-import partner22 from "./img/partner/partner-22.png";
-import partner23 from "./img/partner/partner-23.png";
-import partner24 from "./img/partner/partner-24.png";
-import partner25 from "./img/partner/partner-25.png";
-import partner26 from "./img/partner/partner-26.png";
-import partner27 from "./img/partner/partner-27.png";
-import partner28 from "./img/partner/partner-28.png";
-
-import news44 from "../Media/img/news44.png";
-import news45 from "../Media/img/news45.png";
-import news46 from "../Media/img/news46.png";
-import news47 from "../Media/img/news47.png";
+import hero from "./img/hero.mp4";
 
 import interoperabilityIcon from "./img/darwinia-tech/interoperability.svg";
 import smartContractIcon from "./img/darwinia-tech/smart-contract.svg";
@@ -79,13 +22,58 @@ import metamaskIcon from "./img/powering/metamask.svg";
 import tronscanIcon from "./img/powering/tronscan.png";
 import comingSoonIcon from "./img/powering/coming-soon.png";
 
-import axios from "axios";
+import web3FundactionIcon from "./img/grants/web3-fundaction.png";
+import substrateBuilderProgramIcon from "./img/grants/substrate-builder-program.png";
+import web3BootcampIcon from "./img/grants/web3-bootcamp.png";
+import polkadotIcon from "./img/grants/polkadot.png";
+
+import project01Icon from "./img/projects/1.jpg";
+import project02Icon from "./img/projects/2.jpg";
+import project03Icon from "./img/projects/3.jpg";
+import project04Icon from "./img/projects/4.jpg";
+import project05Icon from "./img/projects/5.jpg";
+import project06Icon from "./img/projects/6.jpg";
+import project07Icon from "./img/projects/7.jpg";
+import project08Icon from "./img/projects/8.jpg";
+import project09Icon from "./img/projects/9.jpg";
+import project10Icon from "./img/projects/10.jpg";
+import project11Icon from "./img/projects/11.jpg";
+import project12Icon from "./img/projects/12.jpg";
+import project13Icon from "./img/projects/13.jpg";
+import project14Icon from "./img/projects/14.jpg";
+import project15Icon from "./img/projects/15.jpg";
+import project17Icon from "./img/projects/16.jpg";
+import project18Icon from "./img/projects/17.jpg";
+import project19Icon from "./img/projects/18.jpg";
+import project20Icon from "./img/projects/19.jpg";
+import project21Icon from "./img/projects/20.jpg";
+import project16Icon from "./img/projects/21.jpg";
+import project22Icon from "./img/projects/22.jpg";
+import project23Icon from "./img/projects/23.jpg";
+
+import partner01Icon from "./img/partners/1.jpg";
+import partner02Icon from "./img/partners/2.jpg";
+import partner03Icon from "./img/partners/3.jpg";
+import partner04Icon from "./img/partners/4.jpg";
+import partner05Icon from "./img/partners/5.jpg";
+import partner06Icon from "./img/partners/6.jpg";
+import partner07Icon from "./img/partners/7.jpg";
+import partner08Icon from "./img/partners/8.jpg";
+import partner09Icon from "./img/partners/9.jpg";
+import partner10Icon from "./img/partners/10.jpg";
+import partner11Icon from "./img/partners/11.jpg";
+import partner12Icon from "./img/partners/12.jpg";
+import partner13Icon from "./img/partners/13.jpg";
+import partner14Icon from "./img/partners/14.jpg";
+import partner15Icon from "./img/partners/15.jpg";
+import partner16Icon from "./img/partners/16.jpg";
+import partner17Icon from "./img/partners/17.jpg";
+import partner18Icon from "./img/partners/18.jpg";
+import partner19Icon from "./img/partners/19.jpg";
+
 import archorsComponent from "../../components/anchorsComponent";
 import { withTranslation } from "react-i18next";
-import i18n from "../../locales/i18n";
 import scrollreveal from "scrollreveal";
-
-import hero from "./img/hero.mp4";
 
 class Home extends Component {
   constructor(props) {
@@ -94,149 +82,6 @@ class Home extends Component {
     this.state = {
       email: "",
       info: "",
-      hasMetamask: false,
-    };
-    this.partnerInfo = {
-      polkadot: {
-        logo: partner1,
-        name: "Polkadot",
-        url: "https://polkadot.network",
-      },
-      parity: {
-        logo: partner2,
-        name: "Parity",
-        url: "https://www.parity.io",
-      },
-      maker: {
-        logo: partner3,
-        name: "MAKER",
-        url: "https://makerdao.com",
-      },
-      snz: {
-        logo: partner4,
-        name: "SNZ Holding",
-        url: "https://snzholding.com",
-      },
-      hashkey: {
-        logo: partner5,
-        name: "HashKey",
-        url: "https://www.hashkey.com",
-      },
-      chainlink: {
-        logo: partner6,
-        name: "Chainlink",
-        url: "https://chain.link/",
-      },
-      ankr: {
-        logo: partner7,
-        name: "Ankr",
-        url: "https://www.ankr.com/",
-      },
-      bondly: {
-        logo: partner8,
-        name: "Bondly",
-        url: "https://bondly.finance/",
-      },
-      crust: {
-        logo: partner9,
-        name: "Crust",
-        url: "https://crust.network/",
-      },
-      reef: {
-        logo: partner10,
-        name: "Reef",
-        url: "https://reef.finance/",
-      },
-      polkabase: {
-        logo: partner25,
-        name: "Polkabase",
-        url: "https://www.polkabase.com",
-      },
-      bihu: {
-        logo: partner11,
-        name: "Bihu",
-        url: "https://bihu.com",
-      },
-      evolutionland: {
-        logo: partner12,
-        name: "Evolution Land",
-        url: "https://www.evolution.land",
-      },
-      polkaworld: {
-        logo: partner26,
-        name: "Polka World",
-        url: "https://www.polkaworld.org",
-      },
-      imtoken: {
-        logo: partner13,
-        name: "imToken",
-        url: "https://token.im",
-      },
-      mathwallet: {
-        logo: partner14,
-        name: "Math Wallet",
-        url: "https://www.mathwallet.org",
-      },
-      cobowallet: {
-        logo: partner15,
-        name: "Cobo Wallet",
-        url: "https://cobo.com",
-      },
-      polkawallet: {
-        logo: partner16,
-        name: "Polka Wallet",
-        url: "https://polkawallet.io",
-      },
-      sssnodes: {
-        logo: partner17,
-        name: "SSSnodes",
-        url: "http://sssnodes.com",
-      },
-      waterdrip: {
-        logo: partner18,
-        name: "Waterdrip Capital",
-        url: "http://waterdrip.io/index_cn.html",
-      },
-      consensus: {
-        logo: partner19,
-        name: "Consensus Lab",
-        url: "http://www.consensus-lab.com/index.aspx",
-      },
-      bitrise: {
-        logo: partner20,
-        name: "Bitrise Capital",
-        url: "http://bitrisevc.com/",
-      },
-      seven: {
-        logo: partner21,
-        name: "Seven X",
-        url: "http://jyjtx.com/",
-      },
-      digital: {
-        logo: partner22,
-        name: "Digital Renaissance",
-        url: "http://drf.ee",
-      },
-      ddex: {
-        logo: partner23,
-        name: "DDEX",
-        url: "https://ddex.io",
-      },
-      otcmaker: {
-        logo: partner24,
-        name: "OTCMAKER",
-        url: "https://www.otcmaker.com",
-      },
-      tokeninsight: {
-        logo: partner27,
-        name: "TokenInsight",
-        url: "https://tokeninsight.com/",
-      },
-      blockspot: {
-        logo: partner28,
-        name: "Blockspot",
-        url: "https://blockspot.io/",
-      },
     };
 
     this.tokenInfo = {
@@ -255,38 +100,6 @@ class Home extends Component {
           "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADwAAAA8CAYAAAA6/NlyAAAKsElEQVRo3u2ZCVQTdx7H2e12j+529+3b7e7b7b7dWg9AkfsIR7gTEkICJA1XAoQjk4QbinJruI8op5yieEBtWanV1n3d7q54lNraWotWRdB6gi0goqhVK/z2P5PMMGBctdXWuPze+7zP9838Z+AbkskkGBnNzdzMzdzMjYFP7nG+X9d4wdq3rhR3PHImSqZNzw95nuLDkrBHUjanz9c2s493o+RU2MH20axvNo9mwuYRxOgDMkIzYtNIBmUij2ZSpmdqP+2YGeeinb/5XNKx5fv8J7M/EvO+U9miE+IX8/r8B3P7BICjORexu2EoHhqHEgC3XgZpHtSt1Zk8jn48fZs+HmT98h5BT/oePmT1BF4tOBC65FuVbR7CnssfEB4sGBBBfr+QAM/lZyP2VJyJBM1ZGQGZcT8WztJ8dtY2ROlJ6fmUXb53lu3lQ3aPEFZ+FPTFqhPY7x+qLAD8qORUSFfpqWAoORkMuMlcdirk9ooB0SEE6CMPPTCk6fle6++in+b+Wdv0kLKXszt5FwfwwugvjBeG4k+le5oBe/aBC68+LSnRfCEBzWkpUEas0llzWnIp9Rj7bOpRNqQd9QHS+qCv0bf+YffTSTnCvpzwL9a15P9oC2d/INQWPiiB8l5Z6wOVrbkQE16DnqI41WemTYByWX/kuHBb4G7TKtZhszrvM2a1iLpHw5JaL8r0fK/1Tmv4F1T/ZI2m7OIC/hrWPqWDoQgVruiVQeXnWOr/LNs4qHSuP4/drD8vB4JzsZQzPw4/7NIasM9Yw79hXMEDnEU0E5TTXK7bpzM9k/tnHEOs8aOshUfzzJ9nUsEHZmkkeNUIJ5K7Obf1Fa4+Gnun4UQCV2/ZtospL7UOxQ+3DKpg7WAcQd1p1Xj4zvDd1jWifvNKIczGolJEmZ6p/VUiygSVNOtZb05lEYH2eBF1PP2cjEoJuKLCjitDQNAqGKRdtGh/4VhYcyLuytozKaYzym4fWf78hi+Tj7RdTAKcwl5VL3dTxD6H2rAb9nVhYF+ro47mulnb9HG/9d/yfA51EvCqwlBhGSocCraZQpB1Cfrx17D6QPDMwn0qaD6ZdHLjhazfEWU7ofOZjuH0nevPp11Wvafa7d4SM+DaGAVaommOBmZDFGVtnra+9TO3PQj3O16bvRqU4FVJFg4hClun8abSdgkHqIvWZzKoOirXFU6EDWfSuz+B5meNig6lpUi6Et5lr4sbZLcqL/m0qi7hpmfc+rjf+u96PjaVVQQ+OnMbE+94V2GTruVRk44FYZN22aJJy3T+pF0m72bmXvHpvJ7QsYIPw8dKD0aNaQ7Jx2qOxI3VH0scaziWUmVw9/WMnbGbHd6JBYediHe02Ots0x4+ME/KuPKSxBFekjBAa0SYNqN92QZV1mkHlsPYEQuMt+VAmQAV3hp96eUI57PzpE4wLxxBWgfat9nAyspFiCmn7XJw3B4LpHEY2+S3F8jdPkOlQD8uPQsSuT8zmLIu22JtnLdj1522oaII57fklHGMU733zpe5wHwZk+DlSBfKL8uYp+cr2X8wmLKs7Ql/Zr4lH3R5Uw7MbVrIjHupmt+9IMoV5kcxAfeMHM28ahrjbmYwZflvY88xu+SfIIC5FdGlxVVnu9rgAwti3SYXxLjBXaDtCzEPnsGUxT+xuW7Ftrr+XQ5uCNIEWzFwWh/Zv0jufnWh3B2VcwfSRMaNeaQa1EXKsxMrcu/EQIucZlS4I2ZkkcLj/EK5BxBgNCMWKTxbDKqs1xsKqcfrciDxfAOj7PmG/JZJIrt3kdILjHWggtNWeO2yaX6Iz8I/9LC3xDl5v6646bUFA32YpfP2Gau8wViFyhKexkTF6l+q4v3WYMr6dsX/jfWa4ivvDgy8X0N06NBlm8LAbpN4FhjHoXI6a2GBSRxrzCTed9Ej+2Wq+1bE7JgoW/GwrD9XlC5sT/zL/c4v2L78eXa74girHYPZoO3gXC350DTRZ9I0gQ0mCNJETmR/sziJ4/VIH31RR4JP9NvJx+u+yNjTMZZ9FQE4r13OoUzky9mU28dybgW2KXt9W7BD4ZvSf3mvc6tB/WNOu+Idn00YEGxWTBvh0RR5YnGSzwQqDDgmNOMsTuYoHstTLnBTfHzARhUEbYmfyPwoYU/jV8n9zcNJ0DyCGL6bkC3yvT710eDTEIOzDS+m96m8CavkblQAZwOmZeO02etjh81SfC+YJnNQMa4ODuUlKdzqx/o6C2hT1vu3KYAkeqfis6KTsT2VX8bcXn0xGkiwd2V7vGsjgVUrA9Ks2uiy2efjtinlvhsUwEXnwq3NmNbrFTfNXuUdXpLqC4tTuICbnhen+P5D3Cl+5rEWVnerfyJojX2P3yoHgnVaizpihpM/lnbnnw8eTD4QdsijUvoNAjwRpAmqwmXU63ZjnAdvveK27zoFIANuerbK8n9/SRoP9OP3uYNa8uvv5Woq7sR+49cSfZzXEg28lhiYdgwI1kXf8a6R/ttdEwo4bhUhlLWE3vKqlDJFbYqFfq2KSwiYDX+dEhiFwd1m6X5wD4bNc/nzvte3kIBmbD6vKWqU2yQD36YowE3RLJtyqwjezywNgtm4lIjBtSx4RLBWcViwVgk4/LUKyjjuqyP2my3jTyHgLpYLbllmCZx/kPdNbkOUm09D5G1OfQT46CAzZ03ENaci0XGnQiE4FSAKdeiyfxM27t+ihNlw1sT0mWcIri3N8IelGQId/pTNMwIjftCbBU59ZAy7LhymkVJm1UqHGOrAi4yV/sBYGaBDmwOaFOMBjQogaFISFjQovrLIChg0zwoA80xElpalmf7anB1Q8mTcDtZINd7VYYDDqpFQxvHUhByzy+Vft8vxAzr+9corwkYl4AQ24FZ8bZkTeAQvZpEdCKRJLHOEb+KfoJ6Iwvj7q1dV6A6vyhB0JQ4B0mR2KRbut87gTiHAOhOBHFiPXRXVK4HETi3uschFX7Tj5NBMZNGnNmrsuSfqPlhcH/crD01wr8eqIHRVDgLcRNbZLs+v2zKdDRavsgD3K3XKCQRudCGTdFvmiYAEFZx2rmjIsUj84hN58+9dLf6rR0XQl24Vr4B7hZiAzLgtl7P2LU3xBJxXqrFrQbUq8KmI+sBKLZ6yWimG2VirxTes1CG2T/QnHvfyYIZbmehrZqkQ7qJEdMssyaN3SYIbKqy47r9afsxaHXQdFQYrdRBorSNfPGWTHyw2jG8Zi4VhLsUBoA/nIv9RU5XLOdFq+RmbwpAh64JgsM5HkNZltC/PoL61cC4UFDgVCsCxgA+kiVwgAIcVvAHbgrDD1oUhgGNDs44Og/uXCP4W4pjP72So/UAfdiUhN2yKQuEuisP2u7fJfm5kiONYKf6F/Qrfjx1W+IJ9HncGtqWSa7YlEqBjVyI551Ad+0cjQx5msfBPdjmcC3a5HCDI0dq2JGzCrkwKOKg82JWHX7Mvk1oYPQ1jm8e1sslmX7fJYgEJKncFlcSLgn15xKSDJsLf6Gka60xWoFWGF7rb8gZksK8IH7fXRAAOQxORYfQ0jtUyz0zLZZ5gke4BDprIcYdVkcBYJdtg9DSPZZrbRvM0N1Q0YsyxKvp9caf6p091YbFa/FOzVNf3GaujPmXWJr5g9P8wVonMF2yro42N5mZu5mZu5mZuZsx/Aar1hpdjhKbjAAAAAElFTkSuQmCC",
       },
     };
-
-    this.partners = [
-      "polkadot",
-      "parity",
-      "maker",
-      "snz",
-      "hashkey",
-      "chainlink",
-      "ankr",
-      "bondly",
-      "crust",
-      "reef",
-      "bihu",
-      "evolutionland",
-      "imtoken",
-      "mathwallet",
-      "cobowallet",
-      "polkawallet",
-      "sssnodes",
-      "waterdrip",
-      "consensus",
-      "bitrise",
-      "seven",
-      "digital",
-      "ddex",
-      "otcmaker",
-      "polkabase",
-      "polkaworld",
-      "tokeninsight",
-      "blockspot",
-    ];
-    this.detectMetaMaskTimer = null;
 
     this.darwiniaTechData = [
       {
@@ -367,18 +180,203 @@ class Home extends Component {
         ],
       },
     ];
+
+    this.grantsData = [
+      {
+        icon: substrateBuilderProgramIcon,
+        description: this.props.t("home_page:band_1_desc"),
+      },
+      {
+        icon: web3FundactionIcon,
+        description: this.props.t("home_page:band_2_desc"),
+      },
+      {
+        icon: web3BootcampIcon,
+        description: this.props.t("home_page:band_3_desc"),
+      },
+      {
+        icon: polkadotIcon,
+        description: this.props.t("home_page:band_4_desc"),
+      },
+    ];
+
+    this.projectsData = [
+      {
+        icon: project01Icon,
+        link: "#",
+      },
+      {
+        icon: project02Icon,
+        link: "#",
+      },
+      {
+        icon: project03Icon,
+        link: "#",
+      },
+      {
+        icon: project04Icon,
+        link: "#",
+      },
+      {
+        icon: project05Icon,
+        link: "#",
+      },
+      {
+        icon: project06Icon,
+        link: "#",
+      },
+      {
+        icon: project07Icon,
+        link: "#",
+      },
+      {
+        icon: project08Icon,
+        link: "#",
+      },
+      {
+        icon: project09Icon,
+        link: "#",
+      },
+      {
+        icon: project10Icon,
+        link: "#",
+      },
+      {
+        icon: project11Icon,
+        link: "#",
+      },
+      {
+        icon: project12Icon,
+        link: "#",
+      },
+      {
+        icon: project13Icon,
+        link: "#",
+      },
+      {
+        icon: project14Icon,
+        link: "#",
+      },
+      {
+        icon: project15Icon,
+        link: "#",
+      },
+      {
+        icon: project16Icon,
+        link: "#",
+      },
+      {
+        icon: project17Icon,
+        link: "#",
+      },
+      {
+        icon: project18Icon,
+        link: "#",
+      },
+      {
+        icon: project19Icon,
+        link: "#",
+      },
+      {
+        icon: project20Icon,
+        link: "#",
+      },
+      {
+        icon: project21Icon,
+        link: "#",
+      },
+      {
+        icon: project22Icon,
+        link: "#",
+      },
+      {
+        icon: project23Icon,
+        link: "#",
+      },
+    ];
+
+    this.partnersData = [
+      {
+        icon: partner01Icon,
+        link: "#",
+      },
+      {
+        icon: partner02Icon,
+        link: "#",
+      },
+      {
+        icon: partner03Icon,
+        link: "#",
+      },
+      {
+        icon: partner04Icon,
+        link: "#",
+      },
+      {
+        icon: partner05Icon,
+        link: "#",
+      },
+      {
+        icon: partner06Icon,
+        link: "#",
+      },
+      {
+        icon: partner07Icon,
+        link: "#",
+      },
+      {
+        icon: partner08Icon,
+        link: "#",
+      },
+      {
+        icon: partner09Icon,
+        link: "#",
+      },
+      {
+        icon: partner10Icon,
+        link: "#",
+      },
+      {
+        icon: partner11Icon,
+        link: "#",
+      },
+      {
+        icon: partner12Icon,
+        link: "#",
+      },
+      {
+        icon: partner13Icon,
+        link: "#",
+      },
+      {
+        icon: partner14Icon,
+        link: "#",
+      },
+      {
+        icon: partner15Icon,
+        link: "#",
+      },
+      {
+        icon: partner16Icon,
+        link: "#",
+      },
+      {
+        icon: partner17Icon,
+        link: "#",
+      },
+      {
+        icon: partner18Icon,
+        link: "#",
+      },
+      {
+        icon: partner19Icon,
+        link: "#",
+      },
+    ];
   }
 
   componentDidMount() {
     archorsComponent();
-    // this.addScrollReveal();
-    this.detectMetaMaskTimer = setTimeout(() => {
-      this.detectMetaMask();
-    }, 1500);
-  }
-
-  componentWillUnmount() {
-    this.detectMetaMaskTimer && clearTimeout(this.detectMetaMaskTimer);
   }
 
   addScrollReveal = () => {
@@ -402,29 +400,6 @@ class Home extends Component {
     });
   };
 
-  detectMetaMask = () => {
-    if (typeof window.ethereum !== "undefined") {
-      this.setState({
-        hasMetamask: window.ethereum.isMetaMask,
-      });
-    }
-  };
-
-  subscribe = (text) => {
-    axios
-      .post("https://api.darwinia.network/api/subscribe?email=" + text)
-      .then((response) => {
-        if (response.status === 200) {
-          this.setState({
-            info: this.props.t("home_page:subscribe_tip"),
-          });
-        }
-      })
-      .catch((error) => {
-        // console.log(error);
-      });
-  };
-
   changeTextValue = (k, e) => {
     this.setState({
       [k]: e.target.value,
@@ -439,19 +414,6 @@ class Home extends Component {
         </div>
       </Popover>
     );
-  };
-
-  renderPartner = () => {
-    return this.partners.map((partner, index) => {
-      return (
-        <Col key={index} xs={6} md={4} lg={2}>
-          <a target="_blank" rel="noopener noreferrer" href={this.partnerInfo[partner].url}>
-            <img alt={this.partnerInfo[partner].name} src={this.partnerInfo[partner].logo} />
-            <h3>{this.partnerInfo[partner].name}</h3>
-          </a>
-        </Col>
-      );
-    });
   };
 
   addToken = async (type) => {
@@ -482,7 +444,7 @@ class Home extends Component {
 
   render() {
     const { t } = this.props;
-    const { hasMetamask } = this.state;
+
     return (
       <div className={styles.homePage}>
         <PageHeader href="#top" transparent={true} />
@@ -503,7 +465,7 @@ class Home extends Component {
         </div>
 
         <Fade bottom fraction={0.1} duration={1000} distance={"50px"}>
-          <Container className="py-5">
+          <Container className={styles.commonContainer}>
             <div className={styles.darwiniaTech}>
               {this.darwiniaTechData.map((item, index) => (
                 <div key={index} className={`${styles.darwiniaTechItem}`}>
@@ -525,10 +487,11 @@ class Home extends Component {
 
         <div className={styles.powering}>
           <Fade bottom fraction={0.1} duration={1000} distance={"50px"}>
-            <Container className="py-5">
+            <Container className={styles.commonContainer}>
               <div className="d-flex flex-column align-items-center px-md-5 mx-md-5">
                 <h5 className={styles.poweringTitle}>{t("home_page:powering_title")}</h5>
                 <p className={styles.poweringDesc}>{t("home_page:powering_desc")}</p>
+
                 <div className={styles.poweringCardGrounp}>
                   {this.poweringCardData.map((item, index) => (
                     <div key={index} className={styles.poweringCard}>
@@ -560,543 +523,51 @@ class Home extends Component {
         </div>
 
         <Fade bottom fraction={0.1} duration={1000} distance={"50px"}>
-          <div className={`reveal-h1 ${styles.highlightContainer} ${styles.economicContainer}`}>
-            <Container>
-              <div className={styles.title}>
-                <h1 className={`${styles.fontH1} ${styles.gradientText}`}>{t("home_page:economic_title")}</h1>
-              </div>
-              {/* <div className={styles.lineH1} /> */}
-              <Row className={`d-flex justify-content-center`}>
-                <Col xs={12} md={12} lg={6} className={styles.economicImg}>
-                  {i18n.language.indexOf("en") > -1 ? (
-                    <img alt="economic" className={styles.bridge} src={economic_en} />
-                  ) : (
-                    <img alt="economic" className={styles.bridge} src={economic} />
-                  )}
-                </Col>
-                <Col xs={0} md={0} lg={1} />
-                <Col xs={12} md={12} lg={5} className={styles.economicCol}>
-                  <div className={styles.economicItem}>
-                    <div className={styles.economicItemHeader}>
-                      <div>
-                        <img alt="economic" className={styles.economicIcon} src={eco1} />
-                        <span className={styles.gradientText}>{t("home_page:economic_block_title_1")}</span>
-                      </div>
-                      <p>
-                        <OverlayTrigger placement={"top"} overlay={<Tooltip>subscan</Tooltip>}>
-                          <a href={`https://darwinia.subscan.io/account`} target="_blank" rel="noopener noreferrer">
-                            <img alt="subscan" src={subscan} />
-                          </a>
-                        </OverlayTrigger>
-                        <OverlayTrigger placement={"top"} overlay={<Tooltip>etherscan</Tooltip>}>
-                          <a
-                            href={`https://etherscan.io/token/${this.tokenInfo.ring.tokenAddress}`}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                          >
-                            <img alt="etherscan" src={etherscan} />
-                          </a>
-                        </OverlayTrigger>
-                        <OverlayTrigger placement={"top"} overlay={<Tooltip>metamask</Tooltip>}>
-                          <span>
-                            {hasMetamask ? (
-                              <a className={styles.addToken} href="#s" onClick={() => this.addToken("ring")}>
-                                <img alt="metamask" src={metamask} />
-                              </a>
-                            ) : null}
-                          </span>
-                        </OverlayTrigger>
-                        <OverlayTrigger placement={"top"} overlay={<Tooltip>tronscan</Tooltip>}>
-                          <a
-                            href="https://tronscan.org/#/token20/TL175uyihLqQD656aFx3uhHYe1tyGkmXaW"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                          >
-                            <img alt="tronscan" src={tronscan} />
-                          </a>
-                        </OverlayTrigger>
-                      </p>
-                    </div>
-                    <div className={styles.economicItemContent}>
-                      <p>{t("home_page:economic_block_content_1")}</p>
-                    </div>
-                  </div>
-                  <div className={styles.economicItem}>
-                    <div className={styles.economicItemHeader}>
-                      <div>
-                        <img alt="economic" className={styles.economicIcon} src={eco2} />
-                        <span className={styles.gradientText}>{t("home_page:economic_block_title_2")}</span>
-                      </div>
-                      <p>
-                        <OverlayTrigger placement={"top"} overlay={<Tooltip>subscan</Tooltip>}>
-                          <a
-                            href={`https://darwinia.subscan.io/account?currency=kton`}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                          >
-                            <img alt="subscan" src={subscan} />
-                          </a>
-                        </OverlayTrigger>
-                        <OverlayTrigger placement={"top"} overlay={<Tooltip>etherscan</Tooltip>}>
-                          <a
-                            href={`https://etherscan.io/token/${this.tokenInfo.kton.tokenAddress}`}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                          >
-                            <img alt="etherscan" src={etherscan} />
-                          </a>
-                        </OverlayTrigger>
-                        <OverlayTrigger placement={"top"} overlay={<Tooltip>metamask</Tooltip>}>
-                          <span>
-                            {hasMetamask ? (
-                              <a className={styles.addToken} href="#" onClick={() => this.addToken("kton")}>
-                                <img alt="metamask" src={metamask} />
-                              </a>
-                            ) : null}
-                          </span>
-                        </OverlayTrigger>
-                        <OverlayTrigger placement={"top"} overlay={<Tooltip>tronscan</Tooltip>}>
-                          <a
-                            href="https://tronscan.org/#/token20/TW3kTpVtYYQ5Ka1awZvLb9Yy6ZTDEC93dC"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                          >
-                            <img alt="tronscan" src={tronscan} />
-                          </a>
-                        </OverlayTrigger>
-                      </p>
-                    </div>
-                    <div className={styles.economicItemContent}>
-                      <p>{t("home_page:economic_block_content_2")}</p>
-                    </div>
-                  </div>
-                  <div className={styles.economicItem}>
-                    <div className={styles.economicItemHeader}>
-                      <div>
-                        <img alt="economic" className={styles.economicIcon} src={eco3} />
-                        <span className={styles.gradientText}>{t("home_page:economic_block_title_3")}</span>
-                      </div>
-                    </div>
-                    <div className={styles.economicItemContent}>
-                      <p>{t("home_page:economic_block_content_3")}</p>
-                    </div>
-                  </div>
-                </Col>
-              </Row>
-              <div>
-                <Button variant="transparent" href="/economic_model" className={`${styles.button} ${styles.colorBtn}`}>
-                  {t("home_page:read_more")}
-                </Button>
-              </div>
-            </Container>
-          </div>
-        </Fade>
+          <Container className={styles.commonContainer}>
+            <div className="d-flex flex-column align-items-center">
+              <h3 className={styles.supportersTitle}>{t("home_page:supporters")}</h3>
 
-        <div className={`${styles.highlightContainer} ${styles.applicationContainer}`}>
-          <Fade bottom fraction={0.1} duration={1000} distance={"50px"}>
-            <Container className={`reveal-h1`}>
-              <div className={`hidden-xs ${styles.title}`}>
-                <h1 className={` ${styles.fontH1}`}>{t("home_page:application_title")}</h1>
+              <h5 className={styles.supportersSubtitle}>{t("home_page:grants")}</h5>
+              <div className={styles.grantsGrounp}>
+                {this.grantsData.map((item, index) => (
+                  <>
+                    <OverlayTrigger
+                      key={index}
+                      placement="top"
+                      delay={{ show: 100, hide: 100 }}
+                      overlay={this.renderTooltip(item.description)}
+                    >
+                      <img alt="..." src={item.icon} />
+                    </OverlayTrigger>
+                    <p>{item.description}</p>
+                  </>
+                ))}
               </div>
-              <div className={`hidden-md ${styles.title}`}>
-                <h1 className={` ${styles.gradientText} ${styles.fontH1}`}>{t("home_page:application_title")}</h1>
-              </div>
-              <Row className={`d-flex justify-content-center`}>
-                <Col xs={12} md={6} className={styles.appItem}>
-                  <a target="_blank" rel="noopener noreferrer" href="https://www.evolution.land/">
-                    <img className={`hidden-xs`} alt="evoland" src={app_evo} />
-                    <img className={`hidden-md`} alt="evoland" src={application_evo} />
+
+              <h5 className={styles.supportersSubtitle}>{t("home_page:ecosystem_projects")}</h5>
+              <div className={styles.projectsGrounp}>
+                {this.projectsData.map((item, index) => (
+                  <a key={index} target="_blank" rel="noopener noreferrer" href={item.link}>
+                    <img alt="..." src={item.icon} />
                   </a>
-                  <a target="_blank" rel="noopener noreferrer" href="https://www.evolution.land/">
-                    <h3 className={styles.generalGradientText}>{t("home_page:application_block_title_1")}</h3>
-                  </a>
-                  <p>{t("home_page:application_block_content_1")}</p>
-                </Col>
-                <Col xs={12} md={6} className={styles.appItem}>
-                  <a target="_blank" rel="noopener noreferrer" href="https://www.subscan.io">
-                    <img className={`hidden-xs`} alt="subscan" src={app_subscan} />
-                    <img className={`hidden-md`} alt="subscan" src={application_subscan} />
-                  </a>
-                  <a target="_blank" rel="noopener noreferrer" href="https://www.subscan.io">
-                    <h3 className={styles.generalGradientText}>{t("home_page:application_block_title_2")}</h3>
-                  </a>
-                  <p>{t("home_page:application_block_content_2")}</p>
-                </Col>
-                <Col xs={12} md={6} className={styles.appItem}>
-                  <img className={`hidden-xs`} alt="Token DEX" src={app_token} />
-                  <img className={`hidden-md`} alt="Token DEX" src={application_token} />
-                  <h3 className={styles.generalGradientText}>{t("home_page:application_block_title_3")}</h3>
-                  <p>{t("home_page:application_block_content_3")}</p>
-                </Col>
-                <Col xs={12} md={6} className={styles.appItem}>
-                  <img alt="NFT Market" src={app_nft} className={`hidden-xs ${styles.secondImg}`} />
-                  <img alt="NFT Market" src={application_nft} className={`hidden-md ${styles.secondImg}`} />
-                  <h3 className={styles.generalGradientText}>{t("home_page:application_block_title_4")}</h3>
-                  <p>{t("home_page:application_block_content_4")}</p>
-                </Col>
-              </Row>
-            </Container>
-          </Fade>
-        </div>
-
-        <Fade bottom fraction={0.1} duration={1000} distance={"50px"}>
-          <div className={`reveal-h1 ${styles.roadmapContainer}`}>
-            <Container>
-              <div className={styles.title}>
-                <h1 className={` ${styles.fontH1} ${styles.gradientText}`}>{t("home_page:roadmap_title")}</h1>
+                ))}
               </div>
-              <div className={`hidden-xs ${styles.roadmap}`}>
-                <Row className={styles.roadmapRow}>
-                  <Col className={styles.roadmapImgCol}>
-                    <Row className={styles.roadmapImgRow}>
-                      <Col md={6} xs={0}></Col>
-                      <Col className={styles.roadmapTextCol}>
-                        <Row className={styles.roadmap2018}>
-                          <Col xs={2}>
-                            <div className={`${styles.colorBtn}`}>2018</div>
-                          </Col>
-                          <Col xs={10} className={styles.middleTextCol}>
-                            <p>{t("home_page:roadmap_2018")}</p>
-                          </Col>
-                        </Row>
-                        <Row className={styles.roadmap2019q1}>
-                          <Col xs={2}>
-                            <div className={`${styles.colorBtn}`}>Q1</div>
-                          </Col>
-                          <Col xs={10} className={styles.middleTextCol}>
-                            <p>{t("home_page:roadmap_2019_q1")}</p>
-                          </Col>
-                        </Row>
-                        <Row className={styles.roadmap2019q2}>
-                          <Col xs={2}>
-                            <div className={`${styles.colorBtn}`}>Q2</div>
-                          </Col>
-                          <Col xs={10} className={styles.middleTextCol}>
-                            <p>{t("home_page:roadmap_2019_q2")}</p>
-                          </Col>
-                        </Row>
-                        <Row className={styles.roadmap2019q3}>
-                          <Col xs={2}>
-                            <div className={`${styles.colorBtn}`}>Q3</div>
-                          </Col>
-                          <Col xs={10} className={styles.middleTextCol}>
-                            <p>
-                              {t("home_page:roadmap_2019_q3_1")}
-                              <br />
-                              {t("home_page:roadmap_2019_q3_2")}
-                            </p>
-                          </Col>
-                        </Row>
-                        <Row className={styles.roadmap2019q4}>
-                          <Col xs={2}>
-                            <div className={`${styles.colorBtn}`}>Q4</div>
-                          </Col>
-                          <Col xs={10} className={styles.middleTextCol}>
-                            <p>{t("home_page:roadmap_2019_q4")}</p>
-                          </Col>
-                        </Row>
 
-                        <Row className={styles.roadmap2020q1}>
-                          <Col xs={2}>
-                            <div className={`${styles.whiteBtn}`}>Q1</div>
-                          </Col>
-                          <Col xs={10} className={styles.middleTextCol}>
-                            <p>{t("home_page:roadmap_2020_q1")}</p>
-                          </Col>
-                        </Row>
-                        <Row className={styles.roadmap2020q2}>
-                          <Col xs={2}>
-                            <div className={`${styles.whiteBtn}`}>Q2</div>
-                          </Col>
-                          <Col xs={10} className={styles.middleTextCol}>
-                            <p>
-                              {t("home_page:roadmap_2020_q2_1")}
-                              <br />
-                              {t("home_page:roadmap_2020_q2_2")}
-                            </p>
-                          </Col>
-                        </Row>
-                        <Row className={styles.roadmap2020q3}>
-                          <Col xs={2}>
-                            <div className={`${styles.whiteBtn}`}>Q3</div>
-                          </Col>
-                          <Col xs={10} className={styles.middleTextCol}>
-                            <p>
-                              {t("home_page:roadmap_2020_q3_1")}
-                              <br />
-                              {t("home_page:roadmap_2020_q3_2")}
-                              <br />
-                              {t("home_page:roadmap_2020_q3_3")}
-                            </p>
-                          </Col>
-                        </Row>
-                        <Row className={styles.roadmap2020q4}>
-                          <Col xs={2}>
-                            <div className={`${styles.whiteBtn}`}>Q4</div>
-                          </Col>
-                          <Col xs={10} className={styles.middleTextCol}>
-                            <p className={styles.roadmap2020Q4}>
-                              {t("home_page:roadmap_2020_q4_1")}
-                              <br />
-                              {t("home_page:roadmap_2020_q4_2")}
-                              <br />
-                              {t("home_page:roadmap_2020_q4_3")}
-                              <br />
-                              {t("home_page:roadmap_2020_q4_4")}
-                              <br />
-                              {t("home_page:roadmap_2020_q4_5")}
-                            </p>
-                          </Col>
-                        </Row>
-
-                        <Row className={styles.roadmap2021q1}>
-                          <Col xs={2}>
-                            <div className={`${styles.colorBtn}`}>Q1</div>
-                          </Col>
-                          <Col xs={10} className={styles.middleTextCol}>
-                            <p>
-                              {t("home_page:roadmap_2021_q1_1")}
-                              <br />
-                              {t("home_page:roadmap_2021_q1_2")}
-                              <br />
-                              {t("home_page:roadmap_2021_q1_3")}
-                            </p>
-                          </Col>
-                        </Row>
-                        <Row className={styles.roadmap2021q2}>
-                          <Col xs={2}>
-                            <div className={`${styles.colorBtn}`}>Q2</div>
-                          </Col>
-                          <Col xs={10} className={styles.middleTextCol}>
-                            <p>
-                              {t("home_page:roadmap_2021_q2_1")}
-                              <br />
-                              {t("home_page:roadmap_2021_q2_2")}
-                              <br />
-                              {t("home_page:roadmap_2021_q2_3")}
-                              <br />
-                              {t("home_page:roadmap_2021_q2_4")}
-                              <br />
-                              {t("home_page:roadmap_2021_q2_5")}
-                            </p>
-                          </Col>
-                        </Row>
-                        <Row className={styles.roadmap2021q3}>
-                          <Col xs={2}>
-                            <div className={`${styles.colorBtn}`}>Q3-Q4</div>
-                          </Col>
-                          <Col xs={10} className={styles.middleTextCol}>
-                            <p>
-                              {t("home_page:roadmap_2021_q3_1")}
-                              <br />
-                              {t("home_page:roadmap_2021_q3_2")}
-                              <br />
-                              {t("home_page:roadmap_2021_q3_3")}
-                              <br />
-                              {t("home_page:roadmap_2021_q3_4")}
-                              <br />
-                              {t("home_page:roadmap_2021_q3_5")}
-                              <br />
-                              {t("home_page:roadmap_2021_q3_6")}
-                              <br />
-                              {t("home_page:roadmap_2021_q3_7")}
-                            </p>
-                          </Col>
-                        </Row>
-                      </Col>
-                    </Row>
-                  </Col>
-                </Row>
+              <h5 className={styles.supportersSubtitle}>{t("home_page:partners")}</h5>
+              <div className={styles.partnersGrounp}>
+                {this.partnersData.map((item, index) => (
+                  <a key={index} target="_blank" rel="noopener noreferrer" href={item.link}>
+                    <img alt="..." src={item.icon} />
+                  </a>
+                ))}
               </div>
-              <div className={`hidden-md ${styles.roadmapM}`}>
-                <Row>
-                  <Col>
-                    <h6 className={`${styles.generalGradientText}`}>2018-2019</h6>
-                  </Col>
-                </Row>
-                <Row className={styles.roadmap2018}>
-                  <Col xs={3}>
-                    <div className={`${styles.colorBtn}`}>2018</div>
-                  </Col>
-                  <Col xs={9} className={styles.middleTextCol}>
-                    <p>{t("home_page:roadmap_2018")}</p>
-                  </Col>
-                </Row>
-                <Row className={styles.roadmap2019q1}>
-                  <Col xs={3}>
-                    <div className={`${styles.colorBtn}`}>Q1</div>
-                  </Col>
-                  <Col xs={9} className={styles.middleTextCol}>
-                    <p>{t("home_page:roadmap_2019_q1")}</p>
-                  </Col>
-                </Row>
-                <Row className={styles.roadmap2019q2}>
-                  <Col xs={3}>
-                    <div className={`${styles.colorBtn}`}>Q2</div>
-                  </Col>
-                  <Col xs={9} className={styles.middleTextCol}>
-                    <p>{t("home_page:roadmap_2019_q2")}</p>
-                  </Col>
-                </Row>
-                <Row className={styles.roadmap2019q3}>
-                  <Col xs={3}>
-                    <div className={`${styles.colorBtn}`}>Q3</div>
-                  </Col>
-                  <Col xs={9} className={styles.middleTextCol}>
-                    <p>
-                      {t("home_page:roadmap_2019_q3_1")}
-                      <br />
-                      {t("home_page:roadmap_2019_q3_2")}
-                    </p>
-                  </Col>
-                </Row>
-                <Row className={styles.roadmap2019q4}>
-                  <Col xs={3}>
-                    <div className={`${styles.colorBtn}`}>Q4</div>
-                  </Col>
-                  <Col xs={9} className={styles.middleTextCol}>
-                    <p>{t("home_page:roadmap_2019_q4")}</p>
-                  </Col>
-                </Row>
-
-                <Row>
-                  <Col>
-                    <img src={roadmapSplit} alt="roadmap split line" />
-                  </Col>
-                </Row>
-
-                <Row>
-                  <Col>
-                    <h6 className={`${styles.transBtn} ${styles.generalGradientText}`}>2020</h6>
-                  </Col>
-                </Row>
-                <Row className={styles.roadmap2020q1}>
-                  <Col xs={3}>
-                    <div className={`${styles.whiteBtn}`}>Q1</div>
-                  </Col>
-                  <Col xs={9} className={styles.middleTextCol}>
-                    <p>{t("home_page:roadmap_2020_q1")}</p>
-                  </Col>
-                </Row>
-                <Row className={styles.roadmap2020q2}>
-                  <Col xs={3}>
-                    <div className={`${styles.whiteBtn}`}>Q2</div>
-                  </Col>
-                  <Col xs={9} className={styles.middleTextCol}>
-                    <p>
-                      {t("home_page:roadmap_2020_q2_1")}
-                      <br />
-                      {t("home_page:roadmap_2020_q2_2")}
-                    </p>
-                  </Col>
-                </Row>
-                <Row className={styles.roadmap2020q3}>
-                  <Col xs={3}>
-                    <div className={`${styles.whiteBtn}`}>Q3</div>
-                  </Col>
-                  <Col xs={9} className={styles.middleTextCol}>
-                    <p>
-                      {t("home_page:roadmap_2020_q3_1")}
-                      <br />
-                      {t("home_page:roadmap_2020_q3_2")}
-                      <br />
-                      {t("home_page:roadmap_2020_q3_3")}
-                    </p>
-                  </Col>
-                </Row>
-                <Row className={styles.roadmap2020q4}>
-                  <Col xs={3}>
-                    <div className={`${styles.whiteBtn}`}>Q4</div>
-                  </Col>
-                  <Col xs={9} className={styles.middleTextCol}>
-                    <p className={styles.roadmap2020Q4}>
-                      {t("home_page:roadmap_2020_q4_1")}
-                      <br />
-                      {t("home_page:roadmap_2020_q4_2")}
-                      <br />
-                      {t("home_page:roadmap_2020_q4_3")}
-                      <br />
-                      {t("home_page:roadmap_2020_q4_4")}
-                      <br />
-                      {t("home_page:roadmap_2020_q4_5")}
-                    </p>
-                  </Col>
-                </Row>
-
-                <Row>
-                  <Col>
-                    <img src={roadmapSplit} alt="roadmap split line" />
-                  </Col>
-                </Row>
-
-                <Row>
-                  <Col>
-                    <h6 className={`${styles.transBtn} ${styles.generalGradientText}`}>2021</h6>
-                  </Col>
-                </Row>
-                <Row className={styles.roadmap2021q1}>
-                  <Col xs={3}>
-                    <div className={`${styles.colorBtn}`}>Q1</div>
-                  </Col>
-                  <Col xs={9} className={styles.middleTextCol}>
-                    <p>
-                      {t("home_page:roadmap_2021_q1_1")}
-                      <br />
-                      {t("home_page:roadmap_2021_q1_2")}
-                      <br />
-                      {t("home_page:roadmap_2021_q1_3")}
-                      <br />
-                    </p>
-                  </Col>
-                </Row>
-                <Row className={styles.roadmap2021q2}>
-                  <Col xs={3}>
-                    <div className={`${styles.colorBtn}`}>Q2</div>
-                  </Col>
-                  <Col xs={9} className={styles.middleTextCol}>
-                    <p>
-                      {t("home_page:roadmap_2021_q2_1")}
-                      <br />
-                      {t("home_page:roadmap_2021_q2_2")}
-                      <br />
-                      {t("home_page:roadmap_2021_q2_3")}
-                      <br />
-                      {t("home_page:roadmap_2021_q2_4")}
-                      <br />
-                      {t("home_page:roadmap_2021_q2_5")}
-                    </p>
-                  </Col>
-                </Row>
-                <Row className={styles.roadmap2021q3}>
-                  <Col xs={3}>
-                    <div className={`${styles.colorBtn}`}>Q3-Q4</div>
-                  </Col>
-                  <Col xs={9} className={styles.middleTextCol}>
-                    <p>
-                      {t("home_page:roadmap_2021_q3_1")}
-                      <br />
-                      {t("home_page:roadmap_2021_q3_2")}
-                      <br />
-                      {t("home_page:roadmap_2021_q3_3")}
-                      <br />
-                      {t("home_page:roadmap_2021_q3_4")}
-                      <br />
-                      {t("home_page:roadmap_2021_q3_5")}
-                      <br />
-                      {t("home_page:roadmap_2021_q3_6")}
-                      <br />
-                      {t("home_page:roadmap_2021_q3_7")}
-                    </p>
-                  </Col>
-                </Row>
-              </div>
-            </Container>
-          </div>
+            </div>
+          </Container>
         </Fade>
 
         <div className={`${styles.teamContainer}`}>
           <Fade bottom fraction={0.1} duration={1000} distance={"50px"}>
-            <Container className={`reveal-h1`}>
+            <Container>
               <Row>
                 <Col md={1} xs={0}></Col>
                 <Col md={10} xs={12} className={`${styles.content}`}>
@@ -1119,82 +590,6 @@ class Home extends Component {
             </Container>
           </Fade>
         </div>
-
-        <Fade bottom fraction={0.1} duration={1000} distance={"50px"}>
-          <div className={`reveal-h1 ${styles.partnersContainer}`}>
-            <Container>
-              <div className={styles.title}>
-                <h1 className={` ${styles.fontH1} ${styles.gradientText}`}>{t("home_page:partners_title")}</h1>
-              </div>
-              <Row className={`d-flex`}>{this.renderPartner()}</Row>
-            </Container>
-          </div>
-        </Fade>
-
-        <Fade bottom fraction={0.1} duration={1000} distance={"50px"}>
-          <div className={`reveal-h1 ${styles.highlightContainer}  ${styles.newContainer}`}>
-            <Container>
-              <div className={styles.title}>
-                <h1 className={` ${styles.fontH1} ${styles.gradientText}`}>{t("home_page:newest_title")}</h1>
-              </div>
-              <Row className={`d-flex justify-content-center text-left`}>
-                <Col xs={12} md={4} lg={3}>
-                  <a className={styles.imgUrl} rel="noopener noreferrer" target="_blank" href={t("media:news_44_link")}>
-                    <div className={styles.imgRatio}>
-                      <img alt="news" src={news44} />
-                    </div>
-                    <div className={styles.mediaInfo}>
-                      <span>{t("media:more_title")}</span>
-                      <span className={styles.mediaTime}>{t("media:news_44_time")}</span>
-                    </div>
-                    <div className={styles.mediaDesc}>{t("media:news_44_title")}</div>
-                  </a>
-                </Col>
-                <Col xs={12} md={4} lg={3}>
-                  <a className={styles.imgUrl} rel="noopener noreferrer" target="_blank" href={t("media:news_47_link")}>
-                    <div className={styles.imgRatio}>
-                      <img alt="news" src={news47} />
-                    </div>
-                    <div className={styles.mediaInfo}>
-                      <span>{t("media:more_title")}</span>
-                      <span className={styles.mediaTime}>{t("media:news_47_time")}</span>
-                    </div>
-                    <div className={styles.mediaDesc}>{t("media:news_47_title")}</div>
-                  </a>
-                </Col>
-                <Col xs={12} md={4} lg={3}>
-                  <a className={styles.imgUrl} rel="noopener noreferrer" target="_blank" href={t("media:news_46_link")}>
-                    <div className={styles.imgRatio}>
-                      <img alt="news" src={news46} />
-                    </div>
-                    <div className={styles.mediaInfo}>
-                      <span>{t("media:more_title")}</span>
-                      <span className={styles.mediaTime}>{t("media:news_46_time")}</span>
-                    </div>
-                    <div className={styles.mediaDesc}>{t("media:news_46_title")}</div>
-                  </a>
-                </Col>
-                <Col xs={12} md={4} lg={3}>
-                  <a className={styles.imgUrl} rel="noopener noreferrer" target="_blank" href={t("media:news_45_link")}>
-                    <div className={styles.imgRatio}>
-                      <img alt="news" src={news45} />
-                    </div>
-                    <div className={styles.mediaInfo}>
-                      <span>{t("media:more_title")}</span>
-                      <span className={styles.mediaTime}>{t("media:news_45_time")}</span>
-                    </div>
-                    <div className={styles.mediaDesc}>{t("media:news_45_title")}</div>
-                  </a>
-                </Col>
-              </Row>
-              <div className="text-center">
-                <Button variant="dark" href="/media" className={styles.button}>
-                  {t("home_page:news_btn")}
-                </Button>
-              </div>
-            </Container>
-          </div>
-        </Fade>
 
         <PageFooter></PageFooter>
       </div>

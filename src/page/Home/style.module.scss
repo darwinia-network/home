@@ -1,51 +1,11 @@
 @import "../../style/index";
+
 .homePage {
   p {
     line-height: 1.5;
   }
 }
-.promoteContentArea {
-  text-align: left;
-  padding-top: 100px;
-  padding-bottom: 70px;
-  .slogan {
-    text-transform: uppercase;
-    font-size: 40px;
-    font-weight: 600;
-  }
 
-  .slideLogo {
-    width: 222px;
-    margin-bottom: 93px;
-  }
-
-  .subTitle {
-    text-align: left;
-    margin-bottom: 40px !important;
-    width: 95%;
-    // font-weight:600;
-  }
-}
-
-.gradientText {
-  text-transform: uppercase;
-  font-size: 40px;
-  color: rgba(8, 12, 32, 1);
-  letter-spacing: 2px;
-  background: linear-gradient(315deg, rgba(254, 56, 118, 1) 0%, rgba(124, 48, 221, 1) 71%, rgba(58, 48, 221, 1) 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-.launchBanner {
-  // background: url("./img/launch-banner.png") top center no-repeat;
-  // background-size: cover;
-  // height: 412px;
-  img {
-    width: 100%;
-  }
-}
 .carousel {
   // margin: 100px 0;
   > div {
@@ -116,307 +76,9 @@
       border: none !important;
     }
   }
-}
 
-.themeContainer {
-  // background: url("./img/theme-bg.png") top center no-repeat;
-  // background-size: cover;
-  // height: 412px;
-  .promoteContentArea {
-    padding: 100px 0;
-    .bands {
-      .imgRatio {
-        padding-bottom: 40.7%;
-        position: relative;
-        img {
-          position: absolute;
-          object-fit: cover;
-          width: 100%;
-          height: 100%;
-        }
-      }
-      .bandDesc {
-        margin-top: 20px;
-        text-align: center;
-        color: #6330dd;
-        font-size: 14px;
-        margin-bottom: 36px;
-      }
-      img {
-        width: 100%;
-      }
-    }
-    .bandsPc {
-      margin-bottom: 20px;
-      .bandAll {
-        position: relative;
-      }
-      ul {
-        list-style: none;
-        position: absolute;
-        top: 0;
-        width: 100%;
-        height: 100%;
-        padding: 0;
-        margin: 0;
-        display: flex;
-        li {
-          flex: 2 2 auto;
-          margin: 20px 0 0;
-          &:first-child {
-            flex: 3 3 auto;
-          }
-        }
-      }
-      img {
-        width: 100%;
-      }
-    }
-    div {
-      h1 {
-        margin-bottom: 20px;
-        & + p {
-          margin-bottom: 30px;
-        }
-      }
-      p {
-        // text-align: center;
-        font-size: 16px;
-        color: #6330dd;
-        // padding: 0 100px;
-      }
-      .subscribe {
-        margin: 0 auto;
-        width: 30%;
-      }
-
-      .subscribeTip {
-        text-align: center;
-      }
-    }
-  }
-}
-
-.highlightContainer {
-  // padding: 60px 0 100px 0;
-  img {
-    width: 100%;
-    margin-bottom: 23px;
-  }
-
-  h3 {
-    font-size: 16px;
-    text-align: center;
-    margin-bottom: 5px;
-  }
-
-  p {
-    // font-size: 16px;
-    // color: #6330DD;
-    // font-weight: bold;
-    // line-height: 24px;
-  }
-
-  .keyItem {
-    p {
-      font-size: 14px;
-    }
-  }
-
-  @media (min-width: 992px) {
-    .lg5 {
-      flex: 0 0 20%;
-      max-width: 20%;
-    }
-  }
-}
-
-.economicContainer {
-  text-align: center;
-  padding: 100px 0;
-
-  h1 {
-    display: inline-block;
-    margin-bottom: 90px;
-  }
-
-  .title {
-    text-align: left;
-  }
-
-  .bridge {
-    // width: 577px;
-  }
-
-  .economicCol {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-  }
-
-  .economicItem {
-    text-align: left;
-
-    .economicItemHeader {
-      display: flex;
-      margin-bottom: 10px;
-      align-items: center;
-
-      div {
-        display: flex;
-        align-items: center;
-        margin-right: 20px;
-        > img {
-          margin-bottom: 0;
-          width: 30px;
-          height: 30px;
-          margin-right: 20px;
-        }
-        > span {
-          font-size: 26px;
-          line-height: 30px;
-          letter-spacing: normal;
-          font-weight: bold;
-        }
-      }
-
-      p {
-        margin-bottom: 0;
-
-        a {
-          margin-right: 10px;
-          img {
-            width: 21px;
-            height: 21px;
-            margin-bottom: 0;
-            opacity: 0.5;
-            &:hover {
-              opacity: 1;
-            }
-          }
-        }
-      }
-    }
-
-    .economicItemContent {
-      text-align: left;
-      line-height: 24px;
-      margin-bottom: 10px;
-      p {
-        margin-bottom: 7px;
-        color: #6330dd;
-      }
-    }
-  }
-  .colorBtn {
-    margin-top: 50px;
-    padding: 12px 62px;
-    border-radius: 0;
-    border: none;
-    color: #fff;
-    background: linear-gradient(315deg, #fe3876 0%, #7c30dd 71%, #3a30dd 100%);
-  }
-}
-
-.partnersContainer {
-  padding-top: 100px;
-  // padding-bottom: 100px;
-  // background: #f8f8f8;
-
-  h1 {
-    display: inline-block;
-    margin-bottom: 30px;
-  }
-
-  .title {
-    text-align: left;
-  }
-
-  & > div > div > div {
-    text-align: center;
-    margin-bottom: 50px;
-  }
-
-  img {
-    max-height: 80px;
-    max-width: 100%;
-  }
-
-  h3 {
-    font-size: 14px;
-    margin-top: 20px;
-    text-align: center;
-    color: #201550;
-  }
-
-  a:hover {
-    text-decoration: none;
-    color: #201550;
-  }
-}
-
-.newContainer {
-  padding-top: 50px;
-  padding-bottom: 100px;
-  background: #fff;
-
-  h1 {
-    display: inline-block;
-    margin-bottom: 30px;
-  }
-
-  .title {
-    text-align: left;
-  }
-
-  h3 {
-    text-align: left;
-  }
-
-  .imgUrl {
-    display: inline-block;
-    color: $text-main;
-    width: 100%;
-    &:hover {
-      text-decoration: none;
-    }
-  }
-
-  .imgRatio {
-    padding-bottom: 55%;
-    position: relative;
-    img {
-      position: absolute;
-      object-fit: cover;
-      width: 100%;
-      height: 100%;
-    }
-  }
-  .mediaInfo {
-    margin: 10px 0 0;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    color: #6330dd;
-    .mediaTime {
-      font-weight: bold;
-      letter-spacing: 0.5px;
-      line-height: 20px;
-      font-size: 12px;
-      order: -1;
-      opacity: 0.5;
-      color: #6330dd;
-    }
-  }
-  .mediaDesc {
-    font-size: 16px;
-  }
-
-  .button {
-    font-weight: 600;
-    font-size: 14px;
-    padding: 10px 75px;
-    border-radius: 0;
+  @media (max-width: 767.98px) {
+    display: none;
   }
 }
 
@@ -426,36 +88,6 @@
   width: 113px;
   background-color: #fff;
   margin: 0px 8px 35px 3px;
-}
-
-.subscribe {
-  width: 50%;
-
-  input {
-    border-radius: 0;
-    height: 40px;
-    border: 1px solid #3e30dd;
-    background-clip: initial;
-    font-weight: bold;
-    font-size: 14px;
-    &::placeholder {
-      color: #6330dd;
-      opacity: 0.3;
-    }
-  }
-
-  button {
-    box-shadow: none !important;
-    line-height: initial;
-    border: 0;
-    border-radius: 0;
-    padding-left: 20px;
-    padding-right: 20px;
-    font-size: 14px;
-    color: #fff;
-    font-weight: bold;
-    background: linear-gradient(315deg, rgba(254, 56, 118, 1) 0%, rgba(124, 48, 221, 1) 71%, rgba(58, 48, 221, 1) 100%);
-  }
 }
 
 .Landscape {
@@ -483,354 +115,11 @@
   margin: 2rem auto;
 }
 
-.applicationContainer {
-  background: url("./img/application/app-bg.jpg") top center no-repeat;
-  background-size: cover;
-  // height: 720px;
-  padding-top: 68px;
-  padding-bottom: 68px;
-  a {
-    @extend .extend-link;
-  }
-
-  h1 {
-    color: #fff;
-    display: inline-block;
-    margin-bottom: 90px;
-  }
-  .appItem {
-    padding-right: 55px;
-  }
-  .title {
-    text-align: left;
-  }
-
-  img {
-    margin-bottom: 50px;
-  }
-
-  h3 {
-    color: #fff;
-    font-size: 30px;
-    margin-bottom: 10px;
-    text-align: left;
-    font-weight: bold;
-  }
-
-  p {
-    color: #fff;
-    text-align: left;
-  }
-}
-
-.architectureContainer {
-  background: url("./img/architecture-bg.png") top center no-repeat;
-  // padding: 60px 0 88px 0;
-  // background: url("./img/architecture-bg.png");
-  background-size: cover;
-  padding: 70px 0 110px 0;
-
-  // height: 782px;
-  .fontH1 {
-    margin-bottom: 73px;
-    color: #fff;
-  }
-
-  img {
-    width: 100%;
-  }
-
-  .archWrapper {
-    position: relative;
-    // padding: 0 10%;
-    .opacityBg {
-      position: absolute;
-    }
-  }
-
-  .anime {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-
-    > div {
-      padding-top: 32%;
-      position: relative;
-    }
-
-    img {
-      position: absolute;
-    }
-
-    .solo {
-      // width: 2.5%;
-      width: 28px;
-      margin-left: 45.7%;
-
-      :global {
-        animation: solo 6s ease-in-out infinite both;
-      }
-    }
-
-    .chain {
-      // width: 3.0%;
-      width: 34px;
-      margin-left: 49.4%;
-
-      :global {
-        animation: chain 6s ease-in-out infinite both;
-      }
-    }
-
-    button {
-      cursor: default;
-      pointer-events: none;
-      height: 11%;
-      line-height: 1;
-      border: none;
-      text-align: center;
-      font-size: 20px;
-      border-radius: 0;
-    }
-
-    .soloBtn {
-      margin-left: 28.5%;
-      background: linear-gradient(
-        315deg,
-        rgba(254, 56, 118, 1) 0%,
-        rgba(124, 48, 221, 1) 71%,
-        rgba(58, 48, 221, 1) 100%
-      );
-      color: #fff;
-      width: 9.2%;
-      position: absolute;
-      padding: 0;
-    }
-
-    .soloWhiteBtn {
-      background: white;
-      color: #1e1e1e;
-
-      :global {
-        animation: 6s ease-in-out infinite both soloWhiteBtn;
-      }
-    }
-
-    .chainBtn {
-      margin-left: 58%;
-      width: 13.8%;
-      position: absolute;
-      background: white;
-      color: #1e1e1e;
-    }
-
-    .chainPinkBtn {
-      border: 0;
-      color: #fff;
-      background: linear-gradient(
-        315deg,
-        rgba(254, 56, 118, 1) 0%,
-        rgba(124, 48, 221, 1) 71%,
-        rgba(58, 48, 221, 1) 100%
-      );
-
-      :global {
-        animation: 6s ease-in-out infinite both chainPinkBtn;
-      }
-    }
-
-    @keyframes :global(chainPinkBtn) {
-      0%,
-      33% {
-        opacity: 0;
-      }
-
-      50%,
-      83% {
-        opacity: 1;
-      }
-
-      100% {
-        opacity: 0;
-      }
-    }
-
-    @keyframes :global(soloWhiteBtn) {
-      0%,
-      33% {
-        opacity: 0;
-      }
-
-      50%,
-      83% {
-        opacity: 1;
-      }
-
-      100% {
-        opacity: 0;
-      }
-    }
-
-    @keyframes :global(chain) {
-      0%,
-      33% {
-        transform: translate(0, 0);
-      }
-
-      50%,
-      83% {
-        transform: translate(-30%, 0);
-      }
-
-      100% {
-        transform: translate(0, 0);
-      }
-    }
-
-    @keyframes :global(solo) {
-      0%,
-      33% {
-        transform: translate(0, 0);
-      }
-
-      50%,
-      83% {
-        transform: translate(32%, 0);
-      }
-
-      100% {
-        transform: translate(0, 0);
-      }
-    }
-  }
-}
-
-.roadmapContainer {
-  padding: 100px 0;
-  color: #5430dd;
-
-  h1 {
-    display: inline-block;
-    margin-bottom: 30px;
-  }
-
-  .title {
-    text-align: left;
-  }
-
-  .content {
-    text-align: center;
-  }
-
-  img {
-    width: 100%;
-  }
-  .roadmapRow {
-    background: #fbfbfb;
-    height: 1213px;
-    // padding: 50px 0 60px 0;
-    p {
-      margin-bottom: 22px;
-    }
-    .note {
-      font-size: 12px;
-    }
-  }
-
-  .roadmap {
-    height: initial;
-    background-color: initial;
-    padding: 0 15px;
-    h6 {
-      font-weight: 600;
-    }
-    p {
-      margin-bottom: 0;
-      line-height: 24px;
-      font-size: 16px;
-      margin-top: -4px;
-    }
-    .middleTextCol {
-      display: flex;
-      align-items: center;
-    }
-    .roadmap2018 {
-      margin-bottom: 12px;
-    }
-    .roadmap2019q1 {
-      margin-bottom: 12px;
-    }
-    .roadmap2019q2 {
-      margin-bottom: 20px;
-    }
-    .roadmap2019q3 {
-      margin-bottom: 20px;
-    }
-    .roadmap2019q4 {
-      margin-bottom: 44px;
-    }
-    .roadmap2020q1 {
-      margin-bottom: 20px;
-    }
-    .roadmap2020q2 {
-      margin-bottom: 30px;
-    }
-    .roadmap2020q3 {
-      margin-bottom: 30px;
-    }
-    .roadmap2020q4 {
-      margin-bottom: 44px;
-    }
-    .roadmap2021q1 {
-      margin-bottom: 10px;
-    }
-    .roadmap2021q2 {
-      margin-bottom: 20px;
-    }
-    .transBtn {
-      width: 63px;
-      text-align: center;
-    }
-    .colorBtn,
-    .whiteBtn {
-      width: 63px;
-      height: 35px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      font-weight: 600;
-    }
-    .colorBtn {
-      color: #fff;
-      background: linear-gradient(315deg, #fe3876 0%, #7c30dd 71%, #3a30dd 100%);
-    }
-    .whiteBtn {
-      color: #6330dd;
-      border: 2px solid #a633bd;
-    }
-  }
-  .roadmapImgCol {
-    margin: 70px 105px 80px 85px;
-  }
-  .roadmapImgRow {
-    background: url("./img/roadmap-new.png") top center no-repeat;
-    background-size: cover;
-    max-height: 1063px;
-    height: 100%;
-  }
-  .roadmapTextCol {
-    margin-top: 54px;
-    // margin-left: 20px;
-  }
-}
-
 .teamContainer {
   background: url("./img/dev-team.png") top center no-repeat;
   background-size: cover;
   color: #f9fafc;
-  height: 360px;
+  height: 390px;
   .content {
     text-align: center;
   }
@@ -845,7 +134,7 @@
     color: #fff;
     font-size: 14px;
     padding: 10px 50px;
-    border-radius: 0;
+    // border-radius: 0;
   }
   p {
     font-size: 16px;
@@ -854,48 +143,11 @@
   }
 }
 
-.subscribeTip {
-  font-size: 16px !important;
-  // color: #fff !important;
-}
-
 .button {
   margin-top: 60px;
 }
 
 @media (max-width: 767.98px) {
-  .generalGradientText {
-    display: inline-block;
-    color: rgba(8, 12, 32, 1);
-    background: linear-gradient(315deg, rgba(254, 56, 118, 1) 0%, rgba(124, 48, 221, 1) 71%, rgba(58, 48, 221, 1) 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
-  .promoteContentArea {
-    padding-top: 90px;
-    padding-bottom: 70px;
-
-    .slogan {
-      text-transform: uppercase;
-      text-align: center;
-      font-size: 26px;
-      margin-top: 40px;
-      line-height: 33px;
-      margin-bottom: 50px;
-    }
-
-    .subTitle {
-      font-size: 16px;
-      text-align: center;
-      margin-bottom: 30px !important;
-      width: 100% !important;
-    }
-
-    img {
-      width: 203px;
-    }
-  }
-
   .carousel {
     > div {
       > a {
@@ -906,297 +158,13 @@
       .imgRatio {
         height: initial;
         padding-bottom: 137%;
-        img {
-        }
-      }
-      .mediaInfo {
-        .mediaTime {
-        }
-      }
-      .mediaDesc {
-      }
-    }
-  }
-
-  .themeContainer {
-    .promoteContentArea {
-      padding: 50px 0 20px;
-      .bands {
-        margin-bottom: 0;
-        .bandDesc {
-          margin-bottom: 20px;
-        }
-      }
-      div {
-        h1 {
-          font-size: 24px;
-          letter-spacing: 1px;
-          margin-bottom: 12px;
-          & + p {
-            margin-bottom: 20px;
-          }
-        }
-        p {
-          font-size: 14px;
-          line-height: 25px;
-          padding: 0;
-        }
-        .subscribe {
-          width: 100%;
-          button {
-            border-radius: 0;
-          }
-        }
-      }
-    }
-  }
-
-  .highlightContainer {
-    padding: 30px 0 20px 0;
-
-    img {
-      width: 100%;
-      margin-bottom: 26px;
-    }
-
-    h3 {
-      font-size: 20px;
-      text-align: center;
-      height: auto;
-      margin-bottom: 1rem;
-    }
-
-    p {
-      font-size: 14px;
-      // color: #6330DD;
-      margin-bottom: 50px;
-    }
-
-    .lg5 {
-      display: flex;
-
-      img {
-        width: 140px;
-        height: 130px;
-        margin-bottom: 10px;
-      }
-
-      .keyItem {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        margin-left: 20px;
-        margin-bottom: 10px;
-        align-items: flex-start;
-
-        h3 {
-          text-align: left;
-        }
-
-        p {
-          margin-bottom: 0;
-          text-align: left;
-        }
-      }
-    }
-  }
-
-  .architectureContainer {
-    background: url("./img/architecture-bg-m.png") top center no-repeat;
-    background-size: cover;
-    padding: 50px 0 60px 0;
-    .fontH1 {
-      margin-bottom: 32px;
-    }
-  }
-
-  .economicContainer {
-    padding: 50px 0 0;
-    text-align: center;
-    .title {
-      text-align: center;
-    }
-    h1 {
-      margin-bottom: 30px;
-    }
-    .economicImg {
-      img {
-        margin-bottom: 40px;
-      }
-    }
-    .economicItem {
-      .economicItemHeader {
-        > div {
-          flex: 1 1 auto;
-        }
-        p {
-          > span {
-            display: none;
-          }
-        }
-      }
-      .economicItemContent {
-        margin-bottom: 40px;
-        p {
-          font-size: 16px;
-          line-height: 24px;
-        }
-
-        .addToken {
-          display: none;
-        }
-      }
-    }
-    .colorBtn {
-      width: 100%;
-      margin: 0;
-    }
-  }
-  .applicationContainer {
-    padding: 50px 0 0;
-    background: none;
-    height: initial;
-    img {
-      margin-bottom: 10px;
-    }
-    .title {
-      text-align: center;
-    }
-    h1 {
-      margin-bottom: 12px;
-    }
-    .appItem {
-      padding-right: 15px;
-      text-align: center;
-    }
-    .generalGradientText {
-      font-weight: bold;
-    }
-    h3 {
-      color: #201550;
-      margin-bottom: 10px;
-    }
-    p {
-      font-size: 14px;
-      line-height: 18px;
-      color: #6330dd;
-      text-align: center;
-      margin-bottom: 20px;
-    }
-  }
-  .roadmapContainer {
-    padding: 50px 0 40px 0;
-    text-align: left;
-    .title {
-      text-align: center;
-    }
-    h1 {
-      margin-bottom: 12px;
-    }
-    .placeholderCol {
-      padding: 0;
-    }
-    .nospace {
-      padding-left: 10px;
-      padding-right: 0;
-
-      p {
-        // text-align: center;
-        text-align: left;
-        margin-bottom: 0px;
-      }
-
-      & > div > div {
-        padding-left: 0;
-        padding-right: 0;
-      }
-    }
-
-    .content {
-      margin: 35px;
-    }
-
-    img {
-      width: 100%;
-      margin-bottom: 20px;
-      // padding: 0 60px;
-    }
-    .roadmapM {
-      height: initial;
-      background-color: initial;
-      h6 {
-        font-weight: 600;
-      }
-      p {
-        margin-bottom: 0;
-        line-height: 22px;
-        font-size: 14px;
-        margin-top: -4px;
-      }
-      .middleTextCol {
-        display: flex;
-        align-items: center;
-      }
-      .roadmap2018 {
-        margin-bottom: 12px;
-      }
-      .roadmap2019q1 {
-        margin-bottom: 14px;
-      }
-      .roadmap2019q2 {
-        margin-bottom: 24px;
-      }
-      .roadmap2019q3 {
-        margin-bottom: 24px;
-      }
-      .roadmap2019q4 {
-        margin-bottom: 20px;
-      }
-      .roadmap2020q1 {
-        margin-bottom: 23px;
-      }
-      .roadmap2020q2 {
-        margin-bottom: 36px;
-      }
-      .roadmap2020q3 {
-        margin-bottom: 40px;
-      }
-      .roadmap2020q4 {
-        margin-bottom: 20px;
-      }
-      .roadmap2021q1 {
-        margin-bottom: 30px;
-      }
-      .roadmap2021q2 {
-        margin-bottom: 30px;
-      }
-      .transBtn {
-        width: 63px;
-        text-align: center;
-      }
-      .colorBtn,
-      .whiteBtn {
-        width: 63px;
-        height: 35px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        font-weight: 600;
-      }
-      .colorBtn {
-        color: #fff;
-        background: linear-gradient(315deg, #fe3876 0%, #7c30dd 71%, #3a30dd 100%);
-      }
-      .whiteBtn {
-        color: #6330dd;
-        border: 2px solid #a633bd;
       }
     }
   }
 
   .teamContainer {
     color: #fff;
-    height: 390px;
+    height: 420px;
     .title {
       margin: 60px 0;
     }
@@ -1211,79 +179,6 @@
     a {
       width: 100%;
       font-weight: bold;
-    }
-  }
-  .partnersContainer {
-    padding-top: 50px;
-    padding-bottom: 50px;
-    .title {
-      text-align: center;
-    }
-    img {
-      max-height: initial;
-    }
-    h1 {
-      margin-bottom: 30px;
-    }
-    h3 {
-      font-size: 16px;
-      margin-bottom: 0;
-    }
-    > div {
-      > div {
-        // &:nth-child(odd) {
-        //   padding: 0 5px 0 10px;
-        // }
-        // &:nth-child(even) {
-        //   padding: 0 10px 0 5px;
-        // }
-        > div {
-          margin-bottom: 20px;
-          &:nth-child(odd) {
-            padding: 0 10px 0 20px;
-          }
-          &:nth-child(even) {
-            padding: 0 20px 0 10px;
-          }
-        }
-      }
-    }
-  }
-
-  .newContainer {
-    background: #fff;
-    padding: 0 0 20px;
-    .title {
-      text-align: center;
-    }
-    h3 {
-      font-size: 16px;
-      text-align: left;
-      margin-bottom: 40px;
-
-      a {
-        color: $text-main;
-      }
-    }
-    h1 {
-      margin-bottom: 30px;
-    }
-    .button {
-      margin-top: 0;
-    }
-    .mediaInfo {
-      .mediaTime {
-        font-weight: bold;
-        letter-spacing: 0.5px;
-        line-height: 20px;
-        font-size: 12px;
-        order: -1;
-        opacity: 0.5;
-        color: #6330dd;
-      }
-    }
-    .mediaDesc {
-      margin-bottom: 30px;
     }
   }
 
@@ -1332,6 +227,14 @@
 
   .button {
     margin-bottom: 20px;
+  }
+}
+
+.commonContainer {
+  padding-top: 88px;
+  padding-bottom: 80px;
+
+  @media screen and (max-width: 768px) {
   }
 }
 
@@ -1552,6 +455,7 @@
   font-size: 16px;
   color: #ffffff;
   line-height: 20px;
+  padding: 20px;
 }
 
 .poweringCardGrounp {
@@ -1609,19 +513,83 @@
   }
 }
 
-//@media (min-width: 576px) and(max-width: 768px) {
-//  .highlightContainer {
-//    padding: 30px 0 20px 0;
-//    h3 {
-//      font-size: 20px;
-//      text-align: center;
-//      height: auto;
-//      margin-bottom: 1rem;
-//    }
-//    p {
-//      font-size: 14px;
-//      color: #6330DD;
-//      margin-bottom: 50px;
-//    }
-//  }
-//}
+.supportersTitle {
+  font-size: 40px;
+  font-weight: 500;
+  color: #080c20;
+  line-height: 52px;
+  background: linear-gradient(315deg, #fe3876 0%, #7c30dd 71%, #3a30dd 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 30px;
+}
+
+.supportersSubtitle {
+  font-size: 22px;
+  font-weight: 600;
+  color: #080c20;
+  line-height: 29px;
+  background: linear-gradient(315deg, #fe3876 0%, #7c30dd 71%, #3a30dd 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  align-self: flex-start;
+  margin-top: 50px;
+  margin-bottom: 30px;
+
+  @media (max-width: 767.98px) {
+    align-self: center;
+    margin-top: 30px;
+    margin-bottom: 15px;
+  }
+}
+
+.grantsGrounp {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+
+  img {
+    width: 100%;
+  }
+
+  p {
+    display: none;
+  }
+
+  @media (max-width: 767.98px) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    p {
+      display: block;
+      font-size: 14px;
+      color: #6330dd;
+      line-height: 20px;
+      padding-top: 14px;
+      padding-bottom: 8px;
+    }
+  }
+}
+
+.projectsGrounp,
+.partnersGrounp {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  column-gap: 10px;
+  row-gap: 10px;
+  background: #fbfbfb;
+  padding: 16px;
+
+  img {
+    width: 100%;
+  }
+
+  @media (max-width: 767.98px) {
+    grid-template-columns: repeat(3, 1fr);
+    padding: 10px;
+    column-gap: 6px;
+    row-gap: 6px;
+  }
+}

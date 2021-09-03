@@ -194,6 +194,11 @@
     "powering_title": "Powering the Darwinia Network",
     "powering_desc": "The native tokens for Darwinia Network are RING, KTON. KTON is a derivative commitment token of RING, which encourages long-term involvement.",
 
+    "supporters": "支持者",
+    "grants": "赞助",
+    "ecosystem_projects": "生态项目",
+    "partners": "合作伙伴",
+
     "learn_more": "学习更多",
     "get_started": "开始吧",
     "build_onn_darwinia": "Build on Darwinia"
