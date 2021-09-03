@@ -4,7 +4,7 @@ import style from "./style.module.scss";
 const CardItem = ({ icon, title, content, link, target }) => (
   <a className={style.cardItem} rel="noopener noreferrer" target={target} href={link}>
     <img alt="..." src={icon} />
-    <div className="d-flex flex-column ml-1">
+    <div className="d-flex flex-column">
       <h5>{title}</h5>
       <p>{content}</p>
     </div>

@@ -507,7 +507,7 @@ class Home extends Component {
               {this.darwiniaTechData.map((item, index) => (
                 <div key={index} className={`${styles.darwiniaTechItem}`}>
                   <img alt="..." src={item.icon} />
-                  <div className="d-flex flex-column align-items-center align-items-md-start ml-1 mt-3">
+                  <div className={styles.darwiniaTechItemRight}>
                     <h5>{item.title}</h5>
                     <p>{item.content}</p>
                   </div>
@@ -532,11 +532,11 @@ class Home extends Component {
                 <div className={styles.poweringCardGrounp}>
                   {this.poweringCardData.map((item, index) => (
                     <div key={index} className={styles.poweringCard}>
-                      <div className="d-flex flex-column align-items-center">
+                      <div className={styles.poweringCardLeft}>
                         <img alt="..." src={item.token} className={styles.token} />
                         <h5 className={styles.name}>{item.name}</h5>
                       </div>
-                      <div className="d-flex flex-column ml-0 ml-md-4">
+                      <div className={styles.poweringCardRight}>
                         <div className="d-flex align-items-center justify-content-center justify-content-md-start">
                           {item.chains.map((chain, idx) => {
                             if (chain.link) {
@@ -576,7 +576,7 @@ class Home extends Component {
             <div className="d-flex flex-column align-items-center">
               <h3 className={styles.supportersTitle}>{t("home_page:supporters")}</h3>
 
-              <h5 className={styles.supportersSubtitle}>{t("home_page:grants")}</h5>
+              <h5 className={styles.grantTitle}>{t("home_page:grants")}</h5>
               <div className={styles.grantsGrounp}>
                 {this.grantsData.map((item, index) => (
                   <>
@@ -593,7 +593,7 @@ class Home extends Component {
                 ))}
               </div>
 
-              <h5 className={styles.supportersSubtitle}>{t("home_page:ecosystem_projects")}</h5>
+              <h5 className={styles.projectsTitle}>{t("home_page:ecosystem_projects")}</h5>
               <div className={styles.projectsGrounp}>
                 {this.projectsData.map((item, index) => (
                   <a key={index} target="_blank" rel="noopener noreferrer" href={item.link}>
@@ -602,7 +602,7 @@ class Home extends Component {
                 ))}
               </div>
 
-              <h5 className={styles.supportersSubtitle}>{t("home_page:partners")}</h5>
+              <h5 className={styles.partnersTitle}>{t("home_page:partners")}</h5>
               <div className={styles.partnersGrounp}>
                 {this.partnersData.map((item, index) => (
                   <a key={index} target="_blank" rel="noopener noreferrer" href={item.link}>

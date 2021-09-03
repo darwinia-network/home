@@ -235,17 +235,19 @@
   padding-bottom: 80px;
 
   @media screen and (max-width: 768px) {
+    padding-top: 60px;
+    padding-bottom: 40px;
   }
 }
 
 .slogan {
-  padding-top: 300px;
-  padding-bottom: 280px;
+  padding-top: 270px;
+  padding-bottom: 186px;
   position: relative;
 
   video {
     width: 100%;
-    height: 100%;
+    height: 648px;
     position: absolute;
     top: 0;
     left: 0;
@@ -340,8 +342,8 @@
 .darwiniaTech {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  column-gap: 10px;
-  row-gap: 10px;
+  column-gap: 30px;
+  row-gap: 40px;
   justify-content: center;
   align-content: center;
 
@@ -379,6 +381,23 @@
   @media (max-width: 767.98px) {
     flex-direction: column;
     align-items: center;
+  }
+}
+
+.darwiniaTechItemRight {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  margin-left: 30px;
+
+  > h5 {
+    text-align: center;
+  }
+
+  @media (max-width: 767.98px) {
+    align-items: center;
+    margin-left: 0;
   }
 }
 
@@ -449,21 +468,32 @@
   color: #ffffff;
   line-height: 52px;
   letter-spacing: 2px;
+  margin-bottom: 24px;
+  text-align: center;
+
+  @media (max-width: 767.98px) {
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 32px;
+    letter-spacing: 1px;
+  }
 }
 
 .poweringDesc {
   font-size: 16px;
   color: #ffffff;
   line-height: 20px;
-  padding: 20px;
+  text-align: center;
+  margin: 0 {
+    bottom: 0;
+  }
 }
 
 .poweringCardGrounp {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  row-gap: 10px;
-  column-gap: 24px;
-  margin-top: 18px;
+  column-gap: 30px;
+  margin-top: 40px;
 
   @media (max-width: 767.98px) {
     grid-template-columns: 1fr;
@@ -477,7 +507,7 @@
   border-radius: 4px;
   display: flex;
   align-items: center;
-  padding: 14px 20px;
+  padding: 30px 40px;
 
   .name {
     font-size: 24px;
@@ -498,7 +528,7 @@
 
   .chain {
     width: 24px;
-    margin-right: 2px;
+    margin-right: 5px;
   }
 
   .content {
@@ -506,6 +536,7 @@
     font-size: 16px;
     color: #6330dd;
     line-height: 20px;
+    margin-top: 14px;
   }
 
   button {
@@ -517,6 +548,23 @@
 
   @media (max-width: 767.98px) {
     flex-direction: column;
+    padding: 30px 20px;
+  }
+}
+
+.poweringCardLeft {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.poweringCardRight {
+  display: flex;
+  flex-direction: column;
+  margin-left: 50px;
+
+  @media (max-width: 767.98px) {
+    margin-left: 0;
   }
 }
 
@@ -529,10 +577,14 @@
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
-  margin-bottom: 30px;
+  margin-bottom: 47px;
+
+  @media (max-width: 767.98px) {
+    margin-bottom: 12px;
+  }
 }
 
-.supportersSubtitle {
+%-supportersSubtitle {
   font-size: 22px;
   font-weight: 600;
   color: #080c20;
@@ -542,13 +594,38 @@
   background-clip: text;
   -webkit-text-fill-color: transparent;
   align-self: flex-start;
-  margin-top: 50px;
-  margin-bottom: 30px;
 
   @media (max-width: 767.98px) {
     align-self: center;
-    margin-top: 30px;
-    margin-bottom: 15px;
+  }
+}
+
+.grantTitle {
+  @extend %-supportersSubtitle;
+  margin-bottom: 40px;
+
+  @media (max-width: 767.98px) {
+    margin-bottom: 10px;
+  }
+}
+
+.projectsTitle,
+.partnersTitle {
+  @extend %-supportersSubtitle;
+  margin: 0 {
+    top: 60px;
+    bottom: 30px;
+  }
+
+  @media (max-width: 767.98px) {
+    margin-top: 40px;
+    margin-bottom: 10px;
+  }
+}
+
+.projectsTitle {
+  @media (max-width: 767.98px) {
+    margin-top: 22px;
   }
 }
 
@@ -574,8 +651,14 @@
       font-size: 14px;
       color: #6330dd;
       line-height: 20px;
-      padding-top: 14px;
-      padding-bottom: 8px;
+      padding: 0;
+      margin: 0 {
+        bottom: 18px;
+      }
+    }
+
+    img {
+      margin-bottom: 20px;
     }
   }
 }
@@ -584,10 +667,8 @@
 .partnersGrounp {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  column-gap: 10px;
-  row-gap: 10px;
   background: #fbfbfb;
-  padding: 16px;
+  padding: 30px;
 
   img {
     width: 100%;
@@ -596,7 +677,5 @@
   @media (max-width: 767.98px) {
     grid-template-columns: repeat(3, 1fr);
     padding: 10px;
-    column-gap: 6px;
-    row-gap: 6px;
   }
 }
