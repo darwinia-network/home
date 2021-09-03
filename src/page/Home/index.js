@@ -120,8 +120,8 @@ class Home extends Component {
       },
       {
         icon: governanceIcon,
-        title: this.props.t("home_page:smart_contract"),
-        content: this.props.t("home_page:smart_contract_content"),
+        title: this.props.t("home_page:governance"),
+        content: this.props.t("home_page:governance_content"),
       },
     ];
 
@@ -472,6 +472,7 @@ class Home extends Component {
     return (
       <div className={styles.homePage}>
         <PageHeader href="#top" transparent={true} />
+
         <div className={styles.slogan}>
           <video src={hero} autoPlay="autoplay" loop="loop" muted />
           <Container>
