@@ -23,6 +23,8 @@
 
 .subscribe {
   width: 30%;
+  position: relative;
+  margin-bottom: 70px;
 
   input {
     border: 1px solid #3e30dd;
@@ -49,8 +51,9 @@
 }
 
 .subscribeTip {
+  position: absolute;
+  top: 40px;
   font-size: 16px !important;
-  // color: #fff !important;
 }
 
 .wxContainer {
@@ -73,18 +76,10 @@
   }
 }
 
-.mdContent {
-  img {
-  }
-}
-
 .map {
   background: #201550;
   padding-top: 70px;
   width: 100%;
-  small {
-    margin-bottom: 50px;
-  }
   .line {
     margin-top: 40px;
     height: 2px;

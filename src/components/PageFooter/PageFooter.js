@@ -17,32 +17,15 @@ import share11 from "./img/share-11.png";
 import dwSlideIcon from "./img/slide-logo.png";
 
 import wx from "./img/wx.jpg";
-import axios from "axios";
 
 class PageFooter extends Component {
-  constructor(props, context) {
-    super(props, context);
-
-    this.state = {
-      email: "",
-      info: "",
-    };
+  componentDidMount() {
+    const script = document.createElement("script");
+    script.src = "//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js";
+    script.type = "text/javascript";
+    script.async = true;
+    document.body.appendChild(script);
   }
-
-  subscribe = (text) => {
-    axios
-      .post("https://api.darwinia.network/api/subscribe?email=" + text)
-      .then((response) => {
-        if (response.status === 200) {
-          this.setState({
-            info: this.props.t("home_page:subscribe_tip"),
-          });
-        }
-      })
-      .catch((error) => {
-        // console.log(error);
-      });
-  };
 
   changeTextValue = (k, e) => {
     this.setState({
@@ -106,7 +89,6 @@ class PageFooter extends Component {
   };
 
   renderMap = () => {
-    const { email, info } = this.state;
     const { t, i18n } = this.props;
 
     return (
@@ -117,55 +99,64 @@ class PageFooter extends Component {
               <img alt="dwSlideIcon" className={styles.footerIcon} src={dwSlideIcon} />
             </Col>
             <Col>
-              <InputGroup className={`mb-3 ${styles.subscribe} hidden-xs`}>
-                <FormControl
-                  value={email}
-                  onChange={(e) => {
-                    this.changeTextValue("email", e);
-                  }}
-                  placeholder={t("home_page:placeholder")}
-                  aria-label={t("home_page:placeholder")}
-                  aria-describedby={t("home_page:placeholder")}
+              <Form
+                action="https://network.us6.list-manage.com/subscribe/post?u=eb1c779b75a344e2d52755879&amp;id=70a65557b6"
+                method="post"
+                id="mc-embedded-subscribe-form"
+                name="mc-embedded-subscribe-form"
+                target="_blank"
+              >
+                <input
+                  type="text"
+                  value="w1"
+                  name="MMERGE1"
+                  className="required"
+                  id="mce-MMERGE1"
+                  style={{ display: "none" }}
                 />
-                <InputGroup.Append>
-                  <Button
-                    variant="outline-secondary"
-                    onClick={() => {
-                      this.subscribe(email);
-                    }}
-                  >
-                    {t("home_page:subscribe_btn")}
-                  </Button>
-                </InputGroup.Append>
-              </InputGroup>
-              <Form.Text
-                className={`text-muted ${styles.subscribeTip} hidden-xs`}
-                dangerouslySetInnerHTML={{ __html: info || "&nbsp" }}
-              ></Form.Text>
-              <Form className={`${styles.subscribe} hidden-md`}>
-                <FormControl
-                  value={email}
-                  type={"email"}
-                  onChange={(e) => {
-                    this.changeTextValue("email", e);
-                  }}
-                  placeholder={t("home_page:placeholder")}
-                  aria-label={t("home_page:placeholder")}
-                  aria-describedby={t("home_page:placeholder")}
+                <input
+                  type="text"
+                  value="w2"
+                  name="MMERGE2"
+                  className="required"
+                  id="mce-MMERGE2"
+                  style={{ display: "none" }}
                 />
 
-                <Button
-                  block
-                  onClick={() => {
-                    this.subscribe(email);
-                  }}
-                >
-                  {t("home_page:subscribe_btn")}
-                </Button>
+                <InputGroup className={`${styles.subscribe} hidden-xs`}>
+                  <div className="mc-field-group">
+                    <FormControl
+                      type="email"
+                      className="required email"
+                      defaultValue=""
+                      id="mce-EMAIL"
+                      name="EMAIL"
+                      placeholder={t("home_page:placeholder")}
+                      aria-label={t("home_page:placeholder")}
+                      aria-describedby={t("home_page:placeholder")}
+                    />
+                    <div
+                      for="mce-EMAIL"
+                      style={{ display: "none" }}
+                      className={`mce_inline_error text-muted ${styles.subscribeTip}`}
+                    ></div>
+                  </div>
+                  <InputGroup.Append>
+                    <Button variant="outline-secondary" type="submit">
+                      {t("home_page:subscribe_btn")}
+                    </Button>
+                  </InputGroup.Append>
+                </InputGroup>
                 <Form.Text
-                  className={`text-muted ${styles.subscribeTip}`}
-                  dangerouslySetInnerHTML={{ __html: info || "&nbsp" }}
-                />
+                  id="mce-error-response"
+                  className={`text-muted ${styles.subscribeTip} hidden-xs`}
+                  style={{ display: "none" }}
+                ></Form.Text>
+                <Form.Text
+                  id="mce-success-response"
+                  className={`text-muted ${styles.subscribeTip} hidden-xs`}
+                  style={{ display: "none" }}
+                ></Form.Text>
               </Form>
             </Col>
           </Row>
