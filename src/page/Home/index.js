@@ -4,6 +4,7 @@ import React, { Component } from "react";
 import { Container, Row, Col, Button, OverlayTrigger, Popover } from "react-bootstrap";
 import { PageHeader } from "../../components/PageHeader";
 import { PageFooter } from "../../components/PageFooter";
+import { PageTurner } from "../../components/PageTurner";
 import Fade from "react-reveal/Fade";
 
 import styles from "./style.module.scss";
@@ -42,12 +43,12 @@ import project12Icon from "./img/projects/12.jpg";
 import project13Icon from "./img/projects/13.jpg";
 import project14Icon from "./img/projects/14.jpg";
 import project15Icon from "./img/projects/15.jpg";
-import project17Icon from "./img/projects/16.jpg";
-import project18Icon from "./img/projects/17.jpg";
-import project19Icon from "./img/projects/18.jpg";
-import project20Icon from "./img/projects/19.jpg";
-import project21Icon from "./img/projects/20.jpg";
-import project16Icon from "./img/projects/21.jpg";
+import project16Icon from "./img/projects/16.jpg";
+import project17Icon from "./img/projects/17.jpg";
+import project18Icon from "./img/projects/18.jpg";
+import project19Icon from "./img/projects/19.jpg";
+import project20Icon from "./img/projects/20.jpg";
+import project21Icon from "./img/projects/21.jpg";
 import project22Icon from "./img/projects/22.jpg";
 import project23Icon from "./img/projects/23.jpg";
 
@@ -74,6 +75,7 @@ import partner19Icon from "./img/partners/19.jpg";
 import archorsComponent from "../../components/anchorsComponent";
 import { withTranslation } from "react-i18next";
 import scrollreveal from "scrollreveal";
+import { isMobile } from "../../utils";
 
 class Home extends Component {
   constructor(props) {
@@ -83,6 +85,10 @@ class Home extends Component {
       email: "",
       info: "",
       hasMetamask: false,
+      projectsShow: false,
+      partnersShow: false,
+      projectsShowData: [],
+      partnersShowData: [],
     };
 
     this.tokenInfo = {
@@ -162,11 +168,11 @@ class Home extends Component {
         chains: [
           {
             icon: subscanIcon,
-            link: "#",
+            link: "https://darwinia.subscan.io/account",
           },
           {
             icon: etherscanIcon,
-            link: "#",
+            link: "https://etherscan.io/token/0x9469D013805bFfB7D3DEBe5E7839237e535ec483",
           },
           {
             icon: metamaskIcon,
@@ -176,7 +182,7 @@ class Home extends Component {
           },
           {
             icon: tronscanIcon,
-            link: "#",
+            link: "https://tronscan.org/#/token20/TL175uyihLqQD656aFx3uhHYe1tyGkmXaW",
           },
           {
             icon: comingSoonIcon,
@@ -208,176 +214,181 @@ class Home extends Component {
     this.projectsData = [
       {
         icon: project01Icon,
-        link: "#",
+        link: "https://www.subscan.io/",
       },
       {
         icon: project02Icon,
-        link: "#",
+        link: "https://crust.network/",
       },
       {
         icon: project03Icon,
-        link: "#",
+        link: "https://clover.finance/",
       },
       {
         icon: project04Icon,
-        link: "#",
+        link: "https://bifrost.finance/",
       },
       {
         icon: project05Icon,
-        link: "#",
+        link: "https://www.evolution.land/",
       },
       {
         icon: project06Icon,
-        link: "#",
+        link: "https://www.gamyfi.org/",
       },
       {
         icon: project07Icon,
-        link: "#",
+        link: "https://cere.network/",
       },
       {
         icon: project08Icon,
-        link: "#",
+        link: "https://reef.finance/",
       },
       {
         icon: project09Icon,
-        link: "#",
+        link: "https://oasisprotocol.org/",
       },
       {
         icon: project10Icon,
-        link: "#",
+        link: "https://zenlink.pro/",
       },
       {
         icon: project11Icon,
-        link: "#",
+        link: "https://www.genshards.com/",
       },
       {
         icon: project12Icon,
-        link: "#",
+        link: "https://subquery.network/",
       },
       {
         icon: project13Icon,
-        link: "#",
+        link: "https://jambo.network/",
       },
       {
         icon: project14Icon,
-        link: "#",
+        link: "https://www.ata.network/",
       },
       {
         icon: project15Icon,
-        link: "#",
+        link: "https://glitch.com/",
       },
       {
         icon: project16Icon,
-        link: "#",
+        link: "https://cryptomeda.tech/",
       },
       {
         icon: project17Icon,
-        link: "#",
+        link: "https://www.subsquid.io/",
       },
       {
         icon: project18Icon,
-        link: "#",
+        link: "https://www.konomi.network/",
       },
       {
         icon: project19Icon,
-        link: "#",
+        link: "https://www.bondly.finance/",
       },
       {
         icon: project20Icon,
-        link: "#",
+        link: "https://apron.network/",
       },
       {
         icon: project21Icon,
-        link: "#",
+        link: "https://rai.finance/",
       },
       {
         icon: project22Icon,
-        link: "#",
+        link: "https://www.maplabs.io/",
       },
       {
         icon: project23Icon,
-        link: "#",
+        link: "https://paralink.network/",
       },
     ];
 
     this.partnersData = [
       {
         icon: partner01Icon,
-        link: "#",
+        link: "https://www.parity.io/",
       },
       {
         icon: partner02Icon,
-        link: "#",
+        link: "https://makerdao.com/en/",
       },
       {
         icon: partner03Icon,
-        link: "#",
+        link: "https://snzholding.com/",
       },
       {
         icon: partner04Icon,
-        link: "#",
+        link: "https://www.hashkey.com/",
       },
       {
         icon: partner05Icon,
-        link: "#",
+        link: "https://chain.link/",
       },
       {
         icon: partner06Icon,
-        link: "#",
+        link: "https://token.im/",
       },
       {
         icon: partner07Icon,
-        link: "#",
+        link: "https://polkawallet.io/",
       },
       {
         icon: partner08Icon,
-        link: "#",
+        link: "https://www.mathwallet.org/zh-cn/",
       },
       {
         icon: partner09Icon,
-        link: "#",
+        link: "https://cobo.com/",
       },
       {
         icon: partner10Icon,
-        link: "#",
+        link: "https://www.ankr.com/",
       },
       {
         icon: partner11Icon,
-        link: "#",
+        link: "http://sssnodes.com/",
       },
       {
         icon: partner12Icon,
-        link: "#",
+        link: "http://waterdrip.io/",
       },
       {
         icon: partner13Icon,
-        link: "#",
+        link: "https://www.drf.ee/",
       },
       {
         icon: partner14Icon,
-        link: "#",
+        link: "https://tokeninsight.com/zh",
       },
       {
         icon: partner15Icon,
-        link: "#",
+        link: "https://www.polkaworld.org/",
       },
       {
         icon: partner16Icon,
-        link: "#",
+        link: "https://bihu.com/",
       },
       {
         icon: partner17Icon,
-        link: "#",
+        link: "https://ddex.io/",
       },
       {
         icon: partner18Icon,
-        link: "#",
+        link: "https://blockspot.io/",
       },
       {
         icon: partner19Icon,
-        link: "#",
+        link: "http://www.consensus-lab.com/index.aspx",
       },
     ];
+
+    this.partnersPerPage = 10;
+    this.projectsPerPage = 10;
+    this.partnersTotalPage = Math.ceil(this.partnersData.length / this.partnersPerPage);
+    this.projectsTotalPage = Math.ceil(this.projectsData.length / this.projectsPerPage);
 
     this.detectMetaMaskTimer = null;
   }
@@ -393,6 +404,38 @@ class Home extends Component {
   componentWillUnmount() {
     this.detectMetaMaskTimer && clearTimeout(this.detectMetaMaskTimer);
   }
+
+  handleProjectsPageChange = (page) => {
+    const begin = isMobile() ? 0 : (page - 1) * this.projectsPerPage;
+    const end = isMobile() ? this.projectsData.length : begin + this.projectsPerPage;
+
+    this.setState({ projectsShow: false }, () => {
+      this.setState(
+        {
+          projectsShowData: this.projectsData.slice(begin, end),
+        },
+        () => {
+          this.setState({ projectsShow: true });
+        }
+      );
+    });
+  };
+
+  handlePartnersPageChange = (page) => {
+    const begin = isMobile() ? 0 : (page - 1) * this.partnersPerPage;
+    const end = isMobile() ? this.partnersData.length : begin + this.partnersPerPage;
+
+    this.setState({ partnersShow: false }, () => {
+      this.setState(
+        {
+          partnersShowData: this.partnersData.slice(begin, end),
+        },
+        () => {
+          this.setState({ partnersShow: true });
+        }
+      );
+    });
+  };
 
   detectMetaMask = () => {
     if (typeof window.ethereum !== "undefined") {
@@ -502,7 +545,7 @@ class Home extends Component {
         </div>
 
         <Fade bottom fraction={0.1} duration={1000} distance={"50px"}>
-          <Container className={styles.commonContainer}>
+          <Container className={styles.techSectionContainer}>
             <div className={styles.darwiniaTech}>
               {this.darwiniaTechData.map((item, index) => (
                 <div key={index} className={`${styles.darwiniaTechItem}`}>
@@ -527,7 +570,8 @@ class Home extends Component {
             <Container className={styles.commonContainer}>
               <div className="d-flex flex-column align-items-center px-md-5 mx-md-5">
                 <h5 className={styles.poweringTitle}>{t("home_page:powering_title")}</h5>
-                <p className={styles.poweringDesc}>{t("home_page:powering_desc")}</p>
+                <p className={styles.poweringDesc}>{t("home_page:powering_desc_1")}</p>
+                <p className={styles.poweringDesc}>{t("home_page:powering_desc_2")}</p>
 
                 <div className={styles.poweringCardGrounp}>
                   {this.poweringCardData.map((item, index) => (
@@ -548,12 +592,12 @@ class Home extends Component {
                             }
                             if (chain.needMetamask && chain.type && hasMetamask) {
                               return (
-                                <button onClick={() => this.addToken(chain.type)}>
+                                <button key={idx} onClick={() => this.addToken(chain.type)}>
                                   <img alt="..." src={chain.icon} className={styles.chain} />
                                 </button>
                               );
                             }
-                            return <img alt="..." src={chain.icon} className={styles.chain} />;
+                            return <img key={idx} alt="..." src={chain.icon} className={styles.chain} />;
                           })}
                         </div>
                         <p className={styles.content}>{item.content}</p>
@@ -576,10 +620,11 @@ class Home extends Component {
             <div className="d-flex flex-column align-items-center">
               <h3 className={styles.supportersTitle}>{t("home_page:supporters")}</h3>
 
+              {/* Grants */}
               <h5 className={styles.grantTitle}>{t("home_page:grants")}</h5>
               <div className={styles.grantsGrounp}>
                 {this.grantsData.map((item, index) => (
-                  <>
+                  <React.Fragment key={index}>
                     <OverlayTrigger
                       key={index}
                       placement="top"
@@ -589,25 +634,37 @@ class Home extends Component {
                       <img alt="..." src={item.icon} />
                     </OverlayTrigger>
                     <p>{item.description}</p>
-                  </>
+                  </React.Fragment>
                 ))}
               </div>
 
-              <h5 className={styles.projectsTitle}>{t("home_page:ecosystem_projects")}</h5>
+              {/* Projects */}
+              <div className={styles.projectsTiltleRow}>
+                <h5 className={styles.projectsTitle}>{t("home_page:ecosystem_projects")}</h5>
+                <PageTurner totalPage={this.projectsTotalPage} onPageChange={this.handleProjectsPageChange} />
+              </div>
               <div className={styles.projectsGrounp}>
-                {this.projectsData.map((item, index) => (
-                  <a key={index} target="_blank" rel="noopener noreferrer" href={item.link}>
-                    <img alt="..." src={item.icon} />
-                  </a>
+                {this.state.projectsShowData.map((item, index) => (
+                  <Fade key={index} opposite right when={this.state.projectsShow}>
+                    <a target="_blank" rel="noopener noreferrer" href={item.link}>
+                      <img alt="..." src={item.icon} />
+                    </a>
+                  </Fade>
                 ))}
               </div>
 
-              <h5 className={styles.partnersTitle}>{t("home_page:partners")}</h5>
+              {/* Partners */}
+              <div className={styles.partnersTiltleRow}>
+                <h5 className={styles.partnersTitle}>{t("home_page:partners")}</h5>
+                <PageTurner totalPage={this.partnersTotalPage} onPageChange={this.handlePartnersPageChange} />
+              </div>
               <div className={styles.partnersGrounp}>
-                {this.partnersData.map((item, index) => (
-                  <a key={index} target="_blank" rel="noopener noreferrer" href={item.link}>
-                    <img alt="..." src={item.icon} />
-                  </a>
+                {this.state.partnersShowData.map((item, index) => (
+                  <Fade key={index} opposite right when={this.state.partnersShow}>
+                    <a key={index} target="_blank" rel="noopener noreferrer" href={item.link}>
+                      <img alt="..." src={item.icon} />
+                    </a>
+                  </Fade>
                 ))}
               </div>
             </div>
@@ -626,7 +683,7 @@ class Home extends Component {
                     <br />
                     {t("home_page:dev_content_2")}
                   </p>
-                  <Button target="_blank" href="https://www.itering.io/" className={styles.btnLight}>
+                  <Button target="_blank" href="https://www.itering.io/about" className={styles.btnLight}>
                     <span>{t("home_page:dev_join")}</span>
                   </Button>
                 </Col>

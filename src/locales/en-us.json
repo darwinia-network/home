@@ -50,7 +50,7 @@
     "slogan": "INTERNET OF TOKENS, CONNECTED!",
     "subtitle": "As an open cross-chain bridge protocol based on Substrate, Darwinia focuses on the construction of future Internet of Tokens, including decentralized tokens swap, exchange and market",
     "placeholder": "Email Address",
-    "subscribe_btn": "Get Updates",
+    "subscribe_btn": "Subscribe",
     "subscribe_tip": "Subscription success! Please check your inbox.",
 
     "learn_more_darwinia_tech": "Learn more about Darwinia’s Technology",
@@ -200,7 +200,8 @@
     "kton_content": "To encourage users to make long term commitments and pledge, users can choose to lock RING for 3 - 36 months in the process of Staking, and the system will offer a KTON token as reward for users participating in Staking.",
 
     "powering_title": "Powering the Darwinia Network",
-    "powering_desc": "The native tokens for Darwinia Network are RING, KTON. KTON is a derivative commitment token of RING, which encourages long-term involvement.",
+    "powering_desc_1": "The native tokens for Darwinia Network are RING, KTON.",
+    "powering_desc_2": "KTON is a derivative commitment token of RING, which encourages long-term involvement.",
 
     "supporters": "Supporters",
     "grants": "Grants",

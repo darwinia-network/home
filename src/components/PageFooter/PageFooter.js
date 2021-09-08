@@ -10,10 +10,10 @@ import share1 from "./img/share-1.png";
 import share2 from "./img/share-2.png";
 import share3 from "./img/share-3.png";
 import share4 from "./img/share-4.png";
-import share5 from "./img/share-5.png";
-import share6 from "./img/share-6.png";
 import share7 from "./img/share-7.png";
 import share8 from "./img/share-8.png";
+import share10 from "./img/share-10.png";
+import share11 from "./img/share-11.png";
 import dwSlideIcon from "./img/slide-logo.png";
 
 import wx from "./img/wx.jpg";
@@ -53,7 +53,7 @@ class PageFooter extends Component {
   goto = (type, e) => {
     switch (type) {
       case "medium":
-        window.open("https://medium.com/@DarwiniaNetwork");
+        window.open("https://darwinianetwork.medium.com/");
         return;
       case "tg":
         window.open("https://t.me/DarwiniaNetwork");
@@ -77,6 +77,12 @@ class PageFooter extends Component {
       case "email":
         window.open("mailto:hello@darwinia.network");
         return;
+      case "discord":
+        window.open("https://discord.com/channels/456092011347443723/795384466930663434");
+        return;
+      case "bilibili":
+        window.open("https://space.bilibili.com/518736354");
+        return;
       default:
         return;
     }
@@ -97,7 +103,7 @@ class PageFooter extends Component {
 
   handleClickLng = (lng) => {
     i18n.changeLanguage(lng);
-  }
+  };
 
   renderMap = () => {
     const { email, info } = this.state;
@@ -172,6 +178,15 @@ class PageFooter extends Component {
                 </a>
               </p>
               <p>
+                <a
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  href="https://www.notion.so/itering/9617e154ec884b07a7cee9a056374e42?v=0c3e4d9f257646c486a32a0425ee3a93"
+                >
+                  {t("footer:general_title_6")}
+                </a>
+              </p>
+              <p>
                 <a target="_blank" rel="noopener noreferrer" href="https://www.itering.io/about">
                   {t("footer:general_title_3")}
                 </a>
@@ -203,7 +218,11 @@ class PageFooter extends Component {
                 </p>
               )}
               <p>
-                <a target="_blank" rel="noopener noreferrer" href="https://darwinia.network/ChainRelay_Technical_Paper(Preview)_EN.pdf">
+                <a
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  href="https://darwinia.network/ChainRelay_Technical_Paper(Preview)_EN.pdf"
+                >
                   {t("footer:technology_title_5")}
                 </a>
               </p>
@@ -263,6 +282,43 @@ class PageFooter extends Component {
                       }}
                       src={share8}
                     />
+                    <img
+                      alt="github"
+                      onClick={() => {
+                        this.goto("github");
+                      }}
+                      src={share4}
+                    />
+                    <img
+                      alt="Medium"
+                      onClick={() => {
+                        this.goto("medium");
+                      }}
+                      src={share1}
+                    />
+                    <img
+                      alt="twitter"
+                      onClick={() => {
+                        this.goto("twitter");
+                      }}
+                      src={share3}
+                    />
+                  </div>
+                  <div>
+                    <img
+                      alt="telegram"
+                      onClick={() => {
+                        this.goto("tg");
+                      }}
+                      src={share2}
+                    />
+                    <img
+                      alt="discord"
+                      onClick={() => {
+                        this.goto("discord");
+                      }}
+                      src={share10}
+                    />
                     <OverlayTrigger placement="top-end" delay={{ show: 100, hide: 100 }} overlay={this.renderTooltip}>
                       <img
                         alt="wechat"
@@ -273,57 +329,24 @@ class PageFooter extends Component {
                       />
                     </OverlayTrigger>
                     <img
-                      alt="weibo"
+                      alt="bilibili"
                       onClick={() => {
-                        this.goto("weibo");
+                        this.goto("bilibili");
                       }}
-                      src={share6}
-                    />
-                    <img
-                      alt="bihu"
-                      onClick={() => {
-                        this.goto("bihu");
-                      }}
-                      src={share5}
-                    />
-                  </div>
-                  <div>
-                    <img
-                      alt="github"
-                      onClick={() => {
-                        this.goto("github");
-                      }}
-                      src={share4}
-                    />
-                    <img
-                      alt="twitter"
-                      onClick={() => {
-                        this.goto("twitter");
-                      }}
-                      src={share3}
-                    />
-                    <img
-                      alt="telegram"
-                      onClick={() => {
-                        this.goto("tg");
-                      }}
-                      src={share2}
-                    />
-                    <img
-                      alt="Medium"
-                      onClick={() => {
-                        this.goto("medium");
-                      }}
-                      src={share1}
+                      src={share11}
                     />
                   </div>
                 </Col>
               </Row>
               <div className="d-flex align-items-center">
                 <img alt="..." src={lngIcon} />
-                <Button className={styles.lngBtn} onClick={() => this.handleClickLng("en")}>EN</Button>
+                <Button className={styles.lngBtn} onClick={() => this.handleClickLng("en")}>
+                  EN
+                </Button>
                 <div className={styles.lngDivider} />
-                <Button className={styles.lngBtn} onClick={() => this.handleClickLng("zh")}>中文</Button>
+                <Button className={styles.lngBtn} onClick={() => this.handleClickLng("zh")}>
+                  中文
+                </Button>
               </div>
             </Col>
             <Col xs={0} md={0} lg={1}></Col>
@@ -363,6 +386,43 @@ class PageFooter extends Component {
                     }}
                     src={share8}
                   />
+                  <img
+                    alt="github"
+                    onClick={() => {
+                      this.goto("github");
+                    }}
+                    src={share4}
+                  />
+                  <img
+                    alt="Medium"
+                    onClick={() => {
+                      this.goto("medium");
+                    }}
+                    src={share1}
+                  />
+                  <img
+                    alt="twitter"
+                    onClick={() => {
+                      this.goto("twitter");
+                    }}
+                    src={share3}
+                  />
+                </div>
+                <div className={styles.logoContent}>
+                  <img
+                    alt="telegram"
+                    onClick={() => {
+                      this.goto("tg");
+                    }}
+                    src={share2}
+                  />
+                  <img
+                    alt="discord"
+                    onClick={() => {
+                      this.goto("discord");
+                    }}
+                    src={share10}
+                  />
                   <OverlayTrigger placement="top-end" delay={{ show: 100, hide: 1000 }} overlay={this.renderTooltip}>
                     <img
                       alt="wechat"
@@ -373,48 +433,11 @@ class PageFooter extends Component {
                     />
                   </OverlayTrigger>
                   <img
-                    alt="weibo"
+                    alt="bilibili"
                     onClick={() => {
-                      this.goto("weibo");
+                      this.goto("bilibili");
                     }}
-                    src={share6}
-                  />
-                  <img
-                    alt="bihu"
-                    onClick={() => {
-                      this.goto("bihu");
-                    }}
-                    src={share5}
-                  />
-                </div>
-                <div className={styles.logoContent}>
-                  <img
-                    alt="github"
-                    onClick={() => {
-                      this.goto("github");
-                    }}
-                    src={share4}
-                  />
-                  <img
-                    alt="twitter"
-                    onClick={() => {
-                      this.goto("twitter");
-                    }}
-                    src={share3}
-                  />
-                  <img
-                    alt="telegram"
-                    onClick={() => {
-                      this.goto("tg");
-                    }}
-                    src={share2}
-                  />
-                  <img
-                    alt="Medium"
-                    onClick={() => {
-                      this.goto("medium");
-                    }}
-                    src={share1}
+                    src={share11}
                   />
                 </div>
               </Col>

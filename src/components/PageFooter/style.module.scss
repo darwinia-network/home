@@ -167,9 +167,12 @@
 .lngBtn {
   border: none;
   background: transparent;
-  color: #7B70AE;
+  color: #7b70ae;
 
-  &:hover, &:active, &:focus, &:visited {
+  &:hover,
+  &:active,
+  &:focus,
+  &:visited {
     border: none;
     background: transparent;
     box-shadow: none;
@@ -179,7 +182,7 @@
 .lngDivider {
   height: 20px;
   width: 2px;
-  background: #7B70AE;
+  background: #7b70ae;
 }
 
 //@media (max-width: 768px) {

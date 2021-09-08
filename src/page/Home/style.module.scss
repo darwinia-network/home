@@ -240,6 +240,16 @@
   }
 }
 
+.techSectionContainer {
+  padding-top: 68px;
+  padding-bottom: 80px;
+
+  @media screen and (max-width: 768px) {
+    padding-top: 60px;
+    padding-bottom: 40px;
+  }
+}
+
 .slogan {
   padding-top: 270px;
   padding-bottom: 186px;
@@ -405,7 +415,7 @@
   background: #ffffff;
   border-radius: 4px;
   border: none;
-  width: 40%;
+  width: 30%;
   padding: {
     top: 10px;
     bottom: 10px;
@@ -606,6 +616,19 @@
 
   @media (max-width: 767.98px) {
     margin-bottom: 10px;
+  }
+}
+
+.projectsTiltleRow,
+.partnersTiltleRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  width: 100%;
+
+  @media (max-width: 767.98px) {
+    justify-content: center;
+    align-items: center;
   }
 }
 
