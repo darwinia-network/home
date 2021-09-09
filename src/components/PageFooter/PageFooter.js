@@ -119,7 +119,7 @@ class PageFooter extends Component {
                       aria-describedby={t("home_page:placeholder")}
                     />
                     <div
-                      for="mce-EMAIL"
+                      htmlFor="mce-EMAIL"
                       style={{ display: "none" }}
                       className={`mce_inline_error text-muted ${styles.subscribeTip}`}
                     ></div>

@@ -1,7 +1,7 @@
 /* eslint-disable no-script-url */
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { Component } from "react";
-import { Container, Row, Col, Button, OverlayTrigger, Popover } from "react-bootstrap";
+import { Container, Row, Col, Button, OverlayTrigger, Popover, Tooltip } from "react-bootstrap";
 import { PageHeader } from "../../components/PageHeader";
 import { PageFooter } from "../../components/PageFooter";
 import { PageTurner } from "../../components/PageTurner";
@@ -84,7 +84,7 @@ class Home extends Component {
     this.state = {
       email: "",
       info: "",
-      hasMetamask: false,
+      hasMetamask: true,
       projectsShow: false,
       partnersShow: false,
       projectsShowData: [],
@@ -139,24 +139,29 @@ class Home extends Component {
         chains: [
           {
             icon: subscanIcon,
+            text: "subscan",
             link: "https://darwinia.subscan.io/account",
           },
           {
             icon: etherscanIcon,
+            text: "etherscan",
             link: "https://etherscan.io/token/0x9469D013805bFfB7D3DEBe5E7839237e535ec483",
           },
           {
             icon: metamaskIcon,
+            text: "metamask",
             // link: "#",
             needMetamask: true,
             type: "ring",
           },
           {
             icon: tronscanIcon,
+            text: "tronscan",
             link: "https://tronscan.org/#/token20/TL175uyihLqQD656aFx3uhHYe1tyGkmXaW",
           },
           {
             icon: comingSoonIcon,
+            text: "more coming",
             // link: "#",
           },
         ],
@@ -168,24 +173,29 @@ class Home extends Component {
         chains: [
           {
             icon: subscanIcon,
-            link: "https://darwinia.subscan.io/account",
+            text: "subscan",
+            link: "https://darwinia.subscan.io/account?currency=kton",
           },
           {
             icon: etherscanIcon,
-            link: "https://etherscan.io/token/0x9469D013805bFfB7D3DEBe5E7839237e535ec483",
+            text: "etherscan",
+            link: "https://etherscan.io/token/0x9F284E1337A815fe77D2Ff4aE46544645B20c5ff",
           },
           {
             icon: metamaskIcon,
+            text: "metamask",
             // link: "#",
             needMetamask: true,
             type: "kton",
           },
           {
             icon: tronscanIcon,
-            link: "https://tronscan.org/#/token20/TL175uyihLqQD656aFx3uhHYe1tyGkmXaW",
+            text: "tronscan",
+            link: "https://tronscan.org/#/token20/TW3kTpVtYYQ5Ka1awZvLb9Yy6ZTDEC93dC",
           },
           {
             icon: comingSoonIcon,
+            text: "more coming",
             // link: "#",
           },
         ],
@@ -583,21 +593,27 @@ class Home extends Component {
                       <div className={styles.poweringCardRight}>
                         <div className="d-flex align-items-center justify-content-center justify-content-md-start">
                           {item.chains.map((chain, idx) => {
+                            let overlayChild = <img alt="..." src={chain.icon} className={styles.chain} />;
+
                             if (chain.link) {
-                              return (
-                                <a key={idx} target="_blank" rel="noopener noreferrer" href={chain.link}>
+                              overlayChild = (
+                                <a target="_blank" rel="noopener noreferrer" href={chain.link}>
                                   <img alt="..." src={chain.icon} className={styles.chain} />
                                 </a>
                               );
-                            }
-                            if (chain.needMetamask && chain.type && hasMetamask) {
-                              return (
-                                <button key={idx} onClick={() => this.addToken(chain.type)}>
+                            } else if (hasMetamask && chain.needMetamask && chain.type) {
+                              overlayChild = (
+                                <button onClick={() => this.addToken(chain.type)}>
                                   <img alt="..." src={chain.icon} className={styles.chain} />
                                 </button>
                               );
                             }
-                            return <img key={idx} alt="..." src={chain.icon} className={styles.chain} />;
+
+                            return (
+                              <OverlayTrigger key={idx} placement={"top"} overlay={<Tooltip>{chain.text}</Tooltip>}>
+                                {overlayChild}
+                              </OverlayTrigger>
+                            );
                           })}
                         </div>
                         <p className={styles.content}>{item.content}</p>

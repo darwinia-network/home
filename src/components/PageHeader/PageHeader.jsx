@@ -67,7 +67,7 @@ const NavGrounp = ({ hasFixed = false }) => {
       icon: appsIcon,
       title: t("header:apps"),
       content: t("header:apps_content"),
-      link: "https://apps.darwinia.network/",
+      link: t("header:apps_link"),
       target: "_blank",
     },
     {
@@ -79,9 +79,9 @@ const NavGrounp = ({ hasFixed = false }) => {
     },
     {
       icon: smartAppIcon,
-      title: t("header:smart_app"),
-      content: t("header:smart_app_content"),
-      link: t("header:smart_app_link"),
+      title: t("header:smart_module"),
+      content: t("header:smart_module_content"),
+      link: t("header:smart_module_link"),
       target: "_blank",
     },
     {
@@ -120,7 +120,7 @@ const NavGrounp = ({ hasFixed = false }) => {
           {t("header:media")}
         </Nav.Link>
         <Button
-          href="#"
+          href={t("header:apps_link")}
           rel="noopener noreferrer"
           target="_blank"
           variant="outline-light"
