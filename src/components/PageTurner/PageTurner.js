@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useState } from "react";
+import React, { useCallback, useState } from "react";
 import style from "./style.module.scss";
 import classNames from "classnames/bind";
 
@@ -15,6 +15,7 @@ const PageTurner = ({ totalPage = 1, defaultPage = 1, onPageChange }) => {
   const handlePrevClick = useCallback(() => {
     setCurrentPage((prev) => {
       if (prev > pageMin) {
+        onPageChange && onPageChange(prev - 1, "prev");
         return prev - 1;
       }
       return prev;
@@ -24,15 +25,12 @@ const PageTurner = ({ totalPage = 1, defaultPage = 1, onPageChange }) => {
   const handleNextClick = useCallback(() => {
     setCurrentPage((prev) => {
       if (prev < pageMax) {
+        onPageChange && onPageChange(prev + 1, "next");
         return prev + 1;
       }
       return prev;
     });
   }, []);
-
-  useEffect(() => {
-    onPageChange && onPageChange(currentPage);
-  }, [onPageChange, currentPage]);
 
   return (
     <div className={cx("main")}>

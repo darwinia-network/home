@@ -85,10 +85,13 @@ class Home extends Component {
       email: "",
       info: "",
       hasMetamask: true,
+
       projectsShow: false,
       partnersShow: false,
       projectsShowData: [],
       partnersShowData: [],
+      projectsDirectionRight: true,
+      partnersDirectionRight: true,
     };
 
     this.tokenInfo = {
@@ -409,41 +412,58 @@ class Home extends Component {
     this.detectMetaMaskTimer = setTimeout(() => {
       this.detectMetaMask();
     }, 1500);
+
+    this.setState(
+      {
+        projectsShowData: this.projectsData.slice(0, isMobile() ? this.projectsData.length : this.projectsPerPage),
+        partnersShowData: this.partnersData.slice(0, isMobile() ? this.partnersData.length : this.partnersPerPage),
+      },
+      () => {
+        this.setState({
+          projectsShow: true,
+          partnersShow: true,
+        });
+      }
+    );
   }
 
   componentWillUnmount() {
     this.detectMetaMaskTimer && clearTimeout(this.detectMetaMaskTimer);
   }
 
-  handleProjectsPageChange = (page) => {
-    const begin = isMobile() ? 0 : (page - 1) * this.projectsPerPage;
-    const end = isMobile() ? this.projectsData.length : begin + this.projectsPerPage;
+  handleProjectsPageChange = (page, direction) => {
+    const begin = (page - 1) * this.projectsPerPage;
+    const end = begin + this.projectsPerPage;
 
-    this.setState({ projectsShow: false }, () => {
-      this.setState(
-        {
-          projectsShowData: this.projectsData.slice(begin, end),
-        },
-        () => {
-          this.setState({ projectsShow: true });
-        }
-      );
+    this.setState({ projectsDirectionRight: direction === "next" ? true : false }, () => {
+      this.setState({ projectsShow: false }, () => {
+        this.setState(
+          {
+            projectsShowData: this.projectsData.slice(begin, end),
+          },
+          () => {
+            this.setState({ projectsShow: true });
+          }
+        );
+      });
     });
   };
 
-  handlePartnersPageChange = (page) => {
-    const begin = isMobile() ? 0 : (page - 1) * this.partnersPerPage;
-    const end = isMobile() ? this.partnersData.length : begin + this.partnersPerPage;
+  handlePartnersPageChange = (page, direction) => {
+    const begin = (page - 1) * this.partnersPerPage;
+    const end = begin + this.partnersPerPage;
 
-    this.setState({ partnersShow: false }, () => {
-      this.setState(
-        {
-          partnersShowData: this.partnersData.slice(begin, end),
-        },
-        () => {
-          this.setState({ partnersShow: true });
-        }
-      );
+    this.setState({ partnersDirectionRight: direction === "next" ? true : false }, () => {
+      this.setState({ partnersShow: false }, () => {
+        this.setState(
+          {
+            partnersShowData: this.partnersData.slice(begin, end),
+          },
+          () => {
+            this.setState({ partnersShow: true });
+          }
+        );
+      });
     });
   };
 
@@ -520,7 +540,7 @@ class Home extends Component {
 
   render() {
     const { t } = this.props;
-    const { hasMetamask } = this.state;
+    const { hasMetamask, projectsDirectionRight, partnersDirectionRight } = this.state;
 
     return (
       <div className={styles.homePage}>
@@ -661,7 +681,12 @@ class Home extends Component {
               </div>
               <div className={styles.projectsGrounp}>
                 {this.state.projectsShowData.map((item, index) => (
-                  <Fade key={index} opposite right when={this.state.projectsShow}>
+                  <Fade
+                    key={index}
+                    left={!projectsDirectionRight}
+                    right={projectsDirectionRight}
+                    when={this.state.projectsShow}
+                  >
                     <a target="_blank" rel="noopener noreferrer" href={item.link}>
                       <img alt="..." src={item.icon} />
                     </a>
@@ -676,7 +701,12 @@ class Home extends Component {
               </div>
               <div className={styles.partnersGrounp}>
                 {this.state.partnersShowData.map((item, index) => (
-                  <Fade key={index} opposite right when={this.state.partnersShow}>
+                  <Fade
+                    key={index}
+                    left={!partnersDirectionRight}
+                    right={partnersDirectionRight}
+                    when={this.state.partnersShow}
+                  >
                     <a key={index} target="_blank" rel="noopener noreferrer" href={item.link}>
                       <img alt="..." src={item.icon} />
                     </a>
