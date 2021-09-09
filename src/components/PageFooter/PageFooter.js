@@ -106,23 +106,6 @@ class PageFooter extends Component {
                 name="mc-embedded-subscribe-form"
                 target="_blank"
               >
-                <input
-                  type="text"
-                  value="w1"
-                  name="MMERGE1"
-                  className="required"
-                  id="mce-MMERGE1"
-                  style={{ display: "none" }}
-                />
-                <input
-                  type="text"
-                  value="w2"
-                  name="MMERGE2"
-                  className="required"
-                  id="mce-MMERGE2"
-                  style={{ display: "none" }}
-                />
-
                 <InputGroup className={`${styles.subscribe} hidden-xs`}>
                   <div className="mc-field-group">
                     <FormControl
