@@ -114,23 +114,23 @@ class Home extends Component {
     this.darwiniaTechData = [
       {
         icon: interoperabilityIcon,
-        title: this.props.t("home_page:interoperability"),
-        content: this.props.t("home_page:interoperability_content"),
+        title: "home_page:interoperability",
+        content: "home_page:interoperability_content",
       },
       {
         icon: smartContractIcon,
-        title: this.props.t("home_page:smart_contract"),
-        content: this.props.t("home_page:smart_contract_content"),
+        title: "home_page:smart_contract",
+        content: "home_page:smart_contract_content",
       },
       {
         icon: experienceIcon,
-        title: this.props.t("home_page:experience"),
-        content: this.props.t("home_page:experience_content"),
+        title: "home_page:experience",
+        content: "home_page:experience_content",
       },
       {
         icon: governanceIcon,
-        title: this.props.t("home_page:governance"),
-        content: this.props.t("home_page:governance_content"),
+        title: "home_page:governance",
+        content: "home_page:governance_content",
       },
     ];
 
@@ -138,7 +138,7 @@ class Home extends Component {
       {
         token: tokenRingIcon,
         name: "RING",
-        content: this.props.t("home_page:ring_content"),
+        content: "home_page:ring_content",
         chains: [
           {
             icon: subscanIcon,
@@ -172,7 +172,7 @@ class Home extends Component {
       {
         token: tokenKtonIcon,
         name: "KTON",
-        content: this.props.t("home_page:kton_content"),
+        content: "home_page:kton_content",
         chains: [
           {
             icon: subscanIcon,
@@ -208,19 +208,19 @@ class Home extends Component {
     this.grantsData = [
       {
         icon: substrateBuilderProgramIcon,
-        description: this.props.t("home_page:band_1_desc"),
+        description: "home_page:band_1_desc",
       },
       {
         icon: web3FundactionIcon,
-        description: this.props.t("home_page:band_2_desc"),
+        description: "home_page:band_2_desc",
       },
       {
         icon: web3BootcampIcon,
-        description: this.props.t("home_page:band_3_desc"),
+        description: "home_page:band_3_desc",
       },
       {
         icon: polkadotIcon,
-        description: this.props.t("home_page:band_4_desc"),
+        description: "home_page:band_4_desc",
       },
     ];
 
@@ -581,8 +581,8 @@ class Home extends Component {
                 <div key={index} className={`${styles.darwiniaTechItem}`}>
                   <img alt="..." src={item.icon} />
                   <div className={styles.darwiniaTechItemRight}>
-                    <h5>{item.title}</h5>
-                    <p>{item.content}</p>
+                    <h5>{t(item.title)}</h5>
+                    <p>{t(item.content)}</p>
                   </div>
                 </div>
               ))}
@@ -636,7 +636,7 @@ class Home extends Component {
                             );
                           })}
                         </div>
-                        <p className={styles.content}>{item.content}</p>
+                        <p className={styles.content}>{t(item.content)}</p>
                       </div>
                     </div>
                   ))}
@@ -665,11 +665,11 @@ class Home extends Component {
                       key={index}
                       placement="top"
                       delay={{ show: 100, hide: 100 }}
-                      overlay={this.renderTooltip(item.description)}
+                      overlay={this.renderTooltip(t(item.description))}
                     >
                       <img alt="..." src={item.icon} />
                     </OverlayTrigger>
-                    <p>{item.description}</p>
+                    <p>{t(item.description)}</p>
                   </React.Fragment>
                 ))}
               </div>
