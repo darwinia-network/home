@@ -531,7 +531,7 @@ class Home extends Component {
       },
       (err, added) => {
         if (err || "error" in added) {
-          console.log(err);
+          console.log("add token:", err);
           return;
         }
       }
