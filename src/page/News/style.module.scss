@@ -19,7 +19,7 @@
   p {
     font-size: 14px;
   }
-  .imgUrl{
+  .imgUrl {
     display: inline-block;
     color: $text-main;
     width: 100%;
@@ -54,19 +54,18 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      color: #6330DD;
+      color: #6330dd;
       .mediaTime {
         font-weight: bold;
         letter-spacing: 0.5px;
         line-height: 20px;
         font-size: 12px;
         order: -1;
-        opacity: .5;
-        color: #6330DD;
+        opacity: 0.5;
+        color: #6330dd;
       }
     }
     .mediaDesc {
-       
       font-size: 16px;
     }
     // padding: 0 25px 70px 35px;
@@ -81,7 +80,7 @@
 
 .lineH1 {
   height: 1px;
-  background: #EFEFEF;
+  background: #efefef;
   margin-bottom: 70px;
   margin-top: 30px;
 }

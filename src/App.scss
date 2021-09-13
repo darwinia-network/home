@@ -3,7 +3,8 @@
 body {
   color: $text-main;
   line-height: 1.3;
-  font-family: "IBMPlexSans", "-apple-system", "BlinkMacSystemFont", "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "sans-serif";
+  font-family: "IBMPlexSans", "-apple-system", "BlinkMacSystemFont", "Segoe UI", "Roboto", "Oxygen", "Ubuntu",
+    "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "sans-serif";
   --font-base: 0;
   &.zh-font {
     // font-family: "-apple-system", "BlinkMacSystemFont", "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "sans-serif";
@@ -12,6 +13,18 @@ body {
 html {
   scroll-behavior: smooth;
 }
+
+@media (min-width: 1280px) {
+  .container {
+    max-width: 1200px;
+  }
+}
+
+// @media (min-width: 1600px) {
+//   .container {
+//     max-width: 1535px;
+//   }
+// }
 
 #basic-navbar-nav .nav-link {
   color: $text-main;
@@ -27,39 +40,16 @@ html {
   }
 }
 
-@font-face {
-  font-family: IBMPlexSans;
-  //src: url('./style/font/pt-sans.regular.ttf') format('truetype');
-  src: url('./style/font/IBMPlexSans-Regular.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: IBMPlexSans;
-  src: url('./style/font/IBMPlexSans-SemiBold.ttf') format('truetype');
-  font-weight: bold;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: IBMPlexSans;
-  src: url('./style/font/IBMPlexSans-Bold.ttf') format('truetype');
-  font-weight: 600;
-  font-style: normal;
-}
-
 h1 {
   font-weight: 400;
 }
 
 .navbar-toggler {
   border: none;
-
 }
 
 .navbar-light .navbar-toggler-icon {
-  color: #000
+  color: #000;
 }
 
 .cs-header .dropdown-toggle::after {
@@ -88,9 +78,9 @@ h1 {
   position: fixed;
   right: 0;
   top: 0;
-  transition: .3s cubic-bezier(.25, .8, .5, 1);
+  transition: 0.3s cubic-bezier(0.25, 0.8, 0.5, 1);
   z-index: 5;
-  color: rgba(0, 0, 0, .87);
+  color: rgba(0, 0, 0, 0.87);
 }
 
 .overlay:before {
@@ -104,12 +94,12 @@ h1 {
   right: 0;
   top: 0;
   transition: inherit;
-  transition-delay: .15s;
+  transition-delay: 0.15s;
   width: 100%;
 }
 
 .overlay--active:before {
-  opacity: .7;
+  opacity: 0.7;
 }
 
 .spacer {
@@ -133,9 +123,9 @@ h1 {
 }
 
 .btn-dark {
-  color: #080C20;
+  color: #080c20;
   background-color: #fff;
-  border-color: #080C20;
+  border-color: #080c20;
   padding-left: 55px;
   padding-right: 55px;
   font-weight: bold;
@@ -161,7 +151,7 @@ h1 {
       width: 14px;
       height: 14px;
       border-radius: 50%;
-      background-color: #6330DD;
+      background-color: #6330dd;
       opacity: 0.3;
       &.active {
         opacity: 1;
@@ -176,7 +166,7 @@ h1 {
       transform: translate(-50%, 0);
       margin: 0 0 15px 0;
       width: fit-content;
-      background: #6330DD4D;
+      background: #6330dd4d;
       border-radius: 11px;
       padding: 2px 12px;
       li {
@@ -259,9 +249,76 @@ h1 {
     margin-right: -20px;
     margin-left: -20px;
   }
-  .col, .col-1, .col-10, .col-11, .col-12, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .col-auto, .col-lg, .col-lg-1, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-lg-auto, .col-md, .col-md-1, .col-md-10, .col-md-11, .col-md-12, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-auto, .col-sm, .col-sm-1, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-sm-auto, .col-xl, .col-xl-1, .col-xl-10, .col-xl-11, .col-xl-12, .col-xl-2, .col-xl-3, .col-xl-4, .col-xl-5, .col-xl-6, .col-xl-7, .col-xl-8, .col-xl-9, .col-xl-auto {
+  .col,
+  .col-1,
+  .col-10,
+  .col-11,
+  .col-12,
+  .col-2,
+  .col-3,
+  .col-4,
+  .col-5,
+  .col-6,
+  .col-7,
+  .col-8,
+  .col-9,
+  .col-auto,
+  .col-lg,
+  .col-lg-1,
+  .col-lg-10,
+  .col-lg-11,
+  .col-lg-12,
+  .col-lg-2,
+  .col-lg-3,
+  .col-lg-4,
+  .col-lg-5,
+  .col-lg-6,
+  .col-lg-7,
+  .col-lg-8,
+  .col-lg-9,
+  .col-lg-auto,
+  .col-md,
+  .col-md-1,
+  .col-md-10,
+  .col-md-11,
+  .col-md-12,
+  .col-md-2,
+  .col-md-3,
+  .col-md-4,
+  .col-md-5,
+  .col-md-6,
+  .col-md-7,
+  .col-md-8,
+  .col-md-9,
+  .col-md-auto,
+  .col-sm,
+  .col-sm-1,
+  .col-sm-10,
+  .col-sm-11,
+  .col-sm-12,
+  .col-sm-2,
+  .col-sm-3,
+  .col-sm-4,
+  .col-sm-5,
+  .col-sm-6,
+  .col-sm-7,
+  .col-sm-8,
+  .col-sm-9,
+  .col-sm-auto,
+  .col-xl,
+  .col-xl-1,
+  .col-xl-10,
+  .col-xl-11,
+  .col-xl-12,
+  .col-xl-2,
+  .col-xl-3,
+  .col-xl-4,
+  .col-xl-5,
+  .col-xl-6,
+  .col-xl-7,
+  .col-xl-8,
+  .col-xl-9,
+  .col-xl-auto {
     padding: 0 20px;
   }
-
 }
-

@@ -8,7 +8,7 @@
 .navFooter {
   background: #201550;
   position: relative;
-  color: #7B70AE;
+  color: #7b70ae;
   padding: 24px;
   img {
     width: 25px;
@@ -23,15 +23,16 @@
 
 .subscribe {
   width: 30%;
+  position: relative;
+  margin-bottom: 70px;
 
   input {
-    border-radius: 0;
-    border: 1px solid #3E30DD;
+    border: 1px solid #3e30dd;
     background-clip: initial;
     font-weight: bold;
     font-size: 14px;
     &::placeholder {
-      color: #6330DD;
+      color: #6330dd;
       opacity: 0.3;
     }
   }
@@ -40,7 +41,6 @@
     box-shadow: none !important;
     line-height: initial;
     border: 0;
-    border-radius: 0;
     padding-left: 20px;
     padding-right: 20px;
     font-size: 14px;
@@ -51,8 +51,9 @@
 }
 
 .subscribeTip {
+  position: absolute;
+  top: 40px;
   font-size: 16px !important;
-  // color: #fff !important;
 }
 
 .wxContainer {
@@ -75,50 +76,41 @@
   }
 }
 
-.mdContent {
-  img {
-
-  }
-}
-
-.map{
+.map {
   background: #201550;
   padding-top: 70px;
   width: 100%;
-  small {
-    margin-bottom: 50px;
-  }
   .line {
     margin-top: 40px;
     height: 2px;
     background-color: #34295f;
   }
-  h1{
+  h1 {
     font-size: 18px;
     font-weight: bold;
     color: #fff;
     margin-bottom: 26px;
     text-transform: uppercase;
   }
-  p{
-    color: #7B70AE;
+  p {
+    color: #7b70ae;
   }
-  a{
-    color: #7B70AE;
+  a {
+    color: #7b70ae;
     font-size: fontSize(16px);
   }
-  .footerIcon{
+  .footerIcon {
     width: 100%;
     max-width: 220px;
     margin-bottom: 20px;
   }
-  .shareLogo{
-    &>div{
+  .shareLogo {
+    & > div {
       display: flex;
       justify-content: space-between;
       margin-bottom: 20px;
     }
-    img{
+    img {
       width: 25px;
       height: 25px;
     }
@@ -137,7 +129,6 @@
   }
 
   img {
-
   }
 
   .copyright {
@@ -168,6 +159,27 @@
   }
 }
 
+.lngBtn {
+  border: none;
+  background: transparent;
+  color: #7b70ae;
+
+  &:hover,
+  &:active,
+  &:focus,
+  &:visited {
+    border: none;
+    background: transparent;
+    box-shadow: none;
+  }
+}
+
+.lngDivider {
+  height: 20px;
+  width: 2px;
+  background: #7b70ae;
+}
+
 //@media (max-width: 768px) {
 //  .mdContent{
 //    text-align: center;
@@ -181,7 +193,3 @@
 //    }
 //  }
 //}
-
-
-
-

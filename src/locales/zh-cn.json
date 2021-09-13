@@ -5,8 +5,9 @@
     "community": "社区",
     "economic_model": "经济模型",
     "media": "资讯",
+    "use_darwinia": "使用 Darwinia",
     "hiring": "加入达尔文",
-    "genepaper": "Genepaper",
+    "genepaper": "Gene paper",
     "techpaper": "技术白皮书",
     "gringotts": "古灵阁",
     "forum": "论坛",
@@ -18,12 +19,33 @@
     "explorer_url": "https://crab.subscan.io/",
     "faq": "FAQs",
     "rfc": "RFCs",
-    "docs": "知识库",
+    "docs": "文档",
     "wallet": "钱包",
     "comingsoon": "即将到来",
     "lang_demo": "CN",
     "en": "English",
-    "zh": "中文"
+    "zh": "中文",
+    "wiki": "Wiki",
+    "roadmap": "路线图",
+    "wiki_content": "与核心功能交互的指南。",
+    "wiki_link": "https://docs.darwinia.network/zh-CN",
+    "genepaper_link": "https://darwinia.network/Darwinia_Genepaper_CN.pdf",
+    "wormhole_link": "https://wormhole.darwinia.network/?lng=zh",
+    "smart_module_link": "https://smart.darwinia.network?lng=zh",
+    "roadmap_content": "随时了解 Darwinia 网络的阶段性计划。",
+    "techpaper_content": "围绕实现 Darwinia 网络的一个可能方向的技术总结。",
+    "genepaper_content": "对Darwinia网络区块链技术的直观、易读的介绍。",
+    "tokens": "Tokens",
+    "apps": "Apps",
+    "apps_link": "https://apps.darwinia.network/",
+    "whormhole": "Whormhole",
+    "smart_module": "Smart Module",
+    "crab_net": "Crab Network",
+    "tokens_content": "Darwinia 网络的原生代币是 RING 和 KTON，它们为 Darwinia 网络提供动力。",
+    "apps_content": "参与转账，通过质押获得通证奖励。",
+    "whormhole_content": "通过虫洞可以实现多个网络之间的资产跨链转移。",
+    "smart_module_content": "以太坊生态中的项目可以通过 Smart App 轻松迁移到 Darwinia 网络。",
+    "crab_net_content": "Darwinia Network 具有实际经济价值的金丝雀网络，其定位类似于 Polkadot 的 Kusama Network。"
   },
   "home_page": {
     "slogan": "资产互联网络，已接通",
@@ -31,6 +53,10 @@
     "placeholder": "输入你的邮箱",
     "subscribe_btn": "订阅",
     "subscribe_tip": "订阅成功！请查看您的收件箱。",
+
+    "learn_more_darwinia_tech": "了解更多有关 Darwinia 技术的信息",
+    "get_started_link": "https://docs.darwinia.network/docs/zh-CN/wiki-intro",
+    "build_on_darwinia_link": "https://docs.darwinia.network/docs/zh-CN/dev-home",
 
     "recom_2_link": "https://darwinianetwork.medium.com/congratulations-darwinia-won-the-level-2-badge-in-the-substrate-builder-program-59ca4270f695",
     "recom_3_link": "https://darwinianetwork.medium.com/darwinia-mainnet-transfer-is-now-live-612b3e44b7c",
@@ -45,7 +71,7 @@
     "band_2_desc": "获得了3个W3F Grant,是首批接入波卡平行测试链Rococo的四个项目之一",
     "band_3_desc": "Web3 Foundation Bootcamp首期成员",
     "band_4_desc": "被写入波卡轻白皮书",
-    
+
     "highlight_title": "核心要素",
     "highlight_block_title_1": "桥接链",
     "highlight_block_content_1": "达尔文网络核心技术，跨链互操作解决方案",
@@ -59,7 +85,6 @@
     "highlight_block_content_5": "去中心化非标资产交易中心，支持跨链交易，支持拍卖等多种交易方式",
     "highlight_block_title_6": "链上随机数",
     "highlight_block_content_6": "链上随机数解决方案",
-
 
     "architecture_title": "架构设计",
     "architecture_solo": "Solo模式",
@@ -87,9 +112,9 @@
     "application_block_content_4": "去中心化非标资产拍卖市场通过跨链拍卖支持不同区块链网络的非标资产拍卖，创造了新的非标资产跨链流通场景",
 
     "dev_title": "开发团队",
-    "dev_content_1": "Itering于2018年成立于新加坡，是一家区块链技术公司。",
+    "dev_content_1": "Itering 于 2018 年成立于新加坡，是一家区块链技术公司。",
     "dev_content_2": "我们专注于区块链基础设施的研发，尤其是跨链技术。",
-    "dev_join": "www.itering.io",
+    "dev_join": "加入我们",
     "dev_link": "www.itering.io",
 
     "roadmap_title": "路线图",
@@ -159,7 +184,34 @@
 
     "view_on_etherscan": "Etherscan",
     "view_on_tronscan": "Tronscan",
-    "watch_token": "将 {{token}} 添加到 Metamask 通证列表中"
+    "watch_token": "将 {{token}} 添加到 Metamask 通证列表中",
+
+    "slogan_title": "Darwinia Network",
+    "slogan_subtitle": "Web3.0 跨链桥枢纽",
+
+    "interoperability": "跨链互操作性",
+    "interoperability_content": "Darwinia 网络为已经部署在以太坊和 BSC 等公共区块链上的项目提供了进入 Polkadot 生态的入口。",
+    "smart_contract": "智能合约解决方案",
+    "smart_contract_content": "Darwinia Smart App 兼容以太坊虚拟机，支持 Defi 和 NFT 等 DApp，可以轻松迁移到 Polkadot。",
+    "experience": "更快和更易用的用户体验",
+    "experience_content": "可以为用户带来非常优质的体验，包括极低的交易费用和超快的交易确认速度。",
+    "governance": "用户驱动的网络治理",
+    "governance_content": "Darwinia 网络拥有健全的治理系统，所有通证持有者都可以在其中提交议案。网络升级在链上协调并自主制定，确保 Darwinia 网络的发展反映社区的价值观并避免停滞。",
+    "ring_content": "RING 是达尔文网络的原生资产，RING 可以作为交易的燃料费。燃料费包括交易费用，合约执行费用，网络带宽费用，存储费用等等。",
+    "kton_content": "为了鼓励用户进行长期锁定和承诺投入，用户在 Staking RING 的过程中，可以承诺锁定 RING 3 - 36 个月，系统会给参与 Staking 的用户一个氪石的通证进行奖励。",
+
+    "powering_title": "为 Darwinia 网络提供动力",
+    "powering_desc_1": "RING、KTON 是达尔文网络的原生资产",
+    "powering_desc_2": "KTON 是达尔文网络原生通证 RING 的衍生通证，称为承诺通证",
+
+    "supporters": "支持者",
+    "grants": "荣誉",
+    "ecosystem_projects": "生态项目",
+    "partners": "合作伙伴",
+
+    "learn_more": "学习更多",
+    "get_started": "开始吧",
+    "build_on_darwinia": "Build on Darwinia"
   },
   "faq_page": {
     "title": "FAQs",
@@ -315,7 +367,7 @@
     "moderator": "4. 协调者",
     "moderator_desc": "帮助管理达尔文各个官方社交媒体社区，为社区成员营造一个友善的，持久的和富有活力的社区氛围。",
     "experience": "5. 体验官",
-    "experience_desc_1": "体验达尔文网络生态应用，并根据团队需求提交详细的体验报告，截止目前，达尔文技术团队已经创造出各种极具Web3属性的产品：", 
+    "experience_desc_1": "体验达尔文网络生态应用，并根据团队需求提交详细的体验报告，截止目前，达尔文技术团队已经创造出各种极具Web3属性的产品：",
     "experience_desc_2": "进化星球: 跨链区块链游戏",
     "experience_desc_3": "Subscan: 聚合Substrate 生态网络的高精度Web3浏览器",
     "how_title": "如何成为达尔文大使?",
@@ -739,12 +791,28 @@
     "technology_title_2": "Genepaper",
     "technology_title_3": "Github",
     "technology_title_4": "Telemetry",
+    "technology_title_5": "Technical Paper",
+    "technology_title_6": "Build on Darwinia",
+    "technology_title_6_link": "https://docs.darwinia.network/docs/zh-CN/dev-home",
 
     "community": "社区",
     "community_title_1": "RFCS",
     "community_title_2": "大使计划",
     "community_title_3": "加入社区",
     "community_title_4": "FAQ",
+
+    "use_darwinia": "使用 Darwinia",
+    "use_darwinia_title_1": "Tokens",
+    "use_darwinia_title_2": "Apps",
+    "use_darwinia_title_3": "Wormhole",
+    "use_darwinia_title_4": "Smart Module",
+    "use_darwinia_title_5": "Crab Network",
+
+    "use_darwinia_title_1_link": "/#powering-the-darwinia-network",
+    "use_darwinia_title_2_link": "https://apps.darwinia.network/",
+    "use_darwinia_title_3_link": "https://wormhole.darwinia.network/?lng=zh",
+    "use_darwinia_title_4_link": "https://smart.darwinia.network?lng=zh",
+    "use_darwinia_title_5_link": "https://crab.network/",
 
     "contact": "联系我们"
   }

@@ -5,8 +5,9 @@
     "community": "Community",
     "economic_model": "Economic Model",
     "media": "Media",
+    "use_darwinia": "Use Darwinia",
     "hiring": "We Are Hiring",
-    "genepaper": "GenePaper",
+    "genepaper": "Gene Paper",
     "techpaper": "Technical Paper",
     "gringotts": "Gringotts",
     "testnet": "Testnet",
@@ -23,7 +24,28 @@
     "comingsoon": "Coming Soon",
     "lang_demo": "EN",
     "en": "English",
-    "zh": "中文"
+    "zh": "中文",
+    "wiki": "Wiki",
+    "roadmap": "Roadmap",
+    "wiki_content": "Guides to interacting with core functionality.",
+    "wiki_link": "https://docs.darwinia.network/",
+    "genepaper_link": "https://darwinia.network/Darwinia_Genepaper_EN.pdf",
+    "wormhole_link": "https://wormhole.darwinia.network/",
+    "smart_module_link": "https://smart.darwinia.network/",
+    "roadmap_content": "Keep up-to-date with the Darwinia Network's phased plan.",
+    "techpaper_content": "A technical summary around one possible direction of implementing the Darwinia network.",
+    "genepaper_content": "A visual, easy-to-read introduction to Darwinia Network's blockchain technology.",
+    "tokens": "Tokens",
+    "apps": "Apps",
+    "apps_link": "https://apps.darwinia.network/",
+    "whormhole": "Wormhole",
+    "smart_module": "Smart Module",
+    "crab_net": "Crab Network",
+    "tokens_content": "The native tokens of the Darwinia Network are RING and KTON, which powering for Darwinia Network.",
+    "apps_content": "Participate in transferring and earn token rewards by staking.",
+    "whormhole_content": "Cross-chain transfer of assets between multiple networks can be realized through Wormhole.",
+    "smart_module_content": "Projects in the Ethereum ecosystem can be easily migrated to the Darwinia network through Smart App.",
+    "crab_net_content": "It's a canary network with real economic value for Darwinia Network, and its positioning is similar to Polkadot's Kusama Network."
   },
   "home_page": {
     "slogan": "INTERNET OF TOKENS, CONNECTED!",
@@ -31,7 +53,11 @@
     "placeholder": "Email Address",
     "subscribe_btn": "Subscribe",
     "subscribe_tip": "Subscription success! Please check your inbox.",
-    
+
+    "learn_more_darwinia_tech": "Learn more about Darwinia’s Technology",
+    "get_started_link": "https://docs.darwinia.network/docs/en/wiki-intro",
+    "build_on_darwinia_link": "https://docs.darwinia.network/docs/en/dev-home",
+
     "recom_2_link": "https://darwinianetwork.medium.com/congratulations-darwinia-won-the-level-2-badge-in-the-substrate-builder-program-59ca4270f695",
     "recom_3_link": "https://darwinianetwork.medium.com/darwinia-mainnet-transfer-is-now-live-612b3e44b7c",
     "recom_4_link": "https://docs.crab.network/dvm-intro/",
@@ -59,7 +85,6 @@
     "highlight_block_content_5": "Decentralized NFT cross-chain auction market",
     "highlight_block_title_6": "Onchain RNG",
     "highlight_block_content_6": "Onchain RNG solution",
-
 
     "architecture_title": "Architecture Design",
     "architecture_solo": "Solo",
@@ -89,7 +114,7 @@
     "dev_title": "Dev team",
     "dev_content_1": "Itering is a blockchain technology company, established in Singapore,2018.",
     "dev_content_2": "We focus on the research and development of blockchain infrastructure, especially the cross-chain technology.",
-    "dev_join": "www.itering.io",
+    "dev_join": "Join us",
     "dev_link": "www.itering.io",
 
     "roadmap_title": "Roadmap",
@@ -159,7 +184,34 @@
 
     "view_on_etherscan": "View on Etherscan",
     "view_on_tronscan": "Tronscan",
-    "watch_token": "Add {{token}} to the Metamask token list"
+    "watch_token": "Add {{token}} to the Metamask token list",
+
+    "slogan_title": "Darwinia Network",
+    "slogan_subtitle": "Web3.0 Cross-Chain Bridge Hub",
+
+    "interoperability": "Cross-chain Interoperability",
+    "interoperability_content": "Darwinia Network provides an entrance to the Polkadot ecology for projects that have been deployed on public blockchains such as Ethereum and BSC.",
+    "smart_contract": "Smart Contract Solution",
+    "smart_contract_content": "Darwinia Smart App is compatible with the Ethereum virtual machine, and supports DApps such as Defi and NFT, which can be easily migrated to Polkadot.",
+    "experience": "Faster and Easier User Experience",
+    "experience_content": "Darwinia network can bring users a very high-quality experience, including very low transaction fees and ultra-fast transaction confirmation speed.",
+    "governance": "User-driven Network Governance",
+    "governance_content": "Darwinia Network has a sound governance system where all token holders can submit proposals. Upgrades to the network are coordinated on-chain and enacted autonomously, ensuring that Darwinia’s development reflects the values of the community and avoids stagnation.",
+    "ring_content": "The native tokens for Darwinia Network is RING, RING can be used as gas for transactions. Gas include transaction fees, contract execution fees, network bandwidth charges, storage fees, and more.",
+    "kton_content": "To encourage users to make long term commitments and pledge, users can choose to lock RING for 3 - 36 months in the process of Staking, and the system will offer a KTON token as reward for users participating in Staking.",
+
+    "powering_title": "Powering the Darwinia Network",
+    "powering_desc_1": "The native tokens for Darwinia Network are RING, KTON.",
+    "powering_desc_2": "KTON is a derivative commitment token of RING, which encourages long-term involvement.",
+
+    "supporters": "Supporters",
+    "grants": "Grants",
+    "ecosystem_projects": "Ecosystem Projects",
+    "partners": "Partners",
+
+    "learn_more": "Learn more",
+    "get_started": "Get Started",
+    "build_on_darwinia": "Build on Darwinia"
   },
   "faq_page": {
     "title": "FAQs",
@@ -315,7 +367,7 @@
     "moderator": "4. Moderator",
     "moderator_desc": "Keep Darwinia official social media channels (i.e., telegram, twitter, medium,etc.) informative, productive, and create a pleasant, sustained, and viable environment for community members in multiple languages across various platforms.",
     "experience": "5. Experience Officer",
-    "experience_desc_1": "Experience Darwinia Ecological Applications and submit detailed reports according to our requirements. Up to now, Darwinia tech team has created various products on the way leading to Web3.0. For instance:", 
+    "experience_desc_1": "Experience Darwinia Ecological Applications and submit detailed reports according to our requirements. Up to now, Darwinia tech team has created various products on the way leading to Web3.0. For instance:",
     "experience_desc_2": "Evolution Land: A cross-chain blockchain game to showcase blockchain capabilities and onboard new users.",
     "experience_desc_3": "Subscan: A high precision data explorer and visualization for substrate-based blockchains.",
     "how_title": "How to become a Darwinia Ambassador?",
@@ -739,12 +791,28 @@
     "technology_title_2": "Genepaper",
     "technology_title_3": "Github",
     "technology_title_4": "Telemetry",
+    "technology_title_5": "Technical Paper",
+    "technology_title_6": "Build on Darwinia",
+    "technology_title_6_link": "https://docs.darwinia.network/docs/en/dev-home",
 
     "community": "Community",
     "community_title_1": "RFCS",
     "community_title_2": "Ambassador Program",
     "community_title_3": "Get involved",
     "community_title_4": "FAQ",
+
+    "use_darwinia": "Use Darwinia",
+    "use_darwinia_title_1": "Tokens",
+    "use_darwinia_title_2": "Apps",
+    "use_darwinia_title_3": "Wormhole",
+    "use_darwinia_title_4": "Smart Module",
+    "use_darwinia_title_5": "Crab Network",
+
+    "use_darwinia_title_1_link": "/#powering-the-darwinia-network",
+    "use_darwinia_title_2_link": "https://apps.darwinia.network/",
+    "use_darwinia_title_3_link": "https://wormhole.darwinia.network/",
+    "use_darwinia_title_4_link": "https://smart.darwinia.network/",
+    "use_darwinia_title_5_link": "https://crab.network/",
 
     "contact": "Contact"
   }

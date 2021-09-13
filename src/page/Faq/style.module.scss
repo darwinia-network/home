@@ -14,7 +14,6 @@
     margin-bottom: 30px;
     font-size: 30px;
     letter-spacing: 1.5px;
-     
   }
   h4 {
     font-size: 22px;
@@ -43,7 +42,7 @@
     justify-content: space-between;
     flex-wrap: wrap;
   }
-  .imgUrl{
+  .imgUrl {
     display: inline-block;
     color: $text-main;
     width: 100%;
@@ -69,19 +68,18 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      color: #6330DD;
+      color: #6330dd;
       .mediaTime {
         font-weight: bold;
         letter-spacing: 0.5px;
         line-height: 20px;
         font-size: 12px;
         order: -1;
-        opacity: .5;
-        color: #6330DD;
+        opacity: 0.5;
+        color: #6330dd;
       }
     }
     .mediaDesc {
-       
       font-size: 16px;
     }
   }
@@ -95,7 +93,7 @@
   height: 1px;
   margin-bottom: 50px;
   margin-top: 50px;
-  background: linear-gradient(315deg, #FE3876 0%, #7C30DD 72%, #3A30DD 100%);
+  background: linear-gradient(315deg, #fe3876 0%, #7c30dd 72%, #3a30dd 100%);
 }
 
 .gradientText {
