@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Container, Row, Col, OverlayTrigger, Popover, InputGroup, FormControl, Button, Form } from "react-bootstrap";
+import { Container, Row, Col, InputGroup, FormControl, Button, Form } from "react-bootstrap";
 import { withTranslation } from "react-i18next";
 import styles from "./style.module.scss";
 import i18n from "../../locales/i18n";
@@ -10,13 +10,11 @@ import share1 from "./img/share-1.png";
 import share2 from "./img/share-2.png";
 import share3 from "./img/share-3.png";
 import share4 from "./img/share-4.png";
-import share7 from "./img/share-7.png";
 import share8 from "./img/share-8.png";
 import share10 from "./img/share-10.png";
-import share11 from "./img/share-11.png";
+import shareElement from "./img/element.svg";
+import shareYoutube from "./img/youtube.svg";
 import dwSlideIcon from "./img/slide-logo.png";
-
-import wx from "./img/wx.jpg";
 
 class PageFooter extends Component {
   componentDidMount() {
@@ -53,35 +51,21 @@ class PageFooter extends Component {
       case "weibo":
         window.open("http://weibo.com/DarwiniaNetwork");
         return;
-      case "wx":
-        // window.open('https://medium.com/@DarwiniaNetwork');
-        // console.log(e.pageX)
-        return;
       case "email":
         window.open("mailto:hello@darwinia.network");
         return;
       case "discord":
         window.open("https://discord.com/channels/456092011347443723/795384466930663434");
         return;
-      case "bilibili":
-        window.open("https://space.bilibili.com/518736354");
+      case "element":
+        window.open("https://app.element.io/#/room/#darwinia:matrix.org");
+        return;
+      case "youtube":
+        window.open("https://www.youtube.com/channel/UCgtFX6DJn66fM7rPp99fOGg/featured");
         return;
       default:
         return;
     }
-  };
-
-  renderTooltip = (props) => {
-    const { t } = this.props;
-    return (
-      <Popover {...props} className={styles.wxContainer}>
-        <div className="popover-body">
-          <img alt="wx" src={wx} />
-          <p>{t("footer:scan")}</p>
-          <p>{t("footer:follow")}</p>
-        </div>
-      </Popover>
-    );
   };
 
   handleClickLng = (lng) => {
@@ -293,21 +277,19 @@ class PageFooter extends Component {
                       }}
                       src={share10}
                     />
-                    <OverlayTrigger placement="top-end" delay={{ show: 100, hide: 100 }} overlay={this.renderTooltip}>
-                      <img
-                        alt="wechat"
-                        onClick={(e) => {
-                          this.goto("wx", e);
-                        }}
-                        src={share7}
-                      />
-                    </OverlayTrigger>
                     <img
-                      alt="bilibili"
+                      alt="element"
                       onClick={() => {
-                        this.goto("bilibili");
+                        this.goto("element");
                       }}
-                      src={share11}
+                      src={shareElement}
+                    />
+                    <img
+                      alt="youtube"
+                      onClick={() => {
+                        this.goto("youtube");
+                      }}
+                      src={shareYoutube}
                     />
                   </div>
                 </Col>
@@ -397,21 +379,19 @@ class PageFooter extends Component {
                     }}
                     src={share10}
                   />
-                  <OverlayTrigger placement="top-end" delay={{ show: 100, hide: 1000 }} overlay={this.renderTooltip}>
-                    <img
-                      alt="wechat"
-                      onClick={(e) => {
-                        this.goto("wx", e);
-                      }}
-                      src={share7}
-                    />
-                  </OverlayTrigger>
                   <img
-                    alt="bilibili"
+                    alt="element"
                     onClick={() => {
-                      this.goto("bilibili");
+                      this.goto("element");
                     }}
-                    src={share11}
+                    src={shareElement}
+                  />
+                  <img
+                    alt="youtube"
+                    onClick={() => {
+                      this.goto("youtube");
+                    }}
+                    src={shareYoutube}
                   />
                 </div>
               </Col>
