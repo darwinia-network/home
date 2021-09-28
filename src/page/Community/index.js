@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Container, Row, Col, Button, Popover, OverlayTrigger } from "react-bootstrap";
+import { Container, Row, Col, Button, Popover } from "react-bootstrap";
 import { PageHeader } from "../../components/PageHeader";
 import { PageFooter } from "../../components/PageFooter";
 import LazyBackground from "../../components/lazyBackground";
