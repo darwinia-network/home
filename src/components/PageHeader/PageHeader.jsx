@@ -43,7 +43,7 @@ const NavGrounp = ({ hasFixed = false }) => {
       icon: techPaperIcon,
       title: t("header:techpaper"),
       content: t("header:techpaper_content"),
-      link: "https://darwinia.network/ChainRelay_Technical_Paper(Preview)_EN.pdf",
+      link: "https://darwinia.network/Optimistic_Bridge_Technical_Paper(Preview)_EN.pdf",
       target: "_blank",
     },
     {
