@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Container, Row, Col, Button, Popover, OverlayTrigger } from "react-bootstrap";
+import { Container, Row, Col, Button, Popover } from "react-bootstrap";
 import { PageHeader } from "../../components/PageHeader";
 import { PageFooter } from "../../components/PageFooter";
 import LazyBackground from "../../components/lazyBackground";
@@ -20,8 +20,6 @@ import telegram from "./img/telegram.png";
 import telegram_white from "./img/telegram_white.png";
 import twitter from "./img/twitter.png";
 import twitter_white from "./img/twitter_white.png";
-import wechat from "./img/wechat.png";
-import wechat_white from "./img/wechat_white.png";
 import wx from "./img/wx.jpg";
 
 import new_bg from "./img/new-bg.png";
@@ -174,16 +172,6 @@ class Brand extends Component {
                       <div className={styles.mediaNum}>3,056</div>
                       <div className={styles.mediaName}>{t("community:medium")}</div>
                     </a>
-                    <OverlayTrigger placement="top" delay={{ show: 100, hide: 100 }} overlay={this.renderTooltip}>
-                      <div className={`${styles.mediaBlock} ${styles.wechat}`}>
-                        <div className={styles.mediaLogo}>
-                          <img alt="wechat" src={wechat_white} />
-                          <img className={styles.hoverImg} alt="wechat" src={wechat} />
-                        </div>
-                        <div className={styles.mediaNum}>11,545</div>
-                        <div className={styles.mediaName}>{t("community:wechat")}</div>
-                      </div>
-                    </OverlayTrigger>
                     <a
                       target="_blank"
                       rel="noopener noreferrer"
@@ -194,7 +182,7 @@ class Brand extends Component {
                         <img alt="github" src={github_white} />
                         <img className={styles.hoverImg} alt="github" src={github} />
                       </div>
-                      <div className={styles.mediaNum}>115</div>
+                      <div className={styles.mediaNum}>134</div>
                       <div className={styles.mediaName}>{t("community:github")}</div>
                     </a>
                   </div>

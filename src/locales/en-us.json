@@ -14,7 +14,7 @@
     "forum": "Forum",
     "testnet_url": "https://docs.darwinia.network/en/crab-home",
     "genepaper_url": "https://darwinia.network/Darwinia_Genepaper_EN.pdf",
-    "techpaper_url": "https://darwinia.network/ChainRelay_Technical_Paper(Preview)_EN.pdf",
+    "techpaper_url": "https://darwinia.network/Optimistic_Bridge_Technical_Paper(Preview)_EN.pdf",
     "explorer": "Explorer",
     "explorer_url": "https://crab.subscan.io/",
     "faq": "FAQs",
@@ -297,7 +297,6 @@
     "twitter": "Twitter followers",
     "telegram": "Telegram members",
     "medium": "Blog subscribers",
-    "wechat": "Wechat followers",
     "github": "Github stars",
 
     "contribute": "How to contribute",
