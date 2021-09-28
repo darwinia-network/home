@@ -182,7 +182,7 @@ class Brand extends Component {
                         <img alt="github" src={github_white} />
                         <img className={styles.hoverImg} alt="github" src={github} />
                       </div>
-                      <div className={styles.mediaNum}>115</div>
+                      <div className={styles.mediaNum}>134</div>
                       <div className={styles.mediaName}>{t("community:github")}</div>
                     </a>
                   </div>
