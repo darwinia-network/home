@@ -56,7 +56,7 @@
 
     "learn_more_darwinia_tech": "Learn more about Darwinia’s Technology",
     "get_started_link": "https://docs.darwinia.network/en/wiki-intro",
-    "build_on_darwinia_link": "https://docs.darwinia.network/en/dev-home",
+    "build_on_darwinia_link": "https://docs.crab.network/builders/get-started/darwinia-dev",
 
     "recom_2_link": "https://darwinianetwork.medium.com/congratulations-darwinia-won-the-level-2-badge-in-the-substrate-builder-program-59ca4270f695",
     "recom_3_link": "https://darwinianetwork.medium.com/darwinia-mainnet-transfer-is-now-live-612b3e44b7c",
@@ -712,7 +712,7 @@
     "nft": "Support NFT cross-chain transfer",
     "nft_desc": "Darwinia heterogeneous cross-chain bridge does not rely on collateral, so it supports small and high-frequency transfers such as NFT. It provides an important infrastructure for NFT to take over the Defi hotspot.",
     "read_more": "Read more",
-    "read_more_link": "https://docs.darwinia.network/en/dev-home"
+    "read_more_link": "https://docs.crab.network/builders/get-started/darwinia-dev"
   },
   "model": {
     "economic": "Darwinia Economic Model",
@@ -792,7 +792,7 @@
     "technology_title_4": "Telemetry",
     "technology_title_5": "Technical Paper",
     "technology_title_6": "Build on Darwinia",
-    "technology_title_6_link": "https://docs.darwinia.network/en/dev-home",
+    "technology_title_6_link": "https://docs.crab.network/builders/get-started/darwinia-dev",
 
     "community": "Community",
     "community_title_1": "RFCS",
