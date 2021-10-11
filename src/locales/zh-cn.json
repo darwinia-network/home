@@ -56,7 +56,7 @@
 
     "learn_more_darwinia_tech": "了解更多有关 Darwinia 技术的信息",
     "get_started_link": "https://docs.darwinia.network/en/wiki-intro",
-    "build_on_darwinia_link": "https://docs.darwinia.network/en/dev-home",
+    "build_on_darwinia_link": "https://docs.crab.network/builders/get-started/darwinia-dev",
 
     "recom_2_link": "https://darwinianetwork.medium.com/congratulations-darwinia-won-the-level-2-badge-in-the-substrate-builder-program-59ca4270f695",
     "recom_3_link": "https://darwinianetwork.medium.com/darwinia-mainnet-transfer-is-now-live-612b3e44b7c",
@@ -712,7 +712,7 @@
     "game": "乐观博弈机制",
     "game_desc": "通过概率抽样极大提高攻击者难度，以及通过乐观博弈机制使得最新块头能够最快的得到确认。",
     "read_more": "了解更多",
-    "read_more_link": "https://docs.darwinia.network/en/dev-home"
+    "read_more_link": "https://docs.crab.network/builders/get-started/darwinia-dev"
   },
   "model": {
     "economic": "达尔文经济模型",
@@ -792,7 +792,7 @@
     "technology_title_4": "Telemetry",
     "technology_title_5": "Technical Paper",
     "technology_title_6": "Build on Darwinia",
-    "technology_title_6_link": "https://docs.darwinia.network/en/dev-home",
+    "technology_title_6_link": "https://docs.crab.network/builders/get-started/darwinia-dev",
 
     "community": "社区",
     "community_title_1": "RFCS",
