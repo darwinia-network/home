@@ -55,7 +55,7 @@
     "subscribe_tip": "订阅成功！请查看您的收件箱。",
 
     "learn_more_darwinia_tech": "了解更多有关 Darwinia 技术的信息",
-    "get_started_link": "https://docs.darwinia.network/en/wiki-intro",
+    "get_started_link": "https://docs.darwinia.network/",
     "build_on_darwinia_link": "https://docs.crab.network/builders/get-started/darwinia-dev",
 
     "recom_2_link": "https://darwinianetwork.medium.com/congratulations-darwinia-won-the-level-2-badge-in-the-substrate-builder-program-59ca4270f695",
@@ -321,7 +321,7 @@
     "experience_intro": "体验达尔文生态应用，并根据实际需求提交详细报告。",
     "get_started": "开始吧",
     "darwinia_wiki": "Darwinia Wiki",
-    "darwinia_wiki_link": "https://docs.darwinia.network/en/wiki-intro",
+    "darwinia_wiki_link": "https://docs.darwinia.network/",
     "faq": "FAQ",
 
     "contributors": "社区贡献者",
@@ -661,7 +661,7 @@
     "theme_1": "应用钱包",
     "theme_1_link": "https://apps.darwinia.network/",
     "theme_2": "知识库",
-    "theme_2_link": "https://docs.darwinia.network/en/wiki-intro",
+    "theme_2_link": "https://docs.darwinia.network/",
     "theme_3": "Crab先行网",
     "theme_3_link": "https://crab.network/",
     "architecture": "技术架构",
