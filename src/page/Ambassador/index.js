@@ -33,7 +33,7 @@ class Brand extends Component {
     const { t } = this.props;
     return (
       <div>
-        <PageHeader transparent={true} hasHeightinMobile={true} />
+        <PageHeader />
         <div className={`${styles.article}`}>
           <Container>
             <Row>

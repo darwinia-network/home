@@ -164,7 +164,7 @@ const MobileMenu = ({ expanded, onClick }) => {
   );
 };
 
-const PageHeader = () => {
+const PageHeader = ({ forceFixed = false }) => {
   const [hasFixed, setHasFixed] = useState(false);
   const [expanded, setExpanded] = useState(false);
 
@@ -180,6 +180,11 @@ const PageHeader = () => {
   };
 
   useEffect(() => {
+    if (forceFixed) {
+      setHasFixed(true);
+      return;
+    }
+
     window.addEventListener("scroll", () => {
       if (
         document.getElementById("header-main").offsetHeight &&
@@ -195,7 +200,7 @@ const PageHeader = () => {
       clearAllBodyScrollLocks();
       window.removeEventListener("scroll", () => {});
     };
-  }, []);
+  }, [forceFixed]);
 
   return (
     <div className={`${style.main} ${hasFixed ? style.hasFixed : ""}`} id="header-main">

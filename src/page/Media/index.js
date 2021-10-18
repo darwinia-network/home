@@ -48,7 +48,7 @@ class Brand extends Component {
     const { t } = this.props;
     return (
       <div>
-        <PageHeader transparent={true} hasHeightinMobile={true} />
+        <PageHeader forceFixed={true} />
         <div className={`${styles.media}`}>
           <div className={`hidden-md media-carousel ${styles.carousel}`}>
             <Carousel controls={false} interval={4000}>

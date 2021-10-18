@@ -109,7 +109,7 @@ class Home extends Component {
     const { ring, kton } = this.state;
     return (
       <div className={styles.economic}>
-        <PageHeader href="#top" transparent={true} hasHeightinMobile={true} />
+        <PageHeader />
         <MediaQuery minDeviceWidth={768}>
           <LazyBackground src={bannerBg} className={styles.themeContainer}>
             {this.renderContainer()}
