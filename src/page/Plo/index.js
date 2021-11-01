@@ -10,6 +10,7 @@ import Work from './Work';
 import Contribute from './Contribute';
 import FourCards from './FourCards';
 import FAQs from './FAQs';
+import Waitlist from './Waitlist';
 
 const cx = classNames.bind(styles);
 
@@ -25,6 +26,7 @@ const PloPage = () => {
         <Contribute />
         <FourCards />
         <FAQs />
+        <Waitlist />
       </div>
     </div>
   );

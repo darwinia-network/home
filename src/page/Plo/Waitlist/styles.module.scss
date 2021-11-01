@@ -1,0 +1,92 @@
+.main {
+  margin-top: 60px;
+  margin-bottom: 20px;
+  padding: 48px 42px;
+  background: #FFFFFF;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(50px);
+  border-radius: 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.darwinia-icon {
+  height: 266px;
+  margin-right: 50px;
+}
+
+.right-part {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.join-the-waitlist {
+  font-weight: 600;
+  font-size: 30px;
+  line-height: 39px;
+  color: #1E3676;
+}
+
+.desc-join {
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 21px;
+  color: #000000;
+}
+
+.join-btn {
+  background: linear-gradient(270deg, #FF0050 0%, #7000FF 71.44%, #0027FF 100%);
+  border-radius: 10px;
+  padding: 8px 27px;
+  border: none;
+  margin-left: 10px;
+
+  >span {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 21px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #FFFFFF;
+  }
+}
+
+.input-wrap {
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.input-email {
+  height: 37px;
+  width: 280px;
+  border-radius: 10px;
+}
+
+.desc-input {
+  margin-top: 6px;
+  font-weight: normal;
+  font-size: 10px;
+  line-height: 13px;
+  color: #808080;
+}
+
+.contact-list {
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.contact-icon {
+  width: 24px;
+  margin-left: 15px;
+
+  &:first-child {
+    margin-left: 0;
+  }
+}
