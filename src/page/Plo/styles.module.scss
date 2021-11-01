@@ -5,39 +5,17 @@
   }
 }
 
-.title-h2 {
-  font-weight: bold;
-  font-size: 46px;
-  line-height: 60px;
-  text-align: center;
-  color: #1E3676;
-}
-
-.title-h3 {
-  font-weight: 600;
-  font-size: 30px;
-  line-height: 39px;
-  color: #1E3676;
-}
-
-.title-h5 {
-  font-weight: 600;
-  font-size: 20px;
-  line-height: 26px;
-  color: #000000;
-}
-
-.desc {
+.footer-allright {
   font-weight: normal;
-  font-size: 20px;
-  line-height: 26px;
+  font-size: 16px;
+  line-height: 21px;
   color: #555555;
-
-}
-
-.section {
   display: flex;
-  flex-direction: column;
   justify-content: center;
-  align-items: center;
+  width: 100%;
+  padding: {
+    top: 20px;
+    bottom: 40px;
+  };
 }
+

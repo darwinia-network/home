@@ -27,6 +27,8 @@ const PloPage = () => {
         <FourCards />
         <FAQs />
         <Waitlist />
+
+        <p className={cx('footer-allright')}>Copyright@2021 Darwinia Network</p>
       </div>
     </div>
   );
