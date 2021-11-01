@@ -3,22 +3,18 @@ import styles from './styles.module.scss';
 import classNames from 'classnames/bind';
 
 import Header from './Header';
-import { Container } from 'react-bootstrap';
+import Welcome from './Welcome';
 
 const cx = classNames.bind(styles);
 
 const PloPage = () => {
   return (
-    <>
-      <Header />
-      <Container>
-        <div className={cx('main')}>
-          <div className={cx('inner')}>
-            PLO
-          </div>
-        </div>
-      </Container>
-    </>
+    <div className={cx('main')}>
+      <div className={cx('inner')}>
+        <Header />
+        <Welcome />
+      </div>
+    </div>
   );
 };
 
