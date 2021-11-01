@@ -5,6 +5,7 @@ import { Container, Row, Col, Button, OverlayTrigger, Popover, Tooltip } from "r
 import { PageHeader } from "../../components/PageHeader";
 import { PageFooter } from "../../components/PageFooter";
 import { PageTurner } from "../../components/PageTurner";
+import { PloBanner } from '../../components/PloBanner';
 import Fade from "react-reveal/Fade";
 
 import styles from "./style.module.scss";
@@ -544,6 +545,9 @@ class Home extends Component {
 
     return (
       <div className={styles.homePage}>
+
+        <PloBanner />
+
         <PageHeader href="#top" transparent={true} />
 
         <div className={styles.slogan}>
