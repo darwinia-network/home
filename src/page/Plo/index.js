@@ -4,6 +4,7 @@ import classNames from 'classnames/bind';
 
 import Header from './Header';
 import Welcome from './Welcome';
+import Crowloan from './Crowloan';
 
 const cx = classNames.bind(styles);
 
@@ -13,6 +14,7 @@ const PloPage = () => {
       <div className={cx('inner')}>
         <Header />
         <Welcome />
+        <Crowloan />
       </div>
     </div>
   );
