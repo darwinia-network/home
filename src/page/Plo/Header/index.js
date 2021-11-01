@@ -18,10 +18,10 @@ const Header = () => {
           </button>
         </div>
         <div className={cx('right')}>
-          <a rel='noopener noreferrer' className={cx('link')} href='https//www.baidu.com/'>Crowdloan</a>
-          <a rel='noopener noreferrer' className={cx('link')} href='https//www.baidu.com/'>Support</a>
-          <a rel='noopener noreferrer' className={cx('link')} href='https//www.baidu.com/'>Timeline</a>
-          <a rel='noopener noreferrer' className={cx('link')} href='https//www.baidu.com/'>FAQs</a>
+          <a rel='noopener noreferrer' target='_blank' className={cx('link')} href='https//www.baidu.com/'>Crowdloan</a>
+          <a rel='noopener noreferrer' target='_blank' className={cx('link')} href='https//www.baidu.com/'>Support</a>
+          <a rel='noopener noreferrer' target='_blank' className={cx('link')} href='https//www.baidu.com/'>Timeline</a>
+          <a rel='noopener noreferrer' target='_blank' className={cx('link')} href='https//www.baidu.com/'>FAQs</a>
         </div>
       </div>
     </Container>

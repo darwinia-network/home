@@ -7,6 +7,7 @@ import Welcome from './Welcome';
 import Crowloan from './Crowloan';
 import Auction from './Auction';
 import Work from './Work';
+import Contribute from './Contribute';
 
 const cx = classNames.bind(styles);
 
@@ -19,6 +20,7 @@ const PloPage = () => {
         <Crowloan />
         <Auction />
         <Work />
+        <Contribute />
       </div>
     </div>
   );
