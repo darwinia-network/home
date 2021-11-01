@@ -9,6 +9,7 @@ import Auction from './Auction';
 import Work from './Work';
 import Contribute from './Contribute';
 import FourCards from './FourCards';
+import Timeline from './Timeline';
 import FAQs from './FAQs';
 import Waitlist from './Waitlist';
 
@@ -25,6 +26,7 @@ const PloPage = () => {
         <Work />
         <Contribute />
         <FourCards />
+        <Timeline />
         <FAQs />
         <Waitlist />
 

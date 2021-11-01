@@ -1,0 +1,134 @@
+.main {
+  margin-top: 160px;
+  margin-bottom: 240px;
+}
+
+.title {
+  font-weight: 600;
+  font-size: 30px;
+  line-height: 39px;
+  text-align: center;
+  color: #1E3676;
+  margin-bottom: 130px;
+}
+
+.content {
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 21px;
+  text-align: center;
+  color: #000000;
+}
+
+.tooltip-overlay {
+  box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+
+.pioneers {
+  position: absolute;
+  top: 20px;
+  left: 26px;
+  display: flex;
+  align-items: center;
+}
+
+.icon {
+  width: 20px;
+}
+
+.tips {
+  font-weight: normal;
+  font-size: 10px;
+  line-height: 13px;
+  color: #000000;
+}
+
+.time-line-style-01 {
+  position: relative;
+  height: 45px;
+  background: linear-gradient(315.52deg, rgba(255, 0, 80, 0.05) 0.88%, rgba(111, 0, 255, 0.05) 71.7%, rgba(0, 38, 255, 0.05) 100%);
+  border-radius: 22px;
+}
+
+.time-line-style-01-mini {
+  position: absolute;
+  height: 33px;
+  background: linear-gradient(315.52deg, rgba(255, 0, 80, 0.05) 0.88%, rgba(111, 0, 255, 0.05) 71.7%, rgba(0, 38, 255, 0.05) 100%);
+  border-radius: 40px;
+  top: 100px;
+}
+
+.time-line-style-02 {
+  position: absolute;
+  left: 5%;
+  top: 20px;
+  background: linear-gradient(315deg, rgba(255, 0, 80, 0.2), rgba(112, 0, 255, 0.2), rgba(0, 39, 255, 0.2));
+  border-radius: 68px;
+  height: 4px;
+  width: 90%;
+}
+
+.time-line-style-02-mini {
+  position: absolute;
+  left: 5%;
+  top: 117px;
+  background: linear-gradient(315deg, rgba(255, 0, 80, 0.2), rgba(112, 0, 255, 0.2), rgba(0, 39, 255, 0.2));
+  border-radius: 68px;
+  height: 2px;
+}
+
+.time-line-style-03 {
+  position: absolute;
+  width: 26px;
+  height: 26px;
+  background-clip: content-box, border-box;
+  background-image: linear-gradient(white, white),
+    linear-gradient(315deg, rgba(255, 0, 80, 1), rgba(112, 0, 255, 1), rgba(0, 39, 255, 1));
+  background-origin: border-box;
+  border: solid 2px transparent;
+  border-radius: 30px;
+  left: 10%;
+  top: -10px;
+}
+
+.time-line-style-03-mini {
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  background-clip: content-box, border-box;
+  background-image: linear-gradient(white, white),
+    linear-gradient(315deg, rgba(255, 0, 80, 1), rgba(112, 0, 255, 1), rgba(0, 39, 255, 1));
+  background-origin: border-box;
+  border: solid 1px transparent;
+  border-radius: 30px;
+  top: 111px;
+}
+
+.time-line-style-04 {
+  position: absolute;
+  left: 3px;
+  top: 3px;
+  height: 16px;
+  width: 16px;
+  border-radius: 30px;
+  background: linear-gradient(315.52deg, #FF0050 0.88%, #7000FF 71.7%, #0027FF 100%);
+}
+
+.the-time {
+  @extend .content;
+  position: absolute;
+  top: -70px;
+  left: -30px;
+  width: 80px;
+  text-align: center;
+}
+
+.the-desc {
+  @extend .content;
+  position: absolute;
+  top: 46px;
+  left: -40px;
+  width: 110px;
+  text-align: center;
+}
