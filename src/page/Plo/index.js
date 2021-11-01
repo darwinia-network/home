@@ -8,6 +8,7 @@ import Crowloan from './Crowloan';
 import Auction from './Auction';
 import Work from './Work';
 import Contribute from './Contribute';
+import FourCards from './FourCards';
 
 const cx = classNames.bind(styles);
 
@@ -21,6 +22,7 @@ const PloPage = () => {
         <Auction />
         <Work />
         <Contribute />
+        <FourCards />
       </div>
     </div>
   );
