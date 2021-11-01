@@ -6,6 +6,7 @@ import Header from './Header';
 import Welcome from './Welcome';
 import Crowloan from './Crowloan';
 import Auction from './Auction';
+import Work from './Work';
 
 const cx = classNames.bind(styles);
 
@@ -17,6 +18,7 @@ const PloPage = () => {
         <Welcome />
         <Crowloan />
         <Auction />
+        <Work />
       </div>
     </div>
   );
