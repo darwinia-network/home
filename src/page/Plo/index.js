@@ -9,6 +9,7 @@ import Auction from './Auction';
 import Work from './Work';
 import Contribute from './Contribute';
 import FourCards from './FourCards';
+import FAQs from './FAQs';
 
 const cx = classNames.bind(styles);
 
@@ -23,6 +24,7 @@ const PloPage = () => {
         <Work />
         <Contribute />
         <FourCards />
+        <FAQs />
       </div>
     </div>
   );
