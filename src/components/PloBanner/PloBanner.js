@@ -12,7 +12,7 @@ import closeIcon from './img/close-icon.png';
 const cx = classNames.bind(styles);
 
 const MobileModal = () => {
-  const [visible, setVisible] = useState(true);
+  const [visible, setVisible] = useState(false);
 
   const handleClickClose = () => {
     setVisible(false);
