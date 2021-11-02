@@ -187,6 +187,7 @@ const PageHeader = ({ forceFixed = false }) => {
 
     window.addEventListener("scroll", () => {
       if (
+        document.getElementById("header-main") &&
         document.getElementById("header-main").offsetHeight &&
         window.scrollY >= document.getElementById("header-main").offsetHeight
       ) {

@@ -22,27 +22,24 @@ const cx = classNames.bind(styles);
 const PloPage = () => {
   return (
     <div className={cx('main')}>
-      <div className={cx('inner')}>
+      <div className={cx('magic-01')} />
+      <div className={cx('magic-02')} />
+      <img className={cx('magic-03')} alt='...' src={magic03} />
+      <img className={cx('magic-04')} alt='...' src={magic04} />
+      <img className={cx('magic-05')} alt='...' src={magic05} />
 
-        <div className={cx('magic-01')} />
-        <div className={cx('magic-02')} />
-        <img className={cx('magic-03')} alt='...' src={magic03} />
-        <img className={cx('magic-04')} alt='...' src={magic04} />
-        <img className={cx('magic-05')} alt='...' src={magic05} />
+      <Header />
+      <Welcome />
+      <Crowloan />
+      <Auction />
+      <Work />
+      <Contribute />
+      <FourCards />
+      <Timeline />
+      <FAQs />
+      <Waitlist />
 
-        <Header />
-        <Welcome />
-        <Crowloan />
-        <Auction />
-        <Work />
-        <Contribute />
-        <FourCards />
-        <Timeline />
-        <FAQs />
-        <Waitlist />
-
-        <p className={cx('footer-allright')}>Copyright@2021 Darwinia Network</p>
-      </div>
+      <p className={cx('footer-allright')}>Copyright@2021 Darwinia Network</p>
     </div>
   );
 };

@@ -27,10 +27,10 @@ const FourCards = () => {
                 <span>Top1 8%+</span>
               </div>
               <div className={cx('tab')}>
-                <span>Top1 8%+</span>
+                <span>Top2-5 7%+</span>
               </div>
               <div className={cx('tab')}>
-                <span>Top1 8%+</span>
+                <span>Top6-10 6%+</span>
               </div>
             </div>
           </div>

@@ -1,9 +1,7 @@
 .main {
-  .inner {
-    position: relative;
-    background: url('./img/bg.png') repeat;
-    min-height: 100vh;
-  }
+  position: relative;
+  background: url('./img/bg.png') repeat;
+  padding-top: 20px;
 }
 
 .magic-01 {
@@ -15,6 +13,7 @@
   height: 522px;
   left: 1188px;
   top: -141px;
+  z-index: -1;
 
   @media screen and (max-width: 768px) {
     display: none;

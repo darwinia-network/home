@@ -26,7 +26,7 @@ const TimeDone = ({ left, right, timeText, timeDesc }) => (
 const Timeline = () => {
   return (
     <Container>
-      <div className={cx('main')}>
+      <div className={cx('main')} id="timeline-section">
 
         <h3 className={cx('title')}>Timeline</h3>
 
@@ -50,6 +50,7 @@ const Timeline = () => {
                   overlayInnerStyle={{ padding: '20px', paddingBottom: '10px' }}
                   color='white'
                   placement='rightTop'
+                  trigger={['click', 'hover']}
                   title={
                   <p className={cx('tips')}>
                     Crowdloan Pioneer: The top 5 of the supporters (in addition to Exchange address) who contribute more than 10,000 DOT within this period will be rewarded to share 1 BTC in proportion to your contribution.<br/><br/>

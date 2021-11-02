@@ -9,7 +9,7 @@ const cx = classNames.bind(styles);
 const FAQs = () => {
   return (
     <Container>
-      <div className={cx('main')}>
+      <div className={cx('main')} id="faqs-section">
         <h3 className={cx('title')}>FAQs</h3>
         <p className={cx('title-desc')}>
           We will continue to update the questions here.<br/>

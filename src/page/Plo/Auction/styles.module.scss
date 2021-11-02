@@ -52,7 +52,10 @@
     font-size: 30px;
     line-height: 39px;
     color: #1E3676;
-    text-align: center;
+
+    @media screen and (max-width: 768px) {
+      text-align: center;
+    }
   }
 
   .desc {

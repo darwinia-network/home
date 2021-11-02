@@ -40,7 +40,7 @@ const Work = () => {
 
   return (
     <Container>
-      <div className={cx('main')}>
+      <div className={cx('main')} id="crowdloan-section">
         <h3 className={cx('title')}>How does a Parachain Crowdloan work?</h3>
         <div className={cx('item-container')}>
           {itemData.map((data, index) => (
