@@ -10,7 +10,7 @@ const cx = classNames.bind(styles);
 const Auction = () => {
   return (
     <Container>
-      <div className={cx('main')}>
+      <div className={cx('main')} id="crowdloan-section">
         <div className={cx('content')}>
 
           <div className={cx('part')}>
@@ -20,7 +20,7 @@ const Auction = () => {
 
           <div className={cx('part')}>
             <h5 className={cx('title')}>What is the Crowdloan?</h5>
-            <p className={cx('desc')}>In order to obtain a slot, Darwinia Network will launch crowdloan to allow the community to participate together to increase the probability of success while users' DOTs will not leave away from their wallets.</p>
+            <p className={cx('desc')}>In order to obtain a slot, Darwinia Network will launch crowdloan to allow the community to participate together to increase the probability of success while supporters' DOTs will not leave away from their wallets.</p>
           </div>
 
         </div>

@@ -12,7 +12,7 @@ const Welcome = () => {
     <Container>
       <div className={cx('main')}>
         <img alt='...' src={bridge} className={cx('bridge')} />
-        <h2 className={cx('title-h2')}>Support Darwinia，Invest in the next generation of Web3.0 Metaverse</h2>
+        <h2 className={cx('title-h2')}>Support Darwinia, Invest in the next generation of Web3.0 Metaverse</h2>
         <p className={cx('desc')}>We are bridging heterogeneous chains to build the Web3.0 Metaverse.</p>
         <a className={cx('sign-up-for-wautlist-link')} href="#waitlist-section">
           <span>Sign up for waitlist</span>

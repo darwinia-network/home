@@ -12,6 +12,13 @@ import discordIcon from './img/discord.png';
 const cx = classNames.bind(styles);
 
 const Waitlist = () => {
+  React.useEffect(() => {
+    const script = document.createElement("script");
+    script.src = "//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js";
+    script.type = "text/javascript";
+    script.async = true;
+    document.body.appendChild(script);
+  }, []);
 
   return (
     <Container>
@@ -28,7 +35,7 @@ const Waitlist = () => {
             target="_blank"
             className={cx('input-wrap')}
           >
-            <div className="mc-field-group">
+            <div className={cx('mc-field-group', 'input-email')}>
               <FormControl
                 type="email"
                 className='required email'
@@ -43,7 +50,7 @@ const Waitlist = () => {
               <div
                 htmlFor="mce-EMAIL"
                 style={{ display: "none" }}
-                className={`mce_inline_error text-muted`}
+                className={`mce_inline_error text-muted ${styles.mailtip}`}
               />
             </div>
             <button className={cx('join-btn')} type='submit'>
@@ -51,12 +58,12 @@ const Waitlist = () => {
             </button>
             <Form.Text
               id="mce-error-response"
-              className={`text-muted hidden-xs`}
+              className={`text-muted hidden-xs ${styles.mailtip}`}
               style={{ display: "none" }}
             ></Form.Text>
             <Form.Text
               id="mce-success-response"
-              className={`text-muted hidden-xs`}
+              className={`text-muted hidden-xs ${styles.mailtip}`}
               style={{ display: "none" }}
             ></Form.Text>
           </Form>

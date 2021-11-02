@@ -9,11 +9,11 @@ import timeline from './img/timeline.png';
 
 const cx = classNames.bind(styles);
 
-const Card = ({ icon, title, describe }) => {
+const Card = ({ icon, title, describe, link }) => {
   return (
     <div className={cx('card-main')}>
       <img alt='...' src={icon} className={cx('card-main-icon')} />
-      <h5 className={cx('card-main-title')}>{title}</h5>
+      <a className={cx('card-main-title')} href={link}>{title}</a>
       <p className={cx('card-main-desc')}>{describe}</p>
     </div>
   );
@@ -24,17 +24,20 @@ const Crowloan = () => {
     {
       icon: what,
       title: 'What is Crowdloan？',
-      describe: 'Understand Polkadot Parachain Auction and Darwinia Crowdloan.',
+      describe: 'Understand Polkadot Parachain Slot Auction and Darwinia Crowdloan.',
+      link: '#crowdloan-section',
     },
     {
       icon: contribute,
       title: 'Contribute to Darwinia Crowdloan',
       describe: 'Unlock 200,000,000 RING and 8,000 KTON bonus, also BTC and Metaverse limited edition commemorative NFT waiting for you.',
+      link: '#contribute-section',
     },
     {
       icon: timeline,
       title: 'Timeline',
       describe: 'Keep up-to-date with the Darwinia Network’s PLO plan.',
+      link: '#timeline-section',
     },
   ];
 
@@ -42,7 +45,7 @@ const Crowloan = () => {
     <Container>
       <div className={cx('main')}>
         {cardData.map((data, index) => (
-          <Card key={index} icon={data.icon} title={data.title} describe={data.describe} />
+          <Card key={index} icon={data.icon} title={data.title} describe={data.describe} link={data.link} />
         ))}
       </div>
     </Container>
