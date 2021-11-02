@@ -3,6 +3,10 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  @media screen and (max-width: 768px) {
+    justify-content: flex-start;
+  }
 }
 
 .left, .right {
@@ -11,9 +15,19 @@
   align-items: center;
 }
 
+.right {
+  @media screen and (max-width: 768px) {
+    display: none;
+  }
+}
+
 .logo {
   height: 26px;
   margin-right: 10px;
+
+  @media screen and (max-width: 768px) {
+    height: 14px;
+  }
 }
 
 .plo-btn {
@@ -30,6 +44,15 @@
     font-size: 18px;
     line-height: 23px;
     color: #FFFFFF;
+  }
+
+  @media screen and (max-width: 768px) {
+    padding: 3px 8px;
+
+    >span {
+      font-size: 12px;
+      line-height: 14px;
+    }
   }
 }
 
