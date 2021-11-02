@@ -1,6 +1,7 @@
 import React from 'react';
 import styles from './styles.module.scss';
 import classNames from 'classnames/bind';
+import Fade from 'react-reveal/Fade';
 
 import Header from './Header';
 import Welcome from './Welcome';
@@ -28,18 +29,49 @@ const PloPage = () => {
       <img className={cx('magic-04')} alt='...' src={magic04} />
       <img className={cx('magic-05')} alt='...' src={magic05} />
 
-      <Header />
-      <Welcome />
-      <Crowloan />
-      <Auction />
-      <Work />
-      <Contribute />
-      <FourCards />
-      <Timeline />
-      <FAQs />
-      <Waitlist />
+      <Fade bottom fraction={0.1} duration={1000} distance={"50px"}>
+        <Header />
+      </Fade>
 
-      <p className={cx('footer-allright')}>Copyright@2021 Darwinia Network</p>
+      <Fade bottom fraction={0.2} duration={1000} distance={"50px"}>
+        <Welcome />
+      </Fade>
+
+      <Fade bottom fraction={0.2} duration={1000} distance={"50px"}>
+        <Crowloan />
+      </Fade>
+
+      <Fade bottom fraction={0.2} duration={1000} distance={"50px"}>
+        <Auction />
+      </Fade>
+
+      <Fade bottom fraction={0.2} duration={1000} distance={"50px"}>
+        <Work />
+      </Fade>
+
+      <Fade bottom fraction={0.2} duration={1000} distance={"50px"}>
+        <Contribute />
+      </Fade>
+
+      <Fade bottom fraction={0.2} duration={1000} distance={"50px"}>
+        <FourCards />
+      </Fade>
+
+      <Fade bottom fraction={0.2} duration={1000} distance={"50px"}>
+        <Timeline />
+      </Fade>
+
+      <Fade bottom fraction={0.2} duration={1000} distance={"50px"}>
+        <FAQs />
+      </Fade>
+
+      <Fade bottom fraction={0.2} duration={1000} distance={"50px"}>
+        <Waitlist />
+      </Fade>
+
+      <Fade bottom fraction={0.2} duration={1000} distance={"50px"}>
+        <p className={cx('footer-allright')}>Copyright@2021 Darwinia Network</p>
+      </Fade>
     </div>
   );
 };
