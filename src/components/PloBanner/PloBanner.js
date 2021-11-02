@@ -1,9 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import styles from './styles.module.scss';
 import classNames from 'classnames/bind';
 import { Container } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { Modal } from 'antd';
+import { isMobile } from '../../utils';
 
 import icon01 from './img/icon-01.png';
 import mobileIcon from './img/mobile-icon.png';
@@ -17,6 +18,10 @@ const MobileModal = () => {
   const handleClickClose = () => {
     setVisible(false);
   }
+
+  useEffect(() => {
+    isMobile() && setVisible(true);
+  }, []);
 
   return (
     <Modal
