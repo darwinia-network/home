@@ -4,6 +4,11 @@
   align-items: center;
   padding-top: 45px;
   padding-bottom: 20px;
+
+  @media screen and (max-width: 768px) {
+    flex-direction: column;
+    justify-content: flex-start;
+  }
 }
 
 .card-main {
@@ -22,6 +27,14 @@
 
   &:first-child {
     margin-left: 0;
+  }
+
+  @media screen and (max-width: 768px) {
+    margin-left: 0;
+    background: none;
+    box-shadow: none;
+    backdrop-filter: none;
+    padding: 20px;
   }
 
   .card-main-icon {
