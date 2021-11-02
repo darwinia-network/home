@@ -43,7 +43,7 @@ const Timeline = () => {
             <div className={cx('time-line-style-01-mini')} style={{ left: '30%', right: '30%' }}></div>
             <div className={cx('time-line-style-02-mini')} style={{ left: '35%', right: '35%' }}>
               <div className={cx('pioneers')}>
-                <span className={cx('content')}>Crowdloan Pioneers & Early Bird</span>
+                <span className={cx('pioneers-content')}>Crowdloan Pioneers & Early Bird</span>
                 &nbsp;
                 <Tooltip
                   overlayClassName='tooltip-overlay'

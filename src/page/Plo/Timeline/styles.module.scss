@@ -3,7 +3,8 @@
   margin-bottom: 240px;
 
   @media screen and (max-width: 768px) {
-    display: none;
+    margin-top: 20px;
+    margin-bottom: 400px;
   }
 }
 
@@ -14,6 +15,11 @@
   text-align: center;
   color: #1E3676;
   margin-bottom: 130px;
+
+  @media screen and (max-width: 768px) {
+    margin-top: 10px;
+    margin-bottom: 400px;
+  }
 }
 
 .content {
@@ -22,6 +28,15 @@
   line-height: 21px;
   text-align: center;
   color: #000000;
+}
+
+.pioneers-content {
+  @extend .content;
+
+  @media screen and (max-width: 768px) {
+    transform: rotate(-90deg) rotateY(180deg);
+    width: 90px;
+  }
 }
 
 .tooltip-overlay {
@@ -35,10 +50,19 @@
   left: 26px;
   display: flex;
   align-items: center;
+
+  @media screen and (max-width: 768px) {
+    top: 30px;
+  }
 }
 
 .icon {
   width: 20px;
+
+  @media screen and (max-width: 768px) {
+    transform: rotate(-90deg) rotateY(180deg);
+    left: 10px;
+  }
 }
 
 .tips {
@@ -53,6 +77,11 @@
   height: 45px;
   background: linear-gradient(315.52deg, rgba(255, 0, 80, 0.05) 0.88%, rgba(111, 0, 255, 0.05) 71.7%, rgba(0, 38, 255, 0.05) 100%);
   border-radius: 22px;
+
+  @media screen and (max-width: 768px) {
+    transform: rotateZ(-90deg) rotateY(180deg) translateY(-320px);
+    width: 700px;
+  }
 }
 
 .time-line-style-01-mini {
@@ -61,6 +90,10 @@
   background: linear-gradient(315.52deg, rgba(255, 0, 80, 0.05) 0.88%, rgba(111, 0, 255, 0.05) 71.7%, rgba(0, 38, 255, 0.05) 100%);
   border-radius: 40px;
   top: 100px;
+
+  @media screen and (max-width: 768px) {
+    transform: translateY(100px);
+  }
 }
 
 .time-line-style-02 {
@@ -80,6 +113,10 @@
   background: linear-gradient(315deg, rgba(255, 0, 80, 0.2), rgba(112, 0, 255, 0.2), rgba(0, 39, 255, 0.2));
   border-radius: 68px;
   height: 2px;
+
+  @media screen and (max-width: 768px) {
+    transform: translateY(99px);
+  }
 }
 
 .time-line-style-03 {
@@ -107,6 +144,10 @@
   border: solid 1px transparent;
   border-radius: 30px;
   top: 111px;
+
+  @media screen and (max-width: 768px) {
+    transform: translateY(99px);
+  }
 }
 
 .time-line-style-04 {
@@ -126,6 +167,14 @@
   left: -30px;
   width: 80px;
   text-align: center;
+
+  @media screen and (max-width: 768px) {
+    width: 180px;
+    top: 120px;
+    left: -90px;
+    text-align: start;
+    transform: rotate(90deg) rotateX(180deg);
+  }
 }
 
 .the-desc {
@@ -135,4 +184,12 @@
   left: -40px;
   width: 110px;
   text-align: center;
+
+  @media screen and (max-width: 768px) {
+    top: 120px;
+    width: 180px;
+    left: -70px;
+    text-align: start;
+    transform: rotate(90deg) rotateX(180deg);
+  }
 }
