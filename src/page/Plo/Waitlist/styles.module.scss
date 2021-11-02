@@ -9,11 +9,24 @@
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
+
+  @media screen and (max-width: 768px) {
+    flex-direction: column;
+    align-items: center;
+    box-shadow: none;
+    background: none;
+    backdrop-filter: none;
+    padding: 0;
+  }
 }
 
 .darwinia-icon {
   height: 266px;
   margin-right: 50px;
+
+  @media screen and (max-width: 768px) {
+    display: none;
+  }
 }
 
 .right-part {
@@ -22,6 +35,10 @@
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
+
+  @media screen and (max-width: 768px) {
+    align-items: center;
+  }
 }
 
 .join-the-waitlist {
@@ -60,12 +77,20 @@
   margin-top: 10px;
   display: flex;
   align-items: center;
+
+  @media screen and (max-width: 768px) {
+    width: 100%;
+  }
 }
 
 .input-email {
   height: 37px;
   width: 280px;
   border-radius: 10px;
+
+  @media screen and (max-width: 768px) {
+    width: 90%;
+  }
 }
 
 .desc-input {
