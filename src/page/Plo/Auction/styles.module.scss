@@ -4,6 +4,11 @@
   align-items: center;
   padding-top: 90px;
   padding-bottom: 20px;
+
+  @media screen and (max-width: 768px) {
+    flex-direction: column;
+    padding-top: 20px;
+  }
 }
 
 .content {
@@ -11,11 +16,24 @@
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
+  order: 1;
+
+  @media screen and (max-width: 768px) {
+    order: 2;
+  }
 }
 
 .icon {
   width: 680px;
   margin-left: 10px;
+  order: 2;
+
+  @media screen and (max-width: 768px) {
+    order: 1;
+    width: 345px;
+    margin-left: 0;
+    margin-bottom: 20px;
+  }
 }
 
 .part {
@@ -34,6 +52,7 @@
     font-size: 30px;
     line-height: 39px;
     color: #1E3676;
+    text-align: center;
   }
 
   .desc {
