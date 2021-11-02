@@ -1,11 +1,45 @@
+:global {
+  .ant-modal-content {
+    border-radius: 8px;
+  }
+
+  .ant-modal-close {
+    position: absolute;
+    top: 105%;
+    left: 40%;
+  }
+}
+
 .main {
   display: flex;
   justify-content: space-around;
   align-items: center;
+
+  @media screen and (max-width: 768px) {
+    display: none;
+  }
+}
+
+.mobile-main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.mobile-modal {
+  display: none;
+
+  @media screen and (max-width: 768px) {
+    display: unset;
+  }
 }
 
 .banner-logo {
   width: 117px;
+
+  @media screen and (max-width: 768px) {
+    width: 227px;
+  }
 }
 
 .banner-content {
@@ -15,6 +49,11 @@
     font-size: 20px;
     line-height: 26px;
     color: #000000;
+
+    @media screen and (max-width: 768px) {
+      text-align: center;
+      margin-bottom: 20px;
+    }
   }
 
   .desc {
@@ -34,6 +73,12 @@
   background: linear-gradient(270deg, #FF0050 0%, #7000FF 71.44%, #0027FF 100%);
   border-radius: 10px;
   margin-left: 20px;
+
+  @media screen and (max-width: 768px) {
+    width: 99%;
+    margin-left: 0;
+    margin-top: 20px;
+  }
 
   &:hover {
     text-decoration: none;
