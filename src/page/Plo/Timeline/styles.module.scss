@@ -1,6 +1,10 @@
 .main {
   margin-top: 160px;
   margin-bottom: 240px;
+
+  @media screen and (max-width: 768px) {
+    display: none;
+  }
 }
 
 .title {
