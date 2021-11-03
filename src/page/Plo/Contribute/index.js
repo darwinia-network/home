@@ -3,7 +3,7 @@ import styles from './styles.module.scss';
 import classNames from 'classnames/bind';
 import { Container } from 'react-bootstrap';
 
-import icon from './img/icon.png';
+import icon from './img/icon.jpg';
 
 const cx = classNames.bind(styles);
 
