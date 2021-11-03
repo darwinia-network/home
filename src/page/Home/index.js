@@ -284,7 +284,7 @@ class Home extends Component {
       },
       {
         icon: project15Icon,
-        link: "https://glitch.com/",
+        link: "https://glitch.finance/",
       },
       {
         icon: project16Icon,
