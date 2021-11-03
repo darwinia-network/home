@@ -1,0 +1,66 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 80px;
+  padding-bottom: 20px;
+}
+
+.bridge {
+  width: 578px;
+
+  @media screen and (max-width: 768px) {
+    width: 345px;
+  }
+}
+
+.sign-up-for-wautlist-link {
+  background: linear-gradient(270deg, #FF0050 0%, #7000FF 71.44%, #0027FF 100%);
+  border-radius: 10px;
+  padding: 10px 17px;
+
+  &:hover {
+    text-decoration: none;
+  }
+
+  >span {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 21px;
+    color: #FFFFFF;
+  }
+
+  @media screen and (max-width: 768px) {
+    padding: 6px 10px;
+  }
+}
+
+.title-h2 {
+  max-width: 897px;
+  font-weight: bold;
+  font-size: 46px;
+  line-height: 60px;
+  text-align: center;
+  color: #1E3676;
+
+  @media screen and (max-width: 768px) {
+    font-size: 26px;
+    line-height: 34px;
+  }
+}
+
+.desc {
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 26px;
+  color: #555555;
+  margin-top: 20px;
+  margin-bottom: 30px;
+
+  @media screen and (max-width: 768px) {
+    font-size: 16px;
+    line-height: 21px;
+    text-align: center;
+  }
+}

@@ -1,0 +1,90 @@
+.main {
+  position: relative;
+  background: url('./img/bg.png') repeat;
+  padding-top: 20px;
+}
+
+.magic-01 {
+  background: linear-gradient(344.64deg, #FF0050 7.81%, #7000FF 68.09%, #0027FF 92.19%);
+  opacity: 0.1;
+  filter: blur(100px);
+  position: absolute;
+  width: 522px;
+  height: 522px;
+  left: 1188px;
+  top: -141px;
+  z-index: -1;
+
+  @media screen and (max-width: 768px) {
+    display: none;
+  }
+}
+
+.magic-02 {
+  position: absolute;
+  width: 522px;
+  height: 522px;
+  left: -205px;
+  top: 3993px;
+  background: linear-gradient(344.64deg, #FF0050 7.81%, #7000FF 68.09%, #0027FF 92.19%);
+  opacity: 0.1;
+  filter: blur(100px);
+
+  @media screen and (max-width: 768px) {
+    display: none;
+  }
+}
+
+.magic-03 {
+  height: 515px;
+  position: absolute;
+  top: 27.85%;
+  bottom: 62.35%;
+  filter: drop-shadow(11px 10px 11px rgba(158, 64, 159, 0.322334));
+
+  @media screen and (max-width: 768px) {
+    display: none;
+  }
+}
+
+.magic-04 {
+  height: 515px;
+  position: absolute;
+  left: auto;
+  right: 0;
+  top: 34.23%;
+  bottom: 55.97%;
+  filter: drop-shadow(11px 10px 11px rgba(158, 64, 159, 0.322334));
+
+  @media screen and (max-width: 768px) {
+    display: none;
+  }
+}
+
+.magic-05 {
+  height: 176px;
+  position: absolute;
+  width: 186px;
+  height: 176px;
+  left: 67px;
+  top: 3485px;
+
+  @media screen and (max-width: 768px) {
+    display: none;
+  }
+}
+
+.footer-allright {
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 21px;
+  color: #555555;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  padding: {
+    top: 20px;
+    bottom: 40px;
+  };
+}
+
