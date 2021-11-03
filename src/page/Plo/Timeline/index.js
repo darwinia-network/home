@@ -53,7 +53,7 @@ const Timeline = () => {
                   trigger={['click', 'hover']}
                   title={
                   <p className={cx('tips')}>
-                    Crowdloan Pioneer: The top 5 of the supporters (in addition to Exchange address) who contribute more than 10,000 DOT within this period will be rewarded to share 1 BTC in proportion to your contribution.<br/><br/>
+                    Crowdloan Pioneer: The top 5 of the supporters (exclude the Exchange address) who contribute more than 10,000 DOT within this period will be rewarded to share 1 BTC in proportion to your contribution.<br/><br/>
                     Early Bird: The Early Bird reward will be delivered to the supporters who contributed only within this period.
                   </p>
                 }>

@@ -34,7 +34,7 @@ const Work = () => {
     {
       icon: icon03,
       title: 'Rewards',
-      describe: 'Enjoy the high return of RING and KTON tokens, paid as a percentage of your contribution to the pool, and regularly distributed to your wallet, also BTC and Metaverse limited edition commemorative NFT waiting for you.',
+      describe: 'Stake your DOT token through this webpage or partner exchange. Your needed DOT token should be stored either in a non-custodial (non-exchange) address, or through a partner exchange.',
     },
   ];
 

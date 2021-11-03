@@ -24,7 +24,7 @@ const Crowloan = () => {
     {
       icon: what,
       title: 'What is Crowdloan？',
-      describe: 'Understand Polkadot Parachain Slot Auction and Darwinia Crowdloan.',
+      describe: 'Darwinia Network is bridging heterogeneous chains to build the Web3.0 Metaverse.',
       link: '#crowdloan-section',
     },
     {
@@ -36,7 +36,7 @@ const Crowloan = () => {
     {
       icon: timeline,
       title: 'Timeline',
-      describe: 'Keep up-to-date with the Darwinia Network’s PLO plan.',
+      describe: 'Track key events across the crowdloan lifespan.',
       link: '#timeline-section',
     },
   ];
