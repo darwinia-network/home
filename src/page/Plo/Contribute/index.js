@@ -18,7 +18,7 @@ const Contribute = () => {
           <div className={cx('item-wrap')}>
             <div className={cx('item')}>
               <h5 className={cx('item-title')}>BTC Rewards</h5>
-              <p className={cx('item-desc')}>1 BTC will be released immediately after the second round auction starts regardless of whether Darwinia Network wins the slot auction or not.</p>
+              <p className={cx('item-desc')}>1 BTC will be released among top 5 contribution pioneers immediately after the second round auction starts regardless of whether Darwinia Network wins the slot auction or not.</p>
             </div>
             <div className={cx('item')}>
               <h5 className={cx('item-title')}>8,000 KTON</h5>
@@ -31,7 +31,7 @@ const Contribute = () => {
           <div className={cx('item-wrap')}>
             <div className={cx('item')}>
               <h5 className={cx('item-title')}>200,000,000 RING</h5>
-              <p className={cx('item-desc')}><a href='/?lng=en#powering-the-darwinia-network'>RING</a> is Darwinia Network native token, and 10% RING rewards will be immediately released after Darwinia wins the auction, and the other 90% RING rewards will be linearly released. </p>
+              <p className={cx('item-desc')}><a href='/?lng=en#powering-the-darwinia-network'>RING</a> is Darwinia Network native token, and 10% RING rewards will be immediately released after Darwinia wins the auction, and the other 90% RING rewards will be linearly released.</p>
             </div>
             <div className={cx('item')}>
               <h5 className={cx('item-title')}>Metaverse NFT Package</h5>

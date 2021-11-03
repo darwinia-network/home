@@ -13,11 +13,11 @@ const FAQs = () => {
         <h3 className={cx('title')}>FAQs</h3>
         <p className={cx('title-desc')}>
           We will continue to update the questions here.<br/>
-          If you don’t find the question or answer you want, you can send an email to <a target='_blank' rel='noopener noreferrer' href='mailto:hello@darwinia.network'>hello@darwinia.network</a>. 
+          If you don’t find the question or answer you want, you can send an email to <a target='_blank' rel='noopener noreferrer' href='mailto:hello@darwinia.network'>hello@darwinia.network</a>.
         </p>
 
         <Collapse expandIconPosition='right' accordion bordered ghost className={cx('faqs-collapse')}>
-          <Collapse.Panel header='When will the Polkadot parachain slot auction start?' key='1'>
+          <Collapse.Panel header='When will the Polkadot parachain auction start?' key='1'>
             <p className={cx('content-text')}>
               <a rel='noopener noreferrer' target='_blank' href='https://polkadot.polkassembly.io/referendum/39'>Referendum #39</a> consisting of 2 batch calls has been triggered to begin auctions on November 11th, 2021. The Polkadot's first-round parachain auction will start from 11th Nov to 16th, and the second-round parachain auction will start from 23rd Dec to 30th. For detailed information please refer to <a rel='noopener noreferrer' target='_blank' href='https://polkadot.network/blog/polkadot-is-ready-for-parachains/'>Polkadot's blog</a>.
             </p>
