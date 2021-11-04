@@ -32,8 +32,8 @@ const Timeline = () => {
 
         <div className={cx('time-line-style-01')}>
           <div className={cx('time-line-style-02')}>
-            <TimeDone left='5%'   timeText='NOV 3 2021'      timeDesc='Waitlist Signup' />
-            <TimeDone left='19%'  timeText='NOV 4 2021'      timeDesc='Rewards Plan Release' />
+            <TimeDone left='5%'   timeText='NOV 3 2021'       timeDesc='Waitlist Signup' />
+            <TimeToDo left='19%'  timeText='To be determined' timeDesc='Rewards Plan Release' />
             <TimeToDo left='34%'  timeText='To be determined' timeDesc='Crowdloan Starts' />
             <TimeToDo left='49%'  timeText='NOV 11 2021'      timeDesc='Batch 1 Auction Starts' />
             <TimeToDo right='34%' timeText='DEC 23 2021'      timeDesc='Batch 2 Auction Starts' />

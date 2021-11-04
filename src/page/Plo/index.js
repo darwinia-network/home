@@ -33,15 +33,15 @@ const PloPage = () => {
         <Header />
       </Fade>
 
-      <Fade bottom fraction={0.2} duration={1000} distance={"50px"}>
+      <Fade bottom fraction={0.2} duration={1500} distance={"50px"}>
         <Welcome />
       </Fade>
 
-      <Fade bottom fraction={0.2} duration={1000} distance={"50px"}>
+      <Fade bottom fraction={0.2} duration={1600} distance={"50px"}>
         <Crowloan />
       </Fade>
 
-      <Fade bottom fraction={0.2} duration={1000} distance={"50px"}>
+      <Fade bottom fraction={0.2} duration={1600} distance={"50px"}>
         <Auction />
       </Fade>
 

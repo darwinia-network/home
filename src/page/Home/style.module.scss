@@ -263,6 +263,7 @@
     left: 0;
     object-fit: cover;
     z-index: -1;
+    background: linear-gradient(315deg, #ff1f65 0%, #811eff 71%, #2a1dff 100%);
   }
 
   @media screen and (max-width: 768px) {
@@ -464,11 +465,11 @@
 }
 
 .powering {
-  background-image: url("./img/powering/bg.png");
+  background-image: url("./img/powering/bg.jpg");
   background-size: cover;
 
   @media (max-width: 767.98px) {
-    background-image: url("./img/powering/bg-m.png");
+    background-image: url("./img/powering/bg-m.jpg");
   }
 }
 

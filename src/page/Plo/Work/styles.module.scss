@@ -11,7 +11,7 @@
   backdrop-filter: blur(50px);
   border-radius: 40px;
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 1024px) {
     background: none;
     backdrop-filter: none;
     box-shadow: none;
@@ -34,7 +34,7 @@
   align-items: center;
   margin-top: 60px;
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 1024px) {
     flex-direction: column;
     margin-top: 40px;
   }
@@ -72,7 +72,7 @@
     color: #555555;
   }
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 1024px) {
     align-items: center;
     margin-left: 0;
   }

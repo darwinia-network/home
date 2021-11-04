@@ -550,35 +550,37 @@ class Home extends Component {
 
         <PageHeader href="#top" transparent={true} />
 
-        <div className={styles.slogan}>
-          <video src={hero} autoPlay="autoplay" loop="loop" muted />
-          <Container>
-            <h2 className={styles.sloganTitle}>{t("home_page:slogan_title")}</h2>
-            <h5 className={styles.sloganSubtitle}>{t("home_page:slogan_subtitle")}</h5>
-            <div className={styles.sloganBtnGround}>
-              <Button
-                variant="light"
-                className={styles.slogonBtnText}
-                target="_blank"
-                rel="noopener noreferrer"
-                href={t("home_page:get_started_link")}
-              >
-                <span>{t("home_page:get_started")}</span>
-              </Button>
-              <Button
-                variant="light"
-                className={styles.slogonBtnText}
-                target="_blank"
-                rel="noopener noreferrer"
-                href={t("home_page:build_on_darwinia_link")}
-              >
-                <span>{t("home_page:build_on_darwinia")}</span>
-              </Button>
-            </div>
-          </Container>
-        </div>
+        <Fade bottom fraction={0.1} duration={1500} distance={"50px"}>
+          <div className={styles.slogan}>
+            <video src={hero} autoPlay="autoplay" loop="loop" muted />
+            <Container>
+              <h2 className={styles.sloganTitle}>{t("home_page:slogan_title")}</h2>
+              <h5 className={styles.sloganSubtitle}>{t("home_page:slogan_subtitle")}</h5>
+              <div className={styles.sloganBtnGround}>
+                <Button
+                  variant="light"
+                  className={styles.slogonBtnText}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  href={t("home_page:get_started_link")}
+                >
+                  <span>{t("home_page:get_started")}</span>
+                </Button>
+                <Button
+                  variant="light"
+                  className={styles.slogonBtnText}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  href={t("home_page:build_on_darwinia_link")}
+                >
+                  <span>{t("home_page:build_on_darwinia")}</span>
+                </Button>
+              </div>
+            </Container>
+          </div>
+        </Fade>
 
-        <Fade bottom fraction={0.1} duration={1000} distance={"50px"}>
+        <Fade bottom fraction={0.1} duration={1600} distance={"50px"}>
           <Container className={styles.techSectionContainer}>
             <div className={styles.darwiniaTech}>
               {this.darwiniaTechData.map((item, index) => (
@@ -600,7 +602,7 @@ class Home extends Component {
         </Fade>
 
         <div className={styles.powering} id="powering-the-darwinia-network">
-          <Fade bottom fraction={0.1} duration={1000} distance={"50px"}>
+          <Fade bottom fraction={0.1} duration={1600} distance={"50px"}>
             <Container className={styles.commonContainer}>
               <div className="d-flex flex-column align-items-center px-md-5 mx-md-5">
                 <h5 className={styles.poweringTitle}>{t("home_page:powering_title")}</h5>
