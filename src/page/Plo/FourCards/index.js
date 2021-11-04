@@ -62,7 +62,7 @@ const FourCards = () => {
           <div className={cx('card-content')}>
             <h5 className={cx('card-content-title')}>Early Bird</h5>
             <p className={cx('card-content-desc')}>
-              You can start to contribute when Darwinia Crowdloan is active before the second-round auction starts. We include action time factors in our reward calculation algorithm. You can earn up to an extra 25% reward if you contribute earlier.
+              You can start to contribute when Darwinia Crowdloan is active before the second-round auction starts. We include action time factors in our reward calculation algorithm. You can earn up to an extra 20% reward if you contribute earlier.
             </p>
             <button className={cx('card-content-btn')}>
               <span>Learn more</span>
