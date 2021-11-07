@@ -291,3 +291,85 @@
     color: #FFFFFF;
   }
 }
+
+.crowloan {
+  background: #FFFFFF;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(50px);
+  border-radius: 30px;
+  width: 100%;
+  padding: 30px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.crowloan-title {
+  @extend %-base-h3;
+  width: 100%;
+}
+
+.total-rewards-wrap {
+  box-shadow: inset 0px 6px 6px rgba(0, 0, 0, 0.05);
+  height: 52px;
+  background: rgba(255, 255, 255, 0.5);
+  border: 1px solid #CCCCCC;
+  border-radius: 10px;
+  width: 100%;
+  padding-left: 20px;
+
+  display: flex;
+  align-items: center;
+
+  >span {
+    @extend %-base-p;
+  }
+}
+
+.total-ring-rewards,
+.total-kton-rewards {
+  display: flex;
+  align-items: center;
+  margin-left: 30px;
+
+  >span {
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 26px;
+    color: #1E3676;
+    padding-left: 6px;
+  }
+
+  >img {
+    width: 30px;
+  }
+}
+
+.current-total-contribute {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-top: 25px;
+
+  >span {
+    @extend %-base-p;
+  }
+}
+
+.total-contribute-dot {
+  display: flex;
+  align-items: center;
+
+  >span {
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 26px;
+    color: #1E3676;
+  }
+
+  >img {
+    width: 35px;
+  }
+}

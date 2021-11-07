@@ -7,6 +7,9 @@ import { Tooltip } from 'antd';
 
 import darwiniaLogo from './img/logo-darwinia.png';
 import infoIcon from './img/info-icon.png';
+import ringIcon from './img/ring-icon.png';
+import ktonIcon from './img/kton-icon.png';
+import dotIcon from './img/dot-icon.png';
 
 const cx = classNames.bind(styles);
 
@@ -91,7 +94,31 @@ const PloV2 = () => {
             </button>
           </div>
 
-          <div className={cx('crowloan-referral')}>crowloan and referral link</div>
+          <div className={cx('crowloan-referral')}>
+            <div className={cx('crowloan')}>
+              <h3 className={cx('crowloan-title')}>The Crowdloan</h3>
+
+              <div className={cx('total-rewards-wrap')}>
+                <span>Total rewards:  </span>
+                <div className={cx('total-ring-rewards')}>
+                  <img alt='...' src={ringIcon} />
+                  <span>200,000,000</span>
+                </div>
+                <div className={cx('total-kton-rewards')}>
+                  <img alt='...' src={ktonIcon} />
+                  <span>8,000</span>
+                </div>
+              </div>
+
+              <div className={cx('current-total-contribute')}>
+                <span>Current Total contributions</span>
+                <div className={cx('total-contribute-dot')}>
+                  <img alt='...' src={dotIcon} />
+                  <span>42,483.73 DOT</span>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
 
       </Container>
