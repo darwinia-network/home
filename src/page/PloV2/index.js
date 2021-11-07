@@ -200,6 +200,8 @@ const PloV2 = () => {
           </div>
         </div>
 
+        <p className={cx('all-right')}>Copyright@2021 Darwinia Network</p>
+
       </Container>
     </div>
   );

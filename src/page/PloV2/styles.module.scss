@@ -1,7 +1,8 @@
 .main {
   background-image: url('./img//bg.png');
   background-repeat: repeat;
-  min-height: 100vh;
+  padding-top: 20px;
+  padding-bottom: 50px;
 }
 
 %-base-btn {
@@ -48,7 +49,6 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-top: 20px;
 }
 
 .heading-container-logo {
@@ -562,4 +562,13 @@
   .hash-id {
     color: #7000FF;
   }
+}
+
+.all-right {
+  @extend %-base-p;
+  width: 100%;
+  text-align: center;
+  margin: 0 {
+    top: 30px;
+  };
 }
