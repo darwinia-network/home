@@ -10,6 +10,7 @@ import infoIcon from './img/info-icon.png';
 import ringIcon from './img/ring-icon.png';
 import ktonIcon from './img/kton-icon.png';
 import dotIcon from './img/dot-icon.png';
+import accountIcon from './img/account-icon.png';
 
 const cx = classNames.bind(styles);
 
@@ -197,6 +198,35 @@ const PloV2 = () => {
                 ))}
               </div>
             </div>
+          </div>
+        </div>
+
+        {/* Contribute Pioneers */}
+        <div className={cx('contribute-pioneers')}>
+          <div className={cx('contribute-pioneers-title-wrap')}>
+            <div className={cx('contribute-pioneers-title')}>
+              <h3>Contribution Pioneers</h3>
+              <Tooltip>
+                <img alt='...' src={infoIcon} className={cx('info-icon')} />
+              </Tooltip>
+            </div>
+            <div className={cx('contribute-pioneers-title-rank')}>
+              <img alt='...' src={accountIcon} />
+              <span>You Rank: 3,837</span>
+            </div>
+          </div>
+
+          <div className={cx('pioneers-container')}>
+            {[0,0,0].map((_,index) => (
+              <div className={cx('pioneers-item')} key={index}>
+                <div className={cx('pioneers-item-num-icon')}>
+                  <span>{index + 1}</span>
+                </div>
+                <img className={cx('pioneers-item-account-icon')} alt='...' src={accountIcon} />
+                <span className={cx('pioneers-item-account-name')}>16Xuv8T....DiXkn</span>
+                <span className={cx('pioneers-item-dot-amount')}>374,375.37 DOT</span>
+              </div>
+            ))}
           </div>
         </div>
 
