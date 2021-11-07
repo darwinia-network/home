@@ -16,6 +16,7 @@ const AsyncVideos = asyncComponent(import("./page/Videos"));
 const AsyncTech = asyncComponent(import("./page/Tech"));
 const AsyncModel = asyncComponent(import("./page/EcoModel"));
 const AsyncPlo = asyncComponent(import('./page/Plo'));
+const AsyncPloV2 = asyncComponent(import('./page/PloV2'));
 const history = createBrowserHistory();
 
 export default () => (
@@ -45,6 +46,8 @@ export default () => (
       <Route exact component={AsyncModel} path="/economic_model" />
 
       <Route exact component={AsyncPlo} path="/plo" />
+
+      <Route exact component={AsyncPloV2} path="/plo2" />
 
       <Route component={AsyncNotFound} />
     </Switch>
