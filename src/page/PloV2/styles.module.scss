@@ -8,12 +8,40 @@
   position: relative;
   transition: all 0.3s;
   top: 0;
+  opacity: 1;
   border: none;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &:hover {
+    opacity: 0.8;
+  }
 
   &:active {
     top: 2px;
     border: none;
   }
+
+  &:focus,
+  &:focus-visible {
+    outline: none;
+  }
+}
+
+%-base-h3 {
+  font-weight: 600;
+  font-size: 30px;
+  line-height: 39px;
+  color: #1E3676;
+}
+
+%-base-p {
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 21px;
+  color: #000000;
 }
 
 .heading-container {
@@ -54,9 +82,6 @@
 
 .heading-container-connnect-wallet-btn {
   @extend %-base-btn;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   padding: 10px 17px;
 
   background: linear-gradient(270deg, #FF0050 0%, #7000FF 71.44%, #0027FF 100%);
@@ -67,6 +92,202 @@
     font-size: 16px;
     line-height: 21px;
 
+    color: #FFFFFF;
+  }
+}
+
+.contribute-crowloan-referral {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.contribute {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  flex: 1;
+  margin-right: 10px;
+  background: #FFFFFF;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(50px);
+  border-radius: 30px;
+  padding: 30px;
+}
+
+.crowloan-referral {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  margin-left: 10px;
+}
+
+.contribute-title {
+  @extend %-base-h3;
+  width: 100%;
+}
+
+.contribute-lebal {
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 21px;
+  color: #000000;
+  margin-bottom: 10px;
+}
+
+.contribute-lebal-wrap {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+
+  >p {
+    margin: 0;
+  }
+}
+
+.contribute-input,
+.referral-code-input {
+  background: transparent;
+  border: none;
+
+  &:focus-visible {
+    outline: none;
+  }
+}
+
+.contribute-input {
+  width: calc(100% - 130px);
+}
+
+.referral-code-input {
+  width: calc(100%);
+}
+
+.dot-amount-input-wrap,
+.referral-code-input-wrap,
+.auction-success-rewards-wrap {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-top: 30px;
+}
+
+.dot-amount-input-control,
+.referral-code-input-control {
+  background: rgba(255, 255, 255, 0.5);
+  border: 1px solid #CCCCCC;
+  border-radius: 10px;
+  box-shadow: inset 0px 6px 6px rgba(0, 0, 0, 0.05);
+  height: 52px;
+  padding: 0 5px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.dot-amount-input-suffix {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.dot-amount-input-dot-suffix {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 26px;
+  text-align: right;
+  color: #CCCCCC;
+  margin-left: 5px
+}
+
+.dot-amount-input-max-btn {
+  @extend %-base-btn;
+  width: 70px;
+  height: 42px;
+  background: linear-gradient(270deg, #FF0050 0%, #7000FF 71.44%, #0027FF 100%);
+  border-radius: 10px;
+  margin-left: 10px;
+
+  >span {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 21px;
+    color: #FFFFFF;
+  }
+}
+
+.auction-success-rewards {
+  width: 100%;
+  box-shadow: inset 0px 6px 6px rgba(0, 0, 0, 0.05);
+  background: rgba(255, 255, 255, 0.5);
+  border: 1px solid #CCCCCC;
+  border-radius: 10px;
+  padding: 27px 38px;
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  row-gap: 20px;
+  align-items: center;
+  justify-content: space-between;
+
+  >span {
+    @extend %-base-p;
+  }
+}
+
+.auction-success-rewards-content-wrap {
+  display: flex;
+  align-items: center;
+
+  >span {
+    @extend %-base-p;
+  }
+}
+
+.limited-time {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 4px 5px;
+  margin-left: 8px;
+
+  background: #7000FF;
+  border-radius: 10px;
+
+  >span {
+    font-weight: bold;
+    font-size: 10px;
+    line-height: 13px;
+    color: #FFFFFF;
+  }
+}
+
+.info-icon {
+  height: 20px;
+  opacity: 0.5;
+  margin-left: 6px;
+  transition: all 0.3s;
+
+  &:hover {
+    opacity: 1;
+  }
+}
+
+.contribute-btn {
+  @extend %-base-btn;
+  background: linear-gradient(270deg, #FF0050 0%, #7000FF 71.44%, #0027FF 100%);
+  border-radius: 10px;
+  width: 100%;
+  height: 51px;
+  margin-top: 30px;
+
+  >span {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 21px;
     color: #FFFFFF;
   }
 }
