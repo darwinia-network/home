@@ -126,6 +126,80 @@ const PloV2 = () => {
           </div>
         </div>
 
+        {/* My Contribute */}
+        <div className={cx('my-contribute')}>
+          <div className={cx('my-contribute-title-wrap')}>
+            <div className={cx('my-contribute-title')}>
+              <h3>My Contribution</h3>
+              <span>*The reward amount will change in real-time according to the progress of the crowdloan, and the final result shall prevail.</span>
+            </div>
+            <button className={cx('my-contribute-connect-wallet-btn')}>
+              <span>Connect Wallet</span>
+            </button>
+          </div>
+
+          <div className={cx('contribute-info-card')}>
+            <div className={cx('contribute-info-item')}>
+              <span className={cx('contribute-info-item-title')}>Total DOT Contributed</span>
+              <span className={cx('contribute-info-item-value')}>0(0%)</span>
+            </div>
+
+            <div className={cx('my-contribute-line')} />
+
+            <div className={cx('contribute-info-item')}>
+              <div className={cx('contribute-info-item-title-wrap')}>
+                <span className={cx('contribute-info-item-title')}>Metaverse NFT Package</span>
+                <img alt='...' src={infoIcon} className={cx('info-icon')} />
+              </div>
+              <span className={cx('contribute-info-item-value')}>0</span>
+            </div>
+
+            <div className={cx('contribute-info-item')}>
+              <div className={cx('contribute-info-item-title-wrap')}>
+                <span className={cx('contribute-info-item-title')}>BTC Rewards</span>
+                <img alt='...' src={infoIcon} className={cx('info-icon')} />
+              </div>
+              <span className={cx('contribute-info-item-value')}>0</span>
+            </div>
+
+            <div className={cx('contribute-info-item-wrap')}>
+              <div className={cx('contribute-info-item')}>
+                <div className={cx('contribute-info-item-title-wrap')}>
+                  <span className={cx('contribute-info-item-title')}>RING Rewards</span>
+                  <img alt='...' src={infoIcon} className={cx('info-icon')} />
+                </div>
+                <span className={cx('contribute-info-item-value')}>0</span>
+              </div>
+              <div className={cx('contribute-info-item')}>
+                <div className={cx('contribute-info-item-title-wrap')}>
+                  <span className={cx('contribute-info-item-title')}>KTON Rewards</span>
+                  <img alt='...' src={infoIcon} className={cx('info-icon')} />
+                </div>
+                <span className={cx('contribute-info-item-value')}>0</span>
+              </div>
+            </div>
+          </div>
+
+          <div className={cx('my-contribute-history')}>
+            <div className={cx('contribute-history-wrap')}>
+              <p>Contribution history</p>
+              <div className={cx('contribute-history-control', 'no-data')}>No Data</div>
+            </div>
+            <div className={cx('referral-history-wrap')}>
+              <p>Referral history</p>
+              <div className={cx('referral-history-control')}>
+                {[1,1,1,1,1,1,1,1,1].map((_, index) => (
+                  <div className={cx('referral-history-control-item')} key={index}>
+                    <span>Dec  23</span>
+                    <span>32.376 DOT</span>
+                    <span className={cx('hash-id')}>95650-2</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+
       </Container>
     </div>
   );
