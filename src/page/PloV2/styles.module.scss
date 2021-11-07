@@ -660,6 +660,86 @@
   margin-top: 5px;
 }
 
+.referral-leaderboard {
+  background: #FFFFFF;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(50px);
+  border-radius: 30px;
+  padding: 30px;
+  margin-top: 25px;
+}
+
+.referral-leaderboard-title {
+  @extend %-base-h3;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.referral-leaderboard-control {
+  display: flex;
+  flex-direction: column;
+}
+
+.referral-leaderboard-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+
+  &:last-child {
+    border: none;
+    padding-bottom: 0;
+  }
+}
+
+.referral-leaderboard-item-rank {
+  width: 10%;
+
+  .rank {
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background: linear-gradient(315.52deg, #FF0050 0.88%, #7000FF 71.7%, #0027FF 100%);
+  }
+
+  span {
+    @extend %-base-p;
+    color: #FFFFFF;
+  }
+}
+
+.referral-leaderboard-item-address {
+  @extend %-base-p;
+  width: 20%;
+  text-align: center;
+}
+
+.referral-leaderboard-item-referrals {
+  @extend %-base-p;
+  width: 15%;
+  text-align: center;
+}
+
+.referral-leaderboard-item-accumulated {
+  @extend %-base-p;
+  width: 25%;
+  text-align: center;
+}
+
+.referral-leaderboard-item-rewards {
+  @extend %-base-p;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  width: 25%;
+  text-align: center;
+}
+
 .all-right {
   @extend %-base-p;
   width: 100%;

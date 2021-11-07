@@ -230,6 +230,37 @@ const PloV2 = () => {
           </div>
         </div>
 
+        {/* Referral Leaderboard */}
+        <div className={cx('referral-leaderboard')}>
+          <h3 className={cx('referral-leaderboard-title')}>Referral Leaderboard</h3>
+          <div className={cx('referral-leaderboard-control')}>
+            <div className={cx('referral-leaderboard-item')}>
+              <span className={cx('referral-leaderboard-item-rank')}>Rank</span>
+              <span className={cx('referral-leaderboard-item-address')}>Address</span>
+              <span className={cx('referral-leaderboard-item-referrals')}>Referrals</span>
+              <span className={cx('referral-leaderboard-item-accumulated')}>Accumulated Contribution</span>
+              <span className={cx('referral-leaderboard-item-rewards')}>Refferal Rewards</span>
+            </div>
+
+            {[0,0,0,0,0].map((_, index) => (
+              <div className={cx('referral-leaderboard-item')} key={index}>
+                <div className={cx('referral-leaderboard-item-rank')}>
+                  <div className={cx('rank')}>
+                    <span>{index + 1}</span>
+                  </div>
+                </div>
+                <span className={cx('referral-leaderboard-item-address')} style={{ color: '#488CCB' }}>5CRABk…eEQNM6</span>
+                <span className={cx('referral-leaderboard-item-referrals')}>60</span>
+                <span className={cx('referral-leaderboard-item-accumulated')}>19000 DOT</span>
+                <div className={cx('referral-leaderboard-item-rewards')}>
+                  <span>100000 RING</span>
+                  <span>100 KTON</span>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
         <p className={cx('all-right')}>Copyright@2021 Darwinia Network</p>
 
       </Container>
