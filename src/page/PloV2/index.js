@@ -118,6 +118,11 @@ const PloV2 = () => {
                 </div>
               </div>
             </div>
+
+            <div className={cx('my-referral-link')}>
+              <h3 className={cx('my-referral-link-title')}>My Referral Link</h3>
+              <span className={cx('my-referral-link-content')}>Please connect wallet first, and you can copy your referral link to invite people to participate and win more awards.</span>
+            </div>
           </div>
         </div>
 
