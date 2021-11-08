@@ -64,9 +64,9 @@ const FourCards = () => {
             <p className={cx('card-content-desc')}>
               You can start to contribute when Darwinia Crowdloan is active before the second-round auction starts. We include action time factors in our reward calculation algorithm. You can earn up to an extra 20% reward if you contribute earlier.
             </p>
-            <button className={cx('card-content-btn')}>
+            <a className={cx('card-content-btn')} rel='noopener noreferrer' target='_blank' href='https://darwinianetwork.medium.com/support-darwinia-while-investing-in-the-next-generation-infrastructure-for-the-web3-0-metaverse-aaf3defb234a'>
               <span>Learn more</span>
-            </button>
+            </a>
           </div>
         </div>
       </div>
