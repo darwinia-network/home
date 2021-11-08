@@ -3,7 +3,7 @@ import styles from './styles.module.scss';
 import classNames from 'classnames/bind';
 import { Container } from 'react-bootstrap';
 
-import bridge from './img/bridge.jpg';
+import bridge from './img/bridge.png';
 
 const cx = classNames.bind(styles);
 
