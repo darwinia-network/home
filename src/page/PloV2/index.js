@@ -4,6 +4,7 @@ import classNames from 'classnames/bind';
 import { Container } from "react-bootstrap";
 import { Link } from 'react-router-dom';
 import { Tooltip, Table, Modal } from 'antd';
+import { ethers } from 'ethers';
 
 import darwiniaLogo from './img/logo-darwinia.png';
 import infoIcon from './img/info-icon.png';
@@ -13,14 +14,14 @@ import dotIcon from './img/dot-icon.png';
 import accountIcon from './img/account-icon.png';
 import modalCloseIcon from './img/modal-close.png';
 
+// Polkadot
 import {
-  web3Accounts,
   web3Enable,
-  web3FromAddress,
-  web3ListRpcProviders,
-  web3UseRpcProvider
+  web3AccountsSubscribe,
 } from '@polkadot/extension-dapp';
 import Identicon from '@polkadot/react-identicon';
+import { ApiPromise, WsProvider } from '@polkadot/api';
+import { Keyring } from '@polkadot/keyring';
 
 // ======================= echarts ==========================
 import * as echarts from 'echarts/core';
@@ -58,8 +59,14 @@ const shortAddress = (address = '') => {
 
 const PloV2 = () => {
   const echartsRef = useRef();
+  const polkadotApi = useRef(null);
+  const unsubscribeAccounts = useRef(null);
+  const unsubscribeCurBalance = useRef(null);
+
   const [accounts, setAccounts] = useState([]);
+  const [inputDot, setInputDot] = useState('');
   const [currentAccount, setCurrentAccount] = useState(null);
+  const [currentAccountBalannce, setCurrentAccountBalannce] = useState({ freeBalance: '0', lockedBalance: '0', availableBalance: '0' });
   const [showSelectAccountModal, setShowSelectAccountModal] = useState(false);
 
   const globalContributeColumns = [
@@ -137,19 +144,63 @@ const PloV2 = () => {
       // in this case we should inform the use and give a link to the extension
       return;
     }
-  
-    // we are now informed that the user has at least one extension and that we
-    // will be able to show and use accounts
-    const allAccounts = await web3Accounts();
-    setAccounts(allAccounts);
-    console.log('allAccounts', allAccounts);
+
     setShowSelectAccountModal(true);
+    unsubscribeAccounts.current = await web3AccountsSubscribe(allAccounts => setAccounts(allAccounts));
   };
 
-  const handleClickSelectAccount = (account) => {
+  const handleClickSelectAccount = async (account) => {
     setShowSelectAccountModal(false);
     account && setCurrentAccount(account);
   };
+
+  const handleChangeInputDot = (e) => {
+    setInputDot(e.target.value);
+  }
+
+  const handleClickMaxInput = () => {
+    setInputDot(ethers.utils.formatEther(currentAccountBalannce.availableBalance));
+  }
+
+  useEffect(() => {
+    (async () => {
+      const wsProvider = new WsProvider('wss://rpc.polkadot.io');
+      polkadotApi.current = await ApiPromise.create({ provider: wsProvider });
+    })()
+
+    return () => {
+      unsubscribeAccounts.current && unsubscribeAccounts.current();
+      unsubscribeAccounts.current = null;
+    }
+  }, []);
+
+  useEffect(() => {
+    if (currentAccount && polkadotApi.current) {
+      const keyring = new Keyring();
+      keyring.setSS58Format(0); // Polkadot format address
+      const pair = keyring.addFromAddress(currentAccount.address);
+
+      polkadotApi.current.derive.balances.all(pair.address, (balancesAll) => {
+        setCurrentAccountBalannce({
+          freeBalance: balancesAll.freeBalance.toString(),
+          lockedBalance: balancesAll.lockedBalance.toString(),
+          availableBalance: balancesAll.availableBalance.toString(),
+        });
+      })
+      .then((unsub) => {
+        unsubscribeCurBalance.current && unsubscribeCurBalance.current();
+        unsubscribeCurBalance.current = unsub;
+      })
+      .catch((err) => {
+        console.error(err);
+      });
+    }
+
+    return () => {
+      unsubscribeCurBalance.current && unsubscribeCurBalance.current();
+      unsubscribeCurBalance.current = null;
+    };
+  }, [currentAccount, polkadotApi]);
 
   useEffect(() => {
     if (echartsRef.current) {
@@ -274,10 +325,10 @@ const PloV2 = () => {
             <div className={cx('dot-amount-input-wrap')}>
               <p className={cx('contribute-lebal')}>Enter your contribution amount</p>
               <div className={cx('dot-amount-input-control')}>
-                <input className={cx('contribute-input')}></input>
+                <input className={cx('contribute-input')} value={inputDot} onChange={handleChangeInputDot}></input>
                 <div className={cx('dot-amount-input-suffix')}>
                   <span className={cx('dot-amount-input-dot-suffix')}>DOT</span>
-                  <button className={cx('dot-amount-input-max-btn')}>
+                  <button className={cx('dot-amount-input-max-btn')} onClick={handleClickMaxInput}>
                     <span>MAX</span>
                   </button>
                 </div>
