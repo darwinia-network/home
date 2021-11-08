@@ -65,6 +65,7 @@ const PloV2 = () => {
 
   const [accounts, setAccounts] = useState([]);
   const [inputDot, setInputDot] = useState('');
+  const [inputReferralCode, setInputReferralCode] = useState('');
   const [currentAccount, setCurrentAccount] = useState(null);
   const [currentAccountBalannce, setCurrentAccountBalannce] = useState({ freeBalance: '0', lockedBalance: '0', availableBalance: '0' });
   const [showSelectAccountModal, setShowSelectAccountModal] = useState(false);
@@ -156,6 +157,14 @@ const PloV2 = () => {
 
   const handleChangeInputDot = (e) => {
     setInputDot(e.target.value);
+  }
+
+  const handleChangeInputReferral = (e) => {
+    setInputReferralCode(e.target.value);
+  }
+
+  const handleClickContribute = () => {
+    console.log('referral code', inputReferralCode);
   }
 
   const handleClickMaxInput = () => {
@@ -328,7 +337,7 @@ const PloV2 = () => {
                 <input className={cx('contribute-input')} value={inputDot} onChange={handleChangeInputDot}></input>
                 <div className={cx('dot-amount-input-suffix')}>
                   <span className={cx('dot-amount-input-dot-suffix')}>DOT</span>
-                  <button className={cx('dot-amount-input-max-btn')} onClick={handleClickMaxInput}>
+                  <button className={cx('dot-amount-input-max-btn')} onClick={handleClickMaxInput} disabled={!currentAccount} >
                     <span>MAX</span>
                   </button>
                 </div>
@@ -338,7 +347,7 @@ const PloV2 = () => {
             <div className={cx('referral-code-input-wrap')}>
               <p className={cx('contribute-lebal')}>Enter your referral code (optional)</p>
               <div className={cx('referral-code-input-control')}>
-                <input className={cx('referral-code-input')}></input>
+                <input className={cx('referral-code-input')} onChange={handleChangeInputReferral}></input>
               </div>
             </div>
 
@@ -373,7 +382,7 @@ const PloV2 = () => {
               </div>
             </div>
 
-            <button className={cx('contribute-btn')}>
+            <button className={cx('contribute-btn')} onClick={handleClickContribute} disabled={!currentAccount}>
               <span>Contribute</span>
             </button>
           </div>

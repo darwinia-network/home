@@ -256,6 +256,11 @@
     line-height: 21px;
     color: #FFFFFF;
   }
+
+  &:disabled {
+    cursor: not-allowed;
+    filter: grayscale(100%);
+  }
 }
 
 .auction-success-rewards {
@@ -328,6 +333,11 @@
     font-size: 16px;
     line-height: 21px;
     color: #FFFFFF;
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+    filter: grayscale(100%);
   }
 }
 
