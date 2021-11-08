@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef, useEffect } from 'react';
 import styles from './styles.module.scss';
 import classNames from 'classnames/bind';
 import { Container } from "react-bootstrap";
@@ -12,9 +12,35 @@ import ktonIcon from './img/kton-icon.png';
 import dotIcon from './img/dot-icon.png';
 import accountIcon from './img/account-icon.png';
 
+// ======================= echarts ==========================
+import * as echarts from 'echarts';
+// import {
+//   TitleComponent,
+//   ToolboxComponent,
+//   TooltipComponent,
+//   GridComponent,
+//   DataZoomComponent
+// } from 'echarts/components';
+// import { LineChart } from 'echarts/charts';
+// import { UniversalTransition } from 'echarts/features';
+// import { CanvasRenderer } from 'echarts/renderers';
+
+// echarts.use([
+//   TitleComponent,
+//   ToolboxComponent,
+//   TooltipComponent,
+//   GridComponent,
+//   DataZoomComponent,
+//   LineChart,
+//   CanvasRenderer,
+//   UniversalTransition
+// ]);
+// ======================= echarts ==========================
+
 const cx = classNames.bind(styles);
 
 const PloV2 = () => {
+  const echartsRef = useRef();
 
   const globalContributeColumns = [
     {
@@ -83,6 +109,89 @@ const PloV2 = () => {
       curNft: 'No Status',
     });
   }
+
+  useEffect(() => {
+    if (echartsRef.current) {
+      const crowdloanEchart = echarts.init(echartsRef.current);
+      let base = +new Date(1968, 9, 3);
+      const oneDay = 24 * 3600 * 1000;
+      const date = [];
+      const data = [Math.random() * 300];
+      for (let i = 1; i < 20000; i++) {
+        const now = new Date((base += oneDay));
+        date.push([now.getFullYear(), now.getMonth() + 1, now.getDate()].join('/'));
+        data.push(Math.round((Math.random() - 0.5) * 20 + data[i - 1]));
+      }
+
+      const option = {
+        tooltip: {
+          trigger: 'axis',
+          position: function (pt) {
+            return [pt[0], '10%'];
+          }
+        },
+        // title: {
+        //   left: 'center',
+        //   text: 'Large Area Chart'
+        // },
+        // toolbox: {
+        //   feature: {
+        //     dataZoom: {
+        //       yAxisIndex: 'none'
+        //     },
+        //     restore: {},
+        //     saveAsImage: {}
+        //   }
+        // },
+        xAxis: {
+          type: 'category',
+          boundaryGap: false,
+          data: date
+        },
+        yAxis: {
+          type: 'value',
+          boundaryGap: [0, '100%']
+        },
+        dataZoom: [
+          {
+            type: 'inside',
+            start: 0,
+            end: 10
+          },
+          {
+            start: 0,
+            end: 10
+          }
+        ],
+        series: [
+          {
+            name: 'Crowdloan Data',
+            type: 'line',
+            symbol: 'none',
+            sampling: 'lttb',
+            itemStyle: {
+              color: 'rgb(255, 70, 131)'
+            },
+            areaStyle: {
+              color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+                {
+                  offset: 0,
+                  color: 'rgb(255, 158, 68)'
+                },
+                {
+                  offset: 1,
+                  color: 'rgb(255, 70, 131)'
+                }
+              ])
+            },
+            data: data
+          }
+        ]
+      };
+
+      crowdloanEchart.setOption(option);
+    }
+  }, []);
 
   return (
     <div className={cx('main')}>
@@ -179,6 +288,8 @@ const PloV2 = () => {
                   <span>8,000</span>
                 </div>
               </div>
+
+              <div ref={echartsRef} className={cx('crowloan-echarts')} />
 
               <div className={cx('current-total-contribute')}>
                 <span>Current Total contributions</span>
