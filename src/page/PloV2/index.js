@@ -3,7 +3,7 @@ import styles from './styles.module.scss';
 import classNames from 'classnames/bind';
 import { Container } from "react-bootstrap";
 import { Link } from 'react-router-dom';
-import { Tooltip } from 'antd';
+import { Tooltip, Table } from 'antd';
 
 import darwiniaLogo from './img/logo-darwinia.png';
 import infoIcon from './img/info-icon.png';
@@ -15,6 +15,75 @@ import accountIcon from './img/account-icon.png';
 const cx = classNames.bind(styles);
 
 const PloV2 = () => {
+
+  const globalContributeColumns = [
+    {
+      title: 'Address',
+      dataIndex: 'address',
+      key: 'address',
+      align: 'left',
+      width: '17%',
+      render: (text) => (<span className={cx('global-contribute-address')}>{text}</span>)
+    },
+    {
+      title: 'Contributed DOT',
+      dataIndex: 'myDot',
+      key: 'myDot',
+      align: 'center',
+    },
+    {
+      title: 'Referrals',
+      dataIndex: 'referrals',
+      key: 'referrals',
+      align: 'center',
+    },
+    {
+      title: `Referrer's Contributed DOT`,
+      dataIndex: 'referralDot',
+      key: 'referralDot',
+      align: 'center',
+    },
+    {
+      title: 'Current RING Rewards',
+      dataIndex: 'curRingRewards',
+      key: 'curRingRewards',
+      align: 'center',
+    },
+    {
+      title: 'Current KTON Rewards',
+      dataIndex: 'curKtonRewards',
+      key: 'curKtonRewards',
+      align: 'center',
+    },
+    {
+      title: 'Current BTC Rewards',
+      dataIndex: 'curBtcRewards',
+      key: 'curBtcRewards',
+      align: 'center',
+    },
+    {
+      title: 'Metaverse NFT Package',
+      dataIndex: 'curNft',
+      key: 'curNft',
+      align: 'center',
+    },
+  ];
+
+  const globalContributeDataSource = [];
+  for (let i = 0; i < 100; i++) {
+    globalContributeDataSource.push({
+      key: i,
+      address: '5CRABk…eEQNM6',
+      myDot: '323,273.43',
+      referrals: '100',
+      referralDot: '323,273.43',
+      curRingRewards: '32776.27',
+      curKtonRewards: '37.27',
+      curBtcRewards: '0.1457',
+      curNft: 'No Status',
+    });
+  }
+
   return (
     <div className={cx('main')}>
       <Container>
@@ -260,6 +329,17 @@ const PloV2 = () => {
             ))}
           </div>
         </div>
+
+        <Table
+          className={cx('global-contribute')}
+          columns={globalContributeColumns}
+          dataSource={globalContributeDataSource}
+          title={() => 'Global Contribution Activity'}
+          pagination={{
+            size: 'small',
+            showSizeChanger: false,
+          }}
+        />
 
         <p className={cx('all-right')}>Copyright@2021 Darwinia Network</p>
 
