@@ -1,9 +1,9 @@
-import React, { useRef, useEffect } from 'react';
+import React, { useRef, useEffect, useState } from 'react';
 import styles from './styles.module.scss';
 import classNames from 'classnames/bind';
 import { Container } from "react-bootstrap";
 import { Link } from 'react-router-dom';
-import { Tooltip, Table } from 'antd';
+import { Tooltip, Table, Modal } from 'antd';
 
 import darwiniaLogo from './img/logo-darwinia.png';
 import infoIcon from './img/info-icon.png';
@@ -11,36 +11,56 @@ import ringIcon from './img/ring-icon.png';
 import ktonIcon from './img/kton-icon.png';
 import dotIcon from './img/dot-icon.png';
 import accountIcon from './img/account-icon.png';
+import modalCloseIcon from './img/modal-close.png';
+
+import {
+  web3Accounts,
+  web3Enable,
+  web3FromAddress,
+  web3ListRpcProviders,
+  web3UseRpcProvider
+} from '@polkadot/extension-dapp';
+import Identicon from '@polkadot/react-identicon';
 
 // ======================= echarts ==========================
-import * as echarts from 'echarts';
-// import {
-//   TitleComponent,
-//   ToolboxComponent,
-//   TooltipComponent,
-//   GridComponent,
-//   DataZoomComponent
-// } from 'echarts/components';
-// import { LineChart } from 'echarts/charts';
-// import { UniversalTransition } from 'echarts/features';
-// import { CanvasRenderer } from 'echarts/renderers';
+import * as echarts from 'echarts/core';
+import {
+  TitleComponent,
+  ToolboxComponent,
+  TooltipComponent,
+  GridComponent,
+  DataZoomComponent
+} from 'echarts/components';
+import { LineChart } from 'echarts/charts';
+import { UniversalTransition } from 'echarts/features';
+import { CanvasRenderer } from 'echarts/renderers';
 
-// echarts.use([
-//   TitleComponent,
-//   ToolboxComponent,
-//   TooltipComponent,
-//   GridComponent,
-//   DataZoomComponent,
-//   LineChart,
-//   CanvasRenderer,
-//   UniversalTransition
-// ]);
+echarts.use([
+  TitleComponent,
+  ToolboxComponent,
+  TooltipComponent,
+  GridComponent,
+  DataZoomComponent,
+  LineChart,
+  CanvasRenderer,
+  UniversalTransition
+]);
 // ======================= echarts ==========================
 
 const cx = classNames.bind(styles);
 
+const shortAddress = (address = '') => {
+  if (address.length && address.length > 12) {
+    return `${address.slice(0, 5)}...${address.slice(address.length - 5)}`;
+  }
+  return address;
+}
+
 const PloV2 = () => {
   const echartsRef = useRef();
+  const [accounts, setAccounts] = useState([]);
+  const [currentAccount, setCurrentAccount] = useState(null);
+  const [showSelectAccountModal, setShowSelectAccountModal] = useState(false);
 
   const globalContributeColumns = [
     {
@@ -109,6 +129,27 @@ const PloV2 = () => {
       curNft: 'No Status',
     });
   }
+
+  const handleClickConnectWallet = async () => {
+    const extensions = await web3Enable('darwinia.network');
+    if (extensions.length === 0) {
+      // no extension installed, or the user did not accept the authorization
+      // in this case we should inform the use and give a link to the extension
+      return;
+    }
+  
+    // we are now informed that the user has at least one extension and that we
+    // will be able to show and use accounts
+    const allAccounts = await web3Accounts();
+    setAccounts(allAccounts);
+    console.log('allAccounts', allAccounts);
+    setShowSelectAccountModal(true);
+  };
+
+  const handleClickSelectAccount = (account) => {
+    setShowSelectAccountModal(false);
+    account && setCurrentAccount(account);
+  };
 
   useEffect(() => {
     if (echartsRef.current) {
@@ -207,9 +248,22 @@ const PloV2 = () => {
               <span>PLO</span>
             </div>
           </div>
-          <button className={cx('heading-container-connnect-wallet-btn')}>
-            <span>Connect Wallet</span>
-          </button>
+
+          {currentAccount ? (
+            <div className={cx('heading-container-current-account-wrap')}>
+              <div className={cx('heading-container-current-account')}>
+                <span>{shortAddress(currentAccount.address)}</span>
+                <Identicon value={currentAccount.address} size={30} theme="polkadot" />
+              </div>
+              <button className={cx('heading-container-change-account')} onClick={() => setShowSelectAccountModal(true)}>
+                <span>Change</span>
+              </button>
+            </div>
+          ) : (
+            <button className={cx('heading-container-connnect-wallet-btn')} onClick={handleClickConnectWallet}>
+              <span>Connect Wallet</span>
+            </button>
+          )}
         </div>
 
         {/* Contribute, Crowloan, Referral link */}
@@ -455,6 +509,29 @@ const PloV2 = () => {
         <p className={cx('all-right')}>Copyright@2021 Darwinia Network</p>
 
       </Container>
+
+      <Modal
+        className={cx('select-account-modal')}
+        visible={showSelectAccountModal}
+        footer={null}
+        title='Select an Account'
+        closable={true}
+        closeIcon={<img alt='...' src={modalCloseIcon} />}
+        onCancel={() => setShowSelectAccountModal(false)}
+        width={560}
+      >
+        <div className={cx('accounts-container')}>
+          {accounts.map((account, index) => (
+            <button className={cx('accounts-item')} key={index} onClick={() => handleClickSelectAccount(account)}>
+              <Identicon value={account.address} size={40} theme='polkadot' />
+              <div className={cx('accounts-item-name-address')}>
+                <span className={cx('name')}>{account.meta.name}</span>
+                <span className={cx('address')}>{account.address}</span>
+              </div>
+            </button>
+          ))}
+        </div>
+      </Modal>
     </div>
   );
 };
