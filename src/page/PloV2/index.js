@@ -28,8 +28,10 @@ import {
 import Identicon from '@polkadot/react-identicon';
 import { ApiPromise, WsProvider } from '@polkadot/api';
 import { Keyring, decodeAddress, encodeAddress } from '@polkadot/keyring';
-import { hexToU8a, isHex, u8aToHex } from '@polkadot/util';
-// import {} from '@pl'
+import { hexToU8a, isHex, u8aToHex, formatBalance } from '@polkadot/util';
+import BN from 'bn.js';
+
+import { gql, useQuery } from '@apollo/client';
 
 // ======================= echarts ==========================
 import * as echarts from 'echarts/core';
@@ -66,7 +68,6 @@ const shortAddress = (address = '') => {
 }
 
 const isValidAddressPolkadotAddress = (address) => {
-  // u8aToHex(decodeAddress(inputReferralCode)).slice(2) = code
   try {
     encodeAddress(
       isHex(address)
@@ -91,6 +92,26 @@ const isValidReferralCode = (referralCode) => {
 
 const PARA_ID = 2003;
 
+const TOTAL_CONTRIBUTE_HISTORY = gql`
+query {
+  events(
+    filter: { 
+      method: { equalTo: "Contributed" } 
+      and: {
+        data: {
+          includes: ",2084,"
+        }
+      }
+    }) {
+    totalCount
+    nodes {
+      timestamp
+      data
+    }
+  }
+}
+`;
+
 const PloV2 = () => {
   const echartsRef = useRef();
   const polkadotApi = useRef(null);
@@ -102,9 +123,13 @@ const PloV2 = () => {
   const [inputReferralCode, setInputReferralCode] = useState('');
   const [currentAccount, setCurrentAccount] = useState(null);
   const [currentAccountBalannce, setCurrentAccountBalannce] = useState({ freeBalance: '0', lockedBalance: '0', availableBalance: '0' });
+  const [currentTotalContribute, setCurrentTotalContribute] = useState(new BN(0));
 
   const [showThanksForSupportModal, setShowThanksForSupportModal] = useState(false);
   const [showSelectAccountModal, setShowSelectAccountModal] = useState(false);
+
+  // Graphql
+  const totalContributeHistory = useQuery(TOTAL_CONTRIBUTE_HISTORY);
 
   const globalContributeColumns = [
     {
@@ -303,17 +328,20 @@ const PloV2 = () => {
   }, [currentAccount, polkadotApi]);
 
   useEffect(() => {
-    if (echartsRef.current) {
+    if (echartsRef.current && !totalContributeHistory.error && !totalContributeHistory.loading && totalContributeHistory.data.events.totalCount) {
       const crowdloanEchart = echarts.init(echartsRef.current);
-      let base = +new Date(1968, 9, 3);
-      const oneDay = 24 * 3600 * 1000;
+
       const date = [];
-      const data = [Math.random() * 300];
-      for (let i = 1; i < 20000; i++) {
-        const now = new Date((base += oneDay));
-        date.push([now.getFullYear(), now.getMonth() + 1, now.getDate()].join('/'));
-        data.push(Math.round((Math.random() - 0.5) * 20 + data[i - 1]));
+      const data = [];
+      for (let i = 0; i < totalContributeHistory.data.events.totalCount; i++) {
+        const node = totalContributeHistory.data.events.nodes[i];
+        const amount = new BN(JSON.parse(node.data)[2]);
+        date.push(node.timestamp.split('T')[0].replaceAll('-', '/'));
+        // date.push(node.timestamp.split('T')[1].split('.')[0].replaceAll('-', '/'));
+        data.push(i > 0 ? data[i - 1].add(amount) : amount);
       }
+
+      setCurrentTotalContribute(data[data.length - 1]);
 
       const option = {
         tooltip: {
@@ -322,19 +350,6 @@ const PloV2 = () => {
             return [pt[0], '10%'];
           }
         },
-        // title: {
-        //   left: 'center',
-        //   text: 'Large Area Chart'
-        // },
-        // toolbox: {
-        //   feature: {
-        //     dataZoom: {
-        //       yAxisIndex: 'none'
-        //     },
-        //     restore: {},
-        //     saveAsImage: {}
-        //   }
-        // },
         xAxis: {
           type: 'category',
           boundaryGap: false,
@@ -376,14 +391,14 @@ const PloV2 = () => {
                 }
               ])
             },
-            data: data
+            data: data.map(d => formatBalance(d, { forceUnit: true, withUnit: false, withSi: false, decimals: 10 }))
           }
         ]
       };
 
       crowdloanEchart.setOption(option);
     }
-  }, []);
+  }, [totalContributeHistory]);
 
   return (
     <div className={cx('main')}>
@@ -500,7 +515,7 @@ const PloV2 = () => {
                 <span>Current Total contributions</span>
                 <div className={cx('total-contribute-dot')}>
                   <img alt='...' src={dotIcon} />
-                  <span>42,483.73 DOT</span>
+                  <span>{formatBalance(currentTotalContribute, { forceUnit: true, withUnit: false, withSi: false, decimals: 10 })} DOT</span>
                 </div>
               </div>
             </div>
