@@ -31,6 +31,7 @@ import { Keyring, decodeAddress, encodeAddress } from '@polkadot/keyring';
 import { hexToU8a, isHex, u8aToHex, formatBalance } from '@polkadot/util';
 import BN from 'bn.js';
 
+import { graphqlClient } from '../../graphql';
 import { gql, useQuery } from '@apollo/client';
 
 // ======================= echarts ==========================
@@ -112,6 +113,57 @@ query {
 }
 `;
 
+const actionSomeOneConntributeHistory = (address = 'HeU2h1RoQNx5MkUKBDZ9VsX5uCNb4gdCf6YADVxj3Ku6SPG') => (
+gql`
+query {
+  extrinsics(
+    filter: {
+      signerId: { equalTo: "${address}" }
+    }
+  ) {
+    totalCount
+    nodes {
+      events(
+        filter:{
+          method:{equalTo: "Contributed"}
+          and: {
+            data: {
+              includes: ",2084,"
+            }
+          }
+        }) {
+        nodes {
+          id
+          timestamp
+          data
+        }
+      }
+    }
+  }
+}
+`);
+
+const actionSomeOneReferrals = (referralCode = '0x3e68cf5a7d3350cf8a1fa6ad81bc3515e4e86238f472f6a4655c11137500ef57') => (
+gql`
+query {
+  events(
+   filter:{
+     method:{ equalTo:"MemoUpdated"}
+     and: {
+       data: {
+         includes: ",2084,\\"${referralCode}\\""
+       }
+     }
+   }
+ ){
+     totalCount
+     nodes {
+       data
+     }
+   }
+ }
+`);
+
 const PloV2 = () => {
   const echartsRef = useRef();
   const polkadotApi = useRef(null);
@@ -124,12 +176,15 @@ const PloV2 = () => {
   const [currentAccount, setCurrentAccount] = useState(null);
   const [currentAccountBalannce, setCurrentAccountBalannce] = useState({ freeBalance: '0', lockedBalance: '0', availableBalance: '0' });
   const [currentTotalContribute, setCurrentTotalContribute] = useState(new BN(0));
+  const [referralsContributeHistory, setReferralsContributeHistory] = useState([]);
 
   const [showThanksForSupportModal, setShowThanksForSupportModal] = useState(false);
   const [showSelectAccountModal, setShowSelectAccountModal] = useState(false);
 
   // Graphql
   const totalContributeHistory = useQuery(TOTAL_CONTRIBUTE_HISTORY);
+  const myContributeHistoty = useQuery(actionSomeOneConntributeHistory());
+  const myReferrals = useQuery(actionSomeOneReferrals());
 
   const globalContributeColumns = [
     {
@@ -280,6 +335,21 @@ const PloV2 = () => {
     const referral = (new URLSearchParams(window.location.search)).get('referral');
     referral && setInputReferralCode(referral);
   }, []);
+
+  useEffect(() => {
+    (async () => {
+      const results = [];
+      if (!myReferrals.loading && !myReferrals.error && myReferrals.data.events.totalCount) {
+        for (let node of myReferrals.data.events.nodes) {
+          console.log(JSON.parse(node.data)[0]);
+          const res = await graphqlClient.query({ query: actionSomeOneConntributeHistory(JSON.parse(node.data)[0]) });
+          results.push(res);
+        }
+        results.length > 0 && setReferralsContributeHistory(results);
+      }
+
+    })()
+  }, [myReferrals]);
 
   // useEffect(() => {
   //   if (currentAccount && inputReferralCode && u8aToHex(decodeAddress(currentAccount.address)).slice(2) === inputReferralCode) {
@@ -590,19 +660,41 @@ const PloV2 = () => {
           <div className={cx('my-contribute-history')}>
             <div className={cx('contribute-history-wrap')}>
               <p>Contribution history</p>
-              <div className={cx('contribute-history-control', 'no-data')}>No Data</div>
+              {(!myContributeHistoty.loading && !myContributeHistoty.error && myContributeHistoty.data.extrinsics.nodes[0].events.nodes.length) ? (
+                <div className={cx('contribute-history-control')}>
+                  {myContributeHistoty.data.extrinsics.nodes.map((node1, index1) => (
+                    node1.events.nodes.map((node2, index2) => (
+                      <div className={cx('contribute-history-control-item')} key={`${index1}-${index2}`}>
+                        <span>{(new Date(node2.timestamp)).toDateString().split(' ')[1]} {(new Date(node2.timestamp)).toDateString().split(' ')[2]}</span>
+                        <span className={cx('dot-amount')}>{formatBalance(new BN(JSON.parse(node2.data)[2]), { forceUnit: true, withUnit: false, withSi: false, decimals: 10 })} DOT</span>
+                        <a className={cx('hash-id')} target='_blank' rel='noopener noreferrer' href={`https://polkadot.subscan.io/extrinsic/${node2.id}`}>{node2.id}</a>
+                      </div>
+                    ))
+                  ))}
+                </div>
+              ) : (
+                <div className={cx('contribute-history-control', 'no-data')}>No Data</div>
+              )}
             </div>
             <div className={cx('referral-history-wrap')}>
               <p>Referral history</p>
-              <div className={cx('referral-history-control')}>
-                {[1,1,1,1,1,1,1,1,1].map((_, index) => (
-                  <div className={cx('referral-history-control-item')} key={index}>
-                    <span>Dec  23</span>
-                    <span>32.376 DOT</span>
-                    <span className={cx('hash-id')}>95650-2</span>
-                  </div>
-                ))}
-              </div>
+              {referralsContributeHistory.length ? (
+                <div className={cx('referral-history-control')}>
+                  {referralsContributeHistory.map((someone, index0) => (
+                    someone.data.extrinsics.nodes.map((node1, index1) => (
+                      node1.events.nodes.map((node2, index2) => (
+                        <div className={cx('referral-history-control-item')} key={`${index0}-${index1}-${index2}`}>
+                          <span>{(new Date(node2.timestamp)).toDateString().split(' ')[1]} {(new Date(node2.timestamp)).toDateString().split(' ')[2]}</span>
+                          <span className={cx('dot-amount')}>{formatBalance(new BN(JSON.parse(node2.data)[2]), { forceUnit: true, withUnit: false, withSi: false, decimals: 10 })} DOT</span>
+                          <a className={cx('hash-id')} target='_blank' rel='noopener noreferrer' href={`https://polkadot.subscan.io/extrinsic/${node2.id}`}>{node2.id}</a>
+                        </div>
+                      ))
+                    ))
+                  ))}
+                </div>
+              ) : (
+                <div className={cx('referral-history-control', 'no-data')}>No Data</div>
+              )}
             </div>
           </div>
         </div>

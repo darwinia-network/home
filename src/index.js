@@ -6,22 +6,14 @@ import App from "./App";
 import * as serviceWorker from "./serviceWorker";
 import { withTranslation } from "react-i18next";
 
-// Graphql
 import {
-  ApolloClient,
-  InMemoryCache,
   ApolloProvider,
 } from "@apollo/client";
-
-const client = new ApolloClient({
-  // uri: 'https://48p1r2roz4.sse.codesandbox.io',
-  uri: 'https://api.subquery.network/sq/darwinia-network/kusama__ZGFyd',
-  cache: new InMemoryCache()
-});
+import { graphqlClient } from './graphql';
 
 const TransApp = withTranslation()(App);
 ReactDOM.render(
-  <ApolloProvider client={client}>
+  <ApolloProvider client={graphqlClient}>
     <TransApp />
   </ApolloProvider>, 
   document.getElementById("root")
