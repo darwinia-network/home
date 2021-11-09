@@ -3,7 +3,7 @@ import styles from './styles.module.scss';
 import classNames from 'classnames/bind';
 import { Container } from "react-bootstrap";
 import { Link } from 'react-router-dom';
-import { Tooltip, Table, Modal, notification } from 'antd';
+import { Tooltip, Table, Modal, Typography, notification } from 'antd';
 import { ethers } from 'ethers';
 
 import darwiniaLogo from './img/logo-darwinia.png';
@@ -66,6 +66,7 @@ const shortAddress = (address = '') => {
 }
 
 const isValidAddressPolkadotAddress = (address) => {
+  // u8aToHex(decodeAddress(inputReferralCode)).slice(2) = code
   try {
     encodeAddress(
       isHex(address)
@@ -78,6 +79,15 @@ const isValidAddressPolkadotAddress = (address) => {
     return false;
   }
 };
+
+const isValidReferralCode = (referralCode) => {
+  try {
+    const address = encodeAddress(hexToU8a(`0x${referralCode}`));
+    return isValidAddressPolkadotAddress(address);
+  } catch (error) {
+    return false;
+  }
+}
 
 const PARA_ID = 2003;
 
@@ -196,7 +206,7 @@ const PloV2 = () => {
         ethers.utils.parseEther(Number(inputDot).toString()).toString(),
         null
       );
-      const extrinsicAddMemo = isValidAddressPolkadotAddress(inputReferralCode) ? polkadotApi.current.tx.crowdloan.addMemo(PARA_ID, u8aToHex(decodeAddress(inputReferralCode)).slice(2)) : null;
+      const extrinsicAddMemo = isValidReferralCode(inputReferralCode) ? polkadotApi.current.tx.crowdloan.addMemo(PARA_ID, inputReferralCode) : null;
       const injector = await web3FromAddress(currentAccount.address);
       const tx = extrinsicAddMemo ? polkadotApi.current.tx.utility.batch([extrinsicContribute, extrinsicAddMemo]) : extrinsicContribute;
 
@@ -240,6 +250,17 @@ const PloV2 = () => {
   const handleClickMaxInput = () => {
     setInputDot(ethers.utils.formatEther(currentAccountBalannce.availableBalance));
   }
+
+  useEffect(() => {
+    const referral = (new URLSearchParams(window.location.search)).get('referral');
+    referral && setInputReferralCode(referral);
+  }, []);
+
+  // useEffect(() => {
+  //   if (currentAccount && inputReferralCode && u8aToHex(decodeAddress(currentAccount.address)).slice(2) === inputReferralCode) {
+  //     setInputReferralCode('');
+  //   }
+  // }, [currentAccount]);
 
   useEffect(() => {
     (async () => {
@@ -417,7 +438,7 @@ const PloV2 = () => {
             <div className={cx('referral-code-input-wrap')}>
               <p className={cx('contribute-lebal')}>Enter your referral code (optional)</p>
               <div className={cx('referral-code-input-control')}>
-                <input className={cx('referral-code-input')} onChange={handleChangeInputReferral}></input>
+                <input className={cx('referral-code-input')} value={inputReferralCode} onChange={handleChangeInputReferral}></input>
               </div>
             </div>
 
@@ -486,7 +507,13 @@ const PloV2 = () => {
 
             <div className={cx('my-referral-link')}>
               <h3 className={cx('my-referral-link-title')}>My Referral Link</h3>
-              <span className={cx('my-referral-link-content')}>Please connect wallet first, and you can copy your referral link to invite people to participate and win more awards.</span>
+              {currentAccount ? (
+                <Typography.Link rel='noopener noreferrer' className={cx('my-referral-link-content')} code={true} copyable={true} target='_blank' href={`/plo2?referral=${u8aToHex(decodeAddress(currentAccount.address)).slice(2)}`}>
+                  {`https://darwinia.network/plo2?referral=${u8aToHex(decodeAddress(currentAccount.address)).slice(2)}`}
+                </Typography.Link>
+              ) : (
+                <span className={cx('my-referral-link-content')}>Please connect wallet first, and you can copy your referral link to invite people to participate and win more awards.</span>
+              )}
             </div>
           </div>
         </div>
