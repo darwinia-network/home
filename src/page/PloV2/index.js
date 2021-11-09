@@ -14,6 +14,11 @@ import dotIcon from './img/dot-icon.png';
 import accountIcon from './img/account-icon.png';
 import modalCloseIcon from './img/modal-close.png';
 
+import twitterIcon from './img/twitter.png';
+import mediumIcon from './img/medium.png';
+import telegramIcon from './img/telegram.png';
+import discordIcon from './img/discord.png';
+
 // Polkadot
 import {
   web3Enable,
@@ -87,6 +92,8 @@ const PloV2 = () => {
   const [inputReferralCode, setInputReferralCode] = useState('');
   const [currentAccount, setCurrentAccount] = useState(null);
   const [currentAccountBalannce, setCurrentAccountBalannce] = useState({ freeBalance: '0', lockedBalance: '0', availableBalance: '0' });
+
+  const [showThanksForSupportModal, setShowThanksForSupportModal] = useState(false);
   const [showSelectAccountModal, setShowSelectAccountModal] = useState(false);
 
   const globalContributeColumns = [
@@ -208,8 +215,7 @@ const PloV2 = () => {
               if (method === "ExtrinsicSuccess" && section === "system") {
                 if (status.isInBlock) {
                   // setContributedBlockHash(status.asInBlock);
-                  // thanksModal.current && thanksModal.current.show();
-                  // setDisableContributeBtn(false);
+                  setShowThanksForSupportModal(true);
                 } else if (status.isFinalized) {
                   unsub && unsub();
                 }
@@ -654,6 +660,38 @@ const PloV2 = () => {
               </div>
             </button>
           ))}
+        </div>
+      </Modal>
+
+      <Modal
+        className={cx('thanks-for-support-modal')}
+        visible={showThanksForSupportModal}
+        onCancel={() => setShowThanksForSupportModal(false)}
+        title={null}
+        footer={null}
+        closeIcon={<img alt='...' src={modalCloseIcon} />}
+      >
+        <div className={cx('thanks-for-support-modal-content')}>
+          <h3 className={cx('thanks-for-support-modal-content-title')}>
+            <span role='img' aria-label='thx'>🎉</span> Thank you for supporting Darwinia Network!
+          </h3>
+          <p className={cx('thanks-for-support-modal-content-desc')}>
+            You can track the latest progress of Darwinia Network PLO in the following ways:
+          </p>
+          <div className={cx('thanks-for-support-modal-content-contact')}>
+            <a className={cx('thanks-for-support-modal-content-contact-item')} rel='noopener noreferrer' target='_blank' href='https://twitter.com/DarwiniaNetwork'>
+              <img alt='...' src={twitterIcon} />
+            </a>
+            <a className={cx('thanks-for-support-modal-content-contact-item')} rel='noopener noreferrer' target='_blank' href='https://darwinianetwork.medium.com/'>
+              <img alt='...' src={mediumIcon} />
+            </a>
+            <a className={cx('thanks-for-support-modal-content-contact-item')} rel='noopener noreferrer' target='_blank' href='https://t.me/DarwiniaNetwork'>
+              <img alt='...' src={telegramIcon} />
+            </a>
+            <a className={cx('thanks-for-support-modal-content-contact-item')} rel='noopener noreferrer' target='_blank' href='https://discord.com/channels/456092011347443723/795384466930663434'>
+              <img alt='...' src={discordIcon} />
+            </a>
+          </div>
         </div>
       </Modal>
     </div>
