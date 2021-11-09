@@ -113,6 +113,17 @@ query {
 }
 `;
 
+const TOP_5_CONTRIBUTE = gql`
+query {
+  events(filter: { method: { equalTo: "Contributed" } }, orderBy: ID_DESC, , first: 5) {
+    totalCount
+    nodes {
+      data
+    }
+  }
+}
+`;
+
 const actionSomeOneConntributeHistory = (address = 'HeU2h1RoQNx5MkUKBDZ9VsX5uCNb4gdCf6YADVxj3Ku6SPG') => (
 gql`
 query {
@@ -185,6 +196,8 @@ const PloV2 = () => {
   const totalContributeHistory = useQuery(TOTAL_CONTRIBUTE_HISTORY);
   const myContributeHistoty = useQuery(actionSomeOneConntributeHistory());
   const myReferrals = useQuery(actionSomeOneReferrals());
+  const top5Contribute = useQuery(TOP_5_CONTRIBUTE);
+  console.log('top5Contribute', top5Contribute);
 
   const globalContributeColumns = [
     {
@@ -715,16 +728,18 @@ const PloV2 = () => {
           </div>
 
           <div className={cx('pioneers-container')}>
-            {[0,0,0].map((_,index) => (
-              <div className={cx('pioneers-item')} key={index}>
-                <div className={cx('pioneers-item-num-icon')}>
-                  <span>{index + 1}</span>
+            {!top5Contribute.loading && !top5Contribute.error && top5Contribute.data.events.nodes.length ? (
+              top5Contribute.data.events.nodes.map((node, index) => (
+                <div className={cx('pioneers-item')} key={index}>
+                  <div className={cx('pioneers-item-num-icon')}>
+                    <span>{index + 1}</span>
+                  </div>
+                  <Identicon value={JSON.parse(node.data)[0]} className={cx('pioneers-item-account-icon')} theme='polkadot' />
+                  <span className={cx('pioneers-item-account-name')}>{shortAddress(JSON.parse(node.data)[0])}</span>
+                  <span className={cx('pioneers-item-dot-amount')}>{formatBalance(new BN(JSON.parse(node.data)[2]), { forceUnit: true, withUnit: false, withSi: false, decimals: 10 })} DOT</span>
                 </div>
-                <img className={cx('pioneers-item-account-icon')} alt='...' src={accountIcon} />
-                <span className={cx('pioneers-item-account-name')}>16Xuv8T....DiXkn</span>
-                <span className={cx('pioneers-item-dot-amount')}>374,375.37 DOT</span>
-              </div>
-            ))}
+              ))
+            ) : null}
           </div>
         </div>
 
