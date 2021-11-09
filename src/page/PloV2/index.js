@@ -3,7 +3,7 @@ import styles from './styles.module.scss';
 import classNames from 'classnames/bind';
 import { Container } from "react-bootstrap";
 import { Link } from 'react-router-dom';
-import { Tooltip, Table, Modal } from 'antd';
+import { Tooltip, Table, Modal, notification } from 'antd';
 import { ethers } from 'ethers';
 
 import darwiniaLogo from './img/logo-darwinia.png';
@@ -18,10 +18,13 @@ import modalCloseIcon from './img/modal-close.png';
 import {
   web3Enable,
   web3AccountsSubscribe,
+  web3FromAddress,
 } from '@polkadot/extension-dapp';
 import Identicon from '@polkadot/react-identicon';
 import { ApiPromise, WsProvider } from '@polkadot/api';
-import { Keyring } from '@polkadot/keyring';
+import { Keyring, decodeAddress, encodeAddress } from '@polkadot/keyring';
+import { hexToU8a, isHex, u8aToHex } from '@polkadot/util';
+// import {} from '@pl'
 
 // ======================= echarts ==========================
 import * as echarts from 'echarts/core';
@@ -56,6 +59,22 @@ const shortAddress = (address = '') => {
   }
   return address;
 }
+
+const isValidAddressPolkadotAddress = (address) => {
+  try {
+    encodeAddress(
+      isHex(address)
+        ? hexToU8a(address)
+        : decodeAddress(address)
+    );
+
+    return true;
+  } catch (error) {
+    return false;
+  }
+};
+
+const PARA_ID = 2003;
 
 const PloV2 = () => {
   const echartsRef = useRef();
@@ -163,8 +182,53 @@ const PloV2 = () => {
     setInputReferralCode(e.target.value);
   }
 
-  const handleClickContribute = () => {
-    console.log('referral code', inputReferralCode);
+  const handleClickContribute = async () => {
+    if (Number(inputDot) > 0) {
+      const extrinsicContribute = polkadotApi.current.tx.crowdloan.contribute(
+        PARA_ID,
+        ethers.utils.parseEther(Number(inputDot).toString()).toString(),
+        null
+      );
+      const extrinsicAddMemo = isValidAddressPolkadotAddress(inputReferralCode) ? polkadotApi.current.tx.crowdloan.addMemo(PARA_ID, u8aToHex(decodeAddress(inputReferralCode)).slice(2)) : null;
+      const injector = await web3FromAddress(currentAccount.address);
+      const tx = extrinsicAddMemo ? polkadotApi.current.tx.utility.batch([extrinsicContribute, extrinsicAddMemo]) : extrinsicContribute;
+
+      try {
+        const unsub = await tx.signAndSend(
+          currentAccount.address,
+          { signer: injector.signer },
+          ({ events = [], status }) => {
+            events.forEach(({ phase, event: { data, method, section } }) => {
+              console.log(`${phase}: ${section}.${method}:: ${data}`);
+
+              if (method === "Contributed" && section === "crowdloan") {
+                // setContributedValue(formatKSMBalance(data[2]));
+              }
+
+              if (method === "ExtrinsicSuccess" && section === "system") {
+                if (status.isInBlock) {
+                  // setContributedBlockHash(status.asInBlock);
+                  // thanksModal.current && thanksModal.current.show();
+                  // setDisableContributeBtn(false);
+                } else if (status.isFinalized) {
+                  unsub && unsub();
+                }
+              }
+
+              if (method === "ExtrinsicFailed" && section === "system") {
+                // setDisableContributeBtn(false);
+              }
+            });
+          }
+        )
+      } catch (err) {
+        console.log(err);
+        notification.warning({
+          message: 'Failed To Contribute',
+          description: err.message,
+        });
+      }
+    }
   }
 
   const handleClickMaxInput = () => {
