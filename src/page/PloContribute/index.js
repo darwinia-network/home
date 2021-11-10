@@ -173,16 +173,16 @@ query {
 `;
 
 const CONTRIBUTE_PIONEERS = gql`
-query {
-  accounts (first: 6,orderBy: CONTRIBUTED_TOTAL_DESC) {
-    nodes {
+  query {
+    accounts(first: 6, orderBy: CONTRIBUTED_TOTAL_DESC) {
+      nodes {
         id
         transferTotalCount
         contributedTotalCount
         contributedTotal
+      }
     }
-}
-}
+  }
 `;
 
 const PloContribute = () => {
@@ -239,7 +239,13 @@ const PloContribute = () => {
     : 100.0 / currentTotalContribute.div(myTotalContribute).toNumber();
 
   let myBtcReward = 0;
-  if (currentAccount && contributePionners.data && contributePionners.data.accounts && contributePionners.data.accounts.nodes && contributePionners.data.accounts.nodes.length) {
+  if (
+    currentAccount &&
+    contributePionners.data &&
+    contributePionners.data.accounts &&
+    contributePionners.data.accounts.nodes &&
+    contributePionners.data.accounts.nodes.length
+  ) {
     let top5contribute = new BN(0);
     let myContribute = new BN(0);
 
@@ -780,7 +786,7 @@ const PloContribute = () => {
         <Fade bottom fraction={0.1} duration={1200} distance={"50px"}>
           <div className={cx("my-contribute")}>
             <div className={cx("my-contribute-title-wrap")}>
-              <div className={cx("my-contribute-title", { 'connected': !!currentAccount })}>
+              <div className={cx("my-contribute-title", { connected: !!currentAccount })}>
                 <h3>My Contribution</h3>
                 <span>
                   *The reward amount will change in real-time according to the progress of the crowdloan, and the final
@@ -788,23 +794,23 @@ const PloContribute = () => {
                 </span>
               </div>
               {currentAccount ? (
-              <div className={cx("heading-container-current-account-wrap")}>
-                <div className={cx("heading-container-current-account")}>
-                  <span>{shortAddress(currentAccount.address)}</span>
-                  <Identicon value={currentAccount.address} size={isMobile() ? 15 : 30} theme="polkadot" />
+                <div className={cx("heading-container-current-account-wrap")}>
+                  <div className={cx("heading-container-current-account")}>
+                    <span>{shortAddress(currentAccount.address)}</span>
+                    <Identicon value={currentAccount.address} size={isMobile() ? 15 : 30} theme="polkadot" />
+                  </div>
+                  <button
+                    className={cx("heading-container-change-account")}
+                    onClick={() => setShowSelectAccountModal(true)}
+                  >
+                    <span>Change</span>
+                  </button>
                 </div>
-                <button
-                  className={cx("heading-container-change-account")}
-                  onClick={() => setShowSelectAccountModal(true)}
-                >
-                  <span>Change</span>
+              ) : (
+                <button className={cx("my-contribute-connect-wallet-btn")} onClick={handleClickConnectWallet}>
+                  <span>Connect Wallet</span>
                 </button>
-              </div>
-            ) : (
-              <button className={cx("my-contribute-connect-wallet-btn")} onClick={handleClickConnectWallet}>
-                <span>Connect Wallet</span>
-              </button>
-            )}
+              )}
             </div>
 
             <div className={cx("contribute-info-card")}>
@@ -1073,44 +1079,59 @@ const PloContribute = () => {
                   <img alt="..." src={infoIcon} className={cx("info-icon")} />
                 </Tooltip>
               </div>
-              {currentAccount && contributePionners.data && contributePionners.data.accounts && contributePionners.data.accounts.nodes && contributePionners.data.accounts.nodes.length && contributePionners.data.accounts.nodes.findIndex(node => (node.id === currentAccount.address)) !== -1 && (
-                <div className={cx("contribute-pioneers-title-rank")}>
-                  <Identicon
-                    value={currentAccount.address}
-                    className={cx("pioneers-item-account-icon")}
-                    size={isMobile() ? 15 : 30}
-                    theme="polkadot"
-                  />
-                  <span>My Rank: {contributePionners.data.accounts.nodes.findIndex(node => node.id === currentAccount.address) + 1}</span>
-                </div>
-              )}
+              {currentAccount &&
+                contributePionners.data &&
+                contributePionners.data.accounts &&
+                contributePionners.data.accounts.nodes &&
+                contributePionners.data.accounts.nodes.length &&
+                contributePionners.data.accounts.nodes.findIndex((node) => node.id === currentAccount.address) !==
+                  -1 && (
+                  <div className={cx("contribute-pioneers-title-rank")}>
+                    <Identicon
+                      value={currentAccount.address}
+                      className={cx("pioneers-item-account-icon")}
+                      size={isMobile() ? 15 : 30}
+                      theme="polkadot"
+                    />
+                    <span>
+                      My Rank:{" "}
+                      {contributePionners.data.accounts.nodes.findIndex((node) => node.id === currentAccount.address) +
+                        1}
+                    </span>
+                  </div>
+                )}
             </div>
 
             <div className={cx("pioneers-container")}>
-              {contributePionners.data && contributePionners.data.accounts && contributePionners.data.accounts.nodes && contributePionners.data.accounts.nodes.length
-                ? contributePionners.data.accounts.nodes.map((node, index) => index > 4 ? null : (
-                    <div className={cx("pioneers-item")} key={index}>
-                      <div className={cx("pioneers-item-num-icon")}>
-                        <span>{index + 1}</span>
+              {contributePionners.data &&
+              contributePionners.data.accounts &&
+              contributePionners.data.accounts.nodes &&
+              contributePionners.data.accounts.nodes.length
+                ? contributePionners.data.accounts.nodes.map((node, index) =>
+                    index > 4 ? null : (
+                      <div className={cx("pioneers-item")} key={index}>
+                        <div className={cx("pioneers-item-num-icon")}>
+                          <span>{index + 1}</span>
+                        </div>
+                        <Identicon
+                          value={node.id}
+                          className={cx("pioneers-item-account-icon")}
+                          size={isMobile() ? 26 : 30}
+                          theme="polkadot"
+                        />
+                        <span className={cx("pioneers-item-account-name")}>{shortAddress(node.id)}</span>
+                        <span className={cx("pioneers-item-dot-amount")}>
+                          {formatBalance(new BN(node.contributedTotal), {
+                            forceUnit: true,
+                            withUnit: false,
+                            withSi: false,
+                            decimals: 10,
+                          })}{" "}
+                          DOT
+                        </span>
                       </div>
-                      <Identicon
-                        value={node.id}
-                        className={cx("pioneers-item-account-icon")}
-                        size={isMobile() ? 26 : 30}
-                        theme="polkadot"
-                      />
-                      <span className={cx("pioneers-item-account-name")}>{shortAddress(node.id)}</span>
-                      <span className={cx("pioneers-item-dot-amount")}>
-                        {formatBalance(new BN(node.contributedTotal), {
-                          forceUnit: true,
-                          withUnit: false,
-                          withSi: false,
-                          decimals: 10,
-                        })}{" "}
-                        DOT
-                      </span>
-                    </div>
-                  ))
+                    )
+                  )
                 : null}
             </div>
           </div>
