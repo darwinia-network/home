@@ -85,11 +85,12 @@ const isValidAddressPolkadotAddress = (address) => {
 //   }
 // }
 
-const PARA_ID = 2003;
+// const PARA_ID = 2003;
+const PARA_ID = 2084;
 
 const TOTAL_CONTRIBUTE_HISTORY = gql`
   query {
-    events(filter: { method: { equalTo: "Contributed" }, and: { data: { includes: ",2084," } } }) {
+    events(filter: { method: { equalTo: "Contributed" }, and: { data: { includes: ",${PARA_ID}," } } }) {
       totalCount
       nodes {
         timestamp
@@ -114,7 +115,7 @@ query {
           method:{equalTo: "Contributed"}
           and: {
             data: {
-              includes: ",2084,"
+              includes: ",${PARA_ID},"
             }
           }
         }) {
@@ -137,7 +138,7 @@ query {
      method:{ equalTo:"MemoUpdated"}
      and: {
        data: {
-         includes: ",2084,\\"${referralCode}\\""
+         includes: ",${PARA_ID},\\"${referralCode}\\""
        }
      }
    }
@@ -158,7 +159,7 @@ query {
      method:{ equalTo:"MemoUpdated"}
      and: {
        data: {
-         includes: "\\"${address}\\",2084,"
+         includes: "\\"${address}\\",${PARA_ID},"
        }
      }
    }
