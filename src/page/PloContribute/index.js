@@ -13,7 +13,6 @@ import infoIcon from './img/info-icon.png';
 import ringIcon from './img/ring-icon.png';
 import ktonIcon from './img/kton-icon.png';
 import dotIcon from './img/dot-icon.png';
-import accountIcon from './img/account-icon.png';
 import modalCloseIcon from './img/modal-close.png';
 
 import twitterIcon from './img/twitter.png';
@@ -177,7 +176,28 @@ query {
  }
 `);
 
-const PloV2 = () => {
+const actionGetMyReferralCode = (address) => (
+gql`
+query {
+  events(
+   filter:{
+     method:{ equalTo:"MemoUpdated"}
+     and: {
+       data: {
+         includes: "\\"${address}\\",2084,"
+       }
+     }
+   }
+ ){
+     totalCount
+     nodes {
+       data
+     }
+   }
+ }
+`);
+
+const PloContribute = () => {
   const echartsRef = useRef();
   const polkadotApi = useRef(null);
   const unsubscribeAccounts = useRef(null);
@@ -199,6 +219,13 @@ const PloV2 = () => {
   const myContributeHistoty = useQuery(actionSomeOneConntributeHistory());
   const myReferrals = useQuery(actionSomeOneReferrals());
   const top5Contribute = useQuery(TOP_5_CONTRIBUTE);
+  // const myReferralCode = useQuery(actionGetMyReferralCode(currentAccount ? currentAccount.address : ''));
+  const myReferralCode = useQuery(actionGetMyReferralCode('DE5RzJTEekP6UBYpyRD5h5PhQ8q4oTwigLp4nnKTpp3T35n'));
+
+  let myReferralCodeFromGql = null;
+  if (!myReferralCode.loading && !myReferralCode.error && myReferralCode.data.events.nodes.length) {
+    myReferralCodeFromGql = JSON.parse(myReferralCode.data.events.nodes[0].data)[2];
+  }
 
   let myTotalContribute = new BN(0);
   if (!myContributeHistoty.loading && !myContributeHistoty.error && myContributeHistoty.data.extrinsics.nodes[0].events.nodes.length) {
@@ -575,7 +602,7 @@ const PloV2 = () => {
               <div className={cx('referral-code-input-wrap')}>
                 <p className={cx('contribute-lebal')}>Enter your referral code (optional)</p>
                 <div className={cx('referral-code-input-control')}>
-                  <input className={cx('referral-code-input')} value={inputReferralCode} onChange={handleChangeInputReferral}></input>
+                  <input className={cx('referral-code-input')} value={myReferralCodeFromGql || inputReferralCode} disabled={!!myReferralCodeFromGql} onChange={handleChangeInputReferral}></input>
                 </div>
               </div>
 
@@ -1013,4 +1040,4 @@ const PloV2 = () => {
   );
 };
 
-export default React.memo(PloV2);
+export default React.memo(PloContribute);

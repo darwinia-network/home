@@ -302,6 +302,11 @@
   background: transparent;
   border: none;
 
+  &:disabled {
+    filter: grayscale(100%);
+    cursor: not-allowed;
+  }
+
   &:focus-visible {
     outline: none;
   }
