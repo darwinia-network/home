@@ -213,7 +213,6 @@ const PloContribute = () => {
   const myReferrals = useQuery(actionSomeOneReferrals());
   const myReferralCode = useQuery(actionGetMyReferralCode(currentAccount ? currentAccount.address : ""));
   const contributePionners = useQuery(CONTRIBUTE_PIONEERS);
-  console.log('contributePionners', contributePionners);
 
   let myReferralCodeFromGql = null;
   if (!myReferralCode.loading && !myReferralCode.error && myReferralCode.data.events.nodes.length) {
