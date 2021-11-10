@@ -434,11 +434,15 @@ const PloContribute = () => {
     })()
   }, [myReferrals]);
 
-  // useEffect(() => {
-  //   if (currentAccount && inputReferralCode && u8aToHex(decodeAddress(currentAccount.address)).slice(2) === inputReferralCode) {
-  //     setInputReferralCode('');
-  //   }
-  // }, [currentAccount]);
+  useEffect(() => {
+    if (currentAccount && inputReferralCode && currentAccount.address === inputReferralCode) {
+      notification.warning({
+        message: 'Referral Check',
+        description: 'Can not set yourself account as a referral',
+      });
+      setInputReferralCode('');
+    }
+  }, [currentAccount, inputReferralCode]);
 
   useEffect(() => {
     (async () => {
