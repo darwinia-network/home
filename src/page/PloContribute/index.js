@@ -229,7 +229,7 @@ const PloContribute = () => {
   }
 
   let myTotalContribute = new BN(0);
-  if (!myContributeHistoty.loading && !myContributeHistoty.error && myContributeHistoty.data.extrinsics.nodes[0].events.nodes.length) {
+  if (!myContributeHistoty.loading && !myContributeHistoty.error && myContributeHistoty.data && myContributeHistoty.data.extrinsics.nodes.length && myContributeHistoty.data.extrinsics.nodes[0].events.nodes.length) {
     myContributeHistoty.data.extrinsics.nodes.forEach(node1 => {
       node1.events.nodes.forEach(node2 => {
         myTotalContribute = myTotalContribute.add(new BN(JSON.parse(node2.data)[2]));
@@ -871,7 +871,7 @@ const PloContribute = () => {
             <div className={cx('my-contribute-history')}>
               <div className={cx('contribute-history-wrap')}>
                 <p>Contribution history</p>
-                {(!myContributeHistoty.loading && !myContributeHistoty.error && myContributeHistoty.data.extrinsics.nodes[0].events.nodes.length) ? (
+                {(!myContributeHistoty.loading && !myContributeHistoty.error && myContributeHistoty.data.extrinsics.nodes.length && myContributeHistoty.data.extrinsics.nodes[0].events.nodes.length) ? (
                   <div className={cx('contribute-history-control')}>
                     {myContributeHistoty.data.extrinsics.nodes.map((node1, index1) => (
                       node1.events.nodes.map((node2, index2) => (
