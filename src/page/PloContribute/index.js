@@ -693,7 +693,25 @@ const PloContribute = () => {
               </div>
 
               <div className={cx('my-referral-link')}>
-                <h3 className={cx('my-referral-link-title')}>My Referral Link</h3>
+                <div className={cx('my-referral-link-title-wrap')}>
+                  <h3 className={cx('my-referral-link-title')}>My Referral Link</h3>
+                  {currentAccount && (
+                    <Tooltip
+                      overlayClassName='tooltip-overlay'
+                      overlayInnerStyle={{ padding: '20px', paddingBottom: '10px' }}
+                      color='white'
+                      placement='rightBottom'
+                      trigger={['click', 'hover']}
+                      title={
+                        <p className={cx('tips')}>
+                          You can copy your referral link to invite people to participate and win more awards.
+                        </p>
+                      }
+                    >
+                      <img alt='...' src={infoIcon} className={cx('info-icon')} />
+                    </Tooltip>
+                  )}
+                </div>
                 {currentAccount ? (
                   <Typography.Link rel='noopener noreferrer' className={cx('my-referral-link-content', 'link')} code={false} copyable={{ icon: <img alt='...' src={copyIcon} style={{ width: '16px' }} /> }} target='_blank' href={`/plo_contribute?referral=${currentAccount.address}`}>
                     {`https://darwinia.network/plo_contribute?referral=${currentAccount.address}`}

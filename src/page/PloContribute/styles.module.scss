@@ -666,10 +666,15 @@
   }
 }
 
-.my-referral-link-title {
-  @extend %-base-h3;
+.my-referral-link-title-wrap {
+  display: flex;
+  align-items: center;
   margin-bottom: 20px;
   width: 100%;
+
+  >h3 {
+    @extend %-base-h3;
+  }
 }
 
 .my-referral-link-content {
