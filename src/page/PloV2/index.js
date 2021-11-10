@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom';
 import { Tooltip, Table, Modal, Typography, notification } from 'antd';
 import { ethers } from 'ethers';
 import Fade from 'react-reveal/Fade';
+import { isMobile } from '../../utils';
 
 import darwiniaLogo from './img/logo-darwinia.png';
 import infoIcon from './img/info-icon.png';
@@ -538,7 +539,7 @@ const PloV2 = () => {
               <div className={cx('heading-container-current-account-wrap')}>
                 <div className={cx('heading-container-current-account')}>
                   <span>{shortAddress(currentAccount.address)}</span>
-                  <Identicon value={currentAccount.address} size={30} theme="polkadot" />
+                  <Identicon value={currentAccount.address} size={isMobile() ? 15 : 30} theme="polkadot" />
                 </div>
                 <button className={cx('heading-container-change-account')} onClick={() => setShowSelectAccountModal(true)}>
                   <span>Change</span>
@@ -600,8 +601,8 @@ const PloV2 = () => {
                 </div>
                 <div className={cx('auction-success-rewards')}>
                   <span>Base</span>
-                  <span>0 RING</span>
-                  <span>0 KTON</span>
+                  <span className={cx('token-amount')}>0 RING</span>
+                  <span className={cx('token-amount')}>0 KTON</span>
 
                   <div className={cx('auction-success-rewards-content-wrap')}>
                     <span>Bonus</span>
@@ -609,16 +610,16 @@ const PloV2 = () => {
                       <span>Limited Time</span>
                     </div>
                   </div>
-                  <span>0 RING</span>
-                  <span>0 KTON</span>
+                  <span className={cx('token-amount')}>0 RING</span>
+                  <span className={cx('token-amount')}>0 KTON</span>
 
                   <span>Referral</span>
-                  <span>0 RING</span>
-                  <span>0 KTON</span>
+                  <span className={cx('token-amount')}>0 RING</span>
+                  <span className={cx('token-amount')}>0 KTON</span>
 
                   <span>Total</span>
-                  <span>0 RING</span>
-                  <span>0 KTON</span>
+                  <span className={cx('total', 'token-amount')}>0 RING</span>
+                  <span className={cx('total', 'token-amount')}>0 KTON</span>
                 </div>
               </div>
 
@@ -876,10 +877,12 @@ const PloV2 = () => {
                   <img alt='...' src={infoIcon} className={cx('info-icon')} />
                 </Tooltip>
               </div>
-              <div className={cx('contribute-pioneers-title-rank')}>
-                <img alt='...' src={accountIcon} />
-                <span>You Rank: 3,837</span>
-              </div>
+              {currentAccount && (
+                <div className={cx('contribute-pioneers-title-rank')}>
+                  <Identicon value={currentAccount.address} className={cx('pioneers-item-account-icon')} size={isMobile() ? 15 : 30} theme='polkadot' />
+                  <span>You Rank: 3,837</span>
+                </div>
+              )}
             </div>
 
             <div className={cx('pioneers-container')}>
@@ -889,7 +892,7 @@ const PloV2 = () => {
                     <div className={cx('pioneers-item-num-icon')}>
                       <span>{index + 1}</span>
                     </div>
-                    <Identicon value={JSON.parse(node.data)[0]} className={cx('pioneers-item-account-icon')} theme='polkadot' />
+                    <Identicon value={JSON.parse(node.data)[0]} className={cx('pioneers-item-account-icon')} size={isMobile() ? 26 : 30} theme='polkadot' />
                     <span className={cx('pioneers-item-account-name')}>{shortAddress(JSON.parse(node.data)[0])}</span>
                     <span className={cx('pioneers-item-dot-amount')}>{formatBalance(new BN(JSON.parse(node.data)[2]), { forceUnit: true, withUnit: false, withSi: false, decimals: 10 })} DOT</span>
                   </div>
@@ -965,7 +968,7 @@ const PloV2 = () => {
         <div className={cx('accounts-container')}>
           {accounts.map((account, index) => (
             <button className={cx('accounts-item')} key={index} onClick={() => handleClickSelectAccount(account)}>
-              <Identicon value={account.address} size={40} theme='polkadot' />
+              <Identicon value={account.address} size={isMobile() ? 30 : 40} theme='polkadot' />
               <div className={cx('accounts-item-name-address')}>
                 <span className={cx('name')}>{account.meta.name}</span>
                 <span className={cx('address')}>{account.address}</span>
