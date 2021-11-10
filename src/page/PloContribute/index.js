@@ -187,6 +187,7 @@ const PloContribute = () => {
   const polkadotApi = useRef(null);
   const unsubscribeAccounts = useRef(null);
   const unsubscribeCurBalance = useRef(null);
+  const unsubscribeLatestHeads = useRef(null);
 
   const [accounts, setAccounts] = useState([]);
   const [inputDot, setInputDot] = useState("");
@@ -448,12 +449,20 @@ const PloContribute = () => {
   useEffect(() => {
     (async () => {
       const wsProvider = new WsProvider("wss://rpc.polkadot.io");
-      polkadotApi.current = await ApiPromise.create({ provider: wsProvider });
+      const api = await ApiPromise.create({ provider: wsProvider });
+      polkadotApi.current = api;
+
+      unsubscribeLatestHeads.current = await api.rpc.chain.subscribeNewHeads((header) => {
+        console.log(`Chain is at block: #${header.number}`);
+      });
     })();
 
     return () => {
       unsubscribeAccounts.current && unsubscribeAccounts.current();
       unsubscribeAccounts.current = null;
+
+      unsubscribeLatestHeads.current && unsubscribeLatestHeads.current();
+      unsubscribeLatestHeads.current = null;
     };
   }, []);
 
