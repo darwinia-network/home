@@ -14,6 +14,7 @@ import ringIcon from './img/ring-icon.png';
 import ktonIcon from './img/kton-icon.png';
 import dotIcon from './img/dot-icon.png';
 import modalCloseIcon from './img/modal-close.png';
+import copyIcon from './img/copy-icon.png';
 
 import twitterIcon from './img/twitter.png';
 import mediumIcon from './img/medium.png';
@@ -29,7 +30,7 @@ import {
 import Identicon from '@polkadot/react-identicon';
 import { ApiPromise, WsProvider } from '@polkadot/api';
 import { Keyring, decodeAddress, encodeAddress } from '@polkadot/keyring';
-import { hexToU8a, isHex, u8aToHex, formatBalance } from '@polkadot/util';
+import { hexToU8a, isHex, formatBalance } from '@polkadot/util';
 import BN from 'bn.js';
 
 import { graphqlClient } from '../../graphql';
@@ -83,14 +84,14 @@ const isValidAddressPolkadotAddress = (address) => {
   }
 };
 
-const isValidReferralCode = (referralCode) => {
-  try {
-    const address = encodeAddress(hexToU8a(`0x${referralCode}`));
-    return isValidAddressPolkadotAddress(address);
-  } catch (error) {
-    return false;
-  }
-}
+// const isValidReferralCode = (referralCode) => {
+//   try {
+//     const address = encodeAddress(hexToU8a(`0x${referralCode}`));
+//     return isValidAddressPolkadotAddress(address);
+//   } catch (error) {
+//     return false;
+//   }
+// }
 
 const PARA_ID = 2003;
 
@@ -219,8 +220,8 @@ const PloContribute = () => {
   const myContributeHistoty = useQuery(actionSomeOneConntributeHistory());
   const myReferrals = useQuery(actionSomeOneReferrals());
   const top5Contribute = useQuery(TOP_5_CONTRIBUTE);
-  // const myReferralCode = useQuery(actionGetMyReferralCode(currentAccount ? currentAccount.address : ''));
-  const myReferralCode = useQuery(actionGetMyReferralCode('DE5RzJTEekP6UBYpyRD5h5PhQ8q4oTwigLp4nnKTpp3T35n'));
+  const myReferralCode = useQuery(actionGetMyReferralCode(currentAccount ? currentAccount.address : ''));
+  // const myReferralCode = useQuery(actionGetMyReferralCode('DE5RzJTEekP6UBYpyRD5h5PhQ8q4oTwigLp4nnKTpp3T35n'));
 
   let myReferralCodeFromGql = null;
   if (!myReferralCode.loading && !myReferralCode.error && myReferralCode.data.events.nodes.length) {
@@ -336,8 +337,17 @@ const PloContribute = () => {
       return;
     }
 
-    setShowSelectAccountModal(true);
-    unsubscribeAccounts.current = await web3AccountsSubscribe(allAccounts => setAccounts(allAccounts));
+    const keyring = new Keyring();
+    keyring.setSS58Format(0); // Polkadot format address
+
+    unsubscribeAccounts.current = await web3AccountsSubscribe(allAccounts => {
+      setAccounts(allAccounts.map(account => {
+        const pair = keyring.addFromAddress(account.address);
+        return { ...account, address: pair.address };
+      }));
+
+      setShowSelectAccountModal(true);
+    });
   };
 
   const handleClickSelectAccount = async (account) => {
@@ -360,7 +370,7 @@ const PloContribute = () => {
         ethers.utils.parseEther(Number(inputDot).toString()).toString(),
         null
       );
-      const extrinsicAddMemo = isValidReferralCode(inputReferralCode) ? polkadotApi.current.tx.crowdloan.addMemo(PARA_ID, inputReferralCode) : null;
+      const extrinsicAddMemo = isValidAddressPolkadotAddress(inputReferralCode) ? polkadotApi.current.tx.crowdloan.addMemo(PARA_ID, inputReferralCode) : null;
       const injector = await web3FromAddress(currentAccount.address);
       const tx = extrinsicAddMemo ? polkadotApi.current.tx.utility.batch([extrinsicContribute, extrinsicAddMemo]) : extrinsicContribute;
 
@@ -444,11 +454,7 @@ const PloContribute = () => {
 
   useEffect(() => {
     if (currentAccount && polkadotApi.current) {
-      const keyring = new Keyring();
-      keyring.setSS58Format(0); // Polkadot format address
-      const pair = keyring.addFromAddress(currentAccount.address);
-
-      polkadotApi.current.derive.balances.all(pair.address, (balancesAll) => {
+      polkadotApi.current.derive.balances.all(currentAccount.address, (balancesAll) => {
         setCurrentAccountBalannce({
           freeBalance: balancesAll.freeBalance.toString(),
           lockedBalance: balancesAll.lockedBalance.toString(),
@@ -685,8 +691,8 @@ const PloContribute = () => {
               <div className={cx('my-referral-link')}>
                 <h3 className={cx('my-referral-link-title')}>My Referral Link</h3>
                 {currentAccount ? (
-                  <Typography.Link rel='noopener noreferrer' className={cx('my-referral-link-content')} code={true} copyable={true} target='_blank' href={`/plo2?referral=${u8aToHex(decodeAddress(currentAccount.address)).slice(2)}`}>
-                    {`https://darwinia.network/plo2?referral=${u8aToHex(decodeAddress(currentAccount.address)).slice(2)}`}
+                  <Typography.Link rel='noopener noreferrer' className={cx('my-referral-link-content', 'link')} code={false} copyable={{ icon: <img alt='...' src={copyIcon} style={{ width: '16px' }} /> }} target='_blank' href={`/plo_contribute?referral=${currentAccount.address}`}>
+                    {`https://darwinia.network/plo_contribute?referral=${currentAccount.address}`}
                   </Typography.Link>
                 ) : (
                   <span className={cx('my-referral-link-content')}>Please connect wallet first, and you can copy your referral link to invite people to participate and win more awards.</span>

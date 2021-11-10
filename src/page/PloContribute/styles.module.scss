@@ -674,6 +674,12 @@
 
 .my-referral-link-content {
   @extend %-base-p;
+  font-size: 14px;
+  line-height: 16px;
+  
+  &.link {
+    color: #7000FF !important;
+  }
 }
 
 .my-contribute {
