@@ -99,17 +99,6 @@ const TOTAL_CONTRIBUTE_HISTORY = gql`
   }
 `;
 
-const TOP_5_CONTRIBUTE = gql`
-  query {
-    events(filter: { method: { equalTo: "Contributed" } }, orderBy: ID_DESC, first: 5) {
-      totalCount
-      nodes {
-        data
-      }
-    }
-  }
-`;
-
 const actionSomeOneConntributeHistory = (address = "HeU2h1RoQNx5MkUKBDZ9VsX5uCNb4gdCf6YADVxj3Ku6SPG") =>
   gql`
 query {
@@ -182,6 +171,19 @@ query {
  }
 `;
 
+const CONTRIBUTE_PIONEERS = gql`
+query {
+  accounts (first: 6,orderBy: CONTRIBUTED_TOTAL_DESC) {
+    nodes {
+        id
+        transferTotalCount
+        contributedTotalCount
+        contributedTotal
+    }
+}
+}
+`;
+
 const PloContribute = () => {
   const echartsRef = useRef();
   const polkadotApi = useRef(null);
@@ -208,9 +210,9 @@ const PloContribute = () => {
   const totalContributeHistory = useQuery(TOTAL_CONTRIBUTE_HISTORY);
   const myContributeHistoty = useQuery(actionSomeOneConntributeHistory());
   const myReferrals = useQuery(actionSomeOneReferrals());
-  const top5Contribute = useQuery(TOP_5_CONTRIBUTE);
   const myReferralCode = useQuery(actionGetMyReferralCode(currentAccount ? currentAccount.address : ""));
-  // const myReferralCode = useQuery(actionGetMyReferralCode('DE5RzJTEekP6UBYpyRD5h5PhQ8q4oTwigLp4nnKTpp3T35n'));
+  const contributePionners = useQuery(CONTRIBUTE_PIONEERS);
+  console.log('contributePionners', contributePionners);
 
   let myReferralCodeFromGql = null;
   if (!myReferralCode.loading && !myReferralCode.error && myReferralCode.data.events.nodes.length) {
@@ -237,15 +239,15 @@ const PloContribute = () => {
     : 100.0 / currentTotalContribute.div(myTotalContribute).toNumber();
 
   let myBtcReward = 0;
-  if (currentAccount && !top5Contribute.loading && !top5Contribute.error && top5Contribute.data.events.nodes.length) {
+  if (currentAccount && contributePionners.data && contributePionners.data.accounts && contributePionners.data.accounts.nodes && contributePionners.data.accounts.nodes.length) {
     let top5contribute = new BN(0);
     let myContribute = new BN(0);
 
-    top5Contribute.data.events.nodes.forEach((node) => {
-      if (currentAccount.address === JSON.parse(node.data)[0]) {
-        myContribute = myContribute.add(new BN(JSON.parse(node.data)[2]));
+    contributePionners.data.accounts.nodes.forEach((node) => {
+      if (currentAccount.address === node.id) {
+        myContribute = myContribute.add(new BN(node.contributedTotal));
       }
-      top5contribute = top5contribute.add(new BN(JSON.parse(node.data)[2]));
+      top5contribute = top5contribute.add(new BN(node.contributedTotal));
     });
 
     if (!myContribute.isZero()) {
@@ -1056,7 +1058,7 @@ const PloContribute = () => {
                   <img alt="..." src={infoIcon} className={cx("info-icon")} />
                 </Tooltip>
               </div>
-              {currentAccount && (
+              {currentAccount && contributePionners.data && contributePionners.data.accounts && contributePionners.data.accounts.nodes && contributePionners.data.accounts.nodes.length && contributePionners.data.accounts.nodes.findIndex(node => (node.id === currentAccount.address)) !== -1 && (
                 <div className={cx("contribute-pioneers-title-rank")}>
                   <Identicon
                     value={currentAccount.address}
@@ -1064,27 +1066,27 @@ const PloContribute = () => {
                     size={isMobile() ? 15 : 30}
                     theme="polkadot"
                   />
-                  <span>You Rank: 3,837</span>
+                  <span>My Rank: {contributePionners.data.accounts.nodes.findIndex(node => node.id === currentAccount.address) + 1}</span>
                 </div>
               )}
             </div>
 
             <div className={cx("pioneers-container")}>
-              {!top5Contribute.loading && !top5Contribute.error && top5Contribute.data.events.nodes.length
-                ? top5Contribute.data.events.nodes.map((node, index) => (
+              {contributePionners.data && contributePionners.data.accounts && contributePionners.data.accounts.nodes && contributePionners.data.accounts.nodes.length
+                ? contributePionners.data.accounts.nodes.map((node, index) => index > 4 ? null : (
                     <div className={cx("pioneers-item")} key={index}>
                       <div className={cx("pioneers-item-num-icon")}>
                         <span>{index + 1}</span>
                       </div>
                       <Identicon
-                        value={JSON.parse(node.data)[0]}
+                        value={node.id}
                         className={cx("pioneers-item-account-icon")}
                         size={isMobile() ? 26 : 30}
                         theme="polkadot"
                       />
-                      <span className={cx("pioneers-item-account-name")}>{shortAddress(JSON.parse(node.data)[0])}</span>
+                      <span className={cx("pioneers-item-account-name")}>{shortAddress(node.id)}</span>
                       <span className={cx("pioneers-item-dot-amount")}>
-                        {formatBalance(new BN(JSON.parse(node.data)[2]), {
+                        {formatBalance(new BN(node.contributedTotal), {
                           forceUnit: true,
                           withUnit: false,
                           withSi: false,
