@@ -1,11 +1,11 @@
 .main {
   position: relative;
-  background: url('./img/bg.png') repeat;
+  background: url("./img/bg.png") repeat;
   padding-top: 20px;
 }
 
 .magic-01 {
-  background: linear-gradient(344.64deg, #FF0050 7.81%, #7000FF 68.09%, #0027FF 92.19%);
+  background: linear-gradient(344.64deg, #ff0050 7.81%, #7000ff 68.09%, #0027ff 92.19%);
   opacity: 0.1;
   filter: blur(100px);
   position: absolute;
@@ -18,7 +18,7 @@
   @media screen and (max-width: 1700px) {
     width: 400px;
     height: 400px;
-    left: 1100px
+    left: 1100px;
   }
 
   @media screen and (max-width: 1536px) {
@@ -44,7 +44,7 @@
   height: 522px;
   left: -205px;
   top: 3993px;
-  background: linear-gradient(344.64deg, #FF0050 7.81%, #7000FF 68.09%, #0027FF 92.19%);
+  background: linear-gradient(344.64deg, #ff0050 7.81%, #7000ff 68.09%, #0027ff 92.19%);
   opacity: 0.1;
   filter: blur(100px);
 
@@ -103,6 +103,5 @@
   padding: {
     top: 20px;
     bottom: 40px;
-  };
+  }
 }
-

@@ -13,7 +13,7 @@
   font-size: 30px;
   line-height: 39px;
   text-align: center;
-  color: #1E3676;
+  color: #1e3676;
   margin-bottom: 130px;
 
   @media screen and (max-width: 768px) {
@@ -75,7 +75,12 @@
 .time-line-style-01 {
   position: relative;
   height: 45px;
-  background: linear-gradient(315.52deg, rgba(255, 0, 80, 0.05) 0.88%, rgba(111, 0, 255, 0.05) 71.7%, rgba(0, 38, 255, 0.05) 100%);
+  background: linear-gradient(
+    315.52deg,
+    rgba(255, 0, 80, 0.05) 0.88%,
+    rgba(111, 0, 255, 0.05) 71.7%,
+    rgba(0, 38, 255, 0.05) 100%
+  );
   border-radius: 22px;
 
   @media screen and (max-width: 768px) {
@@ -87,7 +92,12 @@
 .time-line-style-01-mini {
   position: absolute;
   height: 33px;
-  background: linear-gradient(315.52deg, rgba(255, 0, 80, 0.05) 0.88%, rgba(111, 0, 255, 0.05) 71.7%, rgba(0, 38, 255, 0.05) 100%);
+  background: linear-gradient(
+    315.52deg,
+    rgba(255, 0, 80, 0.05) 0.88%,
+    rgba(111, 0, 255, 0.05) 71.7%,
+    rgba(0, 38, 255, 0.05) 100%
+  );
   border-radius: 40px;
   top: 100px;
 
@@ -157,7 +167,7 @@
   height: 16px;
   width: 16px;
   border-radius: 30px;
-  background: linear-gradient(315.52deg, #FF0050 0.88%, #7000FF 71.7%, #0027FF 100%);
+  background: linear-gradient(315.52deg, #ff0050 0.88%, #7000ff 71.7%, #0027ff 100%);
 }
 
 .the-time {

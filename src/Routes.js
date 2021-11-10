@@ -15,8 +15,8 @@ const AsyncReports = asyncComponent(import("./page/Reports"));
 const AsyncVideos = asyncComponent(import("./page/Videos"));
 const AsyncTech = asyncComponent(import("./page/Tech"));
 const AsyncModel = asyncComponent(import("./page/EcoModel"));
-const AsyncPlo = asyncComponent(import('./page/Plo'));
-const AsyncPloContrbite = asyncComponent(import('./page/PloContribute'));
+const AsyncPlo = asyncComponent(import("./page/Plo"));
+const AsyncPloContrbite = asyncComponent(import("./page/PloContribute"));
 const history = createBrowserHistory();
 
 export default () => (

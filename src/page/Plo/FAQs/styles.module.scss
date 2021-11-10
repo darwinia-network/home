@@ -9,7 +9,7 @@
   :global {
     .ant-collapse-item {
       padding: 10px 0;
-      border-bottom: 1px solid #CCCCCC;
+      border-bottom: 1px solid #cccccc;
 
       &:last-child {
         border-bottom: none;
@@ -22,7 +22,7 @@
   font-weight: 600;
   font-size: 30px;
   line-height: 39px;
-  color: #1E3676;
+  color: #1e3676;
 }
 
 .content-text {
@@ -31,7 +31,7 @@
   line-height: 21px;
   color: #000000;
 
-  >a {
+  > a {
     color: #0027ff;
     text-decoration: underline;
   }
@@ -47,7 +47,7 @@
 
 .faqs-collapse {
   width: 100%;
-  background: #FFFFFF;
+  background: #ffffff;
   box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(50px);
   border-radius: 30px;

@@ -1,5 +1,5 @@
 .main {
-  background-image: url('./img/bg.png');
+  background-image: url("./img/bg.png");
   background-repeat: repeat;
   padding-top: 20px;
   padding-bottom: 50px;
@@ -12,7 +12,7 @@
   left: -197px;
   top: -117px;
 
-  background: linear-gradient(344.64deg, #FF0050 7.81%, #7000FF 68.09%, #0027FF 92.19%);
+  background: linear-gradient(344.64deg, #ff0050 7.81%, #7000ff 68.09%, #0027ff 92.19%);
   opacity: 0.1;
   filter: blur(100px);
 
@@ -28,7 +28,7 @@
   left: 1051px;
   top: 459px;
 
-  background: linear-gradient(344.64deg, #FF0050 7.81%, #7000FF 68.09%, #0027FF 92.19%);
+  background: linear-gradient(344.64deg, #ff0050 7.81%, #7000ff 68.09%, #0027ff 92.19%);
   opacity: 0.1;
   filter: blur(100px);
 
@@ -72,7 +72,7 @@
   font-weight: 600;
   font-size: 30px;
   line-height: 39px;
-  color: #1E3676;
+  color: #1e3676;
 
   @media screen and (max-width: 1024px) {
     font-weight: 500;
@@ -121,14 +121,14 @@
   justify-content: center;
   align-items: center;
 
-  background: linear-gradient(315.52deg, #FF0050 0.88%, #7000FF 71.7%, #0027FF 100%);
+  background: linear-gradient(315.52deg, #ff0050 0.88%, #7000ff 71.7%, #0027ff 100%);
   border-radius: 10px;
 
-  >span {
+  > span {
     font-weight: bold;
     font-size: 18px;
     line-height: 23px;
-    color: #FFFFFF;
+    color: #ffffff;
   }
 
   @media screen and (max-width: 1024px) {
@@ -145,12 +145,12 @@
   display: flex;
   align-items: center;
   justify-content: space-around;
-  background: #F2F3F7;
+  background: #f2f3f7;
   border-radius: 10px;
   height: 40px;
   padding: 0 10px;
 
-  >span {
+  > span {
     @extend %-base-p;
     margin-right: 8px;
   }
@@ -160,7 +160,7 @@
     height: unset;
     padding: 5px 8px;
 
-    >span {
+    > span {
       font-size: 12px;
       line-height: 14px;
     }
@@ -180,9 +180,9 @@
   width: 90px;
   height: 40px;
 
-  >span {
+  > span {
     @extend %-base-p;
-    color: #6604FF;
+    color: #6604ff;
   }
 
   @media screen and (max-width: 1024px) {
@@ -190,7 +190,7 @@
     height: 22px;
     margin-left: 4px;
 
-    >span {
+    > span {
       font-size: 12px;
       line-height: 14px;
     }
@@ -201,15 +201,15 @@
   @extend %-base-btn;
   padding: 10px 17px;
 
-  background: linear-gradient(270deg, #FF0050 0%, #7000FF 71.44%, #0027FF 100%);
+  background: linear-gradient(270deg, #ff0050 0%, #7000ff 71.44%, #0027ff 100%);
   border-radius: 10px;
 
-  >span {
+  > span {
     font-weight: 500;
     font-size: 16px;
     line-height: 21px;
 
-    color: #FFFFFF;
+    color: #ffffff;
   }
 
   @media screen and (max-width: 1024px) {
@@ -217,7 +217,7 @@
     height: unset;
     padding: 5px 8px;
 
-    >span {
+    > span {
       font-size: 12px;
       line-height: 14px;
     }
@@ -243,7 +243,7 @@
 
   flex: 1;
   margin-right: 10px;
-  background: #FFFFFF;
+  background: #ffffff;
   box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(50px);
   border-radius: 30px;
@@ -288,7 +288,7 @@
   align-items: center;
   margin-bottom: 10px;
 
-  >p {
+  > p {
     margin: 0;
   }
 
@@ -340,7 +340,7 @@
 .dot-amount-input-control,
 .referral-code-input-control {
   background: rgba(255, 255, 255, 0.5);
-  border: 1px solid #CCCCCC;
+  border: 1px solid #cccccc;
   border-radius: 10px;
   box-shadow: inset 0px 6px 6px rgba(0, 0, 0, 0.05);
   height: 52px;
@@ -366,7 +366,7 @@
   font-size: 20px;
   line-height: 26px;
   text-align: right;
-  color: #CCCCCC;
+  color: #cccccc;
   margin-left: 5px;
 
   @media screen and (max-width: 1024px) {
@@ -380,15 +380,15 @@
   @extend %-base-btn;
   width: 70px;
   height: 42px;
-  background: linear-gradient(270deg, #FF0050 0%, #7000FF 71.44%, #0027FF 100%);
+  background: linear-gradient(270deg, #ff0050 0%, #7000ff 71.44%, #0027ff 100%);
   border-radius: 10px;
   margin-left: 10px;
 
-  >span {
+  > span {
     font-weight: 500;
     font-size: 16px;
     line-height: 21px;
-    color: #FFFFFF;
+    color: #ffffff;
   }
 
   &:disabled {
@@ -402,7 +402,7 @@
     margin-left: 6px;
     border-radius: 8px;
 
-    >span {
+    > span {
       font-size: 14px;
       line-height: 18px;
     }
@@ -413,7 +413,7 @@
   width: 100%;
   box-shadow: inset 0px 6px 6px rgba(0, 0, 0, 0.05);
   background: rgba(255, 255, 255, 0.5);
-  border: 1px solid #CCCCCC;
+  border: 1px solid #cccccc;
   border-radius: 10px;
   padding: 27px 38px;
 
@@ -423,7 +423,7 @@
   align-items: center;
   justify-content: space-between;
 
-  >span {
+  > span {
     @extend %-base-p;
   }
 
@@ -431,8 +431,8 @@
     justify-self: flex-end;
   }
 
-  >.total {
-    background: linear-gradient(270deg, #FF0050 0%, #7000FF 71.44%, #0027FF 100%);
+  > .total {
+    background: linear-gradient(270deg, #ff0050 0%, #7000ff 71.44%, #0027ff 100%);
     background-clip: text;
     color: transparent;
     font-weight: bold;
@@ -448,7 +448,7 @@
   display: flex;
   align-items: center;
 
-  >span {
+  > span {
     @extend %-base-p;
   }
 }
@@ -460,21 +460,21 @@
   padding: 4px 5px;
   margin-left: 8px;
 
-  background: #7000FF;
+  background: #7000ff;
   border-radius: 10px;
 
-  >span {
+  > span {
     font-weight: bold;
     font-size: 10px;
     line-height: 13px;
-    color: #FFFFFF;
+    color: #ffffff;
   }
 
   @media screen and (max-width: 1024px) {
     margin-left: 4px;
     border-radius: 6px;
 
-    >span {
+    > span {
       font-weight: normal;
       font-size: 3px;
       line-height: 5px;
@@ -499,24 +499,24 @@
 
 .contribute-btn {
   @extend %-base-btn;
-  background: linear-gradient(270deg, #FF0050 0%, #7000FF 71.44%, #0027FF 100%);
+  background: linear-gradient(270deg, #ff0050 0%, #7000ff 71.44%, #0027ff 100%);
   border-radius: 10px;
   width: 100%;
   height: 51px;
   margin-top: 30px;
 
-  >span {
+  > span {
     font-weight: 500;
     font-size: 16px;
     line-height: 21px;
-    color: #FFFFFF;
+    color: #ffffff;
   }
 
   @media screen and (max-width: 1024px) {
     height: 32px;
     border-radius: 8px;
 
-    >span {
+    > span {
       font-size: 14px;
       line-height: 18px;
     }
@@ -529,7 +529,7 @@
 }
 
 .crowloan {
-  background: #FFFFFF;
+  background: #ffffff;
   box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(50px);
   border-radius: 30px;
@@ -556,7 +556,7 @@
   box-shadow: inset 0px 6px 6px rgba(0, 0, 0, 0.05);
   height: 52px;
   background: rgba(255, 255, 255, 0.5);
-  border: 1px solid #CCCCCC;
+  border: 1px solid #cccccc;
   border-radius: 10px;
   width: 100%;
   padding-left: 20px;
@@ -569,7 +569,7 @@
     height: 42px;
   }
 
-  >span {
+  > span {
     @extend %-base-p;
   }
 }
@@ -584,11 +584,11 @@
     margin-left: 10px;
   }
 
-  >span {
+  > span {
     font-weight: 600;
     font-size: 20px;
     line-height: 26px;
-    color: #1E3676;
+    color: #1e3676;
     padding-left: 6px;
 
     @media screen and (max-width: 1024px) {
@@ -599,7 +599,7 @@
     }
   }
 
-  >img {
+  > img {
     width: 30px;
 
     @media screen and (max-width: 1024px) {
@@ -619,7 +619,7 @@
     margin-top: 10px;
   }
 
-  >span {
+  > span {
     @extend %-base-p;
   }
 }
@@ -628,23 +628,23 @@
   display: flex;
   align-items: center;
 
-  >span {
+  > span {
     font-weight: 600;
     font-size: 20px;
     line-height: 26px;
-    color: #1E3676;
+    color: #1e3676;
   }
 
-  >img {
+  > img {
     width: 35px;
   }
 
   @media screen and (max-width: 1024px) {
-    >img {
+    > img {
       display: none;
     }
 
-    >span {
+    > span {
       font-weight: 500;
       font-size: 14px;
       line-height: 16px;
@@ -653,7 +653,7 @@
 }
 
 .my-referral-link {
-  background: #FFFFFF;
+  background: #ffffff;
   box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(50px);
   border-radius: 30px;
@@ -672,7 +672,7 @@
   margin-bottom: 20px;
   width: 100%;
 
-  >h3 {
+  > h3 {
     @extend %-base-h3;
   }
 }
@@ -681,14 +681,14 @@
   @extend %-base-p;
   font-size: 14px;
   line-height: 16px;
-  
+
   &.link {
-    color: #7000FF !important;
+    color: #7000ff !important;
   }
 }
 
 .my-contribute {
-  background: #FFFFFF;
+  background: #ffffff;
   box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(50px);
   border-radius: 30px;
@@ -714,24 +714,24 @@
   display: flex;
   align-items: center;
 
-  >h3 {
+  > h3 {
     @extend %-base-h3;
   }
 
-  >span {
+  > span {
     font-weight: normal;
     font-size: 12px;
     line-height: 16px;
     color: #555555;
-    margin-left: 15px
+    margin-left: 15px;
   }
 
   @media screen and (max-width: 1024px) {
     flex-direction: column;
     align-items: flex-start;
     justify-content: flex-start;
-    
-    >span {
+
+    > span {
       font-size: 6px;
       line-height: 8px;
       margin-left: 0;
@@ -742,16 +742,16 @@
 
 .my-contribute-connect-wallet-btn {
   @extend %-base-btn;
-  background: linear-gradient(270deg, #FF0050 0%, #7000FF 71.44%, #0027FF 100%);
+  background: linear-gradient(270deg, #ff0050 0%, #7000ff 71.44%, #0027ff 100%);
   border-radius: 10px;
   height: 41px;
   padding: 0 17px;
 
-  >span {
+  > span {
     font-weight: 500;
     font-size: 16px;
     line-height: 21px;
-    color: #FFFFFF;
+    color: #ffffff;
   }
 
   @media screen and (max-width: 1024px) {
@@ -759,7 +759,7 @@
     height: 32px;
     padding: 0 10px;
 
-    >span {
+    > span {
       font-size: 12px;
       line-height: 14px;
       font-weight: 500;
@@ -771,7 +771,7 @@
   margin-top: 18px;
   box-shadow: inset 0px 6px 6px rgba(0, 0, 0, 0.05);
   background: rgba(255, 255, 255, 0.5);
-  border: 1px solid #CCCCCC;
+  border: 1px solid #cccccc;
   border-radius: 10px;
   display: flex;
   align-items: center;
@@ -820,7 +820,7 @@
   font-size: 20px;
   line-height: 26px;
   text-align: center;
-  background: linear-gradient(270deg, #FF0050 0%, #7000FF 71.44%, #0027FF 100%);
+  background: linear-gradient(270deg, #ff0050 0%, #7000ff 71.44%, #0027ff 100%);
   background-clip: text;
   color: transparent;
 
@@ -834,7 +834,7 @@
 .my-contribute-line {
   width: 1px;
   height: 80px;
-  background: #CCCCCC;
+  background: #cccccc;
   border-radius: 4px;
 
   @media screen and (max-width: 1024px) {
@@ -858,7 +858,7 @@
   width: 100%;
   margin-top: 20px;
 
-  >p {
+  > p {
     @extend %-base-p;
     margin-bottom: 12px;
 
@@ -886,7 +886,7 @@
 .referral-history-control {
   box-shadow: inset 0px 6px 6px rgba(0, 0, 0, 0.05);
   background: rgba(255, 255, 255, 0.5);
-  border: 1px solid #CCCCCC;
+  border: 1px solid #cccccc;
   border-radius: 10px;
   width: 100%;
   height: 135px;
@@ -924,12 +924,12 @@
     margin-top: 0;
   }
 
-  >span {
+  > span {
     @extend %-base-p;
   }
 
   .hash-id {
-    color: #7000FF;
+    color: #7000ff;
   }
 
   .dot-amount {
@@ -940,7 +940,7 @@
 
 .contribute-pioneers {
   margin-top: 25px;
-  background: #FFFFFF;
+  background: #ffffff;
   box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(50px);
   border-radius: 30px;
@@ -965,7 +965,7 @@
   display: flex;
   align-items: center;
 
-  >h3 {
+  > h3 {
     @extend %-base-h3;
   }
 }
@@ -978,11 +978,11 @@
     display: none;
   }
 
-  >img {
+  > img {
     height: 30px;
   }
 
-  >span {
+  > span {
     @extend %-base-p;
     margin-left: 10px;
   }
@@ -994,7 +994,7 @@
   column-gap: 10px;
 
   background: rgba(255, 255, 255, 0.5);
-  border: 1px solid #CCCCCC;
+  border: 1px solid #cccccc;
   border-radius: 10px;
   padding: 25px;
   margin-top: 17px;
@@ -1027,7 +1027,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-image: url('./img/pioneer-icon.png');
+  background-image: url("./img/pioneer-icon.png");
   background-repeat: no-repeat;
   background-size: contain;
 
@@ -1036,9 +1036,9 @@
     height: 30px;
   }
 
-  >span {
+  > span {
     @extend %-base-p;
-    color: #FFFFFF;
+    color: #ffffff;
     font-weight: bold;
   }
 }
@@ -1056,7 +1056,7 @@
   @extend %-base-p;
   margin: 0 {
     top: 25px;
-  };
+  }
 
   @media screen and (max-width: 1024px) {
     margin-top: 8px;
@@ -1065,7 +1065,7 @@
 
 .pioneers-item-dot-amount {
   @extend %-base-p;
-  background: linear-gradient(270deg, #FF0050 0%, #7000FF 71.44%, #0027FF 100%);
+  background: linear-gradient(270deg, #ff0050 0%, #7000ff 71.44%, #0027ff 100%);
   background-clip: text;
   color: transparent;
   margin: 0;
@@ -1078,7 +1078,7 @@
 }
 
 .referral-leaderboard {
-  background: #FFFFFF;
+  background: #ffffff;
   box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(50px);
   border-radius: 30px;
@@ -1134,7 +1134,7 @@
     justify-content: center;
     align-items: center;
     border-radius: 50%;
-    background: linear-gradient(315.52deg, #FF0050 0.88%, #7000FF 71.7%, #0027FF 100%);
+    background: linear-gradient(315.52deg, #ff0050 0.88%, #7000ff 71.7%, #0027ff 100%);
 
     @media screen and (max-width: 1024px) {
       width: 20px;
@@ -1160,8 +1160,8 @@
       height: 20px;
     }
 
-    >span {
-      color: #7000FF;
+    > span {
+      color: #7000ff;
     }
   }
 
@@ -1179,15 +1179,15 @@
     background-origin: border-box;
     border: solid 1px transparent;
 
-    >span {
+    > span {
       padding: 0 10px;
-      color: #7000FF;
+      color: #7000ff;
     }
 
     @media screen and (max-width: 1024px) {
       height: 20px;
 
-      >span {
+      > span {
         padding: 0 6px;
       }
     }
@@ -1195,7 +1195,7 @@
 
   span {
     @extend %-base-p;
-    color: #FFFFFF;
+    color: #ffffff;
   }
 }
 
@@ -1228,7 +1228,7 @@
 
 .global-contribute {
   margin-top: 30px;
-  background: #FFFFFF;
+  background: #ffffff;
   box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(50px);
   border-radius: 30px;
@@ -1243,7 +1243,7 @@
       font-weight: 600;
       font-size: 30px;
       line-height: 39px;
-      color: #1E3676;
+      color: #1e3676;
 
       @media screen and (max-width: 1024px) {
         font-weight: 500;
@@ -1265,11 +1265,11 @@
     }
 
     .ant-pagination-item {
-      background: #7000FF;
+      background: #7000ff;
       border: 1px solid #451892;
       box-sizing: border-box;
       border-radius: 5px;
-      color: #FFFFFF;
+      color: #ffffff;
 
       &:not(.ant-pagination-item-active) {
         color: #000000;
@@ -1280,14 +1280,14 @@
 
 .global-contribute-address {
   @extend %-base-p;
-  color: #488CCB;
+  color: #488ccb;
   text-align: center;
 }
 
 .select-account-modal {
   :global {
     .ant-modal-content {
-      background: #FFFFFF;
+      background: #ffffff;
       box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.1);
       border-radius: 10px;
     }
@@ -1301,9 +1301,9 @@
       top: 0px;
       left: calc(100% - 60px);
     }
-  
+
     .ant-modal-close-x {
-      >img {
+      > img {
         width: 36px;
       }
     }
@@ -1383,7 +1383,7 @@
 .thanks-for-support-modal {
   :global {
     .ant-modal-content {
-      background: #FFFFFF;
+      background: #ffffff;
       box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.1);
       border-radius: 10px;
     }
@@ -1397,9 +1397,9 @@
       top: 0px;
       left: calc(100% - 60px);
     }
-  
+
     .ant-modal-close-x {
-      >img {
+      > img {
         width: 36px;
       }
     }
@@ -1474,13 +1474,13 @@
   line-height: 13px;
   color: #000000;
 
-  >a {
-    color: #7000FF;
+  > a {
+    color: #7000ff;
   }
 }
 
 .current-tag {
-  background: #7000FF;
+  background: #7000ff;
   border-radius: 10px;
   display: flex;
   justify-content: center;
@@ -1488,11 +1488,11 @@
   padding: 4px 5px;
   margin-top: 3px;
 
-  >span {
+  > span {
     font-weight: bold;
     font-size: 10px;
     line-height: 13px;
-    color: #FFFFFF;
+    color: #ffffff;
   }
 
   &.space {
@@ -1502,7 +1502,7 @@
       display: none;
     }
 
-    >span {
+    > span {
       color: transparent;
     }
   }
@@ -1510,7 +1510,7 @@
 
 .claim-reward-btn {
   @extend %-base-btn;
-  background: #CCCCCC;
+  background: #cccccc;
   border-radius: 10px;
   padding: 6px 14px;
   margin-top: 8px;
@@ -1524,7 +1524,7 @@
     filter: grayscale(100%);
   }
 
-  >span {
+  > span {
     @extend %-base-p;
     color: #555555;
   }
@@ -1536,7 +1536,7 @@
       display: none;
     }
 
-    >span {
+    > span {
       color: transparent;
     }
   }
@@ -1548,5 +1548,5 @@
   text-align: center;
   margin: 0 {
     top: 30px;
-  };
+  }
 }
