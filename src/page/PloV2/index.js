@@ -5,6 +5,7 @@ import { Container } from "react-bootstrap";
 import { Link } from 'react-router-dom';
 import { Tooltip, Table, Modal, Typography, notification } from 'antd';
 import { ethers } from 'ethers';
+import Fade from 'react-reveal/Fade';
 
 import darwiniaLogo from './img/logo-darwinia.png';
 import infoIcon from './img/info-icon.png';
@@ -197,7 +198,39 @@ const PloV2 = () => {
   const myContributeHistoty = useQuery(actionSomeOneConntributeHistory());
   const myReferrals = useQuery(actionSomeOneReferrals());
   const top5Contribute = useQuery(TOP_5_CONTRIBUTE);
-  console.log('top5Contribute', top5Contribute);
+
+  let myTotalContribute = new BN(0);
+  if (!myContributeHistoty.loading && !myContributeHistoty.error && myContributeHistoty.data.extrinsics.nodes[0].events.nodes.length) {
+    myContributeHistoty.data.extrinsics.nodes.forEach(node1 => {
+      node1.events.nodes.forEach(node2 => {
+        myTotalContribute = myTotalContribute.add(new BN(JSON.parse(node2.data)[2]));
+      });
+    });
+  }
+
+  const myContributePer = myTotalContribute.isZero() ? 0 : 100.0 / (currentTotalContribute.div(myTotalContribute).toNumber());
+
+  let myBtcReward = 0;
+  if (currentAccount && !top5Contribute.loading && !top5Contribute.error && top5Contribute.data.events.nodes.length) {
+    let top5contribute = new BN(0);
+    let myContribute = new BN(0);
+
+    top5Contribute.data.events.nodes.forEach((node) => {
+      if (currentAccount.address === JSON.parse(node.data)[0]) {
+        myContribute = myContribute.add(new BN(JSON.parse(node.data)[2]));
+      }
+      top5contribute = top5contribute.add(new BN(JSON.parse(node.data)[2]));
+    });
+
+    if (!myContribute.isZero()) {
+      if (top5contribute.div(myContribute).ltn(1000000)) {
+        myBtcReward = (1.0 / (top5contribute.div(myContribute)).toNumber()).toFixed(6);
+      }
+    }
+  }
+
+  const myRingReward = (myContributePer * 200000000 / 100).toFixed(2);
+  const myKtonReward = (myContributePer * 8000 / 100).toFixed(2);
 
   const globalContributeColumns = [
     {
@@ -354,7 +387,6 @@ const PloV2 = () => {
       const results = [];
       if (!myReferrals.loading && !myReferrals.error && myReferrals.data.events.totalCount) {
         for (let node of myReferrals.data.events.nodes) {
-          console.log(JSON.parse(node.data)[0]);
           const res = await graphqlClient.query({ query: actionSomeOneConntributeHistory(JSON.parse(node.data)[0]) });
           results.push(res);
         }
@@ -455,7 +487,7 @@ const PloV2 = () => {
         ],
         series: [
           {
-            name: 'Crowdloan Data',
+            name: 'Contribute DOT',
             type: 'line',
             symbol: 'none',
             sampling: 'lttb',
@@ -485,307 +517,438 @@ const PloV2 = () => {
 
   return (
     <div className={cx('main')}>
+      <div className={cx('magic-01')} />
+      <div className={cx('magic-02')} />
+
       <Container>
 
         {/* Heading */}
-        <div className={cx('heading-container')}>
-          <div className={cx('heading-container-logo')}>
-            <Link to='/'>
-              <img alt='...' src={darwiniaLogo} className={cx('heading-container-logo-img')} />
-            </Link>
-            <div className={cx('heading-container-logo-plo')}>
-              <span>PLO</span>
-            </div>
-          </div>
-
-          {currentAccount ? (
-            <div className={cx('heading-container-current-account-wrap')}>
-              <div className={cx('heading-container-current-account')}>
-                <span>{shortAddress(currentAccount.address)}</span>
-                <Identicon value={currentAccount.address} size={30} theme="polkadot" />
+        <Fade bottom fraction={0.1} duration={1000} distance={"50px"}>
+          <div className={cx('heading-container')}>
+            <div className={cx('heading-container-logo')}>
+              <Link to='/'>
+                <img alt='...' src={darwiniaLogo} className={cx('heading-container-logo-img')} />
+              </Link>
+              <div className={cx('heading-container-logo-plo')}>
+                <span>PLO</span>
               </div>
-              <button className={cx('heading-container-change-account')} onClick={() => setShowSelectAccountModal(true)}>
-                <span>Change</span>
-              </button>
             </div>
-          ) : (
-            <button className={cx('heading-container-connnect-wallet-btn')} onClick={handleClickConnectWallet}>
-              <span>Connect Wallet</span>
-            </button>
-          )}
-        </div>
+
+            {currentAccount ? (
+              <div className={cx('heading-container-current-account-wrap')}>
+                <div className={cx('heading-container-current-account')}>
+                  <span>{shortAddress(currentAccount.address)}</span>
+                  <Identicon value={currentAccount.address} size={30} theme="polkadot" />
+                </div>
+                <button className={cx('heading-container-change-account')} onClick={() => setShowSelectAccountModal(true)}>
+                  <span>Change</span>
+                </button>
+              </div>
+            ) : (
+              <button className={cx('heading-container-connnect-wallet-btn')} onClick={handleClickConnectWallet}>
+                <span>Connect Wallet</span>
+              </button>
+            )}
+          </div>
+        </Fade>
 
         {/* Contribute, Crowloan, Referral link */}
-        <div className={cx('contribute-crowloan-referral')}>
-          <div className={cx('contribute')}>
-            <h3 className={cx('contribute-title')}>Contribute</h3>
+        <Fade bottom fraction={0.1} duration={1200} distance={"50px"}>
+          <div className={cx('contribute-crowloan-referral')}>
+            <div className={cx('contribute')}>
+              <h3 className={cx('contribute-title')}>Contribute</h3>
 
-            <div className={cx('dot-amount-input-wrap')}>
-              <p className={cx('contribute-lebal')}>Enter your contribution amount</p>
-              <div className={cx('dot-amount-input-control')}>
-                <input className={cx('contribute-input')} value={inputDot} onChange={handleChangeInputDot}></input>
-                <div className={cx('dot-amount-input-suffix')}>
-                  <span className={cx('dot-amount-input-dot-suffix')}>DOT</span>
-                  <button className={cx('dot-amount-input-max-btn')} onClick={handleClickMaxInput} disabled={!currentAccount} >
-                    <span>MAX</span>
+              <div className={cx('dot-amount-input-wrap')}>
+                <p className={cx('contribute-lebal')}>Enter your contribution amount</p>
+                <div className={cx('dot-amount-input-control')}>
+                  <input className={cx('contribute-input')} value={inputDot} onChange={handleChangeInputDot}></input>
+                  <div className={cx('dot-amount-input-suffix')}>
+                    <span className={cx('dot-amount-input-dot-suffix')}>DOT</span>
+                    <button className={cx('dot-amount-input-max-btn')} onClick={handleClickMaxInput} disabled={!currentAccount} >
+                      <span>MAX</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <div className={cx('referral-code-input-wrap')}>
+                <p className={cx('contribute-lebal')}>Enter your referral code (optional)</p>
+                <div className={cx('referral-code-input-control')}>
+                  <input className={cx('referral-code-input')} value={inputReferralCode} onChange={handleChangeInputReferral}></input>
+                </div>
+              </div>
+
+              <div className={cx('auction-success-rewards-wrap')}>
+                <div className={cx('contribute-lebal-wrap')}>
+                  <p className={cx('contribute-lebal')}>Auction Success Rewards</p>
+                  <Tooltip
+                    overlayClassName='tooltip-overlay'
+                    overlayInnerStyle={{ padding: '20px', paddingBottom: '10px' }}
+                    color='white'
+                    placement='rightTop'
+                    trigger={['click', 'hover']}
+                    title={
+                      <p className={cx('tips')}>
+                        The rewards are dynamic.<br /><br />
+                        The rewards on basis of contribution share will be displayed in real-time.<br /><br />
+                        RING and KTON will be released linearly based on the contribution share after Darwinia Network wins the slot auction.
+                      </p>
+                    }
+                  >
+                    <img alt='...' src={infoIcon} className={cx('info-icon')} />
+                  </Tooltip>
+                </div>
+                <div className={cx('auction-success-rewards')}>
+                  <span>Base</span>
+                  <span>0 RING</span>
+                  <span>0 KTON</span>
+
+                  <div className={cx('auction-success-rewards-content-wrap')}>
+                    <span>Bonus</span>
+                    <div className={cx('limited-time')}>
+                      <span>Limited Time</span>
+                    </div>
+                  </div>
+                  <span>0 RING</span>
+                  <span>0 KTON</span>
+
+                  <span>Referral</span>
+                  <span>0 RING</span>
+                  <span>0 KTON</span>
+
+                  <span>Total</span>
+                  <span>0 RING</span>
+                  <span>0 KTON</span>
+                </div>
+              </div>
+
+              <button className={cx('contribute-btn')} onClick={handleClickContribute} disabled={!currentAccount}>
+                <span>Contribute</span>
+              </button>
+            </div>
+
+            <div className={cx('crowloan-referral')}>
+              <div className={cx('crowloan')}>
+                <h3 className={cx('crowloan-title')}>The Crowdloan</h3>
+
+                <div className={cx('total-rewards-wrap')}>
+                  <span>Total rewards:  </span>
+                  <div className={cx('total-ring-rewards')}>
+                    <img alt='...' src={ringIcon} />
+                    <span>200,000,000</span>
+                  </div>
+                  <div className={cx('total-kton-rewards')}>
+                    <img alt='...' src={ktonIcon} />
+                    <span>8,000</span>
+                  </div>
+                </div>
+
+                <div ref={echartsRef} className={cx('crowloan-echarts')} />
+
+                <div className={cx('current-total-contribute')}>
+                  <span>Current Total contributions</span>
+                  <div className={cx('total-contribute-dot')}>
+                    <img alt='...' src={dotIcon} />
+                    <span>{formatBalance(currentTotalContribute, { forceUnit: true, withUnit: false, withSi: false, decimals: 10 })} DOT</span>
+                  </div>
+                </div>
+              </div>
+
+              <div className={cx('my-referral-link')}>
+                <h3 className={cx('my-referral-link-title')}>My Referral Link</h3>
+                {currentAccount ? (
+                  <Typography.Link rel='noopener noreferrer' className={cx('my-referral-link-content')} code={true} copyable={true} target='_blank' href={`/plo2?referral=${u8aToHex(decodeAddress(currentAccount.address)).slice(2)}`}>
+                    {`https://darwinia.network/plo2?referral=${u8aToHex(decodeAddress(currentAccount.address)).slice(2)}`}
+                  </Typography.Link>
+                ) : (
+                  <span className={cx('my-referral-link-content')}>Please connect wallet first, and you can copy your referral link to invite people to participate and win more awards.</span>
+                )}
+              </div>
+            </div>
+          </div>
+        </Fade>
+
+        {/* My Contribute */}
+        <Fade bottom fraction={0.1} duration={1200} distance={"50px"}>
+          <div className={cx('my-contribute')}>
+            <div className={cx('my-contribute-title-wrap')}>
+              <div className={cx('my-contribute-title')}>
+                <h3>My Contribution</h3>
+                <span>*The reward amount will change in real-time according to the progress of the crowdloan, and the final result shall prevail.</span>
+              </div>
+              <button className={cx('my-contribute-connect-wallet-btn')}>
+                <span>Connect Wallet</span>
+              </button>
+            </div>
+
+            <div className={cx('contribute-info-card')}>
+              <div className={cx('contribute-info-item')}>
+                <span className={cx('contribute-info-item-title')}>Total DOT Contributed</span>
+                <div className={cx('current-tag', 'space')}>
+                  <span>Current</span>
+                </div>
+                <span className={cx('contribute-info-item-value')}>
+                  {formatBalance(myTotalContribute, { forceUnit: true, withUnit: false, withSi: false, decimals: 10 }).split('.')[0]}({myTotalContribute.isZero() ? 0 : myContributePer.toFixed(2)}%)
+                </span>
+                <button className={cx('claim-reward-btn', 'space')} disabled={true}>
+                  <span>Claim</span>
+                </button>
+              </div>
+
+              <div className={cx('my-contribute-line')} />
+
+              <div className={cx('contribute-info-item')}>
+                <div className={cx('contribute-info-item-title-wrap')}>
+                  <span className={cx('contribute-info-item-title')}>Metaverse NFT Package</span>
+                  <Tooltip
+                    overlayClassName='tooltip-overlay'
+                    overlayInnerStyle={{ padding: '20px', paddingBottom: '10px' }}
+                    color='white'
+                    placement='rightTop'
+                    trigger={['click', 'hover']}
+                    title={
+                      <p className={cx('tips')}>
+                        You can get an <a target='_blank' rel='noopener noreferrer' href='https://www.evolution.land/'>Evolution Land</a> Metaverse NFT Package when your contribution share greater or equal 10 DOT and you will have a chance to get a limited edition commemorative NFT in the Package.<br /><br />
+                        The Metaverse NFT Package will be awarded after the Polkadot Slot Auction is terminated regardless of whether Darwinia Network wins the slot auction or not.
+                      </p>
+                    }
+                  >
+                    <img alt='...' src={infoIcon} className={cx('info-icon')} />
+                  </Tooltip>
+                </div>
+                <div className={cx('current-tag', 'space')}>
+                  <span>Current</span>
+                </div>
+                <span className={cx('contribute-info-item-value')}>{myTotalContribute.gte(new BN('100000000000')) ? '1' : '0'}</span>
+                <button className={cx('claim-reward-btn')} disabled={true}>
+                  <span>Claim</span>
+                </button>
+              </div>
+
+              <div className={cx('contribute-info-item')}>
+                <div className={cx('contribute-info-item-title-wrap')}>
+                  <span className={cx('contribute-info-item-title')}>BTC Rewards</span>
+                  <Tooltip
+                    overlayClassName='tooltip-overlay'
+                    overlayInnerStyle={{ padding: '20px', paddingBottom: '10px' }}
+                    color='white'
+                    placement='rightTop'
+                    trigger={['click', 'hover']}
+                    title={
+                      <p className={cx('tips')}>
+                        BTC rewards are dynamic.<br /><br />
+                        At the beginning of the second round auction, spporters who have contributed more than 10,000 DOT and the top 5 people (exclude the Exchange address) ranking will distribute 1 BTC in proportion to their contribution.<br /><br />
+                        1 BTC will be released immediately after the second round auction starts regardless of whether Darwinia Network wins the slot auction or not.
+                      </p>
+                    }
+                  >
+                    <img alt='...' src={infoIcon} className={cx('info-icon')} />
+                  </Tooltip>
+                </div>
+                <div className={cx('current-tag')}>
+                  <span>Current</span>
+                </div>
+                <span className={cx('contribute-info-item-value')}>{myBtcReward}</span>
+                <button className={cx('claim-reward-btn')} disabled={true}>
+                  <span>Claim</span>
+                </button>
+              </div>
+
+              <div className={cx('contribute-info-item-wrap')}>
+                <div className={cx('contribute-info-item')}>
+                  <div className={cx('contribute-info-item-title-wrap')}>
+                    <span className={cx('contribute-info-item-title')}>RING Rewards</span>
+                    <Tooltip
+                      overlayClassName='tooltip-overlay'
+                      overlayInnerStyle={{ padding: '20px', paddingBottom: '10px' }}
+                      color='white'
+                      placement='rightTop'
+                      trigger={['click', 'hover']}
+                      title={
+                        <p className={cx('tips')}>
+                          RING rewards are dynamic.<br /><br />
+                          200,000,000 RING will be released linearly based on the contribution share after Darwinia Network wins the slot auction.
+                        </p>
+                      }
+                    >
+                      <img alt='...' src={infoIcon} className={cx('info-icon')} />
+                    </Tooltip>
+                  </div>
+                  <div className={cx('current-tag')}>
+                    <span>Current</span>
+                  </div>
+                  <span className={cx('contribute-info-item-value')}>{myRingReward}</span>
+                  <button className={cx('claim-reward-btn', 'space')} disabled={true}>
+                    <span>Claim</span>
+                  </button>
+                </div>
+                <div className={cx('contribute-info-item')}>
+                  <div className={cx('contribute-info-item-title-wrap')}>
+                    <span className={cx('contribute-info-item-title')}>KTON Rewards</span>
+                    <Tooltip
+                      overlayClassName='tooltip-overlay'
+                      overlayInnerStyle={{ padding: '20px', paddingBottom: '10px' }}
+                      color='white'
+                      placement='rightTop'
+                      trigger={['click', 'hover']}
+                      title={
+                        <p className={cx('tips')}>
+                          KTON rewards are dynamic.<br /><br />
+                          8,000 KTON will be released linearly based on the contribution share after Darwinia Network wins the slot auction.
+                        </p>
+                      }
+                    >
+                      <img alt='...' src={infoIcon} className={cx('info-icon')} />
+                    </Tooltip>
+                  </div>
+                  <div className={cx('current-tag')}>
+                    <span>Current</span>
+                  </div>
+                  <span className={cx('contribute-info-item-value')}>{myKtonReward}</span>
+                  <button className={cx('claim-reward-btn', 'space')} disabled={true}>
+                    <span>Claim</span>
                   </button>
                 </div>
               </div>
             </div>
 
-            <div className={cx('referral-code-input-wrap')}>
-              <p className={cx('contribute-lebal')}>Enter your referral code (optional)</p>
-              <div className={cx('referral-code-input-control')}>
-                <input className={cx('referral-code-input')} value={inputReferralCode} onChange={handleChangeInputReferral}></input>
-              </div>
-            </div>
-
-            <div className={cx('auction-success-rewards-wrap')}>
-              <div className={cx('contribute-lebal-wrap')}>
-                <p className={cx('contribute-lebal')}>Auction Success Rewards</p>
-                <Tooltip>
-                  <img alt='...' src={infoIcon} className={cx('info-icon')} />
-                </Tooltip>
-              </div>
-              <div className={cx('auction-success-rewards')}>
-                <span>Base</span>
-                <span>0 RING</span>
-                <span>0 KTON</span>
-
-                <div className={cx('auction-success-rewards-content-wrap')}>
-                  <span>Bonus</span>
-                <div className={cx('limited-time')}>
-                  <span>Limited Time</span>
-                </div>
-                </div>
-                <span>0 RING</span>
-                <span>0 KTON</span>
-
-                <span>Referral</span>
-                <span>0 RING</span>
-                <span>0 KTON</span>
-
-                <span>Rewards</span>
-                <span>0 RING</span>
-                <span>0 KTON</span>
-              </div>
-            </div>
-
-            <button className={cx('contribute-btn')} onClick={handleClickContribute} disabled={!currentAccount}>
-              <span>Contribute</span>
-            </button>
-          </div>
-
-          <div className={cx('crowloan-referral')}>
-            <div className={cx('crowloan')}>
-              <h3 className={cx('crowloan-title')}>The Crowdloan</h3>
-
-              <div className={cx('total-rewards-wrap')}>
-                <span>Total rewards:  </span>
-                <div className={cx('total-ring-rewards')}>
-                  <img alt='...' src={ringIcon} />
-                  <span>200,000,000</span>
-                </div>
-                <div className={cx('total-kton-rewards')}>
-                  <img alt='...' src={ktonIcon} />
-                  <span>8,000</span>
-                </div>
-              </div>
-
-              <div ref={echartsRef} className={cx('crowloan-echarts')} />
-
-              <div className={cx('current-total-contribute')}>
-                <span>Current Total contributions</span>
-                <div className={cx('total-contribute-dot')}>
-                  <img alt='...' src={dotIcon} />
-                  <span>{formatBalance(currentTotalContribute, { forceUnit: true, withUnit: false, withSi: false, decimals: 10 })} DOT</span>
-                </div>
-              </div>
-            </div>
-
-            <div className={cx('my-referral-link')}>
-              <h3 className={cx('my-referral-link-title')}>My Referral Link</h3>
-              {currentAccount ? (
-                <Typography.Link rel='noopener noreferrer' className={cx('my-referral-link-content')} code={true} copyable={true} target='_blank' href={`/plo2?referral=${u8aToHex(decodeAddress(currentAccount.address)).slice(2)}`}>
-                  {`https://darwinia.network/plo2?referral=${u8aToHex(decodeAddress(currentAccount.address)).slice(2)}`}
-                </Typography.Link>
-              ) : (
-                <span className={cx('my-referral-link-content')}>Please connect wallet first, and you can copy your referral link to invite people to participate and win more awards.</span>
-              )}
-            </div>
-          </div>
-        </div>
-
-        {/* My Contribute */}
-        <div className={cx('my-contribute')}>
-          <div className={cx('my-contribute-title-wrap')}>
-            <div className={cx('my-contribute-title')}>
-              <h3>My Contribution</h3>
-              <span>*The reward amount will change in real-time according to the progress of the crowdloan, and the final result shall prevail.</span>
-            </div>
-            <button className={cx('my-contribute-connect-wallet-btn')}>
-              <span>Connect Wallet</span>
-            </button>
-          </div>
-
-          <div className={cx('contribute-info-card')}>
-            <div className={cx('contribute-info-item')}>
-              <span className={cx('contribute-info-item-title')}>Total DOT Contributed</span>
-              <span className={cx('contribute-info-item-value')}>0(0%)</span>
-            </div>
-
-            <div className={cx('my-contribute-line')} />
-
-            <div className={cx('contribute-info-item')}>
-              <div className={cx('contribute-info-item-title-wrap')}>
-                <span className={cx('contribute-info-item-title')}>Metaverse NFT Package</span>
-                <img alt='...' src={infoIcon} className={cx('info-icon')} />
-              </div>
-              <span className={cx('contribute-info-item-value')}>0</span>
-            </div>
-
-            <div className={cx('contribute-info-item')}>
-              <div className={cx('contribute-info-item-title-wrap')}>
-                <span className={cx('contribute-info-item-title')}>BTC Rewards</span>
-                <img alt='...' src={infoIcon} className={cx('info-icon')} />
-              </div>
-              <span className={cx('contribute-info-item-value')}>0</span>
-            </div>
-
-            <div className={cx('contribute-info-item-wrap')}>
-              <div className={cx('contribute-info-item')}>
-                <div className={cx('contribute-info-item-title-wrap')}>
-                  <span className={cx('contribute-info-item-title')}>RING Rewards</span>
-                  <img alt='...' src={infoIcon} className={cx('info-icon')} />
-                </div>
-                <span className={cx('contribute-info-item-value')}>0</span>
-              </div>
-              <div className={cx('contribute-info-item')}>
-                <div className={cx('contribute-info-item-title-wrap')}>
-                  <span className={cx('contribute-info-item-title')}>KTON Rewards</span>
-                  <img alt='...' src={infoIcon} className={cx('info-icon')} />
-                </div>
-                <span className={cx('contribute-info-item-value')}>0</span>
-              </div>
-            </div>
-          </div>
-
-          <div className={cx('my-contribute-history')}>
-            <div className={cx('contribute-history-wrap')}>
-              <p>Contribution history</p>
-              {(!myContributeHistoty.loading && !myContributeHistoty.error && myContributeHistoty.data.extrinsics.nodes[0].events.nodes.length) ? (
-                <div className={cx('contribute-history-control')}>
-                  {myContributeHistoty.data.extrinsics.nodes.map((node1, index1) => (
-                    node1.events.nodes.map((node2, index2) => (
-                      <div className={cx('contribute-history-control-item')} key={`${index1}-${index2}`}>
-                        <span>{(new Date(node2.timestamp)).toDateString().split(' ')[1]} {(new Date(node2.timestamp)).toDateString().split(' ')[2]}</span>
-                        <span className={cx('dot-amount')}>{formatBalance(new BN(JSON.parse(node2.data)[2]), { forceUnit: true, withUnit: false, withSi: false, decimals: 10 })} DOT</span>
-                        <a className={cx('hash-id')} target='_blank' rel='noopener noreferrer' href={`https://polkadot.subscan.io/extrinsic/${node2.id}`}>{node2.id}</a>
-                      </div>
-                    ))
-                  ))}
-                </div>
-              ) : (
-                <div className={cx('contribute-history-control', 'no-data')}>No Data</div>
-              )}
-            </div>
-            <div className={cx('referral-history-wrap')}>
-              <p>Referral history</p>
-              {referralsContributeHistory.length ? (
-                <div className={cx('referral-history-control')}>
-                  {referralsContributeHistory.map((someone, index0) => (
-                    someone.data.extrinsics.nodes.map((node1, index1) => (
+            <div className={cx('my-contribute-history')}>
+              <div className={cx('contribute-history-wrap')}>
+                <p>Contribution history</p>
+                {(!myContributeHistoty.loading && !myContributeHistoty.error && myContributeHistoty.data.extrinsics.nodes[0].events.nodes.length) ? (
+                  <div className={cx('contribute-history-control')}>
+                    {myContributeHistoty.data.extrinsics.nodes.map((node1, index1) => (
                       node1.events.nodes.map((node2, index2) => (
-                        <div className={cx('referral-history-control-item')} key={`${index0}-${index1}-${index2}`}>
+                        <div className={cx('contribute-history-control-item')} key={`${index1}-${index2}`}>
                           <span>{(new Date(node2.timestamp)).toDateString().split(' ')[1]} {(new Date(node2.timestamp)).toDateString().split(' ')[2]}</span>
                           <span className={cx('dot-amount')}>{formatBalance(new BN(JSON.parse(node2.data)[2]), { forceUnit: true, withUnit: false, withSi: false, decimals: 10 })} DOT</span>
                           <a className={cx('hash-id')} target='_blank' rel='noopener noreferrer' href={`https://polkadot.subscan.io/extrinsic/${node2.id}`}>{node2.id}</a>
                         </div>
                       ))
-                    ))
-                  ))}
-                </div>
-              ) : (
-                <div className={cx('referral-history-control', 'no-data')}>No Data</div>
-              )}
+                    ))}
+                  </div>
+                ) : (
+                  <div className={cx('contribute-history-control', 'no-data')}>No Data</div>
+                )}
+              </div>
+              <div className={cx('referral-history-wrap')}>
+                <p>Referral history</p>
+                {referralsContributeHistory.length ? (
+                  <div className={cx('referral-history-control')}>
+                    {referralsContributeHistory.map((someone, index0) => (
+                      someone.data.extrinsics.nodes.map((node1, index1) => (
+                        node1.events.nodes.map((node2, index2) => (
+                          <div className={cx('referral-history-control-item')} key={`${index0}-${index1}-${index2}`}>
+                            <span>{(new Date(node2.timestamp)).toDateString().split(' ')[1]} {(new Date(node2.timestamp)).toDateString().split(' ')[2]}</span>
+                            <span className={cx('dot-amount')}>{formatBalance(new BN(JSON.parse(node2.data)[2]), { forceUnit: true, withUnit: false, withSi: false, decimals: 10 })} DOT</span>
+                            <a className={cx('hash-id')} target='_blank' rel='noopener noreferrer' href={`https://polkadot.subscan.io/extrinsic/${node2.id}`}>{node2.id}</a>
+                          </div>
+                        ))
+                      ))
+                    ))}
+                  </div>
+                ) : (
+                  <div className={cx('referral-history-control', 'no-data')}>No Data</div>
+                )}
+              </div>
             </div>
           </div>
-        </div>
+        </Fade>
 
         {/* Contribute Pioneers */}
-        <div className={cx('contribute-pioneers')}>
-          <div className={cx('contribute-pioneers-title-wrap')}>
-            <div className={cx('contribute-pioneers-title')}>
-              <h3>Contribution Pioneers</h3>
-              <Tooltip>
-                <img alt='...' src={infoIcon} className={cx('info-icon')} />
-              </Tooltip>
+        <Fade bottom fraction={0.1} duration={1000} distance={"50px"}>
+          <div className={cx('contribute-pioneers')}>
+            <div className={cx('contribute-pioneers-title-wrap')}>
+              <div className={cx('contribute-pioneers-title')}>
+                <h3>Contribution Pioneers</h3>
+                <Tooltip
+                  overlayClassName='tooltip-overlay'
+                  overlayInnerStyle={{ padding: '20px', paddingBottom: '10px' }}
+                  color='white'
+                  placement='rightTop'
+                  trigger={['click', 'hover']}
+                  title={
+                    <p className={cx('tips')}>
+                      At the beginning of the second round auction, spporters who have contributed more than 10,000 DOT and the top 5 people (exclude the Exchange address) ranking will distribute 1 BTC in proportion to their contribution.
+                    </p>
+                  }
+                >
+                  <img alt='...' src={infoIcon} className={cx('info-icon')} />
+                </Tooltip>
+              </div>
+              <div className={cx('contribute-pioneers-title-rank')}>
+                <img alt='...' src={accountIcon} />
+                <span>You Rank: 3,837</span>
+              </div>
             </div>
-            <div className={cx('contribute-pioneers-title-rank')}>
-              <img alt='...' src={accountIcon} />
-              <span>You Rank: 3,837</span>
-            </div>
-          </div>
 
-          <div className={cx('pioneers-container')}>
-            {!top5Contribute.loading && !top5Contribute.error && top5Contribute.data.events.nodes.length ? (
-              top5Contribute.data.events.nodes.map((node, index) => (
-                <div className={cx('pioneers-item')} key={index}>
-                  <div className={cx('pioneers-item-num-icon')}>
-                    <span>{index + 1}</span>
+            <div className={cx('pioneers-container')}>
+              {!top5Contribute.loading && !top5Contribute.error && top5Contribute.data.events.nodes.length ? (
+                top5Contribute.data.events.nodes.map((node, index) => (
+                  <div className={cx('pioneers-item')} key={index}>
+                    <div className={cx('pioneers-item-num-icon')}>
+                      <span>{index + 1}</span>
+                    </div>
+                    <Identicon value={JSON.parse(node.data)[0]} className={cx('pioneers-item-account-icon')} theme='polkadot' />
+                    <span className={cx('pioneers-item-account-name')}>{shortAddress(JSON.parse(node.data)[0])}</span>
+                    <span className={cx('pioneers-item-dot-amount')}>{formatBalance(new BN(JSON.parse(node.data)[2]), { forceUnit: true, withUnit: false, withSi: false, decimals: 10 })} DOT</span>
                   </div>
-                  <Identicon value={JSON.parse(node.data)[0]} className={cx('pioneers-item-account-icon')} theme='polkadot' />
-                  <span className={cx('pioneers-item-account-name')}>{shortAddress(JSON.parse(node.data)[0])}</span>
-                  <span className={cx('pioneers-item-dot-amount')}>{formatBalance(new BN(JSON.parse(node.data)[2]), { forceUnit: true, withUnit: false, withSi: false, decimals: 10 })} DOT</span>
-                </div>
-              ))
-            ) : null}
+                ))
+              ) : null}
+            </div>
           </div>
-        </div>
+        </Fade>
 
         {/* Referral Leaderboard */}
-        <div className={cx('referral-leaderboard')}>
-          <h3 className={cx('referral-leaderboard-title')}>Referral Leaderboard</h3>
-          <div className={cx('referral-leaderboard-control')}>
-            <div className={cx('referral-leaderboard-item')}>
-              <span className={cx('referral-leaderboard-item-rank')}>Rank</span>
-              <span className={cx('referral-leaderboard-item-address')}>Address</span>
-              <span className={cx('referral-leaderboard-item-referrals')}>Referrals</span>
-              <span className={cx('referral-leaderboard-item-accumulated')}>Accumulated Contribution</span>
-              <span className={cx('referral-leaderboard-item-rewards')}>Refferal Rewards</span>
-            </div>
+        <Fade bottom fraction={0.1} duration={1000} distance={"50px"}>
+          <div className={cx('referral-leaderboard')}>
+            <h3 className={cx('referral-leaderboard-title')}>Referral Leaderboard</h3>
+            <div className={cx('referral-leaderboard-control')}>
+              <div className={cx('referral-leaderboard-item')}>
+                <span className={cx('referral-leaderboard-item-rank')}>Rank</span>
+                <span className={cx('referral-leaderboard-item-address')}>Address</span>
+                <span className={cx('referral-leaderboard-item-referrals')}>Referrals</span>
+                <span className={cx('referral-leaderboard-item-accumulated')}>Accumulated Contribution</span>
+                <span className={cx('referral-leaderboard-item-rewards')}>Refferal Rewards</span>
+              </div>
 
-            {[0,0,0,0,0].map((_, index) => (
-              <div className={cx('referral-leaderboard-item')} key={index}>
-                <div className={cx('referral-leaderboard-item-rank')}>
-                  <div className={cx('rank')}>
-                    <span>{index + 1}</span>
+              {[0,0,0,0,0,0,0,0,0,0,0].map((_, index) => (
+                <div className={cx('referral-leaderboard-item')} key={index}>
+                  <div className={cx('referral-leaderboard-item-rank')}>
+                    <div className={cx({ 'rank': index < 5, 'rank2': 5 <= index && index < 100, 'rank3': 100 <= index })}>
+                      <span>{index + 1}</span>
+                    </div>
+                  </div>
+                  <a className={cx('referral-leaderboard-item-address')} style={{ color: '#488CCB' }} rel='noopener noreferrer' target='_blank' href={`https://polkadot.subscan.io/account/15S2EPQ5DCdeBB3Dsrpe2obfrpm3Gy9J6xLufgSC4URdJ5bQ`}>5CRABk…eEQNM6</a>
+                  <span className={cx('referral-leaderboard-item-referrals')}>60</span>
+                  <span className={cx('referral-leaderboard-item-accumulated')}>19000 DOT</span>
+                  <div className={cx('referral-leaderboard-item-rewards')}>
+                    <span>100000 RING</span>
+                    <span>100 KTON</span>
                   </div>
                 </div>
-                <span className={cx('referral-leaderboard-item-address')} style={{ color: '#488CCB' }}>5CRABk…eEQNM6</span>
-                <span className={cx('referral-leaderboard-item-referrals')}>60</span>
-                <span className={cx('referral-leaderboard-item-accumulated')}>19000 DOT</span>
-                <div className={cx('referral-leaderboard-item-rewards')}>
-                  <span>100000 RING</span>
-                  <span>100 KTON</span>
-                </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
-        </div>
+        </Fade>
 
-        <Table
-          className={cx('global-contribute')}
-          columns={globalContributeColumns}
-          dataSource={globalContributeDataSource}
-          title={() => 'Global Contribution Activity'}
-          pagination={{
-            size: 'small',
-            showSizeChanger: false,
-          }}
-        />
+        {/* Global Contribution Activity */}
+        <Fade bottom fraction={0.1} duration={1000} distance={"50px"}>
+          <Table
+            className={cx('global-contribute')}
+            columns={globalContributeColumns}
+            dataSource={globalContributeDataSource}
+            title={() => 'Global Contribution Activity'}
+            pagination={{
+              size: 'small',
+              showSizeChanger: false,
+            }}
+          />
+        </Fade>
 
-        <p className={cx('all-right')}>Copyright@2021 Darwinia Network</p>
+        <Fade bottom fraction={0.1} duration={1000} distance={"50px"}>
+          <p className={cx('all-right')}>Copyright@2021 Darwinia Network</p>
+        </Fade>
 
       </Container>
 
