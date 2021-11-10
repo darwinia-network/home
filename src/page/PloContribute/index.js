@@ -780,16 +780,31 @@ const PloContribute = () => {
         <Fade bottom fraction={0.1} duration={1200} distance={"50px"}>
           <div className={cx("my-contribute")}>
             <div className={cx("my-contribute-title-wrap")}>
-              <div className={cx("my-contribute-title")}>
+              <div className={cx("my-contribute-title", { 'connected': !!currentAccount })}>
                 <h3>My Contribution</h3>
                 <span>
                   *The reward amount will change in real-time according to the progress of the crowdloan, and the final
                   result shall prevail.
                 </span>
               </div>
-              <button className={cx("my-contribute-connect-wallet-btn")}>
+              {currentAccount ? (
+              <div className={cx("heading-container-current-account-wrap")}>
+                <div className={cx("heading-container-current-account")}>
+                  <span>{shortAddress(currentAccount.address)}</span>
+                  <Identicon value={currentAccount.address} size={isMobile() ? 15 : 30} theme="polkadot" />
+                </div>
+                <button
+                  className={cx("heading-container-change-account")}
+                  onClick={() => setShowSelectAccountModal(true)}
+                >
+                  <span>Change</span>
+                </button>
+              </div>
+            ) : (
+              <button className={cx("my-contribute-connect-wallet-btn")} onClick={handleClickConnectWallet}>
                 <span>Connect Wallet</span>
               </button>
+            )}
             </div>
 
             <div className={cx("contribute-info-card")}>
