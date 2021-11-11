@@ -4,7 +4,7 @@ import classNames from "classnames/bind";
 import { Container } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
-import bridge from "./img/bridge.jpg";
+import bridge from "./img/bridge.png";
 
 const cx = classNames.bind(styles);
 
