@@ -212,6 +212,23 @@ const TOTAL_REFER_CONTRIBUTE_WITH_POWER = gql`
   }
 `;
 
+const REFERRAL_LEADERBORD = gql`
+  query {
+    crowdloanReferStatistics(orderBy: TOTAL_BALANCE_DESC) {
+      nodes {
+        user
+        totalPower
+        totalBalance
+        contributors {
+          nodes {
+            id
+          }
+        }
+      }
+    }
+  }
+`;
+
 /**
  * PLO Contribute
  * @returns ReactNode
@@ -247,6 +264,7 @@ const PloContribute = () => {
   const contributePionners = useQuery(CONTRIBUTE_PIONEERS);
   const totalWhoContributeWithPower = useQuery(TOTAL_WHO_CONTRIBUTE_WITH_POWER);
   const totalReferContributeWithPower = useQuery(TOTAL_REFER_CONTRIBUTE_WITH_POWER);
+  const referralLeaderborad = useQuery(REFERRAL_LEADERBORD);
 
   // All total power
   let totalPower = new BN(0);
@@ -279,6 +297,35 @@ const PloContribute = () => {
         totalPower = totalPower.add(new BN(node.totalPower));
       });
     }
+  }
+
+  const referralLeaderboradData = [];
+  if (
+    referralLeaderborad.data &&
+    referralLeaderborad.data.crowdloanReferStatistics &&
+    referralLeaderborad.data.crowdloanReferStatistics.nodes &&
+    referralLeaderborad.data.crowdloanReferStatistics.nodes.length
+  ) {
+    referralLeaderborad.data.crowdloanReferStatistics.nodes.forEach((node) => {
+      const aBN = totalPower.div(new BN(node.totalPower));
+      referralLeaderboradData.push({
+        address: node.user,
+        referrals: node.contributors.nodes.length,
+        accumulatedContribution: node.totalBalance,
+        refferalRewards: {
+          ring: totalPower.isZero()
+            ? 0
+            : aBN.lt(DOT_TO_BN) && aBN.toNumber() > 0
+            ? (1.0 / aBN.toNumber()) * RING_REWARD
+            : 0,
+          kton: totalPower.isZero()
+            ? 0
+            : aBN.lt(DOT_TO_BN) && aBN.toNumber() > 0
+            ? (1.0 / aBN.toNumber()) * KTON_REWARD
+            : 0,
+        },
+      });
+    });
   }
 
   let myReferralCodeFromGql = null;
@@ -1251,7 +1298,7 @@ const PloContribute = () => {
                 <span className={cx("referral-leaderboard-item-rewards")}>Refferal Rewards</span>
               </div>
 
-              {[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0].map((_, index) => (
+              {referralLeaderboradData.map((data, index) => (
                 <div className={cx("referral-leaderboard-item")} key={index}>
                   <div className={cx("referral-leaderboard-item-rank")}>
                     <div className={cx({ rank: index < 5, rank2: 5 <= index && index < 100, rank3: 100 <= index })}>
@@ -1265,13 +1312,21 @@ const PloContribute = () => {
                     target="_blank"
                     href={`https://polkadot.subscan.io/account/15S2EPQ5DCdeBB3Dsrpe2obfrpm3Gy9J6xLufgSC4URdJ5bQ`}
                   >
-                    5CRABk…eEQNM6
+                    {shortAddress(data.address)}
                   </a>
-                  <span className={cx("referral-leaderboard-item-referrals")}>60</span>
-                  <span className={cx("referral-leaderboard-item-accumulated")}>19000 DOT</span>
+                  <span className={cx("referral-leaderboard-item-referrals")}>{data.referrals}</span>
+                  <span className={cx("referral-leaderboard-item-accumulated")}>
+                    {formatBalance(new BN(data.accumulatedContribution), {
+                      forceUnit: true,
+                      withUnit: false,
+                      withSi: false,
+                      decimals: 10,
+                    })}{" "}
+                    DOT
+                  </span>
                   <div className={cx("referral-leaderboard-item-rewards")}>
-                    <span>100000 RING</span>
-                    <span>100 KTON</span>
+                    <span>{data.refferalRewards.ring.toFixed(2)} RING</span>
+                    <span>{data.refferalRewards.kton.toFixed(2)} KTON</span>
                   </div>
                 </div>
               ))}
