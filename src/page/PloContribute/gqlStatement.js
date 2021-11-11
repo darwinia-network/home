@@ -44,7 +44,9 @@ query {
 }
 `;
 
-export const actionSomeOneReferrals = (referralCode = "0x3e68cf5a7d3350cf8a1fa6ad81bc3515e4e86238f472f6a4655c11137500ef57") =>
+export const actionSomeOneReferrals = (
+  referralCode = "0x3e68cf5a7d3350cf8a1fa6ad81bc3515e4e86238f472f6a4655c11137500ef57"
+) =>
   gql`
 query {
   events(

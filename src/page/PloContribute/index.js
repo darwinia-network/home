@@ -31,7 +31,7 @@ import {
   TOTAL_WHO_CONTRIBUTE_WITH_POWER,
   TOTAL_REFER_CONTRIBUTE_WITH_POWER,
   REFERRAL_LEADERBORD,
-} from './gqlStatement';
+} from "./gqlStatement";
 
 // Polkadot
 import { web3Enable, web3AccountsSubscribe, web3FromAddress } from "@polkadot/extension-dapp";
@@ -131,8 +131,8 @@ const PloContribute = () => {
 
   // Graphql
   const totalContributeHistory = useQuery(TOTAL_CONTRIBUTE_HISTORY);
-  const myContributeHistoty = useQuery(actionSomeOneConntributeHistory(currentAccount ? currentAccount.address : ''));
-  const myReferrals = useQuery(actionSomeOneReferrals(currentAccount ? currentAccount.address : ''));
+  const myContributeHistoty = useQuery(actionSomeOneConntributeHistory(currentAccount ? currentAccount.address : ""));
+  const myReferrals = useQuery(actionSomeOneReferrals(currentAccount ? currentAccount.address : ""));
   const myReferralCode = useQuery(actionGetMyReferralCode(currentAccount ? currentAccount.address : ""));
   const contributePionners = useQuery(CONTRIBUTE_PIONEERS);
   const totalWhoContributeWithPower = useQuery(TOTAL_WHO_CONTRIBUTE_WITH_POWER);
@@ -286,7 +286,9 @@ const PloContribute = () => {
     let myContribute = new BN(0);
 
     contributePionners.data.accounts.nodes.forEach((node, index) => {
-      if (index > 4) { return; }
+      if (index > 4) {
+        return;
+      }
       if (currentAccount && currentAccount.address === node.id) {
         myContribute = myContribute.add(new BN(node.contributedTotal));
       }
@@ -359,21 +361,38 @@ const PloContribute = () => {
   const globalContributeDataSource = [];
   for (let i = 0; i < allWhoContributeData.length; i++) {
     const nodeWho = allWhoContributeData[i];
-    const nodeRefer = allReferContributeData.find(node => node.user === nodeWho.user);
+    const nodeRefer = allReferContributeData.find((node) => node.user === nodeWho.user);
 
-   const a = totalPower.div(new BN(nodeWho.totalPower));
+    const a = totalPower.div(new BN(nodeWho.totalPower));
 
-   let btcR = 0;
-   if (i < 5 && (new BN(nodeWho.totalBalance)).gte(DOT_TO_BN.muln(10000)) && !top5contribute.isZero() && top5contribute.div(new BN(nodeWho.totalBalance)).lt(DOT_TO_BN)) {
-     btcR = (1.0 / top5contribute.div(new BN(nodeWho.totalBalance))).toFixed(6);
-   }
+    let btcR = 0;
+    if (
+      i < 5 &&
+      new BN(nodeWho.totalBalance).gte(DOT_TO_BN.muln(10000)) &&
+      !top5contribute.isZero() &&
+      top5contribute.div(new BN(nodeWho.totalBalance)).lt(DOT_TO_BN)
+    ) {
+      btcR = (1.0 / top5contribute.div(new BN(nodeWho.totalBalance))).toFixed(6);
+    }
 
     globalContributeDataSource.push({
       key: i,
       address: shortAddress(nodeWho.user),
-      myDot: formatBalance(new BN(nodeWho.totalBalance), { forceUnit: true, withUnit: false, withSi: false, decimals: 10 }),
+      myDot: formatBalance(new BN(nodeWho.totalBalance), {
+        forceUnit: true,
+        withUnit: false,
+        withSi: false,
+        decimals: 10,
+      }),
       referrals: nodeRefer ? nodeRefer.contributorsCount : 0,
-      referralDot: nodeRefer ? formatBalance(new BN(nodeRefer.totalBalance), { forceUnit: true, withUnit: false, withSi: false, decimals: 10 }) : 0,
+      referralDot: nodeRefer
+        ? formatBalance(new BN(nodeRefer.totalBalance), {
+            forceUnit: true,
+            withUnit: false,
+            withSi: false,
+            decimals: 10,
+          })
+        : 0,
       curRingRewards: a.lt(DOT_TO_BN) && a.toNumber() > 0 ? ((1.0 / a.toNumber()) * RING_REWARD).toFixed(2) : 0,
       curKtonRewards: a.lt(DOT_TO_BN) && a.toNumber() > 0 ? ((1.0 / a.toNumber()) * KTON_REWARD).toFixed(2) : 0,
       curBtcRewards: btcR,
@@ -1197,39 +1216,41 @@ const PloContribute = () => {
                 <span className={cx("referral-leaderboard-item-rewards")}>Refferal Rewards</span>
               </div>
 
-              {referralLeaderboradData.length ? referralLeaderboradData.map((data, index) => (
-                <div className={cx("referral-leaderboard-item")} key={index}>
-                  <div className={cx("referral-leaderboard-item-rank")}>
-                    <div className={cx({ rank: index < 5, rank2: 5 <= index && index < 100, rank3: 100 <= index })}>
-                      <span>{index + 1}</span>
+              {referralLeaderboradData.length ? (
+                referralLeaderboradData.map((data, index) => (
+                  <div className={cx("referral-leaderboard-item")} key={index}>
+                    <div className={cx("referral-leaderboard-item-rank")}>
+                      <div className={cx({ rank: index < 5, rank2: 5 <= index && index < 100, rank3: 100 <= index })}>
+                        <span>{index + 1}</span>
+                      </div>
+                    </div>
+                    <a
+                      className={cx("referral-leaderboard-item-address")}
+                      style={{ color: "#488CCB" }}
+                      rel="noopener noreferrer"
+                      target="_blank"
+                      href={`https://polkadot.subscan.io/account/15S2EPQ5DCdeBB3Dsrpe2obfrpm3Gy9J6xLufgSC4URdJ5bQ`}
+                    >
+                      {shortAddress(data.address)}
+                    </a>
+                    <span className={cx("referral-leaderboard-item-referrals")}>{data.referrals}</span>
+                    <span className={cx("referral-leaderboard-item-accumulated")}>
+                      {formatBalance(new BN(data.accumulatedContribution), {
+                        forceUnit: true,
+                        withUnit: false,
+                        withSi: false,
+                        decimals: 10,
+                      })}{" "}
+                      DOT
+                    </span>
+                    <div className={cx("referral-leaderboard-item-rewards")}>
+                      <span>{data.refferalRewards.ring.toFixed(2)} RING</span>
+                      <span>{data.refferalRewards.kton.toFixed(2)} KTON</span>
                     </div>
                   </div>
-                  <a
-                    className={cx("referral-leaderboard-item-address")}
-                    style={{ color: "#488CCB" }}
-                    rel="noopener noreferrer"
-                    target="_blank"
-                    href={`https://polkadot.subscan.io/account/15S2EPQ5DCdeBB3Dsrpe2obfrpm3Gy9J6xLufgSC4URdJ5bQ`}
-                  >
-                    {shortAddress(data.address)}
-                  </a>
-                  <span className={cx("referral-leaderboard-item-referrals")}>{data.referrals}</span>
-                  <span className={cx("referral-leaderboard-item-accumulated")}>
-                    {formatBalance(new BN(data.accumulatedContribution), {
-                      forceUnit: true,
-                      withUnit: false,
-                      withSi: false,
-                      decimals: 10,
-                    })}{" "}
-                    DOT
-                  </span>
-                  <div className={cx("referral-leaderboard-item-rewards")}>
-                    <span>{data.refferalRewards.ring.toFixed(2)} RING</span>
-                    <span>{data.refferalRewards.kton.toFixed(2)} KTON</span>
-                  </div>
-                </div>
-              )) : (
-                <div style={{ marginTop: '20px', textAlign: 'center' }}>No Data</div>
+                ))
+              ) : (
+                <div style={{ marginTop: "20px", textAlign: "center" }}>No Data</div>
               )}
             </div>
           </div>
