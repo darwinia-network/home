@@ -21,6 +21,18 @@ import mediumIcon from "./img/medium.png";
 import telegramIcon from "./img/telegram.png";
 import discordIcon from "./img/discord.png";
 
+import {
+  PARA_ID,
+  TOTAL_CONTRIBUTE_HISTORY,
+  actionSomeOneConntributeHistory,
+  actionSomeOneReferrals,
+  actionGetMyReferralCode,
+  CONTRIBUTE_PIONEERS,
+  TOTAL_WHO_CONTRIBUTE_WITH_POWER,
+  TOTAL_REFER_CONTRIBUTE_WITH_POWER,
+  REFERRAL_LEADERBORD,
+} from './gqlStatement';
+
 // Polkadot
 import { web3Enable, web3AccountsSubscribe, web3FromAddress } from "@polkadot/extension-dapp";
 import Identicon from "@polkadot/react-identicon";
@@ -30,7 +42,7 @@ import { hexToU8a, isHex, formatBalance } from "@polkadot/util";
 import BN from "bn.js";
 
 import { graphqlClient } from "../../graphql";
-import { gql, useQuery } from "@apollo/client";
+import { useQuery } from "@apollo/client";
 
 // ======================= echarts ==========================
 import * as echarts from "echarts/core";
@@ -85,155 +97,10 @@ const isValidAddressPolkadotAddress = (address) => {
 //   }
 // }
 
-const PARA_ID = 2003;
-
 const T1_BLOCK_NUMBER = 9473310;
 const RING_REWARD = 200000000;
 const KTON_REWARD = 8000;
 const DOT_TO_BN = new BN("10000000000");
-
-const TOTAL_CONTRIBUTE_HISTORY = gql`
-  query {
-    events(filter: { method: { equalTo: "Contributed" }, and: { data: { includes: ",${PARA_ID}," } } }) {
-      totalCount
-      nodes {
-        timestamp
-        data
-      }
-    }
-  }
-`;
-
-const actionSomeOneConntributeHistory = (address = "HeU2h1RoQNx5MkUKBDZ9VsX5uCNb4gdCf6YADVxj3Ku6SPG") =>
-  gql`
-query {
-  extrinsics(
-    filter: {
-      signerId: { equalTo: "${address}" }
-    }
-  ) {
-    totalCount
-    nodes {
-      events(
-        filter:{
-          method:{equalTo: "Contributed"}
-          and: {
-            data: {
-              includes: ",${PARA_ID},"
-            }
-          }
-        }) {
-        nodes {
-          id
-          timestamp
-          data
-        }
-      }
-    }
-  }
-}
-`;
-
-const actionSomeOneReferrals = (referralCode = "0x3e68cf5a7d3350cf8a1fa6ad81bc3515e4e86238f472f6a4655c11137500ef57") =>
-  gql`
-query {
-  events(
-   filter:{
-     method:{ equalTo:"MemoUpdated"}
-     and: {
-       data: {
-         includes: ",${PARA_ID},\\"${referralCode}\\""
-       }
-     }
-   }
- ){
-     totalCount
-     nodes {
-       data
-     }
-   }
- }
-`;
-
-const actionGetMyReferralCode = (address) =>
-  gql`
-query {
-  events(
-   filter:{
-     method:{ equalTo:"MemoUpdated"}
-     and: {
-       data: {
-         includes: "\\"${address}\\",${PARA_ID},"
-       }
-     }
-   }
- ){
-     totalCount
-     nodes {
-       data
-     }
-   }
- }
-`;
-
-const CONTRIBUTE_PIONEERS = gql`
-  query {
-    accounts(orderBy: CONTRIBUTED_TOTAL_DESC) {
-      nodes {
-        id
-        transferTotalCount
-        contributedTotalCount
-        contributedTotal
-      }
-    }
-  }
-`;
-
-const TOTAL_WHO_CONTRIBUTE_WITH_POWER = gql`
-  query {
-    crowdloanWhoStatistics(orderBy: TOTAL_BALANCE_DESC) {
-      nodes {
-        user
-        totalPower
-        totalBalance
-      }
-    }
-  }
-`;
-
-const TOTAL_REFER_CONTRIBUTE_WITH_POWER = gql`
-  query {
-    crowdloanReferStatistics(orderBy: TOTAL_BALANCE_DESC) {
-      nodes {
-        user
-        totalPower
-        totalBalance
-        contributors {
-          nodes {
-            id
-          }
-        }
-      }
-    }
-  }
-`;
-
-const REFERRAL_LEADERBORD = gql`
-  query {
-    crowdloanReferStatistics(orderBy: TOTAL_BALANCE_DESC) {
-      nodes {
-        user
-        totalPower
-        totalBalance
-        contributors {
-          nodes {
-            id
-          }
-        }
-      }
-    }
-  }
-`;
 
 /**
  * PLO Contribute
