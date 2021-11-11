@@ -88,6 +88,11 @@ const isValidAddressPolkadotAddress = (address) => {
 // const PARA_ID = 2003;
 const PARA_ID = 2084;
 
+const T1_BLOCK_NUMBER = 9473310;
+const RING_REWARD = 200000000;
+const KTON_REWARD = 8000;
+const DOT_TO_BN = new BN("10000000000");
+
 const TOTAL_CONTRIBUTE_HISTORY = gql`
   query {
     events(filter: { method: { equalTo: "Contributed" }, and: { data: { includes: ",${PARA_ID}," } } }) {
@@ -185,12 +190,39 @@ const CONTRIBUTE_PIONEERS = gql`
   }
 `;
 
+const TOTAL_WHO_CONTRIBUTE_WITH_POWER = gql`
+  query {
+    crowdloanWhoStatistics {
+      nodes {
+        user
+        totalPower
+      }
+    }
+  }
+`;
+
+const TOTAL_REFER_CONTRIBUTE_WITH_POWER = gql`
+  query {
+    crowdloanReferStatistics {
+      nodes {
+        user
+        totalPower
+      }
+    }
+  }
+`;
+
+/**
+ * PLO Contribute
+ * @returns ReactNode
+ */
 const PloContribute = () => {
   const echartsRef = useRef();
   const polkadotApi = useRef(null);
   const unsubscribeAccounts = useRef(null);
   const unsubscribeCurBalance = useRef(null);
   const unsubscribeLatestHeads = useRef(null);
+  const currentBlockNumber = useRef(null);
 
   const [accounts, setAccounts] = useState([]);
   const [inputDot, setInputDot] = useState("");
@@ -213,10 +245,79 @@ const PloContribute = () => {
   const myReferrals = useQuery(actionSomeOneReferrals());
   const myReferralCode = useQuery(actionGetMyReferralCode(currentAccount ? currentAccount.address : ""));
   const contributePionners = useQuery(CONTRIBUTE_PIONEERS);
+  const totalWhoContributeWithPower = useQuery(TOTAL_WHO_CONTRIBUTE_WITH_POWER);
+  const totalReferContributeWithPower = useQuery(TOTAL_REFER_CONTRIBUTE_WITH_POWER);
+
+  // All total power
+  let totalPower = new BN(0);
+  if (
+    !totalWhoContributeWithPower.loading &&
+    !totalWhoContributeWithPower.error &&
+    !totalReferContributeWithPower.loading &&
+    !totalReferContributeWithPower.error
+  ) {
+    totalPower = new BN(0);
+
+    if (
+      totalWhoContributeWithPower.data &&
+      totalWhoContributeWithPower.data.crowdloanWhoStatistics &&
+      totalWhoContributeWithPower.data.crowdloanWhoStatistics.nodes &&
+      totalWhoContributeWithPower.data.crowdloanWhoStatistics.nodes.length
+    ) {
+      totalWhoContributeWithPower.data.crowdloanWhoStatistics.nodes.forEach((node) => {
+        totalPower = totalPower.add(new BN(node.totalPower));
+      });
+    }
+
+    if (
+      totalReferContributeWithPower.data &&
+      totalReferContributeWithPower.data.crowdloanWhoStatistics &&
+      totalReferContributeWithPower.data.crowdloanWhoStatistics.nodes &&
+      totalReferContributeWithPower.data.crowdloanWhoStatistics.nodes.length
+    ) {
+      totalReferContributeWithPower.data.crowdloanWhoStatistics.nodes.forEach((node) => {
+        totalPower = totalPower.add(new BN(node.totalPower));
+      });
+    }
+  }
 
   let myReferralCodeFromGql = null;
   if (!myReferralCode.loading && !myReferralCode.error && myReferralCode.data.events.nodes.length) {
     myReferralCodeFromGql = JSON.parse(myReferralCode.data.events.nodes[0].data)[2];
+  }
+
+  let auctionSuccessReward = {
+    base: { ring: 0, kton: 0 },
+    bonus: { ring: 0, kton: 0 },
+    referral: { ring: 0, kton: 0 },
+    total: { ring: 0, kton: 0 },
+  };
+  if (currentBlockNumber.current && !totalPower.isZero() && Number(inputDot) && Number(inputDot) > 0) {
+    const inputDotBN = new BN(`${inputDot}`).mul(DOT_TO_BN);
+    const bonusN = currentBlockNumber.current < T1_BLOCK_NUMBER ? 0.2 : 0;
+    const referN =
+      isValidAddressPolkadotAddress(inputReferralCode) || isValidAddressPolkadotAddress(myReferralCodeFromGql)
+        ? 0.05
+        : 0;
+
+    const base = {
+      ring: totalPower.div(inputDotBN).lt(DOT_TO_BN) ? (1.0 / totalPower.div(inputDotBN).toNumber()) * RING_REWARD : 0,
+      kton: totalPower.div(inputDotBN).lt(DOT_TO_BN) ? (1.0 / totalPower.div(inputDotBN).toNumber()) * KTON_REWARD : 0,
+    };
+    const bonus = {
+      ring: base.ring * bonusN,
+      kton: base.kton * bonusN,
+    };
+    const referral = {
+      ring: (base.ring + bonus.ring) * referN,
+      kton: (base.kton + bonus.kton) * referN,
+    };
+    const total = {
+      ring: base.ring + bonus.ring + referral.ring,
+      kton: base.kton + bonus.kton + referral.kton,
+    };
+
+    auctionSuccessReward = { base, bonus, referral, total };
   }
 
   let myTotalContribute = new BN(0);
@@ -461,7 +562,7 @@ const PloContribute = () => {
       polkadotApi.current = api;
 
       unsubscribeLatestHeads.current = await api.rpc.chain.subscribeNewHeads((header) => {
-        console.log(`Chain is at block: #${header.number}`);
+        currentBlockNumber.current = header.number;
       });
     })();
 
@@ -678,8 +779,8 @@ const PloContribute = () => {
                 </div>
                 <div className={cx("auction-success-rewards")}>
                   <span>Base</span>
-                  <span className={cx("token-amount")}>0 RING</span>
-                  <span className={cx("token-amount")}>0 KTON</span>
+                  <span className={cx("token-amount")}>{auctionSuccessReward.base.ring.toFixed(2)} RING</span>
+                  <span className={cx("token-amount")}>{auctionSuccessReward.base.kton.toFixed(2)} KTON</span>
 
                   <div className={cx("auction-success-rewards-content-wrap")}>
                     <span>Bonus</span>
@@ -687,16 +788,16 @@ const PloContribute = () => {
                       <span>Limited Time</span>
                     </div>
                   </div>
-                  <span className={cx("token-amount")}>0 RING</span>
-                  <span className={cx("token-amount")}>0 KTON</span>
+                  <span className={cx("token-amount")}>{auctionSuccessReward.bonus.ring.toFixed(2)} RING</span>
+                  <span className={cx("token-amount")}>{auctionSuccessReward.bonus.kton.toFixed(2)} KTON</span>
 
                   <span>Referral</span>
-                  <span className={cx("token-amount")}>0 RING</span>
-                  <span className={cx("token-amount")}>0 KTON</span>
+                  <span className={cx("token-amount")}>{auctionSuccessReward.referral.ring.toFixed(2)} RING</span>
+                  <span className={cx("token-amount")}>{auctionSuccessReward.referral.kton.toFixed(2)} KTON</span>
 
                   <span>Total</span>
-                  <span className={cx("total", "token-amount")}>0 RING</span>
-                  <span className={cx("total", "token-amount")}>0 KTON</span>
+                  <span className={cx("total", "token-amount")}>{auctionSuccessReward.total.ring.toFixed(2)} RING</span>
+                  <span className={cx("total", "token-amount")}>{auctionSuccessReward.total.kton.toFixed(2)} KTON</span>
                 </div>
               </div>
 
@@ -868,7 +969,7 @@ const PloContribute = () => {
                   <span>Current</span>
                 </div>
                 <span className={cx("contribute-info-item-value")}>
-                  {myTotalContribute.gte(new BN("100000000000")) ? "1" : "0"}
+                  {myTotalContribute.gte(DOT_TO_BN.muln(10)) ? "1" : "0"}
                 </span>
                 <button className={cx("claim-reward-btn")} disabled={true}>
                   <span>Claim</span>
