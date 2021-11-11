@@ -139,7 +139,7 @@ const PloContribute = () => {
   const referralLeaderborad = useQuery(REFERRAL_LEADERBORD);
 
   // All total power
-  let totalPower = new BN(0);
+  let globalTotalPower = new BN("1000000");
   const allWhoContributeData = [];
   const allReferContributeData = [];
   if (
@@ -148,7 +148,7 @@ const PloContribute = () => {
     !totalReferContributeWithPower.loading &&
     !totalReferContributeWithPower.error
   ) {
-    totalPower = new BN(0);
+    let totalPowerTmp = new BN(0);
 
     if (
       totalWhoContributeWithPower.data &&
@@ -157,7 +157,7 @@ const PloContribute = () => {
       totalWhoContributeWithPower.data.crowdloanWhoStatistics.nodes.length
     ) {
       totalWhoContributeWithPower.data.crowdloanWhoStatistics.nodes.forEach((node) => {
-        totalPower = totalPower.add(new BN(node.totalPower));
+        totalPowerTmp = totalPowerTmp.add(new BN(node.totalPower));
 
         allWhoContributeData.push({
           user: node.user,
@@ -174,7 +174,7 @@ const PloContribute = () => {
       totalReferContributeWithPower.data.crowdloanWhoStatistics.nodes.length
     ) {
       totalReferContributeWithPower.data.crowdloanWhoStatistics.nodes.forEach((node) => {
-        totalPower = totalPower.add(new BN(node.totalPower));
+        totalPowerTmp = totalPowerTmp.add(new BN(node.totalPower));
 
         allReferContributeData.push({
           user: node.user,
@@ -184,6 +184,8 @@ const PloContribute = () => {
         });
       });
     }
+
+    globalTotalPower = totalPowerTmp.gt(globalTotalPower) ? totalPowerTmp : globalTotalPower;
   }
 
   const referralLeaderboradData = [];
@@ -194,18 +196,18 @@ const PloContribute = () => {
     referralLeaderborad.data.crowdloanReferStatistics.nodes.length
   ) {
     referralLeaderborad.data.crowdloanReferStatistics.nodes.forEach((node) => {
-      const aBN = totalPower.div(new BN(node.totalPower));
+      const aBN = globalTotalPower.div(new BN(node.totalPower));
       referralLeaderboradData.push({
         address: node.user,
         referrals: node.contributors.nodes.length,
         accumulatedContribution: node.totalBalance,
         refferalRewards: {
-          ring: totalPower.isZero()
+          ring: globalTotalPower.isZero()
             ? 0
             : aBN.lt(DOT_TO_BN) && aBN.toNumber() > 0
             ? (1.0 / aBN.toNumber()) * RING_REWARD
             : 0,
-          kton: totalPower.isZero()
+          kton: globalTotalPower.isZero()
             ? 0
             : aBN.lt(DOT_TO_BN) && aBN.toNumber() > 0
             ? (1.0 / aBN.toNumber()) * KTON_REWARD
@@ -226,7 +228,7 @@ const PloContribute = () => {
     referral: { ring: 0, kton: 0 },
     total: { ring: 0, kton: 0 },
   };
-  if (currentBlockNumber.current && !totalPower.isZero() && Number(inputDot) && Number(inputDot) > 0) {
+  if (currentBlockNumber.current && !globalTotalPower.isZero() && Number(inputDot) && Number(inputDot) > 0) {
     const inputDotBN = new BN(`${inputDot}`).mul(DOT_TO_BN);
     const bonusN = currentBlockNumber.current < T1_BLOCK_NUMBER ? 0.2 : 0;
     const referN =
@@ -235,8 +237,12 @@ const PloContribute = () => {
         : 0;
 
     const base = {
-      ring: totalPower.div(inputDotBN).lt(DOT_TO_BN) ? (1.0 / totalPower.div(inputDotBN).toNumber()) * RING_REWARD : 0,
-      kton: totalPower.div(inputDotBN).lt(DOT_TO_BN) ? (1.0 / totalPower.div(inputDotBN).toNumber()) * KTON_REWARD : 0,
+      ring: globalTotalPower.div(inputDotBN).lt(DOT_TO_BN)
+        ? (1.0 / globalTotalPower.div(inputDotBN).toNumber()) * RING_REWARD
+        : 0,
+      kton: globalTotalPower.div(inputDotBN).lt(DOT_TO_BN)
+        ? (1.0 / globalTotalPower.div(inputDotBN).toNumber()) * KTON_REWARD
+        : 0,
     };
     const bonus = {
       ring: base.ring * bonusN,
@@ -362,7 +368,7 @@ const PloContribute = () => {
     const nodeWho = allWhoContributeData[i];
     const nodeRefer = allReferContributeData.find((node) => node.user === nodeWho.user);
 
-    const a = totalPower.div(new BN(nodeWho.totalPower));
+    const a = globalTotalPower.div(new BN(nodeWho.totalPower));
 
     let btcR = 0;
     if (
