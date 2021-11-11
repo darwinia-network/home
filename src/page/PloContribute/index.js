@@ -29,6 +29,8 @@ import {
   ALL_REFER_CROWDLOAN,
 } from "./gqlStatement";
 
+import { useApi, useCurrentBlockNumber } from "./hooks";
+
 import {
   DOT_TO_ORIG,
   shortAddress,
@@ -41,7 +43,6 @@ import { isMobile } from "../../utils";
 // Polkadot
 import { web3Enable, web3AccountsSubscribe, web3FromAddress } from "@polkadot/extension-dapp";
 import Identicon from "@polkadot/react-identicon";
-import { ApiPromise, WsProvider } from "@polkadot/api";
 import { Keyring } from "@polkadot/keyring";
 import BN from "bn.js";
 
@@ -85,19 +86,19 @@ const KTON_REWARD = 8000;
  * @returns ReactNode
  */
 const PloContribute = () => {
+  const { api } = useApi();
+  const { currentBlockNumber } = useCurrentBlockNumber(api);
+
   const echartsRef = useRef();
-  const polkadotApi = useRef(null);
 
   // unsub
   const unsubscribeAccounts = useRef(null);
   const unsubscribeCurBalance = useRef(null);
-  const unsubscribeLatestHeads = useRef(null);
 
   const [accounts, setAccounts] = useState([]);
   const [inputDot, setInputDot] = useState("");
   const [inputReferralCode, setInputReferralCode] = useState("");
   const [currentAccount, setCurrentAccount] = useState(null);
-  const [currentBlockNumber, setCurrentBlockNumber] = useState(null);
   const [currentAccountBalannce, setCurrentAccountBalannce] = useState({
     freeBalance: "0",
     lockedBalance: "0",
@@ -402,18 +403,12 @@ const PloContribute = () => {
 
   const handleClickContribute = async () => {
     if (Number(inputDot) > 0) {
-      const extrinsicContribute = polkadotApi.current.tx.crowdloan.contribute(
-        PARA_ID,
-        formatBalanceFromDOTToOrig(inputDot),
-        null
-      );
+      const extrinsicContribute = api.tx.crowdloan.contribute(PARA_ID, formatBalanceFromDOTToOrig(inputDot), null);
       const extrinsicAddMemo = isValidAddressPolkadotAddress(inputReferralCode)
-        ? polkadotApi.current.tx.crowdloan.addMemo(PARA_ID, inputReferralCode)
+        ? api.tx.crowdloan.addMemo(PARA_ID, inputReferralCode)
         : null;
       const injector = await web3FromAddress(currentAccount.address);
-      const tx = extrinsicAddMemo
-        ? polkadotApi.current.tx.utility.batch([extrinsicContribute, extrinsicAddMemo])
-        : extrinsicContribute;
+      const tx = extrinsicAddMemo ? api.tx.utility.batch([extrinsicContribute, extrinsicAddMemo]) : extrinsicContribute;
 
       try {
         const unsub = await tx.signAndSend(
@@ -487,29 +482,15 @@ const PloContribute = () => {
   }, [currentAccount, inputReferralCode]);
 
   useEffect(() => {
-    (async () => {
-      const wsProvider = new WsProvider("wss://rpc.polkadot.io");
-      const api = await ApiPromise.create({ provider: wsProvider });
-      polkadotApi.current = api;
-
-      unsubscribeLatestHeads.current = await api.rpc.chain.subscribeNewHeads((header) => {
-        // console.log(`Chain is at block: #${header.number}`);
-        setCurrentBlockNumber(Number(`${header.number}`));
-      });
-    })();
-
     return () => {
       unsubscribeAccounts.current && unsubscribeAccounts.current();
       unsubscribeAccounts.current = null;
-
-      unsubscribeLatestHeads.current && unsubscribeLatestHeads.current();
-      unsubscribeLatestHeads.current = null;
     };
   }, []);
 
   useEffect(() => {
-    if (currentAccount && polkadotApi.current) {
-      polkadotApi.current.derive.balances
+    if (currentAccount && api) {
+      api.derive.balances
         .all(currentAccount.address, (balancesAll) => {
           setCurrentAccountBalannce({
             freeBalance: balancesAll.freeBalance.toString(),
@@ -530,7 +511,7 @@ const PloContribute = () => {
       unsubscribeCurBalance.current && unsubscribeCurBalance.current();
       unsubscribeCurBalance.current = null;
     };
-  }, [currentAccount, polkadotApi]);
+  }, [currentAccount, api]);
 
   useEffect(() => {
     if (
