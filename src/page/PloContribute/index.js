@@ -179,7 +179,7 @@ query {
 
 const CONTRIBUTE_PIONEERS = gql`
   query {
-    accounts(first: 6, orderBy: CONTRIBUTED_TOTAL_DESC) {
+    accounts(orderBy: CONTRIBUTED_TOTAL_DESC) {
       nodes {
         id
         transferTotalCount
@@ -192,10 +192,11 @@ const CONTRIBUTE_PIONEERS = gql`
 
 const TOTAL_WHO_CONTRIBUTE_WITH_POWER = gql`
   query {
-    crowdloanWhoStatistics {
+    crowdloanWhoStatistics(orderBy: TOTAL_BALANCE_DESC) {
       nodes {
         user
         totalPower
+        totalBalance
       }
     }
   }
@@ -203,10 +204,16 @@ const TOTAL_WHO_CONTRIBUTE_WITH_POWER = gql`
 
 const TOTAL_REFER_CONTRIBUTE_WITH_POWER = gql`
   query {
-    crowdloanReferStatistics {
+    crowdloanReferStatistics(orderBy: TOTAL_BALANCE_DESC) {
       nodes {
         user
         totalPower
+        totalBalance
+        contributors {
+          nodes {
+            id
+          }
+        }
       }
     }
   }
@@ -268,6 +275,8 @@ const PloContribute = () => {
 
   // All total power
   let totalPower = new BN(0);
+  const allWhoContributeData = [];
+  const allReferContributeData = [];
   if (
     !totalWhoContributeWithPower.loading &&
     !totalWhoContributeWithPower.error &&
@@ -284,6 +293,12 @@ const PloContribute = () => {
     ) {
       totalWhoContributeWithPower.data.crowdloanWhoStatistics.nodes.forEach((node) => {
         totalPower = totalPower.add(new BN(node.totalPower));
+
+        allWhoContributeData.push({
+          user: node.user,
+          totalPower: node.totalPower,
+          totalBalance: node.totalBalance,
+        });
       });
     }
 
@@ -295,6 +310,13 @@ const PloContribute = () => {
     ) {
       totalReferContributeWithPower.data.crowdloanWhoStatistics.nodes.forEach((node) => {
         totalPower = totalPower.add(new BN(node.totalPower));
+
+        allReferContributeData.push({
+          user: node.user,
+          totalPower: node.totalPower,
+          totalBalance: node.totalBalance,
+          contributorsCount: node.contributors.nodes.length,
+        });
       });
     }
   }
@@ -387,24 +409,25 @@ const PloContribute = () => {
     : 100.0 / currentTotalContribute.div(myTotalContribute).toNumber();
 
   let myBtcReward = 0;
+  let top5contribute = new BN(0);
   if (
-    currentAccount &&
     contributePionners.data &&
     contributePionners.data.accounts &&
     contributePionners.data.accounts.nodes &&
     contributePionners.data.accounts.nodes.length
   ) {
-    let top5contribute = new BN(0);
+    top5contribute = new BN(0);
     let myContribute = new BN(0);
 
-    contributePionners.data.accounts.nodes.forEach((node) => {
-      if (currentAccount.address === node.id) {
+    contributePionners.data.accounts.nodes.forEach((node, index) => {
+      if (index > 4) { return; }
+      if (currentAccount && currentAccount.address === node.id) {
         myContribute = myContribute.add(new BN(node.contributedTotal));
       }
       top5contribute = top5contribute.add(new BN(node.contributedTotal));
     });
 
-    if (!myContribute.isZero()) {
+    if (!myContribute.isZero() && myContribute.gt(DOT_TO_BN.muln(10000))) {
       if (top5contribute.div(myContribute).ltn(1000000)) {
         myBtcReward = (1.0 / top5contribute.div(myContribute).toNumber()).toFixed(6);
       }
@@ -468,16 +491,26 @@ const PloContribute = () => {
   ];
 
   const globalContributeDataSource = [];
-  for (let i = 0; i < 100; i++) {
+  for (let i = 0; i < allWhoContributeData.length; i++) {
+    const nodeWho = allWhoContributeData[i];
+    const nodeRefer = allReferContributeData.find(node => node.user === nodeWho.user);
+
+   const a = totalPower.div(new BN(nodeWho.totalPower));
+
+   let btcR = 0;
+   if (i < 5 && (new BN(nodeWho.totalBalance)).gte(DOT_TO_BN.muln(10000)) && !top5contribute.isZero() && top5contribute.div(new BN(nodeWho.totalBalance)).lt(DOT_TO_BN)) {
+     btcR = (1.0 / top5contribute.div(new BN(nodeWho.totalBalance))).toFixed(6);
+   }
+
     globalContributeDataSource.push({
       key: i,
-      address: "5CRABk…eEQNM6",
-      myDot: "323,273.43",
-      referrals: "100",
-      referralDot: "323,273.43",
-      curRingRewards: "32776.27",
-      curKtonRewards: "37.27",
-      curBtcRewards: "0.1457",
+      address: shortAddress(nodeWho.user),
+      myDot: formatBalance(new BN(nodeWho.totalBalance), { forceUnit: true, withUnit: false, withSi: false, decimals: 10 }),
+      referrals: nodeRefer ? nodeRefer.contributorsCount : 0,
+      referralDot: nodeRefer ? formatBalance(new BN(nodeRefer.totalBalance), { forceUnit: true, withUnit: false, withSi: false, decimals: 10 }) : 0,
+      curRingRewards: a.lt(DOT_TO_BN) && a.toNumber() > 0 ? ((1.0 / a.toNumber()) * RING_REWARD).toFixed(2) : 0,
+      curKtonRewards: a.lt(DOT_TO_BN) && a.toNumber() > 0 ? ((1.0 / a.toNumber()) * KTON_REWARD).toFixed(2) : 0,
+      curBtcRewards: btcR,
       curNft: "No Status",
     });
   }
@@ -1298,7 +1331,7 @@ const PloContribute = () => {
                 <span className={cx("referral-leaderboard-item-rewards")}>Refferal Rewards</span>
               </div>
 
-              {referralLeaderboradData.map((data, index) => (
+              {referralLeaderboradData.length ? referralLeaderboradData.map((data, index) => (
                 <div className={cx("referral-leaderboard-item")} key={index}>
                   <div className={cx("referral-leaderboard-item-rank")}>
                     <div className={cx({ rank: index < 5, rank2: 5 <= index && index < 100, rank3: 100 <= index })}>
@@ -1329,7 +1362,9 @@ const PloContribute = () => {
                     <span>{data.refferalRewards.kton.toFixed(2)} KTON</span>
                   </div>
                 </div>
-              ))}
+              )) : (
+                <div style={{ marginTop: '20px', textAlign: 'center' }}>No Data</div>
+              )}
             </div>
           </div>
         </Fade>
