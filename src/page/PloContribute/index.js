@@ -806,7 +806,7 @@ const PloContribute = () => {
                 <div ref={echartsRef} className={cx("crowloan-echarts")} />
 
                 <div className={cx("current-total-contribute")}>
-                  <span>Current Total contributions</span>
+                  <span>Current total contributions</span>
                   <div className={cx("total-contribute-dot")}>
                     <img alt="..." src={dotIcon} />
                     <span>

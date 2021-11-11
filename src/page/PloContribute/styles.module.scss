@@ -478,14 +478,7 @@
   }
 
   @media screen and (max-width: 1024px) {
-    margin-left: 4px;
-    border-radius: 6px;
-
-    > span {
-      font-weight: normal;
-      font-size: 3px;
-      line-height: 5px;
-    }
+    display: none;
   }
 }
 
