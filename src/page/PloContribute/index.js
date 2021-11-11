@@ -85,8 +85,7 @@ const isValidAddressPolkadotAddress = (address) => {
 //   }
 // }
 
-// const PARA_ID = 2003;
-const PARA_ID = 2084;
+const PARA_ID = 2003;
 
 const T1_BLOCK_NUMBER = 9473310;
 const RING_REWARD = 200000000;
@@ -265,8 +264,8 @@ const PloContribute = () => {
 
   // Graphql
   const totalContributeHistory = useQuery(TOTAL_CONTRIBUTE_HISTORY);
-  const myContributeHistoty = useQuery(actionSomeOneConntributeHistory());
-  const myReferrals = useQuery(actionSomeOneReferrals());
+  const myContributeHistoty = useQuery(actionSomeOneConntributeHistory(currentAccount ? currentAccount.address : ''));
+  const myReferrals = useQuery(actionSomeOneReferrals(currentAccount ? currentAccount.address : ''));
   const myReferralCode = useQuery(actionGetMyReferralCode(currentAccount ? currentAccount.address : ""));
   const contributePionners = useQuery(CONTRIBUTE_PIONEERS);
   const totalWhoContributeWithPower = useQuery(TOTAL_WHO_CONTRIBUTE_WITH_POWER);
