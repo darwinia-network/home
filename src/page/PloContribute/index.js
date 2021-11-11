@@ -5,7 +5,6 @@ import { Container } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { Tooltip, Table, Modal, Typography, notification } from "antd";
 import Fade from "react-reveal/Fade";
-import { isMobile } from "../../utils";
 
 import darwiniaLogo from "./img/logo-darwinia.png";
 import infoIcon from "./img/info-icon.png";
@@ -21,23 +20,29 @@ import telegramIcon from "./img/telegram.png";
 import discordIcon from "./img/discord.png";
 
 import {
-  PARA_ID,
-  TOTAL_CONTRIBUTE_HISTORY,
-  actionSomeOneConntributeHistory,
-  actionSomeOneReferrals,
-  actionGetMyReferralCode,
+  gqlContributesByParaId,
+  gqlSomeOneContributesByAddressAndParaId,
+  gqlReferralsOfSomeOneByAddressAndParaId,
+  gqlGetReferralCodeOfSomeOneByAddressAndParaId,
   CONTRIBUTE_PIONEERS,
-  TOTAL_WHO_CONTRIBUTE_WITH_POWER,
-  TOTAL_REFER_CONTRIBUTE_WITH_POWER,
-  REFERRAL_LEADERBORD,
+  ALL_WHO_CROWDLOAN,
+  ALL_REFER_CROWDLOAN,
 } from "./gqlStatement";
+
+import {
+  DOT_TO_ORIG,
+  shortAddress,
+  isValidAddressPolkadotAddress,
+  formatBalanceFromOrigToDOT,
+  formatBalanceFromDOTToOrig,
+} from "./utils";
+import { isMobile } from "../../utils";
 
 // Polkadot
 import { web3Enable, web3AccountsSubscribe, web3FromAddress } from "@polkadot/extension-dapp";
 import Identicon from "@polkadot/react-identicon";
 import { ApiPromise, WsProvider } from "@polkadot/api";
-import { Keyring, decodeAddress, encodeAddress } from "@polkadot/keyring";
-import { hexToU8a, isHex, formatBalance } from "@polkadot/util";
+import { Keyring } from "@polkadot/keyring";
 import BN from "bn.js";
 
 import { graphqlClient } from "../../graphql";
@@ -70,36 +75,10 @@ echarts.use([
 
 const cx = classNames.bind(styles);
 
-const shortAddress = (address = "") => {
-  if (address.length && address.length > 12) {
-    return `${address.slice(0, 5)}...${address.slice(address.length - 5)}`;
-  }
-  return address;
-};
-
-const isValidAddressPolkadotAddress = (address) => {
-  try {
-    encodeAddress(isHex(address) ? hexToU8a(address) : decodeAddress(address));
-
-    return true;
-  } catch (error) {
-    return false;
-  }
-};
-
-// const isValidReferralCode = (referralCode) => {
-//   try {
-//     const address = encodeAddress(hexToU8a(`0x${referralCode}`));
-//     return isValidAddressPolkadotAddress(address);
-//   } catch (error) {
-//     return false;
-//   }
-// }
-
+const PARA_ID = 2003;
 const T1_BLOCK_NUMBER = 9473310;
 const RING_REWARD = 200000000;
 const KTON_REWARD = 8000;
-const DOT_TO_BN = new BN("10000000000");
 
 /**
  * PLO Contribute
@@ -108,15 +87,17 @@ const DOT_TO_BN = new BN("10000000000");
 const PloContribute = () => {
   const echartsRef = useRef();
   const polkadotApi = useRef(null);
+
+  // unsub
   const unsubscribeAccounts = useRef(null);
   const unsubscribeCurBalance = useRef(null);
   const unsubscribeLatestHeads = useRef(null);
-  const currentBlockNumber = useRef(null);
 
   const [accounts, setAccounts] = useState([]);
   const [inputDot, setInputDot] = useState("");
   const [inputReferralCode, setInputReferralCode] = useState("");
   const [currentAccount, setCurrentAccount] = useState(null);
+  const [currentBlockNumber, setCurrentBlockNumber] = useState(null);
   const [currentAccountBalannce, setCurrentAccountBalannce] = useState({
     freeBalance: "0",
     lockedBalance: "0",
@@ -129,34 +110,34 @@ const PloContribute = () => {
   const [showSelectAccountModal, setShowSelectAccountModal] = useState(false);
 
   // Graphql
-  const totalContributeHistory = useQuery(TOTAL_CONTRIBUTE_HISTORY);
-  const myContributeHistoty = useQuery(actionSomeOneConntributeHistory(currentAccount ? currentAccount.address : ""));
-  const myReferrals = useQuery(actionSomeOneReferrals(currentAccount ? currentAccount.address : ""));
-  const myReferralCode = useQuery(actionGetMyReferralCode(currentAccount ? currentAccount.address : ""));
+  const totalContributeHistory = useQuery(gqlContributesByParaId(PARA_ID));
+  const myContributeHistoty = useQuery(
+    gqlSomeOneContributesByAddressAndParaId(currentAccount ? currentAccount.address : "", PARA_ID)
+  );
+  const myReferrals = useQuery(
+    gqlReferralsOfSomeOneByAddressAndParaId(currentAccount ? currentAccount.address : "", PARA_ID)
+  );
+  const myReferralCode = useQuery(
+    gqlGetReferralCodeOfSomeOneByAddressAndParaId(currentAccount ? currentAccount.address : "", PARA_ID)
+  );
   const contributePionners = useQuery(CONTRIBUTE_PIONEERS);
-  const totalWhoContributeWithPower = useQuery(TOTAL_WHO_CONTRIBUTE_WITH_POWER);
-  const totalReferContributeWithPower = useQuery(TOTAL_REFER_CONTRIBUTE_WITH_POWER);
-  const referralLeaderborad = useQuery(REFERRAL_LEADERBORD);
+  const allWhoCrowdloan = useQuery(ALL_WHO_CROWDLOAN);
+  const allReferCrowdloan = useQuery(ALL_REFER_CROWDLOAN);
 
-  // All total power
   let globalTotalPower = new BN("1000000");
   const allWhoContributeData = [];
   const allReferContributeData = [];
-  if (
-    !totalWhoContributeWithPower.loading &&
-    !totalWhoContributeWithPower.error &&
-    !totalReferContributeWithPower.loading &&
-    !totalReferContributeWithPower.error
-  ) {
+  const referralLeaderboradData = [];
+  if (!allWhoCrowdloan.loading && !allWhoCrowdloan.error && !allReferCrowdloan.loading && !allReferCrowdloan.error) {
     let totalPowerTmp = new BN(0);
 
     if (
-      totalWhoContributeWithPower.data &&
-      totalWhoContributeWithPower.data.crowdloanWhoStatistics &&
-      totalWhoContributeWithPower.data.crowdloanWhoStatistics.nodes &&
-      totalWhoContributeWithPower.data.crowdloanWhoStatistics.nodes.length
+      allWhoCrowdloan.data &&
+      allWhoCrowdloan.data.crowdloanWhoStatistics &&
+      allWhoCrowdloan.data.crowdloanWhoStatistics.nodes &&
+      allWhoCrowdloan.data.crowdloanWhoStatistics.nodes.length
     ) {
-      totalWhoContributeWithPower.data.crowdloanWhoStatistics.nodes.forEach((node) => {
+      allWhoCrowdloan.data.crowdloanWhoStatistics.nodes.forEach((node) => {
         totalPowerTmp = totalPowerTmp.add(new BN(node.totalPower));
 
         allWhoContributeData.push({
@@ -168,12 +149,12 @@ const PloContribute = () => {
     }
 
     if (
-      totalReferContributeWithPower.data &&
-      totalReferContributeWithPower.data.crowdloanWhoStatistics &&
-      totalReferContributeWithPower.data.crowdloanWhoStatistics.nodes &&
-      totalReferContributeWithPower.data.crowdloanWhoStatistics.nodes.length
+      allReferCrowdloan.data &&
+      allReferCrowdloan.data.crowdloanReferStatistics &&
+      allReferCrowdloan.data.crowdloanReferStatistics.nodes &&
+      allReferCrowdloan.data.crowdloanReferStatistics.nodes.length
     ) {
-      totalReferContributeWithPower.data.crowdloanWhoStatistics.nodes.forEach((node) => {
+      allReferCrowdloan.data.crowdloanReferStatistics.nodes.forEach((node) => {
         totalPowerTmp = totalPowerTmp.add(new BN(node.totalPower));
 
         allReferContributeData.push({
@@ -182,39 +163,29 @@ const PloContribute = () => {
           totalBalance: node.totalBalance,
           contributorsCount: node.contributors.nodes.length,
         });
+
+        const aBN = globalTotalPower.div(new BN(node.totalPower));
+        referralLeaderboradData.push({
+          address: node.user,
+          referrals: node.contributors.nodes.length,
+          accumulatedContribution: node.totalBalance,
+          refferalRewards: {
+            ring: globalTotalPower.isZero()
+              ? 0
+              : aBN.lt(DOT_TO_ORIG) && aBN.toNumber() > 0
+              ? (1.0 / aBN.toNumber()) * RING_REWARD
+              : 0,
+            kton: globalTotalPower.isZero()
+              ? 0
+              : aBN.lt(DOT_TO_ORIG) && aBN.toNumber() > 0
+              ? (1.0 / aBN.toNumber()) * KTON_REWARD
+              : 0,
+          },
+        });
       });
     }
 
     globalTotalPower = totalPowerTmp.gt(globalTotalPower) ? totalPowerTmp : globalTotalPower;
-  }
-
-  const referralLeaderboradData = [];
-  if (
-    referralLeaderborad.data &&
-    referralLeaderborad.data.crowdloanReferStatistics &&
-    referralLeaderborad.data.crowdloanReferStatistics.nodes &&
-    referralLeaderborad.data.crowdloanReferStatistics.nodes.length
-  ) {
-    referralLeaderborad.data.crowdloanReferStatistics.nodes.forEach((node) => {
-      const aBN = globalTotalPower.div(new BN(node.totalPower));
-      referralLeaderboradData.push({
-        address: node.user,
-        referrals: node.contributors.nodes.length,
-        accumulatedContribution: node.totalBalance,
-        refferalRewards: {
-          ring: globalTotalPower.isZero()
-            ? 0
-            : aBN.lt(DOT_TO_BN) && aBN.toNumber() > 0
-            ? (1.0 / aBN.toNumber()) * RING_REWARD
-            : 0,
-          kton: globalTotalPower.isZero()
-            ? 0
-            : aBN.lt(DOT_TO_BN) && aBN.toNumber() > 0
-            ? (1.0 / aBN.toNumber()) * KTON_REWARD
-            : 0,
-        },
-      });
-    });
   }
 
   let myReferralCodeFromGql = null;
@@ -228,19 +199,19 @@ const PloContribute = () => {
     referral: { ring: 0, kton: 0 },
     total: { ring: 0, kton: 0 },
   };
-  if (currentBlockNumber.current && !globalTotalPower.isZero() && Number(inputDot) && Number(inputDot) > 0) {
-    const inputDotBN = new BN(`${inputDot}`).mul(DOT_TO_BN);
-    const bonusN = currentBlockNumber.current < T1_BLOCK_NUMBER ? 0.2 : 0;
+  if (currentBlockNumber && !globalTotalPower.isZero() && Number(inputDot) && Number(inputDot) > 0) {
+    const inputDotBN = new BN(`${inputDot}`).mul(DOT_TO_ORIG);
+    const bonusN = currentBlockNumber < T1_BLOCK_NUMBER ? 0.2 : 0;
     const referN =
       isValidAddressPolkadotAddress(inputReferralCode) || isValidAddressPolkadotAddress(myReferralCodeFromGql)
         ? 0.05
         : 0;
 
     const base = {
-      ring: globalTotalPower.div(inputDotBN).lt(DOT_TO_BN)
+      ring: globalTotalPower.div(inputDotBN).lt(DOT_TO_ORIG)
         ? (1.0 / globalTotalPower.div(inputDotBN).toNumber()) * RING_REWARD
         : 0,
-      kton: globalTotalPower.div(inputDotBN).lt(DOT_TO_BN)
+      kton: globalTotalPower.div(inputDotBN).lt(DOT_TO_ORIG)
         ? (1.0 / globalTotalPower.div(inputDotBN).toNumber()) * KTON_REWARD
         : 0,
     };
@@ -300,7 +271,7 @@ const PloContribute = () => {
       top5contribute = top5contribute.add(new BN(node.contributedTotal));
     });
 
-    if (!myContribute.isZero() && myContribute.gt(DOT_TO_BN.muln(10000))) {
+    if (!myContribute.isZero() && myContribute.gt(DOT_TO_ORIG.muln(10000))) {
       if (top5contribute.div(myContribute).ltn(1000000)) {
         myBtcReward = (1.0 / top5contribute.div(myContribute).toNumber()).toFixed(6);
       }
@@ -373,9 +344,9 @@ const PloContribute = () => {
     let btcR = 0;
     if (
       i < 5 &&
-      new BN(nodeWho.totalBalance).gte(DOT_TO_BN.muln(10000)) &&
+      new BN(nodeWho.totalBalance).gte(DOT_TO_ORIG.muln(10000)) &&
       !top5contribute.isZero() &&
-      top5contribute.div(new BN(nodeWho.totalBalance)).lt(DOT_TO_BN)
+      top5contribute.div(new BN(nodeWho.totalBalance)).lt(DOT_TO_ORIG)
     ) {
       btcR = (1.0 / top5contribute.div(new BN(nodeWho.totalBalance))).toFixed(6);
     }
@@ -383,23 +354,11 @@ const PloContribute = () => {
     globalContributeDataSource.push({
       key: i,
       address: shortAddress(nodeWho.user),
-      myDot: formatBalance(new BN(nodeWho.totalBalance), {
-        forceUnit: true,
-        withUnit: false,
-        withSi: false,
-        decimals: 10,
-      }),
+      myDot: formatBalanceFromOrigToDOT(nodeWho.totalBalance),
       referrals: nodeRefer ? nodeRefer.contributorsCount : 0,
-      referralDot: nodeRefer
-        ? formatBalance(new BN(nodeRefer.totalBalance), {
-            forceUnit: true,
-            withUnit: false,
-            withSi: false,
-            decimals: 10,
-          })
-        : 0,
-      curRingRewards: a.lt(DOT_TO_BN) && a.toNumber() > 0 ? ((1.0 / a.toNumber()) * RING_REWARD).toFixed(2) : 0,
-      curKtonRewards: a.lt(DOT_TO_BN) && a.toNumber() > 0 ? ((1.0 / a.toNumber()) * KTON_REWARD).toFixed(2) : 0,
+      referralDot: nodeRefer ? formatBalanceFromOrigToDOT(nodeRefer.totalBalance) : 0,
+      curRingRewards: a.lt(DOT_TO_ORIG) && a.toNumber() > 0 ? ((1.0 / a.toNumber()) * RING_REWARD).toFixed(2) : 0,
+      curKtonRewards: a.lt(DOT_TO_ORIG) && a.toNumber() > 0 ? ((1.0 / a.toNumber()) * KTON_REWARD).toFixed(2) : 0,
       curBtcRewards: btcR,
       curNft: "No Status",
     });
@@ -445,7 +404,7 @@ const PloContribute = () => {
     if (Number(inputDot) > 0) {
       const extrinsicContribute = polkadotApi.current.tx.crowdloan.contribute(
         PARA_ID,
-        new BN(inputDot).mul(DOT_TO_BN).toString(),
+        formatBalanceFromDOTToOrig(inputDot),
         null
       );
       const extrinsicAddMemo = isValidAddressPolkadotAddress(inputReferralCode)
@@ -494,14 +453,7 @@ const PloContribute = () => {
   };
 
   const handleClickMaxInput = () => {
-    setInputDot(
-      formatBalance(new BN(currentAccountBalannce.availableBalance), {
-        forceUnit: true,
-        withUnit: false,
-        withSi: false,
-        decimals: 10,
-      })
-    );
+    setInputDot(formatBalanceFromOrigToDOT(currentAccountBalannce.availableBalance));
   };
 
   useEffect(() => {
@@ -514,7 +466,9 @@ const PloContribute = () => {
       const results = [];
       if (!myReferrals.loading && !myReferrals.error && myReferrals.data.events.totalCount) {
         for (let node of myReferrals.data.events.nodes) {
-          const res = await graphqlClient.query({ query: actionSomeOneConntributeHistory(JSON.parse(node.data)[0]) });
+          const res = await graphqlClient.query({
+            query: gqlSomeOneContributesByAddressAndParaId(JSON.parse(node.data)[0], PARA_ID),
+          });
           results.push(res);
         }
         results.length > 0 && setReferralsContributeHistory(results);
@@ -539,7 +493,8 @@ const PloContribute = () => {
       polkadotApi.current = api;
 
       unsubscribeLatestHeads.current = await api.rpc.chain.subscribeNewHeads((header) => {
-        currentBlockNumber.current = header.number;
+        // console.log(`Chain is at block: #${header.number}`);
+        setCurrentBlockNumber(Number(`${header.number}`));
       });
     })();
 
@@ -646,7 +601,7 @@ const PloContribute = () => {
                 },
               ]),
             },
-            data: data.map((d) => formatBalance(d, { forceUnit: true, withUnit: false, withSi: false, decimals: 10 })),
+            data: data.map((d) => formatBalanceFromOrigToDOT(d)),
           },
         ],
       };
@@ -720,14 +675,7 @@ const PloContribute = () => {
                     Min contribution: 5 DOT
                   </span>
                   <span className={cx("my-available-dot")}>
-                    Available:{" "}
-                    {formatBalance(new BN(currentAccountBalannce.availableBalance), {
-                      forceUnit: true,
-                      withUnit: false,
-                      withSi: false,
-                      decimals: 10,
-                    })}{" "}
-                    DOT
+                    Available: {formatBalanceFromOrigToDOT(currentAccountBalannce.availableBalance)} DOT
                   </span>
                 </div>
               </div>
@@ -824,15 +772,7 @@ const PloContribute = () => {
                   <span>Current total contributions</span>
                   <div className={cx("total-contribute-dot")}>
                     <img alt="..." src={dotIcon} />
-                    <span>
-                      {formatBalance(currentTotalContribute, {
-                        forceUnit: true,
-                        withUnit: false,
-                        withSi: false,
-                        decimals: 10,
-                      })}{" "}
-                      DOT
-                    </span>
+                    <span>{formatBalanceFromOrigToDOT(currentTotalContribute)} DOT</span>
                   </div>
                 </div>
               </div>
@@ -917,15 +857,8 @@ const PloContribute = () => {
                   <span>Current</span>
                 </div>
                 <span className={cx("contribute-info-item-value")}>
-                  {
-                    formatBalance(myTotalContribute, {
-                      forceUnit: true,
-                      withUnit: false,
-                      withSi: false,
-                      decimals: 10,
-                    }).split(".")[0]
-                  }
-                  ({myTotalContribute.isZero() ? 0 : myContributePer.toFixed(2)}%)
+                  {formatBalanceFromOrigToDOT(myTotalContribute).split(".")[0]}(
+                  {myTotalContribute.isZero() ? 0 : myContributePer.toFixed(2)}%)
                 </span>
                 <button className={cx("claim-reward-btn", "space")} disabled={true}>
                   <span>Claim</span>
@@ -965,7 +898,7 @@ const PloContribute = () => {
                   <span>Current</span>
                 </div>
                 <span className={cx("contribute-info-item-value")}>
-                  {myTotalContribute.gte(DOT_TO_BN.muln(10)) ? "1" : "0"}
+                  {myTotalContribute.gte(DOT_TO_ORIG.muln(10)) ? "1" : "0"}
                 </span>
                 <button className={cx("claim-reward-btn")} disabled={true}>
                   <span>Claim</span>
@@ -1087,13 +1020,7 @@ const PloContribute = () => {
                             {new Date(node2.timestamp).toDateString().split(" ")[2]}
                           </span>
                           <span className={cx("dot-amount")}>
-                            {formatBalance(new BN(JSON.parse(node2.data)[2]), {
-                              forceUnit: true,
-                              withUnit: false,
-                              withSi: false,
-                              decimals: 10,
-                            })}{" "}
-                            DOT
+                            {formatBalanceFromOrigToDOT(JSON.parse(node2.data)[2])} DOT
                           </span>
                           <a
                             className={cx("hash-id")}
@@ -1124,13 +1051,7 @@ const PloContribute = () => {
                               {new Date(node2.timestamp).toDateString().split(" ")[2]}
                             </span>
                             <span className={cx("dot-amount")}>
-                              {formatBalance(new BN(JSON.parse(node2.data)[2]), {
-                                forceUnit: true,
-                                withUnit: false,
-                                withSi: false,
-                                decimals: 10,
-                              })}{" "}
-                              DOT
+                              {formatBalanceFromOrigToDOT(JSON.parse(node2.data)[2])} DOT
                             </span>
                             <a
                               className={cx("hash-id")}
@@ -1218,13 +1139,7 @@ const PloContribute = () => {
                         />
                         <span className={cx("pioneers-item-account-name")}>{shortAddress(node.id)}</span>
                         <span className={cx("pioneers-item-dot-amount")}>
-                          {formatBalance(new BN(node.contributedTotal), {
-                            forceUnit: true,
-                            withUnit: false,
-                            withSi: false,
-                            decimals: 10,
-                          })}{" "}
-                          DOT
+                          {formatBalanceFromOrigToDOT(node.contributedTotal)} DOT
                         </span>
                       </div>
                     )
@@ -1266,13 +1181,7 @@ const PloContribute = () => {
                     </a>
                     <span className={cx("referral-leaderboard-item-referrals")}>{data.referrals}</span>
                     <span className={cx("referral-leaderboard-item-accumulated")}>
-                      {formatBalance(new BN(data.accumulatedContribution), {
-                        forceUnit: true,
-                        withUnit: false,
-                        withSi: false,
-                        decimals: 10,
-                      })}{" "}
-                      DOT
+                      {formatBalanceFromOrigToDOT(data.accumulatedContribution)} DOT
                     </span>
                     <div className={cx("referral-leaderboard-item-rewards")}>
                       <span>{data.refferalRewards.ring.toFixed(2)} RING</span>

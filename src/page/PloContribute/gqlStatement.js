@@ -1,10 +1,8 @@
 import { gql } from "@apollo/client";
 
-export const PARA_ID = 2003;
-
-export const TOTAL_CONTRIBUTE_HISTORY = gql`
+export const gqlContributesByParaId = (paraId) => gql`
   query {
-    events(filter: { method: { equalTo: "Contributed" }, and: { data: { includes: ",${PARA_ID}," } } }) {
+    events(filter: { method: { equalTo: "Contributed" }, and: { data: { includes: ",${paraId}," } } }) {
       totalCount
       nodes {
         timestamp
@@ -14,7 +12,7 @@ export const TOTAL_CONTRIBUTE_HISTORY = gql`
   }
 `;
 
-export const actionSomeOneConntributeHistory = (address = "HeU2h1RoQNx5MkUKBDZ9VsX5uCNb4gdCf6YADVxj3Ku6SPG") =>
+export const gqlSomeOneContributesByAddressAndParaId = (address, paraId) =>
   gql`
 query {
   extrinsics(
@@ -29,7 +27,7 @@ query {
           method:{equalTo: "Contributed"}
           and: {
             data: {
-              includes: ",${PARA_ID},"
+              includes: ",${paraId},"
             }
           }
         }) {
@@ -44,9 +42,7 @@ query {
 }
 `;
 
-export const actionSomeOneReferrals = (
-  referralCode = "0x3e68cf5a7d3350cf8a1fa6ad81bc3515e4e86238f472f6a4655c11137500ef57"
-) =>
+export const gqlReferralsOfSomeOneByAddressAndParaId = (address, paraId) =>
   gql`
 query {
   events(
@@ -54,7 +50,7 @@ query {
      method:{ equalTo:"MemoUpdated"}
      and: {
        data: {
-         includes: ",${PARA_ID},\\"${referralCode}\\""
+         includes: ",${paraId},\\"${address}\\""
        }
      }
    }
@@ -67,7 +63,7 @@ query {
  }
 `;
 
-export const actionGetMyReferralCode = (address) =>
+export const gqlGetReferralCodeOfSomeOneByAddressAndParaId = (address, paraId) =>
   gql`
 query {
   events(
@@ -75,7 +71,7 @@ query {
      method:{ equalTo:"MemoUpdated"}
      and: {
        data: {
-         includes: "\\"${address}\\",${PARA_ID},"
+         includes: "\\"${address}\\",${paraId},"
        }
      }
    }
@@ -101,7 +97,7 @@ export const CONTRIBUTE_PIONEERS = gql`
   }
 `;
 
-export const TOTAL_WHO_CONTRIBUTE_WITH_POWER = gql`
+export const ALL_WHO_CROWDLOAN = gql`
   query {
     crowdloanWhoStatistics(orderBy: TOTAL_BALANCE_DESC) {
       nodes {
@@ -113,24 +109,7 @@ export const TOTAL_WHO_CONTRIBUTE_WITH_POWER = gql`
   }
 `;
 
-export const TOTAL_REFER_CONTRIBUTE_WITH_POWER = gql`
-  query {
-    crowdloanReferStatistics(orderBy: TOTAL_BALANCE_DESC) {
-      nodes {
-        user
-        totalPower
-        totalBalance
-        contributors {
-          nodes {
-            id
-          }
-        }
-      }
-    }
-  }
-`;
-
-export const REFERRAL_LEADERBORD = gql`
+export const ALL_REFER_CROWDLOAN = gql`
   query {
     crowdloanReferStatistics(orderBy: TOTAL_BALANCE_DESC) {
       nodes {
