@@ -4,7 +4,6 @@ import classNames from "classnames/bind";
 import { Container } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { Tooltip, Table, Modal, Typography, notification } from "antd";
-import { ethers } from "ethers";
 import Fade from "react-reveal/Fade";
 import { isMobile } from "../../utils";
 
@@ -440,7 +439,7 @@ const PloContribute = () => {
     if (Number(inputDot) > 0) {
       const extrinsicContribute = polkadotApi.current.tx.crowdloan.contribute(
         PARA_ID,
-        ethers.utils.parseEther(Number(inputDot).toString()).toString(),
+        new BN(inputDot).mul(DOT_TO_BN).toString(),
         null
       );
       const extrinsicAddMemo = isValidAddressPolkadotAddress(inputReferralCode)
@@ -489,7 +488,14 @@ const PloContribute = () => {
   };
 
   const handleClickMaxInput = () => {
-    setInputDot(ethers.utils.formatEther(currentAccountBalannce.availableBalance));
+    setInputDot(
+      formatBalance(new BN(currentAccountBalannce.availableBalance), {
+        forceUnit: true,
+        withUnit: false,
+        withSi: false,
+        decimals: 10,
+      })
+    );
   };
 
   useEffect(() => {
@@ -704,7 +710,14 @@ const PloContribute = () => {
                   </div>
                 </div>
                 <span className={cx("my-available-dot")}>
-                  Available: {ethers.utils.formatEther(currentAccountBalannce.availableBalance)} DOT
+                  Available:{" "}
+                  {formatBalance(new BN(currentAccountBalannce.availableBalance), {
+                    forceUnit: true,
+                    withUnit: false,
+                    withSi: false,
+                    decimals: 10,
+                  })}{" "}
+                  DOT
                 </span>
               </div>
 
