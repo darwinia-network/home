@@ -703,6 +703,9 @@ const PloContribute = () => {
                     </button>
                   </div>
                 </div>
+                <span className={cx("my-available-dot")}>
+                  Available: {ethers.utils.formatEther(currentAccountBalannce.availableBalance)} DOT
+                </span>
               </div>
 
               <div className={cx("referral-code-input-wrap")}>

@@ -409,6 +409,13 @@
   }
 }
 
+.my-available-dot {
+  @extend %-base-p;
+  font-size: 14px;
+  text-align: right;
+  color: rgba(0, 0, 0, 0.6);
+}
+
 .auction-success-rewards {
   width: 100%;
   box-shadow: inset 0px 6px 6px rgba(0, 0, 0, 0.05);
