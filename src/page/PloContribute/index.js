@@ -958,7 +958,7 @@ const PloContribute = () => {
                         BTC rewards are dynamic.
                         <br />
                         <br />
-                        At the beginning of the second round auction, spporters who have contributed more than 10,000
+                        At the beginning of the second round auction, supporters who have contributed more than 10,000
                         DOT and the top 5 people (exclude the Exchange address) ranking will distribute 1 BTC in
                         proportion to their contribution.
                         <br />
@@ -1139,7 +1139,7 @@ const PloContribute = () => {
                   trigger={["click", "hover"]}
                   title={
                     <p className={cx("tips")}>
-                      At the beginning of the second round auction, spporters who have contributed more than 10,000 DOT
+                      At the beginning of the second round auction, supporters who have contributed more than 10,000 DOT
                       and the top 5 people (exclude the Exchange address) ranking will distribute 1 BTC in proportion to
                       their contribution.
                     </p>
