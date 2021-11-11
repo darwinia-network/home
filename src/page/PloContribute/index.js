@@ -709,16 +709,21 @@ const PloContribute = () => {
                     </button>
                   </div>
                 </div>
-                <span className={cx("my-available-dot")}>
-                  Available:{" "}
-                  {formatBalance(new BN(currentAccountBalannce.availableBalance), {
-                    forceUnit: true,
-                    withUnit: false,
-                    withSi: false,
-                    decimals: 10,
-                  })}{" "}
-                  DOT
-                </span>
+                <div className={cx("input-dot-tip-wrap")}>
+                  <span className={cx("min-contrbution", { warning: 0 < Number(inputDot) && Number(inputDot) < 5 })}>
+                    Min contribution: 5 DOT
+                  </span>
+                  <span className={cx("my-available-dot")}>
+                    Available:{" "}
+                    {formatBalance(new BN(currentAccountBalannce.availableBalance), {
+                      forceUnit: true,
+                      withUnit: false,
+                      withSi: false,
+                      decimals: 10,
+                    })}{" "}
+                    DOT
+                  </span>
+                </div>
               </div>
 
               <div className={cx("referral-code-input-wrap")}>
@@ -782,7 +787,11 @@ const PloContribute = () => {
                 </div>
               </div>
 
-              <button className={cx("contribute-btn")} onClick={handleClickContribute} disabled={!currentAccount}>
+              <button
+                className={cx("contribute-btn")}
+                onClick={handleClickContribute}
+                disabled={!currentAccount || Number(inputDot) < 5}
+              >
                 <span>Contribute</span>
               </button>
             </div>

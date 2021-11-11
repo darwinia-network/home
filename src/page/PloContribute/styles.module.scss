@@ -409,11 +409,21 @@
   }
 }
 
-.my-available-dot {
+.input-dot-tip-wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.my-available-dot,
+.min-contrbution {
   @extend %-base-p;
   font-size: 14px;
-  text-align: right;
   color: rgba(0, 0, 0, 0.6);
+
+  &.warning {
+    color: #ff0050;
+  }
 }
 
 .auction-success-rewards {
