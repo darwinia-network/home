@@ -53,7 +53,7 @@ import { useQuery } from "@apollo/client";
 const cx = classNames.bind(styles);
 
 const PARA_ID = 2003;
-const T1_BLOCK_NUMBER = 9473310;
+const T1_BLOCK_NUMBER = 8263710;
 const RING_REWARD = 200000000;
 const KTON_REWARD = 8000;
 
