@@ -35,6 +35,7 @@ import { useApi, useCurrentBlockNumber, useBalanceAll } from "./hooks";
 import {
   DOT_TO_ORIG,
   shortAddress,
+  isValidContributeDOTInput,
   isValidAddressPolkadotAddress,
   formatBalanceFromOrigToDOT,
   formatBalanceFromDOTToOrig,
@@ -402,7 +403,9 @@ const PloContribute = () => {
   };
 
   const handleChangeInputDot = (e) => {
-    setInputDot(e.target.value);
+    if (isValidContributeDOTInput(e.target.value)) {
+      setInputDot(e.target.value);
+    }
   };
 
   const handleChangeInputReferral = (e) => {
