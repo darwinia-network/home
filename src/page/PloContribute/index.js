@@ -232,22 +232,17 @@ const PloContribute = () => {
     myContributeHistoty.data.extrinsics.nodes.length &&
     myContributeHistoty.data.extrinsics.nodes[0].events.nodes.length
   ) {
-    myTotalContribute = new BN(0);
+    let tmp = new BN(0);
     myContributeHistoty.data.extrinsics.nodes.forEach((node1) => {
       node1.events.nodes.forEach((node2) => {
-        myTotalContribute = myTotalContribute.add(new BN(JSON.parse(node2.data)[2]));
+        tmp = tmp.add(new BN(JSON.parse(node2.data)[2]));
       });
     });
+    myTotalContribute = tmp;
   }
-
-  const myContributePer =
-    myTotalContribute.isZero() || currentTotalContribute.isZero()
-      ? 0
-      : 1.0 / currentTotalContribute.div(myTotalContribute).toNumber();
-
-  const myRingReward = (myContributePer * RING_REWARD).toFixed(2);
-  const myKtonReward = (myContributePer * KTON_REWARD).toFixed(2);
-
+  const myContributePer = Big(myTotalContribute.toString()).div(globalTotalPower.toString());
+  const myRingReward = myContributePer.mul(RING_REWARD).toFixed(4);
+  const myKtonReward = myContributePer.mul(KTON_REWARD).toFixed(4);
   let myBtcReward = 0;
   let top5contribute = new BN(0);
   if (
@@ -271,10 +266,8 @@ const PloContribute = () => {
       top5contribute = top5contribute.add(nodeContributedTotalBN);
     }
 
-    if (!myContribute.isZero() && myContribute.gte(DOT_TO_ORIG.muln(10000))) {
-      if (top5contribute.div(myContribute).lt(DOT_TO_ORIG)) {
-        myBtcReward = (1.0 / top5contribute.div(myContribute).toNumber()).toFixed(6);
-      }
+    if (!top5contribute.isZero() && !myContribute.isZero() && myContribute.gte(DOT_TO_ORIG.muln(10000))) {
+      myBtcReward = Big(myContribute.toString()).div(top5contribute.toString()).toFixed(8);
     }
   }
 
