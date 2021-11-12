@@ -29,6 +29,7 @@ import {
   ALL_REFER_CROWDLOAN,
 } from "./gql";
 
+import { useEcharts } from "./useEcharts";
 import { useApi, useCurrentBlockNumber, useBalanceAll } from "./hooks";
 
 import {
@@ -49,31 +50,6 @@ import BN from "bn.js";
 import { graphqlClient } from "../../graphql";
 import { useQuery } from "@apollo/client";
 
-// ======================= echarts ==========================
-import * as echarts from "echarts/core";
-import {
-  TitleComponent,
-  ToolboxComponent,
-  TooltipComponent,
-  GridComponent,
-  DataZoomComponent,
-} from "echarts/components";
-import { LineChart } from "echarts/charts";
-import { UniversalTransition } from "echarts/features";
-import { CanvasRenderer } from "echarts/renderers";
-
-echarts.use([
-  TitleComponent,
-  ToolboxComponent,
-  TooltipComponent,
-  GridComponent,
-  DataZoomComponent,
-  LineChart,
-  CanvasRenderer,
-  UniversalTransition,
-]);
-// ======================= echarts ==========================
-
 const cx = classNames.bind(styles);
 
 const PARA_ID = 2003;
@@ -86,23 +62,9 @@ const KTON_REWARD = 8000;
  * @returns ReactNode
  */
 const PloContribute = () => {
-  const { api } = useApi();
-  const { currentBlockNumber } = useCurrentBlockNumber(api);
-
   const echartsRef = useRef();
-
-  // unsub
   const unsubscribeAccounts = useRef(null);
-
-  const [accounts, setAccounts] = useState([]);
-  const [inputDot, setInputDot] = useState("");
-  const [inputReferralCode, setInputReferralCode] = useState("");
   const [currentAccount, setCurrentAccount] = useState(null);
-  const { currentAccountBalannce } = useBalanceAll(api, currentAccount ? currentAccount.address : null);
-  const [currentTotalContribute, setCurrentTotalContribute] = useState(new BN(0));
-
-  const [showThanksForSupportModal, setShowThanksForSupportModal] = useState(false);
-  const [showSelectAccountModal, setShowSelectAccountModal] = useState(false);
 
   // Graphql
   const totalContributeHistory = useQuery(gqlContributesByParaId(PARA_ID));
@@ -118,6 +80,17 @@ const PloContribute = () => {
   const contributePionners = useQuery(CONTRIBUTE_PIONEERS);
   const allWhoCrowdloan = useQuery(ALL_WHO_CROWDLOAN);
   const allReferCrowdloan = useQuery(ALL_REFER_CROWDLOAN);
+
+  const [accounts, setAccounts] = useState([]);
+  const [inputDot, setInputDot] = useState("");
+  const [inputReferralCode, setInputReferralCode] = useState("");
+  const [showSelectAccountModal, setShowSelectAccountModal] = useState(false);
+  const [showThanksForSupportModal, setShowThanksForSupportModal] = useState(false);
+
+  const { api } = useApi();
+  const { currentBlockNumber } = useCurrentBlockNumber(api);
+  const { currentTotalContribute } = useEcharts(echartsRef.current, totalContributeHistory);
+  const { currentAccountBalannce } = useBalanceAll(api, currentAccount ? currentAccount.address : null);
 
   let referralsContributeHistory = [];
   (async (_myReferrals) => {
@@ -505,84 +478,6 @@ const PloContribute = () => {
       setInputReferralCode("");
     }
   }, [currentAccount, inputReferralCode]);
-
-  useEffect(() => {
-    if (
-      echartsRef.current &&
-      !totalContributeHistory.error &&
-      !totalContributeHistory.loading &&
-      totalContributeHistory.data.events.totalCount
-    ) {
-      const crowdloanEchart = echarts.init(echartsRef.current);
-
-      const date = [];
-      const data = [];
-      for (let i = 0; i < totalContributeHistory.data.events.totalCount; i++) {
-        const node = totalContributeHistory.data.events.nodes[i];
-        const amount = new BN(JSON.parse(node.data)[2]);
-        date.push(node.timestamp.split("T")[0].replaceAll("-", "/"));
-        // date.push(node.timestamp.split('T')[1].split('.')[0].replaceAll('-', '/'));
-        data.push(i > 0 ? data[i - 1].add(amount) : amount);
-      }
-
-      setCurrentTotalContribute(data[data.length - 1]);
-
-      const option = {
-        tooltip: {
-          trigger: "axis",
-          position: function (pt) {
-            return [pt[0], "10%"];
-          },
-        },
-        xAxis: {
-          type: "category",
-          boundaryGap: false,
-          data: date,
-        },
-        yAxis: {
-          type: "value",
-          boundaryGap: [0, "100%"],
-        },
-        dataZoom: [
-          {
-            type: "inside",
-            start: 0,
-            end: 10,
-          },
-          {
-            start: 0,
-            end: 10,
-          },
-        ],
-        series: [
-          {
-            name: "Contribute DOT",
-            type: "line",
-            symbol: "none",
-            sampling: "lttb",
-            itemStyle: {
-              color: "rgb(255, 70, 131)",
-            },
-            areaStyle: {
-              color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
-                {
-                  offset: 0,
-                  color: "rgb(255, 158, 68)",
-                },
-                {
-                  offset: 1,
-                  color: "rgb(255, 70, 131)",
-                },
-              ]),
-            },
-            data: data.map((d) => formatBalanceFromOrigToDOT(d)),
-          },
-        ],
-      };
-
-      crowdloanEchart.setOption(option);
-    }
-  }, [totalContributeHistory]);
 
   return (
     <div className={cx("main")}>
