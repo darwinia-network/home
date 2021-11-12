@@ -293,7 +293,16 @@ const PloContribute = () => {
       key: "address",
       align: "left",
       width: "17%",
-      render: (text) => <a className={cx("global-contribute-address")} target='_blank' rel="noopener noreferrer" href={`https://polkadot.subscan.io/account/${text}`}>{shortAddress(text)}</a>,
+      render: (text) => (
+        <a
+          className={cx("global-contribute-address")}
+          target="_blank"
+          rel="noopener noreferrer"
+          href={`https://polkadot.subscan.io/account/${text}`}
+        >
+          {shortAddress(text)}
+        </a>
+      ),
     },
     {
       title: "Contributed DOT",
