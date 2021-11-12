@@ -69,7 +69,7 @@ const BTC_THRESHOLD = 10000; // 10000 DOT
 const PloContribute = () => {
   const echartsRef = useRef();
   const unsubscribeAccounts = useRef(null);
-  const [currentAccount, setCurrentAccount] = useState({ address: '14BDApxBpu9wrCtaF7JoWnsMzNa1kBDbjmPHzvQNeUH5wKJN' });
+  const [currentAccount, setCurrentAccount] = useState({ address: "14BDApxBpu9wrCtaF7JoWnsMzNa1kBDbjmPHzvQNeUH5wKJN" });
 
   // Graphql
   const totalContributeHistory = useQuery(gqlContributesByParaId(PARA_ID));
