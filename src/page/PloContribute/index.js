@@ -293,7 +293,7 @@ const PloContribute = () => {
       key: "address",
       align: "left",
       width: "17%",
-      render: (text) => <span className={cx("global-contribute-address")}>{text}</span>,
+      render: (text) => <a className={cx("global-contribute-address")} target='_blank' rel="noopener noreferrer" href={`https://polkadot.subscan.io/account/${text}`}>{shortAddress(text)}</a>,
     },
     {
       title: "Contributed DOT",
@@ -359,7 +359,7 @@ const PloContribute = () => {
 
     globalContributeDataSource.push({
       key: i,
-      address: shortAddress(nodeWho.user),
+      address: nodeWho.user,
       myDot: formatBalanceFromOrigToDOT(nodeWho.totalBalance),
       referrals: nodeRefer ? nodeRefer.contributorsCount : 0,
       referralDot: nodeRefer ? formatBalanceFromOrigToDOT(nodeRefer.totalBalance) : 0,
