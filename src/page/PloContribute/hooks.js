@@ -5,7 +5,8 @@ export const useApi = () => {
   const [api, setApi] = useState(null);
 
   useEffect(() => {
-    const wsProvider = new WsProvider("wss://rpc.polkadot.io");
+    // const wsProvider = new WsProvider("wss://rpc.polkadot.io");
+    const wsProvider = new WsProvider("wss://polkadot.api.onfinality.io/public-ws");
     ApiPromise.create({ provider: wsProvider })
       .then((_api) => setApi(_api))
       .catch((err) => console.error(err));
