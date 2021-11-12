@@ -46,6 +46,7 @@ import { web3Enable, web3AccountsSubscribe, web3FromAddress } from "@polkadot/ex
 import Identicon from "@polkadot/react-identicon";
 import { Keyring } from "@polkadot/keyring";
 import BN from "bn.js";
+import Big from 'big.js';
 
 import { graphqlClient } from "../../graphql";
 import { useQuery } from "@apollo/client";
@@ -354,7 +355,7 @@ const PloContribute = () => {
     const nodeRefer = allReferContributeData.find((node) => node.user === nodeWho.user);
 
     const nodeWhoTotalBalanceBN = new BN(nodeWho.totalBalance);
-    const a = globalTotalPower.div(new BN(nodeWho.totalPower));
+    const contributePer = Big(nodeWho.totalPower).div(globalTotalPower.toString());
 
     let btcR = 0;
     if (
@@ -363,7 +364,7 @@ const PloContribute = () => {
       !top5contribute.isZero() &&
       top5contribute.div(nodeWhoTotalBalanceBN).lt(DOT_TO_ORIG)
     ) {
-      btcR = (1.0 / top5contribute.div(nodeWhoTotalBalanceBN)).toFixed(6);
+      btcR = Big(nodeWhoTotalBalanceBN.toString()).div(top5contribute.toString()).toFixed(8);
     }
 
     globalContributeDataSource.push({
@@ -372,8 +373,8 @@ const PloContribute = () => {
       myDot: formatBalanceFromOrigToDOT(nodeWho.totalBalance),
       referrals: nodeRefer ? nodeRefer.contributorsCount : 0,
       referralDot: nodeRefer ? formatBalanceFromOrigToDOT(nodeRefer.totalBalance) : 0,
-      curRingRewards: a.lt(DOT_TO_ORIG) && a.toNumber() > 0 ? ((1.0 / a.toNumber()) * RING_REWARD).toFixed(2) : 0,
-      curKtonRewards: a.lt(DOT_TO_ORIG) && a.toNumber() > 0 ? ((1.0 / a.toNumber()) * KTON_REWARD).toFixed(2) : 0,
+      curRingRewards: contributePer.mul(RING_REWARD).toFixed(8),
+      curKtonRewards: contributePer.mul(KTON_REWARD).toFixed(8),
       curBtcRewards: btcR,
       curNft: "No Status",
     });
