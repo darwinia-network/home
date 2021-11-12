@@ -1329,6 +1329,11 @@
       border-bottom: none;
     }
 
+    .ant-modal-body {
+      max-height: 600px;
+      overflow-y: auto;
+    }
+
     .ant-modal-close {
       top: 0px;
       left: calc(100% - 60px);
@@ -1346,8 +1351,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  max-height: 600px;
-  overflow-y: auto;
+  height: fit-content;
   width: 100%;
 
   @media screen and (max-width: 1024px) {
