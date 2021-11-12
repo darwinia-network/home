@@ -2,6 +2,7 @@ import { decodeAddress, encodeAddress } from "@polkadot/keyring";
 import { hexToU8a, u8aToHex, isHex, formatBalance } from "@polkadot/util";
 import { Keyring } from "@polkadot/keyring";
 import BN from "bn.js";
+import { TypeRegistry } from "@polkadot/types";
 
 export const DOT_TO_ORIG = new BN("10000000000");
 
@@ -34,7 +35,8 @@ export const isValidReferralCode = (referralCode) => {
 export const polkadotAddressToPublicKey = (address) => u8aToHex(decodeAddress(address));
 
 export const polkadotAddressToReferralCode = (address) => {
-  return decodeAddress(address);
+  return new TypeRegistry().createType("Bytes", polkadotAddressToPublicKey(address));
+  // return decodeAddress(address);
   // const publicKey = polkadotAddressToPublicKey(address);
   // return publicKey.slice(2);
 };
