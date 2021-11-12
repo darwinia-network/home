@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { ApiPromise, WsProvider } from "@polkadot/api";
 
 export const useApi = () => {
@@ -16,24 +16,66 @@ export const useApi = () => {
 };
 
 export const useCurrentBlockNumber = (api) => {
+  const unsubRef = useRef(null);
   const [currentBlockNumber, setCurrentBlockNumber] = useState(null);
 
   useEffect(() => {
-    let unsub = null;
-
     if (api) {
       api.rpc.chain
         .subscribeNewHeads((header) => {
           // console.log(`Chain is at block: #${header.number}`);
           setCurrentBlockNumber(Number(`${header.number}`));
         })
-        .then((_unsub) => (unsub = _unsub));
+        .then((unsub) => {
+          unsubRef.current && unsubRef.current();
+          unsubRef.current = unsub;
+        })
+        .catch((err) => {
+          console.error(err);
+        });
     }
 
     return () => {
-      unsub && unsub();
+      unsubRef.current && unsubRef.current();
+      unsubRef.current = null;
     };
   }, [api]);
 
   return { currentBlockNumber };
+};
+
+export const useBalanceAll = (api, address) => {
+  const unsubRef = useRef(null);
+  const [currentAccountBalannce, setCurrentAccountBalannce] = useState({
+    freeBalance: "0",
+    lockedBalance: "0",
+    availableBalance: "0",
+  });
+
+  useEffect(() => {
+    if (api && address) {
+      api.derive.balances
+        .all(address, (balancesAll) => {
+          setCurrentAccountBalannce({
+            freeBalance: balancesAll.freeBalance.toString(),
+            lockedBalance: balancesAll.lockedBalance.toString(),
+            availableBalance: balancesAll.availableBalance.toString(),
+          });
+        })
+        .then((unsub) => {
+          unsubRef.current && unsubRef.current();
+          unsubRef.current = unsub;
+        })
+        .catch((err) => {
+          console.error(err);
+        });
+    }
+
+    return () => {
+      unsubRef.current && unsubRef.current();
+      unsubRef.current = null;
+    };
+  }, [api, address]);
+
+  return { currentAccountBalannce };
 };

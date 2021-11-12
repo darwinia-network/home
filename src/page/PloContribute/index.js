@@ -29,7 +29,7 @@ import {
   ALL_REFER_CROWDLOAN,
 } from "./gqlStatement";
 
-import { useApi, useCurrentBlockNumber } from "./hooks";
+import { useApi, useCurrentBlockNumber, useBalanceAll } from "./hooks";
 
 import {
   DOT_TO_ORIG,
@@ -93,19 +93,13 @@ const PloContribute = () => {
 
   // unsub
   const unsubscribeAccounts = useRef(null);
-  const unsubscribeCurBalance = useRef(null);
 
   const [accounts, setAccounts] = useState([]);
   const [inputDot, setInputDot] = useState("");
   const [inputReferralCode, setInputReferralCode] = useState("");
   const [currentAccount, setCurrentAccount] = useState(null);
-  const [currentAccountBalannce, setCurrentAccountBalannce] = useState({
-    freeBalance: "0",
-    lockedBalance: "0",
-    availableBalance: "0",
-  });
+  const { currentAccountBalannce } = useBalanceAll(api, currentAccount ? currentAccount.address : null);
   const [currentTotalContribute, setCurrentTotalContribute] = useState(new BN(0));
-  const [referralsContributeHistory, setReferralsContributeHistory] = useState([]);
 
   const [showThanksForSupportModal, setShowThanksForSupportModal] = useState(false);
   const [showSelectAccountModal, setShowSelectAccountModal] = useState(false);
@@ -125,10 +119,30 @@ const PloContribute = () => {
   const allWhoCrowdloan = useQuery(ALL_WHO_CROWDLOAN);
   const allReferCrowdloan = useQuery(ALL_REFER_CROWDLOAN);
 
+  let referralsContributeHistory = [];
+  (async (_myReferrals) => {
+    const results = [];
+    if (
+      !_myReferrals.loading &&
+      !_myReferrals.error &&
+      _myReferrals.data.events.nodes &&
+      _myReferrals.data.events.nodes.length
+    ) {
+      for (let node of _myReferrals.data.events.nodes) {
+        const res = await graphqlClient.query({
+          query: gqlSomeOneContributesByAddressAndParaId(JSON.parse(node.data)[0], PARA_ID),
+        });
+        results.push(res);
+      }
+      if (results.length) {
+        referralsContributeHistory = results;
+      }
+    }
+  })(myReferrals);
+
   let globalTotalPower = new BN("1000000");
   const allWhoContributeData = [];
   const allReferContributeData = [];
-  const referralLeaderboradData = [];
   if (!allWhoCrowdloan.loading && !allWhoCrowdloan.error && !allReferCrowdloan.loading && !allReferCrowdloan.error) {
     let totalPowerTmp = new BN(0);
 
@@ -164,8 +178,23 @@ const PloContribute = () => {
           totalBalance: node.totalBalance,
           contributorsCount: node.contributors.nodes.length,
         });
+      });
+    }
 
-        const aBN = globalTotalPower.div(new BN(node.totalPower));
+    globalTotalPower = totalPowerTmp.gt(globalTotalPower) ? totalPowerTmp : globalTotalPower;
+  }
+
+  const referralLeaderboradData = [];
+  if (!allReferCrowdloan.loading && !allReferCrowdloan.error) {
+    if (
+      allReferCrowdloan.data &&
+      allReferCrowdloan.data.crowdloanReferStatistics &&
+      allReferCrowdloan.data.crowdloanReferStatistics.nodes &&
+      allReferCrowdloan.data.crowdloanReferStatistics.nodes.length
+    ) {
+      allReferCrowdloan.data.crowdloanReferStatistics.nodes.forEach((node) => {
+        const nodeTotalPowerBN = new BN(node.totalPower);
+        const aBN = nodeTotalPowerBN.isZero() ? 0 : globalTotalPower.div(nodeTotalPowerBN);
         referralLeaderboradData.push({
           address: node.user,
           referrals: node.contributors.nodes.length,
@@ -185,8 +214,6 @@ const PloContribute = () => {
         });
       });
     }
-
-    globalTotalPower = totalPowerTmp.gt(globalTotalPower) ? totalPowerTmp : globalTotalPower;
   }
 
   let myReferralCodeFromGql = null;
@@ -200,7 +227,7 @@ const PloContribute = () => {
     referral: { ring: 0, kton: 0 },
     total: { ring: 0, kton: 0 },
   };
-  if (currentBlockNumber && !globalTotalPower.isZero() && Number(inputDot) && Number(inputDot) > 0) {
+  if (currentBlockNumber && Number(inputDot) && Number(inputDot) > 0) {
     const inputDotBN = new BN(`${inputDot}`).mul(DOT_TO_ORIG);
     const bonusN = currentBlockNumber < T1_BLOCK_NUMBER ? 0.2 : 0;
     const referN =
@@ -240,6 +267,7 @@ const PloContribute = () => {
     myContributeHistoty.data.extrinsics.nodes.length &&
     myContributeHistoty.data.extrinsics.nodes[0].events.nodes.length
   ) {
+    myTotalContribute = new BN(0);
     myContributeHistoty.data.extrinsics.nodes.forEach((node1) => {
       node1.events.nodes.forEach((node2) => {
         myTotalContribute = myTotalContribute.add(new BN(JSON.parse(node2.data)[2]));
@@ -247,9 +275,13 @@ const PloContribute = () => {
     });
   }
 
-  const myContributePer = myTotalContribute.isZero()
-    ? 0
-    : 100.0 / currentTotalContribute.div(myTotalContribute).toNumber();
+  const myContributePer =
+    myTotalContribute.isZero() || currentTotalContribute.isZero()
+      ? 0
+      : 1.0 / currentTotalContribute.div(myTotalContribute).toNumber();
+
+  const myRingReward = (myContributePer * RING_REWARD).toFixed(2);
+  const myKtonReward = (myContributePer * KTON_REWARD).toFixed(2);
 
   let myBtcReward = 0;
   let top5contribute = new BN(0);
@@ -262,25 +294,24 @@ const PloContribute = () => {
     top5contribute = new BN(0);
     let myContribute = new BN(0);
 
-    contributePionners.data.accounts.nodes.forEach((node, index) => {
-      if (index > 4) {
-        return;
+    for (let i = 0; i < contributePionners.data.accounts.nodes.length; i++) {
+      if (i > 4) {
+        break;
       }
+      const node = contributePionners.data.accounts.nodes[i];
+      const nodeContributedTotalBN = new BN(node.contributedTotal);
       if (currentAccount && currentAccount.address === node.id) {
-        myContribute = myContribute.add(new BN(node.contributedTotal));
+        myContribute = nodeContributedTotalBN;
       }
-      top5contribute = top5contribute.add(new BN(node.contributedTotal));
-    });
+      top5contribute = top5contribute.add(nodeContributedTotalBN);
+    }
 
-    if (!myContribute.isZero() && myContribute.gt(DOT_TO_ORIG.muln(10000))) {
-      if (top5contribute.div(myContribute).ltn(1000000)) {
+    if (!myContribute.isZero() && myContribute.gte(DOT_TO_ORIG.muln(10000))) {
+      if (top5contribute.div(myContribute).lt(DOT_TO_ORIG)) {
         myBtcReward = (1.0 / top5contribute.div(myContribute).toNumber()).toFixed(6);
       }
     }
   }
-
-  const myRingReward = ((myContributePer * 200000000) / 100).toFixed(2);
-  const myKtonReward = ((myContributePer * 8000) / 100).toFixed(2);
 
   const globalContributeColumns = [
     {
@@ -340,16 +371,17 @@ const PloContribute = () => {
     const nodeWho = allWhoContributeData[i];
     const nodeRefer = allReferContributeData.find((node) => node.user === nodeWho.user);
 
+    const nodeWhoTotalBalanceBN = new BN(nodeWho.totalBalance);
     const a = globalTotalPower.div(new BN(nodeWho.totalPower));
 
     let btcR = 0;
     if (
       i < 5 &&
-      new BN(nodeWho.totalBalance).gte(DOT_TO_ORIG.muln(10000)) &&
+      nodeWhoTotalBalanceBN.gte(DOT_TO_ORIG.muln(10000)) &&
       !top5contribute.isZero() &&
-      top5contribute.div(new BN(nodeWho.totalBalance)).lt(DOT_TO_ORIG)
+      top5contribute.div(nodeWhoTotalBalanceBN).lt(DOT_TO_ORIG)
     ) {
-      btcR = (1.0 / top5contribute.div(new BN(nodeWho.totalBalance))).toFixed(6);
+      btcR = (1.0 / top5contribute.div(nodeWhoTotalBalanceBN)).toFixed(6);
     }
 
     globalContributeDataSource.push({
@@ -388,6 +420,13 @@ const PloContribute = () => {
     });
   };
 
+  useEffect(() => {
+    return () => {
+      unsubscribeAccounts.current && unsubscribeAccounts.current();
+      unsubscribeAccounts.current = null;
+    };
+  }, []);
+
   const handleClickSelectAccount = async (account) => {
     setShowSelectAccountModal(false);
     account && setCurrentAccount(account);
@@ -402,11 +441,12 @@ const PloContribute = () => {
   };
 
   const handleClickContribute = async () => {
-    if (Number(inputDot) > 0) {
+    if (Number(inputDot) > 5) {
       const extrinsicContribute = api.tx.crowdloan.contribute(PARA_ID, formatBalanceFromDOTToOrig(inputDot), null);
-      const extrinsicAddMemo = isValidAddressPolkadotAddress(inputReferralCode)
-        ? api.tx.crowdloan.addMemo(PARA_ID, inputReferralCode)
-        : null;
+      const extrinsicAddMemo =
+        !myReferralCodeFromGql && isValidAddressPolkadotAddress(inputReferralCode)
+          ? api.tx.crowdloan.addMemo(PARA_ID, inputReferralCode)
+          : null;
       const injector = await web3FromAddress(currentAccount.address);
       const tx = extrinsicAddMemo ? api.tx.utility.batch([extrinsicContribute, extrinsicAddMemo]) : extrinsicContribute;
 
@@ -457,21 +497,6 @@ const PloContribute = () => {
   }, []);
 
   useEffect(() => {
-    (async () => {
-      const results = [];
-      if (!myReferrals.loading && !myReferrals.error && myReferrals.data.events.totalCount) {
-        for (let node of myReferrals.data.events.nodes) {
-          const res = await graphqlClient.query({
-            query: gqlSomeOneContributesByAddressAndParaId(JSON.parse(node.data)[0], PARA_ID),
-          });
-          results.push(res);
-        }
-        results.length > 0 && setReferralsContributeHistory(results);
-      }
-    })();
-  }, [myReferrals]);
-
-  useEffect(() => {
     if (currentAccount && inputReferralCode && currentAccount.address === inputReferralCode) {
       notification.warning({
         message: "Referral Check",
@@ -480,38 +505,6 @@ const PloContribute = () => {
       setInputReferralCode("");
     }
   }, [currentAccount, inputReferralCode]);
-
-  useEffect(() => {
-    return () => {
-      unsubscribeAccounts.current && unsubscribeAccounts.current();
-      unsubscribeAccounts.current = null;
-    };
-  }, []);
-
-  useEffect(() => {
-    if (currentAccount && api) {
-      api.derive.balances
-        .all(currentAccount.address, (balancesAll) => {
-          setCurrentAccountBalannce({
-            freeBalance: balancesAll.freeBalance.toString(),
-            lockedBalance: balancesAll.lockedBalance.toString(),
-            availableBalance: balancesAll.availableBalance.toString(),
-          });
-        })
-        .then((unsub) => {
-          unsubscribeCurBalance.current && unsubscribeCurBalance.current();
-          unsubscribeCurBalance.current = unsub;
-        })
-        .catch((err) => {
-          console.error(err);
-        });
-    }
-
-    return () => {
-      unsubscribeCurBalance.current && unsubscribeCurBalance.current();
-      unsubscribeCurBalance.current = null;
-    };
-  }, [currentAccount, api]);
 
   useEffect(() => {
     if (
@@ -839,7 +832,7 @@ const PloContribute = () => {
                 </div>
                 <span className={cx("contribute-info-item-value")}>
                   {formatBalanceFromOrigToDOT(myTotalContribute).split(".")[0]}(
-                  {myTotalContribute.isZero() ? 0 : myContributePer.toFixed(2)}%)
+                  {myTotalContribute.isZero() ? 0 : (myContributePer * 100).toFixed(2)}%)
                 </span>
                 <button className={cx("claim-reward-btn", "space")} disabled={true}>
                   <span>Claim</span>
