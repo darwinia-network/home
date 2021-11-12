@@ -119,7 +119,7 @@
 }
 
 .card-content-btn {
-  display: none;
+  display: flex;
   justify-content: center;
   align-items: center;
   padding: 0;
@@ -129,6 +129,7 @@
     linear-gradient(315deg, rgba(255, 0, 80, 1), rgba(112, 0, 255, 1), rgba(0, 39, 255, 1));
   background-origin: border-box;
   border: solid 1px transparent;
+  height: 30px;
 
   > span {
     margin: 6px 25px;
