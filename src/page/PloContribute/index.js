@@ -46,7 +46,7 @@ import { web3Enable, web3AccountsSubscribe, web3FromAddress } from "@polkadot/ex
 import Identicon from "@polkadot/react-identicon";
 import { Keyring } from "@polkadot/keyring";
 import BN from "bn.js";
-import Big from 'big.js';
+import Big from "big.js";
 
 import { graphqlClient } from "../../graphql";
 import { useQuery } from "@apollo/client";
@@ -202,7 +202,6 @@ const PloContribute = () => {
     total: { ring: 0, kton: 0 },
   };
   if (currentBlockNumber && Number(inputDot) && Number(inputDot) > 0) {
-    const inputDotBN = new BN(`${inputDot}`).mul(DOT_TO_ORIG);
     const bonusN = currentBlockNumber < T1_BLOCK_NUMBER ? 0.2 : 0;
     const referN =
       isValidAddressPolkadotAddress(inputReferralCode) || isValidAddressPolkadotAddress(myReferralCodeFromGql)
@@ -210,12 +209,8 @@ const PloContribute = () => {
         : 0;
 
     const base = {
-      ring: globalTotalPower.div(inputDotBN).lt(DOT_TO_ORIG)
-        ? (1.0 / globalTotalPower.div(inputDotBN).toNumber()) * RING_REWARD
-        : 0,
-      kton: globalTotalPower.div(inputDotBN).lt(DOT_TO_ORIG)
-        ? (1.0 / globalTotalPower.div(inputDotBN).toNumber()) * KTON_REWARD
-        : 0,
+      ring: Big(Number(inputDot)).div(globalTotalPower.toString()).mul(RING_REWARD).toNumber(),
+      kton: Big(Number(inputDot)).div(globalTotalPower.toString()).mul(KTON_REWARD).toNumber(),
     };
     const bonus = {
       ring: base.ring * bonusN,
