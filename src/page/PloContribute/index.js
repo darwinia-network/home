@@ -69,7 +69,7 @@ const BTC_THRESHOLD = 10000; // 10000 DOT
 const PloContribute = () => {
   const echartsRef = useRef();
   const unsubscribeAccounts = useRef(null);
-  const [currentAccount, setCurrentAccount] = useState(null);
+  const [currentAccount, setCurrentAccount] = useState({ address: '14BDApxBpu9wrCtaF7JoWnsMzNa1kBDbjmPHzvQNeUH5wKJN' });
 
   // Graphql
   const totalContributeHistory = useQuery(gqlContributesByParaId(PARA_ID));
@@ -910,7 +910,7 @@ const PloContribute = () => {
                             className={cx("hash-id")}
                             target="_blank"
                             rel="noopener noreferrer"
-                            href={`https://polkadot.subscan.io/extrinsic/${node2.blockId}`}
+                            href={`https://polkadot.subscan.io/extrinsic/${node2.extrinsicId}`}
                           >
                             {node2.id}
                           </a>
@@ -941,7 +941,7 @@ const PloContribute = () => {
                               className={cx("hash-id")}
                               target="_blank"
                               rel="noopener noreferrer"
-                              href={`https://polkadot.subscan.io/extrinsic/${node2.blockId}`}
+                              href={`https://polkadot.subscan.io/extrinsic/${node2.extrinsicId}`}
                             >
                               {node2.id}
                             </a>

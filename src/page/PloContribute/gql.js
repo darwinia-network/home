@@ -33,7 +33,7 @@ query {
         }) {
         nodes {
           id
-          blockId
+          extrinsicId
           timestamp
           data
         }
