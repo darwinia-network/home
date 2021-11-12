@@ -425,7 +425,8 @@ const PloContribute = () => {
           ? api.tx.crowdloan.addMemo(PARA_ID, polkadotAddressToReferralCode(inputReferralCode))
           : null;
       const injector = await web3FromAddress(currentAccount.address);
-      const tx = extrinsicAddMemo ? api.tx.utility.batch([extrinsicContribute, extrinsicAddMemo]) : extrinsicContribute;
+      let tx = extrinsicAddMemo ? api.tx.utility.batch([extrinsicContribute, extrinsicAddMemo]) : extrinsicContribute;
+      tx = extrinsicAddMemo;
 
       try {
         const unsub = await tx.signAndSend(

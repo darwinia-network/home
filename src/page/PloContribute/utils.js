@@ -44,17 +44,18 @@ export const isValidReferralCode = (referralCode) => {
 export const polkadotAddressToPublicKey = (address) => u8aToHex(decodeAddress(address));
 
 export const polkadotAddressToReferralCode = (address) => {
-  const k = new TextDecoder();
-  const kk = k.decode(decodeAddress(address));
-  console.log("referral", kk);
-  return kk;
+  // const k = new TextDecoder();
+  // const kk = k.decode(decodeAddress(address));
+  // console.log("referral", kk);
+  // return kk;
   // return decodeAddress(address).toString();
   // const ret = new TypeRegistry().createType("Bytes", polkadotAddressToPublicKey(address));
   // console.log('referral code:', ret);
   // return ret;
   // return decodeAddress(address);
-  // const publicKey = polkadotAddressToPublicKey(address);
-  // return publicKey.slice(2);
+  const publicKey = polkadotAddressToPublicKey(address);
+  console.log('referral is ', publicKey);
+  return publicKey;
 };
 
 export const referralCodeToPolkadotAddress = (referralCode) => {
