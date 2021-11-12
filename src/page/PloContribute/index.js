@@ -411,7 +411,12 @@ const PloContribute = () => {
   };
 
   const handleChangeInputReferral = (e) => {
-    setInputReferralCode(e.target.value);
+    try {
+      const referral = new URLSearchParams(new URL(e.target.value).searchParams).get("referral");
+      referral && setInputReferralCode(referral);
+    } catch (error) {
+      setInputReferralCode(e.target.value);
+    }
   };
 
   const handleClickContribute = async () => {
@@ -560,6 +565,13 @@ const PloContribute = () => {
                     onChange={handleChangeInputReferral}
                   ></input>
                 </div>
+                <span
+                  className={cx("invalid-referral-code", {
+                    show: inputReferralCode && !isValidAddressPolkadotAddress(inputReferralCode),
+                  })}
+                >
+                  Invalid referral code
+                </span>
               </div>
 
               <div className={cx("auction-success-rewards-wrap")}>

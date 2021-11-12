@@ -426,6 +426,17 @@
   }
 }
 
+.invalid-referral-code {
+  visibility: hidden;
+  @extend %-base-p;
+  font-size: 14px;
+  color: #ff0050;
+
+  &.show {
+    visibility: visible;
+  }
+}
+
 .auction-success-rewards {
   width: 100%;
   box-shadow: inset 0px 6px 6px rgba(0, 0, 0, 0.05);
