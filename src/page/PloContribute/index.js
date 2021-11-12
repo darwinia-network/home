@@ -27,7 +27,7 @@ import {
   CONTRIBUTE_PIONEERS,
   ALL_WHO_CROWDLOAN,
   ALL_REFER_CROWDLOAN,
-} from "./gqlStatement";
+} from "./gql";
 
 import { useApi, useCurrentBlockNumber, useBalanceAll } from "./hooks";
 
