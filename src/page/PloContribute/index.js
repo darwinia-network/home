@@ -114,7 +114,7 @@ const PloContribute = () => {
     }
   })(myReferrals);
 
-  let globalTotalPower = new BN("1000000");
+  let globalTotalPower = new BN("1000000").mul(DOT_TO_ORIG);
   const allWhoContributeData = [];
   const allReferContributeData = [];
   if (!allWhoCrowdloan.loading && !allWhoCrowdloan.error && !allReferCrowdloan.loading && !allReferCrowdloan.error) {
@@ -202,6 +202,9 @@ const PloContribute = () => {
     total: { ring: Big(0), kton: Big(0) },
   };
   if (currentBlockNumber && Number(inputDot) && Number(inputDot) > 0) {
+    const inputDotBN = new BN(Number(inputDot)).mul(DOT_TO_ORIG);
+    const contributePer = Big(inputDotBN.toString()).div(globalTotalPower.toString());
+
     const bonusN = currentBlockNumber < T1_BLOCK_NUMBER ? 0.2 : 0;
     const referN =
       isValidAddressPolkadotAddress(inputReferralCode) || isValidAddressPolkadotAddress(myReferralCodeFromGql)
@@ -209,8 +212,8 @@ const PloContribute = () => {
         : 0;
 
     const base = {
-      ring: Big(Number(inputDot)).div(globalTotalPower.toString()).mul(RING_REWARD),
-      kton: Big(Number(inputDot)).div(globalTotalPower.toString()).mul(KTON_REWARD),
+      ring: contributePer.mul(RING_REWARD),
+      kton: contributePer.mul(KTON_REWARD),
     };
     const bonus = {
       ring: base.ring.mul(bonusN),
