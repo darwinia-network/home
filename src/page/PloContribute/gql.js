@@ -42,7 +42,7 @@ query {
 }
 `;
 
-export const gqlReferralsOfSomeOneByAddressAndParaId = (address, paraId) =>
+export const gqlReferralsOfSomeOneByAddressAndParaId = (referralCode, paraId) =>
   gql`
 query {
   events(
@@ -50,7 +50,7 @@ query {
      method:{ equalTo:"MemoUpdated"}
      and: {
        data: {
-         includes: ",${paraId},\\"${address}\\""
+         includes: ",${paraId},\\"${referralCode}\\""
        }
      }
    }

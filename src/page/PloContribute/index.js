@@ -40,6 +40,7 @@ import {
   formatBalanceFromOrigToDOT,
   formatBalanceFromDOTToOrig,
   polkadotAddressToReferralCode,
+  referralCodeToPolkadotAddress,
 } from "./utils";
 import { isMobile } from "../../utils";
 
@@ -76,7 +77,10 @@ const PloContribute = () => {
     gqlSomeOneContributesByAddressAndParaId(currentAccount ? currentAccount.address : "", PARA_ID)
   );
   const myReferrals = useQuery(
-    gqlReferralsOfSomeOneByAddressAndParaId(currentAccount ? currentAccount.address : "", PARA_ID)
+    gqlReferralsOfSomeOneByAddressAndParaId(
+      currentAccount ? polkadotAddressToReferralCode(currentAccount.address) : "",
+      PARA_ID
+    )
   );
   const myReferralCode = useQuery(
     gqlGetReferralCodeOfSomeOneByAddressAndParaId(currentAccount ? currentAccount.address : "", PARA_ID)
@@ -150,7 +154,7 @@ const PloContribute = () => {
         totalPowerTmp = totalPowerTmp.add(new BN(node.totalPower));
 
         allReferContributeData.push({
-          user: node.user,
+          user: referralCodeToPolkadotAddress(node.user),
           totalPower: node.totalPower,
           totalBalance: node.totalBalance,
           contributorsCount: node.contributors.nodes.length,
@@ -174,7 +178,7 @@ const PloContribute = () => {
         const contributePer = Big(nodeTotalPowerBN.toString()).div(globalTotalPower.toString());
 
         referralLeaderboradData.push({
-          address: node.user,
+          address: referralCodeToPolkadotAddress(node.user),
           referrals: node.contributors.nodes.length,
           accumulatedContribution: node.totalBalance,
           refferalRewards: {
@@ -188,7 +192,7 @@ const PloContribute = () => {
 
   let myReferralCodeFromGql = null;
   if (!myReferralCode.loading && !myReferralCode.error && myReferralCode.data.events.nodes.length) {
-    myReferralCodeFromGql = JSON.parse(myReferralCode.data.events.nodes[0].data)[2];
+    myReferralCodeFromGql = referralCodeToPolkadotAddress(JSON.parse(myReferralCode.data.events.nodes[0].data)[2]);
   }
 
   let auctionSuccessReward = {
@@ -738,7 +742,7 @@ const PloContribute = () => {
                 </div>
                 <span className={cx("contribute-info-item-value")}>
                   {formatBalanceFromOrigToDOT(myTotalContribute).split(".")[0]}(
-                  {myTotalContribute.isZero() ? 0 : (myContributePer * 100).toFixed(2)}%)
+                  {myTotalContribute.isZero() ? 0 : (myContributePer * 100).toFixed(4)}%)
                 </span>
                 <button className={cx("claim-reward-btn", "space")} disabled={true}>
                   <span>Claim</span>
