@@ -2,7 +2,7 @@ import { decodeAddress, encodeAddress } from "@polkadot/keyring";
 import { hexToU8a, u8aToHex, isHex, formatBalance } from "@polkadot/util";
 import { Keyring } from "@polkadot/keyring";
 import BN from "bn.js";
-import { TypeRegistry } from "@polkadot/types";
+// import { TypeRegistry } from "@polkadot/types";
 
 export const DOT_TO_ORIG = new BN("10000000000");
 
@@ -11,6 +11,15 @@ export const shortAddress = (address = "") => {
     return `${address.slice(0, 5)}...${address.slice(address.length - 5)}`;
   }
   return address;
+};
+
+export const isValidContributeDOTInput = (amount) => {
+  try {
+    new BN(Number(amount));
+    return true;
+  } catch (error) {
+    return false;
+  }
 };
 
 export const isValidAddressPolkadotAddress = (address) => {
@@ -35,9 +44,14 @@ export const isValidReferralCode = (referralCode) => {
 export const polkadotAddressToPublicKey = (address) => u8aToHex(decodeAddress(address));
 
 export const polkadotAddressToReferralCode = (address) => {
-  const ret = new TypeRegistry().createType("Bytes", polkadotAddressToPublicKey(address));
-  console.log('referral code:', ret);
-  return ret;
+  const k = new TextDecoder();
+  const kk = k.decode(decodeAddress(address));
+  console.log("referral", kk);
+  return kk;
+  // return decodeAddress(address).toString();
+  // const ret = new TypeRegistry().createType("Bytes", polkadotAddressToPublicKey(address));
+  // console.log('referral code:', ret);
+  // return ret;
   // return decodeAddress(address);
   // const publicKey = polkadotAddressToPublicKey(address);
   // return publicKey.slice(2);
