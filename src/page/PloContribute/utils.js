@@ -42,28 +42,15 @@ export const isValidReferralCode = (referralCode) => {
 };
 
 export const polkadotAddressToPublicKey = (address) => u8aToHex(decodeAddress(address));
-
-export const polkadotAddressToReferralCode = (address) => {
-  // const k = new TextDecoder();
-  // const kk = k.decode(decodeAddress(address));
-  // console.log("referral", kk);
-  // return kk;
-  // return decodeAddress(address).toString();
-  // const ret = new TypeRegistry().createType("Bytes", polkadotAddressToPublicKey(address));
-  // console.log('referral code:', ret);
-  // return ret;
-  // return decodeAddress(address);
-  const publicKey = polkadotAddressToPublicKey(address);
-  console.log('referral is ', publicKey);
-  return publicKey;
-};
-
-export const referralCodeToPolkadotAddress = (referralCode) => {
-  const address = encodeAddress(hexToU8a(`0x${referralCode}`));
+export const publicKeyToPolkadotAddress = (publicKey) => {
+  const address = encodeAddress(hexToU8a(publicKey));
   const keyring = new Keyring();
   keyring.setSS58Format(0); // Polkadot format address
   return keyring.addFromAddress(address).address;
 };
+
+export const polkadotAddressToReferralCode = (address) => polkadotAddressToPublicKey(address);
+export const referralCodeToPolkadotAddress = (referralCode) => publicKeyToPolkadotAddress(referralCode);
 
 export const formatBalanceFromOrigToDOT = (origBalance) =>
   formatBalance(BN.isBN(origBalance) ? origBalance : new BN(origBalance), {
