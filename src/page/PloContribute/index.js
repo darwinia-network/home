@@ -196,10 +196,10 @@ const PloContribute = () => {
   }
 
   let auctionSuccessReward = {
-    base: { ring: 0, kton: 0 },
-    bonus: { ring: 0, kton: 0 },
-    referral: { ring: 0, kton: 0 },
-    total: { ring: 0, kton: 0 },
+    base: { ring: Big(0), kton: Big(0) },
+    bonus: { ring: Big(0), kton: Big(0) },
+    referral: { ring: Big(0), kton: Big(0) },
+    total: { ring: Big(0), kton: Big(0) },
   };
   if (currentBlockNumber && Number(inputDot) && Number(inputDot) > 0) {
     const bonusN = currentBlockNumber < T1_BLOCK_NUMBER ? 0.2 : 0;
@@ -209,20 +209,20 @@ const PloContribute = () => {
         : 0;
 
     const base = {
-      ring: Big(Number(inputDot)).div(globalTotalPower.toString()).mul(RING_REWARD).toNumber(),
-      kton: Big(Number(inputDot)).div(globalTotalPower.toString()).mul(KTON_REWARD).toNumber(),
+      ring: Big(Number(inputDot)).div(globalTotalPower.toString()).mul(RING_REWARD),
+      kton: Big(Number(inputDot)).div(globalTotalPower.toString()).mul(KTON_REWARD),
     };
     const bonus = {
-      ring: base.ring * bonusN,
-      kton: base.kton * bonusN,
+      ring: base.ring.mul(bonusN),
+      kton: base.kton.mul(bonusN),
     };
     const referral = {
-      ring: (base.ring + bonus.ring) * referN,
-      kton: (base.kton + bonus.kton) * referN,
+      ring: base.ring.add(bonus.ring).mul(referN),
+      kton: base.kton.add(bonus.kton).mul(referN),
     };
     const total = {
-      ring: base.ring + bonus.ring + referral.ring,
-      kton: base.kton + bonus.kton + referral.kton,
+      ring: base.ring.add(bonus.ring).add(referral.ring),
+      kton: base.kton.add(bonus.kton).add(referral.kton),
     };
 
     auctionSuccessReward = { base, bonus, referral, total };
