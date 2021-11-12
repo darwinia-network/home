@@ -413,7 +413,7 @@ const PloContribute = () => {
   };
 
   const handleClickContribute = async () => {
-    if (Number(inputDot) > 5) {
+    if (Number(inputDot) >= 5) {
       const extrinsicContribute = api.tx.crowdloan.contribute(PARA_ID, formatBalanceFromDOTToOrig(inputDot), null);
       const extrinsicAddMemo =
         !myReferralCodeFromGql && isValidAddressPolkadotAddress(inputReferralCode)
