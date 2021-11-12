@@ -35,7 +35,9 @@ export const isValidReferralCode = (referralCode) => {
 export const polkadotAddressToPublicKey = (address) => u8aToHex(decodeAddress(address));
 
 export const polkadotAddressToReferralCode = (address) => {
-  return new TypeRegistry().createType("Bytes", polkadotAddressToPublicKey(address));
+  const ret = new TypeRegistry().createType("Bytes", polkadotAddressToPublicKey(address));
+  console.log('referral code:', ret);
+  return ret;
   // return decodeAddress(address);
   // const publicKey = polkadotAddressToPublicKey(address);
   // return publicKey.slice(2);
