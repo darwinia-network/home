@@ -910,7 +910,7 @@ const PloContribute = () => {
                             className={cx("hash-id")}
                             target="_blank"
                             rel="noopener noreferrer"
-                            href={`https://polkadot.subscan.io/extrinsic/${node2.id}`}
+                            href={`https://polkadot.subscan.io/extrinsic/${node2.blockId}`}
                           >
                             {node2.id}
                           </a>
@@ -941,7 +941,7 @@ const PloContribute = () => {
                               className={cx("hash-id")}
                               target="_blank"
                               rel="noopener noreferrer"
-                              href={`https://polkadot.subscan.io/extrinsic/${node2.id}`}
+                              href={`https://polkadot.subscan.io/extrinsic/${node2.blockId}`}
                             >
                               {node2.id}
                             </a>

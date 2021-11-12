@@ -33,6 +33,7 @@ query {
         }) {
         nodes {
           id
+          blockId
           timestamp
           data
         }
