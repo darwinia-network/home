@@ -38,6 +38,7 @@ import {
   isValidAddressPolkadotAddress,
   formatBalanceFromOrigToDOT,
   formatBalanceFromDOTToOrig,
+  polkadotAddressToReferralCode,
 } from "./utils";
 import { isMobile } from "../../utils";
 
@@ -418,7 +419,7 @@ const PloContribute = () => {
       const extrinsicContribute = api.tx.crowdloan.contribute(PARA_ID, formatBalanceFromDOTToOrig(inputDot), null);
       const extrinsicAddMemo =
         !myReferralCodeFromGql && isValidAddressPolkadotAddress(inputReferralCode)
-          ? api.tx.crowdloan.addMemo(PARA_ID, inputReferralCode)
+          ? api.tx.crowdloan.addMemo(PARA_ID, polkadotAddressToReferralCode(inputReferralCode))
           : null;
       const injector = await web3FromAddress(currentAccount.address);
       const tx = extrinsicAddMemo ? api.tx.utility.batch([extrinsicContribute, extrinsicAddMemo]) : extrinsicContribute;

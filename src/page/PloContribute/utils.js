@@ -1,5 +1,6 @@
 import { decodeAddress, encodeAddress } from "@polkadot/keyring";
-import { hexToU8a, isHex, formatBalance } from "@polkadot/util";
+import { hexToU8a, u8aToHex, isHex, formatBalance } from "@polkadot/util";
+import { Keyring } from "@polkadot/keyring";
 import BN from "bn.js";
 
 export const DOT_TO_ORIG = new BN("10000000000");
@@ -21,6 +22,29 @@ export const isValidAddressPolkadotAddress = (address) => {
   }
 };
 
+export const isValidReferralCode = (referralCode) => {
+  try {
+    const address = encodeAddress(hexToU8a(`0x${referralCode}`));
+    return isValidAddressPolkadotAddress(address);
+  } catch (error) {
+    return false;
+  }
+};
+
+export const polkadotAddressToPublicKey = (address) => u8aToHex(decodeAddress(address));
+
+export const polkadotAddressToReferralCode = (address) => {
+  const publicKey = polkadotAddressToPublicKey(address);
+  return publicKey.slice(2);
+};
+
+export const referralCodeToPolkadotAddress = (referralCode) => {
+  const address = encodeAddress(hexToU8a(`0x${referralCode}`));
+  const keyring = new Keyring();
+  keyring.setSS58Format(0); // Polkadot format address
+  return keyring.addFromAddress(address).address;
+};
+
 export const formatBalanceFromOrigToDOT = (origBalance) =>
   formatBalance(BN.isBN(origBalance) ? origBalance : new BN(origBalance), {
     forceUnit: true,
@@ -30,12 +54,3 @@ export const formatBalanceFromOrigToDOT = (origBalance) =>
   });
 
 export const formatBalanceFromDOTToOrig = (dotBalance) => new BN(dotBalance).mul(DOT_TO_ORIG).toString();
-
-// export const isValidReferralCode = (referralCode) => {
-//   try {
-//     const address = encodeAddress(hexToU8a(`0x${referralCode}`));
-//     return isValidAddressPolkadotAddress(address);
-//   } catch (error) {
-//     return false;
-//   }
-// }
