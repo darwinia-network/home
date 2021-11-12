@@ -168,22 +168,15 @@ const PloContribute = () => {
     ) {
       allReferCrowdloan.data.crowdloanReferStatistics.nodes.forEach((node) => {
         const nodeTotalPowerBN = new BN(node.totalPower);
-        const aBN = nodeTotalPowerBN.isZero() ? 0 : globalTotalPower.div(nodeTotalPowerBN);
+        const contributePer = Big(nodeTotalPowerBN.toString()).div(globalTotalPower.toString());
+
         referralLeaderboradData.push({
           address: node.user,
           referrals: node.contributors.nodes.length,
           accumulatedContribution: node.totalBalance,
           refferalRewards: {
-            ring: globalTotalPower.isZero()
-              ? 0
-              : aBN.lt(DOT_TO_ORIG) && aBN.toNumber() > 0
-              ? (1.0 / aBN.toNumber()) * RING_REWARD
-              : 0,
-            kton: globalTotalPower.isZero()
-              ? 0
-              : aBN.lt(DOT_TO_ORIG) && aBN.toNumber() > 0
-              ? (1.0 / aBN.toNumber()) * KTON_REWARD
-              : 0,
+            ring: contributePer.mul(RING_REWARD),
+            kton: contributePer.mul(KTON_REWARD),
           },
         });
       });
