@@ -57,6 +57,7 @@ const PARA_ID = 2003;
 const T1_BLOCK_NUMBER = 8263710;
 const RING_REWARD = 200000000;
 const KTON_REWARD = 8000;
+const BTC_THRESHOLD = 10000; // 10000 DOT
 
 /**
  * PLO Contribute
@@ -266,7 +267,7 @@ const PloContribute = () => {
       top5contribute = top5contribute.add(nodeContributedTotalBN);
     }
 
-    if (!top5contribute.isZero() && !myContribute.isZero() && myContribute.gte(DOT_TO_ORIG.muln(10000))) {
+    if (!top5contribute.isZero() && !myContribute.isZero() && myContribute.gte(DOT_TO_ORIG.muln(BTC_THRESHOLD))) {
       myBtcReward = Big(myContribute.toString()).div(top5contribute.toString()).toFixed(8);
     }
   }
@@ -344,7 +345,7 @@ const PloContribute = () => {
     let btcR = 0;
     if (
       i < 5 &&
-      nodeWhoTotalBalanceBN.gte(DOT_TO_ORIG.muln(10000)) &&
+      nodeWhoTotalBalanceBN.gte(DOT_TO_ORIG.muln(BTC_THRESHOLD)) &&
       !top5contribute.isZero() &&
       top5contribute.div(nodeWhoTotalBalanceBN).lt(DOT_TO_ORIG)
     ) {
