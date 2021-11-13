@@ -43,10 +43,15 @@ export const isValidReferralCode = (referralCode) => {
 
 export const polkadotAddressToPublicKey = (address) => u8aToHex(decodeAddress(address));
 export const publicKeyToPolkadotAddress = (publicKey) => {
-  const address = encodeAddress(hexToU8a(publicKey));
-  const keyring = new Keyring();
-  keyring.setSS58Format(0); // Polkadot format address
-  return keyring.addFromAddress(address).address;
+  try {
+    const address = encodeAddress(hexToU8a(publicKey));
+    const keyring = new Keyring();
+    keyring.setSS58Format(0); // Polkadot format address
+    return keyring.addFromAddress(address).address;
+  } catch (error) {
+    console.error(error);
+    return publicKey;
+  }
 };
 
 export const polkadotAddressToReferralCode = (address) => polkadotAddressToPublicKey(address);

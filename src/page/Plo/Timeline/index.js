@@ -28,20 +28,20 @@ const Timeline = () => {
     <Container>
       <div className={cx("main")} id="timeline-section">
         <h3 className={cx("title")}>Timeline</h3>
-        <div className={cx('time-line-style-01')}>
-          <div className={cx('time-line-style-02')}>
-            <TimeDone left='5%'   timeText='NOV 3 2021'       timeDesc='Waitlist Signup' />
-            <TimeDone left='19%'  timeText='NOV 8 2021'       timeDesc='Rewards Plan Release' />
-            <TimeDone left='34%'  timeText='NOV 11 2021'      timeDesc='Batch 1 Auction Starts' />
-            <TimeToDo left='49%'  timeText='To be determined' timeDesc='Crowdloan Starts' />
-            <TimeToDo right='34%' timeText='DEC 23 2021'      timeDesc='Batch 2 Auction Starts' />
-            <TimeToDo right='19%' timeText='To be determined' timeDesc='Crowdloan Ends' />
-            <TimeToDo right='5%'  timeText='To be determined' timeDesc='Distribute Rewards' />
+        <div className={cx("time-line-style-01")}>
+          <div className={cx("time-line-style-02")}>
+            <TimeDone left="5%" timeText="NOV 3 2021" timeDesc="Waitlist Signup" />
+            <TimeDone left="19%" timeText="NOV 8 2021" timeDesc="Rewards Plan Release" />
+            <TimeDone left="34%" timeText="NOV 11 2021" timeDesc="Batch 1 Auction Starts" />
+            <TimeToDo left="49%" timeText="To be determined" timeDesc="Crowdloan Starts" />
+            <TimeToDo right="34%" timeText="DEC 23 2021" timeDesc="Batch 2 Auction Starts" />
+            <TimeToDo right="19%" timeText="To be determined" timeDesc="Crowdloan Ends" />
+            <TimeToDo right="5%" timeText="To be determined" timeDesc="Distribute Rewards" />
 
-            <div className={cx('time-line-style-01-mini')} style={{ left: '30%', right: '30%' }}></div>
-            <div className={cx('time-line-style-02-mini')} style={{ left: '35%', right: '35%' }}>
-              <div className={cx('pioneers')}>
-                <span className={cx('pioneers-content')}>Crowdloan Pioneers & Early Bird</span>
+            <div className={cx("time-line-style-01-mini")} style={{ left: "30%", right: "30%" }}></div>
+            <div className={cx("time-line-style-02-mini")} style={{ left: "35%", right: "35%" }}>
+              <div className={cx("pioneers")}>
+                <span className={cx("pioneers-content")}>Crowdloan Pioneers & Early Bird</span>
                 &nbsp;
                 <Tooltip
                   overlayClassName="tooltip-overlay"
