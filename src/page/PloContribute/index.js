@@ -3,7 +3,7 @@ import styles from "./styles.module.scss";
 import classNames from "classnames/bind";
 import { Container } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import { Tooltip, Table, Modal, Typography, notification } from "antd";
+import { Tooltip, Table, Modal, Typography, Spin, notification } from "antd";
 import Fade from "react-reveal/Fade";
 
 import darwiniaLogo from "./img/logo-darwinia.png";
@@ -89,6 +89,7 @@ const PloContribute = () => {
   const allWhoCrowdloan = useQuery(ALL_WHO_CROWDLOAN);
   const allReferCrowdloan = useQuery(ALL_REFER_CROWDLOAN);
 
+  const [contributeBtnLoading, setContributeBtnLoading] = useState(false);
   const [accounts, setAccounts] = useState([]);
   const [inputDot, setInputDot] = useState("");
   const [inputReferralCode, setInputReferralCode] = useState("");
@@ -431,6 +432,7 @@ const PloContribute = () => {
       const tx = extrinsicAddMemo ? api.tx.utility.batch([extrinsicContribute, extrinsicAddMemo]) : extrinsicContribute;
 
       try {
+        setContributeBtnLoading(true);
         const unsub = await tx.signAndSend(
           currentAccount.address,
           { signer: injector.signer },
@@ -446,6 +448,7 @@ const PloContribute = () => {
                 if (status.isInBlock) {
                   // setContributedBlockHash(status.asInBlock);
                   setShowThanksForSupportModal(true);
+                  setContributeBtnLoading(false);
                 } else if (status.isFinalized) {
                   unsub && unsub();
                 }
@@ -463,6 +466,9 @@ const PloContribute = () => {
           message: "Failed To Contribute",
           description: err.message,
         });
+        setContributeBtnLoading(false);
+      } finally {
+        //
       }
     }
   };
@@ -627,9 +633,11 @@ const PloContribute = () => {
               <button
                 className={cx("contribute-btn")}
                 onClick={handleClickContribute}
-                disabled={!currentAccount || Number(inputDot) < 5}
+                disabled={!currentAccount || Number(inputDot) < 5 || contributeBtnLoading}
               >
-                <span>Contribute</span>
+                <Spin spinning={contributeBtnLoading} wrapperClassName={cx("contribute-btn-spinning")}>
+                  <span>{contributeBtnLoading ? "" : "Contribute"}</span>
+                </Spin>
               </button>
             </div>
 
