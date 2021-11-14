@@ -101,7 +101,7 @@ const PloContribute = () => {
   const { currentTotalContribute } = useEcharts(echartsRef.current, totalContributeHistory);
   const { currentAccountBalannce } = useBalanceAll(api, currentAccount ? currentAccount.address : null);
 
-  let referralsContributeHistory = [];
+  const referralsContributeHistory = useRef([]);
   (async (_myReferrals) => {
     const results = [];
     if (
@@ -117,7 +117,7 @@ const PloContribute = () => {
         results.push(res);
       }
       if (results.length) {
-        referralsContributeHistory = results;
+        referralsContributeHistory.current = results;
       }
     }
   })(myReferrals);
@@ -930,9 +930,9 @@ const PloContribute = () => {
               </div>
               <div className={cx("referral-history-wrap")}>
                 <p>Referral history</p>
-                {referralsContributeHistory.length ? (
+                {referralsContributeHistory.current.length ? (
                   <div className={cx("referral-history-control")}>
-                    {referralsContributeHistory.map((someone, index0) =>
+                    {referralsContributeHistory.current.map((someone, index0) =>
                       someone.data.extrinsics.nodes.map((node1, index1) =>
                         node1.events.nodes.map((node2, index2) => (
                           <div className={cx("referral-history-control-item")} key={`${index0}-${index1}-${index2}`}>
