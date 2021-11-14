@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import BN from "bn.js";
-import { formatBalanceFromOrigToDOT } from "./utils";
+import Big from "big.js";
+import { DOT_TO_ORIG } from "./utils";
 
 import * as echarts from "echarts/core";
 import {
@@ -67,11 +68,11 @@ export const useEcharts = (dom, dataSource) => {
           {
             type: "inside",
             start: 0,
-            end: 10,
+            end: 100,
           },
           {
             start: 0,
-            end: 10,
+            end: 100,
           },
         ],
         series: [
@@ -95,7 +96,7 @@ export const useEcharts = (dom, dataSource) => {
                 },
               ]),
             },
-            data: data.map((d) => formatBalanceFromOrigToDOT(d)),
+            data: data.map((d) => Big(d.toString()).div(DOT_TO_ORIG.toString()).toFixed(4)),
           },
         ],
       };
