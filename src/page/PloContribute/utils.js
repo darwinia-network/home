@@ -49,7 +49,7 @@ export const publicKeyToPolkadotAddress = (publicKey) => {
     keyring.setSS58Format(0); // Polkadot format address
     return keyring.addFromAddress(address).address;
   } catch (error) {
-    console.error(error);
+    // console.error(error);
     return publicKey;
   }
 };

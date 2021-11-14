@@ -236,8 +236,7 @@ const PloContribute = () => {
     !myContributeHistoty.loading &&
     !myContributeHistoty.error &&
     myContributeHistoty.data &&
-    myContributeHistoty.data.extrinsics.nodes.length &&
-    myContributeHistoty.data.extrinsics.nodes[0].events.nodes.length
+    myContributeHistoty.data.extrinsics.nodes.length
   ) {
     let tmp = new BN(0);
     myContributeHistoty.data.extrinsics.nodes.forEach((node1) => {
@@ -893,8 +892,7 @@ const PloContribute = () => {
                 <p>Contribution history</p>
                 {!myContributeHistoty.loading &&
                 !myContributeHistoty.error &&
-                myContributeHistoty.data.extrinsics.nodes.length &&
-                myContributeHistoty.data.extrinsics.nodes[0].events.nodes.length ? (
+                myContributeHistoty.data.extrinsics.nodes.length ? (
                   <div className={cx("contribute-history-control")}>
                     {myContributeHistoty.data.extrinsics.nodes.map((node1, index1) =>
                       node1.events.nodes.map((node2, index2) => (
