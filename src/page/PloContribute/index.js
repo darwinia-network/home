@@ -434,8 +434,12 @@ const PloContribute = () => {
     unsubscribeAccounts.current = await web3AccountsSubscribe((allAccounts) => {
       setAccounts(
         allAccounts.map((account) => {
-          const pair = keyring.addFromAddress(account.address);
-          return { ...account, address: pair.address };
+          if (isValidAddressPolkadotAddress(account.address)) {
+            const pair = keyring.addFromAddress(account.address);
+            return { ...account, address: pair.address };
+          } else {
+            return null;
+          }
         })
       );
 
@@ -1159,15 +1163,17 @@ const PloContribute = () => {
         width={560}
       >
         <div className={cx("accounts-container")}>
-          {accounts.map((account, index) => (
-            <button className={cx("accounts-item")} key={index} onClick={() => handleClickSelectAccount(account)}>
-              <Identicon value={account.address} size={isMobile() ? 30 : 40} theme="polkadot" />
-              <div className={cx("accounts-item-name-address")}>
-                <span className={cx("name")}>{account.meta.name}</span>
-                <span className={cx("address")}>{account.address}</span>
-              </div>
-            </button>
-          ))}
+          {accounts.map((account, index) =>
+            account ? (
+              <button className={cx("accounts-item")} key={index} onClick={() => handleClickSelectAccount(account)}>
+                <Identicon value={account.address} size={isMobile() ? 30 : 40} theme="polkadot" />
+                <div className={cx("accounts-item-name-address")}>
+                  <span className={cx("name")}>{account.meta.name}</span>
+                  <span className={cx("address")}>{account.address}</span>
+                </div>
+              </button>
+            ) : null
+          )}
         </div>
       </Modal>
 
