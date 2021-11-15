@@ -22,8 +22,8 @@ import discordIcon from "./img/discord.png";
 import {
   gqlContributesByParaId,
   gqlCrowdloanWhoStatisticByAddress,
+  gqlCrowdloanReferStatisticByReferralCode,
   gqlSomeOneContributesByAddressAndParaId,
-  gqlReferralsOfSomeOneByAddressAndParaId,
   gqlGetReferralCodeOfSomeOneByAddressAndParaId,
   CONTRIBUTE_PIONEERS,
   ALL_WHO_CROWDLOAN,
@@ -52,7 +52,6 @@ import { Keyring } from "@polkadot/keyring";
 import BN from "bn.js";
 import Big from "big.js";
 
-import { graphqlClient } from "../../graphql";
 import { useQuery } from "@apollo/client";
 
 const cx = classNames.bind(styles);
@@ -77,17 +76,12 @@ const PloContribute = () => {
   const myContributeHistoty = useQuery(
     gqlSomeOneContributesByAddressAndParaId(currentAccount ? currentAccount.address : "", PARA_ID)
   );
-  const myReferrals = useQuery(
-    gqlReferralsOfSomeOneByAddressAndParaId(
-      currentAccount ? polkadotAddressToReferralCode(currentAccount.address) : "",
-      PARA_ID
-    )
-  );
   const myReferralCode = useQuery(
     gqlGetReferralCodeOfSomeOneByAddressAndParaId(currentAccount ? currentAccount.address : "", PARA_ID)
   );
   const contributePionners = useQuery(CONTRIBUTE_PIONEERS);
   const myWhoCrowdloan = useQuery(gqlCrowdloanWhoStatisticByAddress(currentAccount ? currentAccount.address : ""));
+  const myReferCrwonloan = useQuery(gqlCrowdloanReferStatisticByReferralCode(currentAccount ? polkadotAddressToReferralCode(currentAccount.address) : ""));
   const allWhoCrowdloan = useQuery(ALL_WHO_CROWDLOAN);
   const allReferCrowdloan = useQuery(ALL_REFER_CROWDLOAN);
 
@@ -103,26 +97,28 @@ const PloContribute = () => {
   const { currentTotalContribute } = useEcharts(echartsRef.current, totalContributeHistory);
   const { currentAccountBalannce } = useBalanceAll(api, currentAccount ? currentAccount.address : null);
 
-  const referralsContributeHistory = useRef([]);
-  (async (_myReferrals) => {
-    const results = [];
-    if (
-      !_myReferrals.loading &&
-      !_myReferrals.error &&
-      _myReferrals.data.events.nodes &&
-      _myReferrals.data.events.nodes.length
-    ) {
-      for (let node of _myReferrals.data.events.nodes) {
-        const res = await graphqlClient.query({
-          query: gqlSomeOneContributesByAddressAndParaId(JSON.parse(node.data)[0], PARA_ID),
-        });
-        results.push(res);
-      }
-      if (results.length) {
-        referralsContributeHistory.current = results;
+  let referralsContributeHistory = [];
+  if (!myReferCrwonloan.loading && !myReferCrwonloan.error && myReferCrwonloan.data && myReferCrwonloan.data.crowdloanReferStatistic && myReferCrwonloan.data.crowdloanReferStatistic.contributors && myReferCrwonloan.data.crowdloanReferStatistic.contributors.nodes && myReferCrwonloan.data.crowdloanReferStatistic.contributors.nodes.length) {
+    const tmp = [];
+    for (let node1 of myReferCrwonloan.data.crowdloanReferStatistic.contributors.nodes) {
+      if (node1.block && node1.block.extrinsics && node1.block.extrinsics.nodes && node1.block.extrinsics.nodes.length) {
+        for (let node2 of node1.block.extrinsics.nodes) {
+          if (node2.events && node2.events.nodes && node2.events.nodes.length) {
+            for (let node3 of node2.events.nodes) {
+              tmp.push({ 
+                number: node1.block.number,
+                balance: node1.balance,
+                timestamp: node1.timestamp,
+                index: node3.index,
+                extrinsicId: node3.extrinsicId,
+               });
+            }
+          }
+        }
       }
     }
-  })(myReferrals);
+    referralsContributeHistory = tmp;
+  }
 
   let globalTotalPower = new BN("1000000").mul(DOT_TO_ORIG);
   const allWhoContributeData = [];
@@ -966,30 +962,27 @@ const PloContribute = () => {
               </div>
               <div className={cx("referral-history-wrap")}>
                 <p>Referral history</p>
-                {referralsContributeHistory.current.length ? (
+                {referralsContributeHistory.length ? (
                   <div className={cx("referral-history-control")}>
-                    {referralsContributeHistory.current.map((someone, index0) =>
-                      someone.data.extrinsics.nodes.map((node1, index1) =>
-                        node1.events.nodes.map((node2, index2) => (
-                          <div className={cx("referral-history-control-item")} key={`${index0}-${index1}-${index2}`}>
-                            <span>
-                              {new Date(node2.timestamp).toDateString().split(" ")[1]}{" "}
-                              {new Date(node2.timestamp).toDateString().split(" ")[2]}
-                            </span>
-                            <span className={cx("dot-amount")}>
-                              {formatBalanceFromOrigToDOT(JSON.parse(node2.data)[2])} DOT
-                            </span>
-                            <a
-                              className={cx("hash-id")}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              href={`https://polkadot.subscan.io/extrinsic/${node2.extrinsicId}`}
-                            >
-                              {node2.id}
-                            </a>
-                          </div>
-                        ))
-                      )
+                    {referralsContributeHistory.map((data, index) => (
+                      <div className={cx("referral-history-control-item")} key={`${index}}`}>
+                        <span>
+                          {new Date(data.timestamp).toDateString().split(" ")[1]}{" "}
+                          {new Date(data.timestamp).toDateString().split(" ")[2]}
+                        </span>
+                        <span className={cx("dot-amount")}>
+                          {formatBalanceFromOrigToDOT(data.balance)} DOT
+                        </span>
+                        <a
+                          className={cx("hash-id")}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          href={`https://polkadot.subscan.io/extrinsic/${data.extrinsicId}`}
+                        >
+                          {data.number}-{data.index}
+                        </a>
+                      </div>
+                    )
                     )}
                   </div>
                 ) : (

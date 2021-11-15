@@ -119,6 +119,32 @@ query {
 }
 `;
 
+export const gqlCrowdloanReferStatisticByReferralCode = (referralCode) => gql`
+query {
+  crowdloanReferStatistic(id: "${referralCode}") {
+      contributors {
+        nodes {
+          timestamp
+          balance
+          block {
+            number
+            extrinsics (filter: { method: { notEqualTo: "contribute" } })  {
+              nodes {
+                events (filter: { method: { equalTo: "Contributed" } }) {
+                  nodes {
+                    extrinsicId
+                    index
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+}
+`;
+
 export const ALL_WHO_CROWDLOAN = gql`
   query {
     crowdloanWhoStatistics(orderBy: TOTAL_BALANCE_DESC) {
