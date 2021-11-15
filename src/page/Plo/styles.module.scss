@@ -92,6 +92,38 @@
   }
 }
 
+.contribute-now {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+}
+
+.join-our-crowdloan-link {
+  background: linear-gradient(270deg, #ff0050 0%, #7000ff 71.44%, #0027ff 100%);
+  border-radius: 10px;
+  height: 40px;
+  width: 174px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &:hover {
+    text-decoration: none;
+  }
+
+  > span {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 21px;
+    color: #ffffff;
+  }
+
+  @media screen and (max-width: 1024px) {
+    width: 48%;
+  }
+}
+
 .footer-allright {
   font-weight: normal;
   font-size: 16px;

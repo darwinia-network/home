@@ -2,6 +2,7 @@ import React from "react";
 import styles from "./styles.module.scss";
 import classNames from "classnames/bind";
 import Fade from "react-reveal/Fade";
+import { Link } from "react-router-dom";
 
 import Header from "./Header";
 import Welcome from "./Welcome";
@@ -55,6 +56,14 @@ const PloPage = () => {
 
       <Fade bottom fraction={0.2} duration={1000} distance={"50px"}>
         <FourCards />
+      </Fade>
+
+      <Fade bottom fraction={0.2} duration={1000} distance={"50px"}>
+        <div className={cx("contribute-now")}>
+          <Link className={cx("join-our-crowdloan-link")} to="plo_contribute">
+            <span>Contribute now</span>
+          </Link>
+        </div>
       </Fade>
 
       <Fade bottom fraction={0.2} duration={1000} distance={"50px"}>

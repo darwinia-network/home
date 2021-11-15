@@ -17,7 +17,7 @@ const Welcome = () => {
         <p className={cx("desc")}>Darwinia Network is bridging heterogeneous chains to build the Web3.0 Metaverse.</p>
         <div className={cx("link-wrap")}>
           <Link className={cx("join-our-crowdloan-link")} to="plo_contribute">
-            <span>Join our crowdloan</span>
+            <span>Contribute now</span>
           </Link>
           <a
             className={cx("learn-more-link")}
