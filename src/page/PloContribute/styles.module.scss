@@ -1339,7 +1339,7 @@
 
     .ant-modal-body {
       max-height: 600px;
-      overflow-y: auto;
+      overflow: auto;
     }
 
     .ant-modal-close {
@@ -1399,6 +1399,8 @@
   flex-direction: column;
   justify-content: center;
   margin-left: 6px;
+  width: 100%;
+  overflow-x: auto;
 
   @media screen and (max-width: 1024px) {
     margin-left: 12px;

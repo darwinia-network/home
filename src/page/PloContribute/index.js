@@ -1160,7 +1160,7 @@ const PloContribute = () => {
         closable={true}
         closeIcon={<img alt="..." src={modalCloseIcon} />}
         onCancel={() => setShowSelectAccountModal(false)}
-        width={560}
+        width={580}
       >
         <div className={cx("accounts-container")}>
           {accounts.map((account, index) =>
