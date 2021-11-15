@@ -21,8 +21,9 @@ import discordIcon from "./img/discord.png";
 
 import {
   gqlContributesByParaId,
+  gqlCrowdloanWhoStatisticByAddress,
+  gqlCrowdloanReferStatisticByReferralCode,
   gqlSomeOneContributesByAddressAndParaId,
-  gqlReferralsOfSomeOneByAddressAndParaId,
   gqlGetReferralCodeOfSomeOneByAddressAndParaId,
   CONTRIBUTE_PIONEERS,
   ALL_WHO_CROWDLOAN,
@@ -51,7 +52,6 @@ import { Keyring } from "@polkadot/keyring";
 import BN from "bn.js";
 import Big from "big.js";
 
-import { graphqlClient } from "../../graphql";
 import { useQuery } from "@apollo/client";
 
 const cx = classNames.bind(styles);
@@ -76,16 +76,16 @@ const PloContribute = () => {
   const myContributeHistoty = useQuery(
     gqlSomeOneContributesByAddressAndParaId(currentAccount ? currentAccount.address : "", PARA_ID)
   );
-  const myReferrals = useQuery(
-    gqlReferralsOfSomeOneByAddressAndParaId(
-      currentAccount ? polkadotAddressToReferralCode(currentAccount.address) : "",
-      PARA_ID
-    )
-  );
   const myReferralCode = useQuery(
     gqlGetReferralCodeOfSomeOneByAddressAndParaId(currentAccount ? currentAccount.address : "", PARA_ID)
   );
   const contributePionners = useQuery(CONTRIBUTE_PIONEERS);
+  const myWhoCrowdloan = useQuery(gqlCrowdloanWhoStatisticByAddress(currentAccount ? currentAccount.address : ""));
+  const myReferCrwonloan = useQuery(
+    gqlCrowdloanReferStatisticByReferralCode(
+      currentAccount ? polkadotAddressToReferralCode(currentAccount.address) : ""
+    )
+  );
   const allWhoCrowdloan = useQuery(ALL_WHO_CROWDLOAN);
   const allReferCrowdloan = useQuery(ALL_REFER_CROWDLOAN);
 
@@ -101,26 +101,41 @@ const PloContribute = () => {
   const { currentTotalContribute } = useEcharts(echartsRef.current, totalContributeHistory);
   const { currentAccountBalannce } = useBalanceAll(api, currentAccount ? currentAccount.address : null);
 
-  const referralsContributeHistory = useRef([]);
-  (async (_myReferrals) => {
-    const results = [];
-    if (
-      !_myReferrals.loading &&
-      !_myReferrals.error &&
-      _myReferrals.data.events.nodes &&
-      _myReferrals.data.events.nodes.length
-    ) {
-      for (let node of _myReferrals.data.events.nodes) {
-        const res = await graphqlClient.query({
-          query: gqlSomeOneContributesByAddressAndParaId(JSON.parse(node.data)[0], PARA_ID),
-        });
-        results.push(res);
-      }
-      if (results.length) {
-        referralsContributeHistory.current = results;
+  let referralsContributeHistory = [];
+  if (
+    !myReferCrwonloan.loading &&
+    !myReferCrwonloan.error &&
+    myReferCrwonloan.data &&
+    myReferCrwonloan.data.crowdloanReferStatistic &&
+    myReferCrwonloan.data.crowdloanReferStatistic.contributors &&
+    myReferCrwonloan.data.crowdloanReferStatistic.contributors.nodes &&
+    myReferCrwonloan.data.crowdloanReferStatistic.contributors.nodes.length
+  ) {
+    const tmp = [];
+    for (let node1 of myReferCrwonloan.data.crowdloanReferStatistic.contributors.nodes) {
+      if (
+        node1.block &&
+        node1.block.extrinsics &&
+        node1.block.extrinsics.nodes &&
+        node1.block.extrinsics.nodes.length
+      ) {
+        for (let node2 of node1.block.extrinsics.nodes) {
+          if (node2.events && node2.events.nodes && node2.events.nodes.length) {
+            for (let node3 of node2.events.nodes) {
+              tmp.push({
+                number: node1.block.number,
+                balance: node1.balance,
+                timestamp: node1.timestamp,
+                index: node3.index,
+                extrinsicId: node3.extrinsicId,
+              });
+            }
+          }
+        }
       }
     }
-  })(myReferrals);
+    referralsContributeHistory = tmp;
+  }
 
   let globalTotalPower = new BN("1000000").mul(DOT_TO_ORIG);
   const allWhoContributeData = [];
@@ -233,23 +248,57 @@ const PloContribute = () => {
   }
 
   let myTotalContribute = new BN(0);
+  let myRingReward = "0";
+  let myKtonReward = "0";
   if (
-    !myContributeHistoty.loading &&
-    !myContributeHistoty.error &&
-    myContributeHistoty.data &&
-    myContributeHistoty.data.extrinsics.nodes.length
+    !myWhoCrowdloan.loading &&
+    !myWhoCrowdloan.error &&
+    myWhoCrowdloan.data &&
+    myWhoCrowdloan.data.crowdloanWhoStatistic
   ) {
-    let tmp = new BN(0);
-    myContributeHistoty.data.extrinsics.nodes.forEach((node1) => {
-      node1.events.nodes.forEach((node2) => {
-        tmp = tmp.add(new BN(JSON.parse(node2.data)[2]));
-      });
-    });
-    myTotalContribute = tmp;
+    myTotalContribute = new BN(myWhoCrowdloan.data.crowdloanWhoStatistic.totalBalance);
+
+    if (
+      myWhoCrowdloan.data.crowdloanWhoStatistic.contributors.nodes &&
+      myWhoCrowdloan.data.crowdloanWhoStatistic.contributors.nodes.length
+    ) {
+      let myRingRewardTmp = new Big(0);
+      let myktonRewardTmp = new Big(0);
+      for (let node of myWhoCrowdloan.data.crowdloanWhoStatistic.contributors.nodes) {
+        const contributePer = Big(node.balance).div(globalTotalPower.toString());
+
+        if (currentBlockNumber) {
+          const bonusN = currentBlockNumber < T1_BLOCK_NUMBER ? 0.2 : 0;
+          const referN = isValidAddressPolkadotAddress(node.refer) ? 0.05 : 0;
+
+          const base = {
+            ring: contributePer.mul(RING_REWARD),
+            kton: contributePer.mul(KTON_REWARD),
+          };
+          const bonus = {
+            ring: base.ring.mul(bonusN),
+            kton: base.kton.mul(bonusN),
+          };
+          const referral = {
+            ring: base.ring.add(bonus.ring).mul(referN),
+            kton: base.kton.add(bonus.kton).mul(referN),
+          };
+          const total = {
+            ring: base.ring.add(bonus.ring).add(referral.ring),
+            kton: base.kton.add(bonus.kton).add(referral.kton),
+          };
+
+          myRingRewardTmp = myRingRewardTmp.add(total.ring);
+          myktonRewardTmp = myktonRewardTmp.add(total.kton);
+        }
+      }
+
+      myRingReward = myRingRewardTmp.toFixed(4);
+      myKtonReward = myktonRewardTmp.toFixed(4);
+    }
   }
   const myContributePer = Big(myTotalContribute.toString()).div(globalTotalPower.toString());
-  const myRingReward = myContributePer.mul(RING_REWARD).toFixed(4);
-  const myKtonReward = myContributePer.mul(KTON_REWARD).toFixed(4);
+
   let myBtcReward = 0;
   let top5contribute = new BN(0);
   if (
@@ -385,8 +434,12 @@ const PloContribute = () => {
     unsubscribeAccounts.current = await web3AccountsSubscribe((allAccounts) => {
       setAccounts(
         allAccounts.map((account) => {
-          const pair = keyring.addFromAddress(account.address);
-          return { ...account, address: pair.address };
+          if (isValidAddressPolkadotAddress(account.address)) {
+            const pair = keyring.addFromAddress(account.address);
+            return { ...account, address: pair.address };
+          } else {
+            return null;
+          }
         })
       );
 
@@ -930,31 +983,25 @@ const PloContribute = () => {
               </div>
               <div className={cx("referral-history-wrap")}>
                 <p>Referral history</p>
-                {referralsContributeHistory.current.length ? (
+                {referralsContributeHistory.length ? (
                   <div className={cx("referral-history-control")}>
-                    {referralsContributeHistory.current.map((someone, index0) =>
-                      someone.data.extrinsics.nodes.map((node1, index1) =>
-                        node1.events.nodes.map((node2, index2) => (
-                          <div className={cx("referral-history-control-item")} key={`${index0}-${index1}-${index2}`}>
-                            <span>
-                              {new Date(node2.timestamp).toDateString().split(" ")[1]}{" "}
-                              {new Date(node2.timestamp).toDateString().split(" ")[2]}
-                            </span>
-                            <span className={cx("dot-amount")}>
-                              {formatBalanceFromOrigToDOT(JSON.parse(node2.data)[2])} DOT
-                            </span>
-                            <a
-                              className={cx("hash-id")}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              href={`https://polkadot.subscan.io/extrinsic/${node2.extrinsicId}`}
-                            >
-                              {node2.id}
-                            </a>
-                          </div>
-                        ))
-                      )
-                    )}
+                    {referralsContributeHistory.map((data, index) => (
+                      <div className={cx("referral-history-control-item")} key={`${index}}`}>
+                        <span>
+                          {new Date(data.timestamp).toDateString().split(" ")[1]}{" "}
+                          {new Date(data.timestamp).toDateString().split(" ")[2]}
+                        </span>
+                        <span className={cx("dot-amount")}>{formatBalanceFromOrigToDOT(data.balance)} DOT</span>
+                        <a
+                          className={cx("hash-id")}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          href={`https://polkadot.subscan.io/extrinsic/${data.extrinsicId}`}
+                        >
+                          {data.number}-{data.index}
+                        </a>
+                      </div>
+                    ))}
                   </div>
                 ) : (
                   <div className={cx("referral-history-control", "no-data")}>No Data</div>
@@ -1116,15 +1163,17 @@ const PloContribute = () => {
         width={560}
       >
         <div className={cx("accounts-container")}>
-          {accounts.map((account, index) => (
-            <button className={cx("accounts-item")} key={index} onClick={() => handleClickSelectAccount(account)}>
-              <Identicon value={account.address} size={isMobile() ? 30 : 40} theme="polkadot" />
-              <div className={cx("accounts-item-name-address")}>
-                <span className={cx("name")}>{account.meta.name}</span>
-                <span className={cx("address")}>{account.address}</span>
-              </div>
-            </button>
-          ))}
+          {accounts.map((account, index) =>
+            account ? (
+              <button className={cx("accounts-item")} key={index} onClick={() => handleClickSelectAccount(account)}>
+                <Identicon value={account.address} size={isMobile() ? 30 : 40} theme="polkadot" />
+                <div className={cx("accounts-item-name-address")}>
+                  <span className={cx("name")}>{account.meta.name}</span>
+                  <span className={cx("address")}>{account.address}</span>
+                </div>
+              </button>
+            ) : null
+          )}
         </div>
       </Modal>
 

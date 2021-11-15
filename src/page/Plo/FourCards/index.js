@@ -19,7 +19,7 @@ const FourCards = () => {
           <div className={cx("card-content")}>
             <h5 className={cx("card-content-title")}>Referral Program</h5>
             <p className={cx("card-content-desc")}>
-              Contributions made through your referral link will reward your and your friend with an extra 5% each.
+              Contributions made through your referral link will reward you and your friend with an extra 5% each.
               <br />
               <br />
               Top 10 referrers will receive an additional 1-3% boost to raise your referral reward up to 8%.
