@@ -1355,6 +1355,43 @@
   }
 }
 
+.transaction-in-progress-modal {
+  :global {
+    .ant-modal-content {
+      background: #ffffff;
+      box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
+    }
+
+    .ant-modal-body {
+      padding-top: 60px;
+    }
+
+    .ant-modal-close {
+      top: 0px;
+      left: calc(100% - 60px);
+    }
+
+    .ant-modal-close-x {
+      > img {
+        width: 36px;
+      }
+    }
+  }
+}
+
+.transaction-in-progress {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  > span {
+    @extend %-base-p;
+    margin-top: 20px;
+  }
+}
+
 .accounts-container {
   display: flex;
   flex-direction: column;
