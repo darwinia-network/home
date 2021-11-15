@@ -81,7 +81,11 @@ const PloContribute = () => {
   );
   const contributePionners = useQuery(CONTRIBUTE_PIONEERS);
   const myWhoCrowdloan = useQuery(gqlCrowdloanWhoStatisticByAddress(currentAccount ? currentAccount.address : ""));
-  const myReferCrwonloan = useQuery(gqlCrowdloanReferStatisticByReferralCode(currentAccount ? polkadotAddressToReferralCode(currentAccount.address) : ""));
+  const myReferCrwonloan = useQuery(
+    gqlCrowdloanReferStatisticByReferralCode(
+      currentAccount ? polkadotAddressToReferralCode(currentAccount.address) : ""
+    )
+  );
   const allWhoCrowdloan = useQuery(ALL_WHO_CROWDLOAN);
   const allReferCrowdloan = useQuery(ALL_REFER_CROWDLOAN);
 
@@ -98,20 +102,33 @@ const PloContribute = () => {
   const { currentAccountBalannce } = useBalanceAll(api, currentAccount ? currentAccount.address : null);
 
   let referralsContributeHistory = [];
-  if (!myReferCrwonloan.loading && !myReferCrwonloan.error && myReferCrwonloan.data && myReferCrwonloan.data.crowdloanReferStatistic && myReferCrwonloan.data.crowdloanReferStatistic.contributors && myReferCrwonloan.data.crowdloanReferStatistic.contributors.nodes && myReferCrwonloan.data.crowdloanReferStatistic.contributors.nodes.length) {
+  if (
+    !myReferCrwonloan.loading &&
+    !myReferCrwonloan.error &&
+    myReferCrwonloan.data &&
+    myReferCrwonloan.data.crowdloanReferStatistic &&
+    myReferCrwonloan.data.crowdloanReferStatistic.contributors &&
+    myReferCrwonloan.data.crowdloanReferStatistic.contributors.nodes &&
+    myReferCrwonloan.data.crowdloanReferStatistic.contributors.nodes.length
+  ) {
     const tmp = [];
     for (let node1 of myReferCrwonloan.data.crowdloanReferStatistic.contributors.nodes) {
-      if (node1.block && node1.block.extrinsics && node1.block.extrinsics.nodes && node1.block.extrinsics.nodes.length) {
+      if (
+        node1.block &&
+        node1.block.extrinsics &&
+        node1.block.extrinsics.nodes &&
+        node1.block.extrinsics.nodes.length
+      ) {
         for (let node2 of node1.block.extrinsics.nodes) {
           if (node2.events && node2.events.nodes && node2.events.nodes.length) {
             for (let node3 of node2.events.nodes) {
-              tmp.push({ 
+              tmp.push({
                 number: node1.block.number,
                 balance: node1.balance,
                 timestamp: node1.timestamp,
                 index: node3.index,
                 extrinsicId: node3.extrinsicId,
-               });
+              });
             }
           }
         }
@@ -970,9 +987,7 @@ const PloContribute = () => {
                           {new Date(data.timestamp).toDateString().split(" ")[1]}{" "}
                           {new Date(data.timestamp).toDateString().split(" ")[2]}
                         </span>
-                        <span className={cx("dot-amount")}>
-                          {formatBalanceFromOrigToDOT(data.balance)} DOT
-                        </span>
+                        <span className={cx("dot-amount")}>{formatBalanceFromOrigToDOT(data.balance)} DOT</span>
                         <a
                           className={cx("hash-id")}
                           target="_blank"
@@ -982,8 +997,7 @@ const PloContribute = () => {
                           {data.number}-{data.index}
                         </a>
                       </div>
-                    )
-                    )}
+                    ))}
                   </div>
                 ) : (
                   <div className={cx("referral-history-control", "no-data")}>No Data</div>
