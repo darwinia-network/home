@@ -25,7 +25,7 @@ const Welcome = () => {
             rel="noopener noreferrer"
             target="_blank"
           >
-            <span>Lrean more</span>
+            <span>Learn more</span>
           </a>
         </div>
       </div>
