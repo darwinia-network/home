@@ -98,6 +98,27 @@ export const CONTRIBUTE_PIONEERS = gql`
   }
 `;
 
+export const gqlCrowdloanWhoStatisticByAddress = (address) => gql`
+query {
+  crowdloanWhoStatistic(id: "${address}") {
+      user
+      totalPower
+      totalBalance
+      contributors {
+        nodes {
+          id
+          who
+          refer
+          balance
+          powerWho
+          powerRefer
+          timestamp
+        }
+      }
+    }
+}
+`;
+
 export const ALL_WHO_CROWDLOAN = gql`
   query {
     crowdloanWhoStatistics(orderBy: TOTAL_BALANCE_DESC) {

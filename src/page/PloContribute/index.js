@@ -21,6 +21,7 @@ import discordIcon from "./img/discord.png";
 
 import {
   gqlContributesByParaId,
+  gqlCrowdloanWhoStatisticByAddress,
   gqlSomeOneContributesByAddressAndParaId,
   gqlReferralsOfSomeOneByAddressAndParaId,
   gqlGetReferralCodeOfSomeOneByAddressAndParaId,
@@ -86,6 +87,7 @@ const PloContribute = () => {
     gqlGetReferralCodeOfSomeOneByAddressAndParaId(currentAccount ? currentAccount.address : "", PARA_ID)
   );
   const contributePionners = useQuery(CONTRIBUTE_PIONEERS);
+  const myWhoCrowdloan = useQuery(gqlCrowdloanWhoStatisticByAddress(currentAccount ? currentAccount.address : ""));
   const allWhoCrowdloan = useQuery(ALL_WHO_CROWDLOAN);
   const allReferCrowdloan = useQuery(ALL_REFER_CROWDLOAN);
 
@@ -233,23 +235,57 @@ const PloContribute = () => {
   }
 
   let myTotalContribute = new BN(0);
+  let myRingReward = "0";
+  let myKtonReward = "0";
   if (
-    !myContributeHistoty.loading &&
-    !myContributeHistoty.error &&
-    myContributeHistoty.data &&
-    myContributeHistoty.data.extrinsics.nodes.length
+    !myWhoCrowdloan.loading &&
+    !myWhoCrowdloan.error &&
+    myWhoCrowdloan.data &&
+    myWhoCrowdloan.data.crowdloanWhoStatistic
   ) {
-    let tmp = new BN(0);
-    myContributeHistoty.data.extrinsics.nodes.forEach((node1) => {
-      node1.events.nodes.forEach((node2) => {
-        tmp = tmp.add(new BN(JSON.parse(node2.data)[2]));
-      });
-    });
-    myTotalContribute = tmp;
+    myTotalContribute = new BN(myWhoCrowdloan.data.crowdloanWhoStatistic.totalBalance);
+
+    if (
+      myWhoCrowdloan.data.crowdloanWhoStatistic.contributors.nodes &&
+      myWhoCrowdloan.data.crowdloanWhoStatistic.contributors.nodes.length
+    ) {
+      let myRingRewardTmp = new Big(0);
+      let myktonRewardTmp = new Big(0);
+      for (let node of myWhoCrowdloan.data.crowdloanWhoStatistic.contributors.nodes) {
+        const contributePer = Big(node.balance).div(globalTotalPower.toString());
+
+        if (currentBlockNumber) {
+          const bonusN = currentBlockNumber < T1_BLOCK_NUMBER ? 0.2 : 0;
+          const referN = isValidAddressPolkadotAddress(node.refer) ? 0.05 : 0;
+
+          const base = {
+            ring: contributePer.mul(RING_REWARD),
+            kton: contributePer.mul(KTON_REWARD),
+          };
+          const bonus = {
+            ring: base.ring.mul(bonusN),
+            kton: base.kton.mul(bonusN),
+          };
+          const referral = {
+            ring: base.ring.add(bonus.ring).mul(referN),
+            kton: base.kton.add(bonus.kton).mul(referN),
+          };
+          const total = {
+            ring: base.ring.add(bonus.ring).add(referral.ring),
+            kton: base.kton.add(bonus.kton).add(referral.kton),
+          };
+
+          myRingRewardTmp = myRingRewardTmp.add(total.ring);
+          myktonRewardTmp = myktonRewardTmp.add(total.kton);
+        }
+      }
+
+      myRingReward = myRingRewardTmp.toFixed(4);
+      myKtonReward = myktonRewardTmp.toFixed(4);
+    }
   }
   const myContributePer = Big(myTotalContribute.toString()).div(globalTotalPower.toString());
-  const myRingReward = myContributePer.mul(RING_REWARD).toFixed(4);
-  const myKtonReward = myContributePer.mul(KTON_REWARD).toFixed(4);
+
   let myBtcReward = 0;
   let top5contribute = new BN(0);
   if (
