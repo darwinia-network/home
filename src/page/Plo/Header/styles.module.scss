@@ -8,7 +8,8 @@
   }
 }
 
-.left, .right {
+.left,
+.right {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -30,24 +31,24 @@
 }
 
 .plo-btn {
-  background: linear-gradient(315.52deg, #FF0050 0.88%, #7000FF 71.7%, #0027FF 100%);
+  background: linear-gradient(315.52deg, #ff0050 0.88%, #7000ff 71.7%, #0027ff 100%);
   border-radius: 10px;
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 4px 14px;
 
-  >span {
+  > span {
     font-weight: bold;
     font-size: 18px;
     line-height: 23px;
-    color: #FFFFFF;
+    color: #ffffff;
   }
 
   @media screen and (max-width: 1024px) {
     padding: 3px 8px;
 
-    >span {
+    > span {
       font-size: 12px;
       line-height: 14px;
     }

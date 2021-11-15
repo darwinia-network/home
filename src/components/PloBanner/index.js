@@ -1,2 +1,2 @@
-import PloBanner from './PloBanner';
-export { PloBanner }
+import PloBanner from "./PloBanner";
+export { PloBanner };

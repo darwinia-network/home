@@ -12,7 +12,7 @@
   font-size: 30px;
   line-height: 39px;
   text-align: center;
-  color: #1E3676;
+  color: #1e3676;
 }
 
 .sub-title {
@@ -53,7 +53,7 @@
     order: 1;
     margin: 0 {
       bottom: 20px;
-    };
+    }
   }
 }
 
@@ -80,7 +80,7 @@
     &:first-child {
       order: 2;
     }
-  
+
     &:last-child {
       order: 3;
     }
@@ -101,7 +101,7 @@
     font-weight: 600;
     font-size: 20px;
     line-height: 26px;
-    color: #1E3676;
+    color: #1e3676;
   }
 
   .item-desc {
@@ -110,7 +110,7 @@
     line-height: 21px;
     color: #000000;
 
-    >a {
+    > a {
       font-weight: normal;
       font-size: 16px;
       line-height: 21px;

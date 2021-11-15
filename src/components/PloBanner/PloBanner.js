@@ -1,14 +1,14 @@
-import React, { useState, useEffect } from 'react';
-import styles from './styles.module.scss';
-import classNames from 'classnames/bind';
-import { Container } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
-import { Modal } from 'antd';
-import { isMobile } from '../../utils';
+import React, { useState, useEffect } from "react";
+import styles from "./styles.module.scss";
+import classNames from "classnames/bind";
+import { Container } from "react-bootstrap";
+import { Link } from "react-router-dom";
+import { Modal } from "antd";
+import { isMobile } from "../../utils";
 
-import icon01 from './img/icon-01.png';
-import mobileIcon from './img/mobile-icon.png';
-import closeIcon from './img/close-icon.png';
+import icon01 from "./img/icon-01.png";
+import mobileIcon from "./img/mobile-icon.png";
+import closeIcon from "./img/close-icon.png";
 
 const cx = classNames.bind(styles);
 
@@ -17,7 +17,7 @@ const MobileModal = () => {
 
   const handleClickClose = () => {
     setVisible(false);
-  }
+  };
 
   useEffect(() => {
     isMobile() && setVisible(true);
@@ -27,18 +27,24 @@ const MobileModal = () => {
     <Modal
       visible={visible}
       footer={null}
-      closeIcon={
-        <img alt='...' src={closeIcon} style={{ width: '40px' }} />
-      }
+      closeIcon={<img alt="..." src={closeIcon} style={{ width: "40px" }} />}
       onCancel={handleClickClose}
     >
-      <div className={cx('mobile-main')}>
-        <img alt='...' src={mobileIcon} className={cx('banner-logo')} />
-        <div className={cx('banner-content')}>
-          <h5 className={cx('title')}><span role='img' aria-label='fire'>🔥</span> We are launching our Parachain Crowdloan on Polkadot.</h5>
-          <p className={cx('desc')}>Contribute your DOT to help build a Web3.0 Bridge Hub by joining our crowdloan, unlock RING and KTON bonus, also BTC and Metaverse limited edition commemorative NFT waiting for you.</p>
-        </div>        
-        <Link className={cx('banner-link')} to='plo'>
+      <div className={cx("mobile-main")}>
+        <img alt="..." src={mobileIcon} className={cx("banner-logo")} />
+        <div className={cx("banner-content")}>
+          <h5 className={cx("title")}>
+            <span role="img" aria-label="fire">
+              🔥
+            </span>{" "}
+            We are launching our Parachain Crowdloan on Polkadot.
+          </h5>
+          <p className={cx("desc")}>
+            Contribute your DOT to help build a Web3.0 Bridge Hub by joining our crowdloan, unlock RING and KTON bonus,
+            also BTC and Metaverse limited edition commemorative NFT waiting for you.
+          </p>
+        </div>
+        <Link className={cx("banner-link")} to="plo">
           <span>Join our crowdloan</span>
         </Link>
       </div>
@@ -49,15 +55,23 @@ const MobileModal = () => {
 const PloBanner = () => {
   return (
     <>
-      <MobileModal className={cx('mobile-modal')} />
+      <MobileModal className={cx("mobile-modal")} />
       <Container>
-        <div className={cx('main')}>
-          <img alt='...' src={icon01} className={cx('banner-logo')} />
-          <div className={cx('banner-content')}>
-            <h5 className={cx('title')}><span role='img' aria-label='fire'>🔥</span> We are launching our Parachain Crowdloan on Polkadot.</h5>
-            <p className={cx('desc')}>Contribute your DOT to help build a Web3.0 Bridge Hub by joining our crowdloan, unlock RING and KTON bonus, also BTC and Metaverse limited edition commemorative NFT waiting for you.</p>
-          </div>        
-          <Link className={cx('banner-link')} to='plo'>
+        <div className={cx("main")}>
+          <img alt="..." src={icon01} className={cx("banner-logo")} />
+          <div className={cx("banner-content")}>
+            <h5 className={cx("title")}>
+              <span role="img" aria-label="fire">
+                🔥
+              </span>{" "}
+              We are launching our Parachain Crowdloan on Polkadot.
+            </h5>
+            <p className={cx("desc")}>
+              Contribute your DOT to help build a Web3.0 Bridge Hub by joining our crowdloan, unlock RING and KTON
+              bonus, also BTC and Metaverse limited edition commemorative NFT waiting for you.
+            </p>
+          </div>
+          <Link className={cx("banner-link")} to="plo">
             <span>Join our crowdloan</span>
           </Link>
         </div>
