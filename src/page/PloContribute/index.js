@@ -240,7 +240,7 @@ const PloContribute = () => {
           address: referralCodeToPolkadotAddress(node.user),
           referrals: node.contributors.nodes.length,
           accumulatedContribution: node.totalBalance,
-          refferalRewards: {
+          referralRewards: {
             ring: contributePer.mul(RING_REWARD),
             kton: contributePer.mul(KTON_REWARD),
           },
@@ -1196,7 +1196,7 @@ const PloContribute = () => {
                 <span className={cx("referral-leaderboard-item-address")}>Address</span>
                 <span className={cx("referral-leaderboard-item-referrals")}>Referrals</span>
                 <span className={cx("referral-leaderboard-item-accumulated")}>Accumulated Contribution</span>
-                <span className={cx("referral-leaderboard-item-rewards")}>Refferal Rewards</span>
+                <span className={cx("referral-leaderboard-item-rewards")}>Referral Rewards</span>
               </div>
 
               {referralLeaderboradData.length ? (
@@ -1221,8 +1221,8 @@ const PloContribute = () => {
                       {formatBalanceFromOrigToDOT(data.accumulatedContribution)} DOT
                     </span>
                     <div className={cx("referral-leaderboard-item-rewards")}>
-                      <span>{data.refferalRewards.ring.toFixed(2)} RING</span>
-                      <span>{data.refferalRewards.kton.toFixed(2)} KTON</span>
+                      <span>{data.referralRewards.ring.toFixed(2)} RING</span>
+                      <span>{data.referralRewards.kton.toFixed(2)} KTON</span>
                     </div>
                   </div>
                 ))
