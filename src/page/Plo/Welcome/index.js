@@ -21,7 +21,7 @@ const Welcome = () => {
           </Link>
           <a
             className={cx("learn-more-link")}
-            href="https://darwinianetwork.medium.com/support-darwinia-while-investing-in-the-next-generation-infrastructure-for-the-web3-0-metaverse-aaf3defb234a"
+            href="https://darwinianetwork.medium.com/guide-to-participate-in-the-darwinia-plo-e14b1718787f"
             rel="noopener noreferrer"
             target="_blank"
           >
