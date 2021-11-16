@@ -47,7 +47,7 @@ import {
 import { isMobile } from "../../utils";
 
 // Polkadot
-import { web3Enable, web3AccountsSubscribe, web3FromAddress } from "@polkadot/extension-dapp";
+import { web3Enable, web3AccountsSubscribe, web3FromAddress, web3Accounts } from "@polkadot/extension-dapp";
 import Identicon from "@polkadot/react-identicon";
 import { Keyring } from "@polkadot/keyring";
 import { stringToHex } from "@polkadot/util";
@@ -476,8 +476,8 @@ const PloContribute = () => {
       const keyring = new Keyring();
       keyring.setSS58Format(0); // Polkadot format address
 
-      unsubscribeAccounts.current && unsubscribeAccounts.current();
-      unsubscribeAccounts.current = await web3AccountsSubscribe((allAccounts) => {
+      if (isMobile()) {
+        const allAccounts = await web3Accounts();
         setAccounts(
           allAccounts.map((account) => {
             if (isValidAddressPolkadotAddress(account.address)) {
@@ -491,7 +491,24 @@ const PloContribute = () => {
             }
           })
         );
-      });
+      } else {
+        unsubscribeAccounts.current && unsubscribeAccounts.current();
+        unsubscribeAccounts.current = await web3AccountsSubscribe((allAccounts) => {
+          setAccounts(
+            allAccounts.map((account) => {
+              if (isValidAddressPolkadotAddress(account.address)) {
+                const pair = keyring.addFromAddress(account.address);
+                if (pair.address === address) {
+                  setCurrentAccount({ ...account, address: pair.address });
+                }
+                return { ...account, address: pair.address };
+              } else {
+                return null;
+              }
+            })
+          );
+        });
+      }
     })();
 
     return () => {
@@ -516,8 +533,8 @@ const PloContribute = () => {
     const keyring = new Keyring();
     keyring.setSS58Format(0); // Polkadot format address
 
-    unsubscribeAccounts.current && unsubscribeAccounts.current();
-    unsubscribeAccounts.current = await web3AccountsSubscribe((allAccounts) => {
+    if (isMobile()) {
+      const allAccounts = await web3Accounts();
       setAccounts(
         allAccounts.map((account) => {
           if (isValidAddressPolkadotAddress(account.address)) {
@@ -528,9 +545,24 @@ const PloContribute = () => {
           }
         })
       );
-
       setShowSelectAccountModal(true);
-    });
+    } else {
+      unsubscribeAccounts.current && unsubscribeAccounts.current();
+      unsubscribeAccounts.current = await web3AccountsSubscribe((allAccounts) => {
+        setAccounts(
+          allAccounts.map((account) => {
+            if (isValidAddressPolkadotAddress(account.address)) {
+              const pair = keyring.addFromAddress(account.address);
+              return { ...account, address: pair.address };
+            } else {
+              return null;
+            }
+          })
+        );
+
+        setShowSelectAccountModal(true);
+      });
+    }
   };
 
   const handleClickSelectAccount = async (account) => {
