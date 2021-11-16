@@ -3,7 +3,7 @@ import styles from "./styles.module.scss";
 import classNames from "classnames/bind";
 import { Container } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import { Tooltip, Table, Modal, Typography, Spin, notification } from "antd";
+import { Tooltip, Table, Modal, Typography, Spin, message, notification } from "antd";
 import Fade from "react-reveal/Fade";
 
 import darwiniaLogo from "./img/logo-darwinia.png";
@@ -93,6 +93,7 @@ const PloContribute = () => {
   const [accounts, setAccounts] = useState([]);
   const [inputDot, setInputDot] = useState("");
   const [inputReferralCode, setInputReferralCode] = useState("");
+  const [showTransactionInProgress, setShowTransactionInProgress] = useState(false);
   const [showSelectAccountModal, setShowSelectAccountModal] = useState(false);
   const [showThanksForSupportModal, setShowThanksForSupportModal] = useState(false);
 
@@ -475,6 +476,11 @@ const PloContribute = () => {
   };
 
   const handleClickContribute = async () => {
+    if (!api) {
+      message.warning("api does not connect yet");
+      return;
+    }
+
     if (Number(inputDot) >= 5) {
       const extrinsicContribute = api.tx.crowdloan.contribute(PARA_ID, formatBalanceFromDOTToOrig(inputDot), null);
       const extrinsicAddMemo =
@@ -495,11 +501,13 @@ const PloContribute = () => {
 
               if (method === "Contributed" && section === "crowdloan") {
                 // setContributedValue(formatKSMBalance(data[2]));
+                setShowTransactionInProgress(true);
               }
 
               if (method === "ExtrinsicSuccess" && section === "system") {
                 if (status.isInBlock) {
                   // setContributedBlockHash(status.asInBlock);
+                  setShowTransactionInProgress(false);
                   setShowThanksForSupportModal(true);
                   setContributeBtnLoading(false);
                 } else if (status.isFinalized) {
@@ -508,7 +516,8 @@ const PloContribute = () => {
               }
 
               if (method === "ExtrinsicFailed" && section === "system") {
-                // setDisableContributeBtn(false);
+                setShowTransactionInProgress(false);
+                setContributeBtnLoading(false);
               }
             });
           }
@@ -519,6 +528,7 @@ const PloContribute = () => {
           message: "Failed To Contribute",
           description: err.message,
         });
+        setShowTransactionInProgress(false);
         setContributeBtnLoading(false);
       } finally {
         //
@@ -1153,6 +1163,21 @@ const PloContribute = () => {
       </Container>
 
       <Modal
+        className={cx("transaction-in-progress-modal")}
+        visible={showTransactionInProgress}
+        footer={null}
+        title={null}
+        closable={true}
+        closeIcon={<img alt="..." src={modalCloseIcon} />}
+        onCancel={() => setShowTransactionInProgress(false)}
+      >
+        <div className={cx("transaction-in-progress")}>
+          <Spin size="large" />
+          <span>Transaction in progress ...</span>
+        </div>
+      </Modal>
+
+      <Modal
         className={cx("select-account-modal")}
         visible={showSelectAccountModal}
         footer={null}
@@ -1160,7 +1185,7 @@ const PloContribute = () => {
         closable={true}
         closeIcon={<img alt="..." src={modalCloseIcon} />}
         onCancel={() => setShowSelectAccountModal(false)}
-        width={560}
+        width={580}
       >
         <div className={cx("accounts-container")}>
           {accounts.map((account, index) =>
