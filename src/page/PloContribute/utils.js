@@ -2,6 +2,7 @@ import { decodeAddress, encodeAddress } from "@polkadot/keyring";
 import { hexToU8a, u8aToHex, isHex, formatBalance } from "@polkadot/util";
 import { Keyring } from "@polkadot/keyring";
 import BN from "bn.js";
+import Big from "big.js";
 // import { TypeRegistry } from "@polkadot/types";
 
 export const DOT_TO_ORIG = new BN("10000000000");
@@ -13,14 +14,11 @@ export const shortAddress = (address = "") => {
   return address;
 };
 
-export const isValidContributeDOTInput = (amount) => {
-  try {
-    new BN(Number(amount));
-    return true;
-  } catch (error) {
-    return false;
-  }
-};
+const MAX_INPUT_DOT = Number(9999999999999);
+export const isValidContributeDOTInput = (amount) => !isNaN(amount) && Number(amount) <= MAX_INPUT_DOT;
+
+export const isInsufficientBalance = (availableOrig, needDOT) =>
+  Big(availableOrig).lt(Big(Number(needDOT)).mul(DOT_TO_ORIG.toString()));
 
 export const isValidAddressPolkadotAddress = (address) => {
   try {
@@ -65,4 +63,4 @@ export const formatBalanceFromOrigToDOT = (origBalance) =>
     decimals: 10,
   });
 
-export const formatBalanceFromDOTToOrig = (dotBalance) => new BN(dotBalance).mul(DOT_TO_ORIG).toString();
+export const formatBalanceFromDOTToOrig = (dotBalance) => Big(dotBalance).mul(DOT_TO_ORIG.toString()).toString();

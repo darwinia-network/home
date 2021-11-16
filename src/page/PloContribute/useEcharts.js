@@ -42,8 +42,7 @@ export const useEcharts = (dom, dataSource) => {
       for (let i = 0; i < dataSource.data.events.nodes.length; i++) {
         const node = dataSource.data.events.nodes[i];
         const amount = new BN(JSON.parse(node.data)[2]);
-        date.push(node.timestamp.split("T")[0].replaceAll("-", "/"));
-        // date.push(node.timestamp.split('T')[1].split('.')[0].replaceAll('-', '/'));
+        date.push(node.timestamp.split("T")[0].replace(/-/g, "/"));
         data.push(i > 0 ? data[i - 1].add(amount) : amount);
       }
       setCurrentTotalContribute(data[data.length - 1]);

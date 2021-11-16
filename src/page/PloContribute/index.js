@@ -36,6 +36,7 @@ import { useApi, useCurrentBlockNumber, useBalanceAll } from "./hooks";
 import {
   DOT_TO_ORIG,
   shortAddress,
+  isInsufficientBalance,
   isValidContributeDOTInput,
   isValidAddressPolkadotAddress,
   formatBalanceFromOrigToDOT,
@@ -49,6 +50,8 @@ import { isMobile } from "../../utils";
 import { web3Enable, web3AccountsSubscribe, web3FromAddress } from "@polkadot/extension-dapp";
 import Identicon from "@polkadot/react-identicon";
 import { Keyring } from "@polkadot/keyring";
+import { stringToHex } from "@polkadot/util";
+
 import BN from "bn.js";
 import Big from "big.js";
 
@@ -61,6 +64,7 @@ const T1_BLOCK_NUMBER = 8263710;
 const RING_REWARD = 200000000;
 const KTON_REWARD = 8000;
 const BTC_THRESHOLD = 10000; // 10000 DOT
+const LOCAL_STORAGE_CURRENT_ADDRESS_KEY = stringToHex("plo current address");
 
 /**
  * PLO Contribute
@@ -89,6 +93,7 @@ const PloContribute = () => {
   const allWhoCrowdloan = useQuery(ALL_WHO_CROWDLOAN);
   const allReferCrowdloan = useQuery(ALL_REFER_CROWDLOAN);
 
+  const [insufficientBalance, setInsufficientBalance] = useState(false);
   const [contributeBtnLoading, setContributeBtnLoading] = useState(false);
   const [accounts, setAccounts] = useState([]);
   const [inputDot, setInputDot] = useState("");
@@ -101,6 +106,43 @@ const PloContribute = () => {
   const { currentBlockNumber } = useCurrentBlockNumber(api);
   const { currentTotalContribute } = useEcharts(echartsRef.current, totalContributeHistory);
   const { currentAccountBalannce } = useBalanceAll(api, currentAccount ? currentAccount.address : null);
+
+  // let myContributeHistory = [];
+  // console.log('myWhoCrowdloan', myWhoCrowdloan);
+  // if (
+  //   !myWhoCrowdloan.loading &&
+  //   !myWhoCrowdloan.error &&
+  //   myWhoCrowdloan.data &&
+  //   myWhoCrowdloan.data.crowdloanWhoStatistic &&
+  //   myWhoCrowdloan.data.crowdloanWhoStatistic.contributors &&
+  //   myWhoCrowdloan.data.crowdloanWhoStatistic.contributors.nodes &&
+  //   myWhoCrowdloan.data.crowdloanWhoStatistic.contributors.nodes.length
+  // ) {
+  //   const tmp = [];
+  //   for (let node1 of myWhoCrowdloan.data.crowdloanWhoStatistic.contributors.nodes) {
+  //     if (
+  //       node1.block &&
+  //       node1.block.extrinsics &&
+  //       node1.block.extrinsics.nodes &&
+  //       node1.block.extrinsics.nodes.length
+  //     ) {
+  //       for (let node2 of node1.block.extrinsics.nodes) {
+  //         if (node2.events && node2.events.nodes && node2.events.nodes.length) {
+  //           for (let node3 of node2.events.nodes) {
+  //             tmp.push({
+  //               number: node1.block.number,
+  //               balance: node1.balance,
+  //               timestamp: node1.timestamp,
+  //               index: node3.index,
+  //               extrinsicId: node3.extrinsicId,
+  //             });
+  //           }
+  //         }
+  //       }
+  //     }
+  //   }
+  //   myContributeHistory = tmp;
+  // }
 
   let referralsContributeHistory = [];
   if (
@@ -421,7 +463,49 @@ const PloContribute = () => {
     });
   }
 
+  useEffect(() => {
+    const address = localStorage.getItem(LOCAL_STORAGE_CURRENT_ADDRESS_KEY);
+    (async () => {
+      const extensions = await web3Enable("darwinia.network");
+      if (extensions.length === 0) {
+        // no extension installed, or the user did not accept the authorization
+        // in this case we should inform the use and give a link to the extension
+        return;
+      }
+
+      const keyring = new Keyring();
+      keyring.setSS58Format(0); // Polkadot format address
+
+      unsubscribeAccounts.current && unsubscribeAccounts.current();
+      unsubscribeAccounts.current = await web3AccountsSubscribe((allAccounts) => {
+        setAccounts(
+          allAccounts.map((account) => {
+            if (isValidAddressPolkadotAddress(account.address)) {
+              const pair = keyring.addFromAddress(account.address);
+              if (pair.address === address) {
+                setCurrentAccount({ ...account, address: pair.address });
+              }
+              return { ...account, address: pair.address };
+            } else {
+              return null;
+            }
+          })
+        );
+      });
+    })();
+
+    return () => {
+      unsubscribeAccounts.current && unsubscribeAccounts.current();
+      unsubscribeAccounts.current = null;
+    };
+  }, []);
+
   const handleClickConnectWallet = async () => {
+    if (accounts.length) {
+      setShowSelectAccountModal(true);
+      return;
+    }
+
     const extensions = await web3Enable("darwinia.network");
     if (extensions.length === 0) {
       // no extension installed, or the user did not accept the authorization
@@ -432,6 +516,7 @@ const PloContribute = () => {
     const keyring = new Keyring();
     keyring.setSS58Format(0); // Polkadot format address
 
+    unsubscribeAccounts.current && unsubscribeAccounts.current();
     unsubscribeAccounts.current = await web3AccountsSubscribe((allAccounts) => {
       setAccounts(
         allAccounts.map((account) => {
@@ -448,21 +533,20 @@ const PloContribute = () => {
     });
   };
 
-  useEffect(() => {
-    return () => {
-      unsubscribeAccounts.current && unsubscribeAccounts.current();
-      unsubscribeAccounts.current = null;
-    };
-  }, []);
-
   const handleClickSelectAccount = async (account) => {
     setShowSelectAccountModal(false);
     account && setCurrentAccount(account);
+    localStorage.setItem(LOCAL_STORAGE_CURRENT_ADDRESS_KEY, account.address);
   };
 
   const handleChangeInputDot = (e) => {
     if (isValidContributeDOTInput(e.target.value)) {
       setInputDot(e.target.value);
+      if (isInsufficientBalance(currentAccountBalannce.availableBalance, e.target.value)) {
+        setInsufficientBalance(true);
+      } else {
+        setInsufficientBalance(false);
+      }
     }
   };
 
@@ -483,10 +567,11 @@ const PloContribute = () => {
 
     if (Number(inputDot) >= 5) {
       const extrinsicContribute = api.tx.crowdloan.contribute(PARA_ID, formatBalanceFromDOTToOrig(inputDot), null);
-      const extrinsicAddMemo =
-        !myReferralCodeFromGql && isValidAddressPolkadotAddress(inputReferralCode)
-          ? api.tx.crowdloan.addMemo(PARA_ID, polkadotAddressToReferralCode(inputReferralCode))
-          : null;
+      const extrinsicAddMemo = myReferralCodeFromGql
+        ? api.tx.crowdloan.addMemo(PARA_ID, polkadotAddressToReferralCode(myReferralCodeFromGql))
+        : isValidAddressPolkadotAddress(inputReferralCode)
+        ? api.tx.crowdloan.addMemo(PARA_ID, polkadotAddressToReferralCode(inputReferralCode))
+        : null;
       const injector = await web3FromAddress(currentAccount.address);
       const tx = extrinsicAddMemo ? api.tx.utility.batch([extrinsicContribute, extrinsicAddMemo]) : extrinsicContribute;
 
@@ -501,7 +586,6 @@ const PloContribute = () => {
 
               if (method === "Contributed" && section === "crowdloan") {
                 // setContributedValue(formatKSMBalance(data[2]));
-                setShowTransactionInProgress(true);
               }
 
               if (method === "ExtrinsicSuccess" && section === "system") {
@@ -522,6 +606,7 @@ const PloContribute = () => {
             });
           }
         );
+        setShowTransactionInProgress(true);
       } catch (err) {
         console.log(err);
         notification.warning({
@@ -616,8 +701,13 @@ const PloContribute = () => {
                   </div>
                 </div>
                 <div className={cx("input-dot-tip-wrap")}>
-                  <span className={cx("min-contrbution", { warning: 0 < Number(inputDot) && Number(inputDot) < 5 })}>
-                    Min contribution: 5 DOT
+                  <span
+                    className={cx("min-contrbution", {
+                      warning:
+                        (inputDot.length && 0 <= Number(inputDot) && Number(inputDot) < 5) || insufficientBalance,
+                    })}
+                  >
+                    {insufficientBalance ? "Insufficient balance" : "Min contribution: 5 DOT"}
                   </span>
                   <span className={cx("my-available-dot")}>
                     Available: {formatBalanceFromOrigToDOT(currentAccountBalannce.availableBalance)} DOT
@@ -696,7 +786,7 @@ const PloContribute = () => {
               <button
                 className={cx("contribute-btn")}
                 onClick={handleClickContribute}
-                disabled={!currentAccount || Number(inputDot) < 5 || contributeBtnLoading}
+                disabled={!currentAccount || Number(inputDot) < 5 || contributeBtnLoading || insufficientBalance}
               >
                 <Spin spinning={contributeBtnLoading} wrapperClassName={cx("contribute-btn-spinning")}>
                   <span>{contributeBtnLoading ? "" : "Contribute"}</span>
