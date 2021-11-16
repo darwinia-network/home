@@ -104,7 +104,7 @@ query {
       user
       totalPower
       totalBalance
-      contributors {
+      contributors (orderBy: TIMESTAMP_DESC) {
         nodes {
           id
           who
@@ -113,6 +113,19 @@ query {
           powerWho
           powerRefer
           timestamp
+          block {
+            number
+            extrinsics (filter: { method: { equalTo: "batch" } })  {
+              nodes {
+                events (filter: { method: { equalTo: "Contributed" } }) {
+                  nodes {
+                    extrinsicId
+                    index
+                  }
+                }
+              }
+            }
+          }
         }
       }
     }
@@ -122,13 +135,13 @@ query {
 export const gqlCrowdloanReferStatisticByReferralCode = (referralCode) => gql`
 query {
   crowdloanReferStatistic(id: "${referralCode}") {
-      contributors {
+      contributors (orderBy: TIMESTAMP_DESC) {
         nodes {
           timestamp
           balance
           block {
             number
-            extrinsics (filter: { method: { notEqualTo: "contribute" } })  {
+            extrinsics (filter: { method: { equalTo: "batch" } })  {
               nodes {
                 events (filter: { method: { equalTo: "Contributed" } }) {
                   nodes {
