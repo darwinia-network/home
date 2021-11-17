@@ -136,6 +136,36 @@
   }
 }
 
+.heading-container-right {
+  display: flex;
+  align-items: center;
+}
+
+.heading-container-right-how-it-works-link {
+  @extend %-base-btn;
+  padding: 10px 17px;
+  margin-right: 10px;
+
+  background: linear-gradient(270deg, #ff0050 0%, #7000ff 71.44%, #0027ff 100%);
+  border-radius: 10px;
+
+  &:hover {
+    text-decoration: none;
+  }
+
+  > span {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 21px;
+
+    color: #ffffff;
+  }
+
+  @media screen and (max-width: 1024px) {
+    display: none;
+  }
+}
+
 .heading-container-current-account-wrap {
   display: flex;
   align-items: center;
