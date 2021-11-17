@@ -51,7 +51,7 @@ import project19Icon from "./img/projects/19.jpg";
 import project20Icon from "./img/projects/20.jpg";
 import project21Icon from "./img/projects/21.jpg";
 import project22Icon from "./img/projects/22.jpg";
-import project23Icon from "./img/projects/23.jpg";
+// import project23Icon from "./img/projects/23.jpg";
 
 import partner01Icon from "./img/partners/1.jpg";
 import partner02Icon from "./img/partners/2.jpg";
@@ -314,10 +314,10 @@ class Home extends Component {
         icon: project22Icon,
         link: "https://www.maplabs.io/",
       },
-      {
-        icon: project23Icon,
-        link: "https://paralink.network/",
-      },
+      // {
+      //   icon: project23Icon,
+      //   link: "https://paralink.network/",
+      // },
     ];
 
     this.partnersData = [
