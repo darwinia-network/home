@@ -1251,7 +1251,7 @@ const PloContribute = () => {
                 referralLeaderboradData.map((data, index) => (
                   <div className={cx("referral-leaderboard-item")} key={index}>
                     <div className={cx("referral-leaderboard-item-rank")}>
-                      <div className={cx({ rank: index < 5, rank2: 5 <= index && index < 100, rank3: 100 <= index })}>
+                      <div className={cx({ rank: index < 5, rank2: 5 <= index && index < 99, rank3: 99 <= index })}>
                         <span>{index + 1}</span>
                       </div>
                     </div>
