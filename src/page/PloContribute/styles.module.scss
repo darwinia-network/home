@@ -268,6 +268,7 @@
   @media screen and (max-width: 1024px) {
     margin-right: 0;
     padding: 20px;
+    width: 100%;
     border-radius: 20px;
   }
 }
@@ -795,6 +796,15 @@
   }
 }
 
+.my-contribute-container-current-account-wrap {
+  display: flex;
+  align-items: center;
+
+  @media screen and (max-width: 768px) {
+    display: none;
+  }
+}
+
 .my-contribute-connect-wallet-btn {
   @extend %-base-btn;
   background: linear-gradient(270deg, #ff0050 0%, #7000ff 71.44%, #0027ff 100%);
@@ -807,6 +817,10 @@
     font-size: 16px;
     line-height: 21px;
     color: #ffffff;
+  }
+
+  @media screen and (max-width: 768px) {
+    display: none;
   }
 
   @media screen and (max-width: 1024px) {
