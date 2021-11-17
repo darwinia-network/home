@@ -47,7 +47,7 @@ import {
 import { isMobile } from "../../utils";
 
 // Polkadot
-import { web3Enable, web3AccountsSubscribe, web3FromAddress } from "@polkadot/extension-dapp";
+import { web3Enable, web3AccountsSubscribe, web3FromAddress, web3Accounts } from "@polkadot/extension-dapp";
 import Identicon from "@polkadot/react-identicon";
 import { Keyring } from "@polkadot/keyring";
 import { stringToHex } from "@polkadot/util";
@@ -240,7 +240,7 @@ const PloContribute = () => {
           address: referralCodeToPolkadotAddress(node.user),
           referrals: node.contributors.nodes.length,
           accumulatedContribution: node.totalBalance,
-          refferalRewards: {
+          referralRewards: {
             ring: contributePer.mul(RING_REWARD),
             kton: contributePer.mul(KTON_REWARD),
           },
@@ -476,8 +476,8 @@ const PloContribute = () => {
       const keyring = new Keyring();
       keyring.setSS58Format(0); // Polkadot format address
 
-      unsubscribeAccounts.current && unsubscribeAccounts.current();
-      unsubscribeAccounts.current = await web3AccountsSubscribe((allAccounts) => {
+      if (isMobile()) {
+        const allAccounts = await web3Accounts();
         setAccounts(
           allAccounts.map((account) => {
             if (isValidAddressPolkadotAddress(account.address)) {
@@ -491,7 +491,24 @@ const PloContribute = () => {
             }
           })
         );
-      });
+      } else {
+        unsubscribeAccounts.current && unsubscribeAccounts.current();
+        unsubscribeAccounts.current = await web3AccountsSubscribe((allAccounts) => {
+          setAccounts(
+            allAccounts.map((account) => {
+              if (isValidAddressPolkadotAddress(account.address)) {
+                const pair = keyring.addFromAddress(account.address);
+                if (pair.address === address) {
+                  setCurrentAccount({ ...account, address: pair.address });
+                }
+                return { ...account, address: pair.address };
+              } else {
+                return null;
+              }
+            })
+          );
+        });
+      }
     })();
 
     return () => {
@@ -516,8 +533,8 @@ const PloContribute = () => {
     const keyring = new Keyring();
     keyring.setSS58Format(0); // Polkadot format address
 
-    unsubscribeAccounts.current && unsubscribeAccounts.current();
-    unsubscribeAccounts.current = await web3AccountsSubscribe((allAccounts) => {
+    if (isMobile()) {
+      const allAccounts = await web3Accounts();
       setAccounts(
         allAccounts.map((account) => {
           if (isValidAddressPolkadotAddress(account.address)) {
@@ -528,9 +545,24 @@ const PloContribute = () => {
           }
         })
       );
-
       setShowSelectAccountModal(true);
-    });
+    } else {
+      unsubscribeAccounts.current && unsubscribeAccounts.current();
+      unsubscribeAccounts.current = await web3AccountsSubscribe((allAccounts) => {
+        setAccounts(
+          allAccounts.map((account) => {
+            if (isValidAddressPolkadotAddress(account.address)) {
+              const pair = keyring.addFromAddress(account.address);
+              return { ...account, address: pair.address };
+            } else {
+              return null;
+            }
+          })
+        );
+
+        setShowSelectAccountModal(true);
+      });
+    }
   };
 
   const handleClickSelectAccount = async (account) => {
@@ -1196,7 +1228,7 @@ const PloContribute = () => {
                 <span className={cx("referral-leaderboard-item-address")}>Address</span>
                 <span className={cx("referral-leaderboard-item-referrals")}>Referrals</span>
                 <span className={cx("referral-leaderboard-item-accumulated")}>Accumulated Contribution</span>
-                <span className={cx("referral-leaderboard-item-rewards")}>Refferal Rewards</span>
+                <span className={cx("referral-leaderboard-item-rewards")}>Referral Rewards</span>
               </div>
 
               {referralLeaderboradData.length ? (
@@ -1221,8 +1253,8 @@ const PloContribute = () => {
                       {formatBalanceFromOrigToDOT(data.accumulatedContribution)} DOT
                     </span>
                     <div className={cx("referral-leaderboard-item-rewards")}>
-                      <span>{data.refferalRewards.ring.toFixed(2)} RING</span>
-                      <span>{data.refferalRewards.kton.toFixed(2)} KTON</span>
+                      <span>{data.referralRewards.ring.toFixed(2)} RING</span>
+                      <span>{data.referralRewards.kton.toFixed(2)} KTON</span>
                     </div>
                   </div>
                 ))
