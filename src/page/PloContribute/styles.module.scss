@@ -117,7 +117,8 @@
   width: 69px;
   height: 35px;
 
-  display: flex;
+  // display: flex;
+  display: none;
   justify-content: center;
   align-items: center;
 
@@ -130,6 +131,21 @@
     line-height: 23px;
     color: #ffffff;
   }
+
+  @media screen and (max-width: 1024px) {
+    display: none;
+  }
+}
+
+.heading-container-right {
+  display: flex;
+  align-items: center;
+}
+
+.heading-container-right-how-it-works-link {
+  @extend %-base-p;
+  margin-right: 20px;
+  color: #6604ff;
 
   @media screen and (max-width: 1024px) {
     display: none;

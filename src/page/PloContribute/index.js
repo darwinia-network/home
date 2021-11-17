@@ -690,24 +690,34 @@ const PloContribute = () => {
               </div>
             </div>
 
-            {currentAccount ? (
-              <div className={cx("heading-container-current-account-wrap")}>
-                <div className={cx("heading-container-current-account")}>
-                  <span>{shortAddress(currentAccount.address)}</span>
-                  <Identicon value={currentAccount.address} size={isMobile() ? 15 : 30} theme="polkadot" />
+            <div className={cx("heading-container-right")}>
+              <a
+                rel="noopener noreferrer"
+                target="_blank"
+                href="https://darwinianetwork.medium.com/guide-to-participate-in-the-darwinia-plo-e14b1718787f"
+                className={cx("heading-container-right-how-it-works-link")}
+              >
+                <span>How it works</span>
+              </a>
+              {currentAccount ? (
+                <div className={cx("heading-container-current-account-wrap")}>
+                  <div className={cx("heading-container-current-account")}>
+                    <span>{shortAddress(currentAccount.address)}</span>
+                    <Identicon value={currentAccount.address} size={isMobile() ? 15 : 30} theme="polkadot" />
+                  </div>
+                  <button
+                    className={cx("heading-container-change-account")}
+                    onClick={() => setShowSelectAccountModal(true)}
+                  >
+                    <span>Change</span>
+                  </button>
                 </div>
-                <button
-                  className={cx("heading-container-change-account")}
-                  onClick={() => setShowSelectAccountModal(true)}
-                >
-                  <span>Change</span>
+              ) : (
+                <button className={cx("heading-container-connnect-wallet-btn")} onClick={handleClickConnectWallet}>
+                  <span>Connect Wallet</span>
                 </button>
-              </div>
-            ) : (
-              <button className={cx("heading-container-connnect-wallet-btn")} onClick={handleClickConnectWallet}>
-                <span>Connect Wallet</span>
-              </button>
-            )}
+              )}
+            </div>
           </div>
         </Fade>
 
