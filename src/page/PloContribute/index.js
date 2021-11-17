@@ -888,11 +888,14 @@ const PloContribute = () => {
                     rel="noopener noreferrer"
                     className={cx("my-referral-link-content", "link")}
                     code={false}
-                    copyable={{ icon: <img alt="..." src={copyIcon} style={{ width: "16px" }} /> }}
+                    copyable={{
+                      icon: <img alt="..." src={copyIcon} style={{ width: "16px" }} />,
+                      text: `${window.location.origin}/plo_contribute?referral=${currentAccount.address}`,
+                    }}
                     target="_blank"
                     href={`/plo_contribute?referral=${currentAccount.address}`}
                   >
-                    {`https://darwinia.network/plo_contribute?referral=${
+                    {`${window.location.origin}/plo_contribute?referral=${
                       isMobile() ? shortAddress(currentAccount.address) : currentAccount.address
                     }`}
                   </Typography.Link>
