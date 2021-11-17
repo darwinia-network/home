@@ -888,11 +888,16 @@ const PloContribute = () => {
                     rel="noopener noreferrer"
                     className={cx("my-referral-link-content", "link")}
                     code={false}
-                    copyable={{ icon: <img alt="..." src={copyIcon} style={{ width: "16px" }} /> }}
+                    copyable={{
+                      icon: <img alt="..." src={copyIcon} style={{ width: "16px" }} />,
+                      text: `${window.location.origin}/plo_contribute?referral=${currentAccount.address}`,
+                    }}
                     target="_blank"
                     href={`/plo_contribute?referral=${currentAccount.address}`}
                   >
-                    {`https://darwinia.network/plo_contribute?referral=${currentAccount.address}`}
+                    {`${window.location.origin}/plo_contribute?referral=${
+                      isMobile() ? shortAddress(currentAccount.address) : currentAccount.address
+                    }`}
                   </Typography.Link>
                 ) : (
                   <span className={cx("my-referral-link-content")}>
@@ -916,8 +921,9 @@ const PloContribute = () => {
                   result shall prevail.
                 </span>
               </div>
+              <div></div>
               {currentAccount ? (
-                <div className={cx("heading-container-current-account-wrap")}>
+                <div className={cx("my-contribute-container-current-account-wrap")}>
                   <div className={cx("heading-container-current-account")}>
                     <span>{shortAddress(currentAccount.address)}</span>
                     <Identicon value={currentAccount.address} size={isMobile() ? 15 : 30} theme="polkadot" />
@@ -1245,7 +1251,7 @@ const PloContribute = () => {
                 referralLeaderboradData.map((data, index) => (
                   <div className={cx("referral-leaderboard-item")} key={index}>
                     <div className={cx("referral-leaderboard-item-rank")}>
-                      <div className={cx({ rank: index < 5, rank2: 5 <= index && index < 100, rank3: 100 <= index })}>
+                      <div className={cx({ rank: index < 5, rank2: 5 <= index && index < 99, rank3: 99 <= index })}>
                         <span>{index + 1}</span>
                       </div>
                     </div>
