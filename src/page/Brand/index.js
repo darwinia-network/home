@@ -13,7 +13,7 @@ import downloadBtn from "./img/download.png";
 import darwiniaLogoWithText from "./img/logo_text.png";
 import darwiniaLogo from "./img/logo.png";
 import ring from "./img/ring.png";
-import cring from "./img/cring.png";
+import crab from "./img/crab.png";
 import kton from "./img/kton.png";
 import ckton from "./img/ckton.png";
 
@@ -101,8 +101,8 @@ class Brand extends Component {
                 </Col>
                 <Col xs={3}>
                   <div className={styles.logoItem}>
-                    <span>{t("brand:cring")}</span>
-                    <img className={styles.ring} alt="cring" src={cring}></img>
+                    <span>{t("brand:crab")}</span>
+                    <img className={styles.ring} alt="crab" src={crab}></img>
                   </div>
                 </Col>
                 <Col xs={3}>
