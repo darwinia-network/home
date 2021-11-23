@@ -181,9 +181,9 @@ export const ALL_WHO_CROWDLOAN = gql`
   }
 `;
 
-export const ALL_REFER_CROWDLOAN = gql`
+export const LIMITED_REFER_CROWDLOAN = gql`
   query {
-    crowdloanReferStatistics(orderBy: TOTAL_BALANCE_DESC) {
+    crowdloanReferStatistics(orderBy: TOTAL_BALANCE_DESC, first: 20) {
       nodes {
         user
         totalPower
@@ -193,6 +193,17 @@ export const ALL_REFER_CROWDLOAN = gql`
             id
           }
         }
+      }
+    }
+  }
+`;
+
+export const ALL_REFER_CROWDLOAN = gql`
+  query {
+    crowdloanReferStatistics(orderBy: TOTAL_BALANCE_DESC) {
+      nodes {
+        user
+        totalPower
       }
     }
   }
