@@ -5,6 +5,9 @@ import BN from "bn.js";
 import Big from "big.js";
 // import { TypeRegistry } from "@polkadot/types";
 
+export const RING_REWARD = 200000000;
+export const KTON_REWARD = 8000;
+export const BTC_THRESHOLD = 10000; // 10000 DOT
 export const DOT_TO_ORIG = new BN("10000000000");
 
 export const shortAddress = (address = "") => {
