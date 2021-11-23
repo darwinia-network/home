@@ -87,7 +87,7 @@ query {
 
 export const CONTRIBUTE_PIONEERS = gql`
   query {
-    accounts(orderBy: CONTRIBUTED_TOTAL_DESC) {
+    accounts(orderBy: CONTRIBUTED_TOTAL_DESC, first: 10) {
       nodes {
         id
         transferTotalCount
@@ -158,13 +158,24 @@ query {
 }
 `;
 
-export const ALL_WHO_CROWDLOAN = gql`
+export const gqlWhocrowdloanByOffset = (offset) => gql`
   query {
-    crowdloanWhoStatistics(orderBy: TOTAL_BALANCE_DESC) {
+    crowdloanWhoStatistics(orderBy: TOTAL_BALANCE_DESC, first: 10, offset: ${offset}) {
+      totalCount
       nodes {
         user
         totalPower
         totalBalance
+      }
+    }
+  }
+`;
+
+export const ALL_WHO_CROWDLOAN = gql`
+  query {
+    crowdloanWhoStatistics(orderBy: TOTAL_BALANCE_DESC) {
+      nodes {
+        totalPower
       }
     }
   }

@@ -3,7 +3,7 @@ import styles from "./styles.module.scss";
 import classNames from "classnames/bind";
 import { Container } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import { Tooltip, Table, Modal, Typography, Spin, message, notification } from "antd";
+import { Tooltip, Modal, Typography, Spin, message, notification } from "antd";
 import Fade from "react-reveal/Fade";
 
 import darwiniaLogo from "./img/logo-darwinia.png";
@@ -43,6 +43,9 @@ import {
   formatBalanceFromDOTToOrig,
   polkadotAddressToReferralCode,
   referralCodeToPolkadotAddress,
+  RING_REWARD,
+  KTON_REWARD,
+  BTC_THRESHOLD,
 } from "./utils";
 import { isMobile } from "../../utils";
 
@@ -56,14 +59,12 @@ import BN from "bn.js";
 import Big from "big.js";
 
 import { useQuery } from "@apollo/client";
+import GlobalContributionActivity from "./components/global-contribution-activity";
 
 const cx = classNames.bind(styles);
 
 const PARA_ID = 2003;
 const T1_BLOCK_NUMBER = 8263710;
-const RING_REWARD = 200000000;
-const KTON_REWARD = 8000;
-const BTC_THRESHOLD = 10000; // 10000 DOT
 const LOCAL_STORAGE_CURRENT_ADDRESS_KEY = stringToHex("plo current address");
 
 /**
@@ -181,7 +182,6 @@ const PloContribute = () => {
   }
 
   let globalTotalPower = new BN("1000000").mul(DOT_TO_ORIG);
-  const allWhoContributeData = [];
   const allReferContributeData = [];
   if (!allWhoCrowdloan.loading && !allWhoCrowdloan.error && !allReferCrowdloan.loading && !allReferCrowdloan.error) {
     let totalPowerTmp = new BN(0);
@@ -194,12 +194,6 @@ const PloContribute = () => {
     ) {
       allWhoCrowdloan.data.crowdloanWhoStatistics.nodes.forEach((node) => {
         totalPowerTmp = totalPowerTmp.add(new BN(node.totalPower));
-
-        allWhoContributeData.push({
-          user: node.user,
-          totalPower: node.totalPower,
-          totalBalance: node.totalBalance,
-        });
       });
     }
 
@@ -368,99 +362,6 @@ const PloContribute = () => {
     if (!top5contribute.isZero() && !myContribute.isZero() && myContribute.gte(DOT_TO_ORIG.muln(BTC_THRESHOLD))) {
       myBtcReward = Big(myContribute.toString()).div(top5contribute.toString()).toFixed(8);
     }
-  }
-
-  const globalContributeColumns = [
-    {
-      title: "Address",
-      dataIndex: "address",
-      key: "address",
-      align: "left",
-      width: "17%",
-      render: (text) => (
-        <a
-          className={cx("global-contribute-address")}
-          target="_blank"
-          rel="noopener noreferrer"
-          href={`https://polkadot.subscan.io/account/${text}`}
-        >
-          {shortAddress(text)}
-        </a>
-      ),
-    },
-    {
-      title: "Contributed DOT",
-      dataIndex: "myDot",
-      key: "myDot",
-      align: "center",
-    },
-    {
-      title: "Referrals",
-      dataIndex: "referrals",
-      key: "referrals",
-      align: "center",
-    },
-    {
-      title: `Referrer's Contributed DOT`,
-      dataIndex: "referralDot",
-      key: "referralDot",
-      align: "center",
-    },
-    {
-      title: "Current RING Rewards",
-      dataIndex: "curRingRewards",
-      key: "curRingRewards",
-      align: "center",
-    },
-    {
-      title: "Current KTON Rewards",
-      dataIndex: "curKtonRewards",
-      key: "curKtonRewards",
-      align: "center",
-    },
-    {
-      title: "Current BTC Rewards",
-      dataIndex: "curBtcRewards",
-      key: "curBtcRewards",
-      align: "center",
-    },
-    {
-      title: "Metaverse NFT Package",
-      dataIndex: "curNft",
-      key: "curNft",
-      align: "center",
-    },
-  ];
-
-  const globalContributeDataSource = [];
-  for (let i = 0; i < allWhoContributeData.length; i++) {
-    const nodeWho = allWhoContributeData[i];
-    const nodeRefer = allReferContributeData.find((node) => node.user === nodeWho.user);
-
-    const nodeWhoTotalBalanceBN = new BN(nodeWho.totalBalance);
-    const contributePer = Big(nodeWho.totalPower).div(globalTotalPower.toString());
-
-    let btcR = 0;
-    if (
-      i < 5 &&
-      nodeWhoTotalBalanceBN.gte(DOT_TO_ORIG.muln(BTC_THRESHOLD)) &&
-      !top5contribute.isZero() &&
-      top5contribute.div(nodeWhoTotalBalanceBN).lt(DOT_TO_ORIG)
-    ) {
-      btcR = Big(nodeWhoTotalBalanceBN.toString()).div(top5contribute.toString()).toFixed(8);
-    }
-
-    globalContributeDataSource.push({
-      key: i,
-      address: nodeWho.user,
-      myDot: formatBalanceFromOrigToDOT(nodeWho.totalBalance),
-      referrals: nodeRefer ? nodeRefer.contributorsCount : 0,
-      referralDot: nodeRefer ? formatBalanceFromOrigToDOT(nodeRefer.totalBalance) : 0,
-      curRingRewards: contributePer.mul(RING_REWARD).toFixed(8),
-      curKtonRewards: contributePer.mul(KTON_REWARD).toFixed(8),
-      curBtcRewards: btcR,
-      curNft: "No Status",
-    });
   }
 
   useEffect(() => {
@@ -1281,19 +1182,11 @@ const PloContribute = () => {
           </div>
         </Fade>
 
-        {/* Global Contribution Activity */}
-        <Fade bottom fraction={0.1} duration={1000} distance={"50px"}>
-          <Table
-            className={cx("global-contribute")}
-            columns={globalContributeColumns}
-            dataSource={globalContributeDataSource}
-            title={() => "Global Contribution Activity"}
-            pagination={{
-              size: "small",
-              showSizeChanger: false,
-            }}
-          />
-        </Fade>
+        <GlobalContributionActivity
+          allReferContributeData={allReferContributeData}
+          globalTotalPower={globalTotalPower}
+          top5contribute={top5contribute}
+        />
 
         <Fade bottom fraction={0.1} duration={1000} distance={"50px"}>
           <p className={cx("all-right")}>Copyright@2021 Darwinia Network</p>
