@@ -61,6 +61,7 @@ import Big from "big.js";
 import { useQuery } from "@apollo/client";
 import GlobalContributionActivity from "./components/global-contribution-activity";
 import ReferralLeaderboard from "./components/referral-leaderboard";
+import ConnectionFailedModal from "./components/connection-failed-modal";
 
 const cx = classNames.bind(styles);
 
@@ -103,6 +104,7 @@ const PloContribute = () => {
   const [showTransactionInProgress, setShowTransactionInProgress] = useState(false);
   const [showSelectAccountModal, setShowSelectAccountModal] = useState(false);
   const [showThanksForSupportModal, setShowThanksForSupportModal] = useState(false);
+  const [showConnectionFailedModal, setShowConnectionFailedModal] = useState(false);
 
   const { api } = useApi();
   const { currentBlockNumber } = useCurrentBlockNumber(api);
@@ -401,6 +403,7 @@ const PloContribute = () => {
     if (extensions.length === 0) {
       // no extension installed, or the user did not accept the authorization
       // in this case we should inform the use and give a link to the extension
+      setShowConnectionFailedModal(true);
       return;
     }
 
@@ -699,15 +702,23 @@ const PloContribute = () => {
                 </div>
               </div>
 
-              <button
-                className={cx("contribute-btn")}
-                onClick={handleClickContribute}
-                disabled={!currentAccount || Number(inputDot) < 5 || contributeBtnLoading || insufficientBalance}
-              >
-                <Spin spinning={contributeBtnLoading} wrapperClassName={cx("contribute-btn-spinning")}>
-                  <span>{contributeBtnLoading ? "" : "Contribute"}</span>
-                </Spin>
-              </button>
+              <div className={cx("contribute-btn-container")}>
+                {currentAccount ? (
+                  <button
+                    className={cx("contribute-btn")}
+                    onClick={handleClickContribute}
+                    disabled={!currentAccount || Number(inputDot) < 5 || contributeBtnLoading || insufficientBalance}
+                  >
+                    <Spin spinning={contributeBtnLoading} wrapperClassName={cx("contribute-btn-spinning")}>
+                      <span>{contributeBtnLoading ? "" : "Contribute"}</span>
+                    </Spin>
+                  </button>
+                ) : (
+                  <button className={cx("my-contribute-connect-wallet-btn")} onClick={handleClickConnectWallet}>
+                    <span>Connect Wallet</span>
+                  </button>
+                )}
+              </div>
             </div>
 
             <div className={cx("crowloan-referral")}>
@@ -1215,6 +1226,11 @@ const PloContribute = () => {
           </div>
         </div>
       </Modal>
+
+      <ConnectionFailedModal
+        showConnectionFailedModal={showConnectionFailedModal}
+        onCancel={() => setShowConnectionFailedModal(false)}
+      />
     </div>
   );
 };
