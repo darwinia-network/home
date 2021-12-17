@@ -331,7 +331,10 @@ const PloContribute = () => {
       if (currentAccount && currentAccount.address === node.id) {
         myContribute = nodeContributedTotalBN;
       }
-      top5contribute = top5contribute.add(nodeContributedTotalBN);
+
+      if (nodeContributedTotalBN.gte(DOT_TO_ORIG.muln(BTC_THRESHOLD))) {
+        top5contribute = top5contribute.add(nodeContributedTotalBN);
+      }
     }
 
     if (!top5contribute.isZero() && !myContribute.isZero() && myContribute.gte(DOT_TO_ORIG.muln(BTC_THRESHOLD))) {
