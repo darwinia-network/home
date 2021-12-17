@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 
 import Header from "./Header";
 import Welcome from "./Welcome";
+import Channels from "./Channels";
 import Crowloan from "./Crowloan";
 import Auction from "./Auction";
 import Work from "./Work";
@@ -36,6 +37,10 @@ const PloPage = () => {
 
       <Fade bottom fraction={0.2} duration={1500} distance={"50px"}>
         <Welcome />
+      </Fade>
+
+      <Fade bottom fraction={0.2} duration={1600} distance={"50px"}>
+        <Channels />
       </Fade>
 
       <Fade bottom fraction={0.2} duration={1600} distance={"50px"}>
