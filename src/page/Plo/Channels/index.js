@@ -25,7 +25,7 @@ const Icons = ({ icon, name, url, unique = false }) => {
       rel="noopener noreferrer"
     >
       <img src={icon} alt={name} className={cx("icon")} />
-      <span className={"name"}>{name}</span>
+      <span>{name}</span>
     </a>
   );
 };
