@@ -1,87 +1,39 @@
 import { gql } from "@apollo/client";
 
-export const gqlContributesByParaId = (paraId) => gql`
-  query {
-    events(filter: { method: { equalTo: "Contributed" }, and: { data: { includes: ",${paraId}," } } }) {
+export const CONTRIBUTES_BY_PARA_ID = gql`
+  query CrowdloanContributeds($paraId: Int!) {
+    crowdloanContributeds(filter: { paraId: { equalTo: $paraId } }) {
       totalCount
       nodes {
         timestamp
-        data
+        balance
       }
     }
   }
 `;
 
-export const gqlSomeOneContributesByAddressAndParaId = (address, paraId) =>
-  gql`
-query {
-  extrinsics(
-    filter: {
-      signerId: { equalTo: "${address}" }
-    }
-  ) {
+export const CONTRIBUTES_BY_ADDRESS_PARA_ID = gql`
+query CrowdloanContributeds ($paraId: Int!, $address: String!) {
+  crowdloanContributeds(filter: { paraId: { equalTo : $paraId }, and: { refer : { equalTo : $address } } }) {
     totalCount
     nodes {
-      events(
-        filter:{
-          method:{equalTo: "Contributed"}
-          and: {
-            data: {
-              includes: ",${paraId},"
-            }
-          }
-        }) {
-        nodes {
-          id
-          extrinsicId
-          timestamp
-          data
-        }
-      }
+      id
+      timestamp
+      extrinsicId
+      balance
     }
   }
 }
 `;
 
-export const gqlReferralsOfSomeOneByAddressAndParaId = (referralCode, paraId) =>
-  gql`
-query {
-  events(
-   filter:{
-     method:{ equalTo:"MemoUpdated"}
-     and: {
-       data: {
-         includes: ",${paraId},\\"${referralCode}\\""
-       }
-     }
-   }
- ){
-     totalCount
-     nodes {
-       data
-     }
-   }
- }
-`;
-
-export const gqlGetReferralCodeOfSomeOneByAddressAndParaId = (address, paraId) =>
-  gql`
-query {
-  events(
-   filter:{
-     method:{ equalTo:"MemoUpdated"}
-     and: {
-       data: {
-         includes: "\\"${address}\\",${paraId},"
-       }
-     }
-   }
- ){
-     totalCount
-     nodes {
-       data
-     }
-   }
+export const REFERRAL_CODE_BY_ADDRESS_PARA_ID = gql`
+query CrowdloanMemos($paraId: Int!, $address: String!) {
+  crowdloanMemos(filter: { paraId: { equalTo: $paraId }, and: { who: { equalTo: $address } }}) {
+    totalCount
+    nodes {
+      memo
+    }
+  }
  }
 `;
 
@@ -90,7 +42,6 @@ export const CONTRIBUTE_PIONEERS = gql`
     accounts(orderBy: CONTRIBUTED_TOTAL_DESC, first: 10) {
       nodes {
         id
-        transferTotalCount
         contributedTotalCount
         contributedTotal
       }
@@ -106,26 +57,7 @@ query {
       totalBalance
       contributors (orderBy: TIMESTAMP_DESC) {
         nodes {
-          id
-          who
-          refer
           balance
-          powerWho
-          powerRefer
-          timestamp
-          block {
-            number
-            extrinsics (filter: { method: { equalTo: "batch" } })  {
-              nodes {
-                events (filter: { method: { equalTo: "Contributed" } }) {
-                  nodes {
-                    extrinsicId
-                    index
-                  }
-                }
-              }
-            }
-          }
         }
       }
     }
@@ -137,21 +69,11 @@ query {
   crowdloanReferStatistic(id: "${referralCode}") {
       contributors (orderBy: TIMESTAMP_DESC) {
         nodes {
+          id
+          extrinsicId
           timestamp
           balance
-          block {
-            number
-            extrinsics (filter: { method: { equalTo: "batch" } })  {
-              nodes {
-                events (filter: { method: { equalTo: "Contributed" } }) {
-                  nodes {
-                    extrinsicId
-                    index
-                  }
-                }
-              }
-            }
-          }
+          block
         }
       }
     }
