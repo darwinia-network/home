@@ -34,14 +34,14 @@ export const useEcharts = (dom, dataSource) => {
       dom &&
       !dataSource.error &&
       !dataSource.loading &&
-      dataSource.data.events.nodes &&
-      dataSource.data.events.nodes.length
+      dataSource.data.crowdloanContributeds.nodes &&
+      dataSource.data.crowdloanContributeds.nodes.length
     ) {
       const date = [];
       const data = [];
-      for (let i = 0; i < dataSource.data.events.nodes.length; i++) {
-        const node = dataSource.data.events.nodes[i];
-        const amount = new BN(JSON.parse(node.data)[2]);
+      for (let i = 0; i < dataSource.data.crowdloanContributeds.nodes.length; i++) {
+        const node = dataSource.data.crowdloanContributeds.nodes[i];
+        const amount = new BN(node.balance);
         date.push(node.timestamp.split("T")[0].replace(/-/g, "/"));
         data.push(i > 0 ? data[i - 1].add(amount) : amount);
       }
