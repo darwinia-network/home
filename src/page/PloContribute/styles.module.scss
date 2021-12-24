@@ -1,3 +1,5 @@
+$main-bg: linear-gradient(270deg, #ff0050 0%, #7000ff 71.44%, #0027ff 100%);
+
 .main {
   background-image: url("./img/bg.png");
   background-repeat: repeat;
@@ -1707,7 +1709,7 @@
 
 .claim-reward-btn {
   @extend %-base-btn;
-  background: #cccccc;
+  background: $main-bg;
   border-radius: 10px;
   padding: 6px 14px;
   margin-top: 8px;
@@ -1718,12 +1720,12 @@
   }
 
   &:disabled {
-    filter: grayscale(100%);
+    background: #ccc;
   }
 
   > span {
     @extend %-base-p;
-    color: #555555;
+    color: #fff;
   }
 
   &.space {
@@ -1745,5 +1747,41 @@
   text-align: center;
   margin: 0 {
     top: 30px;
+  }
+}
+
+.btc-reward-modal {
+  :global {
+    .ant-modal-content {
+      background: #ffffff;
+      box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
+    }
+
+    .ant-modal-close {
+      top: 0px;
+      left: calc(100% - 60px);
+    }
+
+    .ant-modal-body {
+      padding-bottom: 12px;
+
+      .form-group {
+        padding-left: 24px;
+      }
+    }
+
+    .ant-modal-close-x {
+      > img {
+        width: 36px;
+      }
+    }
+
+    .submit-btn {
+      background: $main-bg;
+      width: 100%;
+      border-radius: 10px;
+      outline: none;
+    }
   }
 }

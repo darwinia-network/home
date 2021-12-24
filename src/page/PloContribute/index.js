@@ -1,4 +1,4 @@
-import React, { useRef, useEffect, useState } from "react";
+import React, { useRef, useEffect, useState, useMemo } from "react";
 import styles from "./styles.module.scss";
 import classNames from "classnames/bind";
 import { Container } from "react-bootstrap";
@@ -18,6 +18,7 @@ import twitterIcon from "./img/twitter.png";
 import mediumIcon from "./img/medium.png";
 import telegramIcon from "./img/telegram.png";
 import discordIcon from "./img/discord.png";
+import BTCReward from "./components/btc-reward";
 
 import {
   CONTRIBUTES_BY_PARA_ID,
@@ -45,7 +46,6 @@ import {
   referralCodeToPolkadotAddress,
   RING_REWARD,
   KTON_REWARD,
-  BTC_THRESHOLD,
 } from "./utils";
 import { isMobile } from "../../utils";
 
@@ -62,6 +62,7 @@ import { useQuery } from "@apollo/client";
 import GlobalContributionActivity from "./components/global-contribution-activity";
 import ReferralLeaderboard from "./components/referral-leaderboard";
 import ConnectionFailedModal from "./components/connection-failed-modal";
+import btcTop5 from './top5.json';
 
 const cx = classNames.bind(styles);
 
@@ -124,7 +125,7 @@ const PloContribute = () => {
     const tmp = [];
     for (let node1 of myReferCrwonloan.data.crowdloanReferStatistic.contributors.nodes) {
       const { block: { number }, extrinsicId, timestamp, balance, id } = node1;
-      
+
       tmp.push({
         number,
         balance,
@@ -132,26 +133,6 @@ const PloContribute = () => {
         extrinsicId,
         index: id.split('-')[1]
       })
-      // if (
-      //   node1.block &&
-      //   node1.block.extrinsics &&
-      //   node1.block.extrinsics.nodes &&
-      //   node1.block.extrinsics.nodes.length
-      // ) {
-      //   for (let node2 of node1.block.extrinsics.nodes) {
-      //     if (node2.events && node2.events.nodes && node2.events.nodes.length) {
-      //       for (let node3 of node2.events.nodes) {
-      //         tmp.push({
-      //           number: node1.block.number,
-      //           balance: node1.balance,
-      //           timestamp: node1.timestamp,
-      //           index: node3.index,
-      //           extrinsicId: node3.extrinsicId,
-      //         });
-      //       }
-      //     }
-      //   }
-      // }
     }
     referralsContributeHistory = tmp;
   }
@@ -283,36 +264,8 @@ const PloContribute = () => {
   }
   const myContributePer = Big(myTotalContribute.toString()).div(globalTotalPower.toString());
 
-  let myBtcReward = 0;
-  let top5contribute = new BN(0);
-  if (
-    contributePionners.data &&
-    contributePionners.data.accounts &&
-    contributePionners.data.accounts.nodes &&
-    contributePionners.data.accounts.nodes.length
-  ) {
-    top5contribute = new BN(0);
-    let myContribute = new BN(0);
-
-    for (let i = 0; i < contributePionners.data.accounts.nodes.length; i++) {
-      if (i > 4) {
-        break;
-      }
-      const node = contributePionners.data.accounts.nodes[i];
-      const nodeContributedTotalBN = new BN(node.contributedTotal);
-      if (currentAccount && currentAccount.address === node.id) {
-        myContribute = nodeContributedTotalBN;
-      }
-
-      if (nodeContributedTotalBN.gte(DOT_TO_ORIG.muln(BTC_THRESHOLD))) {
-        top5contribute = top5contribute.add(nodeContributedTotalBN);
-      }
-    }
-
-    if (!top5contribute.isZero() && !myContribute.isZero() && myContribute.gte(DOT_TO_ORIG.muln(BTC_THRESHOLD))) {
-      myBtcReward = Big(myContribute.toString()).div(top5contribute.toString()).toFixed(8);
-    }
-  }
+  // let myBtcReward = 0;
+  const top5contribute = useMemo(() => btcTop5.reduce((acc, cur) => acc.add(new BN(cur.amount)), new BN(0)), []);
 
   useEffect(() => {
     const address = localStorage.getItem(LOCAL_STORAGE_CURRENT_ADDRESS_KEY);
@@ -857,40 +810,7 @@ const PloContribute = () => {
                 </button>
               </div>
 
-              <div className={cx("contribute-info-item")}>
-                <div className={cx("contribute-info-item-title-wrap")}>
-                  <span className={cx("contribute-info-item-title")}>BTC Rewards</span>
-                  <Tooltip
-                    overlayClassName="tooltip-overlay"
-                    overlayInnerStyle={{ padding: "20px", paddingBottom: "10px" }}
-                    color="white"
-                    placement="rightTop"
-                    trigger={["click", "hover"]}
-                    title={
-                      <p className={cx("tips")}>
-                        BTC rewards are dynamic.
-                        <br />
-                        <br />
-                        At the beginning of the second round auction, supporters who have contributed more than 10,000
-                        DOT and the top 5 people (exclude the Exchange address) ranking will distribute 1 BTC in
-                        proportion to their contribution.
-                        <br />
-                        <br />1 BTC will be released immediately after the second round auction starts regardless of
-                        whether Darwinia Network wins the slot auction or not.
-                      </p>
-                    }
-                  >
-                    <img alt="..." src={infoIcon} className={cx("info-icon")} />
-                  </Tooltip>
-                </div>
-                <div className={cx("current-tag")}>
-                  <span>Current</span>
-                </div>
-                <span className={cx("contribute-info-item-value")}>{myBtcReward}</span>
-                <button className={cx("claim-reward-btn")} disabled={true}>
-                  <span>Claim</span>
-                </button>
-              </div>
+             <BTCReward currentAccount={currentAccount} /> 
 
               <div className={cx("contribute-info-item-wrap")}>
                 <div className={cx("contribute-info-item")}>
