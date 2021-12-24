@@ -264,8 +264,7 @@ const PloContribute = () => {
   }
   const myContributePer = Big(myTotalContribute.toString()).div(globalTotalPower.toString());
 
-  // let myBtcReward = 0;
-  const top5contribute = useMemo(() => btcTop5.reduce((acc, cur) => acc.add(new BN(cur.amount)), new BN(0)), []);
+  const top5contribute = useMemo(() => btcTop5.reduce((acc, cur) => acc.add(new Big(cur.amount)), new Big('0')), []);
 
   useEffect(() => {
     const address = localStorage.getItem(LOCAL_STORAGE_CURRENT_ADDRESS_KEY);

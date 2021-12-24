@@ -4,17 +4,15 @@ import React, { useState } from "react";
 import classNames from "classnames/bind";
 import styles from "../styles.module.scss";
 import {
-  BTC_THRESHOLD,
-  DOT_TO_ORIG,
   formatBalanceFromOrigToDOT,
   KTON_REWARD,
   RING_REWARD,
   shortAddress,
 } from "../utils";
-import BN from "bn.js";
 import Big from "big.js";
 import { useQuery } from "@apollo/client";
 import { gqlWhocrowdloanByOffset } from "../gql";
+import btcTop5 from '../top5.json';
 
 const cx = classNames.bind(styles);
 
@@ -106,19 +104,8 @@ const GlobalContributionActivity = ({ allReferContributeData, globalTotalPower, 
   for (let i = 0; i < allWhoContributeData.length; i++) {
     const nodeWho = allWhoContributeData[i];
     const nodeRefer = allReferContributeData.find((node) => node.user === nodeWho.user);
-
-    const nodeWhoTotalBalanceBN = new BN(nodeWho.totalBalance);
     const contributePer = Big(nodeWho.totalPower).div(globalTotalPower.toString());
-
-    let btcR = 0;
-    if (
-      i < 5 &&
-      nodeWhoTotalBalanceBN.gte(DOT_TO_ORIG.muln(BTC_THRESHOLD)) &&
-      !top5contribute.isZero() &&
-      top5contribute.div(nodeWhoTotalBalanceBN).lt(DOT_TO_ORIG)
-    ) {
-      btcR = Big(nodeWhoTotalBalanceBN.toString()).div(top5contribute.toString()).toFixed(8);
-    }
+    const target = btcTop5.find(item => item.address === nodeWho.user);
 
     globalContributeDataSource.push({
       key: i,
@@ -126,9 +113,9 @@ const GlobalContributionActivity = ({ allReferContributeData, globalTotalPower, 
       myDot: formatBalanceFromOrigToDOT(nodeWho.totalBalance),
       referrals: nodeRefer ? nodeRefer.contributorsCount : 0,
       referralDot: nodeRefer ? formatBalanceFromOrigToDOT(nodeRefer.totalBalance) : 0,
-      curRingRewards: contributePer.mul(RING_REWARD).toFixed(8),
-      curKtonRewards: contributePer.mul(KTON_REWARD).toFixed(8),
-      curBtcRewards: btcR,
+      curRingRewards: contributePer.times(RING_REWARD).toFixed(8),
+      curKtonRewards: contributePer.times(KTON_REWARD).toFixed(8),
+      curBtcRewards: target ? target.reward : '0',
       curNft: "No Status",
     });
   }
