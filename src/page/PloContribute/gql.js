@@ -14,7 +14,7 @@ export const CONTRIBUTES_BY_PARA_ID = gql`
 
 export const CONTRIBUTES_BY_ADDRESS_PARA_ID = gql`
 query CrowdloanContributeds ($paraId: Int!, $address: String!) {
-  crowdloanContributeds(filter: { paraId: { equalTo : $paraId }, and: { refer : { equalTo : $address } } }) {
+  crowdloanContributeds(filter: { paraId: { equalTo : $paraId }, and: { who : { equalTo : $address } } }) {
     totalCount
     nodes {
       id
