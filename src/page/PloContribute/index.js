@@ -17,7 +17,8 @@ import mediumIcon from "./img/medium.png";
 import telegramIcon from "./img/telegram.png";
 import discordIcon from "./img/discord.png";
 import BTCReward from "./components/btc-reward";
-import btcIcon from './img/XTVCBTC--big.svg';
+import ringIcon from './img/ring-icon.png';
+import ktonIcon from './img/kton-icon.png';
 
 import {
   CONTRIBUTES_BY_PARA_ID,
@@ -654,8 +655,12 @@ const PloContribute = () => {
                 <div className={cx("total-rewards-wrap")}>
                   <span>Total rewards: </span>
                   <div className={cx("total-ring-rewards")}>
-                    <img alt="..." src={btcIcon} />
-                    <span>1</span>
+                    <img alt="..." src={ringIcon} />
+                    <span>200,000,000</span>
+                  </div>
+                  <div className={cx("total-kton-rewards")}>
+                    <img alt="..." src={ktonIcon} />
+                    <span>8,000</span>
                   </div>
                 </div>
 
