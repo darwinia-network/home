@@ -657,6 +657,7 @@ $main-bg: linear-gradient(270deg, #ff0050 0%, #7000ff 71.44%, #0027ff 100%);
 
   > img {
     width: 30px;
+    border-radius: 50%;
 
     @media screen and (max-width: 1024px) {
       width: 20px;
