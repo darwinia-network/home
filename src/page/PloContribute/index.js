@@ -986,7 +986,7 @@ const PloContribute = () => {
               contributePionners.data.accounts.nodes &&
               contributePionners.data.accounts.nodes.length
                 ? contributePionners.data.accounts.nodes.map((node, index) =>
-                    index > 4 ? null : (
+                    index === 0 || index > 5 ? null : (
                       <div className={cx("pioneers-item")} key={index}>
                         <div className={cx("pioneers-item-num-icon")}>
                           <span>{index + 1}</span>
