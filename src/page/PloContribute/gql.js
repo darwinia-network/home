@@ -2,7 +2,7 @@ import { gql } from "@apollo/client";
 
 export const CONTRIBUTES_BY_PARA_ID = gql`
   query CrowdloanContributeds($paraId: Int!) {
-    crowdloanContributeds(last: 100, orderBy: TIMESTAMP_ASC, filter: { paraId: { equalTo: $paraId } }) {
+    crowdloanContributeds(filter: { paraId: { equalTo: $paraId } }) {
       totalCount
       nodes {
         timestamp
