@@ -126,6 +126,10 @@ export const ALL_REFER_CROWDLOAN = gql`
       nodes {
         user
         totalPower
+        totalBalance
+        contributors {
+          totalCount
+        }
       }
     }
   }

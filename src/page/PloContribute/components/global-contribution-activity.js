@@ -103,7 +103,7 @@ const GlobalContributionActivity = ({ allReferContributeData, globalTotalPower, 
   const globalContributeDataSource = [];
   for (let i = 0; i < allWhoContributeData.length; i++) {
     const nodeWho = allWhoContributeData[i];
-    const nodeRefer = allReferContributeData.find((node) => node.user === nodeWho.user);
+    const nodeRefer = allReferContributeData.find((node) => node.user === nodeWho.user); // { user: address };
     const contributePer = Big(nodeWho.totalPower).div(globalTotalPower.toString());
     const target = btcTop5.find(item => item.address === nodeWho.user);
 

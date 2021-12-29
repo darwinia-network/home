@@ -164,6 +164,9 @@ const PloContribute = () => {
 
         allReferContributeData.push({
           user: referralCodeToPolkadotAddress(node.user),
+          totalPower: node.totalPower,
+          totalBalance: node.totalBalance,
+          contributorsCount: node.contributors.totalCount,
         });
       });
     }
