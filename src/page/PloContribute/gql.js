@@ -55,11 +55,11 @@ query {
       user
       totalPower
       totalBalance
-      contributors (orderBy: TIMESTAMP_DESC) {
-        nodes {
-          balance
-        }
-      }
+      # contributors (orderBy: TIMESTAMP_DESC) {
+      #   nodes {
+      #     balance
+      #   }
+      # }
     }
 }
 `;
