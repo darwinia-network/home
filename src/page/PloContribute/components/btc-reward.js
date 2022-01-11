@@ -1,7 +1,7 @@
 import { web3FromAddress } from "@polkadot/extension-dapp";
 import { message, Modal, Tooltip, Typography } from "antd";
 import classNames from "classnames/bind";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { Button, Form } from "react-bootstrap";
 import { useApi } from "../hooks";
 import infoIcon from "../img/info-icon.png";
@@ -18,9 +18,9 @@ function BTCReward({ currentAccount }) {
   const [checked, setChecked] = useState(false);
   const [address, setAddress] = useState("");
   const { api } = useApi();
-  const [isReward, setIsReward] = useState(false);
+  const [isReward] = useState(true);
 
-  const target = currentAccount ? btcTop5.find(({ address }) => address === currentAccount.address) : null;
+  const target = currentAccount ? btcTop5.find(({ address }) => address.toLowerCase() === currentAccount.address.toLowerCase()) : null;
   const contributeAmount = target ? target.amount : 0;
 
   const claim = async () => {
@@ -75,16 +75,16 @@ function BTCReward({ currentAccount }) {
     }
   };
 
-  useEffect(() => {
-    if (!currentAccount) {
-      return;
-    }
+  // useEffect(() => {
+  //   if (!currentAccount) {
+  //     return;
+  //   }
 
-    const data = localStorage.getItem(key);
-    const list = JSON.parse(data || "[]");
+  //   const data = localStorage.getItem(key);
+  //   const list = JSON.parse(data || "[]");
 
-    setIsReward(list.includes(currentAccount.address));
-  });
+  //   setIsReward(list.includes(currentAccount.address));
+  // });
 
   return (
     <>
@@ -98,17 +98,27 @@ function BTCReward({ currentAccount }) {
             placement="rightTop"
             trigger={["click", "hover"]}
             title={
-              <p className={cx("tips")}>
-                BTC rewards are dynamic.
-                <br />
-                <br />
-                At the beginning of the second round auction, supporters who have contributed more than 10,000 DOT and
-                the top 5 people (exclude the Exchange address) ranking will distribute 1 BTC in proportion to their
-                contribution.
-                <br />
-                <br />1 BTC will be released immediately after the second round auction starts regardless of whether
-                Darwinia Network wins the slot auction or not.
-              </p>
+              target ? (
+                <p className={cx("tips")}>
+                  BTC Rewards for Darwinia Polkadot Parachain Slot Auction have been Delivered!
+                  <br /><br />
+                  {`Please track the rewards by checking the Hash “${target.hash}“.`}
+                  <br /><br />
+                  Please feel free to contact us through “hello@darwinia.network” if you have any question.
+                </p>
+              ) : (
+                <p className={cx("tips")}>
+                  BTC rewards are dynamic.
+                  <br />
+                  <br />
+                  At the beginning of the second round auction, supporters who have contributed more than 10,000 DOT and
+                  the top 5 people (exclude the Exchange address) ranking will distribute 1 BTC in proportion to their
+                  contribution.
+                  <br />
+                  <br />1 BTC will be released immediately after the second round auction starts regardless of whether
+                  Darwinia Network wins the slot auction or not.
+                </p>
+              )
             }
           >
             <img alt="..." src={infoIcon} className={cx("info-icon")} />
@@ -119,7 +129,7 @@ function BTCReward({ currentAccount }) {
         </div>
         <span className={cx("contribute-info-item-value")}>{contributeAmount}</span>
         <button className={cx("claim-reward-btn")} disabled={!target || isReward} onClick={() => setVisible(1)}>
-          <span>Claim</span>
+          {target ? <span>Claimed</span> : <span>Claim</span>}
         </button>
       </div>
 
