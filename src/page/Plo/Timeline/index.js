@@ -34,7 +34,7 @@ const Timeline = () => {
             <TimeDone left="19%" timeText="NOV 8 2021" timeDesc="Rewards Plan Release" />
             <TimeDone left="34%" timeText="NOV 11 2021" timeDesc="Batch 1 Auction Starts" />
             <TimeDone left="49%" timeText="NOV 15 2021" timeDesc="Crowdloan Starts" />
-            <TimeToDo right="34%" timeText="DEC 23 2021" timeDesc="Batch 2 Auction Starts" />
+            <TimeDone right="34%" timeText="DEC 23 2021" timeDesc="Batch 2 Auction Starts" />
             <TimeToDo right="19%" timeText="To be determined" timeDesc="Crowdloan Ends" />
             <TimeToDo right="5%" timeText="To be determined" timeDesc="Distribute Rewards" />
 
