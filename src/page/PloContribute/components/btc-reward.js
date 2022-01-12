@@ -98,27 +98,17 @@ function BTCReward({ currentAccount }) {
             placement="rightTop"
             trigger={["click", "hover"]}
             title={
-              target ? (
-                <p className={cx("tips")}>
-                  BTC Rewards for Darwinia Polkadot Parachain Slot Auction have been Delivered!
-                  <br /><br />
-                  {`Please track the rewards by checking the Hash “${target.hash}“.`}
-                  <br /><br />
-                  Please feel free to contact us through “hello@darwinia.network” if you have any question.
-                </p>
-              ) : (
-                <p className={cx("tips")}>
-                  BTC rewards are dynamic.
-                  <br />
-                  <br />
-                  At the beginning of the second round auction, supporters who have contributed more than 10,000 DOT and
-                  the top 5 people (exclude the Exchange address) ranking will distribute 1 BTC in proportion to their
-                  contribution.
-                  <br />
-                  <br />1 BTC will be released immediately after the second round auction starts regardless of whether
-                  Darwinia Network wins the slot auction or not.
-                </p>
-              )
+              <p className={cx("tips")}>
+                BTC rewards are dynamic.
+                <br />
+                <br />
+                At the beginning of the second round auction, supporters who have contributed more than 10,000 DOT and
+                the top 5 people (exclude the Exchange address) ranking will distribute 1 BTC in proportion to their
+                contribution.
+                <br />
+                <br />1 BTC will be released immediately after the second round auction starts regardless of whether
+                Darwinia Network wins the slot auction or not.
+              </p>
             }
           >
             <img alt="..." src={infoIcon} className={cx("info-icon")} />
@@ -128,9 +118,36 @@ function BTCReward({ currentAccount }) {
           <span>Current</span>
         </div>
         <span className={cx("contribute-info-item-value")}>{contributeAmount}</span>
-        <button className={cx("claim-reward-btn")} disabled={!target || isReward} onClick={() => setVisible(1)}>
-          {target ? <span>Claimed</span> : <span>Claim</span>}
-        </button>
+        {target ? (
+          <Tooltip
+            overlayClassName="tooltip-overlay"
+            overlayInnerStyle={{ padding: "20px", paddingBottom: "10px" }}
+            color="white"
+            placement="rightTop"
+            trigger={["click", "hover"]}
+            title={
+              <p className={cx("tips")}>
+                BTC Rewards for Darwinia Polkadot Parachain Slot Auction have been Delivered!
+                <br /><br />
+                {`Please track the rewards by checking the Hash “${target.hash}“.`}
+                <br /><br />
+                Please feel free to contact us through “hello@darwinia.network” if you have any question.
+              </p>
+            }
+          >
+            <button className={cx("claim-reward-btn", "disabled")}>
+              <span>Claimed</span>
+            </button>
+          </Tooltip>
+        ) : isReward ? (
+          <button className={cx("claim-reward-btn")} disabled={true} onClick={() => setVisible(1)}>
+            <span>Claimed</span>
+          </button>
+        ) : (
+          <button className={cx("claim-reward-btn")} disabled={true} onClick={() => setVisible(1)}>
+            <span>Claim</span>
+          </button>
+        )}
       </div>
 
       <Modal

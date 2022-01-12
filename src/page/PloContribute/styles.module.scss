@@ -1720,8 +1720,9 @@ $main-bg: linear-gradient(270deg, #ff0050 0%, #7000ff 71.44%, #0027ff 100%);
     border-radius: 8px;
   }
 
-  &:disabled {
+  &:disabled, &.disabled {
     background: #ccc;
+    cursor: not-allowed;
   }
 
   > span {
