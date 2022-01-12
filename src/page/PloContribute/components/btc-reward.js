@@ -1,7 +1,7 @@
 import { web3FromAddress } from "@polkadot/extension-dapp";
 import { message, Modal, Tooltip, Typography } from "antd";
 import classNames from "classnames/bind";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Button, Form } from "react-bootstrap";
 import { useApi } from "../hooks";
 import infoIcon from "../img/info-icon.png";
@@ -18,7 +18,7 @@ function BTCReward({ currentAccount }) {
   const [checked, setChecked] = useState(false);
   const [address, setAddress] = useState("");
   const { api } = useApi();
-  const [isReward] = useState(true);
+  const [isReward, setIsReward] = useState(false);
 
   const target = currentAccount ? btcTop5.find(({ address }) => address.toLowerCase() === currentAccount.address.toLowerCase()) : null;
   const contributeAmount = target ? target.reward : 0;
@@ -75,16 +75,16 @@ function BTCReward({ currentAccount }) {
     }
   };
 
-  // useEffect(() => {
-  //   if (!currentAccount) {
-  //     return;
-  //   }
+  useEffect(() => {
+    if (!currentAccount) {
+      return;
+    }
 
-  //   const data = localStorage.getItem(key);
-  //   const list = JSON.parse(data || "[]");
+    const data = localStorage.getItem(key);
+    const list = JSON.parse(data || "[]");
 
-  //   setIsReward(list.includes(currentAccount.address));
-  // });
+    setIsReward(list.includes(currentAccount.address));
+  });
 
   return (
     <>
