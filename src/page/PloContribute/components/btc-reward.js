@@ -21,7 +21,7 @@ function BTCReward({ currentAccount }) {
   const [isReward] = useState(true);
 
   const target = currentAccount ? btcTop5.find(({ address }) => address.toLowerCase() === currentAccount.address.toLowerCase()) : null;
-  const contributeAmount = target ? target.amount : 0;
+  const contributeAmount = target ? target.reward : 0;
 
   const claim = async () => {
     const mark = `BTC rewards for Darwinia Crowdloan: ${
