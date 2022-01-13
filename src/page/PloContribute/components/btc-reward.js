@@ -20,8 +20,8 @@ function BTCReward({ currentAccount }) {
   const { api } = useApi();
   const [isReward, setIsReward] = useState(false);
 
-  const target = currentAccount ? btcTop5.find(({ address }) => address === currentAccount.address) : null;
-  const contributeAmount = target ? target.amount : 0;
+  const target = currentAccount ? btcTop5.find(({ address }) => address.toLowerCase() === currentAccount.address.toLowerCase()) : null;
+  const contributeAmount = target ? target.reward : 0;
 
   const claim = async () => {
     const mark = `BTC rewards for Darwinia Crowdloan: ${
@@ -118,9 +118,36 @@ function BTCReward({ currentAccount }) {
           <span>Current</span>
         </div>
         <span className={cx("contribute-info-item-value")}>{contributeAmount}</span>
-        <button className={cx("claim-reward-btn")} disabled={!target || isReward} onClick={() => setVisible(1)}>
-          <span>Claim</span>
-        </button>
+        {target ? (
+          <Tooltip
+            overlayClassName="tooltip-overlay"
+            overlayInnerStyle={{ padding: "20px", paddingBottom: "10px" }}
+            color="white"
+            placement="rightTop"
+            trigger={["click", "hover"]}
+            title={
+              <p className={cx("tips")}>
+                BTC Rewards for Darwinia Polkadot Parachain Slot Auction have been Delivered!
+                <br /><br />
+                {`Please track the rewards by checking the Hash “${target.hash}“.`}
+                <br /><br />
+                Please feel free to contact us through “hello@darwinia.network” if you have any question.
+              </p>
+            }
+          >
+            <button className={cx("claim-reward-btn", "disabled")}>
+              <span>Claimed</span>
+            </button>
+          </Tooltip>
+        ) : isReward ? (
+          <button className={cx("claim-reward-btn")} disabled={true} onClick={() => setVisible(1)}>
+            <span>Claimed</span>
+          </button>
+        ) : (
+          <button className={cx("claim-reward-btn")} disabled={true} onClick={() => setVisible(1)}>
+            <span>Claim</span>
+          </button>
+        )}
       </div>
 
       <Modal
