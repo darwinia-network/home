@@ -186,8 +186,7 @@ const PloContribute = () => {
     total: { ring: Big(0), kton: Big(0) },
   };
   if (currentBlockNumber && Number(inputDot) && Number(inputDot) > 0) {
-    const inputDotBN = new BN(Number(inputDot)).mul(DOT_TO_ORIG);
-    const contributePer = Big(inputDotBN.toString()).div(globalTotalPower.toString());
+    const contributePer = Big(Number(inputDot)).mul(DOT_TO_ORIG).div(globalTotalPower.toString());
 
     const bonusN = currentBlockNumber < T1_BLOCK_NUMBER ? 0.2 : 0;
     const referN =
