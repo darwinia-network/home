@@ -8,7 +8,8 @@ const AsyncNotFound = asyncComponent(import("./page/NotFound"));
 const AsyncBrand = asyncComponent(import("./page/Brand"));
 const AsyncAmbassador = asyncComponent(import("./page/Ambassador"));
 const AsyncCommunity = asyncComponent(import("./page/Community"));
-const AsyncMedia = asyncComponent(import("./page/Media"));
+const AsyncBlog = asyncComponent(import("./page/Blog"));
+// const AsyncMedia = asyncComponent(import("./page/Media"));
 const AsyncNews = asyncComponent(import("./page/News"));
 const AsyncEvents = asyncComponent(import("./page/Events"));
 const AsyncReports = asyncComponent(import("./page/Reports"));
@@ -31,7 +32,9 @@ export default () => (
 
       <Route exact component={AsyncCommunity} path="/community" />
 
-      <Route exact component={AsyncMedia} path="/media" />
+      <Route exact component={AsyncBlog} path="/blog" />
+
+      {/* <Route exact component={AsyncMedia} path="/media" /> */}
 
       <Route exact component={AsyncReports} path="/reports" />
 
