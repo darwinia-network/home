@@ -3,16 +3,11 @@ import { Table } from "antd";
 import React, { useState } from "react";
 import classNames from "classnames/bind";
 import styles from "../styles.module.scss";
-import {
-  formatBalanceFromOrigToDOT,
-  KTON_REWARD,
-  RING_REWARD,
-  shortAddress,
-} from "../utils";
+import { formatBalanceFromOrigToDOT, KTON_REWARD, RING_REWARD, shortAddress } from "../utils";
 import Big from "big.js";
 import { useQuery } from "@apollo/client";
 import { gqlWhocrowdloanByOffset } from "../gql";
-import btcTop5 from '../top5.json';
+import btcTop5 from "../top5.json";
 
 const cx = classNames.bind(styles);
 
@@ -105,7 +100,7 @@ const GlobalContributionActivity = ({ allReferContributeData, globalTotalPower, 
     const nodeWho = allWhoContributeData[i];
     const nodeRefer = allReferContributeData.find((node) => node.user === nodeWho.user); // { user: address };
     const contributePer = Big(nodeWho.totalPower).div(globalTotalPower.toString());
-    const target = btcTop5.find(item => item.address === nodeWho.user);
+    const target = btcTop5.find((item) => item.address === nodeWho.user);
 
     globalContributeDataSource.push({
       key: i,
@@ -115,7 +110,7 @@ const GlobalContributionActivity = ({ allReferContributeData, globalTotalPower, 
       referralDot: nodeRefer ? formatBalanceFromOrigToDOT(nodeRefer.totalBalance) : 0,
       curRingRewards: contributePer.times(RING_REWARD).toFixed(8),
       curKtonRewards: contributePer.times(KTON_REWARD).toFixed(8),
-      curBtcRewards: target ? target.reward : '0',
+      curBtcRewards: target ? target.reward : "0",
       curNft: "No Status",
     });
   }
