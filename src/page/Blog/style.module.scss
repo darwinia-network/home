@@ -1,3 +1,160 @@
 .main {
   min-height: 60vh;
 }
+
+.pageSection {
+  margin-top: 160px;
+  margin-bottom: 120px;
+  display: flex;
+  flex-direction: column;
+}
+
+.pageSubHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 60px;
+}
+
+.pageSubTitle {
+  font-family: IBM Plex Sans;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 40px;
+  line-height: 52px;  
+  text-transform: uppercase;
+  display: inline;
+  background: linear-gradient(270deg, #ff0050 0%, #7000ff 71.44%, #0027ff 100%);
+  background-clip: text;
+  color: transparent;
+}
+
+.pageSeeMoreBtn {
+  border: 1px solid #201550;
+  box-sizing: border-box;
+  padding: 6px 20px;
+  border-radius: 4px;
+
+  >span {
+    font-family: IBM Plex Sans;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 26px;
+    text-align: center;
+    color: #080C20;
+  }
+}
+
+.contentCards {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.contentCard {
+  flex: 1;
+  &:nth-of-type(2) {
+    margin: 0 40px;
+  }
+  display: flex;
+  flex-direction: column;
+}
+
+.contentCardImg {
+  width: 100%;
+  border-radius: 4px;
+}
+
+.contentCardTags {
+  display: flex;
+  align-items: center;
+  margin: 10px 0;
+}
+
+.contentCardTag {
+  font-family: IBM Plex Sans;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 21px;
+  color: #ADADAD;
+}
+
+.contentCardTitle {
+  font-family: IBM Plex Sans;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 26px;
+  color: #000000;
+}
+
+.contentCardAbstract {
+  font-family: IBM Plex Sans;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 21px;
+  color: #555555;
+  margin-bottom: 8px;
+}
+
+.contentCardTime {
+  font-family: IBM Plex Sans;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 21px;
+  color: #ADADAD;
+}
+
+.contentSubCards {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  row-gap: 60px;
+  column-gap: 40px;
+  margin-top: 40px;
+}
+
+.contentSubCard {
+  display: flex;
+}
+
+.contentSubCardImg {
+  width: 120px;
+  border-radius: 4px;
+}
+
+.contentSubCardContent {
+  display: flex;
+  flex-direction: column;
+  margin-left: 20px;
+}
+
+.contentSubCardContentTags {
+  display: flex;
+  align-items: center;
+  margin-bottom: 6px;
+}
+
+.contentSubCardContentTag {
+  font-family: IBM Plex Sans;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 20px;
+  letter-spacing: 0.5px;
+  color: #ADADAD;
+  mix-blend-mode: normal;
+}
+
+.contentSubCardContentTitle {
+  font-family: IBM Plex Sans;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 21px;
+  color: #000000;
+}
