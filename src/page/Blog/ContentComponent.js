@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./style.module.scss";
 
-// data: { picture, tags, title, abstract, time, link }[]
+// data: { picture, thumbnail, tags, title, abstract, time, link }[]
 export const ContentCards = ({ data }) => {
   return (
     <div className={styles.contentCards}>
@@ -26,14 +26,14 @@ export const ContentCards = ({ data }) => {
   );
 };
 
-// data: { picture, tags, title, abstract, time, link }[]
+// data: { picture, thumbnail, tags, title, abstract, time, link }[]
 export const ContentSubbCards = ({ data }) => {
   return (
     <div className={styles.contentSubCards}>
       {data.map((value, index) => (
         <div className={styles.contentSubCard} key={index}>
           <a target="_blank" rel="noopener noreferrer" href={value.link}>
-            <img alt="..." src={value.picture} className={styles.contentSubCardImg} />
+            <img alt="..." src={value.thumbnail} className={styles.contentSubCardImg} />
           </a>
           <div className={styles.contentSubCardContent}>
             <div className={styles.contentSubCardContentTags}>

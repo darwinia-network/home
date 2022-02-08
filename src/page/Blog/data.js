@@ -1,22 +1,25 @@
 import pictureRecentBlog009 from "./img/recent_blog_009.svg";
 import pictureRecentBlog008 from "./img/recent_blog_008.svg";
 import pictureRecentBlog007 from "./img/recent_blog_007.svg";
-import pictureRecentBlog006 from "./img/recent_blog_006.svg";
-import pictureRecentBlog005 from "./img/recent_blog_005.svg";
-import pictureRecentBlog004 from "./img/recent_blog_004.svg";
-import pictureRecentBlog003 from "./img/recent_blog_003.svg";
-import pictureRecentBlog002 from "./img/recent_blog_002.svg";
-import pictureRecentBlog001 from "./img/recent_blog_001.svg";
+import thumbnailRecentBlog006 from "./img/thumbnail_recent_blog_006.svg";
+import thumbnailRecentBlog005 from "./img/thumbnail_recent_blog_005.svg";
+import thumbnailRecentBlog004 from "./img/thumbnail_recent_blog_004.svg";
+import thumbnailRecentBlog003 from "./img/thumbnail_recent_blog_003.svg";
+import thumbnailRecentBlog002 from "./img/thumbnail_recent_blog_002.svg";
+import thumbnailRecentBlog001 from "./img/thumbnail_recent_blog_001.svg";
 
+import pictureTutorial001 from "./img/tutorial_009.svg";
 import pictureTutorial009 from "./img/tutorial_009.svg";
 import pictureTutorial008 from "./img/tutorial_008.svg";
 import pictureTutorial007 from "./img/tutorial_007.svg";
-import pictureTutorial006 from "./img/tutorial_006.svg";
-import pictureTutorial005 from "./img/tutorial_005.svg";
+import thumbnailTutorial006 from "./img/thumbnail_tutorial_006.svg";
+import thumbnailTutorial005 from "./img/thumbnail_tutorial_005.svg";
 import pictureTutorial004 from "./img/tutorial_004.svg";
+import thumbnailTutorial004 from "./img/thumbnail_tutorial_004.svg";
 import pictureTutorial003 from "./img/tutorial_003.svg";
-import pictureTutorial002 from "./img/tutorial_002.svg";
-import pictureTutorial001 from "./img/tutorial_001.svg";
+import thumbnailTutorial003 from "./img/thumbnail_tutorial_003.svg";
+import thumbnailTutorial002 from "./img/thumbnail_tutorial_002.svg";
+import thumbnailTutorial001 from "./img/thumbnail_tutorial_001.svg";
 
 import pictureNewsletter003 from "./img/recent_newsletter_003.svg";
 import pictureNewsletter002 from "./img/recent_newsletter_002.svg";
@@ -25,6 +28,7 @@ import pictureNewsletter001 from "./img/recent_newsletter_001.svg";
 export const recentBlogs = [
   {
     picture: pictureRecentBlog009,
+    thumbnail: "",
     title: "Guide to Participate in the Crab PLO",
     tags: ["Tutorials"],
     abstract:
@@ -34,6 +38,7 @@ export const recentBlogs = [
   },
   {
     picture: pictureRecentBlog008,
+    thumbnail: "",
     title: "Technical Checklist for Developers Who Build on Crab Network",
     tags: ["Tutorials"],
     abstract:
@@ -43,6 +48,7 @@ export const recentBlogs = [
   },
   {
     picture: pictureRecentBlog007,
+    thumbnail: "",
     title: "Crab Online Hackathon Now Live!",
     tags: ["Announcements"],
     abstract:
@@ -51,7 +57,8 @@ export const recentBlogs = [
     link: "https://darwinianetwork.medium.com/crab-grant-online-hackathon-now-live-ea42a6c8cfbe",
   },
   {
-    picture: pictureRecentBlog006,
+    picture: "",
+    thumbnail: thumbnailRecentBlog006,
     title: "Bifrost announced to integrate Darwinia Substrate-to-Substrate bridge for Defi applications",
     tags: ["Announcements"],
     abstract: "",
@@ -59,7 +66,8 @@ export const recentBlogs = [
     link: "https://darwinianetwork.medium.com/bifrost-announced-to-integrate-darwinia-substrate-to-substrate-bridge-for-defi-applications-7215f5916521",
   },
   {
-    picture: pictureRecentBlog005,
+    picture: "",
+    thumbnail: thumbnailRecentBlog005,
     title: "Support Crab While Investing in the Next Generation Infrastructure for the Web3.0 Metaverse",
     tags: ["Blogs"],
     abstract: "",
@@ -67,7 +75,8 @@ export const recentBlogs = [
     link: "https://darwinianetwork.medium.com/support-crab-while-investing-in-the-next-generation-infrastructure-for-the-web3-0-metaverse-d194ff902f6d",
   },
   {
-    picture: pictureRecentBlog004,
+    picture: "",
+    thumbnail: thumbnailRecentBlog004,
     title: "Crab Network To Join Kusama Parachain Auction",
     tags: ["Announcements"],
     abstract: "",
@@ -75,7 +84,8 @@ export const recentBlogs = [
     link: "https://darwinianetwork.medium.com/crab-network-to-join-kusama-parachain-auction-db007bffb4d5",
   },
   {
-    picture: pictureRecentBlog003,
+    picture: "",
+    thumbnail: thumbnailRecentBlog003,
     title: "BTC Rewards Release Now!",
     tags: ["Announcements"],
     abstract: "",
@@ -83,7 +93,8 @@ export const recentBlogs = [
     link: "https://darwinianetwork.medium.com/btc-rewards-release-now-8c0ba0e571b5",
   },
   {
-    picture: pictureRecentBlog002,
+    picture: "",
+    thumbnail: thumbnailRecentBlog002,
     title: "Polkadot Batch 2 Slot Auction Starts! Darwinia Crowdloan Pioneers BTC Rewards Release Soon!",
     tags: ["Announcements"],
     abstract: "",
@@ -91,7 +102,8 @@ export const recentBlogs = [
     link: "https://darwinianetwork.medium.com/polkadot-batch-2-slot-auction-starts-darwinia-crowdloan-pioneers-btc-rewards-release-soon-bbdddff125dc",
   },
   {
-    picture: pictureRecentBlog001,
+    picture: "",
+    thumbnail: thumbnailRecentBlog001,
     title: "Darwinia Bounty Program",
     tags: ["Announcements"],
     abstract: "",
@@ -103,6 +115,7 @@ export const recentBlogs = [
 export const tutorials = [
   {
     picture: pictureTutorial009,
+    thumbnail: "",
     title: "Using Darwinia Tools 3–3: Smart App User Guide",
     tags: ["Tutorials", "Tools"],
     abstract:
@@ -113,6 +126,7 @@ export const tutorials = [
   },
   {
     picture: pictureTutorial008,
+    thumbnail: "",
     title:
       "Using Darwinia Tools 3–2: Wormhole User Guide II | The Substrate-to-Substrate Bridge Between Darwinia Network and Crab Network",
     tags: ["Tutorials", "Tools"],
@@ -124,6 +138,7 @@ export const tutorials = [
   },
   {
     picture: pictureTutorial007,
+    thumbnail: "",
     title: "Understanding Darwinia Bridge 1–6: The BSC Light Client for New Message Protocols",
     tags: ["Tutorials", "Bridge"],
     abstract:
@@ -133,7 +148,8 @@ export const tutorials = [
     subtype: "bridge",
   },
   {
-    picture: pictureTutorial006,
+    picture: pictureTutorial007,
+    thumbnail: thumbnailTutorial006,
     title: "Understanding Darwinia Bridge 1–5: A Hands-on Guide on How to Run a Bridger Node",
     tags: ["Tutorials", "Bridge"],
     abstract:
@@ -143,7 +159,8 @@ export const tutorials = [
     subtype: "bridge",
   },
   {
-    picture: pictureTutorial005,
+    picture: pictureTutorial007,
+    thumbnail: thumbnailTutorial005,
     title: "Understanding Darwinia Bridge 1–4: The New Message Protocol for the Ethereum-Darwinia Bridge",
     tags: ["Tutorials", "Bridge"],
     abstract:
@@ -154,6 +171,7 @@ export const tutorials = [
   },
   {
     picture: pictureTutorial004,
+    thumbnail: thumbnailTutorial004,
     title: "Using Darwinia Tools 3–1: Wormhole User Guide",
     tags: ["Tutorials", "Tools"],
     abstract:
@@ -164,6 +182,7 @@ export const tutorials = [
   },
   {
     picture: pictureTutorial003,
+    thumbnail: thumbnailTutorial003,
     title: "Build on Darwinia 2–1: Address Formats in Darwinia",
     tags: ["Tutorials", "Builders"],
     abstract:
@@ -173,7 +192,8 @@ export const tutorials = [
     subtype: "builders",
   },
   {
-    picture: pictureTutorial002,
+    picture: pictureTutorial007,
+    thumbnail: thumbnailTutorial002,
     title: "Understanding Darwinia Bridge 1–3: The Token Bridge Solution",
     tags: ["Tutorials", "Bridge"],
     abstract:
@@ -183,7 +203,8 @@ export const tutorials = [
     subtype: "bridge",
   },
   {
-    picture: pictureTutorial001,
+    picture: pictureTutorial007,
+    thumbnail: thumbnailTutorial001,
     title: "Understanding Darwinia Bridge 1–2: Mapping Token Factory",
     tags: ["Tutorials", "Bridge"],
     abstract:
@@ -193,7 +214,8 @@ export const tutorials = [
     subtype: "bridge",
   },
   {
-    picture: pictureTutorial001,
+    picture: pictureTutorial007,
+    thumbnail: pictureTutorial001,
     title: "Understanding Darwinia Bridge 1–1: Darwinia Relayer Incentive Scheme — Fee Market",
     tags: ["Tutorials", "Bridge"],
     abstract:
@@ -204,13 +226,14 @@ export const tutorials = [
   },
 ];
 
-export const tutorialsBridge = tutorials.find((v) => v.subtype === "bridge");
-export const tutorialsBuilders = tutorials.find((v) => v.subtype === "builders");
-export const tutorialsTools = tutorials.find((v) => v.subtype === "tools");
+export const tutorialsBridge = tutorials.filter((v) => v.subtype === "bridge");
+export const tutorialsBuilders = tutorials.filter((v) => v.subtype === "builders");
+export const tutorialsTools = tutorials.filter((v) => v.subtype === "tools");
 
 export const newsLetters = [
   {
     picture: pictureNewsletter003,
+    thumbnail: "",
     title: "Darwinia Monthly Dispatch: December 2021",
     tags: ["Newsletters"],
     abstract:
@@ -220,6 +243,7 @@ export const newsLetters = [
   },
   {
     picture: pictureNewsletter002,
+    thumbnail: "",
     title: "Darwinia Monthly Dispatch: November 2021",
     tags: ["Newsletters"],
     abstract:
@@ -229,6 +253,7 @@ export const newsLetters = [
   },
   {
     picture: pictureNewsletter001,
+    thumbnail: "",
     title: "Darwinia Monthly Dispatch:October 2021",
     tags: ["Newsletters"],
     abstract:
@@ -238,6 +263,7 @@ export const newsLetters = [
   },
   {
     picture: pictureNewsletter003,
+    thumbnail: "",
     title: "Darwinia Monthly Dispatch: September 2021",
     tags: ["Newsletters"],
     abstract:
@@ -247,6 +273,7 @@ export const newsLetters = [
   },
   {
     picture: pictureNewsletter003,
+    thumbnail: "",
     title: "Darwinia Monthly Dispatch: August 2021",
     tags: ["Newsletters"],
     abstract:
@@ -256,6 +283,7 @@ export const newsLetters = [
   },
   {
     picture: pictureNewsletter003,
+    thumbnail: "",
     title: "Darwinia Monthly Dispatch: July 2021",
     tags: ["Newsletters"],
     abstract:
@@ -265,6 +293,7 @@ export const newsLetters = [
   },
   {
     picture: pictureNewsletter003,
+    thumbnail: "",
     title: "Darwinia Monthly Dispatch: June 2021",
     tags: ["Newsletters"],
     abstract:
