@@ -1,19 +1,18 @@
-.main {
-  min-height: 60vh;
-}
-
 .pageSection {
-  margin-top: 160px;
+  margin-top: 120px;
   margin-bottom: 120px;
   display: flex;
   flex-direction: column;
+  &:first-child {
+    margin-top: 160px;
+  }
 }
 
 .pageSubHeader {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 60px;
+  margin-bottom: 40px;
 }
 
 .pageSubTitle {
@@ -21,7 +20,7 @@
   font-style: normal;
   font-weight: 500;
   font-size: 40px;
-  line-height: 52px;  
+  line-height: 52px;
   text-transform: uppercase;
   display: inline;
   background: linear-gradient(270deg, #ff0050 0%, #7000ff 71.44%, #0027ff 100%);
@@ -35,14 +34,14 @@
   padding: 6px 20px;
   border-radius: 4px;
 
-  >span {
+  > span {
     font-family: IBM Plex Sans;
     font-style: normal;
     font-weight: 600;
     font-size: 14px;
     line-height: 26px;
     text-align: center;
-    color: #080C20;
+    color: #080c20;
   }
 }
 
@@ -78,7 +77,7 @@
   font-weight: 600;
   font-size: 16px;
   line-height: 21px;
-  color: #ADADAD;
+  color: #adadad;
 }
 
 .contentCardTitle {
@@ -106,7 +105,7 @@
   font-weight: 600;
   font-size: 16px;
   line-height: 21px;
-  color: #ADADAD;
+  color: #adadad;
 }
 
 .contentSubCards {
@@ -146,7 +145,7 @@
   font-size: 12px;
   line-height: 20px;
   letter-spacing: 0.5px;
-  color: #ADADAD;
+  color: #adadad;
   mix-blend-mode: normal;
 }
 

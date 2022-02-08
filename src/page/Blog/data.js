@@ -1,26 +1,26 @@
-import pictureRecentBlog009 from './img/recent_blog_009.svg';
-import pictureRecentBlog008 from './img/recent_blog_008.svg';
-import pictureRecentBlog007 from './img/recent_blog_007.svg';
-import pictureRecentBlog006 from './img/recent_blog_006.svg';
-import pictureRecentBlog005 from './img/recent_blog_005.svg';
-import pictureRecentBlog004 from './img/recent_blog_004.svg';
-import pictureRecentBlog003 from './img/recent_blog_003.svg';
-import pictureRecentBlog002 from './img/recent_blog_002.svg';
-import pictureRecentBlog001 from './img/recent_blog_001.svg';
+import pictureRecentBlog009 from "./img/recent_blog_009.svg";
+import pictureRecentBlog008 from "./img/recent_blog_008.svg";
+import pictureRecentBlog007 from "./img/recent_blog_007.svg";
+import pictureRecentBlog006 from "./img/recent_blog_006.svg";
+import pictureRecentBlog005 from "./img/recent_blog_005.svg";
+import pictureRecentBlog004 from "./img/recent_blog_004.svg";
+import pictureRecentBlog003 from "./img/recent_blog_003.svg";
+import pictureRecentBlog002 from "./img/recent_blog_002.svg";
+import pictureRecentBlog001 from "./img/recent_blog_001.svg";
 
-import pictureTutorial009 from './img/tutorial_009.svg';
-import pictureTutorial008 from './img/tutorial_008.svg';
-import pictureTutorial007 from './img/tutorial_007.svg';
-import pictureTutorial006 from './img/tutorial_006.svg';
-import pictureTutorial005 from './img/tutorial_005.svg';
-import pictureTutorial004 from './img/tutorial_004.svg';
-import pictureTutorial003 from './img/tutorial_003.svg';
-import pictureTutorial002 from './img/tutorial_002.svg';
-import pictureTutorial001 from './img/tutorial_001.svg';
+import pictureTutorial009 from "./img/tutorial_009.svg";
+import pictureTutorial008 from "./img/tutorial_008.svg";
+import pictureTutorial007 from "./img/tutorial_007.svg";
+import pictureTutorial006 from "./img/tutorial_006.svg";
+import pictureTutorial005 from "./img/tutorial_005.svg";
+import pictureTutorial004 from "./img/tutorial_004.svg";
+import pictureTutorial003 from "./img/tutorial_003.svg";
+import pictureTutorial002 from "./img/tutorial_002.svg";
+import pictureTutorial001 from "./img/tutorial_001.svg";
 
-import pictureNewsletter003 from './img/recent_newsletter_003.svg';
-import pictureNewsletter002 from './img/recent_newsletter_002.svg';
-import pictureNewsletter001 from './img/recent_newsletter_001.svg';
+import pictureNewsletter003 from "./img/recent_newsletter_003.svg";
+import pictureNewsletter002 from "./img/recent_newsletter_002.svg";
+import pictureNewsletter001 from "./img/recent_newsletter_001.svg";
 
 export const recentBlogs = [
   {
