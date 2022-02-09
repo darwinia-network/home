@@ -27,7 +27,6 @@ import bannerBgM from "./img/banner-bg-m.png";
 import archorsComponent from "../../components/anchorsComponent";
 import { withTranslation } from "react-i18next";
 import axios from "axios";
-// import i18n from '../../locales/i18n';
 
 class Home extends Component {
   constructor(props) {
