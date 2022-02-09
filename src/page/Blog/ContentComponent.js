@@ -1,5 +1,6 @@
 import React from "react";
 import styles from "./style.module.scss";
+import { Typography } from "antd";
 
 // data: { picture, tags, title, abstract, time, link }[]
 export const ContentCards = ({ data }) => (
@@ -40,7 +41,9 @@ export const ContentSubbCards = ({ data }) => (
               </span>
             ))}
           </div>
-          <h3 className={styles.contentSubCardContentTitle}>{value.title}</h3>
+          <Typography.Paragraph className={styles.contentSubCardContentTitle} ellipsis={{ rows: 3, expandable: false }}>
+            {value.title}
+          </Typography.Paragraph>
         </div>
       </div>
     ))}

@@ -185,25 +185,17 @@
 }
 
 .contentSubCardLink {
-  position: relative;
-  width: 120px;
-  height: 120px;
-  overflow: hidden;
-  border-radius: 4px;
   > img {
-    position: absolute;
-    top: -40px;
-    left: -90px;
-    width: fit-content;
-    height: fit-content;
-  }
-  @media (max-width: 767.98px) {
-    width: 100%;
+    width: 180px;
+    border-radius: 4px;
+    @media (max-width: 767.98px) {
+      width: 100%;
+    }
   }
 }
 
 .contentSubCardContent {
-  width: calc(100% - 120px - 20px);
+  width: calc(100% - 180px - 20px);
   display: flex;
   flex-direction: column;
   margin-left: 20px;
