@@ -2,7 +2,6 @@ const PrerenderSPAPlugin = require('prerender-spa-plugin');
 const path = require('path');
 
 module.exports = (config, env) => {
-  console.log('cfg:', config);
   if (env === 'production') {
     config.plugins = config.plugins.concat([
       new PrerenderSPAPlugin({
@@ -33,6 +32,7 @@ module.exports = (config, env) => {
     '.json', '.web.jsx',
     '.jsx'
   ];
+  console.log('cfg:', config);
 
   return config;
 };
