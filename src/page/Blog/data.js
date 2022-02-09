@@ -139,14 +139,14 @@ export const dataNewsletters = [
 
 export const dataTutorials = [
   {
-    picture: "/static/blogImg/tutorial_001.svg",
+    picture: "/static/blogImg/tutorial_bridge_001.png",
     thumbnail: "/static/blogImg/tutorial_001_thumb.svg",
-    title: "This is  title This is title This is title 13",
-    tags: ["Tag1", "Tag2"],
+    title: "Understanding Darwinia Bridge 1-8: How to Develop a Substrate-to-Substrate Bridge",
+    tags: ["Tutorials", "Bridge"],
     abstract:
-      "This is abstract This is abstract This is abstract This is abstract This is abstract This is abstract This is abstract",
-    time: "January 7, 2022",
-    link: "https://www.baidu.com/",
+      "This article describes how to develop a Substrate-to-Substrate bridge for Darwinia Bridger based on parity-bridges-common. A tutorial on how to a generic Substrate-to-Substrate bridge can be found in the above repository.",
+    time: "February 8, 2022",
+    link: "https://darwinianetwork.medium.com/understanding-darwinia-bridge-1-8-how-to-develop-a-substrate-to-substrate-bridge-792d295d0728",
     subtype: "bridge",
   },
   {
