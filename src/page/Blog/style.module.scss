@@ -82,6 +82,11 @@
 .contentCard {
   display: flex;
   flex-direction: column;
+  transition: all 0.3s;
+  &:hover {
+    transform: scale(1.02);
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
+  }
 }
 
 .contentCardLink {
@@ -171,6 +176,11 @@
   display: flex;
   @media (max-width: 767.98px) {
     flex-direction: column;
+  }
+  transition: all 0.3s;
+  &:hover {
+    transform: scale(1.02);
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.1);
   }
 }
 
