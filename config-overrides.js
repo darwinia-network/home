@@ -11,6 +11,7 @@ module.exports = (config, env) => {
           '/brand',
           '/ambassador',
           '/community',
+          '/blog',
           '/media',
           '/reports',
           '/events',
