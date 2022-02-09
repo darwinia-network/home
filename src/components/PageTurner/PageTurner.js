@@ -20,7 +20,7 @@ const PageTurner = ({ totalPage = 1, defaultPage = 1, onPageChange }) => {
       }
       return prev;
     });
-  }, []);
+  }, [onPageChange]);
 
   const handleNextClick = useCallback(() => {
     setCurrentPage((prev) => {
@@ -30,7 +30,7 @@ const PageTurner = ({ totalPage = 1, defaultPage = 1, onPageChange }) => {
       }
       return prev;
     });
-  }, []);
+  }, [onPageChange, pageMax]);
 
   return (
     <div className={cx("main")}>

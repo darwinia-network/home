@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import { Container, Row, Col, InputGroup, FormControl, Button, Form } from "react-bootstrap";
 import { withTranslation } from "react-i18next";
 import styles from "./style.module.scss";
-import i18n from "../../locales/i18n";
 
 import lngIcon from "./img/lngIcon.svg";
 
@@ -69,7 +68,7 @@ class PageFooter extends Component {
   };
 
   handleClickLng = (lng) => {
-    i18n.changeLanguage(lng);
+    this.props.i18n.changeLanguage(lng);
   };
 
   renderMap = () => {

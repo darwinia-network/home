@@ -22,7 +22,7 @@ const AsyncPlo = asyncComponent(import("./page/Plo"));
 const AsyncPloContrbite = asyncComponent(import("./page/PloContribute"));
 const history = createBrowserHistory();
 
-export default () => (
+const Routes = () => (
   <Router history={history}>
     <Switch>
       <Route exact component={AsyncHome} path="/" />
@@ -60,3 +60,5 @@ export default () => (
     </Switch>
   </Router>
 );
+
+export default Routes;

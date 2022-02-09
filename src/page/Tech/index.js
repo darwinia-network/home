@@ -49,7 +49,6 @@ import roadmapMobile from "./img/roadmap/roadmap-m.png";
 
 import archorsComponent from "../../components/anchorsComponent";
 import { withTranslation } from "react-i18next";
-import i18n from "../../locales/i18n";
 
 class Home extends Component {
   componentDidMount() {
@@ -90,7 +89,7 @@ class Home extends Component {
   }
 
   render() {
-    const { t } = this.props;
+    const { t, i18n } = this.props;
     return (
       <div className={styles.tech}>
         <PageHeader href="#top" transparent={true} />

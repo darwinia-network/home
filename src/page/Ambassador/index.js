@@ -3,7 +3,6 @@ import { Container, Row, Col, Button } from "react-bootstrap";
 import { PageHeader } from "../../components/PageHeader";
 import { PageFooter } from "../../components/PageFooter";
 
-import i18n from "../../locales/i18n";
 import archorsComponent from "../../components/anchorsComponent";
 import { withTranslation } from "react-i18next";
 import styles from "./style.module.scss";
@@ -30,7 +29,7 @@ class Brand extends Component {
   }
 
   render() {
-    const { t } = this.props;
+    const { t, i18n } = this.props;
     return (
       <div>
         <PageHeader />
