@@ -86,7 +86,7 @@ function BTCReward({ currentAccount }) {
     const list = JSON.parse(data || "[]");
 
     setIsReward(list.includes(currentAccount.address));
-  });
+  }, [currentAccount]);
 
   return (
     <>
