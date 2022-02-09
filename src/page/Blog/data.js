@@ -1,7 +1,6 @@
 export const dataBlogs = [
   {
     picture: "/static/blogImg/recent_blog_001.svg",
-    thumbnail: "/static/blogImg/recent_blog_001_thumb.svg",
     title: "This is title This is title This is title 7",
     tags: ["Tag1", "Tag2"],
     abstract:
@@ -11,7 +10,6 @@ export const dataBlogs = [
   },
   {
     picture: "/static/blogImg/recent_blog_001.svg",
-    thumbnail: "/static/blogImg/recent_blog_001_thumb.svg",
     title: "This is title This is title This is title 6",
     tags: ["Tag1", "Tag2"],
     abstract:
@@ -21,7 +19,6 @@ export const dataBlogs = [
   },
   {
     picture: "/static/blogImg/recent_blog_001.svg",
-    thumbnail: "/static/blogImg/recent_blog_001_thumb.svg",
     title: "This is title This is title This is title 5",
     tags: ["Tag1", "Tag2"],
     abstract:
@@ -31,7 +28,6 @@ export const dataBlogs = [
   },
   {
     picture: "/static/blogImg/recent_blog_001.svg",
-    thumbnail: "/static/blogImg/recent_blog_001_thumb.svg",
     title: "This is title This is title This is title 4",
     tags: ["Tag1", "Tag2"],
     abstract:
@@ -41,7 +37,6 @@ export const dataBlogs = [
   },
   {
     picture: "/static/blogImg/recent_blog_001.svg",
-    thumbnail: "/static/blogImg/recent_blog_001_thumb.svg",
     title: "This is title This is title This is title 3",
     tags: ["Tag1", "Tag2"],
     abstract:
@@ -51,7 +46,6 @@ export const dataBlogs = [
   },
   {
     picture: "/static/blogImg/recent_blog_001.svg",
-    thumbnail: "/static/blogImg/recent_blog_001_thumb.svg",
     title: "This is title This is title This is title 2",
     tags: ["Tag1", "Tag2"],
     abstract:
@@ -61,7 +55,6 @@ export const dataBlogs = [
   },
   {
     picture: "/static/blogImg/recent_blog_001.svg",
-    thumbnail: "/static/blogImg/recent_blog_001_thumb.svg",
     title: "This is title This is title This is title 1",
     tags: ["Tag1", "Tag2"],
     abstract:
@@ -140,7 +133,6 @@ export const dataNewsletters = [
 export const dataTutorials = [
   {
     picture: "/static/blogImg/tutorial_bridge_001.png",
-    thumbnail: "/static/blogImg/tutorial_001_thumb.svg",
     title: "Understanding Darwinia Bridge 1-8: How to Develop a Substrate-to-Substrate Bridge",
     tags: ["Tutorials", "Bridge"],
     abstract:
@@ -151,7 +143,6 @@ export const dataTutorials = [
   },
   {
     picture: "/static/blogImg/tutorial_001.svg",
-    thumbnail: "/static/blogImg/tutorial_001_thumb.svg",
     title: "This is  title This is title This is title 12",
     tags: ["Tag1", "Tag2"],
     abstract:
@@ -162,7 +153,6 @@ export const dataTutorials = [
   },
   {
     picture: "/static/blogImg/tutorial_001.svg",
-    thumbnail: "/static/blogImg/tutorial_001_thumb.svg",
     title: "This is  title This is title This is title 11",
     tags: ["Tag1", "Tag2"],
     abstract:
@@ -173,7 +163,6 @@ export const dataTutorials = [
   },
   {
     picture: "/static/blogImg/tutorial_001.svg",
-    thumbnail: "/static/blogImg/tutorial_001_thumb.svg",
     title: "This is  title This is title This is title 10",
     tags: ["Tag1", "Tag2"],
     abstract:
@@ -184,7 +173,6 @@ export const dataTutorials = [
   },
   {
     picture: "/static/blogImg/tutorial_001.svg",
-    thumbnail: "/static/blogImg/tutorial_001_thumb.svg",
     title: "This is  title This is title This is title 9",
     tags: ["Tag1", "Tag2"],
     abstract:
@@ -195,7 +183,6 @@ export const dataTutorials = [
   },
   {
     picture: "/static/blogImg/tutorial_001.svg",
-    thumbnail: "/static/blogImg/tutorial_001_thumb.svg",
     title: "This is  title This is title This is title 8",
     tags: ["Tag1", "Tag2"],
     abstract:
@@ -206,7 +193,6 @@ export const dataTutorials = [
   },
   {
     picture: "/static/blogImg/tutorial_001.svg",
-    thumbnail: "/static/blogImg/tutorial_001_thumb.svg",
     title: "This is  title This is title This is title 7",
     tags: ["Tag1", "Tag2"],
     abstract:
@@ -217,7 +203,6 @@ export const dataTutorials = [
   },
   {
     picture: "/static/blogImg/tutorial_001.svg",
-    thumbnail: "/static/blogImg/tutorial_001_thumb.svg",
     title: "This is  title This is title This is title 6",
     tags: ["Tag1", "Tag2"],
     abstract:
@@ -228,7 +213,6 @@ export const dataTutorials = [
   },
   {
     picture: "/static/blogImg/tutorial_001.svg",
-    thumbnail: "/static/blogImg/tutorial_001_thumb.svg",
     title: "This is  title This is title This is title 5",
     tags: ["Tag1", "Tag2"],
     abstract:
@@ -239,7 +223,6 @@ export const dataTutorials = [
   },
   {
     picture: "/static/blogImg/tutorial_001.svg",
-    thumbnail: "/static/blogImg/tutorial_001_thumb.svg",
     title: "This is  title This is title This is title 4",
     tags: ["Tag1", "Tag2"],
     abstract:
@@ -250,7 +233,6 @@ export const dataTutorials = [
   },
   {
     picture: "/static/blogImg/tutorial_001.svg",
-    thumbnail: "/static/blogImg/tutorial_001_thumb.svg",
     title: "This is  title This is title This is title 3",
     tags: ["Tag1", "Tag2"],
     abstract:
@@ -261,7 +243,6 @@ export const dataTutorials = [
   },
   {
     picture: "/static/blogImg/tutorial_001.svg",
-    thumbnail: "/static/blogImg/tutorial_001_thumb.svg",
     title: "This is  title This is title This is title 2",
     tags: ["Tag1", "Tag2"],
     abstract:
@@ -272,7 +253,6 @@ export const dataTutorials = [
   },
   {
     picture: "/static/blogImg/tutorial_001.svg",
-    thumbnail: "/static/blogImg/tutorial_001_thumb.svg",
     title: "This is  title This is title This is title 1",
     tags: ["Tag1", "Tag2"],
     abstract:

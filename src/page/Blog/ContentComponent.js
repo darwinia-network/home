@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./style.module.scss";
 
-// data: { picture, thumbnail, tags, title, abstract, time, link }[]
+// data: { picture, tags, title, abstract, time, link }[]
 export const ContentCards = ({ data }) => (
   <div className={styles.contentCards}>
     {data.map((value, index) => (
@@ -24,7 +24,7 @@ export const ContentCards = ({ data }) => (
   </div>
 );
 
-// data: { picture, thumbnail, tags, title, abstract, time, link }[]
+// data: { picture, tags, title, abstract, time, link }[]
 export const ContentSubbCards = ({ data }) => (
   <div className={styles.contentSubCards}>
     {data.map((value, index) => (
