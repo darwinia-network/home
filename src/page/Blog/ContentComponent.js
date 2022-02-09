@@ -6,8 +6,8 @@ export const ContentCards = ({ data }) => (
   <div className={styles.contentCards}>
     {data.map((value, index) => (
       <div className={styles.contentCard} key={index}>
-        <a target="_blank" rel="noopener noreferrer" href={value.link}>
-          <img alt="..." src={value.picture} className={styles.contentCardImg} />
+        <a target="_blank" rel="noopener noreferrer" href={value.link} className={styles.contentCardLink}>
+          <img alt="..." src={value.picture} />
         </a>
         <div className={styles.contentCardTags}>
           {value.tags.map((value, index) => (
@@ -29,8 +29,8 @@ export const ContentSubbCards = ({ data }) => (
   <div className={styles.contentSubCards}>
     {data.map((value, index) => (
       <div className={styles.contentSubCard} key={index}>
-        <a target="_blank" rel="noopener noreferrer" href={value.link}>
-          <img alt="..." src={value.thumbnail} className={styles.contentSubCardImg} />
+        <a target="_blank" rel="noopener noreferrer" href={value.link} className={styles.contentSubCardLink}>
+          <img alt="..." src={value.picture} />
         </a>
         <div className={styles.contentSubCardContent}>
           <div className={styles.contentSubCardContentTags}>

@@ -84,9 +84,11 @@
   flex-direction: column;
 }
 
-.contentCardImg {
-  width: 100%;
-  border-radius: 4px;
+.contentCardLink {
+  >img {
+    width: 100%;
+    border-radius: 4px;
+  }
 }
 
 .contentCardTags {
@@ -172,19 +174,31 @@
   }
 }
 
-.contentSubCardImg {
+.contentSubCardLink {
+  position: relative;
   width: 120px;
+  height: 120px;
+  overflow: hidden;
   border-radius: 4px;
+  >img {
+    position: absolute;
+    top: -40px;
+    left: -90px;
+    width: fit-content;
+    height: fit-content;
+  }
   @media (max-width: 767.98px) {
     width: 100%;
   }
 }
 
 .contentSubCardContent {
+  width: calc(100% - 120px - 20px);
   display: flex;
   flex-direction: column;
   margin-left: 20px;
   @media (max-width: 767.98px) {
+    width: 100%;
     margin-left: 0;
   }
 }
