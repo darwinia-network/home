@@ -26,13 +26,5 @@ module.exports = (config, env) => {
     ]);
   }
 
-  config.resolve.extensions = [
-    '.web.mjs', '.mjs',
-    '.web.js', '.js',
-    '.json', '.web.jsx',
-    '.jsx'
-  ];
-  console.log('cfg:', config);
-
   return config;
 };
