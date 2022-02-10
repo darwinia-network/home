@@ -34,13 +34,11 @@ export const ContentSubbCards = ({ data }) => (
           <img alt="..." src={value.picture} />
         </a>
         <div className={styles.contentSubCardContent}>
-          <div className={styles.contentSubCardContentTags}>
+          <Typography.Paragraph className={styles.contentSubCardContentTags} ellipsis={{ rows: 2, expandable: false }}>
             {value.tags.map((value, index) => (
-              <span className={styles.contentSubCardContentTag} key={index}>
-                {index > 0 ? `, ${value}` : value}
-              </span>
+              <React.Fragment key={index}>{index > 0 ? `, ${value}` : value}</React.Fragment>
             ))}
-          </div>
+          </Typography.Paragraph>
           <Typography.Paragraph className={styles.contentSubCardContentTitle} ellipsis={{ rows: 3, expandable: false }}>
             {value.title}
           </Typography.Paragraph>

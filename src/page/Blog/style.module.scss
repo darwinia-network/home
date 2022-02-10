@@ -206,15 +206,6 @@
 }
 
 .contentSubCardContentTags {
-  display: flex;
-  align-items: center;
-  margin-bottom: 6px;
-  @media (max-width: 767.98px) {
-    margin-top: 6px;
-  }
-}
-
-.contentSubCardContentTag {
   font-family: IBM Plex Sans;
   font-style: normal;
   font-weight: bold;
@@ -223,7 +214,10 @@
   letter-spacing: 0.5px;
   color: #adadad;
   mix-blend-mode: normal;
+  margin-bottom: 6px !important;
+  -webkit-line-clamp: 1 !important;
   @media (max-width: 767.98px) {
+    margin-top: 6px;
     font-weight: normal;
     font-size: 12px;
     line-height: 18px;
