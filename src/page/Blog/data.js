@@ -4,7 +4,7 @@ export const dataBlogs = [
     title: "Crifferent.de supports Darwinia and sponsors the Crab Hackathon!",
     tags: ["Announcements", "Hackathon"],
     abstract:
-      "We are excited to announce Crifferent.de as an official sponsor of The Crab Hackathon…",
+      "We are excited to announce Crifferent.de as an official sponsor of the Crab Hackathon…",
     time: "January 26, 2022",
     link: "https://medium.com/@darwinianetwork/crifferent-de-supports-darwinia-and-sponsors-the-crab-hackathon-6a6650e65816",
   },
@@ -29,7 +29,7 @@ export const dataBlogs = [
   {
     picture: "/static/blogImg/blog/blog_006.png",
     title: "Announcing the Crab Network Developers Airdrop Program",
-    tags: ["Announcements", "Hackathon"],
+    tags: ["Hackathon"],
     abstract:
       "To promote Crab Network to developers, meanwhile to make it easier for developers to start building on Crab, today we are pleased to announce a developer airdrop program…",
     time: "January 20, 2022",
@@ -38,7 +38,7 @@ export const dataBlogs = [
   {
     picture: "/static/blogImg/blog/blog_005.png",
     title: "RMRK is now an official sponsor of Darwinia Crab Hackathon!",
-    tags: ["Announcements", "Hackathon"],
+    tags: ["Announcements"],
     abstract:
       "We are excited to announce RMRK as an official sponsor of The Crab Hackathon!",
     time: "January 11, 2022",
@@ -47,7 +47,7 @@ export const dataBlogs = [
   {
     picture: "/static/blogImg/blog/blog_004.png",
     title: "1BTC Rewards for Darwinia Polkadot Parachain Slot Auction have been Delivered！",
-    tags: ["Announcements", "Parachain"],
+    tags: ["Announcements"],
     abstract:
       "Pioneers! We’ve distributed the BTC rewards of the Darwinia Polkadot Parachain Slot Auction. Thanks for supporting Darwinia Network…",
     time: "January 11, 2022",
@@ -56,7 +56,7 @@ export const dataBlogs = [
   {
     picture: "/static/blogImg/blog/blog_003.png",
     title: "Guide to Participate in the Crab PLO",
-    tags: ["Tutorials", "Parachain"],
+    tags: [ "Parachain"],
     abstract:
       "We have structured a generous benefits package for our crowdloan contributors and sincerely hope you will consider loaning us your KSMs so that we can be successful in our bid for a parachain slot…",
     time: "January 7, 2022",
@@ -65,7 +65,7 @@ export const dataBlogs = [
   {
     picture: "/static/blogImg/blog/blog_002.png",
     title: "Technical Checklist for Developers Who Build on Crab Network",
-    tags: ["Tutorials", "Hackathon"],
+    tags: ["Hackathon"],
     abstract:
       "Crab Network will hold an online hackathon on the DoraHacks platform to fund the development of projects and applications that contribute to the Crab ecosystem and promote overall network growth…",
     time: "January 7, 2022",
@@ -74,7 +74,7 @@ export const dataBlogs = [
   {
     picture: "/static/blogImg/blog/blog_001.png",
     title: "Crab Online Hackathon Now Live!",
-    tags: ["Announcements", "Hackathon"],
+    tags: ["Announcements"],
     abstract:
       "The Crab Hackathon aims to encourage developers to contribute ideas and early-stage projects related to Web3 Tools, DeFi, Metaverse, and NFT to the Crab ecosystem…",
     time: "January 6, 2022",
@@ -181,7 +181,7 @@ export const dataTutorials = [
   },
   {
     picture: "/static/blogImg/tutorials/tutorials_012.png",
-    title: "Build on Darwinia 2–2：EVM-Compatible Crab Smart Chain",
+    title: "Build on Darwinia 2–2: EVM-Compatible Crab Smart Chain",
     tags: ["Tutorials", "Builders"],
     abstract:
       "The Darwinia core team is committed to providing decentralized cross-chain interoperability solutions for heterogeneous networks…",
@@ -191,7 +191,7 @@ export const dataTutorials = [
   },
   {
     picture: "/static/blogImg/tutorials/tutorials_011.png",
-    title: "Understanding Darwinia Bridge 1–7：A Hands-on Guide on How to Run a Bridger Node Part II",
+    title: "Understanding Darwinia Bridge 1–7: A Hands-on Guide on How to Run a Bridger Node Part II",
     tags: ["Tutorials", "Bridge"],
     abstract:
       "This is a sequel of A Hands-on Guide on How to Run a Bridger Node. It explains the improvements to the previous design of Bridgers and the difference in user operations…",
