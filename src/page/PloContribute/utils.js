@@ -3,7 +3,6 @@ import { hexToU8a, u8aToHex, isHex, formatBalance } from "@polkadot/util";
 import { Keyring } from "@polkadot/keyring";
 import BN from "bn.js";
 import Big from "big.js";
-// import { TypeRegistry } from "@polkadot/types";
 
 export const RING_REWARD = 200000000;
 export const KTON_REWARD = 8000;

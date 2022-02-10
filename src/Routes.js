@@ -8,7 +8,10 @@ const AsyncNotFound = asyncComponent(import("./page/NotFound"));
 const AsyncBrand = asyncComponent(import("./page/Brand"));
 const AsyncAmbassador = asyncComponent(import("./page/Ambassador"));
 const AsyncCommunity = asyncComponent(import("./page/Community"));
-const AsyncMedia = asyncComponent(import("./page/Media"));
+const AsyncBlog = asyncComponent(import("./page/Blog"));
+const AsyncBlogTutorials = asyncComponent(import("./page/Blog/TutorialsPage"));
+const AsyncBlogNewsletters = asyncComponent(import("./page/Blog/NewslettersPage"));
+// const AsyncMedia = asyncComponent(import("./page/Media"));
 const AsyncNews = asyncComponent(import("./page/News"));
 const AsyncEvents = asyncComponent(import("./page/Events"));
 const AsyncReports = asyncComponent(import("./page/Reports"));
@@ -19,7 +22,7 @@ const AsyncPlo = asyncComponent(import("./page/Plo"));
 const AsyncPloContrbite = asyncComponent(import("./page/PloContribute"));
 const history = createBrowserHistory();
 
-export default () => (
+const Routes = () => (
   <Router history={history}>
     <Switch>
       <Route exact component={AsyncHome} path="/" />
@@ -31,7 +34,11 @@ export default () => (
 
       <Route exact component={AsyncCommunity} path="/community" />
 
-      <Route exact component={AsyncMedia} path="/media" />
+      <Route exact component={AsyncBlog} path="/blog" />
+      <Route exact component={AsyncBlogTutorials} path="/blog/tutorials" />
+      <Route exact component={AsyncBlogNewsletters} path="/blog/newsletters" />
+
+      {/* <Route exact component={AsyncMedia} path="/media" /> */}
 
       <Route exact component={AsyncReports} path="/reports" />
 
@@ -53,3 +60,5 @@ export default () => (
     </Switch>
   </Router>
 );
+
+export default Routes;

@@ -17,8 +17,8 @@ import mediumIcon from "./img/medium.png";
 import telegramIcon from "./img/telegram.png";
 import discordIcon from "./img/discord.png";
 import BTCReward from "./components/btc-reward";
-import ringIcon from './img/ring-icon.png';
-import ktonIcon from './img/kton-icon.png';
+import ringIcon from "./img/ring-icon.png";
+import ktonIcon from "./img/kton-icon.png";
 
 import {
   CONTRIBUTES_BY_PARA_ID,
@@ -62,7 +62,7 @@ import { useQuery } from "@apollo/client";
 import GlobalContributionActivity from "./components/global-contribution-activity";
 import ReferralLeaderboard from "./components/referral-leaderboard";
 import ConnectionFailedModal from "./components/connection-failed-modal";
-import btcTop5 from './top5.json';
+import btcTop5 from "./top5.json";
 
 const cx = classNames.bind(styles);
 
@@ -124,15 +124,21 @@ const PloContribute = () => {
   ) {
     const tmp = [];
     for (let node1 of myReferCrwonloan.data.crowdloanReferStatistic.contributors.nodes) {
-      const { block: { number }, extrinsicId, timestamp, balance, id } = node1;
+      const {
+        block: { number },
+        extrinsicId,
+        timestamp,
+        balance,
+        id,
+      } = node1;
 
       tmp.push({
         number,
         balance,
         timestamp,
         extrinsicId,
-        index: id.split('-')[1]
-      })
+        index: id.split("-")[1],
+      });
     }
     referralsContributeHistory = tmp;
   }
@@ -227,13 +233,13 @@ const PloContribute = () => {
 
     const totalPower = new BN(myWhoCrowdloan.data.crowdloanWhoStatistic.totalPower);
 
-    myRingReward = Big(totalPower).div(globalTotalPower.toString()).mul(Big('200000000')).toString()
-    myKtonReward = Big(totalPower).div(globalTotalPower.toString()).mul(Big('8000')).toString();
+    myRingReward = Big(totalPower).div(globalTotalPower.toString()).mul(Big("200000000")).toString();
+    myKtonReward = Big(totalPower).div(globalTotalPower.toString()).mul(Big("8000")).toString();
   }
 
   const myContributePer = Big(myTotalContribute.toString()).div(globalTotalPower.toString());
 
-  const top5contribute = useMemo(() => btcTop5.reduce((acc, cur) => acc.add(new Big(cur.amount)), new Big('0')), []);
+  const top5contribute = useMemo(() => btcTop5.reduce((acc, cur) => acc.add(new Big(cur.amount)), new Big("0")), []);
 
   useEffect(() => {
     const address = localStorage.getItem(LOCAL_STORAGE_CURRENT_ADDRESS_KEY);
@@ -778,7 +784,7 @@ const PloContribute = () => {
                 </button>
               </div>
 
-             <BTCReward currentAccount={currentAccount} /> 
+              <BTCReward currentAccount={currentAccount} />
 
               <div className={cx("contribute-info-item-wrap")}>
                 <div className={cx("contribute-info-item")}>

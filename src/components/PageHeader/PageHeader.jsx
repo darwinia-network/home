@@ -116,8 +116,8 @@ const NavGrounp = ({ hasFixed = false }) => {
         <Nav.Link href="/community" className={`${style.navLinkText} ${hasFixed ? style.hasFixed : ""}`}>
           {t("header:community")}
         </Nav.Link>
-        <Nav.Link href="/media" className={`${style.navLinkText} ${hasFixed ? style.hasFixed : ""}`}>
-          {t("header:media")}
+        <Nav.Link href="/blog" className={`${style.navLinkText} ${hasFixed ? style.hasFixed : ""}`}>
+          {t("header:blog")}
         </Nav.Link>
         <Button
           href={t("header:apps_link")}

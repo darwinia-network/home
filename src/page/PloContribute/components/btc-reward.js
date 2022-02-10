@@ -20,7 +20,9 @@ function BTCReward({ currentAccount }) {
   const { api } = useApi();
   const [isReward, setIsReward] = useState(false);
 
-  const target = currentAccount ? btcTop5.find(({ address }) => address.toLowerCase() === currentAccount.address.toLowerCase()) : null;
+  const target = currentAccount
+    ? btcTop5.find(({ address }) => address.toLowerCase() === currentAccount.address.toLowerCase())
+    : null;
   const contributeAmount = target ? target.reward : 0;
 
   const claim = async () => {
@@ -84,7 +86,7 @@ function BTCReward({ currentAccount }) {
     const list = JSON.parse(data || "[]");
 
     setIsReward(list.includes(currentAccount.address));
-  });
+  }, [currentAccount]);
 
   return (
     <>
@@ -128,9 +130,11 @@ function BTCReward({ currentAccount }) {
             title={
               <p className={cx("tips")}>
                 BTC Rewards for Darwinia Polkadot Parachain Slot Auction have been Delivered!
-                <br /><br />
+                <br />
+                <br />
                 {`Please track the rewards by checking the Hash “${target.hash}“.`}
-                <br /><br />
+                <br />
+                <br />
                 Please feel free to contact us through “hello@darwinia.network” if you have any question.
               </p>
             }

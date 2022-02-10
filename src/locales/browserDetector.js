@@ -1,4 +1,4 @@
-export default {
+const detector = {
   name: "browser",
 
   lookup(options) {
@@ -13,3 +13,5 @@ export default {
     // store it
   },
 };
+
+export default detector;
