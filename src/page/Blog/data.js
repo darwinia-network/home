@@ -1,8 +1,26 @@
 export const dataBlogs = [
   {
+    picture: "/static/blogImg/blog/blog_011.png",
+    title: "Darwinia Partners with OnFinality to Build the API Service on Crab Network",
+    tags: ["Announcements", "Infrastructure"],
+    abstract:
+      "Crab, the Ethereum-compatible smart contract platform on Kusama, announced the availability of a new API service powered by OnFinality, a Polkadot-focused cloud infrastructure service provider…",
+    time: "February 14, 2022",
+    link: "https://darwinianetwork.medium.com/darwinia-partners-with-onfinality-to-build-the-api-service-on-crab-network-9747bd4e0ce5",
+  },
+  {
+    picture: "/static/blogImg/blog/blog_010.png",
+    title: "MetaRock Receives Darwinia Grant, Bringing NFT Trading and Minting Market on Crab Network",
+    tags: ["Announcements", "Grants"],
+    abstract:
+      "Crab, the Ethereum-compatible smart contract platform on Kusama, accepted the MetaRock project into our grants program, a NFT market that allows users to mint and trade their NFT on Crab…",
+    time: "February 11, 2022",
+    link: "https://darwinianetwork.medium.com/grants-program-metarock-receives-darwinia-grant-bringing-nft-trading-and-minting-market-on-crab-eff08089c22a",
+  },
+  {
     picture: "/static/blogImg/blog/blog_009.png",
     title: "Crifferent.de supports Darwinia and sponsors the Crab Hackathon!",
-    tags: ["Announcements", "Hackathon"],
+    tags: ["Announcements","Hackathon"],
     abstract:
       "We are excited to announce Crifferent.de as an official sponsor of the Crab Hackathon…",
     time: "January 26, 2022",
@@ -11,7 +29,7 @@ export const dataBlogs = [
   {
     picture: "/static/blogImg/blog/blog_008.png",
     title: "Additional 100,000 CRAB For the Crab Network Developers Airdrop Program",
-    tags: ["Announcements", "Hackathon"],
+    tags: ["Announcements"],
     abstract:
       "After announcing the Crab Network Developers Airdrop Program, all 200,000 CRAB airdrop has been distributed within 24 hours, and we decided to offer an extra 100,000 CRAB airdrop…",
     time: "January 24, 2022",
@@ -20,7 +38,7 @@ export const dataBlogs = [
   {
     picture: "/static/blogImg/blog/blog_007.png",
     title: "Crab Network will Connect with the Kusama Network as the 22nd Parachain Slot!",
-    tags: ["Announcements", "Parachain"],
+    tags: ["Announcements"],
     abstract:
       "Thanks to all contributors for your support! Crab Network has won the 22nd Kusama Parachain slot and was awarded the parachain ID 2105…",
     time: "January 24, 2022",
@@ -149,6 +167,46 @@ export const dataNewsletters = [
 ];
 
 export const dataTutorials = [
+  {
+    picture: "/static/blogImg/tutorials/tutorials_019.png",
+    title: "Understanding Darwinia Tools 3–7: Crab Parachain Part IV: Crab Crowdloan",
+    tags: ["Tutorials", "Tools"],
+    abstract:
+      "Key Points: Announced that Crab Network to join Kusama Parachain Auction…",
+    time: "February 14, 2022",
+    link: "https://medium.com/@darwinianetwork/using-darwinia-tools-3-7-crab-parachain-part-iv-crab-crowdloan-ea2358bd7f47",
+    subtype: "tools",
+  },
+  {
+    picture: "/static/blogImg/tutorials/tutorials_018.png",
+    title: "Understanding Darwinia Tools 3–6: Crab Parachain Part III: What’s the Parachain Crowdloan?",
+    tags: ["Tutorials", "Tools"],
+    abstract:
+      "Crowdloan functionality was designed to help new parachains fundraise to get a “slot” on the Kusama network. These slots are competitive, which means many projects may need to lock a large number of tokens to secure the slot lease when they’re auctioned off…",
+    time: "February 14, 2022",
+    link: "https://darwinianetwork.medium.com/using-darwinia-tools-3-6-crab-parachain-part-iii-whats-the-parachain-crowdloan-37c0eaddae4d",
+    subtype: "tools",
+  },
+  {
+    picture: "/static/blogImg/tutorials/tutorials_017.png",
+    title: "Understanding Darwinia Tools 3–5: Crab Parachain Part II: What’s the Parachain Slot Auction?",
+    tags: ["Tutorials", "Tools"],
+    abstract:
+      "The parachain slot auction is a way for blockchain company to compete by bidding in an auction for the privilege of launching and operating on Kusama while also benefiting from its security and design…",
+    time: "February 14, 2022",
+    link: "https://darwinianetwork.medium.com/using-darwinia-tools-3-5-crab-parachain-part-ii-whats-the-parachain-slot-auction-3809f716dd2f",
+    subtype: "tools",
+  },
+  {
+    picture: "/static/blogImg/tutorials/tutorials_016.png",
+    title: "Understanding Darwinia Tools 3–4: Crab Parachain Part Ⅰ: What’s the Parachain?",
+    tags: ["Tutorials", "Tools"],
+    abstract:
+      "Kusama is a scalable heterogeneous multi-chain. This means that unlike previous blockchain implementations which have focused on providing a single chain of varying degrees of generality over potential applications…",
+    time: "February 14, 2022",
+    link: "https://darwinianetwork.medium.com/using-darwinia-tools-3-4-crab-parachain-part-%E2%85%B0-whats-the-parachain-709207f3030e",
+    subtype: "tools",
+  },
   {
     picture: "/static/blogImg/tutorials/tutorials_015.png",
     title: "Understanding Darwinia Bridge 1–8: How to Develop a Substrate-to-Substrate Bridge",
