@@ -1,8 +1,26 @@
 export const dataBlogs = [
   {
+    picture: "/static/blogImg/blog/blog_011.png",
+    title: "Darwinia Partners with OnFinality to Build the API Service on Crab Network",
+    tags: ["Announcements", "Infrastructure"],
+    abstract:
+      "Crab, the Ethereum-compatible smart contract platform on Kusama, announced the availability of a new API service powered by OnFinality, a Polkadot-focused cloud infrastructure service provider…",
+    time: "February 14, 2022",
+    link: "https://darwinianetwork.medium.com/darwinia-partners-with-onfinality-to-build-the-api-service-on-crab-network-9747bd4e0ce5",
+  },
+  {
+    picture: "/static/blogImg/blog/blog_010.png",
+    title: "MetaRock Receives Darwinia Grant, Bringing NFT Trading and Minting Market on Crab Network",
+    tags: ["Announcements", "Grants"],
+    abstract:
+      "Crab, the Ethereum-compatible smart contract platform on Kusama, accepted the MetaRock project into our grants program, a NFT market that allows users to mint and trade their NFT on Crab…",
+    time: "February 11, 2022",
+    link: "https://darwinianetwork.medium.com/grants-program-metarock-receives-darwinia-grant-bringing-nft-trading-and-minting-market-on-crab-eff08089c22a",
+  },
+  {
     picture: "/static/blogImg/blog/blog_009.png",
     title: "Crifferent.de supports Darwinia and sponsors the Crab Hackathon!",
-    tags: ["Announcements", "Hackathon"],
+    tags: ["Announcements","Hackathon"],
     abstract:
       "We are excited to announce Crifferent.de as an official sponsor of the Crab Hackathon…",
     time: "January 26, 2022",
@@ -11,7 +29,7 @@ export const dataBlogs = [
   {
     picture: "/static/blogImg/blog/blog_008.png",
     title: "Additional 100,000 CRAB For the Crab Network Developers Airdrop Program",
-    tags: ["Announcements", "Hackathon"],
+    tags: ["Announcements"],
     abstract:
       "After announcing the Crab Network Developers Airdrop Program, all 200,000 CRAB airdrop has been distributed within 24 hours, and we decided to offer an extra 100,000 CRAB airdrop…",
     time: "January 24, 2022",
@@ -20,7 +38,7 @@ export const dataBlogs = [
   {
     picture: "/static/blogImg/blog/blog_007.png",
     title: "Crab Network will Connect with the Kusama Network as the 22nd Parachain Slot!",
-    tags: ["Announcements", "Parachain"],
+    tags: ["Announcements"],
     abstract:
       "Thanks to all contributors for your support! Crab Network has won the 22nd Kusama Parachain slot and was awarded the parachain ID 2105…",
     time: "January 24, 2022",
