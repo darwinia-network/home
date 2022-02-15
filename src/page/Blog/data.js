@@ -168,6 +168,46 @@ export const dataNewsletters = [
 
 export const dataTutorials = [
   {
+    picture: "/static/blogImg/tutorials/tutorials_019.png",
+    title: "Understanding Darwinia Tools 3–7: Crab Parachain Part IV: Crab Crowdloan",
+    tags: ["Tutorials", "Tools"],
+    abstract:
+      "Key Points: Announced that Crab Network to join Kusama Parachain Auction…",
+    time: "February 14, 2022",
+    link: "https://medium.com/@darwinianetwork/using-darwinia-tools-3-7-crab-parachain-part-iv-crab-crowdloan-ea2358bd7f47",
+    subtype: "tools",
+  },
+  {
+    picture: "/static/blogImg/tutorials/tutorials_018.png",
+    title: "Understanding Darwinia Tools 3–6: Crab Parachain Part III: What’s the Parachain Crowdloan?",
+    tags: ["Tutorials", "Tools"],
+    abstract:
+      "Crowdloan functionality was designed to help new parachains fundraise to get a “slot” on the Kusama network. These slots are competitive, which means many projects may need to lock a large number of tokens to secure the slot lease when they’re auctioned off…",
+    time: "February 14, 2022",
+    link: "https://darwinianetwork.medium.com/using-darwinia-tools-3-6-crab-parachain-part-iii-whats-the-parachain-crowdloan-37c0eaddae4d",
+    subtype: "tools",
+  },
+  {
+    picture: "/static/blogImg/tutorials/tutorials_017.png",
+    title: "Understanding Darwinia Tools 3–5: Crab Parachain Part II: What’s the Parachain Slot Auction?",
+    tags: ["Tutorials", "Tools"],
+    abstract:
+      "The parachain slot auction is a way for blockchain company to compete by bidding in an auction for the privilege of launching and operating on Kusama while also benefiting from its security and design…",
+    time: "February 14, 2022",
+    link: "https://darwinianetwork.medium.com/using-darwinia-tools-3-5-crab-parachain-part-ii-whats-the-parachain-slot-auction-3809f716dd2f",
+    subtype: "tools",
+  },
+  {
+    picture: "/static/blogImg/tutorials/tutorials_016.png",
+    title: "Understanding Darwinia Tools 3–4: Crab Parachain Part Ⅰ: What’s the Parachain?",
+    tags: ["Tutorials", "Tools"],
+    abstract:
+      "Kusama is a scalable heterogeneous multi-chain. This means that unlike previous blockchain implementations which have focused on providing a single chain of varying degrees of generality over potential applications…",
+    time: "February 14, 2022",
+    link: "https://darwinianetwork.medium.com/using-darwinia-tools-3-4-crab-parachain-part-%E2%85%B0-whats-the-parachain-709207f3030e",
+    subtype: "tools",
+  },
+  {
     picture: "/static/blogImg/tutorials/tutorials_015.png",
     title: "Understanding Darwinia Bridge 1–8: How to Develop a Substrate-to-Substrate Bridge",
     tags: ["Tutorials", "Bridge"],
