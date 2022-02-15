@@ -23,6 +23,7 @@ jobs:
         name: Deploy to Vercel
         id: smart-vercel
         with:
+          node_version: 12
           vercel_token: ${{ secrets.VERCEL_TOKEN }}
           vercel_group: itering
           preview_output: true
