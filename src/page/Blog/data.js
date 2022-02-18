@@ -1,5 +1,14 @@
 export const dataBlogs = [
   {
+    picture: "/static/blogImg/blog/blog_012.png",
+    title: "Metaverse NFT Package Rewards Release Now!",
+    tags: ["Announcements", "Parachain"],
+    abstract:
+      "Supporters! We are distributing the Metaverse NFT Package rewards of the Crab Kusama Slot Auction. We‘ve won the 22nd Kusama parachain slot! Thanks for contributing to Crab Network…",
+    time: "February 17, 2022",
+    link: "https://medium.com/@darwinianetwork/metaverse-nft-package-rewards-release-now-4f4544e3c5a6",
+  },
+  {
     picture: "/static/blogImg/blog/blog_011.png",
     title: "Darwinia Partners with OnFinality to Build the API Service on Crab Network",
     tags: ["Announcements", "Infrastructure"],
@@ -20,7 +29,7 @@ export const dataBlogs = [
   {
     picture: "/static/blogImg/blog/blog_009.png",
     title: "Crifferent.de supports Darwinia and sponsors the Crab Hackathon!",
-    tags: ["Announcements","Hackathon"],
+    tags: ["Announcements"],
     abstract:
       "We are excited to announce Crifferent.de as an official sponsor of the Crab Hackathon…",
     time: "January 26, 2022",
@@ -167,6 +176,16 @@ export const dataNewsletters = [
 ];
 
 export const dataTutorials = [
+  {
+    picture: "/static/blogImg/tutorials/tutorials_020.png",
+    title: "Build on Darwinia 2–5: Understanding Crab Chain and Crab Smart Chain",
+    tags: ["Tutorials", "Builders"],
+    abstract:
+      "There are two chains in the Darwinia Crab network, Crab Chain(CC) and Crab Smart Chain(CSC)…",
+    time: "February 18, 2022",
+    link: "https://medium.com/@darwinianetwork/build-on-darwinia-2-5-understanding-crab-chain-and-crab-smart-chain-921e079ba7ec",
+    subtype: "builders",
+  },
   {
     picture: "/static/blogImg/tutorials/tutorials_019.png",
     title: "Understanding Darwinia Tools 3–7: Crab Parachain Part IV: Crab Crowdloan",
