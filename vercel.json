@@ -28,6 +28,7 @@
     { "source": "/ambassador", "destination": "/index.html" },
     { "source": "/community", "destination": "/index.html" },
     { "source": "/blog", "destination": "/index.html" },
+    { "source": "/blog/(.*)", "destination": "/index.html" },
     { "source": "/reports", "destination": "/index.html" },
     { "source": "/events", "destination": "/index.html" },
     { "source": "/videos", "destination": "/index.html" },
