@@ -111,6 +111,24 @@ export const dataBlogs = [
 
 export const dataNewsletters = [
   {
+    picture: "/static/blogImg/newsletters/newsletters_002.png",
+    title: "Darwinia Monthly Dispatch: February 2022",
+    tags: ["Newsletters"],
+    abstract:
+      "Updates: Crab parachain successfully connected to Kusama relaychain, and the Crab parachain collators are working smoothly…",
+    time: "March 2, 2022",
+    link: "https://darwinianetwork.medium.com/darwinia-highlight-february-monthly-recap-a1f770cf2b84",
+  },
+  {
+    picture: "/static/blogImg/newsletters/newsletters_001.png",
+    title: "Darwinia Monthly Dispatch: January 2022",
+    tags: ["Newsletters"],
+    abstract:
+      "Updates: Crab Network has won the 22nd Kusama parachain slot, Crab parachain will connect to Kusama next month…",
+    time: "February 17, 2022",
+    link: "https://darwinianetwork.medium.com/darwinia-highlight-january-monthly-recap-9b3c3fd24d03",
+  },
+  {
     picture: "/static/blogImg/newsletters/newsletters_012.png",
     title: "Darwinia Monthly Dispatch: December 2021",
     tags: ["Newsletters"],
@@ -176,6 +194,26 @@ export const dataNewsletters = [
 ];
 
 export const dataTutorials = [
+  {
+    picture: "/static/blogImg/tutorials/tutorials_022.png",
+    title: "Build on Darwinia 2–6: Crab Smart Chain vs Ethereum",
+    tags: ["Tutorials", "Builders"],
+    abstract:
+      "Crab Smart Chain(CSC) is compatible with Ethereum, which is one of its most important features…",
+    time: "March 4, 2022",
+    link: "https://darwinianetwork.medium.com/build-on-darwinia-2-6-crab-smart-chain-vs-ethereum-614d39c4621d",
+    subtype: "builders",
+  },
+  {
+    picture: "/static/blogImg/tutorials/tutorials_021.png",
+    title: "Using Darwinia Tools 3–8: Darwinia Apps Lite Guide Part Ⅰ: Account",
+    tags: ["Tutorials", "Tools"],
+    abstract:
+      "We will launch a series of articles to help users understand Darwinia’s tools, and this article is a tutorial to the new version of Apps Lite…",
+    time: "February 26, 2022",
+    link: "https://darwinianetwork.medium.com/using-darwinia-tools-3-8-darwinia-apps-lite-guide-part-%E2%85%B0-account-ae9b3347b3c7",
+    subtype: "tools",
+  },
   {
     picture: "/static/blogImg/tutorials/tutorials_020.png",
     title: "Build on Darwinia 2–5: Understanding Crab Chain and Crab Smart Chain",
