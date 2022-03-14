@@ -61,18 +61,14 @@ const PloBanner = () => {
           <img alt="..." src={icon01} className={cx("banner-logo")} />
           <div className={cx("banner-content")}>
             <h5 className={cx("title")}>
-              <span role="img" aria-label="fire">
-                🔥
-              </span>{" "}
-              We are launching our Parachain Crowdloan on Polkadot.
+              The Second Batch of Polkadot Parachain Auction has ended.
             </h5>
             <p className={cx("desc")}>
-              Contribute your DOT to help build a Web3.0 Bridge Hub by joining our crowdloan, unlock RING and KTON
-              bonus, also BTC and Metaverse limited edition commemorative NFT waiting for you.
+              Thank you for supporting Darwinia Network! Do not contribute any more DOT at this time. Metaverse NFT Package rewards can be claimed now!
             </p>
           </div>
           <Link className={cx("banner-link")} to="plo">
-            <span>Join our crowdloan</span>
+            <span>Crowdloan Details</span>
           </Link>
         </div>
       </Container>
