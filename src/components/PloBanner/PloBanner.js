@@ -60,11 +60,10 @@ const PloBanner = () => {
         <div className={cx("main")}>
           <img alt="..." src={icon01} className={cx("banner-logo")} />
           <div className={cx("banner-content")}>
-            <h5 className={cx("title")}>
-              The Second Batch of Polkadot Parachain Auction has ended.
-            </h5>
+            <h5 className={cx("title")}>The Second Batch of Polkadot Parachain Auction has ended.</h5>
             <p className={cx("desc")}>
-              Thank you for supporting Darwinia Network! Do not contribute any more DOT at this time. Metaverse NFT Package rewards can be claimed now!
+              Thank you for supporting Darwinia Network! Do not contribute any more DOT at this time. Metaverse NFT
+              Package rewards can be claimed now!
             </p>
           </div>
           <Link className={cx("banner-link")} to="plo">
