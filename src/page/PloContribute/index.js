@@ -757,7 +757,7 @@ const PloContribute = () => {
 
               <div className={cx("my-contribute-line")} />
 
-              <MetaverseNFT myTotalContribute={myTotalContribute} />
+              <MetaverseNFT myTotalContribute={myTotalContribute} currentAccount={currentAccount} />
 
               <BTCReward currentAccount={currentAccount} />
 

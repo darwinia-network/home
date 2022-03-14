@@ -1747,6 +1747,11 @@ $main-bg: linear-gradient(270deg, #ff0050 0%, #7000ff 71.44%, #0027ff 100%);
   }
 }
 
+.claim-reward-btn-text {
+  @extend %-base-p;
+  color: #fff;
+}
+
 .all-right {
   @extend %-base-p;
   width: 100%;
