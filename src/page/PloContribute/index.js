@@ -17,6 +17,7 @@ import mediumIcon from "./img/medium.png";
 import telegramIcon from "./img/telegram.png";
 import discordIcon from "./img/discord.png";
 import BTCReward from "./components/btc-reward";
+import MetaverseNFT from "./components/metaverse-nft";
 import ringIcon from "./img/ring-icon.png";
 import ktonIcon from "./img/kton-icon.png";
 
@@ -231,10 +232,10 @@ const PloContribute = () => {
   ) {
     myTotalContribute = new BN(myWhoCrowdloan.data.crowdloanWhoStatistic.totalBalance);
 
-    const totalPower = new BN(myWhoCrowdloan.data.crowdloanWhoStatistic.totalPower);
-
-    myRingReward = Big(totalPower).div(globalTotalPower.toString()).mul(Big("200000000")).toString();
-    myKtonReward = Big(totalPower).div(globalTotalPower.toString()).mul(Big("8000")).toString();
+    // Failed to plo, got nothing rewards
+    // const totalPower = new BN(myWhoCrowdloan.data.crowdloanWhoStatistic.totalPower);
+    // myRingReward = Big(totalPower).div(globalTotalPower.toString()).mul(Big("200000000")).toString();
+    // myKtonReward = Big(totalPower).div(globalTotalPower.toString()).mul(Big("8000")).toString();
   }
 
   const myContributePer = Big(myTotalContribute.toString()).div(globalTotalPower.toString());
@@ -756,43 +757,7 @@ const PloContribute = () => {
 
               <div className={cx("my-contribute-line")} />
 
-              <div className={cx("contribute-info-item")}>
-                <div className={cx("contribute-info-item-title-wrap")}>
-                  <span className={cx("contribute-info-item-title")}>Metaverse NFT Package</span>
-                  <Tooltip
-                    overlayClassName="tooltip-overlay"
-                    overlayInnerStyle={{ padding: "20px", paddingBottom: "10px" }}
-                    color="white"
-                    placement="rightTop"
-                    trigger={["click", "hover"]}
-                    title={
-                      <p className={cx("tips")}>
-                        You can get an{" "}
-                        <a target="_blank" rel="noopener noreferrer" href="https://www.evolution.land/">
-                          Evolution Land
-                        </a>{" "}
-                        Metaverse NFT Package when your contribution share greater or equal 10 DOT and you will have a
-                        chance to get a limited edition commemorative NFT in the Package.
-                        <br />
-                        <br />
-                        The Metaverse NFT Package will be awarded after the Polkadot Slot Auction is terminated
-                        regardless of whether Darwinia Network wins the slot auction or not.
-                      </p>
-                    }
-                  >
-                    <img alt="..." src={infoIcon} className={cx("info-icon")} />
-                  </Tooltip>
-                </div>
-                <div className={cx("current-tag", "space")}>
-                  <span>Current</span>
-                </div>
-                <span className={cx("contribute-info-item-value")}>
-                  {myTotalContribute.gte(DOT_TO_ORIG.muln(10)) ? "1" : "0"}
-                </span>
-                <button className={cx("claim-reward-btn")} disabled={true}>
-                  <span>Claim</span>
-                </button>
-              </div>
+              <MetaverseNFT myTotalContribute={myTotalContribute} />
 
               <BTCReward currentAccount={currentAccount} />
 
