@@ -1676,7 +1676,8 @@ $main-bg: linear-gradient(270deg, #ff0050 0%, #7000ff 71.44%, #0027ff 100%);
   line-height: 13px;
   color: #000000;
 
-  > a {
+  > a,
+  > strong {
     color: #7000ff;
   }
 }
@@ -1829,7 +1830,7 @@ $main-bg: linear-gradient(270deg, #ff0050 0%, #7000ff 71.44%, #0027ff 100%);
     font-size: 30px;
     line-height: 39px;
     text-align: center;
-    color: #ec3783;
+    color: #7000ff;
 
     @media screen and (max-width: 1024px) {
       font-weight: 500;
@@ -1911,10 +1912,10 @@ $main-bg: linear-gradient(270deg, #ff0050 0%, #7000ff 71.44%, #0027ff 100%);
     }
   }
   strong {
-    color: #ec3783;
+    color: #7000ff;
   }
   a {
-    color: #ec3783;
+    color: #7000ff;
     &:hover {
       text-decoration: underline;
     }
@@ -2016,10 +2017,10 @@ $main-bg: linear-gradient(270deg, #ff0050 0%, #7000ff 71.44%, #0027ff 100%);
   line-height: 21px;
   color: #000000;
   &:hover {
-    border-color: rgba(#ec3783, 0.8);
+    border-color: rgba(#7000ff, 0.8);
   }
   &:focus-visible {
-    outline-color: rgba(#ec3783, 0.5);
+    outline-color: rgba(#7000ff, 0.5);
   }
   &:disabled {
     cursor: not-allowed;
@@ -2039,7 +2040,7 @@ $main-bg: linear-gradient(270deg, #ff0050 0%, #7000ff 71.44%, #0027ff 100%);
   font-size: 12px;
   line-height: 16px;
   color: #ec3783;
-  &.disbaled {
+  &.disabled {
     display: none;
   }
 }
@@ -2052,7 +2053,7 @@ $main-bg: linear-gradient(270deg, #ff0050 0%, #7000ff 71.44%, #0027ff 100%);
       }
     }
     .ant-spin-dot-item {
-      background-color: #ec3783;
+      background-color: #7000ff;
     }
   }
 }
