@@ -38,10 +38,11 @@ const GET_MY_ADDRESS_REMARKS = gql`
   }
 `;
 
+const excludedList = ["13wNbioJt44NKrcQ5ZUrshJqP7TKzQbzZt5nhkeL4joa3PAX"];
+
 const cx = classNames.bind(styles);
 
 const isAnValidDarwiniaAddress = (address) => {
-  console.log("address:", address);
   return Web3Utils.isAddress(address || "");
 };
 
@@ -112,6 +113,8 @@ const MetaverseNFT = ({ myTotalContribute, currentAccount }) => {
     }
   };
 
+  const isExcluded = excludedList.find((v) => currentAccount && v === currentAccount.address);
+
   return (
     <>
       <div className={cx("contribute-info-item")}>
@@ -145,7 +148,7 @@ const MetaverseNFT = ({ myTotalContribute, currentAccount }) => {
           <span>Current</span>
         </div>
         <span className={cx("contribute-info-item-value")}>
-          {myTotalContribute.gte(DOT_TO_ORIG.muln(10)) ? "1" : "0"}
+          {myTotalContribute.gte(DOT_TO_ORIG.muln(10)) && !isExcluded ? "1" : "0"}
         </span>
         {isRemarked || myRemarked ? (
           <Tooltip
@@ -186,7 +189,7 @@ const MetaverseNFT = ({ myTotalContribute, currentAccount }) => {
         ) : (
           <button
             className={cx("claim-reward-btn")}
-            disabled={myTotalContribute.lt(DOT_TO_ORIG.muln(10)) || loading || !currentAccount}
+            disabled={myTotalContribute.lt(DOT_TO_ORIG.muln(10)) || loading || !currentAccount || isExcluded}
             onClick={() => setVisibleModalClaimNFT(true)}
           >
             <Spin wrapperClassName={cx("metaverse-nft-modal-ok-btn-spin")} spinning={loading}>
