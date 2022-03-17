@@ -1,5 +1,41 @@
 export const dataBlogs = [
   {
+    picture: "/static/blogImg/blog/blog_016.png",
+    title: "Darwinia Crowdloan: Metaverse NFT Blind Package Rewards Release Now!",
+    tags: ["Announcements", "Parachain"],
+    abstract:
+      "Supporters! We are distributing the Metaverse NFT Blind Package rewards of the Darwinia Polkadot Slot Auction. Thanks for contributing to Darwinia Network…",
+    time: "March 17, 2022",
+    link: "https://darwinianetwork.medium.com/darwinia-crowdloan-metaverse-nft-package-rewards-release-now-50e10763301d",
+  },
+  {
+    picture: "/static/blogImg/blog/blog_015.png",
+    title: "Crust Network Integrates with Crab to Bring Web3 Decentralized Storage to the Kusama Ecosystem",
+    tags: ["Announcements", "Infrastructure"],
+    abstract:
+      "CRUST is integrating with Crab to enable the decentralized storage of Solidity smart contracts and DApp data. This partnership will create new opportunities not only for the Crab storage infrastructure and Crust Network but also for…",
+    time: "March 15, 2022",
+    link: "https://darwinianetwork.medium.com/crust-network-integrates-with-crab-to-bring-web3-decentralized-storage-to-the-kusama-ecosystem-40a783bafafa",
+  },
+  {
+    picture: "/static/blogImg/blog/blog_014.png",
+    title: "Meet Crab Online Hackathon Winners!",
+    tags: ["Announcements", "Hackathon"],
+    abstract:
+      "We’re happy to summarize the 2-month Crab Online Hackathon and announce our winners! With the total acceptance of 37 submissions, the entries proved themselves a lever for paving the way for building on the Crab Smart Chain…",
+    time: "March 11, 2022",
+    link: "https://darwinianetwork.medium.com/meet-crab-online-hackathon-winners-9e35cb6fff78",
+  },
+  {
+    picture: "/static/blogImg/blog/blog_013.png",
+    title: "Grants Program: Subview Receives Darwinia Grant, Bringing a Blockchain Explorer For Crab Smart Chain Data Support",
+    tags: ["Announcements", "Grants"],
+    abstract:
+      "Crab, the Ethereum-compatible smart contract platform on Kusama, accepted the Subview project into our grants program. Subview is a blockchain explorer for Crab Smart Chain data support and provides a comprehensive…",
+    time: "March 7, 2022",
+    link: "https://darwinianetwork.medium.com/grants-program-subview-receives-darwinia-grant-bringing-a-blockchain-explorer-for-crab-smart-9ca0230499aa",
+  },
+  {
     picture: "/static/blogImg/blog/blog_012.png",
     title: "Metaverse NFT Package Rewards Release Now!",
     tags: ["Announcements", "Parachain"],
@@ -192,6 +228,15 @@ export const dataNewsletters = [
 ];
 
 export const dataTutorials = [
+  {
+    picture: "/static/blogImg/tutorials/tutorials_023.png",
+    title: "Using Darwinia Tools 3–9: Darwinia Apps Guide Part II: Staking and Earning",
+    tags: ["Tutorials", "Tools"],
+    abstract: "This tutorial will walk you through the process of staking your tokens (RING/KTON) on Darwinia Apps built by the Darwinia Dev team. The Apps work on Substrate-based Pangolin/Pangoro Test Network, Darwinia Chain, and Crab Chain…",
+    time: "March 16, 2022",
+    link: "https://darwinianetwork.medium.com/using-darwinia-tools-3-9-darwinia-apps-guide-part-%E2%85%B1-staking-and-earning-7cd586315f76",
+    subtype: "tools",
+  },
   {
     picture: "/static/blogImg/tutorials/tutorials_022.png",
     title: "Build on Darwinia 2–6: Crab Smart Chain vs Ethereum",
