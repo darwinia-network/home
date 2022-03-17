@@ -1157,6 +1157,8 @@ $main-bg: linear-gradient(270deg, #ff0050 0%, #7000ff 71.44%, #0027ff 100%);
 .crowloan-echarts {
   height: 258px;
   width: 100%;
+  display: flex;
+  justify-content: center;
 }
 
 .referral-leaderboard {
@@ -1674,7 +1676,8 @@ $main-bg: linear-gradient(270deg, #ff0050 0%, #7000ff 71.44%, #0027ff 100%);
   line-height: 13px;
   color: #000000;
 
-  > a {
+  > a,
+  > strong {
     color: #7000ff;
   }
 }
@@ -1744,6 +1747,11 @@ $main-bg: linear-gradient(270deg, #ff0050 0%, #7000ff 71.44%, #0027ff 100%);
   }
 }
 
+.claim-reward-btn-text {
+  @extend %-base-p;
+  color: #fff;
+}
+
 .all-right {
   @extend %-base-p;
   width: 100%;
@@ -1785,6 +1793,272 @@ $main-bg: linear-gradient(270deg, #ff0050 0%, #7000ff 71.44%, #0027ff 100%);
       width: 100%;
       border-radius: 10px;
       outline: none;
+    }
+  }
+}
+
+.total-contribute-history {
+  background: #ffffff;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(50px);
+  border-radius: 30px;
+  padding: 30px {
+    top: 40px;
+  }
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+
+  @media screen and (max-width: 1024px) {
+    padding: 20px {
+      top: 30px;
+    }
+  }
+}
+
+.total-contribute-history-title-wrap {
+  background: rgba(236, 55, 131, 0.05);
+  border-radius: 10px;
+  padding: 20px 80px;
+  width: fit-content;
+
+  @media screen and (max-width: 1024px) {
+    padding: 20px 10px;
+  }
+
+  > span {
+    font-family: IBM Plex Sans;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 30px;
+    line-height: 39px;
+    text-align: center;
+    color: #7000ff;
+
+    @media screen and (max-width: 1024px) {
+      font-weight: 500;
+      font-size: 26px;
+      line-height: 21px;
+    }
+  }
+}
+
+.metaverse-nft-modal {
+  :global {
+    .ant-modal-content {
+      border-radius: 16px;
+    }
+    .ant-modal-close {
+      top: 10px;
+      left: auto;
+      right: 12px;
+    }
+    .ant-modal-close-x {
+      width: 36px;
+      height: 36px;
+      line-height: 36px;
+      > img {
+        width: 36px;
+        height: 36px;
+      }
+      @media screen and (max-width: 1024px) {
+        width: 30px;
+        height: 30px;
+        line-height: 30px;
+        > img {
+          width: 30px;
+          height: 30px;
+        }
+      }
+    }
+  }
+
+  button:focus {
+    outline: none;
+  }
+}
+
+.metaverse-nft-modal-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.metaverse-nft-modal-title {
+  font-family: IBM Plex Sans;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 26px;
+  text-align: center;
+  color: #000000;
+  @media screen and (max-width: 1024px) {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 22px;
+  }
+}
+
+.metaverse-nft-modal-content {
+  > li {
+    font-family: IBM Plex Sans;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 21px;
+    color: #000000;
+    margin-top: 12px;
+    @media screen and (max-width: 1024px) {
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 16px;
+    }
+  }
+  strong {
+    color: #7000ff;
+  }
+  a {
+    color: #7000ff;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+.metaverse-nft-modal-ok-btn-text {
+  font-family: IBM Plex Sans;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 21px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: #ffffff;
+  @media screen and (max-width: 1024px) {
+    font-size: 14px;
+    line-height: 16px;
+  }
+}
+
+.metaverse-nft-modal-ok-btn {
+  transition: all 0.3s;
+  width: calc(100% - 16px);
+  border: none;
+  background: linear-gradient(315.52deg, #ff0050 0.88%, #7000ff 71.7%, #0027ff 100%);
+  border-radius: 10px;
+  padding: 9px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &:hover {
+    box-shadow: 0 0 3px #7000ff;
+  }
+  &:disabled {
+    cursor: not-allowed;
+    background: #cccccc;
+    box-shadow: none;
+    > span {
+      color: #555555;
+    }
+  }
+}
+
+.metaverse-nft-modal-copy-that-ok-btn {
+  width: 320px;
+  @media screen and (max-width: 1024px) {
+    width: calc(100% - 40px);
+  }
+}
+
+.metaverse-nft-modal-accept {
+  align-self: flex-start;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  > button {
+    border: none;
+    background: transparent;
+    @media screen and (max-width: 1024px) {
+      > img {
+        width: 22px;
+        height: 22px;
+      }
+    }
+  }
+  > span {
+    font-family: IBM Plex Sans;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 21px;
+    color: #000000;
+    @media screen and (max-width: 1024px) {
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 16px;
+    }
+  }
+}
+
+.metaverse-nft-modal-address-input-wrap {
+  width: calc(100% - 16px);
+  margin-top: 18px;
+  margin-bottom: 12px;
+}
+
+.metaverse-nft-modal-address-input {
+  transition: border-color 0.3s;
+  width: 100%;
+  border: 1px solid #cccccc;
+  border-radius: 10px;
+  padding: 8px 12px;
+  font-family: IBM Plex Sans;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 21px;
+  color: #000000;
+  &:hover {
+    border-color: rgba(#7000ff, 0.8);
+  }
+  &:focus-visible {
+    outline-color: rgba(#7000ff, 0.5);
+  }
+  &:disabled {
+    cursor: not-allowed;
+    border-color: #cccccc;
+  }
+  @media screen and (max-width: 1024px) {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 16px;
+  }
+}
+
+.metaverse-nft-modal-address-warning {
+  font-family: IBM Plex Sans;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 16px;
+  color: #ec3783;
+  &.disabled {
+    display: none;
+  }
+}
+
+.metaverse-nft-modal-ok-btn-spin {
+  :global {
+    .ant-spin-blur {
+      &::after {
+        opacity: 0;
+      }
+    }
+    .ant-spin-dot-item {
+      background-color: #7000ff;
     }
   }
 }

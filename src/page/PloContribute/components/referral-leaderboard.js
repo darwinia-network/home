@@ -79,8 +79,8 @@ const ReferralLeaderboard = ({ globalTotalPower }) => {
                   {formatBalanceFromOrigToDOT(data.accumulatedContribution)} DOT
                 </span>
                 <div className={cx("referral-leaderboard-item-rewards")}>
-                  <span>{data.referralRewards.ring.toFixed(2)} RING</span>
-                  <span>{data.referralRewards.kton.toFixed(2)} KTON</span>
+                  <span>{'0' || data.referralRewards.ring.toFixed(2)} RING</span>
+                  <span>{'0' || data.referralRewards.kton.toFixed(2)} KTON</span>
                 </div>
               </div>
             ))

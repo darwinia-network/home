@@ -30,8 +30,7 @@ export const dataBlogs = [
     picture: "/static/blogImg/blog/blog_009.png",
     title: "Crifferent.de supports Darwinia and sponsors the Crab Hackathon!",
     tags: ["Announcements"],
-    abstract:
-      "We are excited to announce Crifferent.de as an official sponsor of the Crab Hackathon…",
+    abstract: "We are excited to announce Crifferent.de as an official sponsor of the Crab Hackathon…",
     time: "January 26, 2022",
     link: "https://medium.com/@darwinianetwork/crifferent-de-supports-darwinia-and-sponsors-the-crab-hackathon-6a6650e65816",
   },
@@ -66,8 +65,7 @@ export const dataBlogs = [
     picture: "/static/blogImg/blog/blog_005.png",
     title: "RMRK is now an official sponsor of Darwinia Crab Hackathon!",
     tags: ["Announcements"],
-    abstract:
-      "We are excited to announce RMRK as an official sponsor of The Crab Hackathon!",
+    abstract: "We are excited to announce RMRK as an official sponsor of The Crab Hackathon!",
     time: "January 11, 2022",
     link: "https://medium.com/@darwinianetwork/1btc-rewards-for-darwinia-polkadot-parachain-slot-auction-have-been-delivered-df9c9b76154b",
   },
@@ -83,7 +81,7 @@ export const dataBlogs = [
   {
     picture: "/static/blogImg/blog/blog_003.png",
     title: "Guide to Participate in the Crab PLO",
-    tags: [ "Parachain"],
+    tags: ["Parachain"],
     abstract:
       "We have structured a generous benefits package for our crowdloan contributors and sincerely hope you will consider loaning us your KSMs so that we can be successful in our bid for a parachain slot…",
     time: "January 7, 2022",
@@ -198,8 +196,7 @@ export const dataTutorials = [
     picture: "/static/blogImg/tutorials/tutorials_022.png",
     title: "Build on Darwinia 2–6: Crab Smart Chain vs Ethereum",
     tags: ["Tutorials", "Builders"],
-    abstract:
-      "Crab Smart Chain(CSC) is compatible with Ethereum, which is one of its most important features…",
+    abstract: "Crab Smart Chain(CSC) is compatible with Ethereum, which is one of its most important features…",
     time: "March 4, 2022",
     link: "https://darwinianetwork.medium.com/build-on-darwinia-2-6-crab-smart-chain-vs-ethereum-614d39c4621d",
     subtype: "builders",
@@ -218,8 +215,7 @@ export const dataTutorials = [
     picture: "/static/blogImg/tutorials/tutorials_020.png",
     title: "Build on Darwinia 2–5: Understanding Crab Chain and Crab Smart Chain",
     tags: ["Tutorials", "Builders"],
-    abstract:
-      "There are two chains in the Darwinia Crab network, Crab Chain(CC) and Crab Smart Chain(CSC)…",
+    abstract: "There are two chains in the Darwinia Crab network, Crab Chain(CC) and Crab Smart Chain(CSC)…",
     time: "February 18, 2022",
     link: "https://medium.com/@darwinianetwork/build-on-darwinia-2-5-understanding-crab-chain-and-crab-smart-chain-921e079ba7ec",
     subtype: "builders",
@@ -228,8 +224,7 @@ export const dataTutorials = [
     picture: "/static/blogImg/tutorials/tutorials_019.png",
     title: "Understanding Darwinia Tools 3–7: Crab Parachain Part IV: Crab Crowdloan",
     tags: ["Tutorials", "Tools"],
-    abstract:
-      "Key Points: Announced that Crab Network to join Kusama Parachain Auction…",
+    abstract: "Key Points: Announced that Crab Network to join Kusama Parachain Auction…",
     time: "February 14, 2022",
     link: "https://medium.com/@darwinianetwork/using-darwinia-tools-3-7-crab-parachain-part-iv-crab-crowdloan-ea2358bd7f47",
     subtype: "tools",
@@ -278,8 +273,7 @@ export const dataTutorials = [
     picture: "/static/blogImg/tutorials/tutorials_014.png",
     title: "Build on Darwinia 2–4: Deploying Uniswap V2 to Crab/Pangolin Network Part II",
     tags: ["Tutorials", "Builders"],
-    abstract:
-      "This is the second article of the tutorial on the deployment of Uniswap V2 to Crab/Pangolin network…",
+    abstract: "This is the second article of the tutorial on the deployment of Uniswap V2 to Crab/Pangolin network…",
     time: "January 27, 2022",
     link: "https://medium.com/@darwinianetwork/build-on-darwinia-2-4-deploying-uniswap-v2-to-crab-pangolin-network-ii-3798e6c43951",
     subtype: "builders",
@@ -388,8 +382,7 @@ export const dataTutorials = [
     picture: "/static/blogImg/tutorials/tutorials_003.png",
     title: "Understanding Darwinia Bridge 1–3: The Token Bridge Solution",
     tags: ["Tutorials", "Bridge"],
-    abstract:
-      "The cross-chain token bridge refers to the asset transfer channel between two heterogeneous chains…",
+    abstract: "The cross-chain token bridge refers to the asset transfer channel between two heterogeneous chains…",
     time: "November 12, 2021",
     link: "https://darwinianetwork.medium.com/understanding-darwinia-bridge-1-3-the-token-bridge-solution-1f178c9891aa",
     subtype: "bridge",
@@ -403,7 +396,7 @@ export const dataTutorials = [
     time: "October 29, 2021",
     link: "https://darwinianetwork.medium.com/understanding-darwinia-bridge-1-2-mapping-token-factory-a77a2a2c47d1",
     subtype: "bridge",
-  }, 
+  },
   {
     picture: "/static/blogImg/tutorials/tutorials_001.png",
     title: "Understanding Darwinia Bridge 1–1: Darwinia Relayer Incentive Scheme — Fee Market",

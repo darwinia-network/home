@@ -13,11 +13,15 @@ const Welcome = () => {
     <Container>
       <div className={cx("main")}>
         <img alt="..." src={bridge} className={cx("bridge")} />
-        <h2 className={cx("title-h2")}>Support Darwinia, invest in the next generation of Web3.0 Metaverse</h2>
-        <p className={cx("desc")}>Darwinia Network is bridging heterogeneous chains to build the Web3.0 Metaverse.</p>
+        <h2 className={cx("title-h2")}>
+          The Polkadot Parachain Auction has ended. Thank you for supporting Darwinia Network!
+        </h2>
+        <p className={cx("desc")}>
+          Do not contribute any more DOT at this time. Metaverse NFT Package rewards can be claimed now!
+        </p>
         <div className={cx("link-wrap")}>
           <Link className={cx("join-our-crowdloan-link")} to="plo_contribute">
-            <span>Contribute now</span>
+            <span>Crowdloan Details</span>
           </Link>
           <a
             className={cx("learn-more-link")}
