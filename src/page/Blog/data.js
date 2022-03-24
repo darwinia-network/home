@@ -410,7 +410,7 @@ export const dataTutorials = [
     abstract:
       "We will launch a series of articles to help users understand some of Darwinia’s tools, and this article is a user guide to the new version of Wormhole…",
     time: "December 1, 2021",
-    link: "https://darwinianetwork.medium.com/support-crab-while-investing-in-the-next-generation-infrastructure-for-the-web3-0-metaverse-d194ff902f6d",
+    link: "https://medium.com/@darwinianetwork/using-darwinia-tools-3-1-wormhole-user-guide-35de43cff9e9",
     subtype: "tools",
   },
   {
