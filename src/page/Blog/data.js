@@ -1,5 +1,14 @@
 export const dataBlogs = [
   {
+    picture: "/static/blogImg/blog/blog_017.png",
+    title: "Darwinia and SubDAO will jointly explore Web3.0 DAO",
+    tags: ["Announcements"],
+    abstract:
+      "Darwinia is pleased to announce our partnership with SubDAO in the Web 3.0 DAO exploration, SubDAO will bring DAO infrastructure tools to the Darwinia and Crab Network ecosystem…",
+    time: "March 21, 2022",
+    link: "https://medium.com/@darwinianetwork/subdao-and-darwinia-will-jointly-explore-web3-0-dao-56558c11bc5d",
+  },
+  {
     picture: "/static/blogImg/blog/blog_016.png",
     title: "Darwinia Crowdloan: Metaverse NFT Blind Package Rewards Release Now!",
     tags: ["Announcements", "Parachain"],
