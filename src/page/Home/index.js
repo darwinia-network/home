@@ -734,7 +734,7 @@ class Home extends Component {
                     <br />
                     {t("home_page:dev_content_2")}
                   </p>
-                  <Button target="_blank" href="https://www.itering.io/about" className={styles.btnLight}>
+                  <Button target="_blank" href="https://www.itering.io/jobs?lng=en-US" className={styles.btnLight}>
                     <span>{t("home_page:dev_join")}</span>
                   </Button>
                 </Col>

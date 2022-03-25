@@ -144,7 +144,7 @@ class PageFooter extends Component {
                 </a>
               </p>
               <p>
-                <a target="_blank" rel="noopener noreferrer" href="https://www.itering.io/about">
+                <a target="_blank" rel="noopener noreferrer" href={t("footer:general_link_3")}>
                   {t("footer:general_title_3")}
                 </a>
               </p>
