@@ -80,8 +80,8 @@ const NavGrounp = ({ hasFixed = false }) => {
       icon: crabNetIcon,
       title: t("header:crab_net"),
       content: t("header:crab_net_content"),
-      link: "https://crab.network/",
-      target: "_blank",
+      link: "/crab_network",
+      target: "_self",
     },
   ];
 
