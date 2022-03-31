@@ -1,0 +1,10 @@
+.page-section-1 {
+  margin-top: 70px;
+  height: 630px;
+  background: url('./img/bg-m.svg');
+  background-size: 100% 100%;
+
+  @media screen and (min-width: 576px) {
+    background: url('./img/bg.svg');
+  }
+}
