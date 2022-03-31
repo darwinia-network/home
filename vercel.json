@@ -36,6 +36,7 @@
     { "source": "/tech", "destination": "/index.html" },
     { "source": "/economic_model", "destination": "/index.html" },
     { "source": "/plo", "destination": "/index.html" },
-    { "source": "/plo_contribute", "destination": "/index.html" }
+    { "source": "/plo_contribute", "destination": "/index.html" },
+    { "source": "/crab_network", "destination": "/index.html" }
   ]
 }

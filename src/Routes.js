@@ -20,6 +20,7 @@ const AsyncTech = asyncComponent(import("./page/Tech"));
 const AsyncModel = asyncComponent(import("./page/EcoModel"));
 const AsyncPlo = asyncComponent(import("./page/Plo"));
 const AsyncPloContrbite = asyncComponent(import("./page/PloContribute"));
+const AsyncCrabNetwork = asyncComponent(import("./page/CrabNetwork"));
 const history = createBrowserHistory();
 
 const Routes = () => (
@@ -55,6 +56,8 @@ const Routes = () => (
       <Route exact component={AsyncPlo} path="/plo" />
 
       <Route exact component={AsyncPloContrbite} path="/plo_contribute" />
+
+      <Route exact component={AsyncCrabNetwork} path="/crab_network" />
 
       <Route component={AsyncNotFound} />
     </Switch>
