@@ -37,7 +37,8 @@ export const dataBlogs = [
   },
   {
     picture: "/static/blogImg/blog/blog_013.png",
-    title: "Grants Program: Subview Receives Darwinia Grant, Bringing a Blockchain Explorer For Crab Smart Chain Data Support",
+    title:
+      "Grants Program: Subview Receives Darwinia Grant, Bringing a Blockchain Explorer For Crab Smart Chain Data Support",
     tags: ["Announcements", "Grants"],
     abstract:
       "Crab, the Ethereum-compatible smart contract platform on Kusama, accepted the Subview project into our grants program. Subview is a blockchain explorer for Crab Smart Chain data support and provides a comprehensive…",
@@ -241,7 +242,8 @@ export const dataTutorials = [
     picture: "/static/blogImg/tutorials/tutorials_023.png",
     title: "Using Darwinia Tools 3–9: Darwinia Apps Guide Part II: Staking and Earning",
     tags: ["Tutorials", "Tools"],
-    abstract: "This tutorial will walk you through the process of staking your tokens (RING/KTON) on Darwinia Apps built by the Darwinia Dev team. The Apps work on Substrate-based Pangolin/Pangoro Test Network, Darwinia Chain, and Crab Chain…",
+    abstract:
+      "This tutorial will walk you through the process of staking your tokens (RING/KTON) on Darwinia Apps built by the Darwinia Dev team. The Apps work on Substrate-based Pangolin/Pangoro Test Network, Darwinia Chain, and Crab Chain…",
     time: "March 16, 2022",
     link: "https://darwinianetwork.medium.com/using-darwinia-tools-3-9-darwinia-apps-guide-part-%E2%85%B1-staking-and-earning-7cd586315f76",
     subtype: "tools",
