@@ -38,6 +38,7 @@
   },
   "devDependencies": {
     "gh-pages": "^2.1.1",
+    "husky": "^7.0.4",
     "node-sass": "^4.12.0",
     "prerender-spa-plugin": "^3.4.0",
     "prettier": "2.3.2",
@@ -52,7 +53,8 @@
     "render": "babel-node tools/run render",
     "serve": "serve -s build",
     "depoly": "babel-node tools/run depoly",
-    "format": "prettier './src/**/*.{js,jsx,ts,tsx}'  --write"
+    "format": "prettier './src/**/*.{js,jsx,ts,tsx}'  --write",
+    "prepare": "husky install"
   },
   "eslintConfig": {
     "extends": "react-app"
