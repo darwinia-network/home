@@ -17,9 +17,8 @@ import genePaperIcon from "./img/docs/gene-paper.svg";
 
 import tokensIcon from "./img/use-darwinia/tokens.svg";
 import appsIcon from "./img/use-darwinia/apps.svg";
-import wormholeIcon from "./img/use-darwinia/wormhole.svg";
-import smartAppIcon from "./img/use-darwinia/smart-app.svg";
-import crabNetIcon from "./img/use-darwinia/crab-net.png";
+import crabNetIcon from "./img/use-darwinia/crab-network.svg";
+import helixBridgeIcon from "./img/use-darwinia/helix-bridge.svg";
 
 const NavGrounp = ({ hasFixed = false }) => {
   const { t } = useTranslation();
@@ -71,17 +70,10 @@ const NavGrounp = ({ hasFixed = false }) => {
       target: "_blank",
     },
     {
-      icon: wormholeIcon,
-      title: t("header:whormhole"),
-      content: t("header:whormhole_content"),
-      link: t("header:wormhole_link"),
-      target: "_blank",
-    },
-    {
-      icon: smartAppIcon,
-      title: t("header:smart_module"),
-      content: t("header:smart_module_content"),
-      link: t("header:smart_module_link"),
+      icon: helixBridgeIcon,
+      title: t("header:helix_bridge"),
+      content: t("header:helix_bridge_content"),
+      link: t("header:helix_bridge_link"),
       target: "_blank",
     },
     {
