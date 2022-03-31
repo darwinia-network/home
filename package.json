@@ -52,7 +52,7 @@
     "render": "babel-node tools/run render",
     "serve": "serve -s build",
     "depoly": "babel-node tools/run depoly",
-    "format": "yarn prettier --write ./src"
+    "format": "prettier './src/**/*.{js,jsx,ts,tsx}'  --write"
   },
   "eslintConfig": {
     "extends": "react-app"
