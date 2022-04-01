@@ -8,9 +8,13 @@ import { PageFooter } from "../../components/PageFooter";
 
 import crabIcon from "./img/crab.svg";
 import crabIconM from "./img/crab-m.svg";
+import crabTokenIcon from "./img/crab-token.svg";
 import feature1Icon from "./img/feature-1.svg";
 import feature2Icon from "./img/feature-2.svg";
 import feature3Icon from "./img/feature-3.svg";
+import crabChainIcon from "./img/crab-chain.svg";
+import crabSmartChain from "./img/crab-smart-chain.svg";
+import helixBridgeIcon from "./img/helix-bridge.svg";
 
 const cx = classNames.bind(style);
 
@@ -123,10 +127,84 @@ const CrabNetwork = () => {
             </Row>
             <Row className="mt-4">
               <Col xs={12} sm={{ span: 2 }}>
-                <Button className={cx("w-100", "compatibility-btn")}>Dev Guide</Button>
+                <Button className={cx("w-100", "btn")}>Dev Guide</Button>
               </Col>
               <Col xs={12} sm={{ span: 2 }} className="mt-2 mt-sm-0">
-                <Button className={cx("w-100", "compatibility-btn")}>Discuss With Dev</Button>
+                <Button className={cx("w-100", "btn")}>Discuss With Dev</Button>
+              </Col>
+            </Row>
+          </Container>
+        </section>
+      </Fade>
+
+      <Fade bottom fraction={0.1} duration={1600} distance={"50px"}>
+        <section className={cx("page-section-4")}>
+          <Container>
+            <Row>
+              <Col>
+                <h5 className={cx("text-center text-sm-left")}>Interoperation between Chains</h5>
+                <p className={cx("text-center text-sm-left")}>
+                  Crab Chain and Crab Smart Chain provide two set of different interfaces and chain structures but share
+                  the same nodes network, state storage and native token(CRAB).
+                </p>
+              </Col>
+            </Row>
+            <Row>
+              <Col xs={12} sm={4} className={cx("pr-sm-0")}>
+                <div className={cx("interoperation-card", "crab-chain", "p-4 p-sm-5")}>
+                  <img alt="..." src={crabChainIcon} />
+                  <h6 className="mt-3">Crab Chain</h6>
+                  <p>Addresses use SS58 address format with the 32-byte account ID</p>
+                </div>
+              </Col>
+              <Col xs={12} sm={4} className={cx("p-sm-0")}>
+                <div
+                  className={cx(
+                    "d-flex align-items-center justify-content-end",
+                    "interoperation-asset",
+                    "smart-to-crab"
+                  )}
+                >
+                  <img alt="..." src={crabTokenIcon} />
+                </div>
+                <div className={cx("d-flex flex-column justify-content-center align-items-center p-3", "helix-bridge")}>
+                  <img alt="..." src={helixBridgeIcon} />
+                  <span>Helix Bridge</span>
+                </div>
+                <div
+                  className={cx(
+                    "d-flex align-items-center justify-content-start",
+                    "interoperation-asset",
+                    "crab-to-smart"
+                  )}
+                >
+                  <img alt="..." src={crabTokenIcon} />
+                </div>
+              </Col>
+              <Col xs={12} sm={4} className={cx("pl-sm-0")}>
+                <div className={cx("interoperation-card", "crab-smart-chain", "p-4 p-sm-5")}>
+                  <img alt="..." src={crabSmartChain} />
+                  <h6 className="mt-3">Crab Smart Chain</h6>
+                  <p>Smart Addresses use the Ethereum format(H160)</p>
+                </div>
+              </Col>
+            </Row>
+            <Row>
+              <Col>
+                <div className={cx("d-flex align-items-center px-4 py-3 mt-4 rounded", "interoperation-token")}>
+                  <img alt="..." src={crabTokenIcon} className={cx("d-none d-sm-block")} />
+                  <span className={cx("text-center text-sm-left ml-3")}>
+                    The native token for Crab Network is CRAB, CRAB can be used as gas for transactions. Gas includes
+                    transaction fees, contract execution fees, network bandwidth charges, storage fees, and more. Crab
+                    Chain(CC) and Crab Smart Chain(CSC) share the same native token(CRAB), users can transfer CRAB
+                    through the Helix Bridge between CC and CSC.
+                  </span>
+                </div>
+              </Col>
+            </Row>
+            <Row>
+              <Col xs={12} sm={{ span: 2, offset: 5 }} className={cx("mt-4")}>
+                <Button className={cx("w-100", "btn")}>Helix Bridge</Button>
               </Col>
             </Row>
           </Container>
