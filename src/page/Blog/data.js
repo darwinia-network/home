@@ -1,5 +1,23 @@
 export const dataBlogs = [
   {
+    picture: "/static/blogImg/blog/blog_020.png",
+    title: "Darwinia Security Design Strategy and Philosophy Update",
+    tags: ["Announcements"],
+    abstract:
+      "Darwinia uses a decentralized and light-client-based cross-chain messaging framework and takes its safety very seriously…",
+    time: "April 2, 2022",
+    link: "https://darwinianetwork.medium.com/darwinia-security-design-strategy-and-philosophy-update-f66d3406f652",
+  },
+  {
+    picture: "/static/blogImg/blog/blog_019.png",
+    title: "Wormhole to officially rebrand as Helix in pursuit of being a safe community tool for cross-chain assets",
+    tags: ["Announcements"],
+    abstract:
+      "Wormhole is pleased to announce that from now on, Wormhole shall be known as Helix! UI will update within 1 week…",
+    time: "April 2, 2022",
+    link: "https://darwinianetwork.medium.com/wormhole-to-officially-rebrand-as-helix-in-pursuit-of-being-a-safe-community-tool-for-cross-chain-b3823d937e34",
+  },
+  {
     picture: "/static/blogImg/blog/blog_018.png",
     title: "Darwinia Partners with Dwellir to Offer RPC Services on Crab Network",
     tags: ["Announcements", "Infrastructure"],
@@ -162,6 +180,15 @@ export const dataBlogs = [
 ];
 
 export const dataNewsletters = [
+  {
+    picture: "/static/blogImg/newsletters/newsletters_003.png",
+    title: "Darwinia Monthly Dispatch: March 2022",
+    tags: ["Newsletters"],
+    abstract:
+      "Updates: Darwinia new release version of v0.12.0, an upgrade to support Substrate metadata v14…",
+    time: "April 2, 2022",
+    link: "https://darwinianetwork.medium.com/darwinia-highlight-march-monthly-recap-7d35258bb275",
+  },
   {
     picture: "/static/blogImg/newsletters/newsletters_002.png",
     title: "Darwinia Monthly Dispatch: February 2022",
