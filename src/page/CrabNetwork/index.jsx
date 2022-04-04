@@ -2,7 +2,7 @@ import React from "react";
 import style from "./style.module.scss";
 import Fade from "react-reveal/Fade";
 import classNames from "classnames/bind";
-import { Container, Row, Col, Button } from "react-bootstrap";
+import { Container, Row, Col, Button, InputGroup, FormControl } from "react-bootstrap";
 import { PageHeader } from "../../components/PageHeader";
 import { PageFooter } from "../../components/PageFooter";
 
@@ -205,6 +205,39 @@ const CrabNetwork = () => {
             <Row>
               <Col xs={12} sm={{ span: 2, offset: 5 }} className={cx("mt-4")}>
                 <Button className={cx("w-100", "btn")}>Helix Bridge</Button>
+              </Col>
+            </Row>
+          </Container>
+        </section>
+      </Fade>
+
+      <Fade bottom fraction={0.1} duration={1600} distance={"50px"}>
+        <section className={cx("page-section-5")}>
+          <Container>
+            <Row>
+              <Col>
+                <h5 className="text-center">Join the Ecosystem</h5>
+              </Col>
+            </Row>
+            <Row className="mt-4">
+              <Col xs={12} sm={6} className="pr-sm-4">
+                <div className={cx("rounded p-4 p-sm-5 d-flex flex-column align-items-center", "join-card")}>
+                  <h6 className="text-center">Sign up to get the latest from Crab Network</h6>
+                  <p className="text-center">Get notified about major developments in Crab Ecosystem.</p>
+                  <InputGroup className={cx("join-input-group")}>
+                    <FormControl placeholder="Please enter your email" />
+                    <Button>Sign up</Button>
+                  </InputGroup>
+                </div>
+              </Col>
+              <Col xs={12} sm={6} className="mt-5 mt-sm-0 pl-sm-4">
+                <div className={cx("rounded p-4 p-sm-5 d-flex flex-column align-items-center", "join-card")}>
+                  <h6 className="text-center">Build on Crab Network</h6>
+                  <p className="text-center">
+                    Create a new DApp or port your existing Solidity project to Crab Smart Chain.
+                  </p>
+                  <Button className={cx("join-btn")}>Quick Start</Button>
+                </div>
               </Col>
             </Row>
           </Container>

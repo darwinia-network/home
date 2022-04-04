@@ -22,6 +22,17 @@
   padding-bottom: 80px;
 }
 
+.page-section-5 {
+  padding-top: 80px;
+  padding-bottom: 80px;
+  background: url('./img/bg-join-m.svg');
+  background-size: cover;
+
+  @media screen and (min-width: 576px) {
+    background: url('./img/bg-join.svg');
+  }
+}
+
 .feature-card {
   background-color: #EBEAFC;
   height: 200px;
@@ -114,5 +125,56 @@
   }
 
   &.smart-to-crab {
+  }
+}
+
+.join-card {
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+  background: rgba(255, 255, 255, 0.2);
+
+  >p {
+    height: 40px;
+  }
+}
+
+.join-btn {
+  @extend .btn;
+  display: block;
+  width: 100%;
+
+  @media screen and (min-width: 576px) {
+    width: 50%;
+  }
+}
+
+.join-input-group {
+  width: 100%;
+  @media screen and (min-width: 576px) {
+    width: 75%;
+  }
+
+  >input {
+    width: 100%;
+    border-radius: 0.25rem !important;
+
+    @media screen and (min-width: 576px) {
+      width: auto;
+      border-top-right-radius: 0 !important;
+      border-bottom-right-radius: 0 !important;
+    }
+  }
+
+  >button {
+    @extend .btn;
+    width: 100%;
+    margin-top: 1rem;
+    border-radius: 0.25rem !important;
+
+    @media screen and (min-width: 576px) {
+      width: auto;
+      margin-top: 0;
+      border-top-left-radius: 0 !important;
+      border-bottom-left-radius: 0 !important;
+    }
   }
 }
