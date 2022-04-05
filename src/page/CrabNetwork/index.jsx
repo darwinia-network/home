@@ -38,7 +38,7 @@ const CrabNetwork = () => {
     <>
       <PageHeader forceFixed={true} />
 
-      <Fade bottom fraction={0.1} duration={1600} distance={"50px"}>
+      <Fade bottom fraction={0.1} duration={1800} distance={"50px"}>
         <section className={cx("page-section-1")}>
           <Container>
             <Row>
@@ -62,7 +62,7 @@ const CrabNetwork = () => {
         </section>
       </Fade>
 
-      <Fade bottom fraction={0.1} duration={1600} distance={"50px"}>
+      <Fade bottom fraction={0.1} duration={2000} distance={"50px"}>
         <section className={cx("page-section-2")}>
           <Container>
             <Row>

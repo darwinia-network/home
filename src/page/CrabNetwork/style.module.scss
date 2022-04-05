@@ -1,14 +1,21 @@
+%-page-section {
+  padding-top: 60px;
+  padding-bottom: 60px;
+
+  @media screen and (min-width: 576px) {
+    padding-top: 100px;
+    padding-bottom: 100px;
+  }
+}
+
 .page-section-1 {
+  @extend %-page-section;
   margin-top: 70px;
-  padding-top: 100px;
-  padding-bottom: 100px;
   background: url('./img/bg-m.svg') center center no-repeat;
-  background-size: 100% 100%;
+  background-size: cover;
 
   @media screen and (min-width: 576px) {
     background-image: url('./img/bg.svg');
-    padding-top: 140px;
-    padding-bottom: 140px;
   }
 
   .title {
@@ -35,13 +42,13 @@
     @media screen and (min-width: 576px) {
       text-transform: capitalize;
       color: #000000;
+      text-align: left;
     }
   }
 }
 
 .page-section-2 {
-  padding-top: 100px;
-  padding-bottom: 100px;
+  @extend %-page-section;
 
   .title {
     font-weight: 500;
@@ -88,9 +95,8 @@
 }
 
 .page-section-3 {
+  @extend %-page-section;
   background: #EBEAFC;
-  padding-top: 100px;
-  padding-bottom: 100px;
 
   .title {
     font-weight: 500;
@@ -124,8 +130,7 @@
 }
 
 .page-section-4 {
-  padding-top: 100px;
-  padding-bottom: 100px;
+  @extend %-page-section;
 
   .title {
     font-weight: 500;
@@ -170,10 +175,9 @@
 }
 
 .page-section-5 {
-  padding-top: 100px;
-  padding-bottom: 100px;
+  @extend %-page-section;
   background: url('./img/bg-join-m.svg') center center no-repeat;
-  background-size: 100% 100%;
+  background-size: cover;
 
   @media screen and (min-width: 576px) {
     background-image: url('./img/bg-join.svg');
@@ -222,6 +226,7 @@
 .feature-card {
   background-color: #EBEAFC;
   height: 200px;
+  margin-bottom: 6px;
 }
 
 .code-card-title {
