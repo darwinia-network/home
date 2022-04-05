@@ -225,7 +225,18 @@ const CrabNetwork = () => {
             </Row>
             <Row>
               <Col xs={12} sm={{ span: 2, offset: 5 }} className={cx("mt-4")}>
-                <Button className={cx("w-100", "btn")}>Helix Bridge</Button>
+                <Button
+                  className={cx("w-100", "btn")}
+                  onClick={() =>
+                    window.open(
+                      "https://wormhole.darwinia.network/#f%3Dethereum%26t%3Ddarwinia%26fm%3Dnative%26tm%3Dnative",
+                      "_blank",
+                      "noreferrer,noopener"
+                    )
+                  }
+                >
+                  Helix Bridge
+                </Button>
               </Col>
             </Row>
           </Container>
