@@ -170,28 +170,16 @@ const CrabNetwork = () => {
                   <p className={cx("sub-description")}>Addresses use SS58 address format with the 32-byte account ID</p>
                 </div>
               </Col>
-              <Col xs={12} sm={4} className={cx("p-sm-0")}>
-                <div
-                  className={cx(
-                    "d-flex align-items-center justify-content-end",
-                    "interoperation-asset",
-                    "smart-to-crab"
-                  )}
-                >
-                  <img alt="..." src={crabTokenIcon} />
+              <Col xs={12} sm={4} className={cx("p-sm-0 d-flex flex-sm-column")}>
+                <div className={cx("interoperation-asset")}>
+                  <img className={cx("smart-to-crab")} alt="..." src={crabTokenIcon} />
                 </div>
                 <div className={cx("d-flex flex-column justify-content-center align-items-center p-3", "helix-bridge")}>
                   <img alt="..." src={helixBridgeIcon} />
                   <span>Helix Bridge</span>
                 </div>
-                <div
-                  className={cx(
-                    "d-flex align-items-center justify-content-start",
-                    "interoperation-asset",
-                    "crab-to-smart"
-                  )}
-                >
-                  <img alt="..." src={crabTokenIcon} />
+                <div className={cx("interoperation-asset")}>
+                  <img className={cx("crab-to-smart")} alt="..." src={crabTokenIcon} />
                 </div>
               </Col>
               <Col xs={12} sm={4} className={cx("pl-sm-0")}>

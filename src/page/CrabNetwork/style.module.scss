@@ -328,8 +328,14 @@
 }
 
 .helix-bridge {
-  height: 30%;
+  width: 40%;
+  height: 220px;
   background: #000000;
+
+  @media screen and (min-width: 576px) {
+    height: 30%;
+    width: 100%;
+  }
 
   >span {
     margin-top: 6px;
@@ -341,14 +347,80 @@
   }
 }
 
-.interoperation-asset {
-  height: 35%;
-  background: rgba(233, 230, 250, 1);
+@keyframes interoperation {
+  0% {
+    left: 2%;
+    opacity: 0.1;
+    transform: scale(0.6);
+  }
+  10% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  90% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  100% {
+    left: 84%;
+    opacity: 0.1;
+    transform: scale(0.6);
+  }
+}
 
-  &.crab-to-smart {
+@keyframes interoperation-m {
+  0% {
+    top: 2%;
+    opacity: 0.1;
+    transform: scale(0.6);
+  }
+  10% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  90% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  100% {
+    top: 70%;
+    opacity: 0.1;
+    transform: scale(0.6);
+  }
+}
+
+%-interoperation-animation {
+  position: absolute;
+  left: 20%;
+  animation-name: interoperation-m;
+  animation-duration: 6s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+
+  @media screen and (min-width: 576px) {
+    top: 30%;
+    animation-name: interoperation;
+  }
+}
+
+.interoperation-asset {
+  width: 30%;
+  height: 220px;
+  background: rgba(233, 230, 250, 1);
+  position: relative;
+
+  @media screen and (min-width: 576px) {
+    height: 35%;
+    width: 100%;
   }
 
-  &.smart-to-crab {
+  .crab-to-smart {
+    @extend %-interoperation-animation;
+  }
+
+  .smart-to-crab {
+    @extend %-interoperation-animation;
+    animation-direction: reverse;
   }
 }
 
