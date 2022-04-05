@@ -6,6 +6,10 @@ import { Container, Row, Col, Button, InputGroup, FormControl } from "react-boot
 import { PageHeader } from "../../components/PageHeader";
 import { PageFooter } from "../../components/PageFooter";
 
+import { contractCodeString, sendTransactionCodeString } from "./codeString";
+import SyntaxHighlighter from "react-syntax-highlighter";
+import { a11yLight } from "react-syntax-highlighter/dist/esm/styles/hljs";
+
 import crabIcon from "./img/crab.svg";
 import crabIconM from "./img/crab-m.svg";
 import crabTokenIcon from "./img/crab-token.svg";
@@ -18,10 +22,14 @@ import helixBridgeIcon from "./img/helix-bridge.svg";
 
 const cx = classNames.bind(style);
 
-const CodeCard = ({ title }) => (
+const CodeCard = ({ title, codeString, language }) => (
   <div className="d-flex flex-column">
     <title className={cx("d-flex align-items-center pl-3 rounded-top", "code-card-title")}>{title}</title>
-    <div className={cx("pl-3 rounded-bottom", "code-card-source")}>This is source code</div>
+    <div className={cx("pl-2 pt-2 rounded-bottom", "code-card-source")}>
+      <SyntaxHighlighter language={language} showLineNumbers style={a11yLight}>
+        {codeString}
+      </SyntaxHighlighter>
+    </div>
   </div>
 );
 
@@ -119,10 +127,10 @@ const CrabNetwork = () => {
             </Row>
             <Row>
               <Col xs={12} sm={6}>
-                <CodeCard title={"Contract"} />
+                <CodeCard title={"Contract"} language="javascript" codeString={contractCodeString} />
               </Col>
               <Col xs={12} sm={6} className="mt-4 mt-sm-0">
-                <CodeCard title={"Send a Transaction"} />
+                <CodeCard title={"Send a Transaction"} language="javascript" codeString={sendTransactionCodeString} />
               </Col>
             </Row>
             <Row className="mt-4">
