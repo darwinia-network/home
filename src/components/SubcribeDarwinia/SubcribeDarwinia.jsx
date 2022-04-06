@@ -8,40 +8,37 @@ const Component = ({ placeholder, btnText, btnClassName, inputClassName, respons
     id="mc-embedded-subscribe-form"
     name="mc-embedded-subscribe-form"
     target="_blank"
+    className="position-relative"
   >
-    <InputGroup className={inputClassName}>
-      <div className="mc-field-group">
-        <FormControl
-          type="email"
-          className="required email"
-          defaultValue=""
-          id="mce-EMAIL"
-          name="EMAIL"
-          placeholder={placeholder}
-          aria-label={placeholder}
-          aria-describedby={placeholder}
-        />
-        <div
-          htmlFor="mce-EMAIL"
-          style={{ display: "none" }}
-          className={`mce_inline_error text-muted ${responseClassName}`}
-        ></div>
-      </div>
-      <InputGroup.Append>
-        <Button type="submit" className={btnClassName}>
-          {btnText}
-        </Button>
-      </InputGroup.Append>
+    <InputGroup className={`mc-field-group position-relative ${inputClassName}`}>
+      <FormControl
+        type="email"
+        className="required email"
+        defaultValue=""
+        id="mce-EMAIL"
+        name="EMAIL"
+        placeholder={placeholder}
+        aria-label={placeholder}
+        aria-describedby={placeholder}
+      />
+      <div
+        htmlFor="mce-EMAIL"
+        style={{ display: "none", top: "40px" }}
+        className={`mce_inline_error text-muted position-absolute ${responseClassName}`}
+      ></div>
+      <Button type="submit" className={btnClassName}>
+        {btnText}
+      </Button>
     </InputGroup>
     <Form.Text
       id="mce-error-response"
-      className={`text-muted ${responseClassName}`}
-      style={{ display: "none" }}
+      className={`text-muted position-absolute ${responseClassName}`}
+      style={{ display: "none", top: "36px" }}
     ></Form.Text>
     <Form.Text
       id="mce-success-response"
-      className={`text-muted ${responseClassName}`}
-      style={{ display: "none" }}
+      className={`text-muted position-absolute ${responseClassName}`}
+      style={{ display: "none", top: "36px" }}
     ></Form.Text>
   </Form>
 );

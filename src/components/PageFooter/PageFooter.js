@@ -1,9 +1,10 @@
 import React, { Component } from "react";
-import { Container, Row, Col, InputGroup, FormControl, Button, Form } from "react-bootstrap";
+import { Container, Row, Col, Button } from "react-bootstrap";
 import { withTranslation } from "react-i18next";
 import styles from "./style.module.scss";
 
 import lngIcon from "./img/lngIcon.svg";
+import { SubcribeDarwinia } from "../SubcribeDarwinia";
 
 import share1 from "./img/share-1.png";
 import share2 from "./img/share-2.png";
@@ -82,48 +83,12 @@ class PageFooter extends Component {
               <img alt="dwSlideIcon" className={styles.footerIcon} src={dwSlideIcon} />
             </Col>
             <Col>
-              <Form
-                action="https://network.us6.list-manage.com/subscribe/post?u=eb1c779b75a344e2d52755879&amp;id=70a65557b6"
-                method="post"
-                id="mc-embedded-subscribe-form"
-                name="mc-embedded-subscribe-form"
-                target="_blank"
-              >
-                <InputGroup className={`${styles.subscribe} hidden-xs`}>
-                  <div className="mc-field-group">
-                    <FormControl
-                      type="email"
-                      className="required email"
-                      defaultValue=""
-                      id="mce-EMAIL"
-                      name="EMAIL"
-                      placeholder={t("home_page:placeholder")}
-                      aria-label={t("home_page:placeholder")}
-                      aria-describedby={t("home_page:placeholder")}
-                    />
-                    <div
-                      htmlFor="mce-EMAIL"
-                      style={{ display: "none" }}
-                      className={`mce_inline_error text-muted ${styles.subscribeTip}`}
-                    ></div>
-                  </div>
-                  <InputGroup.Append>
-                    <Button variant="outline-secondary" type="submit">
-                      {t("home_page:subscribe_btn")}
-                    </Button>
-                  </InputGroup.Append>
-                </InputGroup>
-                <Form.Text
-                  id="mce-error-response"
-                  className={`text-muted ${styles.subscribeTip} hidden-xs`}
-                  style={{ display: "none" }}
-                ></Form.Text>
-                <Form.Text
-                  id="mce-success-response"
-                  className={`text-muted ${styles.subscribeTip} hidden-xs`}
-                  style={{ display: "none" }}
-                ></Form.Text>
-              </Form>
+              <SubcribeDarwinia
+                btnText={t("home_page:subscribe_btn")}
+                placeholder={t("home_page:placeholder")}
+                inputClassName={`${styles.subscribe} hidden-xs`}
+                responseClassName={`${styles.subscribeTip} hidden-xs`}
+              />
             </Col>
           </Row>
           <Row className={`d-flex justify-content-between`}>

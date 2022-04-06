@@ -440,12 +440,7 @@
 }
 
 .join-input-group {
-  width: 100%;
-  @media screen and (min-width: 576px) {
-    width: 75%;
-  }
-
-  >input {
+  input {
     width: 100%;
     border-radius: 0.25rem !important;
 
@@ -456,7 +451,7 @@
     }
   }
 
-  >button {
+  button {
     @extend .btn;
     width: 100%;
     margin-top: 1rem;
@@ -469,4 +464,12 @@
       border-bottom-left-radius: 0 !important;
     }
   }
+}
+
+.join-subcribe-response {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 25px;
+  letter-spacing: 0.8px;
+  color: #333333 !important;
 }

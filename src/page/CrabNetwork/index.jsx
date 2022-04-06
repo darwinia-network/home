@@ -2,9 +2,10 @@ import React from "react";
 import style from "./style.module.scss";
 import Fade from "react-reveal/Fade";
 import classNames from "classnames/bind";
-import { Container, Row, Col, Button, InputGroup, FormControl } from "react-bootstrap";
+import { Container, Row, Col, Button } from "react-bootstrap";
 import { PageHeader } from "../../components/PageHeader";
 import { PageFooter } from "../../components/PageFooter";
+import { SubcribeDarwinia } from "../../components/SubcribeDarwinia";
 
 import { contractCodeString, sendTransactionCodeString } from "./codeString";
 import SyntaxHighlighter from "react-syntax-highlighter";
@@ -246,10 +247,12 @@ const CrabNetwork = () => {
                   <p className={cx("sub-description", "text-center")}>
                     Get notified about major developments in Crab Ecosystem.
                   </p>
-                  <InputGroup className={cx("join-input-group")}>
-                    <FormControl placeholder="Please enter your email" />
-                    <Button>Sign up</Button>
-                  </InputGroup>
+                  <SubcribeDarwinia
+                    btnText="Sign up"
+                    placeholder="Please enter your email"
+                    inputClassName={cx("join-input-group")}
+                    responseClassName={cx("join-subcribe-response")}
+                  />
                 </div>
               </Col>
               <Col xs={12} sm={6} className="mt-5 mt-sm-0 pl-sm-5">
