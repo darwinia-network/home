@@ -141,10 +141,26 @@ const CrabNetwork = () => {
             </Row>
             <Row className="mt-4">
               <Col xs={12} sm={{ span: 2 }}>
-                <Button className={cx("w-100", "btn")}>Dev Guide</Button>
+                <Button
+                  className={cx("w-100", "btn")}
+                  onClick={() =>
+                    window.open(
+                      "https://docs.crab.network/evm-compatible-crab-smart-chain/builders/interact/rpcs",
+                      "_blank",
+                      "noreferrer,noopener"
+                    )
+                  }
+                >
+                  Dev Guide
+                </Button>
               </Col>
               <Col xs={12} sm={{ span: 2 }} className="mt-2 mt-sm-0">
-                <Button className={cx("w-100", "btn")}>Discuss With Dev</Button>
+                <Button
+                  className={cx("w-100", "btn")}
+                  onClick={() => window.open("https://t.me/DarwiniaDev", "_blank", "noreferrer,noopener")}
+                >
+                  Discuss With Dev
+                </Button>
               </Col>
             </Row>
           </Container>
@@ -216,13 +232,7 @@ const CrabNetwork = () => {
               <Col xs={12} sm={{ span: 2, offset: 5 }} className={cx("mt-4")}>
                 <Button
                   className={cx("w-100", "btn")}
-                  onClick={() =>
-                    window.open(
-                      "https://wormhole.darwinia.network/#f%3Dethereum%26t%3Ddarwinia%26fm%3Dnative%26tm%3Dnative",
-                      "_blank",
-                      "noreferrer,noopener"
-                    )
-                  }
+                  onClick={() => window.open("https://wormhole.darwinia.network/", "_blank", "noreferrer,noopener")}
                 >
                   Helix Bridge
                 </Button>
@@ -261,7 +271,18 @@ const CrabNetwork = () => {
                   <p className={cx("sub-description", "text-center")}>
                     Create a new DApp or port your existing Solidity project to Crab Smart Chain.
                   </p>
-                  <Button className={cx("join-btn")}>Quick Start</Button>
+                  <Button
+                    className={cx("join-btn")}
+                    onClick={() =>
+                      window.open(
+                        "https://docs.crab.network/evm-compatible-crab-smart-chain/builders/interact/rpcs",
+                        "_blank",
+                        "noreferrer,noopener"
+                      )
+                    }
+                  >
+                    Quick Start
+                  </Button>
                 </div>
               </Col>
             </Row>
