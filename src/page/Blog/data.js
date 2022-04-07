@@ -274,6 +274,15 @@ export const dataNewsletters = [
 
 export const dataTutorials = [
   {
+    picture: "/static/blogImg/tutorials/tutorials_024.png",
+    title: "「Using Darwinia Tools 3–10」: Darwinia Apps Guide Part III: Frequently Asked Questions (FAQs)",
+    tags: ["Tutorials", "Tools"],
+    abstract: "This FAQ focuses on common questions for users interested in Darwinia Apps. It has four main sections: General (about Apps), Accounts, Staking, and Tokens…",
+    time: "April 7, 2022",
+    link: "https://darwinianetwork.medium.com/darwinia-apps-guide-part-iii-frequently-asked-questions-faqs-a9f0a3ff6855",
+    subtype: "tools",
+  },
+  {
     picture: "/static/blogImg/tutorials/tutorials_023.png",
     title: "Using Darwinia Tools 3–9: Darwinia Apps Guide Part II: Staking and Earning",
     tags: ["Tutorials", "Tools"],
