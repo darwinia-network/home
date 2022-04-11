@@ -275,7 +275,7 @@ export const dataNewsletters = [
 export const dataTutorials = [
   {
     picture: "/static/blogImg/tutorials/tutorials_024.png",
-    title: "「Using Darwinia Tools 3–10」: Darwinia Apps Guide Part III: Frequently Asked Questions (FAQs)",
+    title: "Using Darwinia Tools 3–10: Darwinia Apps Guide Part III: Frequently Asked Questions (FAQs)",
     tags: ["Tutorials", "Tools"],
     abstract: "This FAQ focuses on common questions for users interested in Darwinia Apps. It has four main sections: General (about Apps), Accounts, Staking, and Tokens…",
     time: "April 7, 2022",
