@@ -1,5 +1,14 @@
 export const dataBlogs = [
   {
+    picture: "/static/blogImg/blog/blog_021.png",
+    title: "Darwinia Partners with Celer Network, Bridging Stablecoins to Crab Smart Chain",
+    tags: ["Announcements", "Infrastructure"],
+    abstract:
+      "Crab Smart Chain, the Ethereum-compatible smart contracts platform on Kusama, is excited to announce its partnership with Celer cBridge…",
+    time: "April 14, 2022",
+    link: "https://darwinianetwork.medium.com/darwinia-partners-with-celer-network-bridging-stablecoins-to-crab-smart-chain-77fc719dc368",
+  },
+  {
     picture: "/static/blogImg/blog/blog_020.png",
     title: "Darwinia Security Design Strategy and Philosophy Update",
     tags: ["Announcements"],
