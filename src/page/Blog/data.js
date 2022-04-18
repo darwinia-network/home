@@ -1,5 +1,14 @@
 export const dataBlogs = [
   {
+    picture: "/static/blogImg/blog/blog_022.webp",
+    title: "Darwinia will offer 1,000,000 xRING and 7,000,000 CRAB for USDT/xRING and USDC/CRAB incentives for Liquidity Providers on SnowSwap",
+    tags: ["Announcements"],
+    abstract:
+      "We’re excited to announce that 1,000,000 xRING and 7,000,000 CRAB sponsored by Darwinia will be distributed to USDT/xRING and USDC/CRAB liquidity…",
+    time: "April 15, 2022",
+    link: "https://darwinianetwork.medium.com/darwinia-will-offer-1-000-000-xring-and-7-000-000-crab-for-usdt-xring-and-usdc-crab-incentives-for-31ecec7fe843",
+  },
+  {
     picture: "/static/blogImg/blog/blog_021.png",
     title: "Darwinia Partners with Celer Network, Bridging Stablecoins to Crab Smart Chain",
     tags: ["Announcements", "Infrastructure"],
