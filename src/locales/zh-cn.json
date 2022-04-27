@@ -1,4 +1,7 @@
 {
+  "common": {
+    "techpaper_url": "/Optimistic_Bridge_Technical_Paper_EN.pdf"
+  },
   "header": {
     "home": "首页",
     "tech": "技术",
@@ -15,7 +18,6 @@
     "testnet": "测试网络",
     "testnet_url": "https://docs.darwinia.network/en/crab-home",
     "genepaper_url": "https://darwinia.network/Darwinia_Genepaper_CN.pdf",
-    "techpaper_url": "https://darwinia.network/Optimistic_Bridge_Technical_Paper(Preview)_EN.pdf",
     "explorer": "浏览器",
     "explorer_url": "https://crab.subscan.io/",
     "faq": "FAQs",
