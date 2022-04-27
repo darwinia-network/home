@@ -178,7 +178,7 @@ class PageFooter extends Component {
                 <a
                   target="_blank"
                   rel="noopener noreferrer"
-                  href="https://darwinia.network/Optimistic_Bridge_Technical_Paper(Preview)_EN.pdf"
+                  href={t("common:techpaper_url")}
                 >
                   {t("footer:technology_title_5")}
                 </a>
