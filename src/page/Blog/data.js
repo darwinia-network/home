@@ -199,13 +199,22 @@ export const dataBlogs = [
 
 export const dataNewsletters = [
   {
+    picture: "/static/blogImg/newsletters/newsletters_004.png",
+    title: "Darwinia Monthly Dispatch: April 2022",
+    tags: ["Newsletters"],
+    abstract:
+      "Updates: More accurate precompile gas calculations on Crab Smart Chain…",
+    time: "May 9, 2022",
+    link: "https://darwinianetwork.medium.com/darwinia-highlight-march-monthly-recap-7d35258bb275",
+  },
+  {
     picture: "/static/blogImg/newsletters/newsletters_003.png",
     title: "Darwinia Monthly Dispatch: March 2022",
     tags: ["Newsletters"],
     abstract:
       "Updates: Darwinia new release version of v0.12.0, an upgrade to support Substrate metadata v14…",
     time: "April 2, 2022",
-    link: "https://darwinianetwork.medium.com/darwinia-highlight-march-monthly-recap-7d35258bb275",
+    link: "https://darwinianetwork.medium.com/darwinia-highlight-april-monthly-recap-8367e40022d2",
   },
   {
     picture: "/static/blogImg/newsletters/newsletters_002.png",
