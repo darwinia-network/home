@@ -213,7 +213,7 @@ export const dataNewsletters = [
     abstract:
       "Updates: More accurate precompile gas calculations on Crab Smart Chain…",
     time: "May 9, 2022",
-    link: "https://darwinianetwork.medium.com/darwinia-highlight-march-monthly-recap-7d35258bb275",
+    link: "https://darwinianetwork.medium.com/darwinia-highlight-april-monthly-recap-8367e40022d2",
   },
   {
     picture: "/static/blogImg/newsletters/newsletters_003.png",
