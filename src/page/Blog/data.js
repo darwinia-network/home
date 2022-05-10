@@ -1,5 +1,13 @@
 export const dataBlogs = [
   {
+    picture: "/static/blogImg/blog/blog_023.png",
+    title: "Crab Network: Referenda #46 is Now Up For Vote",
+    tags: ["Announcements"],
+    abstract:
+      "Referenda #46 is now up for vote: the remark proposal, by @ taonft.com | From the community, in order to…",
+    time: "May 9, 2022",
+    link: "https://darwinianetwork.medium.com/crab-network-referenda-46-is-now-up-for-vote-b34a36af2406",
+  }, {
     picture: "/static/blogImg/blog/blog_022.webp",
     title: "Darwinia will offer 1,000,000 xRING and 7,000,000 CRAB for USDT/xRING and USDC/CRAB incentives for Liquidity Providers on SnowSwap",
     tags: ["Announcements"],
@@ -205,7 +213,7 @@ export const dataNewsletters = [
     abstract:
       "Updates: More accurate precompile gas calculations on Crab Smart Chain…",
     time: "May 9, 2022",
-    link: "https://darwinianetwork.medium.com/darwinia-highlight-march-monthly-recap-7d35258bb275",
+    link: "https://darwinianetwork.medium.com/darwinia-highlight-april-monthly-recap-8367e40022d2",
   },
   {
     picture: "/static/blogImg/newsletters/newsletters_003.png",
