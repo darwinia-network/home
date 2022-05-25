@@ -6,14 +6,9 @@ import App from "./App";
 import * as serviceWorker from "./serviceWorker";
 import { withTranslation } from "react-i18next";
 
-import { ApolloProvider } from "@apollo/client";
-import { graphqlClient } from "./graphql";
-
 const TransApp = withTranslation()(App);
 ReactDOM.render(
-  <ApolloProvider client={graphqlClient}>
-    <TransApp />
-  </ApolloProvider>,
+  <TransApp />,
   document.getElementById("root")
 );
 
