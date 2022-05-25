@@ -300,7 +300,7 @@ const MetaverseNFT = ({ myTotalContribute, currentAccount }) => {
 };
 
 const client = new ApolloClient({
-  uri: "https://api.subquery.network/sq/darwinia-network/darwinia-nft-polkadot",
+  uri: "https://api.subquery.network/sq/JayJay1024/darwinia-nft-polkadot",
   cache: new InMemoryCache(),
 });
 
