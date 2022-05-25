@@ -12,7 +12,7 @@ import styles from "../styles.module.scss";
 import BN from "bn.js";
 import Big from "big.js";
 
-import crowdloanReferStatistics from '../data/crowdloanReferStatistics.json';
+import crowdloanReferStatistics from "../data/crowdloanReferStatistics.json";
 
 const cx = classNames.bind(styles);
 
@@ -70,8 +70,8 @@ const ReferralLeaderboard = ({ globalTotalPower }) => {
                   {formatBalanceFromOrigToDOT(data.accumulatedContribution)} DOT
                 </span>
                 <div className={cx("referral-leaderboard-item-rewards")}>
-                  <span>{'0' || data.referralRewards.ring.toFixed(2)} RING</span>
-                  <span>{'0' || data.referralRewards.kton.toFixed(2)} KTON</span>
+                  <span>{"0" || data.referralRewards.ring.toFixed(2)} RING</span>
+                  <span>{"0" || data.referralRewards.kton.toFixed(2)} KTON</span>
                 </div>
               </div>
             ))

@@ -7,7 +7,7 @@ import { formatBalanceFromOrigToDOT, KTON_REWARD, RING_REWARD, shortAddress } fr
 import Big from "big.js";
 import btcTop5 from "../top5.json";
 
-import crowdloanWhoStatistics from '../data/crowdloanWhoStatistics.json';
+import crowdloanWhoStatistics from "../data/crowdloanWhoStatistics.json";
 
 const cx = classNames.bind(styles);
 
@@ -107,8 +107,8 @@ const GlobalContributionActivity = ({ allReferContributeData, globalTotalPower, 
       myDot: formatBalanceFromOrigToDOT(nodeWho.totalBalance),
       referrals: nodeRefer ? nodeRefer.contributorsCount : 0,
       referralDot: nodeRefer ? formatBalanceFromOrigToDOT(nodeRefer.totalBalance) : 0,
-      curRingRewards: '0' || contributePer.times(RING_REWARD).toFixed(3),
-      curKtonRewards: '0' || contributePer.times(KTON_REWARD).toFixed(3),
+      curRingRewards: "0" || contributePer.times(RING_REWARD).toFixed(3),
+      curKtonRewards: "0" || contributePer.times(KTON_REWARD).toFixed(3),
       curBtcRewards: target ? target.reward : "0",
       curNft: "No Status",
     });

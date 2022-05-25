@@ -103,7 +103,9 @@ const PloContribute = () => {
   const myContributeRank = currentAccount
     ? accountsContributed.data.accounts.nodes.findIndex((node) => node.id === currentAccount.address)
     : -1;
-  const myReferralCode = currentAccount ? crowdloanMemos.data.crowdloanMemos.nodes.find((item) => item.who === currentAccount.address) : null;
+  const myReferralCode = currentAccount
+    ? crowdloanMemos.data.crowdloanMemos.nodes.find((item) => item.who === currentAccount.address)
+    : null;
 
   const myTotalContribute = myContributedStatistic ? new BN(myContributedStatistic.totalBalance) : new BN(0);
   const myContributeTotalPower = myContributedStatistic ? new BN(myContributedStatistic.totalPower) : new BN(0);
@@ -863,26 +865,21 @@ const PloContribute = () => {
                   <img alt="..." src={infoIcon} className={cx("info-icon")} />
                 </Tooltip>
               </div>
-              {currentAccount &&
-                myContributeRank >= 0 && (
-                  <div className={cx("contribute-pioneers-title-rank")}>
-                    <Identicon
-                      value={currentAccount.address}
-                      className={cx("pioneers-item-account-icon")}
-                      size={isMobile() ? 15 : 30}
-                      theme="polkadot"
-                    />
-                    <span>
-                      My Rank:{" "}
-                      {myContributeRank +
-                        1}
-                    </span>
-                  </div>
-                )}
+              {currentAccount && myContributeRank >= 0 && (
+                <div className={cx("contribute-pioneers-title-rank")}>
+                  <Identicon
+                    value={currentAccount.address}
+                    className={cx("pioneers-item-account-icon")}
+                    size={isMobile() ? 15 : 30}
+                    theme="polkadot"
+                  />
+                  <span>My Rank: {myContributeRank + 1}</span>
+                </div>
+              )}
             </div>
 
             <div className={cx("pioneers-container")}>
-              {accountsContributed.data 
+              {accountsContributed.data
                 ? accountsContributed.data.accounts.nodes.map((node, index) =>
                     index === 0 || index > 5 ? null : (
                       <div className={cx("pioneers-item")} key={index}>

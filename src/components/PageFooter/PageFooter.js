@@ -175,11 +175,7 @@ class PageFooter extends Component {
                 </p>
               )}
               <p>
-                <a
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  href={t("common:techpaper_url")}
-                >
+                <a target="_blank" rel="noopener noreferrer" href={t("common:techpaper_url")}>
                   {t("footer:technology_title_5")}
                 </a>
               </p>
