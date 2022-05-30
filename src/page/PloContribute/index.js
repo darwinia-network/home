@@ -158,12 +158,14 @@ const PloContribute = () => {
   const myReferralCodeFromGql = myReferralCode ? referralCodeToPolkadotAddress(myReferralCode.memo) : null;
 
   const myTotalPower = myReferTotalPower.add(myContributeTotalPower);
-  const myRingReward = myTotalPower.isZero()
-    ? "0"
-    : Big(myTotalPower).div(globalTotalPower.toString()).mul(Big("200000000")).toFixed(4);
-  const myKtonReward = myTotalPower.isZero()
-    ? "0"
-    : Big(myTotalPower).div(globalTotalPower.toString()).mul(Big("8000")).toFixed(4);
+  // const myRingReward = myTotalPower.isZero()
+  //   ? "0"
+  //   : Big(myTotalPower).div(globalTotalPower.toString()).mul(Big("200000000")).toFixed(4);
+  // const myKtonReward = myTotalPower.isZero()
+  //   ? "0"
+  //   : Big(myTotalPower).div(globalTotalPower.toString()).mul(Big("8000")).toFixed(4);
+  const myRingReward = '0';
+  const myKtonReward = '0';
 
   let auctionSuccessReward = {
     base: { ring: Big(0), kton: Big(0) },
