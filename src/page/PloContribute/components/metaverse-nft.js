@@ -10,7 +10,7 @@ import infoIcon from "../img/info-icon.png";
 import modalCloseIcon from "../img/modal-close.png";
 
 import { useApi } from "../hooks";
-import { DOT_TO_ORIG } from "../utils";
+import { DOT_PRECISION } from "../utils";
 import styles from "../styles.module.scss";
 
 import { ApolloClient, InMemoryCache, ApolloProvider, useQuery, gql } from "@apollo/client";
@@ -148,7 +148,7 @@ const MetaverseNFT = ({ myTotalContribute, currentAccount }) => {
           <span>Current</span>
         </div>
         <span className={cx("contribute-info-item-value")}>
-          {myTotalContribute.gte(DOT_TO_ORIG.muln(10)) && !isExcluded ? "1" : "0"}
+          {myTotalContribute.gte(DOT_PRECISION.muln(10)) && !isExcluded ? "1" : "0"}
         </span>
         {isRemarked || myRemarked ? (
           <Tooltip
@@ -189,7 +189,7 @@ const MetaverseNFT = ({ myTotalContribute, currentAccount }) => {
         ) : (
           <button
             className={cx("claim-reward-btn")}
-            disabled={myTotalContribute.lt(DOT_TO_ORIG.muln(10)) || loading || !currentAccount || isExcluded}
+            disabled={myTotalContribute.lt(DOT_PRECISION.muln(10)) || loading || !currentAccount || isExcluded}
             onClick={() => setVisibleModalClaimNFT(true)}
           >
             <Spin wrapperClassName={cx("metaverse-nft-modal-ok-btn-spin")} spinning={loading}>
@@ -300,7 +300,7 @@ const MetaverseNFT = ({ myTotalContribute, currentAccount }) => {
 };
 
 const client = new ApolloClient({
-  uri: "https://api.subquery.network/sq/darwinia-network/darwinia-nft-polkadot",
+  uri: "https://api.subquery.network/sq/JayJay1024/darwinia-nft-polkadot",
   cache: new InMemoryCache(),
 });
 

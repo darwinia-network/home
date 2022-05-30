@@ -21,22 +21,17 @@ import MetaverseNFT from "./components/metaverse-nft";
 import ringIcon from "./img/ring-icon.png";
 import ktonIcon from "./img/kton-icon.png";
 
-import {
-  CONTRIBUTES_BY_PARA_ID,
-  gqlCrowdloanWhoStatisticByAddress,
-  gqlCrowdloanReferStatisticByReferralCode,
-  CONTRIBUTES_BY_ADDRESS_PARA_ID,
-  REFERRAL_CODE_BY_ADDRESS_PARA_ID,
-  CONTRIBUTE_PIONEERS,
-  ALL_WHO_CROWDLOAN,
-  ALL_REFER_CROWDLOAN,
-} from "./gql";
+import crowdloanContributeds from "./data/crowdloanContributeds.json";
+import crowdloanMemos from "./data/crowdloanMemos.json";
+import crowdloanReferStatistics from "./data/crowdloanReferStatistics.json";
+import crowdloanWhoStatistics from "./data/crowdloanWhoStatistics.json";
+import accountsContributed from "./data/accounts.json";
 
 import { useEcharts } from "./useEcharts";
 import { useApi, useCurrentBlockNumber, useBalanceAll } from "./hooks";
 
 import {
-  DOT_TO_ORIG,
+  DOT_PRECISION,
   shortAddress,
   isInsufficientBalance,
   isValidContributeDOTInput,
@@ -59,7 +54,6 @@ import { stringToHex } from "@polkadot/util";
 import BN from "bn.js";
 import Big from "big.js";
 
-import { useQuery } from "@apollo/client";
 import GlobalContributionActivity from "./components/global-contribution-activity";
 import ReferralLeaderboard from "./components/referral-leaderboard";
 import ConnectionFailedModal from "./components/connection-failed-modal";
@@ -80,24 +74,6 @@ const PloContribute = () => {
   const unsubscribeAccounts = useRef(null);
   const [currentAccount, setCurrentAccount] = useState(null);
 
-  // Graphql
-  const totalContributeHistory = useQuery(CONTRIBUTES_BY_PARA_ID, { variables: { paraId: PARA_ID } });
-  const myContributeHistory = useQuery(CONTRIBUTES_BY_ADDRESS_PARA_ID, {
-    variables: { paraId: PARA_ID, address: currentAccount ? currentAccount.address : "" },
-  });
-  const myReferralCode = useQuery(REFERRAL_CODE_BY_ADDRESS_PARA_ID, {
-    variables: { paraId: PARA_ID, address: currentAccount ? currentAccount.address : "" },
-  });
-  const contributePionners = useQuery(CONTRIBUTE_PIONEERS);
-  const myWhoCrowdloan = useQuery(gqlCrowdloanWhoStatisticByAddress(currentAccount ? currentAccount.address : ""));
-  const myReferCrwonloan = useQuery(
-    gqlCrowdloanReferStatisticByReferralCode(
-      currentAccount ? polkadotAddressToReferralCode(currentAccount.address) : ""
-    )
-  );
-  const allWhoCrowdloan = useQuery(ALL_WHO_CROWDLOAN);
-  const allReferCrowdloan = useQuery(ALL_REFER_CROWDLOAN);
-
   const [insufficientBalance, setInsufficientBalance] = useState(false);
   const [contributeBtnLoading, setContributeBtnLoading] = useState(false);
   const [accounts, setAccounts] = useState([]);
@@ -110,28 +86,42 @@ const PloContribute = () => {
 
   const { api } = useApi();
   const { currentBlockNumber } = useCurrentBlockNumber(api);
-  const { currentTotalContribute } = useEcharts(echartsRef.current, totalContributeHistory);
+  const { totalContributed } = useEcharts(echartsRef.current);
   const { currentAccountBalannce } = useBalanceAll(api, currentAccount ? currentAccount.address : null);
 
+  const myContributeHistory = currentAccount
+    ? crowdloanContributeds.data.crowdloanContributeds.nodes.filter((item) => item.who === currentAccount.address)
+    : [];
+  const myContributedStatistic = currentAccount
+    ? crowdloanWhoStatistics.data.crowdloanWhoStatistics.nodes.find((item) => item.user === currentAccount.address)
+    : null;
+  const myReferContributedStatistic = currentAccount
+    ? crowdloanReferStatistics.data.crowdloanReferStatistics.nodes.find(
+        (item) => item.user === polkadotAddressToReferralCode(currentAccount.address)
+      )
+    : null;
+  const myContributeRank = currentAccount
+    ? accountsContributed.data.accounts.nodes.findIndex((node) => node.id === currentAccount.address)
+    : -1;
+  const myReferralCode = currentAccount
+    ? crowdloanMemos.data.crowdloanMemos.nodes.find((item) => item.who === currentAccount.address)
+    : null;
+
+  const myTotalContribute = myContributedStatistic ? new BN(myContributedStatistic.totalBalance) : new BN(0);
+  const myContributeTotalPower = myContributedStatistic ? new BN(myContributedStatistic.totalPower) : new BN(0);
+  const myReferTotalPower = myReferContributedStatistic ? new BN(myReferContributedStatistic.totalPower) : new BN(0);
+
   let referralsContributeHistory = [];
-  if (
-    !myReferCrwonloan.loading &&
-    !myReferCrwonloan.error &&
-    myReferCrwonloan.data &&
-    myReferCrwonloan.data.crowdloanReferStatistic &&
-    myReferCrwonloan.data.crowdloanReferStatistic.contributors &&
-    myReferCrwonloan.data.crowdloanReferStatistic.contributors.nodes &&
-    myReferCrwonloan.data.crowdloanReferStatistic.contributors.nodes.length
-  ) {
+  if (myReferContributedStatistic) {
     const tmp = [];
-    for (let node1 of myReferCrwonloan.data.crowdloanReferStatistic.contributors.nodes) {
+    for (let node of myReferContributedStatistic.contributors.nodes) {
       const {
         block: { number },
         extrinsicId,
         timestamp,
         balance,
         id,
-      } = node1;
+      } = node;
 
       tmp.push({
         number,
@@ -144,47 +134,36 @@ const PloContribute = () => {
     referralsContributeHistory = tmp;
   }
 
-  let globalTotalPower = new BN("1000000").mul(DOT_TO_ORIG);
+  let totalPowerTmp = new BN(0);
+  let globalTotalPower = new BN("1000000").mul(DOT_PRECISION);
   const allReferContributeData = [];
-  if (!allWhoCrowdloan.loading && !allWhoCrowdloan.error && !allReferCrowdloan.loading && !allReferCrowdloan.error) {
-    let totalPowerTmp = new BN(0);
 
-    if (
-      allWhoCrowdloan.data &&
-      allWhoCrowdloan.data.crowdloanWhoStatistics &&
-      allWhoCrowdloan.data.crowdloanWhoStatistics.nodes &&
-      allWhoCrowdloan.data.crowdloanWhoStatistics.nodes.length
-    ) {
-      allWhoCrowdloan.data.crowdloanWhoStatistics.nodes.forEach((node) => {
-        totalPowerTmp = totalPowerTmp.add(new BN(node.totalPower));
-      });
-    }
+  crowdloanWhoStatistics.data.crowdloanWhoStatistics.nodes.forEach((node) => {
+    totalPowerTmp = totalPowerTmp.add(new BN(node.totalPower));
+  });
+  crowdloanReferStatistics.data.crowdloanReferStatistics.nodes.forEach((node) => {
+    totalPowerTmp = totalPowerTmp.add(new BN(node.totalPower));
 
-    if (
-      allReferCrowdloan.data &&
-      allReferCrowdloan.data.crowdloanReferStatistics &&
-      allReferCrowdloan.data.crowdloanReferStatistics.nodes &&
-      allReferCrowdloan.data.crowdloanReferStatistics.nodes.length
-    ) {
-      allReferCrowdloan.data.crowdloanReferStatistics.nodes.forEach((node) => {
-        totalPowerTmp = totalPowerTmp.add(new BN(node.totalPower));
+    allReferContributeData.push({
+      user: referralCodeToPolkadotAddress(node.user),
+      totalPower: node.totalPower,
+      totalBalance: node.totalBalance,
+      contributorsCount: node.contributors.totalCount,
+    });
+  });
 
-        allReferContributeData.push({
-          user: referralCodeToPolkadotAddress(node.user),
-          totalPower: node.totalPower,
-          totalBalance: node.totalBalance,
-          contributorsCount: node.contributors.totalCount,
-        });
-      });
-    }
+  globalTotalPower = totalPowerTmp.gt(globalTotalPower) ? totalPowerTmp : globalTotalPower;
 
-    globalTotalPower = totalPowerTmp.gt(globalTotalPower) ? totalPowerTmp : globalTotalPower;
-  }
+  const myContributedShare = Big(myTotalContribute.toString()).div(globalTotalPower.toString());
+  const myReferralCodeFromGql = myReferralCode ? referralCodeToPolkadotAddress(myReferralCode.memo) : null;
 
-  let myReferralCodeFromGql = null;
-  if (!myReferralCode.loading && !myReferralCode.error && myReferralCode.data.crowdloanMemos.nodes.length) {
-    myReferralCodeFromGql = referralCodeToPolkadotAddress(myReferralCode.data.crowdloanMemos.nodes[0].memo);
-  }
+  const myTotalPower = myReferTotalPower.add(myContributeTotalPower);
+  const myRingReward = myTotalPower.isZero()
+    ? "0"
+    : Big(myTotalPower).div(globalTotalPower.toString()).mul(Big("200000000")).toFixed(4);
+  const myKtonReward = myTotalPower.isZero()
+    ? "0"
+    : Big(myTotalPower).div(globalTotalPower.toString()).mul(Big("8000")).toFixed(4);
 
   let auctionSuccessReward = {
     base: { ring: Big(0), kton: Big(0) },
@@ -193,7 +172,7 @@ const PloContribute = () => {
     total: { ring: Big(0), kton: Big(0) },
   };
   if (currentBlockNumber && Number(inputDot) && Number(inputDot) > 0) {
-    const contributePer = Big(Number(inputDot)).mul(DOT_TO_ORIG).div(globalTotalPower.toString());
+    const contributePer = Big(Number(inputDot)).mul(DOT_PRECISION).div(globalTotalPower.toString());
 
     const bonusN = currentBlockNumber < T1_BLOCK_NUMBER ? 0.2 : 0;
     const referN =
@@ -220,25 +199,6 @@ const PloContribute = () => {
 
     auctionSuccessReward = { base, bonus, referral, total };
   }
-
-  let myTotalContribute = new BN(0);
-  let myRingReward = "0";
-  let myKtonReward = "0";
-  if (
-    !myWhoCrowdloan.loading &&
-    !myWhoCrowdloan.error &&
-    myWhoCrowdloan.data &&
-    myWhoCrowdloan.data.crowdloanWhoStatistic
-  ) {
-    myTotalContribute = new BN(myWhoCrowdloan.data.crowdloanWhoStatistic.totalBalance);
-
-    // Failed to plo, got nothing rewards
-    // const totalPower = new BN(myWhoCrowdloan.data.crowdloanWhoStatistic.totalPower);
-    // myRingReward = Big(totalPower).div(globalTotalPower.toString()).mul(Big("200000000")).toString();
-    // myKtonReward = Big(totalPower).div(globalTotalPower.toString()).mul(Big("8000")).toString();
-  }
-
-  const myContributePer = Big(myTotalContribute.toString()).div(globalTotalPower.toString());
 
   const top5contribute = useMemo(() => btcTop5.reduce((acc, cur) => acc.add(new Big(cur.amount)), new Big("0")), []);
 
@@ -646,7 +606,7 @@ const PloContribute = () => {
                   <span>Current total contributions</span>
                   <div className={cx("total-contribute-dot")}>
                     <img alt="..." src={dotIcon} />
-                    <span>{formatBalanceFromOrigToDOT(currentTotalContribute)} DOT</span>
+                    <span>{formatBalanceFromOrigToDOT(totalContributed)} DOT</span>
                   </div>
                 </div>
               </div>
@@ -702,7 +662,7 @@ const PloContribute = () => {
         <Fade bottom fraction={0.1} duration={1200} distance={"50px"}>
           <div className={cx("total-contribute-history")}>
             <div className={cx("total-contribute-history-title-wrap")}>
-              <span>👏 Current Total contributions: {formatBalanceFromOrigToDOT(currentTotalContribute)} DOT 👏</span>
+              <span>👏 Current Total contributions: {formatBalanceFromOrigToDOT(totalContributed)} DOT 👏</span>
             </div>
             <div ref={echartsRef} className={cx("crowloan-echarts")} />
           </div>
@@ -748,7 +708,7 @@ const PloContribute = () => {
                 </div>
                 <span className={cx("contribute-info-item-value")}>
                   {formatBalanceFromOrigToDOT(myTotalContribute).split(".")[0]}(
-                  {myTotalContribute.isZero() ? 0 : (myContributePer * 100).toFixed(4)}%)
+                  {myTotalContribute.isZero() ? 0 : (myContributedShare * 100).toFixed(4)}%)
                 </span>
                 <button className={cx("claim-reward-btn", "space")} disabled={true}>
                   <span>Claim</span>
@@ -828,11 +788,9 @@ const PloContribute = () => {
             <div className={cx("my-contribute-history")}>
               <div className={cx("contribute-history-wrap")}>
                 <p>Contribution history</p>
-                {!myContributeHistory.loading &&
-                !myContributeHistory.error &&
-                myContributeHistory.data.crowdloanContributeds.nodes.length ? (
+                {myContributeHistory.length ? (
                   <div className={cx("contribute-history-control")}>
-                    {myContributeHistory.data.crowdloanContributeds.nodes.map((node, index) => (
+                    {myContributeHistory.map((node, index) => (
                       <div className={cx("contribute-history-control-item")} key={index}>
                         <span>
                           {new Date(node.timestamp).toDateString().split(" ")[1]}{" "}
@@ -907,35 +865,22 @@ const PloContribute = () => {
                   <img alt="..." src={infoIcon} className={cx("info-icon")} />
                 </Tooltip>
               </div>
-              {currentAccount &&
-                contributePionners.data &&
-                contributePionners.data.accounts &&
-                contributePionners.data.accounts.nodes &&
-                contributePionners.data.accounts.nodes.length &&
-                contributePionners.data.accounts.nodes.findIndex((node) => node.id === currentAccount.address) !==
-                  -1 && (
-                  <div className={cx("contribute-pioneers-title-rank")}>
-                    <Identicon
-                      value={currentAccount.address}
-                      className={cx("pioneers-item-account-icon")}
-                      size={isMobile() ? 15 : 30}
-                      theme="polkadot"
-                    />
-                    <span>
-                      My Rank:{" "}
-                      {contributePionners.data.accounts.nodes.findIndex((node) => node.id === currentAccount.address) +
-                        1}
-                    </span>
-                  </div>
-                )}
+              {currentAccount && myContributeRank >= 0 && (
+                <div className={cx("contribute-pioneers-title-rank")}>
+                  <Identicon
+                    value={currentAccount.address}
+                    className={cx("pioneers-item-account-icon")}
+                    size={isMobile() ? 15 : 30}
+                    theme="polkadot"
+                  />
+                  <span>My Rank: {myContributeRank + 1}</span>
+                </div>
+              )}
             </div>
 
             <div className={cx("pioneers-container")}>
-              {contributePionners.data &&
-              contributePionners.data.accounts &&
-              contributePionners.data.accounts.nodes &&
-              contributePionners.data.accounts.nodes.length
-                ? contributePionners.data.accounts.nodes.map((node, index) =>
+              {accountsContributed.data
+                ? accountsContributed.data.accounts.nodes.map((node, index) =>
                     index === 0 || index > 5 ? null : (
                       <div className={cx("pioneers-item")} key={index}>
                         <div className={cx("pioneers-item-num-icon")}>

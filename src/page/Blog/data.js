@@ -7,9 +7,11 @@ export const dataBlogs = [
       "Referenda #46 is now up for vote: the remark proposal, by @ taonft.com | From the community, in order to…",
     time: "May 9, 2022",
     link: "https://darwinianetwork.medium.com/crab-network-referenda-46-is-now-up-for-vote-b34a36af2406",
-  }, {
+  },
+  {
     picture: "/static/blogImg/blog/blog_022.webp",
-    title: "Darwinia will offer 1,000,000 xRING and 7,000,000 CRAB for USDT/xRING and USDC/CRAB incentives for Liquidity Providers on SnowSwap",
+    title:
+      "Darwinia will offer 1,000,000 xRING and 7,000,000 CRAB for USDT/xRING and USDC/CRAB incentives for Liquidity Providers on SnowSwap",
     tags: ["Announcements"],
     abstract:
       "We’re excited to announce that 1,000,000 xRING and 7,000,000 CRAB sponsored by Darwinia will be distributed to USDT/xRING and USDC/CRAB liquidity…",
@@ -90,7 +92,8 @@ export const dataBlogs = [
   },
   {
     picture: "/static/blogImg/blog/blog_013.png",
-    title: "Grants Program: Subview Receives Darwinia Grant, Bringing a Blockchain Explorer For Crab Smart Chain Data Support",
+    title:
+      "Grants Program: Subview Receives Darwinia Grant, Bringing a Blockchain Explorer For Crab Smart Chain Data Support",
     tags: ["Announcements", "Grants"],
     abstract:
       "Crab, the Ethereum-compatible smart contract platform on Kusama, accepted the Subview project into our grants program. Subview is a blockchain explorer for Crab Smart Chain data support and provides a comprehensive…",
@@ -210,8 +213,7 @@ export const dataNewsletters = [
     picture: "/static/blogImg/newsletters/newsletters_004.png",
     title: "Darwinia Monthly Dispatch: April 2022",
     tags: ["Newsletters"],
-    abstract:
-      "Updates: More accurate precompile gas calculations on Crab Smart Chain…",
+    abstract: "Updates: More accurate precompile gas calculations on Crab Smart Chain…",
     time: "May 9, 2022",
     link: "https://darwinianetwork.medium.com/darwinia-highlight-april-monthly-recap-8367e40022d2",
   },
@@ -219,8 +221,7 @@ export const dataNewsletters = [
     picture: "/static/blogImg/newsletters/newsletters_003.png",
     title: "Darwinia Monthly Dispatch: March 2022",
     tags: ["Newsletters"],
-    abstract:
-      "Updates: Darwinia new release version of v0.12.0, an upgrade to support Substrate metadata v14…",
+    abstract: "Updates: Darwinia new release version of v0.12.0, an upgrade to support Substrate metadata v14…",
     time: "April 2, 2022",
     link: "https://darwinianetwork.medium.com/darwinia-highlight-april-monthly-recap-8367e40022d2",
   },
@@ -312,7 +313,8 @@ export const dataTutorials = [
     picture: "/static/blogImg/tutorials/tutorials_024.png",
     title: "Using Darwinia Tools 3–10: Darwinia Apps Guide Part III: Frequently Asked Questions (FAQs)",
     tags: ["Tutorials", "Tools"],
-    abstract: "This FAQ focuses on common questions for users interested in Darwinia Apps. It has four main sections: General (about Apps), Accounts, Staking, and Tokens…",
+    abstract:
+      "This FAQ focuses on common questions for users interested in Darwinia Apps. It has four main sections: General (about Apps), Accounts, Staking, and Tokens…",
     time: "April 7, 2022",
     link: "https://darwinianetwork.medium.com/darwinia-apps-guide-part-iii-frequently-asked-questions-faqs-a9f0a3ff6855",
     subtype: "tools",
@@ -321,7 +323,8 @@ export const dataTutorials = [
     picture: "/static/blogImg/tutorials/tutorials_023.png",
     title: "Using Darwinia Tools 3–9: Darwinia Apps Guide Part II: Staking and Earning",
     tags: ["Tutorials", "Tools"],
-    abstract: "This tutorial will walk you through the process of staking your tokens (RING/KTON) on Darwinia Apps built by the Darwinia Dev team. The Apps work on Substrate-based Pangolin/Pangoro Test Network, Darwinia Chain, and Crab Chain…",
+    abstract:
+      "This tutorial will walk you through the process of staking your tokens (RING/KTON) on Darwinia Apps built by the Darwinia Dev team. The Apps work on Substrate-based Pangolin/Pangoro Test Network, Darwinia Chain, and Crab Chain…",
     time: "March 16, 2022",
     link: "https://darwinianetwork.medium.com/using-darwinia-tools-3-9-darwinia-apps-guide-part-%E2%85%B1-staking-and-earning-7cd586315f76",
     subtype: "tools",
