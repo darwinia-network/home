@@ -1,0 +1,160 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@font-face {
+  font-family: "JetBrainsMono-Light";
+  src: url("../fonts/JetBrainsMono-Light.woff2");
+}
+@font-face {
+  font-family: "JetBrainsMono-Bold";
+  src: url("../fonts/JetBrainsMono-Bold.woff2");
+}
+
+html {
+  @apply bg-black;
+}
+/*components styles*/
+@layer components {
+  a {
+    @apply inline-block;
+  }
+  .container {
+    @apply max-w-[1320px] mx-auto px-[1.25rem] lg:px-[1.875rem] xl:px-[3.75rem];
+  }
+  .space-top {
+    @apply pt-[3.75rem] lg:pt-[5.5rem];
+  }
+  .inter-block-space-1 {
+    @apply mt-[8.75rem] lg:mt-[15.625rem];
+  }
+  /*50px / 90px*/
+  .inter-block-space-2 {
+    @apply mt-[3.125rem] lg:mt-[5.625rem];
+  }
+  .text {
+    @apply font-[JetBrainsMono-Light] text-[0.875rem] leading-[1.875rem] text-gray;
+  }
+  body {
+    @extend .text;
+  }
+  .title {
+    @extend .text;
+    @apply font-[JetBrainsMono-Bold] text-[1.25rem] leading-[1.625rem] font-[700];
+  }
+  .title-lg {
+    @extend .title;
+    @apply font-[JetBrainsMono-Bold] text-[1.5rem] md:text-[2.5rem] leading-[2rem] md:leading-[3.3125rem] font-[700];
+  }
+  .btn {
+    @apply text text-white py-[0.5rem] px-[0.9375rem] border-[1px] border-solid border-white bg-black lg:hover:bg-white lg:hover:text-black hover:cursor-pointer;
+  }
+  .btn-primary {
+    @extend .btn;
+    @apply bg-primary lg:hover:bg-black;
+  }
+  .mobile-navigation {
+    @apply fixed top-0 bottom-0 right-0 h-full bg-black z-[99] w-[16.25rem] transition-transform translate-x-[101%] transform-cpu duration-300 ease-in;
+    &.show {
+      @apply translate-x-0;
+    }
+  }
+  .navigation-overlay {
+    @apply fixed top-0 bottom-0 right-0 left-0 h-full w-full bg-[rgba(0,0,0,0.8)] z-[80] transition-opacity transform-cpu opacity-0;
+    &.show {
+      @apply opacity-100;
+    }
+    &.hide {
+      @apply translate-x-[101%];
+    }
+  }
+  .mobile-navigation {
+    .active {
+      &:after {
+        background: linear-gradient(270deg, #d9d9d9 4.55%, rgba(217, 217, 217, 0) 97.93%);
+        content: "";
+        display: block;
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        z-index: -1;
+        opacity: 0.2;
+      }
+      &:before {
+        content: "";
+        display: block;
+        position: absolute;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        width: 5px;
+        z-index: -1;
+        @apply bg-white;
+      }
+    }
+  }
+  .pc-navigation {
+    .active {
+      position: relative;
+      &:after {
+        background: white;
+        opacity: 0.3;
+        content: "";
+        display: block;
+        position: absolute;
+        left: 25%;
+        right: 25%;
+        bottom: 0;
+        height: 2px;
+        z-index: -1;
+      }
+    }
+  }
+  .divider {
+    @apply w-full h-[1px] bg-white opacity-30;
+  }
+  .divider-50 {
+    @apply w-full h-[1px] bg-halfWhite;
+  }
+  .hero-image-1 {
+    @apply w-full lg:w-[54.58%] shrink-0;
+  }
+  .hero-image-2 {
+    @apply w-full lg:w-[41.667%] shrink-0;
+  }
+}
+/*.aos-animate {
+  z-index: -1;
+  position: relative;
+}*/
+
+/* Works on Firefox */
+.custom-scroll-bar {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.5) rgba(255, 255, 255, 0.2);
+}
+
+/* Works on Chrome, Edge, and Safari */
+.custom-scroll-bar::-webkit-scrollbar {
+  width: 8px;
+}
+
+.custom-scroll-bar::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.custom-scroll-bar::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 20px;
+}
+
+/* if the future there needs to be a light mode for this project,
+  you can set all the light mode styles in here. Simply use
+ something like document.documentElement.classList.remove('light')
+  in your JS */
+.light {
+  [class*="-primary"] {
+    /*your CSS overrides*/
+  }
+}
