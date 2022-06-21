@@ -129,6 +129,9 @@ const localeKeys = {
   crab: "crab",
   community: "community",
   subscriptionSuccessful: "subscriptionSuccessful",
+  getInvolved: "getInvolved",
+  becomeDarwiniaAmbassador: "becomeDarwiniaAmbassador",
+  applyDarwiniaGrant: "applyDarwiniaGrant",
 };
 
 export default localeKeys;

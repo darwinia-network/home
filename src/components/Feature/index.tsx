@@ -3,18 +3,16 @@ import { NavLink } from "react-router-dom";
 
 interface Props {
   data: IFeature;
+  pcGrid: number;
 }
 
-const Feature = ({ data }: Props) => {
+const Feature = ({ data, pcGrid }: Props) => {
   const { type, text, icon, title, links: bottomLinks } = data;
   const bottomDivider = type === 2 ? <div className={"divider mt-[1.25rem]"} /> : null;
-  const linksCustomCLass = type === 3 ? `flex-col mt-[1.25rem] gap-[1.25rem]` : `flex-wrap gap-[1.25rem] mt-[1.25rem]`;
+  const linksCustomClass = getLinkClassByType(type);
   const links = getBottomLinks(bottomLinks);
-  const parentTypeClasses =
-    type === 1 || type === 2
-      ? `lg:w-[33.33%] lg:items-center lg:3n-2:items-start lg:3n:items-end`
-      : `lg:w-[50%] lg:odd:pr-[1.875rem] lg:even:pl-[1.875rem] justify-between`;
-  const childTypeClasses = type === 1 || type === 2 ? `w-full lg:w-[85%]` : `w-full`;
+  const parentTypeClasses = getWrapperGrid(pcGrid);
+  const childTypeClasses = getChildWidthByGrid(pcGrid);
   const titleJSX = title ? <div className={"title text-white capitalize mt-[1.25rem]"}>{title}</div> : null;
   return (
     <div className={`flex flex-col shrink-0 ${parentTypeClasses} inter-block-space-2`}>
@@ -24,10 +22,52 @@ const Feature = ({ data }: Props) => {
         <div className={"divider mt-[1.25rem]"} />
         <div className={"capitalize mt-[1.25rem]"}>{text}</div>
         {bottomDivider}
-        <div className={`flex ${linksCustomCLass}`}>{links}</div>
+        <div className={`flex text-white ${linksCustomClass}`}>{links}</div>
       </div>
     </div>
   );
+};
+const getLinkClassByType = (type: number) => {
+  switch (type) {
+    case 3: {
+      return `flex-col mt-[1.25rem] gap-[1.25rem]`;
+    }
+    case 4: {
+      return `flex-wrap gap-[1.25rem] mt-[1.25rem] text-white`;
+    }
+    default: {
+      return `flex-wrap gap-[1.25rem] mt-[1.25rem]`;
+    }
+  }
+};
+
+const getChildWidthByGrid = (pcGrid: number) => {
+  switch (pcGrid) {
+    case 3: {
+      return `w-full lg:w-[85%]`;
+    }
+    case 4: {
+      return `w-full lg:w-[86%]`;
+    }
+    default: {
+      return `w-full`;
+    }
+  }
+};
+
+const getWrapperGrid = (pcGrid: number) => {
+  switch (pcGrid) {
+    case 3: {
+      return `lg:w-[33.33%] lg:items-center lg:3n-2:items-start lg:3n:items-end`;
+    }
+    case 4: {
+      return `lg:w-[25%] lg:items-center lg:4n-3:items-start lg:4n:items-end`;
+    }
+    case 2:
+    default: {
+      return `lg:w-[50%] lg:odd:pr-[1.875rem] lg:even:pl-[1.875rem] justify-between`;
+    }
+  }
 };
 
 const getBottomLinks = (bottomLinks: Link[] | undefined) => {

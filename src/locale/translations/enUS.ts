@@ -42,7 +42,7 @@ const enUs = {
   [localeKeys.partnerIntro]: `Support and partnership with teams and developers that provide tools, infrastructure, and other ecosystem services.`,
   [localeKeys.integration]: `Integration`,
   [localeKeys.integrationIntro]: `Support teams and developers that want to integrate with and connect to Darwinia Network.`,
-  [localeKeys.startStake]: `Start Stake >`,
+  [localeKeys.startStake]: `Start To Stake >`,
   [localeKeys.runValidator]: `Run A Validator >`,
   [localeKeys.sdkDoc]: `SDK Doc >`,
   [localeKeys.contactUs]: `Contact Us >`,
@@ -124,6 +124,9 @@ const enUs = {
   [localeKeys.darwinia]: `darwinia`,
   [localeKeys.crab]: `crab`,
   [localeKeys.community]: `community`,
+  [localeKeys.getInvolved]: `get involved`,
+  [localeKeys.becomeDarwiniaAmbassador]: `Become a Darwinia Ambassador >`,
+  [localeKeys.applyDarwiniaGrant]: `Apply for the Darwinia Grant >`,
 };
 
 export default enUs;

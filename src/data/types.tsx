@@ -15,6 +15,7 @@ export interface Feature {
 export interface FeatureWrapper {
   title: JSX.Element;
   data: Feature[];
+  pcGrid: number;
   links?: Link[];
 }
 

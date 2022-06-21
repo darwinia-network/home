@@ -70,6 +70,7 @@ const getDarwiniaIntro = (t: TFunction<"translation">): FeatureWrapper => {
         dangerouslySetInnerHTML={{ __html: t(localeKeys.whatIsDarwinia) }}
       />
     ),
+    pcGrid: 3,
     data: [
       {
         icon: programmable,
@@ -163,6 +164,7 @@ const getEcosystemProjects = (t: TFunction<"translation">): FeatureWrapper => {
         dangerouslySetInnerHTML={{ __html: t(localeKeys.ecosystemProjects) }}
       />
     ),
+    pcGrid: 3,
     data: [
       {
         icon: helixBridge,
@@ -202,6 +204,7 @@ const getDarwiniaPower = (t: TFunction<"translation">): FeatureWrapper => {
         dangerouslySetInnerHTML={{ __html: t(localeKeys.poweringDarwinia) }}
       />
     ),
+    pcGrid: 3,
     data: [
       {
         icon: staking,

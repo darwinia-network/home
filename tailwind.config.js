@@ -16,6 +16,8 @@ module.exports = {
       // Add a `third` variant, ie. `third:pb-0`
       addVariant("3n", "&:nth-child(3n)");
       addVariant("3n-2", "&:nth-child(3n-2)");
+      addVariant("4n-3", "&:nth-child(4n-3)");
+      addVariant("4n", "&:nth-child(4n)");
     }),
   ],
 };

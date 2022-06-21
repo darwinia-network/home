@@ -43,6 +43,7 @@ const getDarwiniaDevRoadmap = (t: TFunction<"translation">): FeatureWrapper => {
         dangerouslySetInnerHTML={{ __html: t(localeKeys.developWithDarwinia) }}
       />
     ),
+    pcGrid: 2,
     data: [
       {
         icon: introduction,

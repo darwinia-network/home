@@ -6,10 +6,11 @@ interface Props {
 }
 const FeatureWrapper = ({ data }: Props) => {
   const featuresList = data.data;
+  const pcGrid = data.pcGrid;
   const linksList = data.links ?? [];
   const features = featuresList.map((item, index) => {
     const key = `${index}-${item.title}`;
-    return <Feature key={key} data={item} />;
+    return <Feature key={key} pcGrid={pcGrid} data={item} />;
   });
 
   const links = linksList.map((link, index) => {
