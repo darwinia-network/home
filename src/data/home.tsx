@@ -5,7 +5,7 @@ import programmable from "../assets/images/programmable.png";
 import crossChain from "../assets/images/cross-chain.png";
 import ultraLight from "../assets/images/ultra-light.png";
 import lightClientFigure from "../assets/images/light-client-figure.png";
-import sdk from "../assets/images/sdk.svg";
+import sdk from "../assets/images/sdk.png";
 import helixBridge from "../assets/images/helix-bridge.png";
 import evolutionLand from "../assets/images/evolution-land.png";
 import staking from "../assets/images/staking.png";

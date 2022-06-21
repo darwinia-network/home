@@ -9,17 +9,23 @@ interface Props {
 }
 
 const CodeSample = ({ data }: Props) => {
-  const [activeTabIndex, setActiveTabIndex] = useState<number>(0);
+  const [activePCTabIndex, setActivePCTabIndex] = useState<number>(0);
+  const [activeMobileTabIndex, setActiveMobileTabIndex] = useState<number | undefined>(0);
   useEffect(() => {
     Prism.highlightAll();
   }, []);
 
-  const onSwitchCodeSampleTab = (tabIndex: number) => {
-    setActiveTabIndex(tabIndex);
+  const onSwitchPCCodeSampleTab = (tabIndex: number) => {
+    setActivePCTabIndex(tabIndex);
   };
 
-  const mobileCodeSample = getMobileCodeSample(data, activeTabIndex, onSwitchCodeSampleTab);
-  const PCCodeSample = getPCCodeSample(data, activeTabIndex, onSwitchCodeSampleTab);
+  const onSwitchMobileCodeSampleTab = (tabIndex: number) => {
+    const index = tabIndex === activeMobileTabIndex ? undefined : tabIndex
+    setActiveMobileTabIndex(index);
+  };
+
+  const mobileCodeSample = getMobileCodeSample(data, activeMobileTabIndex, onSwitchMobileCodeSampleTab);
+  const PCCodeSample = getPCCodeSample(data, activePCTabIndex, onSwitchPCCodeSampleTab);
   return (
     <div>
       <div className={"lg:hidden"}>{mobileCodeSample}</div>
@@ -86,7 +92,7 @@ const getPCCodeSample = (
 
 const getMobileCodeSample = (
   codeSample: ICodeSample,
-  activeTabIndex: number,
+  activeTabIndex: number | undefined,
   onSwitchCodeSampleTab: (index: number) => void
 ) => {
   const tabsWithSampleCode = codeSample.codes.map((code, index) => {
@@ -99,7 +105,7 @@ const getMobileCodeSample = (
     const tab = (
       <div
         style={{ paddingTop: customPadding }}
-        className={`${decorationClass} uppercase hover:cursor-pointer title leading-normal text-white mb-[0.625rem] last:mb-0 text-[1.8rem]`}
+        className={`${decorationClass} uppercase hover:cursor-pointer title leading-normal text-white mb-[0.625rem] last:mb-0`}
         onClick={() => {
           onSwitchCodeSampleTab(index);
         }}

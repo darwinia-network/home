@@ -6,4 +6,6 @@ AOS.init({
   easing: "ease-out-quad",
   once: true,
   startEvent: "load",
+  offset: 150,
+  anchorPlacement: 'top-bottom'
 });
