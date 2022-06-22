@@ -127,6 +127,24 @@ const enUs = {
   [localeKeys.getInvolved]: `get involved`,
   [localeKeys.becomeDarwiniaAmbassador]: `Become a Darwinia Ambassador >`,
   [localeKeys.applyDarwiniaGrant]: `Apply for the Darwinia Grant >`,
+  [localeKeys.paperResources]: `Paper Resources`,
+  [localeKeys.paperResourcesIntro]: `A series of papers written by experts about Darwinia Network.`,
+  [localeKeys.darwiniaGenePaper]: `Darwinia Genepaper`,
+  [localeKeys.darwiniaChainRelay]: `Darwinia ChainRelay`,
+  [localeKeys.lightClient]: `Light-Client`,
+  [localeKeys.optimisticVerification]: `Optimistic Verification`,
+  [localeKeys.merkleMountainRange]: `Merkle Mountain Range`,
+  [localeKeys.darwiniaOptimisticBridge]: `Darwinia Optimistic Bridge: Sublinear Relay for Interoperable Blockchains`,
+  [localeKeys.darwiniaOptimisticBridgeSummary]: `To verify transactions, cryptocurrencies such as Bitcoin and Ethereum require nodes to verify that the blockchain is valid. This requirement means downloading and verifying all blocks, which takes hours and requires gigabytes of bandwidth and storage space. Therefore, clients with limited resources cannot independently verify transactions without trusting the full node.
+      Bitcoin and Ethereum provide lightweight clients called simplified payment verification (SPV) clients that can verify the chain by downloading only the block header. Unfortunately, the storage and bandwidth requirements of SPV clients still grow linearly with chain length. Recently, NIPoPoW and FlyClient have proposed a type of solution called super-light client. It is expected that light clients only need to download and store the logarithmic number of block headers, but this type of solution cannot be directly used for light clients on the chain, that is, cross-chain Relay.
+      FlyClient requires making a certain degree of a hard fork to the corresponding chain and supports the Merkle Mountain Range (MMR) commitment before it can be used for relay on the chain, they all have a certain degree of poor generality, NonInteractive Proof of Work (NIPoPoW) is only applicable to chains with fixed block difficulty, and FlyClient needs to modify the best probability block sampling protocol and variable-difficulty verification model.`,
+  [localeKeys.darwiniaOptimisticBridgeMobileSummary]: `To verify transactions, cryptocurrencies such as Bitcoin and Ethereum require nodes to verify that the blockchain is valid. This requirement means downloading and verifying all blocks, which takes hours and requires gigabytes of bandwidth and storage space. Therefore, clients with limited resources cannot independently verify transactions without trusting the full node.`,
+  [localeKeys.darwiniaGenePaperSummary]: `No Content`,
+  [localeKeys.darwiniaGenePaperMobileSummary]: ``,
+  [localeKeys.viewFullPaper]: `View Full Paper`,
+  [localeKeys.back]: `back`,
+  [localeKeys.pageNotFound]: `Sorry, page not found`,
+  [localeKeys.goBackHome]: `Back to home`,
 };
 
 export default enUs;

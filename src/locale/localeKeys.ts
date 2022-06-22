@@ -132,6 +132,22 @@ const localeKeys = {
   getInvolved: "getInvolved",
   becomeDarwiniaAmbassador: "becomeDarwiniaAmbassador",
   applyDarwiniaGrant: "applyDarwiniaGrant",
+  paperResources: "paperResources",
+  paperResourcesIntro: "paperResourcesIntro",
+  darwiniaGenePaper: "darwiniaGenePaper",
+  darwiniaChainRelay: "darwiniaChainRelay",
+  lightClient: "lightClient",
+  optimisticVerification: "optimisticVerification",
+  merkleMountainRange: "merkleMountainRange",
+  darwiniaOptimisticBridge: "darwiniaOptimisticBridge",
+  darwiniaOptimisticBridgeSummary: "darwiniaOptimisticBridgeSummary",
+  darwiniaOptimisticBridgeMobileSummary: "darwiniaOptimisticBridgeMobileSummary",
+  darwiniaGenePaperSummary: "darwiniaGenePaperSummary",
+  darwiniaGenePaperMobileSummary: "darwiniaGenePaperMobileSummary",
+  viewFullPaper: "viewFullPaper",
+  back: "back",
+  pageNotFound: "pageNotFound",
+  goBackHome: "goBackHome",
 };
 
 export default localeKeys;

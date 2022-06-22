@@ -1,6 +1,6 @@
 import PageNotFound from "../pages/PageNotFound";
-import Home from "../pages/Home";
 import { lazy } from "react";
+import Demo from "../pages/Demo";
 
 const routesList = [
   {
@@ -8,8 +8,16 @@ const routesList = [
     component: PageNotFound,
   },
   {
+    path: "/not-found",
+    component: PageNotFound,
+  },
+  {
+    path: "/demo",
+    component: Demo,
+  },
+  {
     path: "/",
-    component: Home,
+    component: lazy(() => import("../pages/Home")),
   },
   {
     path: "/developers",
@@ -24,10 +32,14 @@ const routesList = [
     component: lazy(() => import("../pages/Community")),
   },
   {
-    path: "/about",
-    component: lazy(() => import("../pages/About")),
+    path: "/papers",
+    component: lazy(() => import("../pages/Papers")),
   },
   {
+    path: "/papers/:paperId",
+    component: lazy(() => import("../pages/PaperSummary")),
+  },
+  /* {
     path: "/contact-us",
     component: lazy(() => import("../pages/Contact")),
     children: [
@@ -41,7 +53,7 @@ const routesList = [
         component: lazy(() => import("../pages/Contact/NestedChildTwo")),
       },
     ],
-  },
+  }, */
 ];
 
 export default routesList;

@@ -108,3 +108,13 @@ export interface Menu {
   children?: Menu[];
   isExternalLink?: boolean;
 }
+
+export interface Paper {
+  id: number;
+  title: string;
+  authors: string[];
+  tags: string[];
+  summary: string;
+  mobileSummary?: string;
+  link: Link;
+}

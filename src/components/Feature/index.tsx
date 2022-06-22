@@ -15,7 +15,7 @@ const Feature = ({ data, pcGrid }: Props) => {
   const childTypeClasses = getChildWidthByGrid(pcGrid);
   const titleJSX = title ? <div className={"title text-white capitalize mt-[1.25rem]"}>{title}</div> : null;
   return (
-    <div className={`flex flex-col shrink-0 ${parentTypeClasses} inter-block-space-2`}>
+    <div className={`flex shrink-0 ${parentTypeClasses} inter-block-space-2`}>
       <div className={`${childTypeClasses}`}>
         <img className={"w-[5rem] self-start"} src={icon} alt="icon" />
         {titleJSX}
@@ -58,14 +58,14 @@ const getChildWidthByGrid = (pcGrid: number) => {
 const getWrapperGrid = (pcGrid: number) => {
   switch (pcGrid) {
     case 3: {
-      return `lg:w-[33.33%] lg:items-center lg:3n-2:items-start lg:3n:items-end`;
+      return `lg:w-[33.33%] lg:justify-center lg:3n-2:justify-start lg:3n:justify-end`;
     }
     case 4: {
-      return `lg:w-[25%] lg:items-center lg:4n-3:items-start lg:4n:items-end`;
+      return `lg:w-[25%] lg:justify-center lg:4n-3:justify-start lg:4n:justify-end`;
     }
     case 2:
     default: {
-      return `lg:w-[50%] lg:odd:pr-[1.875rem] lg:even:pl-[1.875rem] justify-between`;
+      return `lg:w-[50%] lg:odd:pr-[1.875rem] lg:even:pl-[1.875rem]`;
     }
   }
 };

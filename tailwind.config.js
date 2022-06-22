@@ -18,6 +18,9 @@ module.exports = {
       addVariant("3n-2", "&:nth-child(3n-2)");
       addVariant("4n-3", "&:nth-child(4n-3)");
       addVariant("4n", "&:nth-child(4n)");
+      addVariant("first-item", "&:nth-child(1)");
+      addVariant("second-item", "&:nth-child(2)");
+      addVariant("third-item", "&:nth-child(3)");
     }),
   ],
 };
