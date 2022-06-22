@@ -1,3 +1,7 @@
+export type SupportedLanguages = "enUS" | "zhCN";
+
+export type Page = "HOME" | "DEVELOPERS" | "TOKENS" | "COMMUNITY" | "PAPERS";
+
 export interface Link {
   title: string;
   url: string;
@@ -68,7 +72,7 @@ export interface CodeSample {
 
 export interface Hero {
   image: JSX.Element;
-  title?: JSX.Element;
+  // title?: JSX.Element;
   text?: string;
   links?: Link[];
   socialNetworks?: SocialNetwork[];

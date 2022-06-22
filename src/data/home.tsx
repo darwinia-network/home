@@ -40,12 +40,6 @@ const getHero = (t: TFunction<"translation">): Hero => {
   return {
     type: 1,
     image: <HomeHeroAnimation />,
-    title: (
-      <div
-        className={"title-lg uppercase text-white"}
-        dangerouslySetInnerHTML={{ __html: t(localeKeys.crossChainMessaging) }}
-      />
-    ),
     text: t(localeKeys.darwiniaIntroData),
     links: [
       {

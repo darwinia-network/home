@@ -6,7 +6,7 @@ export interface Options {
 }
 export interface Phrase {
   text: string;
-  style: string;
+  style?: string;
 }
 
 type Callback = () => Promise<void>;
@@ -23,12 +23,12 @@ export default class Typewriter {
   private deletingSpeed: number;
   private intervalRefs: NodeJS.Timer[] = [];
   private timeoutRefs: NodeJS.Timeout[] = [];
-  constructor(element: HTMLElement, options: Options) {
+  constructor(element: HTMLElement, options: Options = {}) {
     this.cursor = options.cursor ?? "|";
     this.element = this.appendTypewriterElement(element);
     this.shouldLoop = options.loop ?? true;
-    this.typingSpeed = options.typingSpeed ?? 200;
-    this.deletingSpeed = options.deletingSpeed ?? 200;
+    this.typingSpeed = options.typingSpeed ?? 100;
+    this.deletingSpeed = options.deletingSpeed ?? 100;
     this.phrases = [];
     this.callbackQueue = [];
   }

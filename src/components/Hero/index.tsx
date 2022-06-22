@@ -1,23 +1,27 @@
-import { Hero as IHero, Link, SocialNetwork } from "../../data/types";
+import { Hero as IHero, Link, Page, SocialNetwork } from "../../data/types";
 import { NavLink } from "react-router-dom";
+import { lazy, Suspense } from "react";
 
 interface Props {
   data: IHero;
+  page: Page;
 }
 
-const Hero = ({ data }: Props) => {
+const Hero = ({ data, page }: Props) => {
   const links = getLinks(data.links);
   const text = getText(data.text);
-  const title = getTitle(data.title);
   const image = getImage(data.image);
   const socialNetworkLinks = getSocialNetworkLinks(data.socialNetworks);
   const imageClass = data.type === 1 ? `hero-image-1` : `hero-image-2`;
+  const Typewriter = getTypewriterByPage(page);
   return (
     <div className={`bg-center bg-cover bg-no-repeat`}>
       <div data-aos={"fade-up"} data-aod-duration={700} className={`container space-top`}>
         <div className={"flex flex-col lg:flex-row pt-[1.25rem]"}>
           <div className={"order-2 flex-1 lg:order-1"}>
-            {title}
+            <Suspense>
+              <Typewriter />
+            </Suspense>
             {text}
             {links}
             {socialNetworkLinks}
@@ -29,19 +33,25 @@ const Hero = ({ data }: Props) => {
   );
 };
 
-const getTitle = (title: JSX.Element | undefined) => {
-  if (!title) {
-    return null;
+const getTypewriterByPage = (page: Page) => {
+  switch (page) {
+    case "HOME": {
+      return lazy(() => import("../HomeTypewriter"));
+    }
+    case "DEVELOPERS": {
+      return lazy(() => import("../DevelopersTypewriter"));
+    }
+    case "TOKENS": {
+      return lazy(() => import("../TokensTypewriter"));
+    }
+    case "COMMUNITY": {
+      return lazy(() => import("../CommunityTypewriter"));
+    }
+    case "PAPERS":
+    default: {
+      return lazy(() => import("../PapersTypewriter"));
+    }
   }
-  return (
-    <div
-      className={
-        "title-lg text-white text-[1.875rem] leading-[2.5rem] lg:text-[4rem] lg:leading-[5.25rem] pb-[1.875rem] lg:pb-[1.25rem] pt-[3.75rem] lg:pt-[7.5rem]"
-      }
-    >
-      {title}
-    </div>
-  );
 };
 
 const getText = (text: string | undefined) => {

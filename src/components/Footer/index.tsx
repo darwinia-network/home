@@ -179,7 +179,7 @@ const createFooterSections = (data: FooterSection[]) => {
       if (link.isExternal) {
         return (
           <a
-            className={"text-white py-[0.3125rem] my-[0.3125rem] hover:opacity-70"}
+            className={"capitalize text-white py-[0.3125rem] my-[0.3125rem] hover:opacity-70"}
             key={key}
             href={link.url}
             target="_blank"
@@ -191,7 +191,11 @@ const createFooterSections = (data: FooterSection[]) => {
       }
 
       return (
-        <NavLink key={key} to={link.url}>
+        <NavLink
+          className={"capitalize text-white py-[0.3125rem] my-[0.3125rem] hover:opacity-70"}
+          key={key}
+          to={link.url}
+        >
           {link.title}
         </NavLink>
       );

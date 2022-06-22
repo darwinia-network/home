@@ -10,7 +10,7 @@ const Papers = () => {
 
   return (
     <div>
-      <Hero data={heroData} />
+      <Hero page={"PAPERS"} data={heroData} />
       <div data-aos={"fade-up"} data-aod-duration={700} className={"container inter-block-space-1"}>
         <PapersGrid data={papersData} />
       </div>

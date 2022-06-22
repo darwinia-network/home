@@ -10,7 +10,7 @@ const Tokens = () => {
 
   return (
     <div>
-      <Hero data={heroData} />
+      <Hero page={"TOKENS"} data={heroData} />
       <div data-aos={"fade-up"} data-aod-duration={700} className={"container inter-block-space-1"}>
         <Statistics data={tokenStatistics} />
       </div>

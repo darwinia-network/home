@@ -81,8 +81,8 @@ const getFooterData = (t: TFunction<"translation">): Footer => {
         title: t(localeKeys.resources),
         links: [
           {
-            isExternal: true,
-            url: "https://www.google.com",
+            isExternal: false,
+            url: "/papers",
             title: t(localeKeys.papers),
           },
           {

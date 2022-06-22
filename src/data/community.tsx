@@ -30,12 +30,6 @@ const getHero = (t: TFunction<"translation">): Hero => {
   return {
     type: 2,
     image: <img className={"w-full"} src={communityHero} alt="image" />,
-    title: (
-      <div
-        className={"title-lg uppercase text-white"}
-        dangerouslySetInnerHTML={{ __html: t(localeKeys.welcomeToDarwiniaCommunity) }}
-      />
-    ),
     text: t(localeKeys.darwiniaCommunityIntro),
     socialNetworks: [
       {
