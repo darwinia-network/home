@@ -76,9 +76,16 @@ const getPCCodeSample = (
     const highlightedCode = getCodeView(code.sample, code.language);
 
     return (
-      <CSSTransition key={key} in={isCodeVisible} appear={true} timeout={500} classNames={"pc-code"}>
+      <CSSTransition
+        key={key}
+        unmountOnExit={true}
+        in={isCodeVisible}
+        appear={true}
+        timeout={500}
+        classNames={"pc-code"}
+      >
         <div className={`flex-1 flex h-[670px] absolute w-full`}>
-          <div className={`opacity-controller w-full`}>{highlightedCode}</div>
+          <div className={`w-full`}>{highlightedCode}</div>
         </div>
       </CSSTransition>
     );

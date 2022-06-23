@@ -160,6 +160,10 @@ html {
   border-radius: 20px;
 }
 
+.custom-scroll-bar::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(255, 255, 255, 0.7);
+}
+
 @keyframes blinkingCursor {
   0% {
     opacity: 1;
@@ -188,46 +192,23 @@ html {
 $pc-code-transition-duration: 500ms;
 .pc-code-enter {
   opacity: 0;
-  .opacity-controller {
-    opacity: 0;
-  }
 }
 .pc-code-enter-active {
   transition: opacity $pc-code-transition-duration ease-in-out;
   opacity: 1;
-  .opacity-controller {
-    transition: opacity $pc-code-transition-duration ease-in-out;
-    opacity: 1;
-  }
 }
 .pc-code-enter-done {
   opacity: 1;
   z-index: 10;
-  .opacity-controller {
-    opacity: 1;
-  }
 }
 .pc-code-exit {
   opacity: 1;
-  .opacity-controller {
-    opacity: 1;
-  }
 }
 .pc-code-exit-active {
   transition: opacity $pc-code-transition-duration ease-in-out;
   opacity: 0;
-  .opacity-controller {
-    transition: opacity $pc-code-transition-duration ease-in-out;
-    opacity: 0;
-  }
 }
 .pc-code-exit-done {
-  opacity: 0;
-  .opacity-controller {
-    opacity: 0;
-  }
-}
-.opacity-controller {
   opacity: 0;
 }
 
