@@ -53,7 +53,7 @@ html {
   }
   .title-hero {
     @extend .title;
-    @apply text-[1.875rem] lg:text-[3.125rem] leading-[2.5rem] lg:leading-[4.125rem] font-[700] box-border;
+    @apply text-[1.875rem] lg:text-[2.5rem] leading-[2.5rem] lg:leading-[3.75rem] font-[700] box-border;
   }
   .btn {
     @apply py-[0.5rem] px-[0.9375rem] border-[1px] border-solid border-white bg-black lg:hover:bg-white lg:hover:text-black hover:cursor-pointer text text-white;
