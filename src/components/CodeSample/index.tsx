@@ -110,13 +110,14 @@ const getMobileCodeSample = (
     const decorationClass = index === activeTabIndex ? `text-primary` : "";
     const key = `${index}-${code.title}`;
 
-    const visibilityClass = activeTabIndex === index ? `` : `hidden`;
+    // const visibilityClass = activeTabIndex === index ? `` : `hidden`;
+    const isCodeVisible = activeTabIndex === index;
 
     const customPadding = index === 0 ? "0" : "3.125rem";
     const tab = (
       <div
         style={{ paddingTop: customPadding }}
-        className={`${decorationClass} uppercase hover:cursor-pointer title leading-normal text-white mb-[0.625rem] last:mb-0`}
+        className={`${decorationClass} ease-in-out transition-colors duration-[300ms] uppercase hover:cursor-pointer title leading-normal text-white mb-[0.625rem]`}
         onClick={() => {
           onSwitchCodeSampleTab(index);
         }}
@@ -126,11 +127,13 @@ const getMobileCodeSample = (
     );
 
     const highlightedCode = getCodeView(code.sample, code.language, true);
-    const codeJSX = <div className={`${visibilityClass} flex-1 flex`}>{highlightedCode}</div>;
+    const codeJSX = <div className={`overflow-hidden flex-1 flex`}>{highlightedCode}</div>;
     return (
       <div key={key}>
         {tab}
-        {codeJSX}
+        <CSSTransition unmountOnExit={true} in={isCodeVisible} appear={true} timeout={300} classNames={"mobile-code"}>
+          {codeJSX}
+        </CSSTransition>
       </div>
     );
   });

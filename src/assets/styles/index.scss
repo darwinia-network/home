@@ -63,7 +63,7 @@ html {
     @apply bg-primary lg:hover:bg-black;
   }
   .mobile-navigation {
-    @apply z-[99] w-[16.25rem] translate-x-[101%] fixed top-0 bottom-0 right-0 h-full transition-transform bg-black transform-cpu duration-300 ease-in;
+    @apply z-[99] w-[16.25rem] translate-x-[101%] ease-[cubic-bezier(.23,1,.32,1)] fixed top-0 bottom-0 right-0 h-full transition-transform bg-black transform-cpu duration-300;
     &.show {
       @apply translate-x-0;
     }
@@ -212,6 +212,31 @@ $pc-code-transition-duration: 500ms;
   opacity: 0;
 }
 
+$mobile-code-transition-duration: 300ms;
+//$mobile-code-transition-ease: cubic-bezier(.755,.05,.855,.06);
+$mobile-code-height-ease: cubic-bezier(0.645,0.045,0.355,1);
+$mobile-code-opacity-ease: cubic-bezier(.645,.045,.355,1);
+.mobile-code-enter {
+  height: 0;
+}
+.mobile-code-enter-active {
+  height: 370px;
+  transition: height $mobile-code-transition-duration $mobile-code-height-ease,opacity $mobile-code-transition-duration $mobile-code-opacity-ease;
+}
+.mobile-code-enter-done {
+  height: 370px;
+}
+
+.mobile-code-exit {
+  height: 370px;
+}
+.mobile-code-exit-active {
+  height: 0;
+  transition: height $mobile-code-transition-duration $mobile-code-height-ease,opacity $mobile-code-transition-duration $mobile-code-opacity-ease;
+}
+.mobile-code-exit-done {
+  height: 0;
+}
 /* if the future there needs to be a light mode for this project,
   you can set all the light mode styles in here. Simply use
  something like document.documentElement.classList.remove('light')
