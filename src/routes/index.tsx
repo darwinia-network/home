@@ -55,7 +55,11 @@ const createRoute = (routesList: AppRoute[], key: string | undefined = undefined
 };
 
 const createLoadingScreen = () => {
-  return <div className={"text-white"}>Loading...</div>;
+  return (
+    <div className={"text-white w-full h-[calc(100vh)] flex"}>
+      <div className={"space-top flex w-full justify-center items-center"}>Loading...</div>
+    </div>
+  );
 };
 
 export default Index;
