@@ -5,6 +5,7 @@
   font-family: "JetBrainsMono-Light";
   src: url("../fonts/JetBrainsMono-Light.woff2");
 }
+
 @font-face {
   font-family: "JetBrainsMono-Bold";
   src: url("../fonts/JetBrainsMono-Bold.woff2");
@@ -13,6 +14,7 @@
 html {
   @apply bg-black;
 }
+
 /*components styles*/
 /* BUG FIX ALERT 🐛 :
  If you use @apply, always make sure that your styles end up with the "none brackets" styles.
@@ -25,58 +27,73 @@ html {
   a {
     @apply inline-block;
   }
+
   .container {
     @apply max-w-[1320px] px-[1.25rem] lg:px-[1.875rem] xl:px-[3.75rem] mx-auto;
   }
+
   .space-top {
     @apply pt-[3.75rem] lg:pt-[5.5rem] box-border;
   }
+
   .inter-block-space-1 {
     @apply mt-[8.75rem] lg:mt-[15.625rem] box-border;
   }
+
   .inter-block-space-2 {
     @apply mt-[3.125rem] lg:mt-[5.625rem] box-border;
   }
+
   .text {
     @apply font-[JetBrainsMono-Light] text-[0.875rem] leading-[1.875rem] text-gray;
   }
+
   body {
     @extend .text;
   }
+
   .title {
     @extend .text;
     @apply font-[JetBrainsMono-Bold] text-[1.25rem] leading-[1.625rem] font-[700] box-border;
   }
+
   .title-lg {
     @extend .title;
     @apply text-[1.5rem] lg:text-[3.125rem] leading-[2rem] lg:leading-[3.75rem] font-[700] box-border;
   }
+
   .title-hero {
     @extend .title;
     @apply text-[1.5rem] lg:text-[3.125rem] leading-[2rem] lg:leading-[3.75rem] font-[700] box-border;
   }
+
   .btn {
     @apply py-[0.5rem] px-[0.9375rem] border-[1px] border-solid border-white bg-black lg:hover:bg-white lg:hover:text-black hover:cursor-pointer text text-white;
   }
+
   .btn-primary {
     @extend .btn;
     @apply bg-primary lg:hover:bg-black;
   }
+
   .mobile-navigation {
     @apply z-[99] w-[16.25rem] translate-x-[101%] ease-[cubic-bezier(.23,1,.32,1)] fixed top-0 bottom-0 right-0 h-full transition-transform bg-black transform-cpu duration-300;
     &.show {
       @apply translate-x-0;
     }
   }
+
   .navigation-overlay {
     @apply bg-[rgba(0,0,0,0.8)] z-[80] fixed top-0 bottom-0 right-0 left-0 h-full w-full transition-opacity transform-cpu opacity-0;
     &.show {
       @apply opacity-100;
     }
+
     &.hide {
       @apply translate-x-[101%] box-border;
     }
   }
+
   .mobile-navigation {
     .active {
       &:after {
@@ -91,6 +108,7 @@ html {
         z-index: -1;
         opacity: 0.2;
       }
+
       &:before {
         content: "";
         display: block;
@@ -104,9 +122,11 @@ html {
       }
     }
   }
+
   .pc-navigation {
     .active {
       position: relative;
+
       &:after {
         background: white;
         opacity: 0.3;
@@ -121,15 +141,19 @@ html {
       }
     }
   }
+
   .divider {
     @apply h-[1px] w-full bg-white opacity-30;
   }
+
   .divider-50 {
     @apply h-[1px] w-full bg-halfWhite;
   }
+
   .hero-image-1 {
     @apply lg:w-[54.58%] w-full shrink-0;
   }
+
   .hero-image-2 {
     @apply lg:w-[47.083%] lg:pl-[4rem] w-full shrink-0;
   }
@@ -193,36 +217,42 @@ $pc-code-transition-duration: 500ms;
 .pc-code-enter {
   opacity: 0;
 }
+
 .pc-code-enter-active {
   transition: opacity $pc-code-transition-duration ease-in-out;
   opacity: 1;
 }
+
 .pc-code-enter-done {
   opacity: 1;
   z-index: 10;
 }
+
 .pc-code-exit {
   opacity: 1;
 }
+
 .pc-code-exit-active {
   transition: opacity $pc-code-transition-duration ease-in-out;
   opacity: 0;
 }
+
 .pc-code-exit-done {
   opacity: 0;
 }
 
 $mobile-code-transition-duration: 300ms;
-//$mobile-code-transition-ease: cubic-bezier(.755,.05,.855,.06);
-$mobile-code-height-ease: cubic-bezier(0.645,0.045,0.355,1);
-$mobile-code-opacity-ease: cubic-bezier(.645,.045,.355,1);
+$mobile-code-height-ease: cubic-bezier(0.645, 0.045, 0.355, 1);
+$mobile-code-opacity-ease: cubic-bezier(.645, .045, .355, 1);
 .mobile-code-enter {
   height: 0;
 }
+
 .mobile-code-enter-active {
   height: 370px;
-  transition: height $mobile-code-transition-duration $mobile-code-height-ease,opacity $mobile-code-transition-duration $mobile-code-opacity-ease;
+  transition: height $mobile-code-transition-duration $mobile-code-height-ease, opacity $mobile-code-transition-duration $mobile-code-opacity-ease;
 }
+
 .mobile-code-enter-done {
   height: 370px;
 }
@@ -230,13 +260,51 @@ $mobile-code-opacity-ease: cubic-bezier(.645,.045,.355,1);
 .mobile-code-exit {
   height: 370px;
 }
+
 .mobile-code-exit-active {
   height: 0;
-  transition: height $mobile-code-transition-duration $mobile-code-height-ease,opacity $mobile-code-transition-duration $mobile-code-opacity-ease;
+  transition: height $mobile-code-transition-duration $mobile-code-height-ease, opacity $mobile-code-transition-duration $mobile-code-opacity-ease;
 }
+
 .mobile-code-exit-done {
   height: 0;
 }
+
+$pc-sub-menu-transition-duration: 300ms;
+$pc-sub-menu-transition-ease: cubic-bezier(0.645, 0.045, 0.355, 1);
+$pc-sub-menu-y: -20%;
+.pc-sub-menu-enter {
+  opacity: 0;
+  transform: translate3d(-50%, $pc-sub-menu-y, 0);
+}
+
+.pc-sub-menu-enter-active {
+  opacity: 1;
+  transform: translate3d(-50%, 0, 0);
+  transition: transform $pc-sub-menu-transition-duration $pc-sub-menu-transition-ease, opacity $pc-sub-menu-transition-duration $pc-sub-menu-transition-ease;
+}
+
+.pc-sub-menu-enter-done {
+  opacity: 1;
+  transform: translate3d(-50%, 0, 0);
+}
+
+.pc-sub-menu-exit {
+  opacity: 1;
+  transform: translate3d(-50%, 0, 0);
+}
+
+.pc-sub-menu-exit-active {
+  opacity: 0;
+  transform: translate3d(-50%, $pc-sub-menu-y, 0);
+  transition: transform $pc-sub-menu-transition-duration $pc-sub-menu-transition-ease, opacity $pc-sub-menu-transition-duration $pc-sub-menu-transition-ease;
+}
+
+.pc-sub-menu-exit-done {
+  opacity: 0;
+  transform: translate3d(-50%, $pc-sub-menu-y, 0);
+}
+
 /* if the future there needs to be a light mode for this project,
   you can set all the light mode styles in here. Simply use
  something like document.documentElement.classList.remove('light')

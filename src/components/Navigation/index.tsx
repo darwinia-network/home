@@ -7,6 +7,7 @@ import { Menu } from "../../data/types";
 import localeKeys from "../../locale/localeKeys";
 import { useTranslation } from "react-i18next";
 import { useMenuData } from "../../data/menu";
+import { CSSTransition } from "react-transition-group";
 
 interface SubMenuHeight {
   [path: string]: number;
@@ -23,7 +24,6 @@ const Navigation = () => {
   const [openedMobileMenuPath, setOpenedMobileMenuPath] = useState<string | undefined>(undefined);
   const [mobileMenuHeightByPathMap, setMenuHeight] = useState<SubMenuHeight>({});
   const [openedPCMenuPath, setOpenedPCMenuPath] = useState<string | undefined>(undefined);
-  const [PCMenuHeightByPathMap, setPCMenuHeight] = useState<SubMenuHeight>({});
   const [navBarBackground, setNavBarBackground] = useState("rgba(0,0,0,0)");
   const startBuildingURL = "https://www.youku.com";
   const navBarThreshold = 100;
@@ -36,21 +36,6 @@ const Navigation = () => {
         const path = dataset.path;
         const height = item.scrollHeight;
         setMenuHeight((oldValue) => {
-          return {
-            ...oldValue,
-            [path]: height,
-          };
-        });
-      }
-    });
-
-    const PCNavParents = document.querySelectorAll<HTMLElement>(".pc-nav-parent");
-    PCNavParents.forEach((item) => {
-      const dataset = item.dataset as unknown as NavigationDataSet;
-      if (dataset.path) {
-        const path = dataset.path;
-        const height = item.scrollHeight;
-        setPCMenuHeight((oldValue) => {
           return {
             ...oldValue,
             [path]: height,
@@ -109,7 +94,7 @@ const Navigation = () => {
 
   const MobileMenu = createMobileMenu(menu, openedMobileMenuPath, mobileMenuHeightByPathMap, onMobileSubMenuToggle);
 
-  const PCMenu = createPCMenu(menu, openedPCMenuPath, PCMenuHeightByPathMap, onPCSubMenuToggle);
+  const PCMenu = createPCMenu(menu, openedPCMenuPath, onPCSubMenuToggle);
 
   return (
     /* bg-black */
@@ -207,12 +192,7 @@ const Navigation = () => {
   );
 };
 
-const createPCMenu = (
-  menu: Menu[],
-  openedMenuPath: string | undefined,
-  menuHeightByPathMap: SubMenuHeight,
-  onToggleSubMenu: (path: string) => void
-) => {
+const createPCMenu = (menu: Menu[], openedMenuPath: string | undefined, onToggleSubMenu: (path: string) => void) => {
   return menu
     .filter((item) => item.device !== "MOBILE")
     .map((item, index) => {
@@ -244,20 +224,15 @@ const createPCMenu = (
             >
               {item.title}
             </div>
-            <div
-              style={{
-                height: isActive ? `${menuHeightByPathMap[path]}px` : "0",
-                transitionProperty: "height",
-              }}
-              data-path={path}
-              className={
-                "pc-nav-parent ease-in-out duration-[150ms] -translate-x-1/2 left-1/2 top-[30px] pt-[15px] absolute z-[2] w-[33.75rem] overflow-hidden"
-              }
-            >
-              <div className={"justify-between flex bg-black border-2 border-primary p-[2.5rem] select-none"}>
-                {subMenu}
+            <CSSTransition unmountOnExit={true} in={isActive} classNames={"pc-sub-menu"} timeout={300}>
+              <div
+                className={"pc-nav-parent left-1/2 top-[30px] pt-[15px] absolute z-[2] w-[33.75rem] overflow-hidden"}
+              >
+                <div className={"justify-between flex bg-black border-2 border-primary p-[2.5rem] select-none"}>
+                  {subMenu}
+                </div>
               </div>
-            </div>
+            </CSSTransition>
           </div>
         );
       }
