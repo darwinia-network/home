@@ -11,13 +11,13 @@ const Tokens = () => {
   return (
     <div>
       <Hero page={"TOKENS"} data={heroData} />
-      <div data-aos={"fade-up"} data-aod-duration={700} className={"container inter-block-space-1"}>
+      <div data-aos={"fade-up"} data-aos-duration={700} className={"container inter-block-space-1"}>
         <Statistics data={tokenStatistics} />
       </div>
-      <div data-aos={"fade-up"} data-aod-duration={700} className={"container inter-block-space-1"}>
+      <div data-aos={"fade-up"} data-aos-duration={700} className={"container inter-block-space-1"}>
         <Statistics data={stakingModelData} />
       </div>
-      <div data-aos={"fade-up"} data-aod-duration={700} className={"container inter-block-space-1"}>
+      <div data-aos={"fade-up"} data-aos-duration={700} className={"container inter-block-space-1"}>
         <Statistics data={ringInflationModel} />
       </div>
       <Footer data={footerData} />

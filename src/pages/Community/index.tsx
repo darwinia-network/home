@@ -11,7 +11,7 @@ const Community = () => {
   return (
     <div>
       <Hero page={"COMMUNITY"} data={heroData} />
-      <div data-aos={"fade-up"} data-aod-duration={700} className={"container inter-block-space-1"}>
+      <div data-aos={"fade-up"} data-aos-duration={700} className={"container inter-block-space-1"}>
         <FeatureWrapper data={getInvolvedData} />
       </div>
       <Footer data={footerData} />

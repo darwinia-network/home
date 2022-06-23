@@ -53,6 +53,7 @@
   "devDependencies": {
     "@types/aos": "^3.0.4",
     "@types/prismjs": "^1.26.0",
+    "@types/react-transition-group": "^4.4.5",
     "@typescript-eslint/eslint-plugin": "^5.27.1",
     "@typescript-eslint/parser": "^5.27.1",
     "autoprefixer": "^10.4.7",

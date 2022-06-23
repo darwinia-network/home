@@ -23,22 +23,22 @@ const Home = () => {
   return (
     <div>
       <Hero page={"HOME"} data={heroData} />
-      <div data-aos={"fade-up"} data-aod-duration={700} className={"container inter-block-space-1"}>
+      <div data-aos={"fade-up"} data-aos-duration={700} className={"container inter-block-space-1"}>
         <FeatureWrapper data={darwiniaIntroData} />
       </div>
-      <div data-aos={"fade-up"} data-aod-duration={700} className={"container inter-block-space-1"}>
+      <div data-aos={"fade-up"} data-aos-duration={700} className={"container inter-block-space-1"}>
         <LightClientPromo data={howLightClientWorksData} />
       </div>
-      <div data-aos={"fade-up"} data-aod-duration={700} className={"container inter-block-space-1"}>
+      <div data-aos={"fade-up"} data-aos-duration={700} className={"container inter-block-space-1"}>
         <CodeSample data={codeSamplesData} />
       </div>
-      <div data-aos={"fade-up"} data-aod-duration={700} className={"container inter-block-space-1"}>
+      <div data-aos={"fade-up"} data-aos-duration={700} className={"container inter-block-space-1"}>
         <DarwiniaPromo data={darwiniaRecommendationData} />
       </div>
-      <div data-aos={"fade-up"} data-aod-duration={700} className={"container inter-block-space-1"}>
+      <div data-aos={"fade-up"} data-aos-duration={700} className={"container inter-block-space-1"}>
         <FeatureWrapper data={ecosystemProjectsData} />
       </div>
-      <div data-aos={"fade-up"} data-aod-duration={700} className={"container inter-block-space-1"}>
+      <div data-aos={"fade-up"} data-aos-duration={700} className={"container inter-block-space-1"}>
         <FeatureWrapper data={darwiniaPowerData} />
       </div>
       <Footer data={footerData} />

@@ -16,7 +16,7 @@ const Hero = ({ data, page }: Props) => {
   const Typewriter = getTypewriterByPage(page);
   return (
     <div className={`bg-center bg-cover bg-no-repeat`}>
-      <div data-aos={"fade-up"} data-aod-duration={700} className={`container space-top`}>
+      <div data-aos={"fade-up"} data-aos-duration={700} className={`container space-top`}>
         <div className={"flex flex-col lg:flex-row pt-[1.25rem]"}>
           <div className={"order-2 flex-1 lg:order-1"}>
             <Suspense>

@@ -49,11 +49,11 @@ html {
   }
   .title-lg {
     @extend .title;
-    @apply text-[1.5rem] md:text-[2.5rem] leading-[2rem] md:leading-[3.3125rem] font-[700] box-border;
+    @apply text-[1.5rem] lg:text-[3.125rem] leading-[2rem] lg:leading-[3.75rem] font-[700] box-border;
   }
   .title-hero {
     @extend .title;
-    @apply text-[1.875rem] lg:text-[2.5rem] leading-[2.5rem] lg:leading-[3.75rem] font-[700] box-border;
+    @apply text-[1.5rem] lg:text-[3.125rem] leading-[2rem] lg:leading-[3.75rem] font-[700] box-border;
   }
   .btn {
     @apply py-[0.5rem] px-[0.9375rem] border-[1px] border-solid border-white bg-black lg:hover:bg-white lg:hover:text-black hover:cursor-pointer text text-white;
@@ -131,7 +131,7 @@ html {
     @apply lg:w-[54.58%] w-full shrink-0;
   }
   .hero-image-2 {
-    @apply lg:w-[41.667%] w-full shrink-0;
+    @apply lg:w-[47.083%] lg:pl-[4rem] w-full shrink-0;
   }
 }
 /*.aos-animate {

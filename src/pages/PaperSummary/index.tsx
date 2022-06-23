@@ -33,7 +33,7 @@ const PaperSummary = () => {
 
   return (
     <div className={`bg-center bg-cover bg-no-repeat`}>
-      <div data-aos={"fade-up"} data-aod-duration={700} className={`container max-w-[800px] space-top`}>
+      <div data-aos={"fade-up"} data-aos-duration={700} className={`container max-w-[800px] space-top`}>
         <PaperDetails data={paper} />
       </div>
       <Footer data={footerData} />
