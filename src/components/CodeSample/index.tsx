@@ -4,7 +4,6 @@ import { useEffect, useState } from "react";
 import Prism from "prismjs";
 import "../../assets/styles/prism.css";
 import { CSSTransition } from "react-transition-group";
-// import sampleImage from "../../assets/images/light-client-figure.png";
 
 interface Props {
   data: ICodeSample;
@@ -46,7 +45,7 @@ const getPCCodeSample = (
     const key = `${index}-${code.title}`;
     return (
       <div
-        className={`${decorationClass} uppercase self-start hover:cursor-pointer title leading-normal text-white mb-[1.875rem] last:mb-0 text-[1.8rem] xl:text-[2.2rem]`}
+        className={`${decorationClass} ease-in-out transition-colors duration-[300ms] uppercase self-start hover:cursor-pointer title leading-normal text-white mb-[1.875rem] last:mb-0 text-[1.8rem] xl:text-[2.2rem]`}
         key={key}
         onClick={() => {
           onSwitchCodeSampleTab(index);
@@ -138,17 +137,12 @@ const getCodeView = (codeSample: string, language = "javascript", isMobile = fal
   const border = isMobile ? "border border-halfWhite" : "";
   return (
     <div style={{ height, maxHeight: height, width }} className={`flex-1 relative flex ${border}`}>
-      <div
+      <pre
         style={{ left: padding, right: padding, top: padding, bottom: padding }}
         className={"bg-[#1e1e1e] custom-scroll-bar absolute overflow-auto"}
       >
-        <div>
-          {/* <img style={{ width: "1200px", maxWidth: "none" }} src={sampleImage} alt="image" /> */}
-          <pre>
-            <code className={`language-${language}`}>{codeSample}</code>
-          </pre>
-        </div>
-      </div>
+        <code className={`language-${language}`}>{codeSample}</code>
+      </pre>
     </div>
   );
 };
