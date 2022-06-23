@@ -148,6 +148,7 @@ html {
 /* Works on Chrome, Edge, and Safari */
 .custom-scroll-bar::-webkit-scrollbar {
   width: 8px;
+  height: 8px;
 }
 
 .custom-scroll-bar::-webkit-scrollbar-track {
@@ -182,6 +183,52 @@ html {
   animation-iteration-count: infinite;
   animation-timing-function: ease-in-out;
   animation-fill-mode: forwards;
+}
+
+$pc-code-transition-duration: 500ms;
+.pc-code-enter {
+  opacity: 0;
+  .opacity-controller {
+    opacity: 0;
+  }
+}
+.pc-code-enter-active {
+  transition: opacity $pc-code-transition-duration ease-in-out;
+  opacity: 1;
+  .opacity-controller {
+    transition: opacity $pc-code-transition-duration ease-in-out;
+    opacity: 1;
+  }
+}
+.pc-code-enter-done {
+  opacity: 1;
+  z-index: 10;
+  .opacity-controller {
+    opacity: 1;
+  }
+}
+.pc-code-exit {
+  opacity: 1;
+  .opacity-controller {
+    opacity: 1;
+  }
+}
+.pc-code-exit-active {
+  transition: opacity $pc-code-transition-duration ease-in-out;
+  opacity: 0;
+  .opacity-controller {
+    transition: opacity $pc-code-transition-duration ease-in-out;
+    opacity: 0;
+  }
+}
+.pc-code-exit-done {
+  opacity: 0;
+  .opacity-controller {
+    opacity: 0;
+  }
+}
+.opacity-controller {
+  opacity: 0;
 }
 
 /* if the future there needs to be a light mode for this project,

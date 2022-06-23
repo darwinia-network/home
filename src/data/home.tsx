@@ -281,8 +281,14 @@ const getCodeSamples = (t: TFunction<"translation">): CodeSample => {
       },
       {
         title: t(localeKeys.callback),
-        language: "html",
-        sample: `callback code sample`,
+        language: "javascript",
+        sample: `onSubmit(e) {
+  e.preventDefault();
+  const job = {
+     title: 'Another Developer',
+     company: 'Twitter'
+  };
+}`,
       },
     ],
   };
