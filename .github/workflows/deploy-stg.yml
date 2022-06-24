@@ -26,14 +26,8 @@ jobs:
           vercel_token: ${{ secrets.VERCEL_TOKEN }}
           vercel_group: itering
           preview_output: true
-
-      - name: Slack Notification
-        uses: rtCamp/action-slack-notify@v2
-        env:
-          SLACK_CHANNEL: website
-          SLACK_COLOR: ${{ job.status }}
-          SLACK_ICON: https://avatars.githubusercontent.com/u/14985020?s=48&v=4
-          SLACK_MESSAGE: '${{ steps.smart-vercel.outputs.PREVIEW_LINK }}'
-          SLACK_TITLE: Preview
-          SLACK_USERNAME: Vercel
-          SLACK_WEBHOOK: ${{ secrets.SLACK_INCOMING_WEBHOOK_URL }}
+          project_name: home
+          enable_cache: true
+          enable_notify_slack: true
+          slack_channel: website
+          slack_webhook: ${{ secrets.SLACK_INCOMING_WEBHOOK_URL }}
