@@ -3,95 +3,32 @@ import localeKeys from "../../locale/localeKeys";
 import { Footer as IFooter, FooterSection, SocialNetwork } from "../../data/types";
 import { NavLink } from "react-router-dom";
 import earth from "../../assets/images/earth.svg";
-import { ChangeEvent, useState } from "react";
-import http from "../../http";
+import { ChangeEvent, useEffect, useState } from "react";
 
 interface Props {
   data: IFooter;
 }
 
-interface Subscription {
-  email?: string | undefined;
-  status?: string | undefined;
-  isSubmitting?: boolean;
-}
-
 const Footer = ({ data }: Props) => {
   const { t } = useTranslation();
-  const [subscription, setSubscription] = useState<Subscription>({});
-  const { email, isSubmitting } = subscription;
-
+  const emailArray = useState<string>("");
+  const setEmail = emailArray[1];
   const footerSections = createFooterSections(data.referenceLinks);
   const copyRight = data.copyright;
   const socialNetworkLinks = getSocialNetworkLinks(data.socialNetworks);
 
-  const isValidEmail = (email: string) => {
-    return email
-      .toLowerCase()
-      .match(
-        /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
-      );
-  };
-
-  const updateSubmitStatus = (isSubmitting: boolean) => {
-    setSubscription((old) => {
-      return {
-        ...old,
-        isSubmitting,
-      };
-    });
-  };
-
-  const updateMessageStatus = (message: string | undefined) => {
-    setSubscription((old) => {
-      return {
-        ...old,
-        status: message,
-      };
-    });
-  };
-
-  const onSubscribe = async () => {
-    if (!email || !isValidEmail(email)) {
-      updateMessageStatus(t(localeKeys.wrongEmail));
-      return;
-    }
-    try {
-      updateSubmitStatus(true);
-      const { data } = await http.post({
-        path: "/subscribe/post?u=eb1c779b75a344e2d52755879&id=70a65557b6",
-        baseUrl: "https://network.us6.list-manage.com",
-        data: {
-          EMAIL: email,
-        },
-      });
-
-      console.log(data);
-      updateMessageStatus(t(localeKeys.subscriptionSuccessful));
-      updateSubmitStatus(false);
-      onResetEmailInputField();
-    } catch (e) {
-      updateSubmitStatus(false);
-      // catch error
-    }
-  };
+  /* NOTE: Load this javascript here to avoid issues with mailchimp's JS file */
+  useEffect(() => {
+    const script = document.createElement("script");
+    script.src = "//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js";
+    script.type = "text/javascript";
+    script.async = true;
+    document.body.appendChild(script);
+  }, []);
 
   const onInputChanged = (e: ChangeEvent<HTMLInputElement>) => {
-    setSubscription((old) => {
-      return {
-        ...old,
-        email: e.target.value,
-        status: undefined,
-      };
-    });
-  };
-
-  const onResetEmailInputField = () => {
-    setSubscription((old) => {
-      return {
-        ...old,
-        email: undefined,
-      };
+    setEmail(() => {
+      return e.target.value;
     });
   };
 
@@ -109,31 +46,39 @@ const Footer = ({ data }: Props) => {
           {/* Custom Input Field */}
           <div className={"relative"}>
             <div className={"relative inline-block w-full max-w-[21rem]"}>
-              <input
-                onChange={(e) => {
-                  onInputChanged(e);
-                }}
-                name={"email"}
-                className={
-                  "w-full placeholder:text-white placeholder:opacity-50 text-white border border-1 border-solid bg-black outline-0 p-[0.625rem] pr-[7.375rem]"
-                }
-                type="email"
-                value={!email ? "" : email}
-                placeholder={t(localeKeys.yourEmailHere)}
-              />
-              <button
-                disabled={isSubmitting}
-                onClick={() => {
-                  onSubscribe();
-                }}
-                className={
-                  "btn capitalize absolute right-0 top-0 bottom-0 flex items-center disabled:text-gray disabled:cursor-default"
-                }
+              <form
+                action="https://network.us6.list-manage.com/subscribe/post?u=eb1c779b75a344e2d52755879&amp;id=70a65557b6"
+                target="_blank"
+                method="post"
+                id="mc-embedded-subscribe-form"
+                name="mc-embedded-subscribe-form"
               >
-                {t(localeKeys.subscribe)}
-              </button>
+                <input
+                  onChange={(e) => {
+                    onInputChanged(e);
+                  }}
+                  name={"EMAIL"}
+                  id="mce-EMAIL"
+                  className={
+                    "w-full placeholder:text-white placeholder:opacity-50 text-white border border-1 border-solid bg-black outline-0 p-[0.625rem] pr-[7.375rem]"
+                  }
+                  type="email"
+                  placeholder={t(localeKeys.yourEmailHere)}
+                />
+                <button
+                  type="submit"
+                  className={
+                    "btn capitalize absolute right-0 top-0 bottom-0 flex items-center disabled:text-gray disabled:cursor-default"
+                  }
+                >
+                  {t(localeKeys.subscribe)}
+                </button>
+              </form>
             </div>
-            <div className={"absolute capitalize text-white left-0 -bottom-[1.875rem]"}>{subscription.status}</div>
+            <div id="mce-responses" className="clear absolute capitalize text-white left-0 -bottom-[1.875rem]">
+              <div className="response" id="mce-error-response" style={{ display: "none" }} />
+              <div className="response" id="mce-success-response" style={{ display: "none" }} />
+            </div>
           </div>
 
           <div className={"flex shrink-0 justify-between mt-[3.125rem]"}>{footerSections}</div>
