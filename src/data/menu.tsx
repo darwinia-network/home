@@ -77,6 +77,7 @@ const getDarwiniaNetworkLinks = (t: TFunction<"translation">): Menu[] => {
     },
     {
       title: t(localeKeys.polkadotParachainAuction),
+      /* this needs to be changed very soon */
       path: "https://darwinia.network/plo",
       isExternalLink: true,
     },

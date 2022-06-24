@@ -149,7 +149,7 @@ const getCodeView = (codeSample: string, language = "javascript", isMobile = fal
     <div style={{ height, maxHeight: height, width }} className={`flex-1 relative flex ${border}`}>
       <pre
         style={{ left: padding, right: padding, top: padding, bottom: padding }}
-        className={"bg-[#1e1e1e] custom-scroll-bar absolute overflow-auto"}
+        className={"bg-[#141818] custom-scroll-bar absolute overflow-auto"}
       >
         <code className={`language-${language}`}>{codeSample}</code>
       </pre>

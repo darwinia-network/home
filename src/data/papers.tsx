@@ -58,7 +58,7 @@ const getPapers = (t: TFunction<"translation">): Paper[] => {
       link: {
         isExternal: true,
         title: t(localeKeys.viewFullPaper),
-        url: "/optimistic_bridge_technical_paper_en.pdf",
+        url: "/itering_io_optimistic_bridge_technical_paper_en.pdf",
       },
       titleUrl: "",
     },

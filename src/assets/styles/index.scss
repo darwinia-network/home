@@ -33,12 +33,12 @@ html {
   }
 
   .space-top-1 {
-    @apply pt-[3.75rem] lg:pt-[10.5rem] box-border;
+    @apply pt-[7.5rem] lg:pt-[10.5rem] box-border;
   }
 
   .space-top-2 {
     @extend .space-top-1;
-    @apply pt-[3.75rem] lg:pt-[13.75rem] box-border;
+    @apply pt-[7.5rem] lg:pt-[13.75rem] box-border;
   }
 
   .inter-block-space-1 {

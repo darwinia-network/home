@@ -44,7 +44,7 @@ const getPaperHeaders = (paper: Paper, t: TFunction<"translation", undefined>) =
   const title = getPaperTitle(paper);
   return (
     <>
-      <div className={"mt-[3.125rem]"}>
+      <div>
         <NavLink to={"/papers"} className={"btn capitalize"}>
           <>
             {"<"} {t(localeKeys.back)}

@@ -6,6 +6,7 @@ import { SupportedLanguages } from "../../data/types";
 
 const HomeTypewriter = () => {
   const { t, i18n } = useTranslation();
+  const initialText = "Universal ";
 
   useEffect(() => {
     const typewriterElement: HTMLElement | null = document.querySelector(".typewriter-content");
@@ -25,8 +26,11 @@ const HomeTypewriter = () => {
       {/* this first title is rendered just to expand the parent so that the typewriter text
        can be positioned absolute and still be seen */}
       <div className={"opacity-0"}>{fakeTitle}</div>
-      <div className={"absolute left-0 right-0 top-0 bottom-0 z-10"}>
-        <div className={"title-hero uppercase text-white pb-[1.25rem] pt-[3.75rem] lg:pt-0 typewriter-content"} />
+      <div className={"absolute flex left-0 right-0 top-0 bottom-0 z-10"}>
+        <div className={"title-hero uppercase text-white pb-[1.25rem] pt-[3.75rem] lg:pt-0"}>
+          <span>{initialText}</span>
+          <span className={"typewriter-content"} />
+        </div>
       </div>
     </div>
   );
@@ -54,14 +58,15 @@ const initTypewriter = (typewriterElement: HTMLElement, language: SupportedLangu
 const getEnglishTypewriter = (typewriterElement: HTMLElement): Typewriter => {
   const typewriter = new Typewriter(typewriterElement, { loop: true, cursor: "_" });
   typewriter
-    .typeString({
-      text: "Universal Cross-Chain Message Network",
-    })
-    .pauseFor(2000)
-    .deleteChars(10)
-    .pauseFor(1000)
+    .typeString(
+      {
+        text: "Cross- Chain Message network",
+      },
+      100
+    )
+    .pauseFor(10000)
     .deleteAll()
-    .pauseFor(1500)
+    .pauseFor(2000)
     .start();
   return typewriter;
 };

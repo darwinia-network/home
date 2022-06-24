@@ -6,6 +6,7 @@ import { SupportedLanguages } from "../../data/types";
 
 const DevelopersTypewriter = () => {
   const { t, i18n } = useTranslation();
+  const initialText = "";
 
   useEffect(() => {
     const typewriterElement: HTMLElement | null = document.querySelector(".typewriter-content");
@@ -26,7 +27,10 @@ const DevelopersTypewriter = () => {
        can be positioned absolute and still be seen */}
       <div className={"opacity-0"}>{fakeTitle}</div>
       <div className={"absolute left-0 right-0 top-0 bottom-0 z-10"}>
-        <div className={"title-hero uppercase text-white pb-[1.25rem] pt-[3.75rem] lg:pt-0 typewriter-content"} />
+        <div className={"title-hero uppercase text-white pb-[1.25rem] pt-[3.75rem] lg:pt-0"}>
+          <span>{initialText}</span>
+          <span className={"typewriter-content"} />
+        </div>
       </div>
     </div>
   );
@@ -57,16 +61,14 @@ const getEnglishTypewriter = (typewriterElement: HTMLElement): Typewriter => {
     .typeString({
       text: "start building with ",
     })
-    .pauseFor(2000)
+    .pauseFor(1000)
     .typeString({
       text: "darwinia",
       style: "color: #FF0083",
     })
-    .pauseFor(3000)
-    .deleteChars(10)
-    .pauseFor(1000)
+    .pauseFor(10000)
     .deleteAll()
-    .pauseFor(1500)
+    .pauseFor(2000)
     .start();
   return typewriter;
 };
