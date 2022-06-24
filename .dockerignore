@@ -1,8 +1,0 @@
-/.git
-/.vscode
-/.yarn/cache
-/Dockerfile
-
-coverage/
-node_modules/
-tmp/
