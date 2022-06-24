@@ -33,7 +33,7 @@ const getHero = (t: TFunction<"translation">): Hero => {
     links: [
       {
         title: t(localeKeys.howToStake),
-        url: "https://www.google.com",
+        url: "https://medium.com/darwinianetwork/using-darwinia-tools-3-9-darwinia-apps-guide-part-ⅱ-staking-and-earning-7cd586315f76",
         isExternal: true,
       },
     ],
@@ -49,7 +49,7 @@ const getTokensStatistics = (t: TFunction<"translation">): Statistics => {
     links: [
       {
         title: t(localeKeys.learnMore),
-        url: "https://www.google.com",
+        url: "/genepaper_v2.pdf",
         isExternal: true,
       },
     ],
@@ -106,7 +106,7 @@ const getStakingModel = (t: TFunction<"translation">): Statistics => {
     links: [
       {
         title: t(localeKeys.learnMore),
-        url: "https://www.google.com",
+        url: "/genepaper_v2.pdf",
         isExternal: true,
       },
     ],
@@ -127,7 +127,7 @@ const getRingInflationModel = (t: TFunction<"translation">): Statistics => {
     links: [
       {
         title: t(localeKeys.learnMore),
-        url: "https://www.google.com",
+        url: "/genepaper_v2.pdf",
         isExternal: true,
       },
     ],

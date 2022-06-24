@@ -71,7 +71,7 @@ const enUs = {
   [localeKeys.careers]: `Careers`,
   [localeKeys.brand]: `Brand`,
   [localeKeys.collaboration]: `Collaboration`,
-  [localeKeys.substrateBuildersProgram]: `Substrate Builders Program`,
+  [localeKeys.substrateBuildersProgram]: `Substrate_builders Program`,
   [localeKeys.web3Foundation]: `Web3 Foundation`,
   [localeKeys.web3Bootcamp]: `Web3 Bootcamp`,
   [localeKeys.polkadot]: `Polkadot`,
@@ -89,9 +89,9 @@ const enUs = {
   [localeKeys.yourCrossChainStatus]: `Know your cross-chain status >`,
   [localeKeys.firstCrossChainDApp]: `Build your first cross-chain dApp on Crab >`,
   [localeKeys.solidityForSmartChain]: `Solidity API for Smart Chain >`,
-  [localeKeys.demoRMRK]: `Demo: RMRK >`,
-  [localeKeys.demoCallback]: `Demo: Callback >`,
-  [localeKeys.demoCrossChainFilter]: `Demo: Cross-Chain Filter >`,
+  [localeKeys.demoCrossChainRemark]: `Demo: Cross-Chain Remark >`,
+  [localeKeys.demoRemoteEVMTransact]: `Demo: Remote EVM Transact >`,
+  [localeKeys.demoERC20RemoteIssuing]: `Demo: ERC20 Remote Issuing >`,
   [localeKeys.findTechSolution]: `Find Your <span class="text-primary block lg:inline-block">Tech Solutions</span>`,
   [localeKeys.techSolutionIntro]: `Chat with other developers in the Developer Community, share your ideas and get answers to your technical questions.`,
   [localeKeys.devTelegram]: `Developers Telegram >`,
@@ -139,12 +139,17 @@ const enUs = {
       Bitcoin and Ethereum provide lightweight clients called simplified payment verification (SPV) clients that can verify the chain by downloading only the block header. Unfortunately, the storage and bandwidth requirements of SPV clients still grow linearly with chain length. Recently, NIPoPoW and FlyClient have proposed a type of solution called super-light client. It is expected that light clients only need to download and store the logarithmic number of block headers, but this type of solution cannot be directly used for light clients on the chain, that is, cross-chain Relay.
       FlyClient requires making a certain degree of a hard fork to the corresponding chain and supports the Merkle Mountain Range (MMR) commitment before it can be used for relay on the chain, they all have a certain degree of poor generality, NonInteractive Proof of Work (NIPoPoW) is only applicable to chains with fixed block difficulty, and FlyClient needs to modify the best probability block sampling protocol and variable-difficulty verification model.`,
   [localeKeys.darwiniaOptimisticBridgeMobileSummary]: `To verify transactions, cryptocurrencies such as Bitcoin and Ethereum require nodes to verify that the blockchain is valid. This requirement means downloading and verifying all blocks, which takes hours and requires gigabytes of bandwidth and storage space. Therefore, clients with limited resources cannot independently verify transactions without trusting the full node.`,
-  [localeKeys.darwiniaGenePaperSummary]: `No Content`,
-  [localeKeys.darwiniaGenePaperMobileSummary]: ``,
+  [localeKeys.darwiniaGenePaperSummary]: `The world is being blockchainized and tokenized. Fungible tokens, which has been generally used in the financial industry, together with Non-fungible tokens, which are becoming more and more recognized in the game industry, will greatly enhance the openness and collaboration of finance and game sector.
+These tokens are being connected and merged, and the ways of such connection and merger are trends to diversified as well. Such connections might be performed with smart contracts, Dapp, or appchain protocols, that lead to the formation of an open token-network. Darwinia Network powered by decentralized token bridges and decentralized backing technology, via develop infrastructure and core-applications, to support the growth of the token-network. Darwinia focuses its major application in games and defi sector.`,
+  [localeKeys.darwiniaGenePaperMobileSummary]: `The world is being blockchainized and tokenized. Fungible tokens, which has been generally used in the financial industry, together with Non-fungible tokens, which are becoming more and more recognized in the game industry, will greatly enhance the openness and collaboration of finance and game sector.`,
   [localeKeys.viewFullPaper]: `View Full Paper`,
   [localeKeys.back]: `back`,
   [localeKeys.pageNotFound]: `Sorry, page not found`,
   [localeKeys.goBackHome]: `Back to home`,
+  [localeKeys.subscribeToUpdates]: `Subscribe to Project Updates`,
+  [localeKeys.trackLatestUpdates]: `Track the latest updates of Darwinia Network.`,
+  [localeKeys.remoteEVMCall]: `remote EVM call`,
+  [localeKeys.accessRestriction]: `access restriction`,
 };
 
 export default enUs;

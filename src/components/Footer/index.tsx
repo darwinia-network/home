@@ -58,10 +58,11 @@ const Footer = ({ data }: Props) => {
     }
     try {
       updateSubmitStatus(true);
-      const { data } = await http.post({
-        path: "",
+      const { data } = await http.get({
+        path: "/subscribe/post?u=eb1c779b75a344e2d52755879&id=70a65557b6",
+        baseUrl: "https://network.us6.list-manage.com",
         data: {
-          email,
+          EMAIL: email,
         },
       });
 
@@ -102,8 +103,8 @@ const Footer = ({ data }: Props) => {
       <div className={"container py-[1.25rem] lg:py-[3.125rem]"}>
         {/* Only visible on PC */}
         <div className={"hidden lg:block"}>
-          <div className={"title text-white uppercase"}>Subscribe to Project Updates</div>
-          <div className={"text-white my-[1.25rem]"}>Track the latest updates of Darwinia Network.</div>
+          <div className={"title text-white uppercase"}>{t(localeKeys.subscribeToUpdates)}</div>
+          <div className={"text-white my-[1.25rem] capitalize"}>{t(localeKeys.trackLatestUpdates)}</div>
 
           {/* Custom Input Field */}
           <div className={"relative"}>
@@ -176,6 +177,20 @@ const createFooterSections = (data: FooterSection[]) => {
     const sectionTitle = <div className={"title text-white"}>{section.title}</div>;
     const links = section.links.map((link, subIndex) => {
       const key = `${index}-${subIndex}`;
+      if (link.isFake) {
+        return (
+          <div className={"capitalize text-white py-[0.3125rem] my-[0.3125rem]"} key={key}>
+            {link.title}
+          </div>
+        );
+      }
+      if (link.url === "") {
+        return (
+          <div className={"capitalize text-white py-[0.3125rem] my-[0.3125rem] opacity-50"} key={key}>
+            {link.title}
+          </div>
+        );
+      }
       if (link.isExternal) {
         return (
           <a

@@ -80,6 +80,8 @@ const localeKeys = {
   sendMessage: "sendMessage",
   crossChainFilter: "crossChainFilter",
   callback: "callback",
+  remoteEVMCall: "remoteEVMCall",
+  accessRestriction: "accessRestriction",
   startBuildingWithDarwinia: "startBuildingWithDarwinia",
   buildUserFriendly: "buildUserFriendly",
   developWithDarwinia: "developWithDarwinia",
@@ -93,9 +95,9 @@ const localeKeys = {
   api: "api",
   solidityForSmartChain: "solidityForSmartChain",
   examples: "examples",
-  demoRMRK: "demoRMRK",
-  demoCallback: "demoCallback",
-  demoCrossChainFilter: "demoCrossChainFilter",
+  demoCrossChainRemark: "demoCrossChainRemark",
+  demoRemoteEVMTransact: "demoRemoteEVMTransact",
+  demoERC20RemoteIssuing: "demoERC20RemoteIssuing",
   findTechSolution: "findTechSolution",
   techSolutionIntro: "techSolutionIntro",
   devTelegram: "devTelegram",
@@ -148,6 +150,8 @@ const localeKeys = {
   back: "back",
   pageNotFound: "pageNotFound",
   goBackHome: "goBackHome",
+  subscribeToUpdates: "subscribeToUpdates",
+  trackLatestUpdates: "trackLatestUpdates",
 };
 
 export default localeKeys;

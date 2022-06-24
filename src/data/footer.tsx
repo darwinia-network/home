@@ -27,12 +27,12 @@ const getFooterData = (t: TFunction<"translation">): Footer => {
         links: [
           {
             isExternal: true,
-            url: "https://www.google.com",
+            url: "https://docs.darwinia.network/",
             title: t(localeKeys.developerDocs),
           },
           {
-            isExternal: true,
-            url: "https://www.google.com",
+            isExternal: false,
+            url: "/developers",
             title: t(localeKeys.developerResources),
           },
         ],
@@ -42,37 +42,37 @@ const getFooterData = (t: TFunction<"translation">): Footer => {
         links: [
           {
             isExternal: true,
-            url: "https://www.google.com",
+            url: "",
             title: t(localeKeys.overview),
           },
           {
             isExternal: true,
-            url: "https://www.google.com",
+            url: "",
             title: t(localeKeys.crossChainDex),
           },
           {
             isExternal: true,
-            url: "https://www.google.com",
+            url: "",
             title: t(localeKeys.lending),
           },
           {
             isExternal: true,
-            url: "https://www.google.com",
+            url: "",
             title: t(localeKeys.crossChainAssetBridge),
           },
           {
             isExternal: true,
-            url: "https://www.google.com",
+            url: "",
             title: t(localeKeys.nftMarket),
           },
           {
             isExternal: true,
-            url: "https://www.google.com",
+            url: "",
             title: t(localeKeys.daoGovernance),
           },
           {
             isExternal: true,
-            url: "https://www.google.com",
+            url: "",
             title: t(localeKeys.multiChainGaming),
           },
         ],
@@ -87,37 +87,37 @@ const getFooterData = (t: TFunction<"translation">): Footer => {
           },
           {
             isExternal: true,
-            url: "https://www.google.com",
+            url: "https://docs.darwinia.network/",
             title: t(localeKeys.wiki),
           },
           {
             isExternal: true,
-            url: "https://www.google.com",
+            url: "https://www.notion.so/itering/9617e154ec884b07a7cee9a056374e42?v=0c3e4d9f257646c486a32a0425ee3a93",
             title: t(localeKeys.roadmap),
           },
           {
             isExternal: true,
-            url: "https://www.google.com",
+            url: "https://medium.com/darwinianetwork",
             title: t(localeKeys.blog),
           },
           {
             isExternal: true,
-            url: "https://www.google.com",
+            url: "https://telemetry.polkadot.io/#list/0x91b171bb158e2d3848fa23a9f1c25182fb8e20313b2c1eb49219da7a70ce90c3",
             title: t(localeKeys.telemetry),
           },
           {
             isExternal: true,
-            url: "https://www.google.com",
+            url: "mailto:hello@darwinia.network",
             title: t(localeKeys.cooperation),
           },
           {
             isExternal: true,
-            url: "https://www.google.com",
+            url: "https://www.itering.io/jobs?lng=en-US",
             title: t(localeKeys.careers),
           },
           {
             isExternal: true,
-            url: "https://www.google.com",
+            url: "/darwinia_brand.zip",
             title: t(localeKeys.brand),
           },
         ],
@@ -127,23 +127,27 @@ const getFooterData = (t: TFunction<"translation">): Footer => {
         links: [
           {
             isExternal: true,
-            url: "https://www.google.com",
+            url: "",
             title: t(localeKeys.substrateBuildersProgram),
+            isFake: true,
           },
           {
             isExternal: true,
-            url: "https://www.google.com",
+            url: "",
             title: t(localeKeys.web3Foundation),
+            isFake: true,
           },
           {
             isExternal: true,
-            url: "https://www.google.com",
+            url: "",
             title: t(localeKeys.web3Bootcamp),
+            isFake: true,
           },
           {
             isExternal: true,
-            url: "https://www.google.com",
+            url: "",
             title: t(localeKeys.polkadot),
+            isFake: true,
           },
         ],
       },
@@ -151,23 +155,23 @@ const getFooterData = (t: TFunction<"translation">): Footer => {
     socialNetworks: [
       {
         logo: twitter,
-        url: "https://twitter.com",
+        url: "https://twitter.com/DarwiniaNetwork",
       },
       {
         logo: telegram,
-        url: "https://telegram.com",
+        url: "https://t.me/DarwiniaNetwork",
       },
       {
         logo: github,
-        url: "https://github.com",
+        url: "https://github.com/darwinia-network",
       },
       {
         logo: medium,
-        url: "https://medium.com",
+        url: "https://medium.com/darwinianetwork",
       },
       {
         logo: mail,
-        url: "mailto:someone@example.com",
+        url: "mailto:hello@darwinia.network",
       },
     ],
   };

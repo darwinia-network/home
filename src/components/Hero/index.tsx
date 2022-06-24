@@ -13,12 +13,13 @@ const Hero = ({ data, page }: Props) => {
   const image = getImage(data.image);
   const socialNetworkLinks = getSocialNetworkLinks(data.socialNetworks);
   const imageClass = data.type === 1 ? `hero-image-1` : `hero-image-2`;
+  const topSpace = page === "HOME" ? `space-top-1` : `space-top-2`;
   const Typewriter = getTypewriterByPage(page);
   return (
     <div className={`bg-center bg-cover bg-no-repeat`}>
-      <div data-aos={"fade-up"} data-aos-duration={700} className={`container space-top`}>
-        <div className={"flex flex-col lg:flex-row pt-[1.25rem]"}>
-          <div className={"order-2 flex-1 lg:order-1"}>
+      <div data-aos={"fade-up"} data-aos-duration={700} className={`container ${topSpace}`}>
+        <div className={"flex flex-col lg:flex-row"}>
+          <div className={"order-2 flex-1 flex flex-col lg:justify-center lg:order-1"}>
             <Suspense>
               <Typewriter />
             </Suspense>
@@ -69,13 +70,13 @@ const getLinks = (links: Link[] | undefined) => {
     const key = `${index}-${link.url}`;
     if (link.isExternal) {
       return (
-        <a key={key} href={link.url} target="_blank" className={"btn"} rel="noreferrer">
+        <a key={key} href={link.url} target="_blank" className={"btn capitalize"} rel="noreferrer">
           {link.title}
         </a>
       );
     }
     return (
-      <NavLink className={"btn"} key={key} to={link.url}>
+      <NavLink className={"btn capitalize"} key={key} to={link.url}>
         {link.title}
       </NavLink>
     );

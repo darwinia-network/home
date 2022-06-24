@@ -28,8 +28,8 @@ const Developers = () => {
       <div data-aos={"fade-up"} data-aos-duration={700} className={"container inter-block-space-1"}>
         <div className={"lg:border border-halfWhite lg:px-[16.25%] lg:py-[2.5rem]"}>
           <div className={"title lg:text-center"}>{techSupportData.title}</div>
-          <div className={"lg:text-center text-white"}>{techSupportData.text}</div>
-          <div className={"flex lg:justify-center mt-[1.25rem]"}>{techSupportLink}</div>
+          <div className={"lg:text-center text-white capitalize"}>{techSupportData.text}</div>
+          <div className={"flex lg:justify-center mt-[1.25rem] capitalize"}>{techSupportLink}</div>
         </div>
       </div>
       <Footer data={footerData} />

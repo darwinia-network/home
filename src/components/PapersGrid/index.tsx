@@ -44,13 +44,13 @@ const getSinglePaperItem = (paper: Paper) => {
           }
         >
           <div>
-            <div className={"title bg-white p-[0.625rem] text-black text-[1.25rem]"}>{paper.title}</div>
+            <div className={"title bg-white p-[0.625rem] text-black text-[1.25rem] capitalize"}>{paper.title}</div>
             <div className={"flex mt-[0.625rem]"}>
               <img className={"w-[20px] h-[20px]"} src={avatar} alt="" />
-              <div className={"ml-[0.625rem]"}>{authors}</div>
+              <div className={"ml-[0.625rem] capitalize"}>{authors}</div>
             </div>
           </div>
-          <div className={"flex flex-wrap"}>{tags}</div>
+          <div className={"flex flex-wrap capitalize"}>{tags}</div>
         </div>
       </NavLink>
     </div>

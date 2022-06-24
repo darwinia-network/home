@@ -26,11 +26,7 @@ const DevelopersTypewriter = () => {
        can be positioned absolute and still be seen */}
       <div className={"opacity-0"}>{fakeTitle}</div>
       <div className={"absolute left-0 right-0 top-0 bottom-0 z-10"}>
-        <div
-          className={
-            "title-hero uppercase text-white pb-[1.875rem] lg:pb-[1.25rem] pt-[3.75rem] lg:pt-[7.5rem] typewriter-content"
-          }
-        />
+        <div className={"title-hero uppercase text-white pb-[1.25rem] pt-[3.75rem] lg:pt-0 typewriter-content"} />
       </div>
     </div>
   );
@@ -40,11 +36,7 @@ const getFakeTitle = (title: JSX.Element | undefined) => {
   if (!title) {
     return null;
   }
-  return (
-    <div className={"title-hero uppercase text-white pb-[1.875rem] lg:pb-[1.25rem] pt-[3.75rem] lg:pt-[7.5rem]"}>
-      {title}
-    </div>
-  );
+  return <div className={"title-hero uppercase text-white pb-[1.25rem] pt-[3.75rem] lg:pt-0"}>{title}</div>;
 };
 
 const initTypewriter = (typewriterElement: HTMLElement, language: SupportedLanguages) => {

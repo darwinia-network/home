@@ -8,11 +8,15 @@ const DarwiniaPromo = ({ data }: Props) => {
   const { subTitle, title, content, image, links } = data;
   const { text, list } = content;
   const dAppsExamples = list.map((item, index) => {
-    return <li key={index}>{item}</li>;
+    return (
+      <li className={"capitalize"} key={index}>
+        {item}
+      </li>
+    );
   });
   const linksJSX = links.map((item, index) => {
     return (
-      <a className={"btn"} key={index} href={item.url}>
+      <a className={"btn capitalize"} key={index} href={item.url}>
         {item.title}
       </a>
     );
@@ -28,7 +32,7 @@ const DarwiniaPromo = ({ data }: Props) => {
           <div className={"hidden lg:block mb-[1.875rem]"}>{title}</div>
           <div className={"mt-[3.125rem] lg:mt-0 title text-white"}>{subTitle}</div>
           <div className={"mt-[3.125rem] lg:mt-[1.25rem]"}>
-            <div className={"mb-[1.25rem]"}>{text}</div>
+            <div className={"mb-[1.25rem] capitalize"}>{text}</div>
             <ul className={"list-disc pl-[1.625rem]"}>{dAppsExamples}</ul>
           </div>
           <div className={"flex lg:flex-row items-start mt-[3.125rem] lg:mt-[1.875rem] flex-col gap-[1.25rem]"}>

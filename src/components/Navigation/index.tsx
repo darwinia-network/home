@@ -25,7 +25,7 @@ const Navigation = () => {
   const [mobileMenuHeightByPathMap, setMenuHeight] = useState<SubMenuHeight>({});
   const [openedPCMenuPath, setOpenedPCMenuPath] = useState<string | undefined>(undefined);
   const [navBarBackground, setNavBarBackground] = useState("rgba(0,0,0,0)");
-  const startBuildingURL = "https://www.youku.com";
+  const startBuildingURL = "https://docs.darwinia.network/";
   const navBarThreshold = 100;
 
   useEffect(() => {
@@ -101,7 +101,7 @@ const Navigation = () => {
     <div
       style={{ background: navBarBackground }}
       className={
-        "duration-200 transition-all fixed z-[99] left-0 top-0 right-0 flex justify-center h-[3.75rem] lg:h-[5.5rem]"
+        "duration-200 transition-all fixed z-[99] left-0 top-0 right-0 flex justify-center h-[3.75rem] lg:h-[4.375rem]"
       }
     >
       <div className={"justify-between flex container pl-[1.25rem] pr-[0.25rem] lg:px-[1.875rem] xl:px-[3.75rem]"}>
@@ -265,6 +265,13 @@ const createPCSubMenu = (menuItems: Menu, parentKey: string) => {
   const childItems =
     menuItems.children?.map((item, index) => {
       const key = `${parentKey}-${index}`;
+      if (item.path === "") {
+        return (
+          <div className={"flex text-white capitalize mt-[0.625rem] opacity-50"} key={key}>
+            {item.title}
+          </div>
+        );
+      }
       return (
         <a
           className={"flex text-white capitalize mt-[0.625rem] hover:opacity-70"}
@@ -348,6 +355,13 @@ const createMobileMenu = (
 
 const createExternalMobileLink = (item: Menu, indexString = "0", isChild = false) => {
   if (isChild) {
+    if (item.path === "") {
+      return (
+        <div key={indexString} className={`text text-white capitalize px-[1.25rem] py-[0.3125rem] opacity-50`}>
+          {item.title}
+        </div>
+      );
+    }
     return (
       <a
         href={item.path}
@@ -358,6 +372,17 @@ const createExternalMobileLink = (item: Menu, indexString = "0", isChild = false
       >
         {item.title}
       </a>
+    );
+  }
+
+  if (item.path === "") {
+    return (
+      <div
+        key={indexString}
+        className={`text text-white capitalize first:mt-0 mt-[0.3125rem] px-[1.25rem] py-[0.625rem] opacity-50`}
+      >
+        {item.title}
+      </div>
     );
   }
 

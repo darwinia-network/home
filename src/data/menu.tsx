@@ -52,7 +52,7 @@ const getMenu = (t: TFunction<"translation">): Menu[] => {
     },
     {
       title: t(localeKeys.blog),
-      path: "https://www.google.com",
+      path: "https://medium.com/darwinianetwork",
       isExternalLink: true,
     },
   ];
@@ -62,27 +62,27 @@ const getDarwiniaNetworkLinks = (t: TFunction<"translation">): Menu[] => {
   return [
     {
       title: t(localeKeys.overview),
-      path: "https://www.baidu.com",
+      path: "https://darwinia.network/",
       isExternalLink: true,
     },
     {
       title: t(localeKeys.stakingApps),
-      path: "https://www.google.com",
+      path: "https://apps.darwinia.network/?network=darwinia",
       isExternalLink: true,
     },
     {
       title: t(localeKeys.onChainGovernance),
-      path: "https://www.yahoo.com",
+      path: "https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Frpc.darwinia.network#/democracy",
       isExternalLink: true,
     },
     {
       title: t(localeKeys.polkadotParachainAuction),
-      path: "https://www.youku.com",
+      path: "https://darwinia.network/plo",
       isExternalLink: true,
     },
     {
       title: t(localeKeys.subscanExplorer),
-      path: "https://www.google.com",
+      path: "https://darwinia.subscan.io/",
       isExternalLink: true,
     },
   ];
@@ -92,32 +92,32 @@ const getCrabNetworkLinks = (t: TFunction<"translation">): Menu[] => {
   return [
     {
       title: t(localeKeys.overview),
-      path: "https://www.baidu.com",
+      path: "https://crab.network/",
       isExternalLink: true,
     },
     {
       title: t(localeKeys.stakingApps),
-      path: "https://www.google.com",
+      path: "https://apps.darwinia.network/?network=crab",
       isExternalLink: true,
     },
     {
       title: t(localeKeys.onChainGovernance),
-      path: "https://www.yahoo.com",
+      path: "https://crab.subsquare.io/",
       isExternalLink: true,
     },
     {
       title: t(localeKeys.kusamaParachainAuction),
-      path: "https://www.youku.com",
+      path: "https://crab.network/plo",
       isExternalLink: true,
     },
     {
       title: t(localeKeys.subscanExplorer),
-      path: "https://www.google.com",
+      path: "https://crab.subscan.io/",
       isExternalLink: true,
     },
     {
       title: t(localeKeys.subviewExplorer),
-      path: "https://www.google.com",
+      path: "https://subview.xyz/",
       isExternalLink: true,
     },
   ];

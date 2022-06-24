@@ -12,7 +12,7 @@ const Statistics = ({ data }: Props) => {
   return (
     <div>
       <div className={"title"}>{data.title}</div>
-      <div className={"mt-[0.625rem]"}>{data.text}</div>
+      <div className={"mt-[0.625rem] capitalize"}>{data.text}</div>
       <div>{statisticsData}</div>
       <div>{statisticsImages}</div>
       <div>{subText}</div>
@@ -46,7 +46,7 @@ const getStatisticsData = (data: StatisticsData[] | undefined) => {
       return (
         <div className={"flex flex-col mb-[1.875rem] last:mb-0 lg:flex-row lg:justify-between"} key={subKey}>
           <div className={"capitalize"}>{infoItem.info}</div>
-          <div className={"title text-white text-[1.25rem]"}>{infoItem.figure}</div>
+          <div className={"title text-white text-[1.25rem] capitalize"}>{infoItem.figure}</div>
         </div>
       );
     });
@@ -72,13 +72,13 @@ const getBottomLinks = (links: Link[] | undefined) => {
   return links.map((link, index) => {
     if (link.isExternal) {
       return (
-        <a className={"btn"} key={index} target="_blank" href={link.url} rel="noreferrer">
+        <a className={"btn capitalize"} key={index} target="_blank" href={link.url} rel="noreferrer">
           {link.title}
         </a>
       );
     }
     return (
-      <NavLink key={index} className={"btn"} to={link.url}>
+      <NavLink key={index} className={"btn capitalize"} to={link.url}>
         {link.title}
       </NavLink>
     );
@@ -89,7 +89,7 @@ const getSubText = (subText: string | undefined) => {
   if (!subText) {
     return null;
   }
-  return <div className={"mt-[1.875rem]"}>{subText}</div>;
+  return <div className={"mt-[1.875rem] capitalize"}>{subText}</div>;
 };
 
 export default Statistics;

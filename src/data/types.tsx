@@ -6,6 +6,7 @@ export interface Link {
   title: string;
   url: string;
   isExternal: boolean;
+  isFake?: boolean;
 }
 
 export interface Feature {
@@ -120,5 +121,6 @@ export interface Paper {
   tags: string[];
   summary: string;
   mobileSummary?: string;
+  titleUrl: string;
   link: Link;
 }

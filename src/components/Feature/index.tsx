@@ -74,6 +74,13 @@ const getBottomLinks = (bottomLinks: Link[] | undefined) => {
   return bottomLinks
     ? bottomLinks.map((link, index) => {
         const key = `${index}-${link.url}`;
+        if (link.url === "") {
+          return (
+            <div key={key}>
+              <div className={`opacity-50 capitalize`}>{link.title}</div>
+            </div>
+          );
+        }
         if (link.isExternal) {
           return (
             <div key={key}>

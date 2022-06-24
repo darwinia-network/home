@@ -11,7 +11,7 @@ import evolutionLand from "../assets/images/evolution-land.png";
 import staking from "../assets/images/staking.png";
 import partner from "../assets/images/partner.png";
 import integration from "../assets/images/integration.png";
-import { codeSample } from "./codeSample";
+import { accessRestriction, remoteEVMCall, sendMessage } from "./codeSamples";
 import HomeHeroAnimation from "../components/HomeHeroAnimation";
 
 /* make sure you use a custom hook here since we have to use the useTranslation hook
@@ -44,12 +44,12 @@ const getHero = (t: TFunction<"translation">): Hero => {
     links: [
       {
         title: t(localeKeys.devWithDarwinia),
-        url: "https://www.google.com",
-        isExternal: true,
+        url: "/developers",
+        isExternal: false,
       },
       {
         title: t(localeKeys.learnMore),
-        url: "https://www.google.com",
+        url: "https://docs.darwinia.network/",
         isExternal: true,
       },
     ],
@@ -88,12 +88,12 @@ const getDarwiniaIntro = (t: TFunction<"translation">): FeatureWrapper => {
     links: [
       {
         title: t(localeKeys.devWithDarwinia),
-        url: "https://www.google.com",
-        isExternal: true,
+        url: "/developers",
+        isExternal: false,
       },
       {
         title: t(localeKeys.learnMore),
-        url: "https://www.google.com",
+        url: "https://docs.darwinia.network/",
         isExternal: true,
       },
     ],
@@ -137,13 +137,13 @@ const getDarwiniaRecommendation = (t: TFunction<"translation">): DarwiniaPromo =
     image: sdk,
     links: [
       {
-        title: "SDK Doc >",
-        url: "https://www.google.com",
+        title: t(localeKeys.sdkDoc),
+        url: "https://docs.darwinia.network/sdk/api-reference",
         isExternal: true,
       },
       {
-        title: "Learn More >",
-        url: "https://www.google.com",
+        title: t(localeKeys.learnMore),
+        url: "https://docs.darwinia.network/",
         isExternal: true,
       },
     ],
@@ -168,7 +168,7 @@ const getEcosystemProjects = (t: TFunction<"translation">): FeatureWrapper => {
         links: [
           {
             title: t(localeKeys.learnMore),
-            url: "https://www.google.com",
+            url: "https://helixbridge.app/",
             isExternal: true,
           },
         ],
@@ -181,7 +181,7 @@ const getEcosystemProjects = (t: TFunction<"translation">): FeatureWrapper => {
         links: [
           {
             title: t(localeKeys.learnMore),
-            url: "https://www.google.com",
+            url: "https://www.evolution.land/",
             isExternal: true,
           },
         ],
@@ -208,7 +208,12 @@ const getDarwiniaPower = (t: TFunction<"translation">): FeatureWrapper => {
         links: [
           {
             title: t(localeKeys.startStake),
-            url: "https://www.google.com",
+            url: "https://medium.com/darwinianetwork/using-darwinia-tools-3-9-darwinia-apps-guide-part-ⅱ-staking-and-earning-7cd586315f76",
+            isExternal: true,
+          },
+          {
+            title: t(localeKeys.runValidator),
+            url: "https://medium.com/darwinianetwork/using-darwinia-tools-3-11-darwinia-apps-guide-part-iv-how-to-become-a-validator-5f1503f8dd77",
             isExternal: true,
           },
         ],
@@ -221,12 +226,12 @@ const getDarwiniaPower = (t: TFunction<"translation">): FeatureWrapper => {
         links: [
           {
             title: t(localeKeys.sdkDoc),
-            url: "https://www.google.com",
+            url: "https://docs.darwinia.network/sdk/api-reference",
             isExternal: true,
           },
           {
             title: t(localeKeys.contactUs),
-            url: "https://www.google.com",
+            url: "https://t.me/DarwiniaDev",
             isExternal: true,
           },
         ],
@@ -239,7 +244,7 @@ const getDarwiniaPower = (t: TFunction<"translation">): FeatureWrapper => {
         links: [
           {
             title: t(localeKeys.talkToExpert),
-            url: "https://www.google.com",
+            url: "https://forms.gle/96Z9HYuAFaeHE1hp8",
             isExternal: true,
           },
         ],
@@ -254,41 +259,29 @@ const getCodeSamples = (t: TFunction<"translation">): CodeSample => {
       {
         isExternal: true,
         title: t(localeKeys.sdkDoc),
-        url: "https://www.google.com",
+        url: "https://docs.darwinia.network/sdk/api-reference",
       },
       {
         isExternal: true,
         title: t(localeKeys.learnMore),
-        url: "https://www.google.com",
+        url: "https://docs.darwinia.network/",
       },
     ],
     codes: [
       {
         title: t(localeKeys.sendMessage),
-        language: "javascript",
-        sample: codeSample,
+        language: "js",
+        sample: sendMessage,
       },
       {
-        title: t(localeKeys.crossChainFilter),
-        language: "javascript",
-        sample: `onSubmit(e) {
-  e.preventDefault();
-  const job = {
-     title: 'Developer',
-     company: 'Facebook'
-  };
-}`,
+        title: t(localeKeys.remoteEVMCall),
+        language: "js",
+        sample: remoteEVMCall,
       },
       {
-        title: t(localeKeys.callback),
-        language: "javascript",
-        sample: `onSubmit(e) {
-  e.preventDefault();
-  const job = {
-     title: 'Another Developer',
-     company: 'Twitter'
-  };
-}`,
+        title: t(localeKeys.accessRestriction),
+        language: "js",
+        sample: accessRestriction,
       },
     ],
   };

@@ -4,7 +4,7 @@ import localeKeys from "../locale/localeKeys";
 import communityHero from "../assets/images/darwinia-community.png";
 import twitter from "../assets/images/twitter.svg";
 import telegram from "../assets/images/telegram.svg";
-import union from "../assets/images/union.svg";
+import element from "../assets/images/element.svg";
 import discord from "../assets/images/discord.svg";
 import medium from "../assets/images/medium.svg";
 import github from "../assets/images/github.svg";
@@ -34,43 +34,43 @@ const getHero = (t: TFunction<"translation">): Hero => {
     socialNetworks: [
       {
         logo: twitter,
-        url: "https://www.google.com",
+        url: "https://twitter.com/DarwiniaNetwork",
         iconWidth: 20,
         iconHeight: 20,
       },
       {
         logo: telegram,
-        url: "https://www.google.com",
+        url: "https://t.me/DarwiniaNetwork",
         iconWidth: 20,
         iconHeight: 20,
       },
       {
-        logo: union,
-        url: "https://www.google.com",
+        logo: element,
+        url: "https://app.element.io/#/room/#darwinia:matrix.org",
         iconWidth: 20,
         iconHeight: 20,
       },
       {
         logo: discord,
-        url: "https://www.google.com",
+        url: "https://discord.com/invite/aQdK9H4MZS",
         iconWidth: 25,
         iconHeight: 20,
       },
       {
         logo: medium,
-        url: "https://www.google.com",
+        url: "https://medium.com/darwinianetwork",
         iconWidth: 20,
         iconHeight: 20,
       },
       {
         logo: github,
-        url: "https://www.google.com",
+        url: "https://github.com/darwinia-network",
         iconWidth: 20,
         iconHeight: 20,
       },
       {
         logo: message,
-        url: "https://www.google.com",
+        url: "https://github.com/darwinia-network/darwinia/discussions",
         iconWidth: 20,
         iconHeight: 20,
       },
@@ -94,7 +94,7 @@ const getInvolved = (t: TFunction<"translation">): FeatureWrapper => {
         links: [
           {
             isExternal: true,
-            url: "https://www.google.com",
+            url: "https://medium.com/darwinianetwork/using-darwinia-tools-3-9-darwinia-apps-guide-part-ⅱ-staking-and-earning-7cd586315f76",
             title: t(localeKeys.startStake),
           },
         ],
@@ -105,7 +105,7 @@ const getInvolved = (t: TFunction<"translation">): FeatureWrapper => {
         links: [
           {
             isExternal: true,
-            url: "https://www.google.com",
+            url: "https://medium.com/darwinianetwork/using-darwinia-tools-3-11-darwinia-apps-guide-part-iv-how-to-become-a-validator-5f1503f8dd77",
             title: t(localeKeys.runValidator),
           },
         ],
@@ -116,7 +116,7 @@ const getInvolved = (t: TFunction<"translation">): FeatureWrapper => {
         links: [
           {
             isExternal: true,
-            url: "https://www.google.com",
+            url: "https://medium.com/@darwinianetwork/join-the-darwinia-ambassador-program-b57a0d8b2802",
             title: t(localeKeys.becomeDarwiniaAmbassador),
           },
         ],
@@ -127,7 +127,7 @@ const getInvolved = (t: TFunction<"translation">): FeatureWrapper => {
         links: [
           {
             isExternal: true,
-            url: "https://www.google.com",
+            url: "https://github.com/darwinia-network/collaboration/blob/master/grant/README.md",
             title: t(localeKeys.applyDarwiniaGrant),
           },
         ],

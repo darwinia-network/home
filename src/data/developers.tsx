@@ -45,12 +45,12 @@ const getDarwiniaDevRoadmap = (t: TFunction<"translation">): FeatureWrapper => {
         links: [
           {
             isExternal: true,
-            url: "https://www.google.com",
+            url: "https://docs.darwinia.network/",
             title: t(localeKeys.getStarted),
           },
           {
             isExternal: true,
-            url: "https://www.google.com",
+            url: "https://docs.darwinia.network/glossary",
             title: t(localeKeys.glossary),
           },
         ],
@@ -62,17 +62,17 @@ const getDarwiniaDevRoadmap = (t: TFunction<"translation">): FeatureWrapper => {
         links: [
           {
             isExternal: true,
-            url: "https://www.google.com",
+            url: "https://docs.darwinia.network/sdk/guides/using-smart-chain-with-metamask",
             title: t(localeKeys.smartChainWithMetamask),
           },
           {
             isExternal: true,
-            url: "https://www.google.com",
+            url: "https://docs.darwinia.network/sdk/guides/know-your-cross-chain-status",
             title: t(localeKeys.yourCrossChainStatus),
           },
           {
             isExternal: true,
-            url: "https://www.google.com",
+            url: "https://docs.darwinia.network/sdk/guides/build-your-first-cross-chain-dapp",
             title: t(localeKeys.firstCrossChainDApp),
           },
         ],
@@ -84,7 +84,7 @@ const getDarwiniaDevRoadmap = (t: TFunction<"translation">): FeatureWrapper => {
         links: [
           {
             isExternal: true,
-            url: "https://www.google.com",
+            url: "https://docs.darwinia.network/sdk/api-reference",
             title: t(localeKeys.solidityForSmartChain),
           },
         ],
@@ -96,18 +96,18 @@ const getDarwiniaDevRoadmap = (t: TFunction<"translation">): FeatureWrapper => {
         links: [
           {
             isExternal: true,
-            url: "https://www.google.com",
-            title: t(localeKeys.demoRMRK),
+            url: "https://github.com/darwinia-network/darwinia-messages-sol/blob/master/contracts/periphery/contracts/s2s/examples/RemarkDemo.sol",
+            title: t(localeKeys.demoCrossChainRemark),
           },
           {
             isExternal: true,
-            url: "https://www.google.com",
-            title: t(localeKeys.demoCallback),
+            url: "https://github.com/darwinia-network/darwinia-messages-sol/blob/master/contracts/periphery/contracts/s2s/examples/TransactDemo.sol",
+            title: t(localeKeys.demoRemoteEVMTransact),
           },
           {
             isExternal: true,
-            url: "https://www.google.com",
-            title: t(localeKeys.demoCrossChainFilter),
+            url: "",
+            title: t(localeKeys.demoERC20RemoteIssuing),
           },
         ],
         type: 3,
@@ -127,7 +127,7 @@ const getTechSupport = (t: TFunction<"translation">): TechSupport => {
     text: t(localeKeys.techSolutionIntro),
     link: {
       isExternal: true,
-      url: "https://www.google.com",
+      url: "https://t.me/DarwiniaDev",
       title: t(localeKeys.devTelegram),
     },
   };

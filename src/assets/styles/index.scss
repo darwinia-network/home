@@ -32,8 +32,13 @@ html {
     @apply max-w-[1320px] px-[1.25rem] lg:px-[1.875rem] xl:px-[3.75rem] mx-auto;
   }
 
-  .space-top {
-    @apply pt-[3.75rem] lg:pt-[5.5rem] box-border;
+  .space-top-1 {
+    @apply pt-[3.75rem] lg:pt-[10.5rem] box-border;
+  }
+
+  .space-top-2 {
+    @extend .space-top-1;
+    @apply pt-[3.75rem] lg:pt-[13.75rem] box-border;
   }
 
   .inter-block-space-1 {
