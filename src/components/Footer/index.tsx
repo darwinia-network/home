@@ -58,7 +58,7 @@ const Footer = ({ data }: Props) => {
     }
     try {
       updateSubmitStatus(true);
-      const { data } = await http.get({
+      const { data } = await http.post({
         path: "/subscribe/post?u=eb1c779b75a344e2d52755879&id=70a65557b6",
         baseUrl: "https://network.us6.list-manage.com",
         data: {
