@@ -80,6 +80,7 @@ const getDarwiniaNetworkLinks = (t: TFunction<"translation">): Menu[] => {
       /* this needs to be changed very soon */
       path: "https://darwinia.network/plo",
       isExternalLink: true,
+      isComingSoon: true,
     },
     {
       title: t(localeKeys.subscanExplorer),

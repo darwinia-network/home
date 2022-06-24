@@ -27,6 +27,8 @@ const Navigation = () => {
   const [navBarBackground, setNavBarBackground] = useState("rgba(0,0,0,0)");
   const startBuildingURL = "https://docs.darwinia.network/";
   const navBarThreshold = 100;
+  /* this is temporary code, will be deleted very soon */
+  const [isTooltipVisible, setTooltipStatus] = useState(false);
 
   useEffect(() => {
     const mobileNavParents = document.querySelectorAll<HTMLElement>(".mobile-nav-parent");
@@ -92,9 +94,15 @@ const Navigation = () => {
     setOpenedMobileMenuPath(openedMobileMenuPath === path ? undefined : path);
   };
 
+  const toggleTooltip = (isVisible: boolean) => {
+    setTooltipStatus(() => {
+      return isVisible;
+    });
+  };
+
   const MobileMenu = createMobileMenu(menu, openedMobileMenuPath, mobileMenuHeightByPathMap, onMobileSubMenuToggle);
 
-  const PCMenu = createPCMenu(menu, openedPCMenuPath, onPCSubMenuToggle);
+  const PCMenu = createPCMenu(menu, openedPCMenuPath, onPCSubMenuToggle, isTooltipVisible, toggleTooltip);
 
   return (
     /* bg-black */
@@ -192,7 +200,13 @@ const Navigation = () => {
   );
 };
 
-const createPCMenu = (menu: Menu[], openedMenuPath: string | undefined, onToggleSubMenu: (path: string) => void) => {
+const createPCMenu = (
+  menu: Menu[],
+  openedMenuPath: string | undefined,
+  onToggleSubMenu: (path: string) => void,
+  isTooltipVisible: boolean,
+  onToggleTooltip: (isVisible: boolean) => void
+) => {
   return menu
     .filter((item) => item.device !== "MOBILE")
     .map((item, index) => {
@@ -202,7 +216,7 @@ const createPCMenu = (menu: Menu[], openedMenuPath: string | undefined, onToggle
         const subMenu = item.children.map((subItem, subIndex) => {
           const parentKey = `${index}-${subIndex}`;
           if (subItem.children) {
-            const childItems = createPCSubMenu(subItem, parentKey);
+            const childItems = createPCSubMenu(subItem, parentKey, isTooltipVisible, onToggleTooltip);
             return <div key={parentKey}>{childItems}</div>;
           }
           return <div key={parentKey}>{subItem.title}</div>;
@@ -261,10 +275,38 @@ const createPCMenu = (menu: Menu[], openedMenuPath: string | undefined, onToggle
     });
 };
 
-const createPCSubMenu = (menuItems: Menu, parentKey: string) => {
+const createPCSubMenu = (
+  menuItems: Menu,
+  parentKey: string,
+  isTooltipVisible: boolean,
+  onToggleTooltip: (isVisible: boolean) => void
+) => {
   const childItems =
     menuItems.children?.map((item, index) => {
       const key = `${parentKey}-${index}`;
+      if (item.isComingSoon) {
+        return (
+          <div className={"flex relative text-white capitalize mt-[0.625rem]"} key={key}>
+            <div
+              onMouseEnter={() => {
+                onToggleTooltip(true);
+              }}
+              onMouseLeave={() => {
+                onToggleTooltip(false);
+              }}
+            >
+              {item.title}
+            </div>
+            <CSSTransition in={isTooltipVisible} unmountOnExit={true} timeout={0} classNames={""}>
+              <div
+                className={`absolute left-1/2 top-[20px] -translate-x-1/2 bg-primary z-10 text-white px-[10px] py-[3px] w-[65%] text-center`}
+              >
+                Updating...
+              </div>
+            </CSSTransition>
+          </div>
+        );
+      }
       if (item.path === "") {
         return (
           <div className={"flex text-white capitalize mt-[0.625rem] opacity-50"} key={key}>

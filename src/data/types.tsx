@@ -112,6 +112,7 @@ export interface Menu {
   path?: string;
   children?: Menu[];
   isExternalLink?: boolean;
+  isComingSoon?: boolean;
 }
 
 export interface Paper {
