@@ -80,7 +80,7 @@ const enUs = {
   [localeKeys.crossChainFilter]: `cross-chain filter`,
   [localeKeys.callback]: `callback`,
   [localeKeys.startBuildingWithDarwinia]: `start building with darwinia`,
-  [localeKeys.buildUserFriendly]: `Build Use-Friendly Cross-Chain DApps Quickly.`,
+  [localeKeys.buildUserFriendly]: `Build User-Friendly Cross-Chain DApps Quickly.`,
   [localeKeys.developWithDarwinia]: `Develop with darwinia`,
   [localeKeys.introduction]: `introduction`,
   [localeKeys.getStarted]: `Get Started >`,

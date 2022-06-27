@@ -1,9 +1,9 @@
 import { CodeSample as ICodeSample } from "../../data/types";
 import { NavLink } from "react-router-dom";
-import { useEffect, useState } from "react";
-import Prism from "prismjs";
-import "../../assets/styles/prism.css";
+import { useState } from "react";
 import { CSSTransition } from "react-transition-group";
+import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
+import { funky } from "react-syntax-highlighter/dist/esm/styles/prism";
 
 interface Props {
   data: ICodeSample;
@@ -12,9 +12,6 @@ interface Props {
 const CodeSample = ({ data }: Props) => {
   const [activePCTabIndex, setActivePCTabIndex] = useState<number>(0);
   const [activeMobileTabIndex, setActiveMobileTabIndex] = useState<number | undefined>(0);
-  useEffect(() => {
-    Prism.highlightAll();
-  }, [activePCTabIndex, activeMobileTabIndex]);
 
   const onSwitchPCCodeSampleTab = (tabIndex: number) => {
     setActivePCTabIndex(tabIndex);
@@ -146,13 +143,30 @@ const getCodeView = (codeSample: string, language = "javascript", isMobile = fal
   const padding = isMobile ? "20px" : "40px";
   const border = isMobile ? "border border-halfWhite" : "";
   return (
-    <div style={{ height, maxHeight: height, width }} className={`flex-1 relative flex ${border}`}>
-      <pre
-        style={{ left: padding, right: padding, top: padding, bottom: padding }}
-        className={"bg-[#141818] custom-scroll-bar absolute overflow-auto"}
+    <div style={{ height, maxHeight: height, width, padding }} className={`flex-1 relative flex ${border}`}>
+      <SyntaxHighlighter
+        className={"w-full custom-scroll-bar overflow-auto"}
+        customStyle={{ background: "#141818" }}
+        codeTagProps={{
+          style: {
+            textAlign: "left",
+            wordSpacing: "normal",
+            wordBreak: "normal",
+            overflowWrap: "normal",
+            lineHeight: 1.5,
+            tabSize: 4,
+            hyphens: "none",
+            background: "none",
+            color: "white",
+            fontFamily: "JetBrainsMono-Light",
+            fontSize: "0.875rem",
+          },
+        }}
+        language={language}
+        style={funky}
       >
-        <code className={`language-${language}`}>{codeSample}</code>
-      </pre>
+        {codeSample}
+      </SyntaxHighlighter>
     </div>
   );
 };

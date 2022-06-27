@@ -1,6 +1,9 @@
 export type SupportedLanguages = "enUS" | "zhCN";
 
 export type Page = "HOME" | "DEVELOPERS" | "TOKENS" | "COMMUNITY" | "PAPERS";
+export type HeroType = 1 | 2;
+export type FeatureType = 1 | 2 | 3 | 4;
+export type PCGrid = 2 | 3 | 4;
 
 export interface Link {
   title: string;
@@ -13,14 +16,14 @@ export interface Feature {
   icon: string;
   title?: string;
   text?: string;
-  type: number;
+  type: FeatureType;
   links?: Link[];
 }
 
 export interface FeatureWrapper {
   title: JSX.Element;
   data: Feature[];
-  pcGrid: number;
+  pcGrid: PCGrid;
   links?: Link[];
 }
 
@@ -77,7 +80,7 @@ export interface Hero {
   text?: string;
   links?: Link[];
   socialNetworks?: SocialNetwork[];
-  type: number;
+  type: HeroType;
 }
 
 export interface TechSupport {
