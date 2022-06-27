@@ -270,17 +270,17 @@ const getCodeSamples = (t: TFunction<"translation">): CodeSample => {
     codes: [
       {
         title: t(localeKeys.sendMessage),
-        language: "js",
+        language: "solidity",
         sample: sendMessage,
       },
       {
         title: t(localeKeys.remoteEVMCall),
-        language: "js",
+        language: "solidity",
         sample: remoteEVMCall,
       },
       {
         title: t(localeKeys.accessRestriction),
-        language: "js",
+        language: "solidity",
         sample: accessRestriction,
       },
     ],
