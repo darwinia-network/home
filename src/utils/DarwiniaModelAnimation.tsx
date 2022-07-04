@@ -180,9 +180,9 @@ export default class DarwiniaModelAnimation {
   private addOrbitControl() {
     this.orbitControl = new OrbitControls(this.camera, this.canvas);
     this.orbitControl.enableDamping = true;
-    this.orbitControl.autoRotateSpeed *= -3;
-    this.orbitControl.autoRotate = true;
-    // this.orbitControl.enablePan = false;
+    // this.orbitControl.autoRotateSpeed *= -3;
+    // this.orbitControl.autoRotate = true;
+    this.orbitControl.enablePan = false;
     // this.orbitControl.enableZoom = false;
   }
 
