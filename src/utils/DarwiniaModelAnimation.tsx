@@ -331,6 +331,7 @@ export default class DarwiniaModelAnimation {
         this.threeDModel.scale.set(size, size, size);
       }
 
+      this.camera.zoom = 25;
       this.camera.updateProjectionMatrix();
       this.camera.updateMatrix();
       this.scene.updateMatrixWorld(true);

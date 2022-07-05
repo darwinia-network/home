@@ -2,18 +2,30 @@
 import { useEffect, useRef } from "react";
 // import data from "./data";
 import DarwiniaModelAnimation from "../../utils/DarwiniaModelAnimation";
+import throttle from "lodash.throttle";
 
 const LottieAnimation = () => {
   const game = useRef<HTMLCanvasElement>(null);
 
   useEffect(() => {
     let engine: DarwiniaModelAnimation | undefined;
-    if (game.current) {
-      engine = new DarwiniaModelAnimation(game.current);
-    }
+
+    const init3DModel = () => {
+      console.log("fired====");
+      engine?.clean();
+      if (game.current) {
+        engine = new DarwiniaModelAnimation(game.current, false);
+      }
+    };
+
+    init3DModel();
+    const debouncedFunction = throttle(init3DModel, 1000, { leading: false });
+
+    window.addEventListener("resize", debouncedFunction);
 
     return () => {
       engine?.clean();
+      window.removeEventListener("resize", debouncedFunction);
     };
   }, []);
 
