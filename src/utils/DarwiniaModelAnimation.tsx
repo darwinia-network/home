@@ -199,7 +199,7 @@ export default class DarwiniaModelAnimation {
     this.orbitControl.enableDamping = true;
     this.orbitControl.autoRotateSpeed *= 0.3;
     this.orbitControl.autoRotate = true;
-    // this.orbitControl.enablePan = true;
+    this.orbitControl.enablePan = false;
     this.orbitControl.enableZoom = false;
   }
 
@@ -263,48 +263,77 @@ export default class DarwiniaModelAnimation {
     /* IMPORTANT: this width here is the canvas container width, NOT screen width */
     if (this.threeDModel) {
       console.log(width);
-      if (width >= 900) {
+      if (width >= 1020) {
+        console.log("9===");
+        const size = 0.0142;
+        this.threeDModel.scale.set(size, size, size);
+      } else if (width >= 970) {
+        console.log("8.3===");
+        const size = 0.0131;
+        this.threeDModel.scale.set(size, size, size);
+      } else if (width >= 920) {
+        console.log("8.2===");
+        const size = 0.0131;
+        this.threeDModel.scale.set(size, size, size);
+      } else if (width >= 870) {
+        console.log("8.1===");
+        const size = 0.0129;
+        this.threeDModel.scale.set(size, size, size);
+      } else if (width >= 820) {
+        /* PCs will use this dimension */
+        console.log("8===");
+        const size = 0.0122;
+        this.threeDModel.scale.set(size, size, size);
+      } else if (width >= 770) {
+        console.log("7.3===");
+        const size = 0.0118;
+        this.threeDModel.scale.set(size, size, size);
+      } else if (width >= 720) {
+        console.log("7.2===");
+        const size = 0.0117;
+        this.threeDModel.scale.set(size, size, size);
+      } else if (width >= 670) {
+        /* laptops will also use this dimension */
+        console.log("7.1===");
+        const size = 0.0097;
+        this.threeDModel.scale.set(size, size, size);
+      } else if (width >= 620) {
         console.log("7===");
-        const size = 0.0117;
+        const size = 0.0097;
         this.threeDModel.scale.set(size, size, size);
-      } else if (width >= 800) {
+      } else if (width >= 570) {
         console.log("6===");
-        const size = 0.0117;
+        const size = 0.0095;
         this.threeDModel.scale.set(size, size, size);
-      } else if (width >= 700) {
+      } else if (width >= 520) {
         console.log("5===");
-        const size = 0.0117;
+        const size = 0.0085;
         this.threeDModel.scale.set(size, size, size);
-      } else if (width >= 600) {
+      } else if (width >= 470) {
         console.log("4===");
-        const size = 0.0102;
+        const size = 0.0079;
         this.threeDModel.scale.set(size, size, size);
-      } else if (width >= 500) {
+      } else if (width >= 420) {
+        console.log("3.1===");
+        const size = 0.00695;
+        this.threeDModel.scale.set(size, size, size);
+      } else if (width >= 370) {
         console.log("3===");
-        const size = 0.0117;
+        const size = 0.00585;
         this.threeDModel.scale.set(size, size, size);
-      } else if (width >= 400) {
+      } else if (width >= 320) {
         console.log("2===");
-        const size = 0.0117;
+        const size = 0.00565;
         this.threeDModel.scale.set(size, size, size);
       } else {
         console.log("1===");
-        const size = 0.01155;
+        const size = 0.00499;
         this.threeDModel.scale.set(size, size, size);
       }
-      /* if (width >= 500 && width < 600) {
-        // Mobile phones with bigger displays will use this scale
-        this.threeDModel.scale.set(0.00902, 0.00902, 0.00902);
-      } else if (width >= 600 && width < 800) {
-        // Tablets will use this scale
-        this.threeDModel.scale.set(0.0092, 0.0092, 0.0092);
-      } else if (width >= 800) {
-        // PC will use this scale
-        this.threeDModel.scale.set(0.009, 0.009, 0.009);
-      } else {
-        // Mobile phones with small display will use this scale
-        this.threeDModel.scale.set(0.005, 0.005, 0.005);
-      } */
+
+      this.camera.updateProjectionMatrix();
+      this.camera.updateMatrix();
+      this.scene.updateMatrixWorld(true);
     }
   }
 

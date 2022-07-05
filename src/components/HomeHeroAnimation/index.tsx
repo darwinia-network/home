@@ -18,10 +18,10 @@ const LottieAnimation = () => {
   }, []);
 
   return (
-    <div className={"w-full relative lg:absolute lg:top-0 lg:bottom-0 lg:right-0 pb-[90.42%] lg:pb-0"}>
+    <div className={"w-full relative lg:absolute lg:top-0 lg:bottom-0 overflow-hidden lg:right-0 pb-[100%] lg:pb-0"}>
       <canvas
         key={new Date().getTime()}
-        className={"w-full h-full absolute left-0 lg:left-[unset] lg:right-[-110px] top-0"}
+        className={"w-full h-full absolute left-0 lg:left-[unset] lg:right-[-100px] top-0"}
         ref={game}
       />
     </div>
