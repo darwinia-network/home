@@ -1,7 +1,6 @@
 import {
   DirectionalLight,
   Mesh,
-  PerspectiveCamera,
   Scene,
   WebGLRenderer,
   AmbientLight,
@@ -12,6 +11,8 @@ import {
   Clock,
   Group,
   sRGBEncoding,
+  OrthographicCamera,
+  AnimationClip,
 } from "three";
 import { GUI } from "dat.gui";
 // import {GLTFLoader} from "three/examples/jsm/loaders/GLTFLoader";
@@ -27,7 +28,7 @@ export default class DarwiniaModelAnimation {
   private canvas: HTMLCanvasElement;
   private readonly background: string;
   private renderer: WebGLRenderer;
-  private camera: PerspectiveCamera;
+  private camera: OrthographicCamera;
   private scene: Scene;
   private canvasWidth: number;
   private canvasHeight: number;
@@ -54,9 +55,22 @@ export default class DarwiniaModelAnimation {
     this.renderer = new WebGLRenderer({ antialias: true, canvas });
     this.setupGameRenderer();
 
-    this.camera = new PerspectiveCamera(45, this.canvasWidth / this.canvasHeight, 0.1, 3000);
-    this.camera.position.set(18, 26, 18);
+    this.camera = new OrthographicCamera(
+      this.canvasWidth / -2,
+      this.canvasWidth / 2,
+      this.canvasHeight / 2,
+      this.canvasHeight / -2,
+      0.1,
+      3000
+    );
 
+    this.camera.position.set(18, 30, 18);
+    this.camera.zoom = 25; // 28
+    this.camera.updateProjectionMatrix();
+    // this.camera.updateMatrix();
+    // this.camera = new OrthographicCamera(45, this.canvasWidth / this.canvasHeight, 0.1, 3000);
+    // this.camera.position.set(18, 26, 18);
+    // this.camera.position.set(18, 40, 18);
     this.scene = new Scene();
 
     // this.addBox();
@@ -158,11 +172,14 @@ export default class DarwiniaModelAnimation {
     loader.load(
       "/darwinia_model/scene.fbx",
       (model) => {
-        // this.animationMixer = new AnimationMixer(model);
-        // const clip = AnimationClip.findByName(model.animations,"mixamo.com")
-        // const action = this.animationMixer.clipAction(clip);
-        // action.play();
+        this.animationMixer = new AnimationMixer(model);
+        const clip = AnimationClip.findByName(model.animations, "CINEMA_4D___");
+        const action = this.animationMixer.clipAction(clip);
+        action.play();
         this.threeDModel = model;
+        /* this.threeDModel.position.setY(2);
+        this.threeDModel.position.setZ(-1); */
+        this.threeDModel.position.set(0, -3, 0);
         const { width } = this.getCanvasDimensions();
         this.resize3DModel(width);
         this.scene.add(model);
@@ -180,10 +197,10 @@ export default class DarwiniaModelAnimation {
   private addOrbitControl() {
     this.orbitControl = new OrbitControls(this.camera, this.canvas);
     this.orbitControl.enableDamping = true;
-    // this.orbitControl.autoRotateSpeed *= -3;
-    // this.orbitControl.autoRotate = true;
-    this.orbitControl.enablePan = false;
-    // this.orbitControl.enableZoom = false;
+    this.orbitControl.autoRotateSpeed *= 0.3;
+    this.orbitControl.autoRotate = true;
+    // this.orbitControl.enablePan = true;
+    this.orbitControl.enableZoom = false;
   }
 
   private addGameHelpers() {
@@ -240,9 +257,42 @@ export default class DarwiniaModelAnimation {
     };
   }
 
+  /* This code may look very weird, but it's the only way we can make the
+   * 3D model responsive since the model's design itself is too big */
   private resize3DModel(width: number) {
+    /* IMPORTANT: this width here is the canvas container width, NOT screen width */
     if (this.threeDModel) {
-      if (width >= 500 && width < 600) {
+      console.log(width);
+      if (width >= 900) {
+        console.log("7===");
+        const size = 0.0117;
+        this.threeDModel.scale.set(size, size, size);
+      } else if (width >= 800) {
+        console.log("6===");
+        const size = 0.0117;
+        this.threeDModel.scale.set(size, size, size);
+      } else if (width >= 700) {
+        console.log("5===");
+        const size = 0.0117;
+        this.threeDModel.scale.set(size, size, size);
+      } else if (width >= 600) {
+        console.log("4===");
+        const size = 0.0102;
+        this.threeDModel.scale.set(size, size, size);
+      } else if (width >= 500) {
+        console.log("3===");
+        const size = 0.0117;
+        this.threeDModel.scale.set(size, size, size);
+      } else if (width >= 400) {
+        console.log("2===");
+        const size = 0.0117;
+        this.threeDModel.scale.set(size, size, size);
+      } else {
+        console.log("1===");
+        const size = 0.01155;
+        this.threeDModel.scale.set(size, size, size);
+      }
+      /* if (width >= 500 && width < 600) {
         // Mobile phones with bigger displays will use this scale
         this.threeDModel.scale.set(0.00902, 0.00902, 0.00902);
       } else if (width >= 600 && width < 800) {
@@ -254,7 +304,7 @@ export default class DarwiniaModelAnimation {
       } else {
         // Mobile phones with small display will use this scale
         this.threeDModel.scale.set(0.005, 0.005, 0.005);
-      }
+      } */
     }
   }
 
@@ -262,7 +312,7 @@ export default class DarwiniaModelAnimation {
     const { width, height } = this.getCanvasDimensions();
     this.resize3DModel(width);
     this.renderer.setSize(width, height, false);
-    this.camera.aspect = width / height;
+    // this.camera.aspect = width / height;
     this.camera.updateProjectionMatrix();
   }
 

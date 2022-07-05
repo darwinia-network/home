@@ -21,7 +21,6 @@ const Navigation = () => {
   const { menu } = useMenuData();
   const { t } = useTranslation();
   const [isMobileNavVisible, toggleMobileNav] = useState(false);
-  const [isMobileNavInit, setMobileNavInit] = useState(false);
   const [openedMobileMenuPath, setOpenedMobileMenuPath] = useState<string | undefined>(undefined);
   const [mobileMenuHeightByPathMap, setMenuHeight] = useState<SubMenuHeight>({});
   const [openedPCMenuPath, setOpenedPCMenuPath] = useState<string | undefined>(undefined);
@@ -71,7 +70,7 @@ const Navigation = () => {
     mobileNavLinks.forEach((link) => {
       link.addEventListener("click", onCloseMobileNavigation);
     });
-  }, [isMobileNavInit]);
+  }, [isMobileNavVisible]);
 
   const updateNavBarBackground = () => {
     const scrollY = window.scrollY;
@@ -86,7 +85,6 @@ const Navigation = () => {
     toggleMobileNav((isVisible) => {
       return !isVisible;
     });
-    setMobileNavInit(true);
   };
 
   const onPCSubMenuToggle = (path: string | undefined) => {
@@ -120,7 +118,7 @@ const Navigation = () => {
     <div
       style={{ background: navBarBackground }}
       className={
-        "duration-200 transition-all fixed z-[99] left-0 top-0 right-0 flex justify-center h-[3.75rem] lg:h-[4.375rem]"
+        "duration-700 transition-all fixed z-[99] left-0 top-0 right-0 flex justify-center h-[3.75rem] lg:h-[4.375rem]"
       }
     >
       <div className={"justify-between flex container pl-[1.25rem] pr-[0.25rem] lg:px-[1.875rem] xl:px-[3.75rem]"}>
@@ -175,7 +173,7 @@ const Navigation = () => {
        items have zero height, this will make us fail to get the submenu scrollHeights
        if the mobile navigation is hidden when the component is getting mounted */}
 
-      <CSSTransition in={isMobileNavVisible} classNames={"mobile-nav"} timeout={300}>
+      <CSSTransition in={isMobileNavVisible} unmountOnExit={true} classNames={"mobile-nav"} timeout={300}>
         <div className={`lg:w-[1px] lg:h-[1px] lg:overflow-hidden mobile-navigation`}>
           <div className={"flex h-full flex-col"}>
             <div className={"flex justify-end px-[1.25rem]"}>
@@ -397,7 +395,7 @@ const createMobileMenu = (
                 transitionProperty: "height",
               }}
               data-path={path}
-              className={`mobile-nav-parent ease-in-out duration-[200ms] flex
+              className={`mobile-nav-parent ease-in-out duration-[300ms] flex
               overflow-hidden flex-col relative after:content-[''] after:z-[-1]
               after:absolute after:left-0 after:right-0 after:top-0
               after:bottom-0 after:bg-white after:opacity-10`}

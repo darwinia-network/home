@@ -13,13 +13,15 @@ const Hero = ({ data, page }: Props) => {
   const image = getImage(data.image);
   const socialNetworkLinks = getSocialNetworkLinks(data.socialNetworks);
   const imageClass = data.type === 1 ? `hero-image-1` : `hero-image-2`;
+  const fakeImageClass = data.type === 1 ? `hero-image-1-fake` : `hidden`;
+  const textClass = data.type === 1 ? `lg:w-[43.083%]` : `flex-1`;
   const topSpace = page === "HOME" ? `space-top-1` : `space-top-2`;
   const Typewriter = getTypewriterByPage(page);
   return (
     <div className={`bg-center bg-cover bg-no-repeat`}>
       <div data-aos={"fade-up"} data-aos-duration={700} className={`container ${topSpace}`}>
-        <div className={"flex flex-col lg:flex-row"}>
-          <div className={"order-2 flex-1 flex flex-col lg:justify-center lg:order-1"}>
+        <div className={"flex flex-col lg:flex-row relative"}>
+          <div className={`order-2 flex flex-col relative z-10 lg:justify-center lg:order-1 ${textClass}`}>
             <Suspense>
               <Typewriter />
             </Suspense>
@@ -27,7 +29,11 @@ const Hero = ({ data, page }: Props) => {
             {links}
             {socialNetworkLinks}
           </div>
-          <div className={`order-1 lg:order-2 ${imageClass}`}>{image}</div>
+          {/* this item is here just to expand the DOM's height */}
+          <div className={`order-1 flex-1 ml-[1.75rem] lg:order-2 ${fakeImageClass}`}>
+            <div className={`lg:pb-[100%]`} />
+          </div>
+          <div className={`order-1 flex-1 lg:order-2 ${imageClass}`}>{image}</div>
         </div>
       </div>
     </div>
