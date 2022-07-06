@@ -24,7 +24,16 @@ interface CanvasDimensions {
   height: number;
 }
 
+export interface Options {
+  shouldResize?: boolean;
+  background?: string;
+  onLoad?: () => void;
+  onError?: () => void;
+}
+
 export default class DarwiniaModelAnimation {
+  private onLoad: (() => void) | undefined;
+  private onError: (() => void) | undefined;
   private canvas: HTMLCanvasElement;
   private readonly background: string;
   private renderer: WebGLRenderer;
@@ -45,10 +54,13 @@ export default class DarwiniaModelAnimation {
   private threeDModel: Group | undefined;
   private orbitControl: OrbitControls | undefined;
 
-  constructor(canvas: HTMLCanvasElement, shouldResize = true, background = "#000000") {
+  constructor(canvas: HTMLCanvasElement, options: Options) {
+    this.onLoad = options.onLoad;
+    this.onError = options.onError;
     this.canvas = canvas;
-    this.shouldResize = shouldResize;
-    this.background = background;
+    this.shouldResize = options.shouldResize ?? true;
+    this.background = options.background ?? "#000000";
+
     const dimensions = this.getCanvasDimensions();
     this.canvasWidth = dimensions.width;
     this.canvasHeight = dimensions.height;
@@ -183,6 +195,12 @@ export default class DarwiniaModelAnimation {
         const { width } = this.getCanvasDimensions();
         this.resize3DModel(width);
         this.scene.add(model);
+        /* delay on purpose to give a canvas some loading time to avoid the weird flickering */
+        setTimeout(() => {
+          if (this.onLoad) {
+            this.onLoad();
+          }
+        }, 200);
       },
       () => {
         // ignore
@@ -339,6 +357,18 @@ export default class DarwiniaModelAnimation {
 
   private resizeGame() {
     const { width, height } = this.getCanvasDimensions();
+    this.canvasWidth = width;
+    this.canvasHeight = height;
+
+    /* this.camera = new OrthographicCamera(
+      this.canvasWidth / -2,
+      this.canvasWidth / 2,
+      this.canvasHeight / 2,
+      this.canvasHeight / -2,
+      0.1,
+      3000
+    ); */
+
     this.resize3DModel(width);
     this.renderer.setSize(width, height, false);
     // this.camera.aspect = width / height;

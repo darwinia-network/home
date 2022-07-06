@@ -1,19 +1,33 @@
 // import lottie from "lottie-web";
 import { useEffect, useRef } from "react";
 // import data from "./data";
-import DarwiniaModelAnimation from "../../utils/DarwiniaModelAnimation";
+import DarwiniaModelAnimation, { Options } from "../../utils/DarwiniaModelAnimation";
 import throttle from "lodash.throttle";
 
 const LottieAnimation = () => {
   const game = useRef<HTMLCanvasElement>(null);
 
+  /* Here we monitor the screen resize and re-initialize the Three JS instance */
+  /* 💣 Initializing class instances in the resize method is a very bad practice
+   * but at this point it had to be done this way since Three JS wasn't build for
+   * making responsive design models. Our design needs to be responsive and every time
+   * we scale it, it would bring different kinds of bugs that's why I decided to simply
+   * just clean the previous instance and re-initialized it. */
   useEffect(() => {
     let engine: DarwiniaModelAnimation | undefined;
 
     const init3DModel = () => {
       engine?.clean();
       if (game.current) {
-        engine = new DarwiniaModelAnimation(game.current, false);
+        const options: Options = {
+          background: "yellow",
+          shouldResize: false,
+          onLoad: () => {
+            console.log("loaded===");
+          },
+        };
+        console.log(options);
+        engine = new DarwiniaModelAnimation(game.current, options);
       }
     };
 
