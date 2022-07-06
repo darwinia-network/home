@@ -1,4 +1,4 @@
-import axios from "axios";
+import axios, { AxiosResponse } from "axios";
 
 export interface NetworkRequest {
   path: string;
@@ -6,7 +6,8 @@ export interface NetworkRequest {
   data?: Record<string, any>;
 }
 
-const baseUrl = process.env.NODE_ENV === "development" ? "https://darwinia.network" : "https://darwinia.network";
+const baseUrl =
+  process.env.NODE_ENV === "development" ? "https://api.darwinia.network" : "https://api.darwinia.network";
 
 const axiosInstance = axios.create();
 
@@ -37,41 +38,42 @@ axiosInstance.interceptors.response.use(
 );
 
 const http = {
-  get: (requestData: NetworkRequest) => {
-    return axiosInstance({
+  get<T>(requestData: NetworkRequest): Promise<AxiosResponse<T>> {
+    return axiosInstance.get<T>(requestData.path, {
       // headers: {'auth-token': currentUser.getToken()},
       baseURL: requestData.baseUrl ? requestData.baseUrl : baseUrl,
-      url: requestData.path,
       params: requestData.data,
-      method: "GET",
     });
   },
-  post: (requestData: NetworkRequest) => {
-    return axiosInstance({
-      // headers: {'auth-token': currentUser.getToken()},
-      baseURL: requestData.baseUrl ? requestData.baseUrl : baseUrl,
-      url: requestData.path,
-      data: requestData.data,
-      method: "POST",
-    });
+  post<T>(requestData: NetworkRequest): Promise<AxiosResponse<T>> {
+    return axiosInstance.post<T>(
+      requestData.path,
+      { ...requestData.data },
+      {
+        // headers: {'auth-token': currentUser.getToken()},
+        baseURL: requestData.baseUrl ? requestData.baseUrl : baseUrl,
+      }
+    );
   },
-  put: (requestData: NetworkRequest) => {
-    return axiosInstance({
-      // headers: {'auth-token': currentUser.getToken()},
-      baseURL: requestData.baseUrl ? requestData.baseUrl : baseUrl,
-      url: requestData.path,
-      data: requestData.data,
-      method: "PUT",
-    });
+  put<T>(requestData: NetworkRequest): Promise<AxiosResponse<T>> {
+    return axiosInstance.put<T>(
+      requestData.path,
+      { ...requestData.data },
+      {
+        // headers: {'auth-token': currentUser.getToken()},
+        baseURL: requestData.baseUrl ? requestData.baseUrl : baseUrl,
+      }
+    );
   },
-  delete: (requestData: NetworkRequest) => {
-    return axiosInstance({
-      // headers: {'auth-token': currentUser.getToken()},
-      baseURL: requestData.baseUrl ? requestData.baseUrl : baseUrl,
-      url: requestData.path,
-      data: requestData.data,
-      method: "DELETE",
-    });
+  delete<T>(requestData: NetworkRequest): Promise<AxiosResponse<T>> {
+    return axiosInstance.put<T>(
+      requestData.path,
+      { ...requestData.data },
+      {
+        // headers: {'auth-token': currentUser.getToken()},
+        baseURL: requestData.baseUrl ? requestData.baseUrl : baseUrl,
+      }
+    );
   },
 };
 

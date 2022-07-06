@@ -2,8 +2,6 @@ import { Hero, Statistics } from "./types";
 import { TFunction, useTranslation } from "react-i18next";
 import localeKeys from "../locale/localeKeys";
 import tokensHero from "../assets/images/tokens-hero.png";
-import ring from "../assets/images/ring.svg";
-import kTon from "../assets/images/kton.svg";
 import stakingBasicModel from "../assets/images/staking-basic-model.png";
 import stakingAdvancedModel from "../assets/images/staking-advanced-model.png";
 import totalSupply from "../assets/images/total-supply.png";
@@ -53,44 +51,7 @@ const getTokensStatistics = (t: TFunction<"translation">): Statistics => {
         isExternal: true,
       },
     ],
-    data: [
-      {
-        title: t(localeKeys.ring),
-        image: ring,
-        data: [
-          {
-            info: t(localeKeys.initialSupply),
-            figure: "2,000,000,000",
-          },
-          {
-            info: t(localeKeys.circulatingSupply),
-            figure: "511,306,888",
-          },
-          {
-            info: t(localeKeys.totalSupply),
-            figure: "2,149,283,936",
-          },
-        ],
-      },
-      {
-        title: t(localeKeys.kTon),
-        image: kTon,
-        data: [
-          {
-            info: t(localeKeys.initialSupply),
-            figure: "--",
-          },
-          {
-            info: t(localeKeys.circulatingSupply),
-            figure: "39,781",
-          },
-          {
-            info: t(localeKeys.totalSupply),
-            figure: "91,337",
-          },
-        ],
-      },
-    ],
+    data: [],
   };
 };
 
