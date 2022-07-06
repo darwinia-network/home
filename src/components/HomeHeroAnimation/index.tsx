@@ -2,51 +2,58 @@
 import { useEffect, useRef } from "react";
 // import data from "./data";
 import DarwiniaModelAnimation, { Options } from "../../utils/DarwiniaModelAnimation";
-import throttle from "lodash.throttle";
 
 const LottieAnimation = () => {
   const game = useRef<HTMLCanvasElement>(null);
+  /* never use React state to control this, since three JS will
+  lose the canvas reference due to re--rendering */
+  const spinner = useRef<HTMLDivElement>(null);
 
-  /* Here we monitor the screen resize and re-initialize the Three JS instance */
-  /* 💣 Initializing class instances in the resize method is a very bad practice
-   * but at this point it had to be done this way since Three JS wasn't build for
-   * making responsive design models. Our design needs to be responsive and every time
-   * we scale it, it would bring different kinds of bugs that's why I decided to simply
-   * just clean the previous instance and re-initialized it. */
   useEffect(() => {
     let engine: DarwiniaModelAnimation | undefined;
 
-    const init3DModel = () => {
-      engine?.clean();
-      if (game.current) {
-        const options: Options = {
-          background: "yellow",
-          shouldResize: false,
-          onLoad: () => {
-            console.log("loaded===");
-          },
-        };
-        console.log(options);
-        engine = new DarwiniaModelAnimation(game.current, options);
-      }
-    };
-
-    init3DModel();
-    const debouncedFunction = throttle(init3DModel, 1000, { leading: false });
-
-    window.addEventListener("resize", debouncedFunction);
+    if (game.current) {
+      const options: Options = {
+        onLoad: () => {
+          if (spinner.current) {
+            spinner.current.style.opacity = "0";
+            spinner.current.style.transition = "opacity 2000ms ease-out";
+          }
+        },
+      };
+      engine = new DarwiniaModelAnimation(game.current, options);
+    }
 
     return () => {
       engine?.clean();
-      window.removeEventListener("resize", debouncedFunction);
     };
   }, []);
 
+  const onTransitionEnd = () => {
+    if (spinner.current) {
+      spinner.current.style.zIndex = "-1";
+    }
+  };
+
   return (
-    <div className={"w-full relative lg:absolute lg:top-0 lg:bottom-0 overflow-hidden lg:right-0 pb-[100%] lg:pb-0"}>
+    /* I changed the padding bottom here from pb-[90.42%] to pb-[84.17%] here to at least reduce
+     * the 3D model scale issues between mobile and PC when the dimensions almost collide.
+     * IMPORTANT: The wrapper below is positioned relative on mobile phones and the height
+     * depends on the padding bottom but on PCs, it is positioned absolute and its height depends
+     * on the it's parent (outside this component) */
+    <div
+      className={"w-full relative lg:absolute lg:top-0 lg:bottom-0 overflow-hidden lg:right-0 pb-[84.17%] lg:pb-0 z-10"}
+    >
+      <div
+        ref={spinner}
+        onTransitionEnd={() => {
+          onTransitionEnd();
+        }}
+        className={"w-full h-full absolute left-0 lg:left-[unset] lg:right-[-100px] top-0 bg-black z-20"}
+      />
       <canvas
         key={new Date().getTime()}
-        className={"w-full h-full absolute left-0 lg:left-[unset] lg:right-[-100px] top-0"}
+        className={"w-full h-full absolute left-0 lg:left-[unset] lg:right-[-100px] top-0 z-10"}
         ref={game}
       />
     </div>

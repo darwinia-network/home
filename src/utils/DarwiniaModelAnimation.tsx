@@ -67,14 +67,9 @@ export default class DarwiniaModelAnimation {
     this.renderer = new WebGLRenderer({ antialias: true, canvas });
     this.setupGameRenderer();
 
-    this.camera = new OrthographicCamera(
-      this.canvasWidth / -2,
-      this.canvasWidth / 2,
-      this.canvasHeight / 2,
-      this.canvasHeight / -2,
-      0.1,
-      3000
-    );
+    const { left, right, top, bottom } = this.getCameraSettings();
+
+    this.camera = new OrthographicCamera(left, right, top, bottom, 0.1, 3000);
 
     this.camera.position.set(18, 30, 18);
     this.camera.zoom = 25; // 28
@@ -355,22 +350,29 @@ export default class DarwiniaModelAnimation {
     }
   }
 
+  private getCameraSettings() {
+    return {
+      left: this.canvasWidth / -2,
+      right: this.canvasWidth / 2,
+      top: this.canvasHeight / 2,
+      bottom: this.canvasHeight / -2,
+    };
+  }
+
+  /* debounce is probably needed here */
   private resizeGame() {
     const { width, height } = this.getCanvasDimensions();
     this.canvasWidth = width;
     this.canvasHeight = height;
 
-    /* this.camera = new OrthographicCamera(
-      this.canvasWidth / -2,
-      this.canvasWidth / 2,
-      this.canvasHeight / 2,
-      this.canvasHeight / -2,
-      0.1,
-      3000
-    ); */
-
     this.resize3DModel(width);
     this.renderer.setSize(width, height, false);
+
+    const { left, right, top, bottom } = this.getCameraSettings();
+    this.camera.left = left;
+    this.camera.right = right;
+    this.camera.top = top;
+    this.camera.bottom = bottom;
     // this.camera.aspect = width / height;
     this.camera.updateProjectionMatrix();
   }

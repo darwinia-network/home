@@ -13,7 +13,10 @@ const Hero = ({ data, page }: Props) => {
   const image = getImage(data.image);
   const socialNetworkLinks = getSocialNetworkLinks(data.socialNetworks);
   const imageClass = data.type === 1 ? `hero-image-1` : `hero-image-2`;
-  const fakeImageClass = data.type === 1 ? `hero-image-1-fake` : `hidden`;
+  /* this fakeImageClass determines the width and height(virtually) of the 3D model on PC.
+   * It will be a square, just to control the sibling element's height which is the 3d model
+   * container (which is positioned absolute) */
+  const fakeImageClass = data.type === 1 ? `lg:w-[54.58%] w-full shrink-0` : `hidden`;
   const textClass = data.type === 1 ? `lg:w-[43.083%]` : `flex-1`;
   const topSpace = page === "HOME" ? `space-top-1` : `space-top-2`;
   const Typewriter = getTypewriterByPage(page);
@@ -21,7 +24,7 @@ const Hero = ({ data, page }: Props) => {
     <div className={`bg-center bg-cover bg-no-repeat`}>
       <div data-aos={"fade-up"} data-aos-duration={700} className={`container ${topSpace}`}>
         <div className={"flex flex-col lg:flex-row relative"}>
-          <div className={`order-2 flex flex-col relative z-10 lg:justify-center lg:order-1 ${textClass}`}>
+          <div className={`order-2 flex flex-col relative z-20 lg:justify-center lg:order-1 ${textClass}`}>
             <Suspense>
               <Typewriter />
             </Suspense>
@@ -29,9 +32,10 @@ const Hero = ({ data, page }: Props) => {
             {links}
             {socialNetworkLinks}
           </div>
-          {/* this item is here just to expand the DOM's height */}
-          <div className={`order-1 flex-1 ml-[1.75rem] lg:order-2 ${fakeImageClass}`}>
-            <div className={`lg:pb-[100%]`} />
+          {/* this item is here just to expand the DOM's height, BUT only on PCs, its height is
+          zero on mobile phones */}
+          <div className={`opacity-0 order-1 flex-1 ml-[1.75rem] lg:order-2 ${fakeImageClass}`}>
+            <div className={`pb-0 lg:pb-[100%]`} />
           </div>
           <div className={`order-1 flex-1 lg:order-2 ${imageClass}`}>{image}</div>
         </div>

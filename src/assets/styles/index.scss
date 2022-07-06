@@ -176,9 +176,6 @@ html {
   .hero-image-1 {
     @apply lg:w-[70%] lg:absolute lg:right-0 lg:top-0 lg:-bottom-0 w-full shrink-0;
   }
-  .hero-image-1-fake {
-    @apply lg:w-[54.58%] w-full shrink-0;
-  }
 
   .hero-image-2 {
     @apply lg:w-[47.083%] lg:pl-[4rem] w-full shrink-0;
