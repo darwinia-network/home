@@ -11,7 +11,6 @@ const LottieAnimation = () => {
     let engine: DarwiniaModelAnimation | undefined;
 
     const init3DModel = () => {
-      console.log("fired====");
       engine?.clean();
       if (game.current) {
         engine = new DarwiniaModelAnimation(game.current, false);

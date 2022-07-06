@@ -188,7 +188,6 @@ export default class DarwiniaModelAnimation {
         // ignore
       },
       () => {
-        console.log("error====");
         // ignore
       }
     );

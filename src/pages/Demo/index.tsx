@@ -1,7 +1,7 @@
 import Footer from "../../components/Footer";
 import { useFooterData } from "../../data/footer";
 import { useEffect } from "react";
-import Typewriter from "../../utils/typewriter";
+import Typewriter from "../../utils/Typewriter";
 
 const Demo = () => {
   const { footerData } = useFooterData();

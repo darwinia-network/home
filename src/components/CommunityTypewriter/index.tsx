@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import Typewriter from "../../utils/typewriter";
+import Typewriter from "../../utils/Typewriter";
 import { useTranslation } from "react-i18next";
 import localeKeys from "../../locale/localeKeys";
 import { SupportedLanguages } from "../../data/types";
