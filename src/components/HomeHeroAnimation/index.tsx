@@ -14,6 +14,7 @@ const LottieAnimation = () => {
 
     if (game.current) {
       const options: Options = {
+        // background: "#111",
         onLoad: () => {
           if (spinner.current) {
             spinner.current.style.opacity = "0";
@@ -42,7 +43,9 @@ const LottieAnimation = () => {
      * depends on the padding bottom but on PCs, it is positioned absolute and its height depends
      * on the it's parent (outside this component) */
     <div
-      className={"w-full relative lg:absolute lg:top-0 lg:bottom-0 overflow-hidden lg:right-0 pb-[84.17%] lg:pb-0 z-10"}
+      className={
+        "w-full relative lg:absolute lg:top-0 lg:bottom-0 overflow-hidden lg:right-0 pb-[120.17%] lg:pb-0 z-10"
+      }
     >
       <div
         ref={spinner}

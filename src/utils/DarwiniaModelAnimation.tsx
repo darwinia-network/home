@@ -96,6 +96,10 @@ export default class DarwiniaModelAnimation {
     }
   }
 
+  private isPC() {
+    return window.innerWidth >= 1024;
+  }
+
   private addDatGUI() {
     document.querySelector(".dg.main.a")?.remove();
     const datGUI = new GUI();
@@ -186,7 +190,7 @@ export default class DarwiniaModelAnimation {
         this.threeDModel = model;
         /* this.threeDModel.position.setY(2);
         this.threeDModel.position.setZ(-1); */
-        this.threeDModel.position.set(0, -3, 0);
+        this.threeDModel.position.set(1, -3, 0);
         const { width } = this.getCanvasDimensions();
         this.resize3DModel(width);
         this.scene.add(model);
@@ -212,7 +216,7 @@ export default class DarwiniaModelAnimation {
     this.orbitControl.autoRotateSpeed *= 0.3;
     this.orbitControl.autoRotate = true;
     this.orbitControl.enablePan = false;
-    this.orbitControl.enableZoom = false;
+    this.orbitControl.enableZoom = !this.isPC();
   }
 
   private addGameHelpers() {
@@ -274,72 +278,76 @@ export default class DarwiniaModelAnimation {
   private resize3DModel(width: number) {
     /* IMPORTANT: this width here is the canvas container width, NOT screen width */
     if (this.threeDModel) {
-      console.log(width);
+      if (this.isPC()) {
+        if (width >= 824) {
+          const size = 0.011;
+          this.threeDModel.scale.set(size, size, size);
+        } else if (width >= 774) {
+          const size = 0.011;
+          this.threeDModel.scale.set(size, size, size);
+        } else if (width >= 724) {
+          const size = 0.01;
+          this.threeDModel.scale.set(size, size, size);
+        } else {
+          const size = 0.01;
+          this.threeDModel.scale.set(size, size, size);
+        }
+
+        this.camera.zoom = 25;
+        this.camera.updateProjectionMatrix();
+        this.camera.updateMatrix();
+        this.scene.updateMatrixWorld(true);
+        return;
+      }
+      /* These devices are considered to be mobile phones */
       if (width >= 1020) {
-        console.log("9===");
         const size = 0.0142;
         this.threeDModel.scale.set(size, size, size);
       } else if (width >= 970) {
-        console.log("8.3===");
         const size = 0.0131;
         this.threeDModel.scale.set(size, size, size);
       } else if (width >= 920) {
-        console.log("8.2===");
-        const size = 0.0131;
+        const size = 0.017;
         this.threeDModel.scale.set(size, size, size);
       } else if (width >= 870) {
-        console.log("8.1===");
-        const size = 0.0129;
+        const size = 0.016;
         this.threeDModel.scale.set(size, size, size);
       } else if (width >= 820) {
-        /* PCs will use this dimension */
-        console.log("8===");
-        const size = 0.0122;
+        const size = 0.0155;
         this.threeDModel.scale.set(size, size, size);
       } else if (width >= 770) {
-        console.log("7.3===");
-        const size = 0.0118;
+        const size = 0.0145;
         this.threeDModel.scale.set(size, size, size);
       } else if (width >= 720) {
-        console.log("7.2===");
-        const size = 0.0117;
+        const size = 0.014;
         this.threeDModel.scale.set(size, size, size);
       } else if (width >= 670) {
         /* laptops will also use this dimension */
-        console.log("7.1===");
-        const size = 0.0097;
+        const size = 0.0135;
         this.threeDModel.scale.set(size, size, size);
       } else if (width >= 620) {
-        console.log("7===");
-        const size = 0.0097;
+        const size = 0.0125;
         this.threeDModel.scale.set(size, size, size);
       } else if (width >= 570) {
-        console.log("6===");
-        const size = 0.0095;
+        const size = 0.011;
         this.threeDModel.scale.set(size, size, size);
       } else if (width >= 520) {
-        console.log("5===");
-        const size = 0.0085;
+        const size = 0.01;
         this.threeDModel.scale.set(size, size, size);
       } else if (width >= 470) {
-        console.log("4===");
-        const size = 0.0079;
+        const size = 0.009;
         this.threeDModel.scale.set(size, size, size);
       } else if (width >= 420) {
-        console.log("3.1===");
-        const size = 0.00695;
+        const size = 0.0085;
         this.threeDModel.scale.set(size, size, size);
       } else if (width >= 370) {
-        console.log("3===");
-        const size = 0.00585;
+        const size = 0.007;
         this.threeDModel.scale.set(size, size, size);
       } else if (width >= 320) {
-        console.log("2===");
-        const size = 0.00565;
+        const size = 0.0065;
         this.threeDModel.scale.set(size, size, size);
       } else {
-        console.log("1===");
-        const size = 0.00499;
+        const size = 0.0055;
         this.threeDModel.scale.set(size, size, size);
       }
 
@@ -367,6 +375,12 @@ export default class DarwiniaModelAnimation {
 
     this.resize3DModel(width);
     this.renderer.setSize(width, height, false);
+
+    /* stop zooming for pc users */
+    if (this.orbitControl) {
+      this.orbitControl.enableZoom = !this.isPC();
+      this.orbitControl.update();
+    }
 
     const { left, right, top, bottom } = this.getCameraSettings();
     this.camera.left = left;
