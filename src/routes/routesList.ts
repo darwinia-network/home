@@ -1,6 +1,5 @@
 import PageNotFound from "../pages/PageNotFound";
 import { lazy } from "react";
-import Demo from "../pages/Demo";
 
 const routesList = [
   {
@@ -10,10 +9,6 @@ const routesList = [
   {
     path: "/not-found",
     component: PageNotFound,
-  },
-  {
-    path: "/demo",
-    component: Demo,
   },
   {
     path: "/",
