@@ -45,7 +45,7 @@ const getStatisticsData = (data: StatisticsData[] | undefined) => {
       const subKey = `${index}-${subIndex}`;
       return (
         <div className={"flex flex-col mb-[1.875rem] last:mb-0 lg:flex-row lg:justify-between"} key={subKey}>
-          <div className={"capitalize"}>{infoItem.info}</div>
+          <div className={"capitalize shrink-0"}>{infoItem.info}</div>
           <div className={"title text-white text-[1.25rem] capitalize"}>{infoItem.figure}</div>
         </div>
       );

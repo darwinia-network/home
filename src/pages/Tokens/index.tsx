@@ -39,21 +39,26 @@ const Tokens = () => {
   }, []);
 
   const prepareTokenStatistics = (title: string, image: string, supply: Supply): StatisticsData => {
+    const minDecimalPoints = 0;
+    const maxDecimalPoints = 10;
     return {
       title,
       image,
       data: [
         {
           info: t(localeKeys.initialSupply),
-          figure: supply.initialSupply === "--" ? "--" : formatBalance(supply.initialSupply),
+          figure:
+            supply.initialSupply === "--"
+              ? "--"
+              : formatBalance(supply.initialSupply, minDecimalPoints, maxDecimalPoints),
         },
         {
           info: t(localeKeys.circulatingSupply),
-          figure: formatBalance(supply.circulatingSupply),
+          figure: formatBalance(supply.circulatingSupply, minDecimalPoints, maxDecimalPoints),
         },
         {
           info: t(localeKeys.totalSupply),
-          figure: formatBalance(supply.totalSupply),
+          figure: formatBalance(supply.totalSupply, minDecimalPoints, maxDecimalPoints),
         },
       ],
     };
