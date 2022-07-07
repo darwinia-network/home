@@ -35,12 +35,11 @@ const Tokens = () => {
 
   useEffect(() => {
     fetchData();
-    console.log(isLoadingTokenData);
   }, []);
 
   const prepareTokenStatistics = (title: string, image: string, supply: Supply): StatisticsData => {
     const minDecimalPoints = 0;
-    const maxDecimalPoints = 10;
+    const maxDecimalPoints = 0;
     return {
       title,
       image,
@@ -75,7 +74,7 @@ const Tokens = () => {
       });
 
       const resultsList = await Promise.all([loadRingData(), loadKTonData()]);
-      console.log(resultsList);
+      // console.log(resultsList);
       resultsList.forEach((result, index) => {
         if (result.data.code !== 0) {
           return;
@@ -127,7 +126,7 @@ const Tokens = () => {
     <div>
       <Hero page={"TOKENS"} data={heroData} />
       <div data-aos={"fade-up"} data-aos-duration={700} className={"container inter-block-space-1"}>
-        <Statistics data={liveTokenStatistics} />
+        <Statistics isLoading={isLoadingTokenData} data={liveTokenStatistics} />
       </div>
       <div data-aos={"fade-up"} data-aos-duration={700} className={"container inter-block-space-1"}>
         <Statistics data={stakingModelData} />

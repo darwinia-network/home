@@ -328,6 +328,17 @@ $pc-sub-menu-y: -20%;
   transform: translate3d(-50%, $pc-sub-menu-y, 0);
 }
 
+.tokens-statistics-enter {
+  opacity: 0;
+}
+.tokens-statistics-enter-active {
+  opacity: 1;
+  transition: opacity 800ms ease-out;
+}
+.tokens-statistics-enter-done {
+  opacity: 1;
+}
+
 /* if the future there needs to be a light mode for this project,
   you can set all the light mode styles in here. Simply use
  something like document.documentElement.classList.remove('light')

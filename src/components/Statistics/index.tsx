@@ -1,10 +1,14 @@
 import { Link, Statistics as IStatistics, StatisticsData } from "../../data/types";
 import { NavLink } from "react-router-dom";
+import LoadingSpinner from "../LoadingSpinner";
+import { CSSTransition } from "react-transition-group";
 
 interface Props {
   data: IStatistics;
+  isLoading?: boolean;
 }
-const Statistics = ({ data }: Props) => {
+
+const Statistics = ({ data, isLoading }: Props) => {
   const statisticsData = getStatisticsData(data.data);
   const links = getBottomLinks(data.links);
   const statisticsImages = getStatisticsImages(data.statisticsImages);
@@ -13,10 +17,25 @@ const Statistics = ({ data }: Props) => {
     <div>
       <div className={"title"}>{data.title}</div>
       <div className={"mt-[0.625rem] capitalize"}>{data.text}</div>
-      <div>{statisticsData}</div>
-      <div>{statisticsImages}</div>
-      <div>{subText}</div>
-      <div className={"mt-[1.875rem]"}>{links}</div>
+      {isLoading ? (
+        <div className={"mt-[3rem]"}>
+          <LoadingSpinner />
+        </div>
+      ) : null}
+      <CSSTransition
+        mountOnEnter={false}
+        classNames={"tokens-statistics"}
+        unmountOnExit={true}
+        timeout={{ enter: 500, exit: 0, appear: 0 }}
+        in={!isLoading}
+      >
+        <>
+          <div>{statisticsData}</div>
+          <div>{statisticsImages}</div>
+          <div>{subText}</div>
+          <div className={"mt-[1.875rem]"}>{links}</div>
+        </>
+      </CSSTransition>
     </div>
   );
 };

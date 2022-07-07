@@ -20,7 +20,7 @@ const enUs = {
   [localeKeys.ultraLightText]: `Darwinia can provide ultra-light client-based redundant security verification services for various asset bridges.`,
   [localeKeys.lightClientTitle]: `how the <span class="text-primary">Light-Client Based Cross-Chain Messaging Protocol</span>(LCMP) Works`,
   [localeKeys.lightClientSubTitle]: `Cross-Chain Message Workflow`,
-  [localeKeys.lightClientText]: `A DApp on the Application Layer calls send_message on the Message Layer to initiate a cross-chain operation. After send_message is executed, the Relayer forwards the message to the Target Chain, where the Truth Layer verifies the message, and executes the tasks carried within. Once complete, the Relayer forwards a confirmation message back to the source chain.`,
+  [localeKeys.lightClientText]: `A DApp on the Application Layer calls <span style="text-transform: none;">sendMessage</span> on the Message Layer to initiate a cross-chain operation. After <span style="text-transform: none;">sendMessage</span> is executed, the Relayer forwards the message to the Target Chain, where the Truth Layer verifies the message, and executes the tasks carried within. Once complete, the Relayer forwards a confirmation message back to the source chain.`,
   [localeKeys.darwiniaPromoTitle]: `Build on <span class="text-primary">Darwinia</span>`,
   [localeKeys.darwiniaPromoSubTitle]: `Darwinia Universal Cross-Chain Message SDK`,
   [localeKeys.darwiniaPromoContent]: `Build Cross-Chain DApps Such As:`,

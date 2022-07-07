@@ -1,12 +1,10 @@
-// import lottie from "lottie-web";
 import { useEffect, useRef } from "react";
-// import data from "./data";
 import DarwiniaModelAnimation, { Options } from "../../utils/DarwiniaModelAnimation";
 
 const LottieAnimation = () => {
   const game = useRef<HTMLCanvasElement>(null);
   /* never use React state to control this, since three JS will
-  lose the canvas reference due to re--rendering */
+  lose the canvas reference due to re-rendering */
   const spinner = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
