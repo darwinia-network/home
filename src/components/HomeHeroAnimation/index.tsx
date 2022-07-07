@@ -1,5 +1,5 @@
 import { useEffect, useRef } from "react";
-import DarwiniaModelAnimation, { Options } from "../../utils/DarwiniaModelAnimation";
+import DarwiniaModelAnimation, { Options } from "../../utils/darwiniaModelAnimation";
 
 const LottieAnimation = () => {
   const game = useRef<HTMLCanvasElement>(null);
