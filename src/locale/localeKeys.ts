@@ -152,6 +152,7 @@ const localeKeys = {
   goBackHome: "goBackHome",
   subscribeToUpdates: "subscribeToUpdates",
   trackLatestUpdates: "trackLatestUpdates",
+  loading: "loading",
 };
 
 export default localeKeys;

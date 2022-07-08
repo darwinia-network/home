@@ -1,6 +1,7 @@
 import { Route, Routes } from "react-router-dom";
 import React, { LazyExoticComponent, Suspense } from "react";
 import routesArray from "./routesList";
+import LoadingSpinner from "../components/LoadingSpinner";
 
 /* register routes here */
 interface AppRoute {
@@ -57,7 +58,9 @@ const createRoute = (routesList: AppRoute[], key: string | undefined = undefined
 const createLoadingScreen = () => {
   return (
     <div className={"text-white w-full h-[calc(100vh)] flex"}>
-      <div className={"space-top flex w-full justify-center items-center"}>Loading...</div>
+      <div className={"space-top flex w-full justify-center items-center"}>
+        <LoadingSpinner />
+      </div>
     </div>
   );
 };

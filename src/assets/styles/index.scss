@@ -33,7 +33,7 @@ html {
   }
 
   .space-top-1 {
-    @apply pt-[7.5rem] lg:pt-[10.5rem] box-border;
+    @apply pt-[3.5rem] lg:pt-[10.5rem] box-border;
   }
 
   .space-top-2 {
@@ -82,20 +82,38 @@ html {
   }
 
   .mobile-navigation {
-    @apply z-[99] w-[16.25rem] translate-x-[101%] ease-[cubic-bezier(.23,1,.32,1)] fixed top-0 bottom-0 right-0 h-full transition-transform bg-black transform-cpu duration-300;
-    &.show {
-      @apply translate-x-0;
+    @apply z-[99] w-[16.25rem] fixed top-0 bottom-0 right-0 h-full bg-black transform-cpu;
+    &.mobile-nav-enter {
+      @apply translate-x-[101%] box-border;
+    }
+    &.mobile-nav-enter-active,
+    &.mobile-nav-enter-done {
+      @apply translate-x-0 ease-[cubic-bezier(.23,1,.32,1)] transition-transform duration-300;
+    }
+    &.mobile-nav-exit {
+      @apply translate-x-0 box-border;
+    }
+    &.mobile-nav-exit-active,
+    &.mobile-nav-exit-done {
+      @apply translate-x-[101%] ease-[cubic-bezier(.23,1,.32,1)] transition-transform duration-300;
     }
   }
 
   .navigation-overlay {
-    @apply bg-[rgba(0,0,0,0.8)] z-[80] fixed top-0 bottom-0 right-0 left-0 h-full w-full transition-opacity transform-cpu opacity-0;
-    &.show {
-      @apply opacity-100;
+    @apply bg-[rgba(0,0,0,0.8)] z-[80] fixed top-0 bottom-0 right-0 left-0 h-full w-full transform-cpu;
+    &.nav-overlay-enter {
+      @apply opacity-0 box-border;
     }
-
-    &.hide {
-      @apply translate-x-[101%] box-border;
+    &.nav-overlay-enter-active,
+    &.nav-overlay-enter-done {
+      @apply opacity-100 transition-opacity duration-300 box-border;
+    }
+    &.nav-overlay-exit {
+      @apply opacity-100 box-border;
+    }
+    &.nav-overlay-exit-active,
+    &.nav-overlay-exit-done {
+      @apply opacity-0 transition-opacity duration-300 box-border;
     }
   }
 
@@ -156,7 +174,7 @@ html {
   }
 
   .hero-image-1 {
-    @apply lg:w-[54.58%] w-full shrink-0;
+    @apply lg:w-[70%] lg:absolute lg:right-0 lg:top-0 lg:-bottom-0 w-full shrink-0;
   }
 
   .hero-image-2 {
@@ -308,6 +326,17 @@ $pc-sub-menu-y: -20%;
 .pc-sub-menu-exit-done {
   opacity: 0;
   transform: translate3d(-50%, $pc-sub-menu-y, 0);
+}
+
+.tokens-statistics-enter {
+  opacity: 0;
+}
+.tokens-statistics-enter-active {
+  opacity: 1;
+  transition: opacity 800ms ease-out;
+}
+.tokens-statistics-enter-done {
+  opacity: 1;
 }
 
 /* if the future there needs to be a light mode for this project,

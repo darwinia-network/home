@@ -14,7 +14,7 @@ const LightClientPromo = ({ data }: Props) => {
         </div>
         <div className={"flex flex-col capitalize inter-block-space-2 lg:pl-[4.6875rem] lg:pr-[8.75rem]"}>
           <div className={"title text-white"}>{subTitle}</div>
-          <div className={"mt-[0.625rem] lg:mt-[2.5rem]"}>{text}</div>
+          <div className={"mt-[0.625rem] lg:mt-[2.5rem]"} dangerouslySetInnerHTML={{ __html: text }} />
         </div>
       </div>
     </div>

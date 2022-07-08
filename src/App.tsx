@@ -11,7 +11,7 @@ function App() {
     <>
       <AccountContext.Provider value={{ state: accountState, dispatch: accountDispatch }}>
         <Navigation />
-        <ScrollToTop/>
+        <ScrollToTop />
         <Routes />
       </AccountContext.Provider>
     </>

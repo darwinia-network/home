@@ -2,7 +2,7 @@ import { createContext, Dispatch } from "react";
 
 type ActionType = "CHANGE_NAME";
 
-interface Action {
+export interface Action {
   payload: string | Record<string, any>;
   type: ActionType;
 }

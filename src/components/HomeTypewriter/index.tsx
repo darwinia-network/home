@@ -27,7 +27,7 @@ const HomeTypewriter = () => {
        can be positioned absolute and still be seen */}
       <div className={"opacity-0"}>{fakeTitle}</div>
       <div className={"absolute flex left-0 right-0 top-0 bottom-0 z-10"}>
-        <div className={"title-hero uppercase text-white pb-[1.25rem] pt-[3.75rem] lg:pt-0"}>
+        <div className={"title-hero uppercase text-white pb-[1.25rem] pt-[2rem] lg:pt-0"}>
           <span>{initialText}</span>
           <span className={"typewriter-content"} />
         </div>
@@ -40,7 +40,7 @@ const getFakeTitle = (title: JSX.Element | undefined) => {
   if (!title) {
     return null;
   }
-  return <div className={"title-hero uppercase text-white pb-[1.25rem] pt-[3.75rem] lg:pt-0"}>{title}</div>;
+  return <div className={"title-hero uppercase text-white pb-[1.25rem] pt-[2rem] lg:pt-0"}>{title}</div>;
 };
 
 const initTypewriter = (typewriterElement: HTMLElement, language: SupportedLanguages) => {
@@ -60,7 +60,7 @@ const getEnglishTypewriter = (typewriterElement: HTMLElement): Typewriter => {
   typewriter
     .typeString(
       {
-        text: "Cross- Chain Message network",
+        text: "Cross-Chain Message network",
       },
       100
     )

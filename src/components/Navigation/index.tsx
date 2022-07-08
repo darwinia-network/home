@@ -63,6 +63,15 @@ const Navigation = () => {
     };
   }, []);
 
+  /* use this to trigger mobile nav links click on the first app init. It needs this hook
+   * since the mobile nav will be unmounted by default, so the links wouldn't be selectable */
+  useEffect(() => {
+    const mobileNavLinks = document.querySelectorAll<HTMLElement>(".mobile-navigation a");
+    mobileNavLinks.forEach((link) => {
+      link.addEventListener("click", onCloseMobileNavigation);
+    });
+  }, [isMobileNavVisible]);
+
   const updateNavBarBackground = () => {
     const scrollY = window.scrollY;
     if (scrollY > navBarThreshold) {
@@ -109,7 +118,7 @@ const Navigation = () => {
     <div
       style={{ background: navBarBackground }}
       className={
-        "duration-200 transition-all fixed z-[99] left-0 top-0 right-0 flex justify-center h-[3.75rem] lg:h-[4.375rem]"
+        "duration-700 transition-all fixed z-[99] left-0 top-0 right-0 flex justify-center h-[3.75rem] lg:h-[4.375rem]"
       }
     >
       <div className={"justify-between flex container pl-[1.25rem] pr-[0.25rem] lg:px-[1.875rem] xl:px-[3.75rem]"}>
@@ -151,51 +160,56 @@ const Navigation = () => {
       </div>
       {/* Mobile Navigation */}
       {/* overlay */}
-      <div
-        onClick={() => {
-          controlMobileNav();
-        }}
-        className={`lg:hidden navigation-overlay ${isMobileNavVisible ? "show" : "hide"}`}
-      />
+      <CSSTransition in={isMobileNavVisible} classNames={"nav-overlay"} timeout={300} unmountOnExit={true}>
+        <div
+          onClick={() => {
+            controlMobileNav();
+          }}
+          className={`lg:hidden navigation-overlay`}
+        />
+      </CSSTransition>
       {/* Mobile Navigation itself */}
       {/* DON'T use the class hidden since the display: none
        items have zero height, this will make us fail to get the submenu scrollHeights
        if the mobile navigation is hidden when the component is getting mounted */}
-      <div className={`lg:w-[1px] lg:h-[1px] lg:overflow-hidden mobile-navigation ${isMobileNavVisible ? "show" : ""}`}>
-        <div className={"flex h-full flex-col"}>
-          <div className={"flex justify-end px-[1.25rem]"}>
-            <img
-              onClick={() => {
-                controlMobileNav();
-              }}
-              className={"py-[1.375rem]"}
-              src={closeIcon}
-              alt="close-icon"
-            />
-          </div>
-          <div className={"flex-1 relative overflow-auto"}>
-            <div className={"absolute top-0 left-0 right-0"}>
-              <div className={"px-[1.25rem]"}>
-                <div className={"divider"} />
-              </div>
-              <div className={"flex text-right flex-col my-[1.25rem]"}>{MobileMenu}</div>
-              <div className={"px-[1.25rem]"}>
-                <div className={"divider"} />
-              </div>
-              <div className={`flex justify-end my-[1.875rem] px-[1.25rem]`}>
-                <a
-                  href={startBuildingURL}
-                  target="_blank"
-                  className={"btn-primary text-white capitalize self-end hover:bg-white"}
-                  rel="noreferrer"
-                >
-                  {t(localeKeys.startBuilding)}
-                </a>
+
+      <CSSTransition in={isMobileNavVisible} unmountOnExit={true} classNames={"mobile-nav"} timeout={300}>
+        <div className={`lg:w-[1px] lg:h-[1px] lg:overflow-hidden mobile-navigation`}>
+          <div className={"flex h-full flex-col"}>
+            <div className={"flex justify-end px-[1.25rem]"}>
+              <img
+                onClick={() => {
+                  controlMobileNav();
+                }}
+                className={"py-[1.375rem]"}
+                src={closeIcon}
+                alt="close-icon"
+              />
+            </div>
+            <div className={"flex-1 relative overflow-auto"}>
+              <div className={"absolute top-0 left-0 right-0"}>
+                <div className={"px-[1.25rem]"}>
+                  <div className={"divider"} />
+                </div>
+                <div className={"flex text-right flex-col my-[1.25rem]"}>{MobileMenu}</div>
+                <div className={"px-[1.25rem]"}>
+                  <div className={"divider"} />
+                </div>
+                <div className={`flex justify-end my-[1.875rem] px-[1.25rem]`}>
+                  <a
+                    href={startBuildingURL}
+                    target="_blank"
+                    className={"btn-primary text-white capitalize self-end hover:bg-white"}
+                    rel="noreferrer"
+                  >
+                    {t(localeKeys.startBuilding)}
+                  </a>
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
+      </CSSTransition>
     </div>
   );
 };
@@ -381,7 +395,7 @@ const createMobileMenu = (
                 transitionProperty: "height",
               }}
               data-path={path}
-              className={`mobile-nav-parent ease-in-out duration-[200ms] flex
+              className={`mobile-nav-parent ease-in-out duration-[300ms] flex
               overflow-hidden flex-col relative after:content-[''] after:z-[-1]
               after:absolute after:left-0 after:right-0 after:top-0
               after:bottom-0 after:bg-white after:opacity-10`}
