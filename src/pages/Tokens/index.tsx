@@ -15,7 +15,6 @@ import { formatBalance } from "../../utils";
 
 interface Supply {
   circulatingSupply: string;
-  maxSupply: string;
   initialSupply: string;
   totalSupply: string;
 }
@@ -53,11 +52,15 @@ const Tokens = () => {
         },
         {
           info: t(localeKeys.circulatingSupply),
-          figure: formatBalance(supply.circulatingSupply, minDecimalPoints, maxDecimalPoints),
+          figure:
+            supply.circulatingSupply === "--"
+              ? "--"
+              : formatBalance(supply.circulatingSupply, minDecimalPoints, maxDecimalPoints),
         },
         {
           info: t(localeKeys.totalSupply),
-          figure: formatBalance(supply.totalSupply, minDecimalPoints, maxDecimalPoints),
+          figure:
+            supply.totalSupply === "--" ? "--" : formatBalance(supply.totalSupply, minDecimalPoints, maxDecimalPoints),
         },
       ],
     };
@@ -77,7 +80,16 @@ const Tokens = () => {
       // console.log(resultsList);
       resultsList.forEach((result, index) => {
         if (result.data.code !== 0) {
-          return;
+          /* add some dummy data just for the UI to show up */
+          result.data = {
+            data: {
+              initialSupply: "0", // this will be overridden below
+              totalSupply: "--",
+              circulatingSupply: "--",
+            },
+            code: 0,
+            msg: "",
+          };
         }
         const supply = result.data.data;
         switch (index) {
@@ -109,6 +121,7 @@ const Tokens = () => {
       });
       setLoadingTokenData(false);
     } catch (e) {
+      console.log(e);
       setLoadingTokenData(false);
       // ignore the error
     }
