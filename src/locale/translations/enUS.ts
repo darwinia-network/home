@@ -152,6 +152,7 @@ const enUs = {
   [localeKeys.remoteEVMCall]: `remote EVM call`,
   [localeKeys.accessRestriction]: `access restriction`,
   [localeKeys.loading]: `Loading`,
+  [localeKeys.subscribing]: `Subscribing...`,
 };
 
 export default enUs;
