@@ -153,6 +153,7 @@ const localeKeys = {
   subscribeToUpdates: "subscribeToUpdates",
   trackLatestUpdates: "trackLatestUpdates",
   loading: "loading",
+  subscribing: "subscribing",
 };
 
 export default localeKeys;
