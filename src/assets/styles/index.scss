@@ -74,6 +74,9 @@ html {
 
   .btn {
     @apply py-[0.5rem] px-[0.9375rem] border-[1px] border-solid border-white bg-black lg:hover:bg-white lg:hover:text-black hover:cursor-pointer text text-white;
+    &:disabled {
+      @apply lg:hover:bg-[transparent] opacity-80;
+    }
   }
 
   .btn-primary {
