@@ -33,11 +33,12 @@ const Hero = ({ data, page }: Props) => {
             {socialNetworkLinks}
           </div>
           {/* this item is here just to expand the DOM's height, BUT only on PCs, its height is
-          zero on mobile phones */}
+          zero on mobile phones. This fake image is only useful on the homepage, it is here to occupy
+          the 3D model space beforehand. It is completely hidden in other pages */}
           <div className={`opacity-0 order-1 flex-1 ml-[1.75rem] lg:order-2 ${fakeImageClass}`}>
             <div className={`pb-0 lg:pb-[100%]`} />
           </div>
-          <div className={`order-1 flex-1 lg:order-2 ${imageClass}`}>{image}</div>
+          <div className={`order-1 flex-1 lg:flex-none lg:order-2 ${imageClass}`}>{image}</div>
         </div>
       </div>
     </div>

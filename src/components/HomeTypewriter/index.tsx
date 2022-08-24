@@ -60,7 +60,7 @@ const getEnglishTypewriter = (typewriterElement: HTMLElement): Typewriter => {
   typewriter
     .typeString(
       {
-        text: "Cross-Chain Message network",
+        text: "Cross-Chain Messaging network",
       },
       100
     )
