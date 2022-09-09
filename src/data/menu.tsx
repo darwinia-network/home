@@ -85,6 +85,11 @@ const getDarwiniaNetworkLinks = (t: TFunction<"translation">): Menu[] => {
       path: "https://darwinia.subscan.io/",
       isExternalLink: true,
     },
+    {
+      title: t(localeKeys.subviewExplorer),
+      path: "https://darwinia.subview.xyz/",
+      isExternalLink: true,
+    },
   ];
 };
 
