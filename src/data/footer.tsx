@@ -117,7 +117,7 @@ const getFooterData = (t: TFunction<"translation">): Footer => {
           },
           {
             isExternal: true,
-            url: "/darwinia_brand.zip",
+            url: "https://itering.notion.site/About-Darwinia-Network-033b9802511c4c88854477a064391a9c",
             title: t(localeKeys.brand),
           },
         ],

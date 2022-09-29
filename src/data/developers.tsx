@@ -96,12 +96,12 @@ const getDarwiniaDevRoadmap = (t: TFunction<"translation">): FeatureWrapper => {
         links: [
           {
             isExternal: true,
-            url: "https://github.com/darwinia-network/darwinia-messages-sol/blob/master/contracts/periphery/contracts/s2s/examples/RemarkDemo.sol",
+            url: "https://github.com/darwinia-network/darwinia-messages-sol/blob/master/contracts/periphery/contracts/s2s/examples/dispatch/RemarkDemo.sol",
             title: t(localeKeys.demoCrossChainRemark),
           },
           {
             isExternal: true,
-            url: "https://github.com/darwinia-network/darwinia-messages-sol/blob/master/contracts/periphery/contracts/s2s/examples/TransactDemo.sol",
+            url: "https://github.com/darwinia-network/darwinia-messages-sol/blob/master/contracts/periphery/contracts/s2s/examples/execute/ExecuteDemo.sol",
             title: t(localeKeys.demoRemoteEVMTransact),
           },
           {
