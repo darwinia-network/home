@@ -154,6 +154,7 @@ const localeKeys = {
   trackLatestUpdates: "trackLatestUpdates",
   loading: "loading",
   subscribing: "subscribing",
+  support: "support",
 };
 
 export default localeKeys;
