@@ -55,6 +55,11 @@ const getMenu = (t: TFunction<"translation">): Menu[] => {
       path: "https://medium.com/darwinianetwork",
       isExternalLink: true,
     },
+    {
+      title: t(localeKeys.support),
+      path: "https://itering.notion.site/Darwinia-Support-5883f645ab844e7ca3c61273a3a0fa50",
+      isExternalLink: true,
+    },
   ];
 };
 

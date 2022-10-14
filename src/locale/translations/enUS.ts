@@ -146,13 +146,14 @@ const enUs = {
   [localeKeys.viewFullPaper]: `View Full Paper`,
   [localeKeys.back]: `back`,
   [localeKeys.pageNotFound]: `Sorry, page not found`,
-  [localeKeys.goBackHome]: `Back to home`,
+  [localeKeys.goBackHome]: `go home`,
   [localeKeys.subscribeToUpdates]: `Subscribe to Project Updates`,
   [localeKeys.trackLatestUpdates]: `Track the latest updates of Darwinia Network.`,
   [localeKeys.remoteEVMCall]: `remote EVM call`,
   [localeKeys.accessRestriction]: `access restriction`,
   [localeKeys.loading]: `Loading`,
   [localeKeys.subscribing]: `Subscribing...`,
+  [localeKeys.support]: "support",
 };
 
 export default enUs;
