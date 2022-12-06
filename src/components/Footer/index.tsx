@@ -2,7 +2,7 @@ import { useTranslation } from "react-i18next";
 import localeKeys from "../../locale/localeKeys";
 import { Footer as IFooter, FooterSection, SocialNetwork } from "../../data/types";
 import { NavLink } from "react-router-dom";
-import earth from "../../assets/images/earth.svg";
+// import earth from "../../assets/images/earth.svg";
 import { ChangeEvent, useEffect, useRef, useState } from "react";
 import { isValidEmail } from "../../utils";
 
@@ -175,10 +175,10 @@ const Footer = ({ data }: Props) => {
           <div className={"divider-50 my-[1.25rem] order-2 lg:hidden"} />
           <div className={"flex items-center order-1 lg:order-2"}>
             {socialNetworkLinks}
-            <div className={"flex items-center shrink-0 hover:opacity-70 hover:cursor-pointer"}>
+            {/* <div className={"flex items-center shrink-0 hover:opacity-70 hover:cursor-pointer"}>
               <img className={"w-[1.5rem] h-[1.5rem] mr-[5px]"} src={earth} alt="image" />
               <div className={"uppercase text-white"}>en</div>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>
@@ -188,9 +188,10 @@ const Footer = ({ data }: Props) => {
 
 const getSocialNetworkLinks = (socialNetworks: SocialNetwork[]) => {
   return socialNetworks.map((network, index) => {
+    const rightSpace = index === socialNetworks.length - 1 ? "" : "mr-[1.5rem]";
     return (
       <a className={"shrink-0 hover:opacity-70"} key={index} href={network.url} target="_blank" rel="noreferrer">
-        <img className={"w-[1.5rem] h-[1.5rem] mr-[1.5rem]"} src={network.logo} alt="image" />
+        <img className={`w-[1.5rem] h-[1.5rem] ${rightSpace}`} src={network.logo} alt="image" />
       </a>
     );
   });
