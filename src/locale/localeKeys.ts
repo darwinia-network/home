@@ -155,6 +155,8 @@ const localeKeys = {
   loading: "loading",
   subscribing: "subscribing",
   support: "support",
+  darwiniaAppsPortal: "darwiniaAppsPortal",
+  accountMigrationDapp: "accountMigrationDapp",
 };
 
 export default localeKeys;
