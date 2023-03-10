@@ -62,7 +62,6 @@ const getMenu = (t: TFunction<"translation">): Menu[] => {
     },
   ];
 };
-
 const getDarwiniaNetworkLinks = (t: TFunction<"translation">): Menu[] => {
   return [
     {
@@ -112,7 +111,7 @@ const getCrabNetworkLinks = (t: TFunction<"translation">): Menu[] => {
     },
     {
       title: t(localeKeys.subscanExplorer),
-      path: "http://crab.subscan.io/",
+      path: "https://crab.subscan.io/",
       isExternalLink: true,
     },
     {
