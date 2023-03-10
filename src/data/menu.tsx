@@ -77,7 +77,7 @@ const getDarwiniaNetworkLinks = (t: TFunction<"translation">): Menu[] => {
     },
     {
       title: t(localeKeys.polkadotParachainAuction),
-      path: "https://darwinia.network/plo",
+      path: "https://darwinia-network.github.io/home-v1/plo",
       isExternalLink: true,
     },
     {
@@ -107,7 +107,7 @@ const getCrabNetworkLinks = (t: TFunction<"translation">): Menu[] => {
     },
     {
       title: t(localeKeys.kusamaParachainAuction),
-      path: "https://crab.network/plo",
+      path: "https://darwinia-network.github.io/crab-home-v1/plo_contribute",
       isExternalLink: true,
     },
     {
