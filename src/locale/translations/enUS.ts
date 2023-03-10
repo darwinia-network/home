@@ -154,6 +154,8 @@ const enUs = {
   [localeKeys.loading]: `Loading`,
   [localeKeys.subscribing]: `Subscribing...`,
   [localeKeys.support]: "support",
+  [localeKeys.darwiniaAppsPortal]: "Darwinia Apps Portal",
+  [localeKeys.accountMigrationDapp]: "Account Migration Dapp",
 };
 
 export default enUs;

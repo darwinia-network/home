@@ -66,18 +66,13 @@ const getMenu = (t: TFunction<"translation">): Menu[] => {
 const getDarwiniaNetworkLinks = (t: TFunction<"translation">): Menu[] => {
   return [
     {
-      title: t(localeKeys.overview),
-      path: "https://darwinia.network/",
-      isExternalLink: true,
-    },
-    {
       title: t(localeKeys.stakingApps),
       path: "https://apps.darwinia.network/?network=darwinia",
       isExternalLink: true,
     },
     {
-      title: t(localeKeys.onChainGovernance),
-      path: "https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Frpc.darwinia.network#/democracy",
+      title: t(localeKeys.darwiniaAppsPortal),
+      path: "https://apps.darwinia.network/",
       isExternalLink: true,
     },
     {
@@ -101,18 +96,13 @@ const getDarwiniaNetworkLinks = (t: TFunction<"translation">): Menu[] => {
 const getCrabNetworkLinks = (t: TFunction<"translation">): Menu[] => {
   return [
     {
-      title: t(localeKeys.overview),
-      path: "https://crab.network/",
-      isExternalLink: true,
-    },
-    {
       title: t(localeKeys.stakingApps),
-      path: "https://apps.darwinia.network/?network=crab",
+      path: "https://staking.darwinia.network/#/staking?network=Crab",
       isExternalLink: true,
     },
     {
-      title: t(localeKeys.onChainGovernance),
-      path: "https://crab.subsquare.io/",
+      title: t(localeKeys.accountMigrationDapp),
+      path: "https://migration.darwinia.network/#/?network=Crab",
       isExternalLink: true,
     },
     {
@@ -122,13 +112,14 @@ const getCrabNetworkLinks = (t: TFunction<"translation">): Menu[] => {
     },
     {
       title: t(localeKeys.subscanExplorer),
-      path: "https://crab.subscan.io/",
+      path: "http://crab.subscan.io/",
       isExternalLink: true,
     },
     {
       title: t(localeKeys.subviewExplorer),
       path: "https://subview.xyz/",
       isExternalLink: true,
+      isComingSoon: true,
     },
   ];
 };
