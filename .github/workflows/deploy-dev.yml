@@ -20,7 +20,7 @@ jobs:
       - uses: ./.github/actions/smart-vercel
         name: Deploy to Vercel
         with:
-          node_version: 16.13.1
+          node_version: 16.14.0
           vercel_token: ${{ secrets.VERCEL_TOKEN }}
           vercel_group: itering
           preview_output: true
