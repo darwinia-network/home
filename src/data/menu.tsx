@@ -118,7 +118,6 @@ const getCrabNetworkLinks = (t: TFunction<"translation">): Menu[] => {
       title: t(localeKeys.subviewExplorer),
       path: "https://subview.xyz/",
       isExternalLink: true,
-      isComingSoon: true,
     },
   ];
 };
