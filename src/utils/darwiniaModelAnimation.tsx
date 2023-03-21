@@ -14,7 +14,7 @@ import {
   OrthographicCamera,
   AnimationClip,
 } from "three";
-import { GUI } from "dat.gui";
+// import { GUI } from "dat.gui";
 // import {GLTFLoader} from "three/examples/jsm/loaders/GLTFLoader";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 import { FBXLoader } from "three/examples/jsm/loaders/FBXLoader";
@@ -100,7 +100,7 @@ export default class DarwiniaModelAnimation {
     return window.innerWidth >= 1024;
   }
 
-  private addDatGUI() {
+  /* private addDatGUI() {
     document.querySelector(".dg.main.a")?.remove();
     const datGUI = new GUI();
     const cameraGUI = datGUI.addFolder("Camera");
@@ -163,7 +163,7 @@ export default class DarwiniaModelAnimation {
       ambientLightGUI.add(this.ambientLight.position, "z", -10, 10, 0.5);
       ambientLightGUI.add(this.ambientLight, "intensity", 0, 10, 0.1);
     }
-  }
+  } */
 
   /* private add3DModel() {
         const loader = new GLTFLoader()
