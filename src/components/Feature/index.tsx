@@ -6,9 +6,10 @@ import { useState } from "react";
 interface Props {
   data: IFeature;
   pcGrid: number;
+  serialNumber?: number;
 }
 
-const Feature = ({ data, pcGrid }: Props) => {
+const Feature = ({ data, pcGrid, serialNumber }: Props) => {
   const { type, text, icon, title, links: bottomLinks } = data;
   const bottomDivider = type === 2 ? <div className={"divider mt-[1.25rem]"} /> : null;
   const linksCustomClass = getLinkClassByType(type);
@@ -23,7 +24,13 @@ const Feature = ({ data, pcGrid }: Props) => {
   const links = getBottomLinks(bottomLinks, isTooltipVisible, toggleTooltip);
   const parentTypeClasses = getWrapperGrid(pcGrid);
   const childTypeClasses = getChildWidthByGrid(pcGrid);
-  const titleJSX = title ? <div className={"title text-white capitalize mt-[1.25rem]"}>{title}</div> : null;
+  const titleNumber =
+    typeof serialNumber !== "undefined" ? (serialNumber < 10 ? `0${serialNumber}` : serialNumber) : "";
+  const titleJSX = title ? (
+    <div className={"title text-white capitalize mt-[1.25rem]"}>
+      {titleNumber}&nbsp;{title}
+    </div>
+  ) : null;
   return (
     <div className={`flex shrink-0 ${parentTypeClasses} inter-block-space-2`}>
       <div className={`${childTypeClasses}`}>

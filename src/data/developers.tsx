@@ -37,6 +37,7 @@ const getDarwiniaDevRoadmap = (t: TFunction<"translation">): FeatureWrapper => {
         dangerouslySetInnerHTML={{ __html: t(localeKeys.developWithDarwinia) }}
       />
     ),
+    isNumbered: true,
     pcGrid: 2,
     data: [
       /* {
@@ -63,17 +64,17 @@ const getDarwiniaDevRoadmap = (t: TFunction<"translation">): FeatureWrapper => {
           {
             isExternal: true,
             url: "https://www.notion.so/itering/Getting-Started-with-MetaMask-0916766fba6e417ea6532dc4386eefe1",
-            title: t(localeKeys.gettingStartedWithMetaMask),
+            title: `${t(localeKeys.gettingStartedWithMetaMask)} >`,
           },
           {
             isExternal: true,
             url: "https://www.notion.so/itering/Create-A-Simple-Dapp-8635c1b5131240848e3b6a68067712c1",
-            title: t(localeKeys.createASimpleDapp),
+            title: `${t(localeKeys.createASimpleDapp)} >`,
           },
           {
             isExternal: true,
             url: "https://www.notion.so/itering/Ethereum-Darwinia-Parachain-a57933c2440146d2b531cd5ed1bd8308",
-            title: t(localeKeys.ethereumDarwiniaParachain),
+            title: `${t(localeKeys.ethereumDarwiniaParachain)} >`,
           },
         ],
         type: 3,
@@ -85,13 +86,13 @@ const getDarwiniaDevRoadmap = (t: TFunction<"translation">): FeatureWrapper => {
           {
             isExternal: true,
             url: "https://docs.darwinia.network/sdk/api-reference",
-            title: t(localeKeys.soliditySDKApi),
+            title: `${t(localeKeys.soliditySDKApi)} >`,
             isComingSoon: true,
           },
           {
             isExternal: true,
             url: "https://darwinia-js-sdk.darwinia.network/",
-            title: t(localeKeys.jsSDKApi),
+            title: `${t(localeKeys.jsSDKApi)} >`,
           },
         ],
         type: 3,
