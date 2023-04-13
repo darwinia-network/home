@@ -138,7 +138,7 @@ const getDarwiniaRecommendation = (t: TFunction<"translation">): DarwiniaPromo =
     links: [
       {
         title: t(localeKeys.sdkDoc),
-        url: "https://docs.darwinia.network/sdk/api-reference",
+        url: "https://docs.darwinia.network/solidity-sdk-85a817534fad4d8e80a0a79c10cd1d99",
         isExternal: true,
       },
       {
@@ -226,7 +226,7 @@ const getDarwiniaPower = (t: TFunction<"translation">): FeatureWrapper => {
         links: [
           {
             title: t(localeKeys.sdkDoc),
-            url: "https://docs.darwinia.network/sdk/api-reference",
+            url: "https://docs.darwinia.network/solidity-sdk-85a817534fad4d8e80a0a79c10cd1d99",
             isExternal: true,
           },
           {
@@ -259,7 +259,7 @@ const getCodeSamples = (t: TFunction<"translation">): CodeSample => {
       {
         isExternal: true,
         title: t(localeKeys.sdkDoc),
-        url: "https://docs.darwinia.network/sdk/api-reference",
+        url: "https://docs.darwinia.network/solidity-sdk-85a817534fad4d8e80a0a79c10cd1d99",
       },
       {
         isExternal: true,

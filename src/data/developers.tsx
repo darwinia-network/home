@@ -2,10 +2,10 @@ import { FeatureWrapper, Hero, TechSupport } from "./types";
 import { TFunction, useTranslation } from "react-i18next";
 import localeKeys from "../locale/localeKeys";
 import heroImg from "../assets/images/build-with-darwinia-hero.png";
-import introduction from "../assets/images/darwinia-introduction.png";
+// import introduction from "../assets/images/darwinia-introduction.png";
 import guides from "../assets/images/darwinia-guides.png";
 import api from "../assets/images/darwinia-api.png";
-import examples from "../assets/images/darwinia-examples.png";
+// import examples from "../assets/images/darwinia-examples.png";
 
 /* make sure you use a custom hook here since we have to use the useTranslation hook
  * from react-i18next */
@@ -39,7 +39,7 @@ const getDarwiniaDevRoadmap = (t: TFunction<"translation">): FeatureWrapper => {
     ),
     pcGrid: 2,
     data: [
-      {
+      /* {
         icon: introduction,
         title: t(localeKeys.introduction),
         links: [
@@ -55,25 +55,25 @@ const getDarwiniaDevRoadmap = (t: TFunction<"translation">): FeatureWrapper => {
           },
         ],
         type: 3,
-      },
+      }, */
       {
         icon: guides,
         title: t(localeKeys.guides),
         links: [
           {
             isExternal: true,
-            url: "https://docs.darwinia.network/sdk/guides/using-smart-chain-with-metamask",
-            title: t(localeKeys.smartChainWithMetamask),
+            url: "https://www.notion.so/itering/Getting-Started-with-MetaMask-0916766fba6e417ea6532dc4386eefe1",
+            title: t(localeKeys.gettingStartedWithMetaMask),
           },
           {
             isExternal: true,
-            url: "https://docs.darwinia.network/sdk/guides/know-your-cross-chain-status",
-            title: t(localeKeys.yourCrossChainStatus),
+            url: "https://www.notion.so/itering/Create-A-Simple-Dapp-8635c1b5131240848e3b6a68067712c1",
+            title: t(localeKeys.createASimpleDapp),
           },
           {
             isExternal: true,
-            url: "https://docs.darwinia.network/sdk/guides/build-your-first-cross-chain-dapp",
-            title: t(localeKeys.firstCrossChainDApp),
+            url: "https://www.notion.so/itering/Ethereum-Darwinia-Parachain-a57933c2440146d2b531cd5ed1bd8308",
+            title: t(localeKeys.ethereumDarwiniaParachain),
           },
         ],
         type: 3,
@@ -85,12 +85,18 @@ const getDarwiniaDevRoadmap = (t: TFunction<"translation">): FeatureWrapper => {
           {
             isExternal: true,
             url: "https://docs.darwinia.network/sdk/api-reference",
-            title: t(localeKeys.solidityForSmartChain),
+            title: t(localeKeys.soliditySDKApi),
+            isComingSoon: true,
+          },
+          {
+            isExternal: true,
+            url: "https://darwinia-js-sdk.darwinia.network/",
+            title: t(localeKeys.jsSDKApi),
           },
         ],
         type: 3,
       },
-      {
+      /* {
         icon: examples,
         title: t(localeKeys.examples),
         links: [
@@ -111,7 +117,7 @@ const getDarwiniaDevRoadmap = (t: TFunction<"translation">): FeatureWrapper => {
           },
         ],
         type: 3,
-      },
+      }, */
     ],
   };
 };

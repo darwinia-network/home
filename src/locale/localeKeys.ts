@@ -157,6 +157,13 @@ const localeKeys = {
   support: "support",
   darwiniaAppsPortal: "darwiniaAppsPortal",
   accountMigrationDapp: "accountMigrationDapp",
+  generalAccountMigration: "generalAccountMigration",
+  multisigAccountMigration: "multisigAccountMigration",
+  gettingStartedWithMetaMask: "gettingStartedWithMetaMask",
+  createASimpleDapp: "createASimpleDapp",
+  ethereumDarwiniaParachain: "ethereumDarwiniaParachain",
+  soliditySDKApi: "soliditySDKApi",
+  jsSDKApi: "jsSDKApi",
 };
 
 export default localeKeys;

@@ -10,6 +10,7 @@ export interface Link {
   url: string;
   isExternal: boolean;
   isFake?: boolean;
+  isComingSoon?: boolean;
 }
 
 export interface Feature {

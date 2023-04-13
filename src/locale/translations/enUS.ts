@@ -156,6 +156,13 @@ const enUs = {
   [localeKeys.support]: "support",
   [localeKeys.darwiniaAppsPortal]: "Darwinia Apps Portal",
   [localeKeys.accountMigrationDapp]: "Account Migration Dapp",
+  [localeKeys.generalAccountMigration]: "General Account Migration Dapp",
+  [localeKeys.multisigAccountMigration]: "Multisig Account Migration Dapp",
+  [localeKeys.gettingStartedWithMetaMask]: "Getting Started With MetaMask",
+  [localeKeys.createASimpleDapp]: "Create A Simple Dapp",
+  [localeKeys.ethereumDarwiniaParachain]: "Ethereum <> Darwinia <> Parachain",
+  [localeKeys.soliditySDKApi]: "Solidity SDK API",
+  [localeKeys.jsSDKApi]: "JS SDK API",
 };
 
 export default enUs;

@@ -25,7 +25,7 @@ const Navigation = () => {
   const [mobileMenuHeightByPathMap, setMenuHeight] = useState<SubMenuHeight>({});
   const [openedPCMenuPath, setOpenedPCMenuPath] = useState<string | undefined>(undefined);
   const [navBarBackground, setNavBarBackground] = useState("rgba(0,0,0,0)");
-  const startBuildingURL = "https://docs.darwinia.network/";
+  const startBuildingURL = "https://docs.darwinia.network/builder-4003de8942774fffb25726e32be3b27e";
   const navBarThreshold = 100;
   /* this is temporary code, will be deleted very soon */
   const [isTooltipVisible, setTooltipStatus] = useState(false);
@@ -254,7 +254,7 @@ const createPCMenu = (
             </div>
             <CSSTransition unmountOnExit={true} in={isActive} classNames={"pc-sub-menu"} timeout={300}>
               <div
-                className={"pc-nav-parent left-1/2 top-[30px] pt-[15px] absolute z-[2] w-[33.75rem] overflow-hidden"}
+                className={"pc-nav-parent left-1/2 top-[30px] pt-[15px] absolute z-[2] w-[36.75rem] overflow-hidden"}
               >
                 <div className={"justify-between flex bg-black border-2 border-primary p-[2.5rem] select-none"}>
                   {subMenu}

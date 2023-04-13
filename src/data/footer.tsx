@@ -29,7 +29,7 @@ const getFooterData = (t: TFunction<"translation">): Footer => {
         links: [
           {
             isExternal: true,
-            url: "https://docs.darwinia.network/",
+            url: "https://docs.darwinia.network/builder-4003de8942774fffb25726e32be3b27e",
             title: t(localeKeys.developerDocs),
           },
           {
