@@ -10,7 +10,7 @@ const FeatureWrapper = ({ data }: Props) => {
   const linksList = data.links ?? [];
   const features = featuresList.map((item, index) => {
     const key = `${index}-${item.title}`;
-    return <Feature key={key} pcGrid={pcGrid} data={item} />;
+    return <Feature key={key} serialNumber={index + 1} pcGrid={pcGrid} data={item} />;
   });
 
   const links = linksList.map((link, index) => {

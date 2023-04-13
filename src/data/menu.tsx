@@ -71,7 +71,7 @@ const getDarwiniaNetworkLinks = (t: TFunction<"translation">): Menu[] => {
     },
     {
       title: t(localeKeys.darwiniaAppsPortal),
-      path: "https://apps.darwinia.network/",
+      path: "https://apps.darwinia.network/portal",
       isExternalLink: true,
     },
     {
@@ -96,17 +96,7 @@ const getCrabNetworkLinks = (t: TFunction<"translation">): Menu[] => {
   return [
     {
       title: t(localeKeys.stakingApps),
-      path: "https://staking.darwinia.network/#/staking?network=Crab",
-      isExternalLink: true,
-    },
-    {
-      title: t(localeKeys.accountMigrationDapp),
-      path: "https://migration.darwinia.network/#/?network=Crab",
-      isExternalLink: true,
-    },
-    {
-      title: t(localeKeys.kusamaParachainAuction),
-      path: "https://darwinia-network.github.io/crab-home-v1/plo_contribute",
+      path: "https://staking.darwinia.network/#/?network=Crab",
       isExternalLink: true,
     },
     {
@@ -117,6 +107,21 @@ const getCrabNetworkLinks = (t: TFunction<"translation">): Menu[] => {
     {
       title: t(localeKeys.subviewExplorer),
       path: "https://subview.xyz/",
+      isExternalLink: true,
+    },
+    {
+      title: t(localeKeys.kusamaParachainAuction),
+      path: "https://darwinia-network.github.io/crab-home-v1/plo_contribute",
+      isExternalLink: true,
+    },
+    {
+      title: t(localeKeys.generalAccountMigration),
+      path: "https://migration.darwinia.network/#/?network=Crab",
+      isExternalLink: true,
+    },
+    {
+      title: t(localeKeys.multisigAccountMigration),
+      path: "https://migration.darwinia.network/#/multisig-home?network=Crab",
       isExternalLink: true,
     },
   ];

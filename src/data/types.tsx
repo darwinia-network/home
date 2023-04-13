@@ -10,6 +10,7 @@ export interface Link {
   url: string;
   isExternal: boolean;
   isFake?: boolean;
+  isComingSoon?: boolean;
 }
 
 export interface Feature {
@@ -22,6 +23,7 @@ export interface Feature {
 
 export interface FeatureWrapper {
   title: JSX.Element;
+  isNumbered?: boolean;
   data: Feature[];
   pcGrid: PCGrid;
   links?: Link[];
