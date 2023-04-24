@@ -66,17 +66,12 @@ const getDarwiniaNetworkLinks = (t: TFunction<"translation">): Menu[] => {
   return [
     {
       title: t(localeKeys.stakingApps),
-      path: "https://apps.darwinia.network/?network=darwinia",
+      path: "https://staking.darwinia.network/#/?network=Darwinia",
       isExternalLink: true,
     },
     {
       title: t(localeKeys.darwiniaAppsPortal),
       path: "https://apps.darwinia.network/portal",
-      isExternalLink: true,
-    },
-    {
-      title: t(localeKeys.polkadotParachainAuction),
-      path: "https://darwinia-network.github.io/home-v1/plo",
       isExternalLink: true,
     },
     {
@@ -87,6 +82,21 @@ const getDarwiniaNetworkLinks = (t: TFunction<"translation">): Menu[] => {
     {
       title: t(localeKeys.subviewExplorer),
       path: "https://darwinia.subview.xyz/",
+      isComingSoon: true,
+    },
+    {
+      title: t(localeKeys.polkadotParachainAuction),
+      path: "https://darwinia-network.github.io/home-v1/plo",
+      isExternalLink: true,
+    },
+    {
+      title: t(localeKeys.generalAccountMigration),
+      path: "https://migration.darwinia.network/#/?network=Darwinia",
+      isExternalLink: true,
+    },
+    {
+      title: t(localeKeys.multisigAccountMigration),
+      path: "https://migration.darwinia.network/#/multisig-home?network=Darwinia",
       isExternalLink: true,
     },
   ];

@@ -254,7 +254,7 @@ const createPCMenu = (
             </div>
             <CSSTransition unmountOnExit={true} in={isActive} classNames={"pc-sub-menu"} timeout={300}>
               <div
-                className={"pc-nav-parent left-1/2 top-[30px] pt-[15px] absolute z-[2] w-[36.75rem] overflow-hidden"}
+                className={"pc-nav-parent left-1/2 top-[30px] pt-[15px] absolute z-[2] w-[40.75rem] overflow-hidden"}
               >
                 <div className={"justify-between flex bg-black border-2 border-primary p-[2.5rem] select-none"}>
                   {subMenu}

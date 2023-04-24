@@ -113,7 +113,7 @@ const enUs = {
   [localeKeys.welcomeToDarwiniaCommunity]: `Welcome to the Darwinia Community`,
   [localeKeys.darwiniaCommunityIntro]: `The Darwinia community is home to hundreds of thousands of developers, technologists, validators, token holders, creators, builders, and believers alike - everyone is welcome aboard!`,
   [localeKeys.darwiniaNetwork]: `darwinia network`,
-  [localeKeys.stakingApps]: `staking apps`,
+  [localeKeys.stakingApps]: `staking Dapp`,
   [localeKeys.onChainGovernance]: `On-Chain Governance`,
   [localeKeys.polkadotParachainAuction]: `Polkadot Parachain Auction`,
   [localeKeys.subscanExplorer]: `Subscan Explorer`,
