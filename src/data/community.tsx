@@ -94,7 +94,7 @@ const getInvolved = (t: TFunction<"translation">): FeatureWrapper => {
         links: [
           {
             isExternal: true,
-            url: "https://medium.com/darwinianetwork/using-darwinia-tools-3-9-darwinia-apps-guide-part-ⅱ-staking-and-earning-7cd586315f76",
+            url: "https://darwinia.notion.site/Staking-56cd5e14439b4c9789f1cf63edd1d9d7",
             title: t(localeKeys.startStake),
           },
         ],
@@ -105,8 +105,8 @@ const getInvolved = (t: TFunction<"translation">): FeatureWrapper => {
         links: [
           {
             isExternal: true,
-            url: "https://medium.com/darwinianetwork/using-darwinia-tools-3-11-darwinia-apps-guide-part-iv-how-to-become-a-validator-5f1503f8dd77",
-            title: t(localeKeys.runValidator),
+            url: "https://docs.darwinia.network/how-to-become-a-collator-af6bce360d5b49ddacc56e4587510210",
+            title: t(localeKeys.runCollator),
           },
         ],
       },

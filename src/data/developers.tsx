@@ -63,17 +63,17 @@ const getDarwiniaDevRoadmap = (t: TFunction<"translation">): FeatureWrapper => {
         links: [
           {
             isExternal: true,
-            url: "https://darwinia.notion.site/Getting-Started-with-MetaMask-7e62c6c12f884e868110461b956b4f40",
+            url: "https://docs.darwinia.network/getting-started-with-metamask-7e62c6c12f884e868110461b956b4f40",
             title: `${t(localeKeys.gettingStartedWithMetaMask)} >`,
           },
           {
             isExternal: true,
-            url: "https://darwinia.notion.site/Create-A-Simple-Dapp-8e274497e45e41b981dbd7bf040f70d8",
+            url: "https://docs.darwinia.network/create-a-simple-dapp-8e274497e45e41b981dbd7bf040f70d8",
             title: `${t(localeKeys.createASimpleDapp)} >`,
           },
           {
             isExternal: true,
-            url: "https://darwinia.notion.site/Ethereum-Darwinia-Parachain-723500992ab44562ba11b2a79553da23",
+            url: "https://docs.darwinia.network/ethereum-lessgreater-darwinia-lessgreater-parachain-723500992ab44562ba11b2a79553da23",
             title: `${t(localeKeys.ethereumDarwiniaParachain)} >`,
           },
         ],

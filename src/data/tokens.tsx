@@ -31,7 +31,7 @@ const getHero = (t: TFunction<"translation">): Hero => {
     links: [
       {
         title: t(localeKeys.howToStake),
-        url: "https://medium.com/darwinianetwork/using-darwinia-tools-3-9-darwinia-apps-guide-part-ⅱ-staking-and-earning-7cd586315f76",
+        url: "https://darwinia.notion.site/Staking-56cd5e14439b4c9789f1cf63edd1d9d7",
         isExternal: true,
       },
     ],

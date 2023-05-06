@@ -25,7 +25,7 @@ const Navigation = () => {
   const [mobileMenuHeightByPathMap, setMenuHeight] = useState<SubMenuHeight>({});
   const [openedPCMenuPath, setOpenedPCMenuPath] = useState<string | undefined>(undefined);
   const [navBarBackground, setNavBarBackground] = useState("rgba(0,0,0,0)");
-  const startBuildingURL = "https://docs.darwinia.network/builder-4003de8942774fffb25726e32be3b27e";
+  const startBuildingURL = "https://docs.darwinia.network/builder-0f142bfb7f6b41d78548fca21531a03d";
   const navBarThreshold = 100;
   /* this is temporary code, will be deleted very soon */
   const [isTooltipVisible, setTooltipStatus] = useState(false);

@@ -57,7 +57,7 @@ const getMenu = (t: TFunction<"translation">): Menu[] => {
     },
     {
       title: t(localeKeys.support),
-      path: "https://darwinia.notion.site/Darwinia-Support-c9412ead803542f197ba1ccafb72c427",
+      path: "https://darwinia.notion.site/a76d5bdc7ad242bea991c023dfca208f?v=5fb127fc9a7a4d67a3bbc3ed50445180",
       isExternalLink: true,
     },
   ];
