@@ -29,7 +29,7 @@ const getFooterData = (t: TFunction<"translation">): Footer => {
         links: [
           {
             isExternal: true,
-            url: "https://docs.darwinia.network/builder-4003de8942774fffb25726e32be3b27e",
+            url: "https://docs.darwinia.network/builder-0f142bfb7f6b41d78548fca21531a03d",
             title: t(localeKeys.developerDocs),
           },
           {
@@ -119,7 +119,7 @@ const getFooterData = (t: TFunction<"translation">): Footer => {
           },
           {
             isExternal: true,
-            url: "https://darwinia.notion.site/About-Darwinia-Network-0072ca5fd23e41229fe111ccf96a87dc",
+            url: "https://darwinia.notion.site/Brand-Assets-9bd35f88f0674232954737577616f2c2",
             title: t(localeKeys.brand),
           },
         ],

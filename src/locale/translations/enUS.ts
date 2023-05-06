@@ -43,7 +43,7 @@ const enUs = {
   [localeKeys.integration]: `Integration`,
   [localeKeys.integrationIntro]: `Support teams and developers that want to integrate with and connect to Darwinia Network.`,
   [localeKeys.startStake]: `Start To Stake >`,
-  [localeKeys.runValidator]: `Run A Validator >`,
+  [localeKeys.runValidator]: `Run A Collator >`,
   [localeKeys.sdkDoc]: `SDK Doc >`,
   [localeKeys.contactUs]: `Contact Us >`,
   [localeKeys.talkToExpert]: `Talk to An Expert >`,

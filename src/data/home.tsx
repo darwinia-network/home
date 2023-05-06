@@ -138,7 +138,7 @@ const getDarwiniaRecommendation = (t: TFunction<"translation">): DarwiniaPromo =
     links: [
       {
         title: t(localeKeys.sdkDoc),
-        url: "https://docs.darwinia.network/solidity-sdk-85a817534fad4d8e80a0a79c10cd1d99",
+        url: "https://docs.darwinia.network/solidity-sdk-ac0f639b18094a4caeb1b39714f406b9",
         isExternal: true,
       },
       {
@@ -208,12 +208,12 @@ const getDarwiniaPower = (t: TFunction<"translation">): FeatureWrapper => {
         links: [
           {
             title: t(localeKeys.startStake),
-            url: "https://medium.com/darwinianetwork/using-darwinia-tools-3-9-darwinia-apps-guide-part-ⅱ-staking-and-earning-7cd586315f76",
+            url: "https://darwinia.notion.site/Staking-56cd5e14439b4c9789f1cf63edd1d9d7",
             isExternal: true,
           },
           {
             title: t(localeKeys.runValidator),
-            url: "https://medium.com/darwinianetwork/using-darwinia-tools-3-11-darwinia-apps-guide-part-iv-how-to-become-a-validator-5f1503f8dd77",
+            url: "https://docs.darwinia.network/how-to-become-a-collator-af6bce360d5b49ddacc56e4587510210",
             isExternal: true,
           },
         ],
@@ -226,7 +226,7 @@ const getDarwiniaPower = (t: TFunction<"translation">): FeatureWrapper => {
         links: [
           {
             title: t(localeKeys.sdkDoc),
-            url: "https://docs.darwinia.network/solidity-sdk-85a817534fad4d8e80a0a79c10cd1d99",
+            url: "https://docs.darwinia.network/solidity-sdk-ac0f639b18094a4caeb1b39714f406b9",
             isExternal: true,
           },
           {
@@ -259,7 +259,7 @@ const getCodeSamples = (t: TFunction<"translation">): CodeSample => {
       {
         isExternal: true,
         title: t(localeKeys.sdkDoc),
-        url: "https://docs.darwinia.network/solidity-sdk-85a817534fad4d8e80a0a79c10cd1d99",
+        url: "https://docs.darwinia.network/solidity-sdk-ac0f639b18094a4caeb1b39714f406b9",
       },
       {
         isExternal: true,
