@@ -94,7 +94,7 @@ const getFooterData = (t: TFunction<"translation">): Footer => {
           },
           {
             isExternal: true,
-            url: "https://www.notion.so/itering/9617e154ec884b07a7cee9a056374e42?v=0c3e4d9f257646c486a32a0425ee3a93",
+            url: "https://darwinia.notion.site/c700133dd5a04c2494ceab489c75c907?v=8ff88199019d4236a3b9a190f5e7b9d5",
             title: t(localeKeys.roadmap),
           },
           {
@@ -114,12 +114,12 @@ const getFooterData = (t: TFunction<"translation">): Footer => {
           },
           {
             isExternal: true,
-            url: "https://www.itering.io/jobs?lng=en-US",
+            url: "https://darwinia.notion.site/Join-Us-d573135a4b5144bca530276d99e6d9f0",
             title: t(localeKeys.careers),
           },
           {
             isExternal: true,
-            url: "https://itering.notion.site/About-Darwinia-Network-033b9802511c4c88854477a064391a9c",
+            url: "https://darwinia.notion.site/About-Darwinia-Network-0072ca5fd23e41229fe111ccf96a87dc",
             title: t(localeKeys.brand),
           },
         ],
