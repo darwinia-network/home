@@ -212,7 +212,7 @@ const getDarwiniaPower = (t: TFunction<"translation">): FeatureWrapper => {
             isExternal: true,
           },
           {
-            title: t(localeKeys.runValidator),
+            title: t(localeKeys.runCollator),
             url: "https://docs.darwinia.network/how-to-become-a-collator-af6bce360d5b49ddacc56e4587510210",
             isExternal: true,
           },

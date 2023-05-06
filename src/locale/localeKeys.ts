@@ -44,7 +44,7 @@ const localeKeys = {
   integration: "integration",
   integrationIntro: "integrationIntro",
   startStake: "startStake",
-  runValidator: "runValidator",
+  runCollator: "runCollator",
   sdkDoc: "sdkDoc",
   contactUs: "contactUs",
   talkToExpert: "talkToExpert",
