@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="160px" height="160px" viewBox="0 0 160 160" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>F</title>
+    <g id="F" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="编组" transform="translate(14.000000, 33.000000)" fill="#FFFFFF">
+            <rect id="矩形" fill-rule="nonzero" opacity="0" x="56" y="63" width="19" height="19"></rect>
+            <path d="M59.4019179,80.5714535 C59.1423847,80.3100883 59.0008097,79.9774518 59.0008097,80.0012035 C58.9772244,80.5477018 59.4726896,81.0229128 59.9917559,80.999145 C60.0625434,80.999145 59.6614511,80.8328188 59.4019179,80.5714535 L59.4019179,80.5714535 Z" id="路径" fill-rule="nonzero"></path>
+            <rect id="矩形" x="0" y="31" width="22" height="61"></rect>
+            <rect id="矩形" x="15" y="46" width="44" height="35"></rect>
+            <rect id="矩形" x="56" y="52" width="69" height="19"></rect>
+            <rect id="矩形" x="107" y="52" width="18" height="34"></rect>
+            <rect id="矩形" x="100" y="86" width="33" height="10"></rect>
+            <rect id="矩形" x="71" y="25" width="29" height="35"></rect>
+            <rect id="矩形" x="82" y="11" width="10" height="18"></rect>
+            <rect id="矩形" x="66" y="0" width="41" height="17"></rect>
+        </g>
+    </g>
+</svg>

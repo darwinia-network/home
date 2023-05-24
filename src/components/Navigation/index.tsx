@@ -2,12 +2,13 @@ import { NavLink } from "react-router-dom";
 import logo from "../../assets/images/logo.png";
 import menuIcon from "../../assets/images/menu-toggler.svg";
 import closeIcon from "../../assets/images/close.svg";
-import { useEffect, useState } from "react";
+import { Key, useEffect, useState } from "react";
 import { Menu } from "../../data/types";
 import localeKeys from "../../locale/localeKeys";
 import { useTranslation } from "react-i18next";
 import { useMenuData } from "../../data/menu";
 import { CSSTransition } from "react-transition-group";
+import { MetamaskAddDarwiniaChain } from "../MetamaskAddDarwiniaChain";
 
 interface SubMenuHeight {
   [path: string]: number;
@@ -27,8 +28,6 @@ const Navigation = () => {
   const [navBarBackground, setNavBarBackground] = useState("rgba(0,0,0,0)");
   const startBuildingURL = "https://docs.darwinia.network/builder-0f142bfb7f6b41d78548fca21531a03d";
   const navBarThreshold = 100;
-  /* this is temporary code, will be deleted very soon */
-  const [isTooltipVisible, setTooltipStatus] = useState(false);
 
   useEffect(() => {
     const mobileNavParents = document.querySelectorAll<HTMLElement>(".mobile-nav-parent");
@@ -103,16 +102,6 @@ const Navigation = () => {
     setOpenedMobileMenuPath(openedMobileMenuPath === path ? undefined : path);
   };
 
-  const toggleTooltip = (isVisible: boolean) => {
-    setTooltipStatus(() => {
-      return isVisible;
-    });
-  };
-
-  const MobileMenu = createMobileMenu(menu, openedMobileMenuPath, mobileMenuHeightByPathMap, onMobileSubMenuToggle);
-
-  const PCMenu = createPCMenu(menu, openedPCMenuPath, onPCSubMenuToggle, isTooltipVisible, toggleTooltip);
-
   return (
     /* bg-black */
     <div
@@ -135,7 +124,7 @@ const Navigation = () => {
           }
         >
           <div className={"flex items-center h-full"}>
-            <div className={"flex items-center h-full"}>{PCMenu}</div>
+            <div className={"flex items-center h-full"}>{createPCMenu(menu, openedPCMenuPath, onPCSubMenuToggle)}</div>
             <div className={`flex justify-end`}>
               <a
                 href={startBuildingURL}
@@ -191,7 +180,9 @@ const Navigation = () => {
                 <div className={"px-[1.25rem]"}>
                   <div className={"divider"} />
                 </div>
-                <div className={"flex text-right flex-col my-[1.25rem]"}>{MobileMenu}</div>
+                <div className={"flex text-right flex-col my-[1.25rem]"}>
+                  {createMobileMenu(menu, openedMobileMenuPath, mobileMenuHeightByPathMap, onMobileSubMenuToggle)}
+                </div>
                 <div className={"px-[1.25rem]"}>
                   <div className={"divider"} />
                 </div>
@@ -214,28 +205,13 @@ const Navigation = () => {
   );
 };
 
-const createPCMenu = (
-  menu: Menu[],
-  openedMenuPath: string | undefined,
-  onToggleSubMenu: (path: string) => void,
-  isTooltipVisible: boolean,
-  onToggleTooltip: (isVisible: boolean) => void
-) => {
+const createPCMenu = (menu: Menu[], openedMenuPath: string | undefined, onToggleSubMenu: (path: string) => void) => {
   return menu
     .filter((item) => item.device !== "MOBILE")
     .map((item, index) => {
       const path = `${index}`;
       const isActive = openedMenuPath === path;
       if (item.children) {
-        const subMenu = item.children.map((subItem, subIndex) => {
-          const parentKey = `${index}-${subIndex}`;
-          if (subItem.children) {
-            const childItems = createPCSubMenu(subItem, parentKey, isTooltipVisible, onToggleTooltip);
-            return <div key={parentKey}>{childItems}</div>;
-          }
-          return <div key={parentKey}>{subItem.title}</div>;
-        });
-
         return (
           <div
             onClick={(e) => {
@@ -253,11 +229,9 @@ const createPCMenu = (
               {item.title}
             </div>
             <CSSTransition unmountOnExit={true} in={isActive} classNames={"pc-sub-menu"} timeout={300}>
-              <div
-                className={"pc-nav-parent left-1/2 top-[30px] pt-[15px] absolute z-[2] w-[40.75rem] overflow-hidden"}
-              >
-                <div className={"justify-between flex bg-black border-2 border-primary p-[2.5rem] select-none"}>
-                  {subMenu}
+              <div className={"pc-nav-parent left-1/2 top-[30px] pt-[15px] absolute z-[2] w-[50rem] overflow-hidden"}>
+                <div className={"justify-between flex bg-black border-2 border-primary select-none"}>
+                  {createPCSubMenu(item.children, index)}
                 </div>
               </div>
             </CSSTransition>
@@ -289,69 +263,91 @@ const createPCMenu = (
     });
 };
 
-const createPCSubMenu = (
-  menuItems: Menu,
-  parentKey: string,
-  isTooltipVisible: boolean,
-  onToggleTooltip: (isVisible: boolean) => void
-) => {
-  const childItems =
-    menuItems.children?.map((item, index) => {
-      const key = `${parentKey}-${index}`;
-      if (item.isComingSoon) {
-        return (
-          <div className={"flex relative text-white capitalize mt-[0.625rem]"} key={key}>
-            <div
-              onMouseEnter={() => {
-                onToggleTooltip(true);
-              }}
-              onMouseLeave={() => {
-                onToggleTooltip(false);
-              }}
-            >
-              {item.title}
-            </div>
-            <CSSTransition in={isTooltipVisible} unmountOnExit={true} timeout={0} classNames={""}>
-              <div
-                className={`absolute left-1/2 top-[20px] -translate-x-1/2 bg-primary z-10 text-white px-[10px] py-[3px] w-[65%] text-center`}
-              >
-                Updating...
-              </div>
-            </CSSTransition>
+const PCSubMenuItem = ({
+  index,
+  active,
+  title,
+  icon,
+  description,
+  action,
+  isLive,
+  isComingSoon,
+  side,
+  isExternalLink,
+  path,
+}: Menu & { index: number; side: "left" | "right"; active?: number }) => {
+  const [hovering, setHovering] = useState(index === 0);
+
+  const content =
+    action === "addChain" ? (
+      <div className="flex items-center justify-center w-full">
+        <MetamaskAddDarwiniaChain />
+      </div>
+    ) : (
+      <>
+        <img
+          alt="..."
+          src={icon}
+          width={40}
+          height={40}
+          className={`${!isComingSoon && (active === index || hovering) ? "bg-primary" : ""}`}
+        />
+        <div className="flex flex-col gap-2">
+          <div className="flex items-center gap-[10px]">
+            <span className="title text-sm text-white">{title}</span>
+            {isLive && <span className="border border-primary title text-xs text-primary">&nbsp;Live&nbsp;</span>}
+            {isComingSoon && (
+              <span className="border border-primary title text-xs text-primary">&nbsp;Coming soon&nbsp;</span>
+            )}
           </div>
-        );
-      }
-      if (item.path === "") {
-        return (
-          <div className={"flex text-white capitalize mt-[0.625rem] opacity-50"} key={key}>
-            {item.title}
-          </div>
-        );
-      }
+          <span className="text text-xs">{description}</span>
+        </div>
+      </>
+    );
+
+  const attributes = {
+    onMouseEnter: () => setHovering(true),
+    onMouseLeave: () => setHovering(false),
+    className: `flex items-start gap-5 p-5 ${
+      !isComingSoon && (active === index || side === "right" || hovering)
+        ? `${side === "right" ? "bg-[#222020] cursor-pointer" : "bg-[#222020]"}`
+        : ""
+    }`,
+  };
+
+  if (path) {
+    if (isExternalLink) {
       return (
-        <a
-          className={"flex text-white capitalize mt-[0.625rem] hover:opacity-70"}
-          href={item.path}
-          target="_blank"
-          key={key}
-          rel="noreferrer"
-        >
-          {item.title}
+        <a href={path} target="_blank" rel="noreferrer" {...attributes}>
+          {content}
         </a>
       );
-    }) ?? null;
-  const color = menuItems.title.toLowerCase().includes("darwinia") ? "#FF0083" : "#512DBC";
+    }
+    return (
+      <NavLink to={path} {...attributes}>
+        {content}
+      </NavLink>
+    );
+  }
+  return <div {...attributes}>{content}</div>;
+};
+
+const createPCSubMenu = (menuItems: Menu[], key: Key) => {
   return (
-    <div key={parentKey}>
-      <div
-        className={`flex after:content-[''] after:absolute after:left-0
-            after:right-0 after:bottom-0 after:h-[2px] after:bg-gray after:opacity-50
-            items-center font-bold text-white title relative pb-[0.625rem]`}
-      >
-        <div>{menuItems.title}</div>
-        <div style={{ backgroundColor: color }} className={"w-[0.875rem] h-[0.875rem] ml-[10px] bg-primary"} />
+    <div key={key} className="flex w-full">
+      {/* left */}
+      <div className="flex-1 flex flex-col">
+        {menuItems.map((item, index) => (
+          <PCSubMenuItem key={index} {...item} index={index} active={0} side="left" />
+        ))}
       </div>
-      <div>{childItems}</div>
+
+      {/* right */}
+      <div className="flex-1 flex flex-col bg-[#222020]">
+        {menuItems[0].children?.map((item, index) => (
+          <PCSubMenuItem key={index} {...item} index={index} side="right" />
+        ))}
+      </div>
     </div>
   );
 };
@@ -372,13 +368,15 @@ const createMobileMenu = (
       }
       if (item.children) {
         const isActive = openedMenuPath === path;
-        const childrenNavItems = item.children.map((childItem, childIndex) => {
-          const key = `${index}-${childIndex}`;
-          if (childItem.isExternalLink) {
-            return createExternalMobileLink(childItem, key, true);
-          }
-          return createMobileLink(childItem, key);
-        });
+        const childrenNavItems = item.children
+          .filter(({ device }) => device !== "PC")
+          .map((childItem, childIndex) => {
+            const key = `${index}-${childIndex}`;
+            if (childItem.isExternalLink) {
+              return createExternalMobileLink(childItem, key, true);
+            }
+            return createMobileLink(childItem, key);
+          });
         return (
           <div key={path} className={"first:mt-0 mt-[0.3125rem]"}>
             <div

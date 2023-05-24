@@ -2,6 +2,13 @@ import { Menu } from "./types";
 import { TFunction, useTranslation } from "react-i18next";
 import localeKeys from "../locale/localeKeys";
 
+import darwiniaChainIcon from "../assets/images/darwinia-chain.svg";
+import darwiniaMsgportIcon from "../assets/images/darwinia-msgport.svg";
+import ecosystemAppsIcon from "../assets/images/ecosystem-apps.svg";
+import stakingIcon from "../assets/images/staking.svg";
+import crabChainIcon from "../assets/images/crab-chain.svg";
+import faucetIcon from "../assets/images/faucet.svg";
+
 /* make sure you use a custom hook here since we have to use the useTranslation hook
  * from react-i18next */
 export const useMenuData = () => {
@@ -15,37 +22,33 @@ export const useMenuData = () => {
 const getMenu = (t: TFunction<"translation">): Menu[] => {
   return [
     {
-      title: t(localeKeys.developers),
-      path: "/developers",
-    },
-    {
-      title: `${t(localeKeys.darwiniaNetwork)}▾`,
-      device: "MOBILE",
-      children: getDarwiniaNetworkLinks(t),
-    },
-    {
-      title: `${t(localeKeys.crabNetwork)}▾`,
-      device: "MOBILE",
-      children: getCrabNetworkLinks(t),
-    },
-    {
-      title: `${t(localeKeys.networks)}▾`,
+      title: `${t(localeKeys.solutions)}▾`,
       device: "PC",
       children: [
         {
-          title: t(localeKeys.darwinia),
-          children: getDarwiniaNetworkLinks(t),
+          title: t(localeKeys.darwiniaChain),
+          children: getDarwiniaChainSubMenu(t),
+          icon: darwiniaChainIcon,
+          description: t(localeKeys.darwiniaChainDescription),
+          isLive: true,
         },
         {
-          title: t(localeKeys.crab),
-          children: getCrabNetworkLinks(t),
+          title: t(localeKeys.darwiniaMsgport),
+          icon: darwiniaMsgportIcon,
+          description: t(localeKeys.darwiniaMsgportDescription),
+          isComingSoon: true,
         },
       ],
     },
-    // {
-    //   title: t(localeKeys.tokens),
-    //   path: "/tokens",
-    // },
+    {
+      title: `${t(localeKeys.darwiniaChain)}▾`,
+      device: "MOBILE",
+      children: getDarwiniaChainSubMenu(t),
+    },
+    {
+      title: t(localeKeys.developers),
+      path: "/developers",
+    },
     {
       title: t(localeKeys.community),
       path: "/community",
@@ -62,77 +65,39 @@ const getMenu = (t: TFunction<"translation">): Menu[] => {
     },
   ];
 };
-const getDarwiniaNetworkLinks = (t: TFunction<"translation">): Menu[] => {
+const getDarwiniaChainSubMenu = (t: TFunction<"translation">): Menu[] => {
   return [
     {
-      title: t(localeKeys.stakingApps),
-      path: "https://staking.darwinia.network/#/?network=Darwinia",
+      title: t(localeKeys.ecosystemApps),
+      path: "https://apps.darwinia.network/",
       isExternalLink: true,
+      icon: ecosystemAppsIcon,
+      description: t("Explore Dapps in Darwinia Ecosystem."),
     },
     {
-      title: t(localeKeys.darwiniaAppsPortal),
-      path: "https://apps.darwinia.network/portal",
-      isExternalLink: true,
+      title: t(localeKeys.staking),
+      path: "/staking?network=Darwinia",
+      icon: stakingIcon,
+      description: t("Stake RING & KTON to eran rewards."),
     },
     {
-      title: t(localeKeys.subscanExplorer),
-      path: "https://darwinia.subscan.io/",
+      title: t(localeKeys.crabChain),
+      path: "https://docs.darwinia.network/crab-7d27b58cb42a4315b878281da0043aa6",
       isExternalLink: true,
+      icon: crabChainIcon,
+      description: t("Canary Network of Darwinia Chain."),
     },
     {
-      title: t(localeKeys.subviewExplorer),
-      path: "https://darwinia.subview.xyz/",
-      isComingSoon: true,
+      title: t(localeKeys.faucet),
+      path: "https://docs.darwinia.network/testnet-faucets-98a5b8e69c7e40b59973aa36af2ac647",
+      isExternalLink: true,
+      icon: faucetIcon,
+      description: t("Get Test Tokens To experiment on TestNet."),
     },
     {
-      title: t(localeKeys.polkadotParachainAuction),
-      path: "https://darwinia-network.github.io/home-v1/plo",
-      isExternalLink: true,
-    },
-    {
-      title: t(localeKeys.generalAccountMigration),
-      path: "https://migration.darwinia.network/#/?network=Darwinia",
-      isExternalLink: true,
-    },
-    {
-      title: t(localeKeys.multisigAccountMigration),
-      path: "https://migration.darwinia.network/#/multisig-home?network=Darwinia",
-      isExternalLink: true,
-    },
-  ];
-};
-
-const getCrabNetworkLinks = (t: TFunction<"translation">): Menu[] => {
-  return [
-    {
-      title: t(localeKeys.stakingApps),
-      path: "https://staking.darwinia.network/#/?network=Crab",
-      isExternalLink: true,
-    },
-    {
-      title: t(localeKeys.subscanExplorer),
-      path: "https://crab.subscan.io/",
-      isExternalLink: true,
-    },
-    {
-      title: t(localeKeys.subviewExplorer),
-      path: "https://subview.xyz/",
-      isExternalLink: true,
-    },
-    {
-      title: t(localeKeys.kusamaParachainAuction),
-      path: "https://darwinia-network.github.io/crab-home-v1/plo_contribute",
-      isExternalLink: true,
-    },
-    {
-      title: t(localeKeys.generalAccountMigration),
-      path: "https://migration.darwinia.network/#/?network=Crab",
-      isExternalLink: true,
-    },
-    {
-      title: t(localeKeys.multisigAccountMigration),
-      path: "https://migration.darwinia.network/#/multisig-home?network=Crab",
-      isExternalLink: true,
+      title: t("Add Darwinia Chain to MetaMask"),
+      device: "PC",
+      action: "addChain",
     },
   ];
 };

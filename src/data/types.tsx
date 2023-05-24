@@ -117,7 +117,11 @@ export interface Menu {
   path?: string;
   children?: Menu[];
   isExternalLink?: boolean;
+  isLive?: boolean;
   isComingSoon?: boolean;
+  icon?: string;
+  description?: string;
+  action?: "addChain";
 }
 
 export interface Paper {

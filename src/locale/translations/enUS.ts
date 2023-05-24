@@ -163,6 +163,14 @@ const enUs = {
   [localeKeys.ethereumDarwiniaParachain]: "Ethereum <> Darwinia <> Parachain",
   [localeKeys.soliditySDKApi]: "Solidity SDK API",
   [localeKeys.jsSDKApi]: "JS SDK API",
+  [localeKeys.solutions]: "Solutions",
+  [localeKeys.darwiniaChain]: "Darwinia Chain",
+  [localeKeys.darwiniaMsgport]: "Darwinia Msgport",
+  [localeKeys.ecosystemApps]: "Ecosystem Apps",
+  [localeKeys.crabChain]: "Crab Chain",
+  [localeKeys.faucet]: "Faucet",
+  [localeKeys.darwiniaChainDescription]: "EVM compatible smart contract platform, sharing security of Polkadot.",
+  [localeKeys.darwiniaMsgportDescription]: "Essential infrastructure that enable DApps to send messages across different blockchain networks, thus facilitating interchain operations.",
 };
 
 export default enUs;
