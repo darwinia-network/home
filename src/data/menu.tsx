@@ -42,10 +42,10 @@ const getMenu = (t: TFunction<"translation">): Menu[] => {
         },
       ],
     },
-    {
-      title: t(localeKeys.tokens),
-      path: "/tokens",
-    },
+    // {
+    //   title: t(localeKeys.tokens),
+    //   path: "/tokens",
+    // },
     {
       title: t(localeKeys.community),
       path: "/community",

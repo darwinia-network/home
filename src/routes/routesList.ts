@@ -18,10 +18,10 @@ const routesList = [
     path: "/developers",
     component: lazy(() => import("../pages/Developers")),
   },
-  {
-    path: "/tokens",
-    component: lazy(() => import("../pages/Tokens")),
-  },
+  // {
+  //   path: "/tokens",
+  //   component: lazy(() => import("../pages/Tokens")),
+  // },
   {
     path: "/community",
     component: lazy(() => import("../pages/Community")),
