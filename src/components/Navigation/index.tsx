@@ -26,7 +26,7 @@ const Navigation = () => {
   const [mobileMenuHeightByPathMap, setMenuHeight] = useState<SubMenuHeight>({});
   const [openedPCMenuPath, setOpenedPCMenuPath] = useState<string | undefined>(undefined);
   const [navBarBackground, setNavBarBackground] = useState("rgba(0,0,0,0)");
-  const startBuildingURL = "https://docs.darwinia.network/builder-0f142bfb7f6b41d78548fca21531a03d";
+  const startBuildingURL = "https://docs.darwinia.network/";
   const navBarThreshold = 100;
 
   useEffect(() => {
@@ -231,7 +231,10 @@ const createPCMenu = (menu: Menu[], openedMenuPath: string | undefined, onToggle
             <CSSTransition unmountOnExit={true} in={isActive} classNames={"pc-sub-menu"} timeout={300}>
               <div className={"pc-nav-parent left-1/2 top-[30px] pt-[15px] absolute z-[2] w-[50rem] overflow-hidden"}>
                 <div className={"justify-between flex bg-black border-2 border-primary select-none"}>
-                  {createPCSubMenu(item.children, index)}
+                  {createPCSubMenu(
+                    item.children.filter(({ device }) => device !== "MOBILE"),
+                    index
+                  )}
                 </div>
               </div>
             </CSSTransition>
@@ -309,22 +312,20 @@ const PCSubMenuItem = ({
     onMouseEnter: () => setHovering(true),
     onMouseLeave: () => setHovering(false),
     className: `flex items-start gap-5 p-5 ${
-      !isComingSoon && (active === index || side === "right" || hovering)
-        ? `${side === "right" ? "bg-[#222020] cursor-pointer" : "bg-[#222020]"}`
-        : ""
-    }`,
+      !isComingSoon && (active === index || side === "right") ? "bg-[#222020]" : ""
+    } ${hovering && !isComingSoon ? "bg-[#222020]/80" : ""}`,
   };
 
   if (path) {
     if (isExternalLink) {
       return (
-        <a href={path} target="_blank" rel="noreferrer" {...attributes}>
+        <a href={path} target="_blank" rel="noreferrer" {...attributes} onClick={() => document.body.click()}>
           {content}
         </a>
       );
     }
     return (
-      <NavLink to={path} {...attributes}>
+      <NavLink to={path} {...attributes} onClick={() => document.body.click()}>
         {content}
       </NavLink>
     );
@@ -343,10 +344,12 @@ const createPCSubMenu = (menuItems: Menu[], key: Key) => {
       </div>
 
       {/* right */}
-      <div className="flex-1 flex flex-col bg-[#222020]">
-        {menuItems[0].children?.map((item, index) => (
-          <PCSubMenuItem key={index} {...item} index={index} side="right" />
-        ))}
+      <div className="flex-1 flex flex-col">
+        {menuItems[0].children
+          ?.filter(({ device }) => device !== "MOBILE")
+          .map((item, index) => (
+            <PCSubMenuItem key={index} {...item} index={index} side="right" />
+          ))}
       </div>
     </div>
   );

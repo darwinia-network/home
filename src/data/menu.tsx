@@ -31,6 +31,7 @@ const getMenu = (t: TFunction<"translation">): Menu[] => {
           icon: darwiniaChainIcon,
           description: t(localeKeys.darwiniaChainDescription),
           isLive: true,
+          path: "/darwiniachain",
         },
         {
           title: t(localeKeys.darwiniaMsgport),
@@ -68,6 +69,11 @@ const getMenu = (t: TFunction<"translation">): Menu[] => {
 const getDarwiniaChainSubMenu = (t: TFunction<"translation">): Menu[] => {
   return [
     {
+      title: `${t(localeKeys.darwiniaChain)}`,
+      device: "MOBILE",
+      path: "/darwiniachain",
+    },
+    {
       title: t(localeKeys.ecosystemApps),
       path: "https://apps.darwinia.network/",
       isExternalLink: true,
@@ -76,7 +82,8 @@ const getDarwiniaChainSubMenu = (t: TFunction<"translation">): Menu[] => {
     },
     {
       title: t(localeKeys.staking),
-      path: "/staking?network=Darwinia",
+      path: "https://staking.darwinia.network/#/staking?network=Darwinia",
+      isExternalLink: true,
       icon: stakingIcon,
       description: t("Stake RING & KTON to eran rewards."),
     },

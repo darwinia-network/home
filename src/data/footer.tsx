@@ -25,19 +25,37 @@ const getFooterData = (t: TFunction<"translation">): Footer => {
     copyright: <div dangerouslySetInnerHTML={{ __html: t(localeKeys.darwiniaNetworkCopyright, { year }) }} />,
     referenceLinks: [
       {
-        title: t(localeKeys.developers),
-        links: [
+        categories: [
           {
-            isExternal: true,
-            url: "https://docs.darwinia.network/builder-0f142bfb7f6b41d78548fca21531a03d",
-            title: t(localeKeys.developerDocs),
+            title: t("Solutions"),
+            links: [{
+              title: t("Darwinia Chain"),
+              url: "/darwiniachain",
+              isExternal: false,
+            }, {
+              title: t("Darwinia Msgport"),
+              url: "",
+              isExternal: false,
+            }],
           },
           {
-            isExternal: false,
-            url: "/developers",
-            title: t(localeKeys.developerResources),
+            title: t(localeKeys.developers),
+            links: [
+              {
+                isExternal: true,
+                url: "https://docs.darwinia.network/builder-0f142bfb7f6b41d78548fca21531a03d",
+                title: t(localeKeys.developerDocs),
+              },
+              {
+                isExternal: false,
+                url: "/developers",
+                title: t(localeKeys.developerResources),
+              },
+            ],
           },
         ],
+        title: "",
+        links: [],
       },
       {
         title: t(localeKeys.useCases),

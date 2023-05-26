@@ -25,10 +25,10 @@ const Feature = ({ data, pcGrid, serialNumber }: Props) => {
   const parentTypeClasses = getWrapperGrid(pcGrid);
   const childTypeClasses = getChildWidthByGrid(pcGrid);
   const titleNumber =
-    typeof serialNumber !== "undefined" ? (serialNumber < 10 ? `0${serialNumber}` : serialNumber) : "";
+    typeof serialNumber !== "undefined" ? (serialNumber < 10 ? `0${serialNumber} ` : `${serialNumber} `) : "";
   const titleJSX = title ? (
     <div className={"title text-white capitalize mt-[1.25rem]"}>
-      {titleNumber}&nbsp;{title}
+      {titleNumber}{title}
     </div>
   ) : null;
   return (

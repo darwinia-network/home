@@ -18,6 +18,10 @@ const routesList = [
     path: "/developers",
     component: lazy(() => import("../pages/Developers")),
   },
+  {
+    path: "/darwiniachain",
+    component: lazy(() => import("../pages/DarwiniaChain")),
+  },
   // {
   //   path: "/tokens",
   //   component: lazy(() => import("../pages/Tokens")),

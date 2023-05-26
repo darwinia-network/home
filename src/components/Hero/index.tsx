@@ -12,19 +12,19 @@ const Hero = ({ data, page }: Props) => {
   const text = getText(data.text);
   const image = getImage(data.image);
   const socialNetworkLinks = getSocialNetworkLinks(data.socialNetworks);
-  const imageClass = data.type === 1 ? `hero-image-1` : `hero-image-2`;
+  const imageClass = data.type === 1 ? `hero-image-1 lg:order-1 flex items-center` : `hero-image-2 lg:order-2`;
   /* this fakeImageClass determines the width and height(virtually) of the 3D model on PC.
    * It will be a square, just to control the sibling element's height which is the 3d model
    * container (which is positioned absolute) */
-  const fakeImageClass = data.type === 1 ? `lg:w-[54.58%] w-full shrink-0` : `hidden`;
-  const textClass = data.type === 1 ? `lg:w-[43.083%]` : `flex-1`;
-  const topSpace = page === "HOME" ? `space-top-1` : `space-top-2`;
+  const fakeImageClass = data.type === 1 ? `lg:w-[60%] w-full shrink-0` : `hidden`;
+  const textClass = data.type === 1 ? `lg:w-[33%] lg:order-2` : `flex-1 lg:order-1`;
+  const topSpace = page === "HOME" ? `space-top-2 lg:space-top-1` : `space-top-2`;
   const Typewriter = getTypewriterByPage(page);
   return (
     <div className={`bg-center bg-cover bg-no-repeat`}>
       <div data-aos={"fade-up"} data-aos-duration={700} className={`container ${topSpace}`}>
         <div className={"flex flex-col lg:flex-row relative"}>
-          <div className={`order-2 flex flex-col relative z-20 lg:justify-center lg:order-1 ${textClass}`}>
+          <div className={`order-2 flex flex-col relative z-20 lg:justify-center ${textClass}`}>
             <Suspense>
               <Typewriter />
             </Suspense>
@@ -35,10 +35,10 @@ const Hero = ({ data, page }: Props) => {
           {/* this item is here just to expand the DOM's height, BUT only on PCs, its height is
           zero on mobile phones. This fake image is only useful on the homepage, it is here to occupy
           the 3D model space beforehand. It is completely hidden in other pages */}
-          <div className={`opacity-0 order-1 flex-1 ml-[1.75rem] lg:order-2 ${fakeImageClass}`}>
-            <div className={`pb-0 lg:pb-[100%]`} />
+          <div className={`opacity-0 order-1 flex-1 mr-[1.75rem] ${fakeImageClass}`}>
+            <div className={`pb-0 ${page === "HOME" ? "lg:pb-[70%]" : "lg:pb-[100%]"}`} />
           </div>
-          <div className={`order-1 flex-1 lg:flex-none lg:order-2 ${imageClass}`}>{image}</div>
+          <div className={`order-1 flex-1 lg:flex-none ${imageClass}`}>{image}</div>
         </div>
       </div>
     </div>
@@ -52,6 +52,9 @@ const getTypewriterByPage = (page: Page) => {
     }
     case "DEVELOPERS": {
       return lazy(() => import("../DevelopersTypewriter"));
+    }
+    case "DARWINIA_CHAIN": {
+      return lazy(() => import("../DarwiniaChainTypewriter"));
     }
     case "TOKENS": {
       return lazy(() => import("../TokensTypewriter"));
