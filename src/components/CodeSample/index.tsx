@@ -26,7 +26,8 @@ const CodeSample = ({ data }: Props) => {
   const PCCodeSample = getPCCodeSample(data, activePCTabIndex, onSwitchPCCodeSampleTab);
   return (
     <div>
-      <div className={"lg:hidden"}>{mobileCodeSample}</div>
+      <h3 className="lg:hidden title uppercase text-2xl text-white font-bold">{data.title}</h3>
+      <div className={"lg:hidden mt-12"}>{mobileCodeSample}</div>
       <div className={"hidden lg:block"}>{PCCodeSample}</div>
     </div>
   );
@@ -37,12 +38,13 @@ const getPCCodeSample = (
   activeTabIndex: number,
   onSwitchCodeSampleTab: (index: number) => void
 ) => {
+  const { title, pcSide } = codeSample;
   const tabs = codeSample.codes.map((code, index) => {
     const decorationClass = index === activeTabIndex ? `text-primary` : "";
     const key = `${index}-${code.title}`;
     return (
       <div
-        className={`${decorationClass} ease-in-out transition-colors duration-[300ms] uppercase self-start hover:cursor-pointer title leading-normal text-white mb-[1.875rem] last:mb-0 text-[1.8rem] xl:text-[2.2rem]`}
+        className={`${decorationClass} ease-in-out transition-colors duration-[300ms] capitalize self-start hover:cursor-pointer title text-white mb-[1.875rem] last:mb-0`}
         key={key}
         onClick={() => {
           onSwitchCodeSampleTab(index);
@@ -88,12 +90,15 @@ const getPCCodeSample = (
     );
   });
   return (
-    <div className={"flex items-center"}>
-      <div className={"w-[39.25%] shrink-0"}>
-        <div className={"flex flex-col"}>{tabs}</div>
-        <div className={"flex gap-[1.25rem] mt-[3.125rem]"}>{links}</div>
+    <div className={"flex items-center gap-[5.625rem]"}>
+      <div className={`shrink-0 w-fit ${pcSide === "left" ? "order-2" : ""}`}>
+        <div className="title uppercase text-white text-5xl leading-[4rem] font-bold">{title}</div>
+        <div className={"flex flex-col mt-[2.375rem]"}>{tabs}</div>
+        <div className={"flex gap-[1.25rem] mt-[2.375rem]"}>{links}</div>
       </div>
-      <div className={"flex-1 h-[670px] relative border border-halfWhite"}>{codeView}</div>
+      <div className={`flex-1 h-[670px] relative border border-halfWhite ${pcSide === "left" ? "order-1" : ""}`}>
+        {codeView}
+      </div>
     </div>
   );
 };
@@ -110,11 +115,9 @@ const getMobileCodeSample = (
     // const visibilityClass = activeTabIndex === index ? `` : `hidden`;
     const isCodeVisible = activeTabIndex === index;
 
-    const customPadding = index === 0 ? "0" : "3.125rem";
     const tab = (
       <div
-        style={{ paddingTop: customPadding }}
-        className={`${decorationClass} ease-in-out transition-colors duration-[300ms] uppercase hover:cursor-pointer title leading-normal text-white mb-[0.625rem]`}
+        className={`${decorationClass} ease-in-out transition-colors duration-[300ms] lowercase hover:cursor-pointer text text-xl font-bold text-white mb-[0.625rem]`}
         onClick={() => {
           onSwitchCodeSampleTab(index);
         }}
@@ -126,7 +129,7 @@ const getMobileCodeSample = (
     const highlightedCode = getCodeView(code.sample, code.language, true);
     const codeJSX = <div className={`overflow-hidden flex-1 flex`}>{highlightedCode}</div>;
     return (
-      <div key={key}>
+      <div key={key} className={`${isCodeVisible ? "mb-[3.125rem]" : ""}`}>
         {tab}
         <CSSTransition unmountOnExit={true} in={isCodeVisible} appear={true} timeout={300} classNames={"mobile-code"}>
           {codeJSX}

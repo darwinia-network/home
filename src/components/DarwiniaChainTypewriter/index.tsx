@@ -3,9 +3,9 @@ import Typewriter from "../../utils/typewriter";
 import { useTranslation } from "react-i18next";
 import { SupportedLanguages } from "../../data/types";
 
-const HomeTypewriter = () => {
+const DarwiniaChainTypewriter = () => {
   const { t, i18n } = useTranslation();
-  const initialText = "Cross";
+  const initialText = "";
 
   useEffect(() => {
     const typewriterElement: HTMLElement | null = document.querySelector(".typewriter-content");
@@ -19,7 +19,7 @@ const HomeTypewriter = () => {
     };
   }, []);
   /* change this for every page */
-  const fakeTitle = getFakeTitle(t("Cross-Chain programmable Network"));
+  const fakeTitle = getFakeTitle(t("Say Hello To Darwinia Chain"));
   return (
     <div className={"relative"}>
       {/* this first title is rendered just to expand the parent so that the typewriter text
@@ -57,12 +57,14 @@ const initTypewriter = (typewriterElement: HTMLElement, language: SupportedLangu
 const getEnglishTypewriter = (typewriterElement: HTMLElement): Typewriter => {
   const typewriter = new Typewriter(typewriterElement, { loop: true, cursor: "_" });
   typewriter
-    .typeString(
-      {
-        text: "-Chain programmable Network",
-      },
-      100
-    )
+    .typeString({
+      text: "Say Hello To ",
+    })
+    .pauseFor(1000)
+    .typeString({
+      text: "Darwinia Chain",
+      style: "color: #FF0083",
+    })
     .pauseFor(10000)
     .deleteAll()
     .pauseFor(2000)
@@ -70,4 +72,4 @@ const getEnglishTypewriter = (typewriterElement: HTMLElement): Typewriter => {
   return typewriter;
 };
 
-export default HomeTypewriter;
+export default DarwiniaChainTypewriter;

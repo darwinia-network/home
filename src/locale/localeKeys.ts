@@ -164,6 +164,14 @@ const localeKeys = {
   ethereumDarwiniaParachain: "ethereumDarwiniaParachain",
   soliditySDKApi: "soliditySDKApi",
   jsSDKApi: "jsSDKApi",
+  solutions: "solutions",
+  darwiniaChain: "darwiniaChain",
+  darwiniaMsgport: "darwiniaMsgport",
+  ecosystemApps: "ecosystemApps",
+  crabChain: "crabChain",
+  faucet: "faucet",
+  darwiniaChainDescription: "darwiniaChainDescription",
+  darwiniaMsgportDescription: "darwiniaMsgportDescription",
 };
 
 export default localeKeys;

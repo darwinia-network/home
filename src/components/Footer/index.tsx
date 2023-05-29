@@ -197,61 +197,74 @@ const getSocialNetworkLinks = (socialNetworks: SocialNetwork[]) => {
   });
 };
 
-const createFooterSections = (data: FooterSection[]) => {
-  return data.map((section, index) => {
-    const sectionTitle = <div className={"title text-white"}>{section.title}</div>;
-    const links = section.links.map((link, subIndex) => {
-      const key = `${index}-${subIndex}`;
-      if (link.isFake) {
-        return (
-          <div className={"capitalize text-white py-[0.3125rem] my-[0.3125rem]"} key={key}>
-            {link.title}
-          </div>
-        );
-      }
-      if (link.url === "") {
-        return (
-          <div className={"capitalize text-white py-[0.3125rem] my-[0.3125rem] opacity-50"} key={key}>
-            {link.title}
-          </div>
-        );
-      }
-      if (link.isExternal) {
-        return (
-          <a
-            className={"capitalize text-white py-[0.3125rem] my-[0.3125rem] hover:opacity-70"}
-            key={key}
-            href={link.url}
-            target="_blank"
-            rel="noreferrer"
-          >
-            {link.title}
-          </a>
-        );
-      }
-
+const createFooterSection = (section: FooterSection) => {
+  const sectionTitle = <div className={"title text-white"}>{section.title}</div>;
+  const links = section.links.map((link) => {
+    const key = `${link.title}`;
+    if (link.isFake) {
       return (
-        <NavLink
+        <div className={"capitalize text-white py-[0.3125rem] my-[0.3125rem]"} key={key}>
+          {link.title}
+        </div>
+      );
+    }
+    if (link.url === "") {
+      return (
+        <div className={"capitalize text-white py-[0.3125rem] my-[0.3125rem] opacity-50"} key={key}>
+          {link.title}
+        </div>
+      );
+    }
+    if (link.isExternal) {
+      return (
+        <a
           className={"capitalize text-white py-[0.3125rem] my-[0.3125rem] hover:opacity-70"}
           key={key}
-          to={link.url}
+          href={link.url}
+          target="_blank"
+          rel="noreferrer"
         >
           {link.title}
-        </NavLink>
+        </a>
       );
-    });
+    }
+
     return (
-      <div className={"flex flex-col"} key={index}>
-        <div
-          className={
-            "relative pb-[1.25rem] mb-[1.25rem] after:content-[''] after:absolute after:left-0 after:bottom-0 after:bg-primary after:h-[5px] after:w-[2.75rem]"
-          }
-        >
-          {sectionTitle}
-        </div>
-        <div className={"flex flex-col"}>{links}</div>
-      </div>
+      <NavLink
+        className={"capitalize text-white py-[0.3125rem] my-[0.3125rem] hover:opacity-70"}
+        key={key}
+        to={link.url}
+      >
+        {link.title}
+      </NavLink>
     );
+  });
+
+  return (
+    <div className={"flex flex-col"} key={section.title}>
+      <div
+        className={
+          "relative pb-[1.25rem] mb-[1.25rem] after:content-[''] after:absolute after:left-0 after:bottom-0 after:bg-primary after:h-[5px] after:w-[2.75rem]"
+        }
+      >
+        {sectionTitle}
+      </div>
+      <div className={"flex flex-col"}>{links}</div>
+    </div>
+  );
+};
+
+const createFooterSections = (data: FooterSection[]) => {
+  return data.map((section) => {
+    if (section.categories?.length) {
+      return (
+        <div key={section.title} className="flex flex-col items-start justify-start gap-20">
+          {section.categories.map((s) => createFooterSection(s))}
+        </div>
+      );
+    }
+
+    return createFooterSection(section);
   });
 };
 

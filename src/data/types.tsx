@@ -1,6 +1,6 @@
 export type SupportedLanguages = "enUS" | "zhCN";
 
-export type Page = "HOME" | "DEVELOPERS" | "TOKENS" | "COMMUNITY" | "PAPERS";
+export type Page = "HOME" | "DEVELOPERS" | "TOKENS" | "COMMUNITY" | "PAPERS" | "DARWINIA_CHAIN";
 export type HeroType = 1 | 2;
 export type FeatureType = 1 | 2 | 3 | 4;
 export type PCGrid = 2 | 3 | 4;
@@ -39,7 +39,7 @@ export interface LightClient {
 export interface DarwiniaPromo {
   title: JSX.Element;
   subTitle: string;
-  image: string;
+  image: JSX.Element;
   content: {
     text: string;
     list: string[];
@@ -57,6 +57,7 @@ export interface SocialNetwork {
 export interface FooterSection {
   title: string;
   links: Link[];
+  categories?: Omit<FooterSection, "categories">[];
 }
 
 export interface Footer {
@@ -72,8 +73,10 @@ export interface Code {
 }
 
 export interface CodeSample {
+  title: string;
   links: Link[];
   codes: Code[];
+  pcSide?: "left" | "right";
 }
 
 export interface Hero {
@@ -117,7 +120,11 @@ export interface Menu {
   path?: string;
   children?: Menu[];
   isExternalLink?: boolean;
+  isLive?: boolean;
   isComingSoon?: boolean;
+  icon?: string;
+  description?: string;
+  action?: "addChain";
 }
 
 export interface Paper {

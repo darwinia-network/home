@@ -2,14 +2,20 @@ const plugin = require("tailwindcss/plugin");
 module.exports = {
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
-    colors: {
-      primary: "#FF0083",
-      black: "#000000",
-      gray: "#C6C6C6",
-      white: "#FFFFFF",
-      halfWhite: "rgba(255, 255, 255, 0.5)",
+    extend: {
+      colors: {
+        primary: "#FF0083",
+        black: "#000000",
+        gray: "#C6C6C6",
+        white: "#FFFFFF",
+        halfWhite: "rgba(255, 255, 255, 0.5)",
+      },
+      spacing: {
+        small: "0.3125rem", // 5px
+        medium: "0.625rem", // 10
+        large: "1.25rem", // 20
+      },
     },
-    extend: {},
   },
   plugins: [
     plugin(function ({ addVariant }) {

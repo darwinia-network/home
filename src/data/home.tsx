@@ -3,16 +3,14 @@ import { TFunction, useTranslation } from "react-i18next";
 import localeKeys from "../locale/localeKeys";
 import programmable from "../assets/images/programmable.png";
 import crossChain from "../assets/images/cross-chain.png";
-import ultraLight from "../assets/images/ultra-light.png";
 import lightClientFigure from "../assets/images/light-client-figure.png";
-import sdk from "../assets/images/sdk.png";
 import helixBridge from "../assets/images/helix-bridge.png";
 import evolutionLand from "../assets/images/evolution-land.png";
 import staking from "../assets/images/staking.png";
 import partner from "../assets/images/partner.png";
 import integration from "../assets/images/integration.png";
-import { accessRestriction, remoteEVMCall, sendMessage } from "./codeSamples";
-import HomeHeroAnimation from "../components/HomeHeroAnimation";
+import { remoteEVMCall, sendMessage } from "./codeSamples";
+// import HomeHeroAnimation from "../components/HomeHeroAnimation";
 
 /* make sure you use a custom hook here since we have to use the useTranslation hook
  * from react-i18next */
@@ -39,8 +37,12 @@ export const useHomeData = () => {
 const getHero = (t: TFunction<"translation">): Hero => {
   return {
     type: 1,
-    image: <HomeHeroAnimation />,
-    text: t(localeKeys.darwiniaIntroData),
+    image: (
+      <video autoPlay muted loop>
+        <source src="./hero.mp4" type="video/mp4" />
+      </video>
+    ),
+    text: t("Darwinia Provides Cross-chain smart contract platform and message port network."),
     links: [
       {
         title: t(localeKeys.devWithDarwinia),
@@ -64,24 +66,20 @@ const getDarwiniaIntro = (t: TFunction<"translation">): FeatureWrapper => {
         dangerouslySetInnerHTML={{ __html: t(localeKeys.whatIsDarwinia) }}
       />
     ),
-    pcGrid: 3,
+    pcGrid: 2,
     data: [
       {
         icon: programmable,
-        title: t(localeKeys.programmable),
-        text: t(localeKeys.programmableText),
+        title: t("EVM Smart Contract Platform"),
+        text: t("Darwinia smart contract platform is fully compatible with EVM."),
         type: 1,
       },
       {
         icon: crossChain,
-        title: t(localeKeys.crossChain),
-        text: t(localeKeys.crossChainText),
-        type: 1,
-      },
-      {
-        icon: ultraLight,
-        title: t(localeKeys.ultraLight),
-        text: t(localeKeys.ultraLightText),
+        title: t("Cross-Chain Message Network"),
+        text: t(
+          "Darwinia provides user-friendly and reliable cross-chain services and infrastructure for Dapp developers."
+        ),
         type: 1,
       },
     ],
@@ -116,13 +114,8 @@ const getHowLightClientWorks = (t: TFunction<"translation">): LightClient => {
 
 const getDarwiniaRecommendation = (t: TFunction<"translation">): DarwiniaPromo => {
   return {
-    title: (
-      <div
-        className={"title-lg uppercase text-white"}
-        dangerouslySetInnerHTML={{ __html: t(localeKeys.darwiniaPromoTitle) }}
-      />
-    ),
-    subTitle: t(localeKeys.darwiniaPromoSubTitle),
+    title: <div className={"title-lg uppercase text-white"} dangerouslySetInnerHTML={{ __html: t("Use cases") }} />,
+    subTitle: "",
     content: {
       text: t(localeKeys.darwiniaPromoContent),
       list: [
@@ -134,13 +127,12 @@ const getDarwiniaRecommendation = (t: TFunction<"translation">): DarwiniaPromo =
         t(localeKeys.darwiniaPromoContentText6),
       ],
     },
-    image: sdk,
+    image: (
+      <video autoPlay muted loop>
+        <source src="./use_cases.mp4" type="video/mp4" />
+      </video>
+    ),
     links: [
-      {
-        title: t(localeKeys.sdkDoc),
-        url: "https://docs.darwinia.network/solidity-sdk-ac0f639b18094a4caeb1b39714f406b9",
-        isExternal: true,
-      },
       {
         title: t(localeKeys.learnMore),
         url: "https://docs.darwinia.network/",
@@ -253,36 +245,51 @@ const getDarwiniaPower = (t: TFunction<"translation">): FeatureWrapper => {
   };
 };
 
-const getCodeSamples = (t: TFunction<"translation">): CodeSample => {
-  return {
-    links: [
-      {
-        isExternal: true,
-        title: t(localeKeys.sdkDoc),
-        url: "https://docs.darwinia.network/solidity-sdk-ac0f639b18094a4caeb1b39714f406b9",
-      },
-      {
-        isExternal: true,
-        title: t(localeKeys.learnMore),
-        url: "https://docs.darwinia.network/",
-      },
-    ],
-    codes: [
-      {
-        title: t(localeKeys.sendMessage),
-        language: "solidity",
-        sample: sendMessage,
-      },
-      {
-        title: t(localeKeys.remoteEVMCall),
-        language: "solidity",
-        sample: remoteEVMCall,
-      },
-      {
-        title: t(localeKeys.accessRestriction),
-        language: "solidity",
-        sample: accessRestriction,
-      },
-    ],
-  };
+const getCodeSamples = (t: TFunction<"translation">): CodeSample[] => {
+  return [
+    {
+      title: t(localeKeys.sendMessage),
+      links: [
+        {
+          isExternal: true,
+          title: t(localeKeys.learnMore),
+          url: "https://docs.darwinia.network/",
+        },
+      ],
+      codes: [
+        {
+          title: t("msgport.send()"),
+          language: "solidity",
+          sample: sendMessage,
+        },
+        {
+          title: t("msgport.recv()"),
+          language: "solidity",
+          sample: remoteEVMCall,
+        },
+      ],
+    },
+    {
+      title: t("examples"),
+      links: [
+        {
+          isExternal: true,
+          title: t(localeKeys.learnMore),
+          url: "https://docs.darwinia.network/",
+        },
+      ],
+      codes: [
+        {
+          title: t("remote add"),
+          language: "solidity",
+          sample: sendMessage,
+        },
+        {
+          title: t("ping pong"),
+          language: "solidity",
+          sample: remoteEVMCall,
+        },
+      ],
+    },
+  ];
 };
