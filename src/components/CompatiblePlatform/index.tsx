@@ -21,7 +21,7 @@ export default function CompatiblePlatform() {
       {/* sub title */}
       <div className="lg:mt-1 lg:mb-4">
         <span className="text text-sm leading-6 font-light text-gray">
-          {t("Darwinia Chain provides a development environment that is fully compatible with Ethereum.")}
+          {t("Darwinia Chain provides a development environment that is fully compatible with EVM.")}
         </span>
       </div>
 
