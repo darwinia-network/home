@@ -331,6 +331,38 @@ $pc-sub-menu-y: -20%;
   transform: translate3d(-50%, $pc-sub-menu-y, 0);
 }
 
+.pc-sub-menu-right-enter {
+  width: 0;
+  height: 0;
+}
+
+.pc-sub-menu-right-enter-active {
+  height: 26rem;
+  width: 25rem;
+  transition: width 300ms, height 300ms;
+}
+
+.pc-sub-menu-right-enter-done {
+  width: 25rem;
+  height: fit-content;
+}
+
+.pc-sub-menu-right-exit {
+  width: 25rem;
+  height: 26rem;
+}
+
+.pc-sub-menu-right-exit-active {
+  width: 0;
+  height: 0;
+  transition: width 300ms, height 300ms;
+}
+
+.pc-sub-menu-right-exit-done {
+  width: 0;
+  height: 0;
+}
+
 .tokens-statistics-enter {
   opacity: 0;
 }
