@@ -84,3 +84,18 @@ export const accessRestriction = `function add(uint256 _value) public {
     );
     number = number + _value;
 }`;
+
+export const msgportSend = `function send(
+    address _throughLocalDock,
+    uint64 _toChainId,
+    address _toDappAddress,
+    bytes memory _messagePayload,
+    bytes memory _params
+) external payable returns (uint256);`;
+
+export const msgportRecv = `function recv(
+    uint64 _fromChainId,
+    address _fromDappAddress,
+    address _toDappAddress,
+    bytes memory _message
+) external;`;

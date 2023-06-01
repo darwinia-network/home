@@ -44,7 +44,7 @@ const getPCCodeSample = (
     const key = `${index}-${code.title}`;
     return (
       <div
-        className={`${decorationClass} ease-in-out transition-colors duration-[300ms] capitalize self-start hover:cursor-pointer title text-white mb-[1.875rem] last:mb-0`}
+        className={`${decorationClass} ease-in-out transition-colors duration-[300ms] lowercase self-start hover:cursor-pointer title text-white mb-[1.875rem] last:mb-0`}
         key={key}
         onClick={() => {
           onSwitchCodeSampleTab(index);
