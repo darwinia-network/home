@@ -9,7 +9,7 @@ import evolutionLand from "../assets/images/evolution-land.png";
 import staking from "../assets/images/staking.png";
 import partner from "../assets/images/partner.png";
 import integration from "../assets/images/integration.png";
-import { remoteEVMCall, sendMessage } from "./codeSamples";
+import { remoteEVMCall, sendMessage, msgportSend, msgportRecv } from "./codeSamples";
 // import HomeHeroAnimation from "../components/HomeHeroAnimation";
 
 /* make sure you use a custom hook here since we have to use the useTranslation hook
@@ -260,12 +260,12 @@ const getCodeSamples = (t: TFunction<"translation">): CodeSample[] => {
         {
           title: t("msgport.send()"),
           language: "solidity",
-          sample: sendMessage,
+          sample: msgportSend,
         },
         {
           title: t("msgport.recv()"),
           language: "solidity",
-          sample: remoteEVMCall,
+          sample: msgportRecv,
         },
       ],
     },

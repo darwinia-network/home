@@ -24,9 +24,9 @@ const DarwiniaPromo = ({ data }: Props) => {
   return (
     <div>
       <div className={"lg:hidden"}>{title}</div>
-      <div className={"flex flex-col lg:flex-row"}>
-        <div className={"mt-[3.125rem] lg:mt-[3.4375rem] w-full lg:w-[30.917%] shrink-0"}>{image}</div>
-        <div className={"lg:pl-[11.1875rem] capitalize"}>
+      <div className={"flex flex-col lg:flex-row lg:justify-between"}>
+        <div className={"mt-[3.125rem] lg:mt-[3.4375rem] w-full lg:w-[43%] shrink-0"}>{image}</div>
+        <div className={"capitalize lg:w-[50%]"}>
           <div className={"hidden lg:block mb-[1.875rem]"}>{title}</div>
           <div className={"mt-[3.125rem] lg:mt-0 title text-white"}>{subTitle}</div>
           <div className={"mt-[3.125rem] lg:mt-[1.25rem]"}>

@@ -2,7 +2,7 @@ import { NavLink } from "react-router-dom";
 import logo from "../../assets/images/logo.png";
 import menuIcon from "../../assets/images/menu-toggler.svg";
 import closeIcon from "../../assets/images/close.svg";
-import { Key, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { Menu } from "../../data/types";
 import localeKeys from "../../locale/localeKeys";
 import { useTranslation } from "react-i18next";
@@ -86,10 +86,6 @@ const Navigation = () => {
     });
   };
 
-  const onPCSubMenuToggle = (path: string | undefined) => {
-    setOpenedPCMenuPath(openedPCMenuPath === path ? undefined : path);
-  };
-
   const onClosePCSubMenu = () => {
     setOpenedPCMenuPath(undefined);
   };
@@ -124,7 +120,9 @@ const Navigation = () => {
           }
         >
           <div className={"flex items-center h-full"}>
-            <div className={"flex items-center h-full"}>{createPCMenu(menu, openedPCMenuPath, onPCSubMenuToggle)}</div>
+            <div className={"flex items-center h-full"}>
+              {createPCMenu(menu, openedPCMenuPath, setOpenedPCMenuPath)}
+            </div>
             <div className={`flex justify-end`}>
               <a
                 href={startBuildingURL}
@@ -205,7 +203,11 @@ const Navigation = () => {
   );
 };
 
-const createPCMenu = (menu: Menu[], openedMenuPath: string | undefined, onToggleSubMenu: (path: string) => void) => {
+const createPCMenu = (
+  menu: Menu[],
+  openedMenuPath: string | undefined,
+  onToggleSubMenu: (path: string | undefined) => void
+) => {
   return menu
     .filter((item) => item.device !== "MOBILE")
     .map((item, index) => {
@@ -222,19 +224,18 @@ const createPCMenu = (menu: Menu[], openedMenuPath: string | undefined, onToggle
           >
             <div
               onClick={() => {
-                onToggleSubMenu(path);
+                onToggleSubMenu(isActive ? undefined : path);
               }}
               className={"hover:cursor-pointer hover:opacity-70 select-none"}
             >
               {item.title}
             </div>
             <CSSTransition unmountOnExit={true} in={isActive} classNames={"pc-sub-menu"} timeout={300}>
-              <div className={"pc-nav-parent left-1/2 top-[30px] pt-[15px] absolute z-[2] w-[50rem] overflow-hidden"}>
-                <div className={"justify-between flex bg-black border-2 border-primary select-none"}>
-                  {createPCSubMenu(
-                    item.children.filter(({ device }) => device !== "MOBILE"),
-                    index
-                  )}
+              <div
+                className={"pc-nav-parent left-1/2 top-[30px] pt-[15px] absolute z-[2] w-[50.25rem] overflow-hidden"}
+              >
+                <div className={"justify-between flex bg-black border-2 border-primary w-fit select-none"}>
+                  <PCSubMenu menuItems={item.children.filter(({ device }) => device !== "MOBILE")} />
                 </div>
               </div>
             </CSSTransition>
@@ -278,8 +279,9 @@ const PCSubMenuItem = ({
   side,
   isExternalLink,
   path,
-}: Menu & { index: number; side: "left" | "right"; active?: number }) => {
-  const [hovering, setHovering] = useState(index === 0);
+  onActive = () => undefined,
+}: Menu & { index: number; side: "left" | "right"; active?: number; onActive?: (index: number) => void }) => {
+  const isActive = index === active;
 
   const content =
     action === "addChain" ? (
@@ -293,7 +295,7 @@ const PCSubMenuItem = ({
           src={icon}
           width={40}
           height={40}
-          className={`${!isComingSoon && (active === index || hovering) ? "bg-primary" : ""}`}
+          className={`${!isComingSoon && isActive ? "bg-primary" : ""}`}
         />
         <div className="flex flex-col gap-2">
           <div className="flex items-center gap-[10px]">
@@ -309,11 +311,15 @@ const PCSubMenuItem = ({
     );
 
   const attributes = {
-    onMouseEnter: () => setHovering(true),
-    onMouseLeave: () => setHovering(false),
-    className: `flex items-start gap-5 p-5 ${
-      !isComingSoon && (active === index || side === "right") ? "bg-[#222020]" : ""
-    } ${hovering && !isComingSoon ? "bg-[#222020]/80" : ""}`,
+    onMouseEnter: () => {
+      // if (!isComingSoon) {
+      //   onActive(index);
+      // }
+      onActive(index);
+    },
+    className: `flex items-start gap-5 p-5 ${!isComingSoon && (isActive || side === "right") ? "bg-[#222020]" : ""} ${
+      isActive && !isComingSoon ? "bg-[#222020]/80" : ""
+    }`,
   };
 
   if (path) {
@@ -333,24 +339,43 @@ const PCSubMenuItem = ({
   return <div {...attributes}>{content}</div>;
 };
 
-const createPCSubMenu = (menuItems: Menu[], key: Key) => {
+const PCSubMenu = ({ menuItems }: { menuItems: Menu[] }) => {
+  const [activeLeftIndex, setActiveLeftIndex] = useState<number>(-1);
+  const [activeRightIndex, setActiveRightIndex] = useState<number>(-1);
+
+  const rightItems = menuItems.at(activeLeftIndex)?.children?.filter(({ device }) => device !== "MOBILE");
+
   return (
-    <div key={key} className="flex w-full">
+    <div className="flex w-fit">
       {/* left */}
-      <div className="flex-1 flex flex-col">
+      <div className="w-[25rem] flex flex-col">
         {menuItems.map((item, index) => (
-          <PCSubMenuItem key={index} {...item} index={index} active={0} side="left" />
+          <PCSubMenuItem
+            key={index}
+            {...item}
+            index={index}
+            active={activeLeftIndex}
+            side="left"
+            onActive={setActiveLeftIndex}
+          />
         ))}
       </div>
 
       {/* right */}
-      <div className="flex-1 flex flex-col">
-        {menuItems[0].children
-          ?.filter(({ device }) => device !== "MOBILE")
-          .map((item, index) => (
-            <PCSubMenuItem key={index} {...item} index={index} side="right" />
+      <CSSTransition unmountOnExit in={!!rightItems?.length} timeout={300} classNames="pc-sub-menu-right">
+        <div className="flex flex-col">
+          {rightItems?.map((item, index) => (
+            <PCSubMenuItem
+              key={index}
+              {...item}
+              index={index}
+              active={activeRightIndex}
+              side="right"
+              onActive={setActiveRightIndex}
+            />
           ))}
-      </div>
+        </div>
+      </CSSTransition>
     </div>
   );
 };

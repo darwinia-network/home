@@ -68,7 +68,7 @@ export const MetamaskAddDarwiniaChain = () => {
     <button
       disabled={disabled || loading}
       onClick={handleClick}
-      className="btn-primary relative hover:bg-white disabled:cursor-not-allowed disabled:hover:bg-primary disabled:hover:text-white"
+      className="btn-primary border-0 relative hover:bg-white disabled:cursor-not-allowed disabled:hover:bg-primary disabled:hover:text-white"
     >
       {loading && (
         <div className="absolute top-0 left-0 w-full h-full z-10 flex items-center justify-center">
