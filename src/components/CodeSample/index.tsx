@@ -40,11 +40,11 @@ const getPCCodeSample = (
 ) => {
   const { title, pcSide } = codeSample;
   const tabs = codeSample.codes.map((code, index) => {
-    const decorationClass = index === activeTabIndex ? `text-primary` : "";
+    const decorationClass = index === activeTabIndex ? `text-primary` : "text-white";
     const key = `${index}-${code.title}`;
     return (
       <div
-        className={`${decorationClass} ease-in-out transition-colors duration-[300ms] lowercase self-start hover:cursor-pointer title text-white mb-[1.875rem] last:mb-0`}
+        className={`${decorationClass} ease-in-out transition-colors duration-[300ms] lowercase self-start hover:cursor-pointer title mb-[1.875rem] last:mb-0`}
         key={key}
         onClick={() => {
           onSwitchCodeSampleTab(index);
