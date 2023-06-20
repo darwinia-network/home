@@ -39,7 +39,7 @@ const getPapers = (t: TFunction<"translation">): Paper[] => {
       link: {
         isExternal: true,
         title: t(localeKeys.viewFullPaper),
-        url: "/genepaper_v2.pdf",
+        url: "/Genepaper_v3.pdf",
       },
       titleUrl: "",
     },

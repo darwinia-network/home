@@ -140,8 +140,7 @@ const enUs = {
       but this type of solution cannot be directly used for light clients on the chain, that is, cross-chain Relay.
       FlyClient requires making a certain degree of a hard fork to the corresponding chain and supports the Merkle Mountain Range (MMR) commitment before it can be used for relay on the chain, they all have a certain degree of poor generality, NonInteractive Proof of Work (NIPoPoW) is only applicable to chains with fixed block difficulty, and FlyClient needs to modify the best probability block sampling protocol and variable-difficulty verification model.`,
   [localeKeys.darwiniaOptimisticBridgeMobileSummary]: `To verify transactions, cryptocurrencies such as Bitcoin and Ethereum require nodes to verify that the blockchain is valid. This requirement means downloading and verifying all blocks, which takes hours and requires gigabytes of bandwidth and storage space. Therefore, clients with limited resources cannot independently verify transactions without trusting the full node.`,
-  [localeKeys.darwiniaGenePaperSummary]: `The blockchain industry has been evolving at a rapid pace, with more and more blockchain networks coming online every day. As believers and supporters of a multi-chain future, we foresee that there will be greater and greater need for interoperability between these different chains. Our focus while building a solution to this interoperability problem will not only be on safety,
-      but versatility in the way that it will be generalized and programmable. Darwinia will help kickstart this trend with its cross-chain messaging infrastructure. Darwinia provides a reliable and programmable cross-chain platform for decentralized applications, and empowers developers with a software development kit (SDK) which allows them to easily integrate cross-chain functionality into their own Dapps.`,
+  [localeKeys.darwiniaGenePaperSummary]: `The blockchain industry has been evolving rapidly, witnessing the emergence of numerous blockchain networks. As proponents of a multi-chain future, we recognize the increasing need for interoperability among these diverse chains. While addressing this interoperability challenge, our focus extends beyond safety to encompass versatility, generalizability, and programmability. Currently, several service providers offer token bridges for token holders. However, most of these solutions are limited to specific assets or use cases, lacking the desired level of generalization and programmability. Moreover, the complexity arising from layering application layer smart contracts on top of underlying cross-chain solutions further compromises security. To cater to the needs of cross-chain Dapp developers, there is a requirement for layered protocols, including a purpose-built, generalized, and programmable cross-chain messaging layer to support their applications.`,
   [localeKeys.darwiniaGenePaperMobileSummary]: ``,
   [localeKeys.viewFullPaper]: `View Full Paper`,
   [localeKeys.back]: `back`,
@@ -170,7 +169,8 @@ const enUs = {
   [localeKeys.crabChain]: "Crab Chain",
   [localeKeys.faucet]: "Faucet",
   [localeKeys.darwiniaChainDescription]: "EVM compatible smart contract platform, sharing security of Polkadot.",
-  [localeKeys.darwiniaMsgportDescription]: "Essential infrastructure that enable DApps to send messages across different blockchain networks, thus facilitating interchain operations.",
+  [localeKeys.darwiniaMsgportDescription]:
+    "Essential infrastructure that enable DApps to send messages across different blockchain networks, thus facilitating interchain operations.",
 };
 
 export default enUs;
