@@ -11,7 +11,6 @@ import github from "../assets/images/github.svg";
 import message from "../assets/images/message.svg";
 import startStake from "../assets/images/start-stake-2.png";
 import runValidator from "../assets/images/run-validator.png";
-import darwiniaAmbassador from "../assets/images/darwinia-ambassador.png";
 import darwiniaGrants from "../assets/images/darwinia-grant.png";
 
 /* make sure you use a custom hook here since we have to use the useTranslation hook
@@ -94,7 +93,7 @@ const getInvolved = (t: TFunction<"translation">): FeatureWrapper => {
         links: [
           {
             isExternal: true,
-            url: "https://darwinia.notion.site/Staking-56cd5e14439b4c9789f1cf63edd1d9d7",
+            url: "https://docs.darwinia.network/staking-guide-d7387bfc4d3f4604860651f268ed00ba",
             title: t(localeKeys.startStake),
           },
         ],
@@ -107,17 +106,6 @@ const getInvolved = (t: TFunction<"translation">): FeatureWrapper => {
             isExternal: true,
             url: "https://docs.darwinia.network/how-to-become-a-collator-af6bce360d5b49ddacc56e4587510210",
             title: t(localeKeys.runCollator),
-          },
-        ],
-      },
-      {
-        icon: darwiniaAmbassador,
-        type: 4,
-        links: [
-          {
-            isExternal: true,
-            url: "https://medium.com/@darwinianetwork/join-the-darwinia-ambassador-program-b57a0d8b2802",
-            title: t(localeKeys.becomeDarwiniaAmbassador),
           },
         ],
       },

@@ -132,7 +132,6 @@ const localeKeys = {
   community: "community",
   subscriptionSuccessful: "subscriptionSuccessful",
   getInvolved: "getInvolved",
-  becomeDarwiniaAmbassador: "becomeDarwiniaAmbassador",
   applyDarwiniaGrant: "applyDarwiniaGrant",
   paperResources: "paperResources",
   paperResourcesIntro: "paperResourcesIntro",
