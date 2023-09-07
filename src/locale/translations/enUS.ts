@@ -125,7 +125,6 @@ const enUs = {
   [localeKeys.crab]: `crab`,
   [localeKeys.community]: `community`,
   [localeKeys.getInvolved]: `get involved`,
-  [localeKeys.becomeDarwiniaAmbassador]: `Become a Darwinia Ambassador >`,
   [localeKeys.applyDarwiniaGrant]: `Apply for the Darwinia Grant >`,
   [localeKeys.paperResources]: `Paper Resources`,
   [localeKeys.paperResourcesIntro]: `A series of papers written by experts about Darwinia Network.`,

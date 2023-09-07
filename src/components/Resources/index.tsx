@@ -42,7 +42,7 @@ const getResourcesConfig = (t: TFunction): ItemCfg[] => [
     title: t("Staking Rewards"),
     link: {
       text: t("Learn more"),
-      path: "https://www.notion.so/Staking-56cd5e14439b4c9789f1cf63edd1d9d7",
+      path: "https://docs.darwinia.network/staking-guide-d7387bfc4d3f4604860651f268ed00ba",
       external: true,
     },
     description: t("Stake your RING/KTON to become a delegator or collator on Darwinia Chain."),

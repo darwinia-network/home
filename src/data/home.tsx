@@ -200,7 +200,7 @@ const getDarwiniaPower = (t: TFunction<"translation">): FeatureWrapper => {
         links: [
           {
             title: t(localeKeys.startStake),
-            url: "https://darwinia.notion.site/Staking-56cd5e14439b4c9789f1cf63edd1d9d7",
+            url: "https://docs.darwinia.network/staking-guide-d7387bfc4d3f4604860651f268ed00ba",
             isExternal: true,
           },
           {
