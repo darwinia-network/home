@@ -89,11 +89,6 @@ const getDarwiniaDevRoadmap = (t: TFunction<"translation">): FeatureWrapper => {
             title: `${t(localeKeys.soliditySDKApi)} >`,
             isComingSoon: true,
           },
-          {
-            isExternal: true,
-            url: "https://darwinia-js-sdk.darwinia.network/",
-            title: `${t(localeKeys.jsSDKApi)} >`,
-          },
         ],
         type: 3,
       },

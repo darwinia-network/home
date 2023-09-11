@@ -160,7 +160,6 @@ const enUs = {
   [localeKeys.createASimpleDapp]: "Create A Simple Dapp",
   [localeKeys.ethereumDarwiniaParachain]: "Ethereum <> Darwinia <> Parachain",
   [localeKeys.soliditySDKApi]: "Solidity SDK API",
-  [localeKeys.jsSDKApi]: "JS SDK API",
   [localeKeys.solutions]: "Solutions",
   [localeKeys.darwiniaChain]: "Darwinia Chain",
   [localeKeys.darwiniaMsgport]: "Darwinia Msgport",
