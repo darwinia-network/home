@@ -162,7 +162,6 @@ const localeKeys = {
   createASimpleDapp: "createASimpleDapp",
   ethereumDarwiniaParachain: "ethereumDarwiniaParachain",
   soliditySDKApi: "soliditySDKApi",
-  jsSDKApi: "jsSDKApi",
   solutions: "solutions",
   darwiniaChain: "darwiniaChain",
   darwiniaMsgport: "darwiniaMsgport",
