@@ -27,29 +27,27 @@ const getFooterData = (t: TFunction<"translation">): Footer => {
       {
         categories: [
           {
-            title: t("Solutions"),
-            links: [{
-              title: t("Darwinia Chain"),
-              url: "/darwiniachain",
-              isExternal: false,
-            }, {
-              title: t("Darwinia Msgport"),
-              url: "",
-              isExternal: false,
-            }],
-          },
-          {
             title: t(localeKeys.developers),
             links: [
               {
                 isExternal: true,
-                url: "https://docs.darwinia.network/builder-0f142bfb7f6b41d78548fca21531a03d",
-                title: t(localeKeys.developerDocs),
+                url: "https://docs.darwinia.network/",
+                title: "Documentation",
+              },
+            ],
+          },
+          {
+            title: t("Solutions"),
+            links: [
+              {
+                title: "Darwinia EVM + XCMP",
+                url: "https://docs.darwinia.network/darwinia-chains-df814f681ec248438cb762df8aaddbd6",
+                isExternal: true,
               },
               {
-                isExternal: false,
-                url: "/developers",
-                title: t(localeKeys.developerResources),
+                title: t("Darwinia Msgport"),
+                url: "https://docs.darwinia.network/darwinia-msgport-fa89f501ea1747e285b6169697e2ff77",
+                isExternal: true,
               },
             ],
           },
