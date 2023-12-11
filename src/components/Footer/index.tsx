@@ -85,7 +85,7 @@ const Footer = ({ data }: Props) => {
       <div className={"hidden lg:block lg:px-0"}>
         <div className={"divider-50"} />
       </div>
-      <div className={"container py-[1.25rem] lg:py-[3.125rem]"}>
+      <div className={"max-w-8xl mx-auto lg:px-8 px-4 py-[1.25rem] lg:py-[3.125rem]"}>
         {/* Only visible on PC */}
         <div className={"hidden lg:block"}>
           <div className={"title text-white uppercase"}>{t(localeKeys.subscribeToUpdates)}</div>
@@ -169,7 +169,7 @@ const Footer = ({ data }: Props) => {
       <div className={"container lg:hidden"}>
         <div className={"divider-50"} />
       </div>
-      <div className={"container py-[1.25rem] lg:py-[3.125rem]"}>
+      <div className={"max-w-8xl mx-auto lg:px-8 px-4 py-[1.25rem] lg:py-[3.125rem]"}>
         <div className={"flex flex-col justify-between lg:flex-row"}>
           <div className={"order-3 lg:order-1"}>{copyRight}</div>
           <div className={"divider-50 my-[1.25rem] order-2 lg:hidden"} />

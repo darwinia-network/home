@@ -6,6 +6,7 @@ import CompatiblePlatform from "../../components/CompatiblePlatform";
 import DeveloperFriendly from "../../components/DeveloperFriendly";
 import RingToken from "../../components/RingToken";
 import Resources from "../../components/Resources";
+import { PropsWithChildren } from "react";
 
 const DarwiniaChain = () => {
   const { heroData } = useDarwiniaChainData();
@@ -14,21 +15,33 @@ const DarwiniaChain = () => {
   return (
     <div>
       <Hero page="DARWINIA_CHAIN" data={heroData} />
-      <div data-aos={"fade-up"} data-aos-duration={700} className={"container inter-block-space-1"}>
+      <Section>
         <CompatiblePlatform />
-      </div>
-      <div data-aos={"fade-up"} data-aos-duration={700} className={"container inter-block-space-1"}>
+      </Section>
+      <Section>
         <DeveloperFriendly />
-      </div>
-      <div data-aos={"fade-up"} data-aos-duration={700} className={"container inter-block-space-1"}>
+      </Section>
+      <Section>
         <RingToken />
-      </div>
-      <div data-aos={"fade-up"} data-aos-duration={700} className={"container inter-block-space-1"}>
+      </Section>
+      <Section>
         <Resources />
-      </div>
+      </Section>
       <Footer data={footerData} />
     </div>
   );
 };
+
+function Section({ children }: PropsWithChildren<unknown>) {
+  return (
+    <div
+      data-aos={"fade-up"}
+      data-aos-duration={700}
+      className={"max-w-8xl w-full mx-auto lg:px-8 px-4 inter-block-space-1"}
+    >
+      {children}
+    </div>
+  );
+}
 
 export default DarwiniaChain;

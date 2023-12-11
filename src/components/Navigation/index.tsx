@@ -100,7 +100,7 @@ const Navigation = () => {
         "duration-700 transition-all fixed z-[99] left-0 top-0 right-0 flex justify-center h-[3.75rem] lg:h-[4.375rem]"
       }
     >
-      <div className={"justify-between flex container pl-[1.25rem] pr-[0.25rem] lg:px-[1.875rem] xl:px-[3.75rem]"}>
+      <div className={"justify-between flex max-w-8xl w-full mx-auto lg:px-8 pl-4 pr-[0.25rem]"}>
         <NavLink to="/" className={"flex hover:cursor-pointer"}>
           <img className={"self-center w-[10.108rem] lg:w-[11.119rem]"} src={logo} alt="logo" />
         </NavLink>
@@ -188,14 +188,14 @@ const createPCMenu = (
         onClick={(e) => {
           e.stopPropagation();
         }}
-        className={"relative text capitalize px-[.9375rem]"}
+        className={"relative px-[.9375rem]"}
         key={path}
       >
         <div
           onClick={() => {
             onToggleSubMenu(isActive ? undefined : path);
           }}
-          className={`hover:cursor-pointer hover:text-primary transition-colors select-none ${
+          className={`hover:cursor-pointer hover:text-primary transition-colors select-none font-[JetBrainsMono-Bold] font-bold text-sm ${
             isActive ? "text-primary" : "text-white"
           }`}
         >
@@ -230,7 +230,9 @@ const createMobileMenu = (
           onClick={() => {
             onChildMenuToggle(path);
           }}
-          className={`text capitalize px-[1.25rem] py-[0.625rem] ${isActive ? "text-primary" : "text-white"}`}
+          className={`font-[JetBrainsMono-Bold] font-bold text-sm px-[1.25rem] py-[0.625rem] ${
+            isActive ? "text-primary" : "text-white"
+          }`}
         >
           {item.title}
         </div>

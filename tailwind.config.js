@@ -15,6 +15,9 @@ module.exports = {
         medium: "0.625rem", // 10
         large: "1.25rem", // 20
       },
+      maxWidth: {
+        "8xl": "90rem",
+      },
     },
   },
   plugins: [

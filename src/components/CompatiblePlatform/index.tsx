@@ -47,7 +47,7 @@ const Features = ({ features, className }: { features: string[]; className: stri
   <div className={`flex-col items-start justify-start gap-2 lg:gap-8 ${className}`}>
     {features.map((feature, index) => (
       <span key={index} className="title lg:text text-xs lg:text-sm leading-6 font-semibold lg:font-light capitalize">
-        -{feature}
+        - {feature}
       </span>
     ))}
   </div>

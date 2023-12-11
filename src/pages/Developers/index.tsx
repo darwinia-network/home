@@ -22,10 +22,10 @@ const Developers = () => {
   return (
     <div>
       <Hero page={"DEVELOPERS"} data={heroData} />
-      <div data-aos={"fade-up"} data-aos-duration={700} className={"container inter-block-space-1"}>
+      <div data-aos={"fade-up"} data-aos-duration={700} className={"max-w-8xl w-full mx-auto lg:px-8 px-4 inter-block-space-1"}>
         <FeatureWrapper data={devRoadmapData} />
       </div>
-      <div data-aos={"fade-up"} data-aos-duration={700} className={"container inter-block-space-1"}>
+      <div data-aos={"fade-up"} data-aos-duration={700} className={"max-w-8xl w-full mx-auto lg:px-8 px-4 inter-block-space-1"}>
         <div className={"lg:border border-halfWhite lg:px-[16.25%] lg:py-[2.5rem]"}>
           <div className={"title lg:text-center"}>{techSupportData.title}</div>
           <div className={"lg:text-center text-white capitalize"}>{techSupportData.text}</div>
