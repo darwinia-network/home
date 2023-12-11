@@ -78,8 +78,16 @@ const getMenu = (_t: TFunction): Menu[] => {
     {
       title: "Community ▾",
       navigations: [
-        { label: "Online Communities" },
-        { label: "Get Involved" },
+        {
+          label: "Online Communities",
+          path: "https://www.notion.so/darwinia/Online-communities-fe79f25c50e7412189fff9583c3df5d2",
+          external: true,
+        },
+        {
+          label: "Get Involved",
+          path: "https://www.notion.so/darwinia/Get-involved-664339c01069475da197718e8003544c",
+          external: true,
+        },
         {
           label: "Grants",
           path: "https://github.com/darwinia-network/collaboration/blob/master/grant/README.md",
