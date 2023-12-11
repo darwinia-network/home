@@ -80,11 +80,6 @@ const getDarwiniaIntro = (t: TFunction<"translation">): FeatureWrapper => {
     links: [
       {
         title: t(localeKeys.devWithDarwinia),
-        url: "/developers",
-        isExternal: false,
-      },
-      {
-        title: t(localeKeys.learnMore),
         url: "https://docs.darwinia.network/",
         isExternal: true,
       },
