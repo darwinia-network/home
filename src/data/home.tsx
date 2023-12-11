@@ -42,15 +42,9 @@ const getHero = (t: TFunction<"translation">): Hero => {
         <source src="./hero.mp4" type="video/mp4" />
       </video>
     ),
-    text: t("Darwinia Provides Cross-chain smart contract platform and message port network."),
     links: [
       {
         title: t(localeKeys.devWithDarwinia),
-        url: "/developers",
-        isExternal: false,
-      },
-      {
-        title: t(localeKeys.learnMore),
         url: "https://docs.darwinia.network/",
         isExternal: true,
       },

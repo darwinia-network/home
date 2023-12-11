@@ -5,7 +5,7 @@ import { SupportedLanguages } from "../../data/types";
 
 const HomeTypewriter = () => {
   const { t, i18n } = useTranslation();
-  const initialText = "Cross";
+  const initialText = "Powering";
 
   useEffect(() => {
     const typewriterElement: HTMLElement | null = document.querySelector(".typewriter-content");
@@ -19,7 +19,8 @@ const HomeTypewriter = () => {
     };
   }, []);
   /* change this for every page */
-  const fakeTitle = getFakeTitle(t("Cross-Chain programmable Network"));
+  // const fakeTitle = getFakeTitle(t("Cross-Chain programmable Network"));
+  const fakeTitle = getFakeTitle(t("Powering Your DApp's Cross-Chain Capabilities"));
   return (
     <div className={"relative"}>
       {/* this first title is rendered just to expand the parent so that the typewriter text
@@ -59,7 +60,7 @@ const getEnglishTypewriter = (typewriterElement: HTMLElement): Typewriter => {
   typewriter
     .typeString(
       {
-        text: "-Chain programmable Network",
+        text: " Your DApp's Cross-Chain Capabilities",
       },
       100
     )
