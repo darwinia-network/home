@@ -1,5 +1,4 @@
 import Hero from "../../components/Hero";
-import FeatureWrapper from "../../components/FeatureWrapper";
 import { useHomeData } from "../../data/home";
 import DarwiniaPromo from "../../components/DarwiniaPromo";
 import Footer from "../../components/Footer";
@@ -8,16 +7,13 @@ import CodeSample from "../../components/CodeSample";
 import { PropsWithChildren } from "react";
 
 const Home = () => {
-  const { heroData, darwiniaIntroData, darwiniaRecommendationData, darwiniaPowerData, codeSamplesData } = useHomeData();
+  const { heroData, darwiniaRecommendationData, codeSamplesData } = useHomeData();
 
   const { footerData } = useFooterData();
 
   return (
     <div>
       <Hero page={"HOME"} data={heroData} />
-      <Section>
-        <FeatureWrapper data={darwiniaIntroData} />
-      </Section>
       <Section className="max-w-6xl">
         <CodeSample data={{ ...codeSamplesData[0], pcSide: "left" }} />
       </Section>
@@ -26,9 +22,6 @@ const Home = () => {
       </Section>
       <Section>
         <DarwiniaPromo data={darwiniaRecommendationData} />
-      </Section>
-      <Section>
-        <FeatureWrapper data={darwiniaPowerData} />
       </Section>
       <Footer data={footerData} />
     </div>
