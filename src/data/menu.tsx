@@ -94,7 +94,7 @@ const getMenu = (_t: TFunction): Menu[] => {
           external: true,
         },
         {
-          label: "help Center",
+          label: "Help Center",
           path: "https://www.notion.so/darwinia/a76d5bdc7ad242bea991c023dfca208f?v=5fb127fc9a7a4d67a3bbc3ed50445180",
           external: true,
         },
