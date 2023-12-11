@@ -1,13 +1,5 @@
-import { Menu } from "./types";
 import { TFunction, useTranslation } from "react-i18next";
-import localeKeys from "../locale/localeKeys";
-
-import darwiniaChainIcon from "../assets/images/darwinia-chain.svg";
-import darwiniaMsgportIcon from "../assets/images/darwinia-msgport.svg";
-import ecosystemAppsIcon from "../assets/images/ecosystem-apps.svg";
-import stakingIcon from "../assets/images/staking.svg";
-import crabChainIcon from "../assets/images/crab-chain.svg";
-import faucetIcon from "../assets/images/faucet.svg";
+import { Menu } from "./types";
 
 /* make sure you use a custom hook here since we have to use the useTranslation hook
  * from react-i18next */
@@ -19,92 +11,91 @@ export const useMenuData = () => {
   };
 };
 
-const getMenu = (t: TFunction<"translation">): Menu[] => {
+const getMenu = (_t: TFunction): Menu[] => {
   return [
     {
-      title: `${t(localeKeys.solutions)}▾`,
-      device: "PC",
-      children: [
+      title: "Use Darwinia ▾",
+      navigations: [
         {
-          title: t(localeKeys.darwiniaChain),
-          children: getDarwiniaChainSubMenu(t),
-          icon: darwiniaChainIcon,
-          description: t(localeKeys.darwiniaChainDescription),
-          isLive: true,
-          path: "/darwiniachain",
+          label: "Get RING",
+          path: "https://darwinia.notion.site/Where-can-I-get-the-RING-token-c0932eaa99454be99335fdfff106e789",
+          external: true,
         },
         {
-          title: t(localeKeys.darwiniaMsgport),
-          icon: darwiniaMsgportIcon,
-          description: t(localeKeys.darwiniaMsgportDescription),
-          isComingSoon: true,
+          label: "Stake RING",
+          path: "https://docs.darwinia.network/staking-guide-4306a2a3f25f4ea0b41377e267e1d319",
+          external: true,
+        },
+        {
+          label: "Run a Node",
+          path: "https://docs.darwinia.network/run-collator-node-af6bce360d5b49ddacc56e4587510210",
+          external: true,
+        },
+        // { label: "Cross-Chain Asset Bridge" },
+        // { label: "Cross-Chain DAO Governance" },
+      ],
+    },
+    {
+      title: "Learn ▾",
+      navigations: [
+        { label: "What is Darwinia", path: "https://docs.darwinia.network/", external: true },
+        {
+          label: "What is RING",
+          path: "https://docs.darwinia.network/token-and-economic-model-ebfbf88c76794215a4abe75ae13f596b",
+          external: true,
+        },
+        { label: "Darwinia Ecosystem DApps", path: "https://apps.darwinia.network/", external: true },
+        { label: "Darwinia News & Updates", path: "https://medium.com/darwinianetwork", external: true },
+        {
+          label: "Darwinia Roadmap",
+          path: "https://www.notion.so/darwinia/c700133dd5a04c2494ceab489c75c907?v=8ff88199019d4236a3b9a190f5e7b9d5",
+          external: true,
+        },
+        { label: "Darwinia Genepaper", path: "https://darwinia.network/#/papers/1" },
+        { label: "Glossary", path: "https://docs.darwinia.network/glossary-8967fc4aa6a046a69b525dff7bf70a50" },
+        { label: "FAQ", path: "https://www.notion.so/darwinia/FAQ-c9412ead803542f197ba1ccafb72c427", external: true },
+      ],
+    },
+    {
+      title: "Developers ▾",
+      navigations: [{ label: "Documentation", path: "https://docs.darwinia.network/", external: true }],
+    },
+    {
+      title: "Solutions ▾",
+      navigations: [
+        {
+          label: "Darwinia EVM + XCMP",
+          path: "https://docs.darwinia.network/darwinia-chains-df814f681ec248438cb762df8aaddbd6",
+          external: true,
+        },
+        {
+          label: "Darwinia Msgport",
+          path: "https://docs.darwinia.network/darwinia-msgport-fa89f501ea1747e285b6169697e2ff77",
+          external: true,
         },
       ],
     },
     {
-      title: `${t(localeKeys.darwiniaChain)}▾`,
-      device: "MOBILE",
-      children: getDarwiniaChainSubMenu(t),
-    },
-    {
-      title: t(localeKeys.developers),
-      path: "/developers",
-    },
-    {
-      title: t(localeKeys.community),
-      path: "/community",
-    },
-    {
-      title: t(localeKeys.blog),
-      path: "https://medium.com/darwinianetwork",
-      isExternalLink: true,
-    },
-    {
-      title: t(localeKeys.support),
-      path: "https://darwinia.notion.site/a76d5bdc7ad242bea991c023dfca208f?v=5fb127fc9a7a4d67a3bbc3ed50445180",
-      isExternalLink: true,
-    },
-  ];
-};
-const getDarwiniaChainSubMenu = (t: TFunction<"translation">): Menu[] => {
-  return [
-    {
-      title: `${t(localeKeys.darwiniaChain)}`,
-      device: "MOBILE",
-      path: "/darwiniachain",
-    },
-    {
-      title: t(localeKeys.ecosystemApps),
-      path: "https://apps.darwinia.network/",
-      isExternalLink: true,
-      icon: ecosystemAppsIcon,
-      description: t("Explore Dapps in Darwinia Ecosystem."),
-    },
-    {
-      title: t(localeKeys.staking),
-      path: "https://staking.darwinia.network/#/staking?network=Darwinia",
-      isExternalLink: true,
-      icon: stakingIcon,
-      description: t("Stake RING & KTON to eran rewards."),
-    },
-    {
-      title: t(localeKeys.crabChain),
-      path: "https://docs.darwinia.network/crab-7d27b58cb42a4315b878281da0043aa6",
-      isExternalLink: true,
-      icon: crabChainIcon,
-      description: t("Canary Network of Darwinia Chain."),
-    },
-    {
-      title: t(localeKeys.faucet),
-      path: "https://docs.darwinia.network/testnet-faucets-98a5b8e69c7e40b59973aa36af2ac647",
-      isExternalLink: true,
-      icon: faucetIcon,
-      description: t("Get Test Tokens To experiment on TestNet."),
-    },
-    {
-      title: t("Add Darwinia Chain to MetaMask"),
-      device: "PC",
-      action: "addChain",
+      title: "Community ▾",
+      navigations: [
+        { label: "Online Communities" },
+        { label: "Get Involved" },
+        {
+          label: "Grants",
+          path: "https://github.com/darwinia-network/collaboration/blob/master/grant/README.md",
+          external: true,
+        },
+        {
+          label: "help Center",
+          path: "https://www.notion.so/darwinia/a76d5bdc7ad242bea991c023dfca208f?v=5fb127fc9a7a4d67a3bbc3ed50445180",
+          external: true,
+        },
+        {
+          label: "Brand Assets",
+          path: "https://darwinia.notion.site/Brand-Assets-9bd35f88f0674232954737577616f2c2",
+          external: true,
+        },
+      ],
     },
   ];
 };

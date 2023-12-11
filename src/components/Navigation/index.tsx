@@ -3,12 +3,9 @@ import logo from "../../assets/images/logo.png";
 import menuIcon from "../../assets/images/menu-toggler.svg";
 import closeIcon from "../../assets/images/close.svg";
 import { useEffect, useState } from "react";
-import { Menu } from "../../data/types";
-import localeKeys from "../../locale/localeKeys";
-import { useTranslation } from "react-i18next";
+import { Menu, Navigation as TNavigation } from "../../data/types";
 import { useMenuData } from "../../data/menu";
 import { CSSTransition } from "react-transition-group";
-import { MetamaskAddDarwiniaChain } from "../MetamaskAddDarwiniaChain";
 
 interface SubMenuHeight {
   [path: string]: number;
@@ -20,13 +17,11 @@ interface NavigationDataSet {
 
 const Navigation = () => {
   const { menu } = useMenuData();
-  const { t } = useTranslation();
   const [isMobileNavVisible, toggleMobileNav] = useState(false);
   const [openedMobileMenuPath, setOpenedMobileMenuPath] = useState<string | undefined>(undefined);
   const [mobileMenuHeightByPathMap, setMenuHeight] = useState<SubMenuHeight>({});
   const [openedPCMenuPath, setOpenedPCMenuPath] = useState<string | undefined>(undefined);
   const [navBarBackground, setNavBarBackground] = useState("rgba(0,0,0,0)");
-  const startBuildingURL = "https://docs.darwinia.network/";
   const navBarThreshold = 100;
 
   useEffect(() => {
@@ -99,7 +94,6 @@ const Navigation = () => {
   };
 
   return (
-    /* bg-black */
     <div
       style={{ background: navBarBackground }}
       className={
@@ -107,9 +101,10 @@ const Navigation = () => {
       }
     >
       <div className={"justify-between flex container pl-[1.25rem] pr-[0.25rem] lg:px-[1.875rem] xl:px-[3.75rem]"}>
-        <NavLink to={"/"} className={"flex hover:cursor-pointer"}>
+        <NavLink to="/" className={"flex hover:cursor-pointer"}>
           <img className={"self-center w-[10.108rem] lg:w-[11.119rem]"} src={logo} alt="logo" />
         </NavLink>
+
         {/* PC navigation */}
         {/* DON'T use the class hidden since the display: none
        items have zero height, this will make us fail to get the submenu scrollHeights
@@ -119,22 +114,9 @@ const Navigation = () => {
             "max-w-[1px] max-h-[1px] overflow-hidden lg:max-w-[none] lg:max-h-[none] lg:overflow-visible lg: lg:block pc-navigation"
           }
         >
-          <div className={"flex items-center h-full"}>
-            <div className={"flex items-center h-full"}>
-              {createPCMenu(menu, openedPCMenuPath, setOpenedPCMenuPath)}
-            </div>
-            <div className={`flex justify-end`}>
-              <a
-                href={startBuildingURL}
-                target="_blank"
-                className={"btn-primary text-white lg:py-[0.125rem] ml-[0.9375rem] capitalize self-end hover:bg-white"}
-                rel="noreferrer"
-              >
-                {t(localeKeys.startBuilding)}
-              </a>
-            </div>
-          </div>
+          <div className="flex items-center h-full">{createPCMenu(menu, openedPCMenuPath, setOpenedPCMenuPath)}</div>
         </div>
+
         {/* Mobile navigation toggler */}
         <div
           onClick={() => {
@@ -145,8 +127,9 @@ const Navigation = () => {
           <img src={menuIcon} alt="menu-toggler" />
         </div>
       </div>
+
       {/* Mobile Navigation */}
-      {/* overlay */}
+      {/* mask */}
       <CSSTransition in={isMobileNavVisible} classNames={"nav-overlay"} timeout={300} unmountOnExit={true}>
         <div
           onClick={() => {
@@ -155,6 +138,7 @@ const Navigation = () => {
           className={`lg:hidden navigation-overlay`}
         />
       </CSSTransition>
+
       {/* Mobile Navigation itself */}
       {/* DON'T use the class hidden since the display: none
        items have zero height, this will make us fail to get the submenu scrollHeights
@@ -181,19 +165,6 @@ const Navigation = () => {
                 <div className={"flex text-right flex-col my-[1.25rem]"}>
                   {createMobileMenu(menu, openedMobileMenuPath, mobileMenuHeightByPathMap, onMobileSubMenuToggle)}
                 </div>
-                <div className={"px-[1.25rem]"}>
-                  <div className={"divider"} />
-                </div>
-                <div className={`flex justify-end my-[1.875rem] px-[1.25rem]`}>
-                  <a
-                    href={startBuildingURL}
-                    target="_blank"
-                    className={"btn-primary text-white capitalize self-end hover:bg-white"}
-                    rel="noreferrer"
-                  >
-                    {t(localeKeys.startBuilding)}
-                  </a>
-                </div>
               </div>
             </div>
           </div>
@@ -208,176 +179,38 @@ const createPCMenu = (
   openedMenuPath: string | undefined,
   onToggleSubMenu: (path: string | undefined) => void
 ) => {
-  return menu
-    .filter((item) => item.device !== "MOBILE")
-    .map((item, index) => {
-      const path = `${index}`;
-      const isActive = openedMenuPath === path;
-      if (item.children) {
-        return (
-          <div
-            onClick={(e) => {
-              e.stopPropagation();
-            }}
-            className={"relative text text-white capitalize px-[.9375rem]"}
-            key={path}
-          >
-            <div
-              onClick={() => {
-                onToggleSubMenu(isActive ? undefined : path);
-              }}
-              className={"hover:cursor-pointer hover:opacity-70 select-none"}
-            >
-              {item.title}
-            </div>
-            <CSSTransition unmountOnExit={true} in={isActive} classNames={"pc-sub-menu"} timeout={300}>
-              <div
-                className={"pc-nav-parent left-1/2 top-[30px] pt-[15px] absolute z-[2] w-[50.25rem] overflow-hidden"}
-              >
-                <div className={"justify-between flex bg-black border-2 border-primary w-fit select-none"}>
-                  <PCSubMenu menuItems={item.children.filter(({ device }) => device !== "MOBILE")} />
-                </div>
-              </div>
-            </CSSTransition>
-          </div>
-        );
-      }
-      if (item.isExternalLink) {
-        return (
-          <a
-            href={item.path}
-            target="_blank"
-            key={index}
-            className={`text text-white capitalize px-[0.9375rem] hover:opacity-70 select-none`}
-            rel="noreferrer"
-          >
-            {item.title}
-          </a>
-        );
-      }
-      return (
-        <NavLink
-          to={item.path ?? ""}
-          key={index}
-          className={`text text-white capitalize px-[.9375rem] hover:opacity-70 select-none`}
+  return menu.map((item, index) => {
+    const path = `${index}`;
+    const isActive = openedMenuPath === path;
+
+    return (
+      <div
+        onClick={(e) => {
+          e.stopPropagation();
+        }}
+        className={"relative text capitalize px-[.9375rem]"}
+        key={path}
+      >
+        <div
+          onClick={() => {
+            onToggleSubMenu(isActive ? undefined : path);
+          }}
+          className={`hover:cursor-pointer hover:text-primary transition-colors select-none ${
+            isActive ? "text-primary" : "text-white"
+          }`}
         >
           {item.title}
-        </NavLink>
-      );
-    });
-};
-
-const PCSubMenuItem = ({
-  index,
-  active,
-  title,
-  icon,
-  description,
-  action,
-  isLive,
-  isComingSoon,
-  side,
-  isExternalLink,
-  path,
-  onActive = () => undefined,
-}: Menu & { index: number; side: "left" | "right"; active?: number; onActive?: (index: number) => void }) => {
-  const isActive = index === active;
-
-  const content =
-    action === "addChain" ? (
-      <div className="flex items-center justify-center w-full">
-        <MetamaskAddDarwiniaChain />
-      </div>
-    ) : (
-      <>
-        <img
-          alt="..."
-          src={icon}
-          width={40}
-          height={40}
-          className={`${!isComingSoon && isActive ? "bg-primary" : ""}`}
-        />
-        <div className="flex flex-col gap-2">
-          <div className="flex items-center gap-[10px]">
-            <span className="title text-sm text-white">{title}</span>
-            {isLive && <span className="border border-primary title text-xs text-primary">&nbsp;Live&nbsp;</span>}
-            {isComingSoon && (
-              <span className="border border-primary title text-xs text-primary">&nbsp;Coming soon&nbsp;</span>
-            )}
+        </div>
+        <CSSTransition unmountOnExit={true} in={isActive} classNames={"pc-sub-menu"} timeout={300}>
+          <div className={"left-1/2 top-10 absolute z-[2] w-max overflow-hidden"}>
+            <div className={"justify-between flex bg-black border-2 border-primary w-fit select-none"}>
+              <SubMenu navigations={item.navigations} />
+            </div>
           </div>
-          <span className="text text-xs">{description}</span>
-        </div>
-      </>
-    );
-
-  const attributes = {
-    onMouseEnter: () => {
-      // if (!isComingSoon) {
-      //   onActive(index);
-      // }
-      onActive(index);
-    },
-    className: `flex items-start gap-5 p-5 ${!isComingSoon && (isActive || side === "right") ? "bg-[#222020]" : ""} ${
-      isActive && !isComingSoon ? "bg-[#222020]/80" : ""
-    }`,
-  };
-
-  if (path) {
-    if (isExternalLink) {
-      return (
-        <a href={path} target="_blank" rel="noreferrer" {...attributes} onClick={() => document.body.click()}>
-          {content}
-        </a>
-      );
-    }
-    return (
-      <NavLink to={path} {...attributes} onClick={() => document.body.click()}>
-        {content}
-      </NavLink>
-    );
-  }
-  return <div {...attributes}>{content}</div>;
-};
-
-const PCSubMenu = ({ menuItems }: { menuItems: Menu[] }) => {
-  const [activeLeftIndex, setActiveLeftIndex] = useState<number>(-1);
-  const [activeRightIndex, setActiveRightIndex] = useState<number>(-1);
-
-  const rightItems = menuItems.at(activeLeftIndex)?.children?.filter(({ device }) => device !== "MOBILE");
-
-  return (
-    <div className="flex w-fit">
-      {/* left */}
-      <div className="w-[25rem] flex flex-col">
-        {menuItems.map((item, index) => (
-          <PCSubMenuItem
-            key={index}
-            {...item}
-            index={index}
-            active={activeLeftIndex}
-            side="left"
-            onActive={setActiveLeftIndex}
-          />
-        ))}
+        </CSSTransition>
       </div>
-
-      {/* right */}
-      <CSSTransition unmountOnExit in={!!rightItems?.length} timeout={300} classNames="pc-sub-menu-right">
-        <div className="flex flex-col">
-          {rightItems?.map((item, index) => (
-            <PCSubMenuItem
-              key={index}
-              {...item}
-              index={index}
-              active={activeRightIndex}
-              side="right"
-              onActive={setActiveRightIndex}
-            />
-          ))}
-        </div>
-      </CSSTransition>
-    </div>
-  );
+    );
+  });
 };
 
 /* our mobile navigation only supports two levels */
@@ -387,109 +220,75 @@ const createMobileMenu = (
   menuHeightByPathMap: SubMenuHeight,
   onChildMenuToggle: (path: string | undefined) => void
 ) => {
-  return menu
-    .filter((item) => item.device !== "PC")
-    .map((item, index) => {
-      const path = `${index}`;
-      if (item.isExternalLink) {
-        return createExternalMobileLink(item, `${index}`);
-      }
-      if (item.children) {
-        const isActive = openedMenuPath === path;
-        const childrenNavItems = item.children
-          .filter(({ device }) => device !== "PC")
-          .map((childItem, childIndex) => {
-            const key = `${index}-${childIndex}`;
-            if (childItem.isExternalLink) {
-              return createExternalMobileLink(childItem, key, true);
-            }
-            return createMobileLink(childItem, key);
-          });
-        return (
-          <div key={path} className={"first:mt-0 mt-[0.3125rem]"}>
-            <div
-              onClick={() => {
-                onChildMenuToggle(path);
-              }}
-              className={`text text-white capitalize px-[1.25rem] py-[0.625rem]`}
-            >
-              {item.title}
-            </div>
-            <div
-              style={{
-                height: isActive ? `${menuHeightByPathMap[path]}px` : "0",
-                transitionProperty: "height",
-              }}
-              data-path={path}
-              className={`mobile-nav-parent ease-in-out duration-[300ms] flex
-              overflow-hidden flex-col relative after:content-[''] after:z-[-1]
-              after:absolute after:left-0 after:right-0 after:top-0
-              after:bottom-0 after:bg-white after:opacity-10`}
-            >
-              {childrenNavItems}
-            </div>
-          </div>
-        );
-      }
-      return createMobileLink(item, `${index}`);
-    });
-};
+  return menu.map((item, index) => {
+    const path = `${index}`;
+    const isActive = openedMenuPath === path;
 
-const createExternalMobileLink = (item: Menu, indexString = "0", isChild = false) => {
-  if (isChild) {
-    if (item.path === "") {
-      return (
-        <div key={indexString} className={`text text-white capitalize px-[1.25rem] py-[0.3125rem] opacity-50`}>
+    return (
+      <div key={path} className={"first:mt-0 mt-[0.3125rem]"}>
+        <div
+          onClick={() => {
+            onChildMenuToggle(path);
+          }}
+          className={`text capitalize px-[1.25rem] py-[0.625rem] ${isActive ? "text-primary" : "text-white"}`}
+        >
           {item.title}
         </div>
-      );
-    }
-    return (
-      <a
-        href={item.path}
-        target="_blank"
-        key={indexString}
-        className={`text text-white capitalize px-[1.25rem] py-[0.3125rem]`}
-        rel="noreferrer"
-      >
-        {item.title}
-      </a>
-    );
-  }
-
-  if (item.path === "") {
-    return (
-      <div
-        key={indexString}
-        className={`text text-white capitalize first:mt-0 mt-[0.3125rem] px-[1.25rem] py-[0.625rem] opacity-50`}
-      >
-        {item.title}
+        <div
+          style={{
+            height: isActive ? `${menuHeightByPathMap[path]}px` : "0",
+            transitionProperty: "height",
+          }}
+          data-path={path}
+          className={`mobile-nav-parent ease-in-out duration-[300ms] flex
+            overflow-hidden flex-col relative after:content-[''] after:z-[-1]
+            after:absolute after:left-0 after:right-0 after:top-0
+            after:bottom-0 after:bg-white after:opacity-10`}
+        >
+          <SubMenu navigations={item.navigations} />
+        </div>
       </div>
     );
-  }
-
-  return (
-    <a
-      href={item.path}
-      target="_blank"
-      key={indexString}
-      className={`text text-white capitalize first:mt-0 mt-[0.3125rem] px-[1.25rem] py-[0.625rem]`}
-      rel="noreferrer"
-    >
-      {item.title}
-    </a>
-  );
+  });
 };
 
-const createMobileLink = (item: Menu, indexString = "0") => {
+const SubMenu = ({ navigations }: { navigations: TNavigation[] }) => {
   return (
-    <NavLink
-      to={item.path ?? ""}
-      key={indexString}
-      className={`relative text text-white capitalize first:mt-0 mt-[0.3125rem] px-[1.25rem] py-[0.625rem]`}
-    >
-      {item.title}
-    </NavLink>
+    <div className="flex flex-col p-5 gap-small">
+      {navigations.map((navigation) => {
+        if (navigation.path) {
+          return navigation.external ? (
+            <div className="inline-flex gap-2 text-white hover:text-primary transition-colors" key={navigation.label}>
+              <span className="hidden lg:inline">{">"}</span>
+              <a
+                target="_blank"
+                rel="noopener noreferrer"
+                href={navigation.path}
+                className="text hover:underline text-white hover:text-primary transition-colors w-full"
+              >
+                {navigation.label}
+              </a>
+            </div>
+          ) : (
+            <div className="inline-flex gap-2 text-white hover:text-primary transition-colors" key={navigation.label}>
+              <span className="hidden lg:inline">{">"}</span>
+              <NavLink
+                to={navigation.path}
+                className="text hover:underline text-white hover:text-primary transition-colors w-full"
+              >
+                {navigation.label}
+              </NavLink>
+            </div>
+          );
+        }
+        return (
+          <div className="inline-flex gap-2 justify-end lg:justify-start" key={navigation.label}>
+            <span className="hidden lg:inline text-white/50">{">"}</span>
+            <span className="text text-white/50">{navigation.label}</span>
+          </div>
+        );
+      })}
+    </div>
   );
 };
 
