@@ -22,7 +22,7 @@ const Hero = ({ data, page }: Props) => {
   const Typewriter = getTypewriterByPage(page);
   return (
     <div className={`bg-center bg-cover bg-no-repeat`}>
-      <div data-aos={"fade-up"} data-aos-duration={700} className={`container ${topSpace}`}>
+      <div data-aos={"fade-up"} data-aos-duration={700} className={`max-w-8xl w-full mx-auto lg:px-8 px-4 ${topSpace}`}>
         <div className={"flex flex-col lg:flex-row relative"}>
           <div className={`order-2 flex flex-col relative z-20 lg:justify-center ${textClass}`}>
             <Suspense>

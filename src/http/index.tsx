@@ -28,7 +28,7 @@ axiosInstance.interceptors.response.use(
       }
     }
     if (hasAuthFailed) {
-      return;
+      // return;
     }
     return Promise.resolve(res);
   },

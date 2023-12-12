@@ -114,17 +114,15 @@ export interface Statistics {
   statisticsImages?: string[];
 }
 
+export interface Navigation {
+  label: string;
+  path?: string;
+  external?: boolean;
+}
+
 export interface Menu {
   title: string;
-  device?: "MOBILE" | "PC";
-  path?: string;
-  children?: Menu[];
-  isExternalLink?: boolean;
-  isLive?: boolean;
-  isComingSoon?: boolean;
-  icon?: string;
-  description?: string;
-  action?: "addChain";
+  navigations: Navigation[];
 }
 
 export interface Paper {
