@@ -130,7 +130,7 @@ export interface Paper {
   title: string;
   authors: string[];
   tags: string[];
-  summary: string;
+  summary: string | string[];
   mobileSummary?: string;
   titleUrl: string;
   link: Link;

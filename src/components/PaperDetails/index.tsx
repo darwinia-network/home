@@ -84,7 +84,17 @@ const getSummaryText = (paper: Paper) => {
   return (
     <div>
       <div className={`${mobileSummaryClasses}`}>{paper.mobileSummary}</div>
-      <div className={`${pcSummaryClasses}`}>{paper.summary}</div>
+      {typeof paper.summary === "string" ? (
+        <div className={`${pcSummaryClasses}`}>{paper.summary}</div>
+      ) : (
+        <div className="flex flex-col gap-5">
+          {paper.summary.map((summary, index) => (
+            <p key={index} className={`${pcSummaryClasses}`}>
+              {summary}
+            </p>
+          ))}
+        </div>
+      )}
     </div>
   );
 };
