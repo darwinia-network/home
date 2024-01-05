@@ -51,7 +51,7 @@ const getPapers = (t: TFunction<"translation">): Paper[] => {
     },
     {
       id: 1,
-      title: t(localeKeys.darwiniaGenePaper),
+      title: "Darwinia Genepaper v3",
       authors: ["Alex Chien", "Denny Wang"],
       tags: [t(localeKeys.darwiniaChainRelay), t(localeKeys.lightClient), t(localeKeys.optimisticVerification)],
       summary: t(localeKeys.darwiniaGenePaperSummary),
