@@ -53,6 +53,13 @@ html {
     @apply font-[JetBrainsMono-Light] text-[0.875rem] leading-[1.875rem] text-gray;
   }
 
+  .text-light {
+    @apply font-[JetBrainsMono-Light];
+  }
+  .text-bold {
+    @apply font-[JetBrainsMono-Bold];
+  }
+
   body {
     @extend .text;
   }

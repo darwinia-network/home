@@ -38,6 +38,14 @@ const routesList = [
     path: "/papers/:paperId",
     component: lazy(() => import("../pages/PaperSummary")),
   },
+  {
+    path: "/online-communities",
+    component: lazy(() => import("../pages/OnlineCommunities")),
+  },
+  {
+    path: "/get-involved",
+    component: lazy(() => import("../pages/GetInvolved")),
+  },
   /* {
     path: "/contact-us",
     component: lazy(() => import("../pages/Contact")),

@@ -85,13 +85,11 @@ const getMenu = (_t: TFunction): Menu[] => {
       navigations: [
         {
           label: "Online Communities",
-          path: "https://www.notion.so/darwinia/Online-communities-fe79f25c50e7412189fff9583c3df5d2",
-          external: true,
+          path: "/online-communities",
         },
         {
           label: "Get Involved",
-          path: "https://www.notion.so/darwinia/Get-involved-664339c01069475da197718e8003544c",
-          external: true,
+          path: "/get-involved",
         },
         {
           label: "Grants",
