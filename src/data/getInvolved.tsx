@@ -1,13 +1,17 @@
+interface Section {
+  icon: string;
+  items?: (string | { label: string; path: string; isExternal?: boolean })[][];
+  description?: string;
+  content?: { link: { label: string; path: string; isExternal?: boolean }; text?: string }[];
+  sub?: ({ h2: string } & Section)[];
+}
+
 interface GetInvolvedData {
   title: string;
   summary: string;
-  sections: {
+  sections: ({
     h1: string;
-    icon: string;
-    items?: (string | { label: string; path: string; isExternal?: boolean })[][];
-    description?: string;
-    content?: { link: { label: string; path: string; isExternal?: boolean }; text?: string }[];
-  }[];
+  } & Section)[];
 }
 
 export default function useGetInvolvedData(): GetInvolvedData {
@@ -51,40 +55,42 @@ export default function useGetInvolvedData(): GetInvolvedData {
         icon: "🔊",
         description:
           "If you're not a developer, it can be hard to know where to start in Darwinia. Here are a few suggestions, along with resources for specific professional backgrounds.",
-      },
-      {
-        h1: "Content Creator",
-        icon: "⌨️",
-        description:
-          "Educate the community and the broader public about Darwinia through writing informative and insightful content in videos, blogs, graphic designs, podcasts, or any other artistic production form.",
-      },
-      {
-        h1: "Meetup Organizer",
-        icon: "🤝",
-        description:
-          "Host online or offline Darwinia meetups/ technical workshops/hackathons, connect with local blockchain enthusiasts to educate them on what Darwina is, and discover the potential users/partners through discussion and communication.",
-      },
-      {
-        h1: "Translator",
-        icon: "🌎",
-        description:
-          "Translate and share Darwinia-related content in different languages and expand Darwinia's ecological application to non-English speaking communities.",
-      },
-      {
-        h1: "Stake your RING",
-        icon: "🧑‍💼",
-        description: "By staking your RING you can earn rewards whilst helping to secure the Darwinia.",
-        content: [
+        sub: [
           {
-            link: { label: "Staking Discord", path: "https://discord.gg/hp9fzFNap8", isExternal: true },
-            text: "welcome to all interested in staking on Darwinia",
+            h2: "Content Creator",
+            icon: "⌨️",
+            description:
+              "Educate the community and the broader public about Darwinia through writing informative and insightful content in videos, blogs, graphic designs, podcasts, or any other artistic production form.",
           },
           {
-            link: {
-              label: "Staking guide",
-              path: "https://docs.darwinia.network/staking-guide-d7387bfc4d3f4604860651f268ed00ba",
-              isExternal: true,
-            },
+            h2: "Meetup Organizer",
+            icon: "🤝",
+            description:
+              "Host online or offline Darwinia meetups/ technical workshops/hackathons, connect with local blockchain enthusiasts to educate them on what Darwina is, and discover the potential users/partners through discussion and communication.",
+          },
+          {
+            h2: "Translator",
+            icon: "🌎",
+            description:
+              "Translate and share Darwinia-related content in different languages and expand Darwinia's ecological application to non-English speaking communities.",
+          },
+          {
+            h2: "Stake your RING",
+            icon: "🧑‍💼",
+            description: "By staking your RING you can earn rewards whilst helping to secure the Darwinia.",
+            content: [
+              {
+                link: { label: "Staking Discord", path: "https://discord.gg/hp9fzFNap8", isExternal: true },
+                text: "welcome to all interested in staking on Darwinia",
+              },
+              {
+                link: {
+                  label: "Staking guide",
+                  path: "https://docs.darwinia.network/staking-guide-d7387bfc4d3f4604860651f268ed00ba",
+                  isExternal: true,
+                },
+              },
+            ],
           },
         ],
       },

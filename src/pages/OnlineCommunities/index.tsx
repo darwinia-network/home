@@ -16,7 +16,7 @@ export default function OnlineCommunitiesPage() {
           <span className="text-light text-gray text-sm font-light">Home/ Community</span>
           <h1 className="text-bold text-4xl text-white font-bold">{title}</h1>
           <div className="h-[1px] bg-white/50 w-full" />
-          <p className="text-light text-gray text-sm font-light">{summary}</p>
+          <p className="text-light text-gray text-sm font-light leading-7">{summary}</p>
 
           {sections.map((section) => (
             <Fragment key={section.h1}>
@@ -26,11 +26,11 @@ export default function OnlineCommunitiesPage() {
               {section.content.map(({ link, text }, index) => (
                 <div key={index} className="text-light text-gray text-sm font-light italic">
                   {link.isExternal ? (
-                    <a target="_blank" rel="noopener noreferrer" href={link.path} className="underline">
+                    <a target="_blank" rel="noopener noreferrer" href={link.path} className="underline transition-colors hover:text-primary">
                       {link.label}
                     </a>
                   ) : (
-                    <Link to={link.path} className="underline">
+                    <Link to={link.path} className="underline transition-colors hover:text-primary">
                       {link.label}
                     </Link>
                   )}
