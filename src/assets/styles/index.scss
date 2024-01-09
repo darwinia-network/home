@@ -15,6 +15,14 @@ html {
   @apply bg-black;
 }
 
+.text-light {
+  font-family: 'JetBrainsMono-Light';
+}
+
+.text-bold {
+  font-family: 'JetBrainsMono-Bold';
+}
+
 /*components styles*/
 /* BUG FIX ALERT 🐛 :
  If you use @apply, always make sure that your styles end up with the "none brackets" styles.

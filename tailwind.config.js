@@ -9,6 +9,7 @@ module.exports = {
         gray: "#C6C6C6",
         white: "#FFFFFF",
         halfWhite: "rgba(255, 255, 255, 0.5)",
+        "table-bg": "#222020",
       },
       spacing: {
         small: "0.3125rem", // 5px
