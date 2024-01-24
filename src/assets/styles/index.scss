@@ -1,27 +1,74 @@
+// @font-face {
+//   font-family: "JetBrainsMono-Light";
+//   src: url("../fonts/JetBrainsMono-Light.woff2");
+// }
+// @font-face {
+//   font-family: "JetBrainsMono-Bold";
+//   src: url("../fonts/JetBrainsMono-Bold.woff2");
+// }
+
+@font-face {
+  font-family: "Euclid Circular A";
+  src: local("Euclid Circular A"), url("../fonts/Euclid\ Circular\ A\ Light.ttf");
+  font-weight: 300;
+}
+@font-face {
+  font-family: "Euclid Circular A";
+  src: local("Euclid Circular A"), url("../fonts/Euclid\ Circular\ A\ Light\ Italic.ttf");
+  font-weight: 300;
+  font-style: italic;
+}
+@font-face {
+  font-family: "Euclid Circular A";
+  src: local("Euclid Circular A"), url("../fonts/Euclid\ Circular\ A\ Regular.ttf");
+}
+@font-face {
+  font-family: "Euclid Circular A";
+  src: local("Euclid Circular A"), url("../fonts/Euclid\ Circular\ A\ Italic.ttf");
+  font-style: italic;
+}
+@font-face {
+  font-family: "Euclid Circular A";
+  src: local("Euclid Circular A"), url("../fonts/Euclid\ Circular\ A\ Medium.ttf");
+  font-weight: 500;
+}
+@font-face {
+  font-family: "Euclid Circular A";
+  src: local("Euclid Circular A"), url("../fonts/Euclid\ Circular\ A\ Medium\ Italic.ttf");
+  font-weight: 500;
+  font-style: italic;
+}
+@font-face {
+  font-family: "Euclid Circular A";
+  src: local("Euclid Circular A"), url("../fonts/Euclid\ Circular\ A\ SemiBold.ttf");
+  font-weight: 600;
+}
+@font-face {
+  font-family: "Euclid Circular A";
+  src: local("Euclid Circular A"), url("../fonts/Euclid\ Circular\ A\ SemiBold\ Italic.ttf");
+  font-weight: 600;
+  font-style: italic;
+}
+@font-face {
+  font-family: "Euclid Circular A";
+  src: local("Euclid Circular A Bold"), url("../fonts/Euclid\ Circular\ A\ Bold.ttf");
+  font-weight: 700;
+}
+@font-face {
+  font-family: "Euclid Circular A";
+  src: local("Euclid Circular A Bold Italic"), url("../fonts/Euclid\ Circular\ A\ Bold\ Italic.ttf");
+  font-weight: 700;
+  font-style: italic;
+}
+
 @tailwind base;
+@layer base {
+  html {
+    font-family: "Euclid Circular A", ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  }
+}
 @tailwind components;
 @tailwind utilities;
-@font-face {
-  font-family: "JetBrainsMono-Light";
-  src: url("../fonts/JetBrainsMono-Light.woff2");
-}
-
-@font-face {
-  font-family: "JetBrainsMono-Bold";
-  src: url("../fonts/JetBrainsMono-Bold.woff2");
-}
-
-html {
-  @apply bg-black;
-}
-
-.text-light {
-  font-family: 'JetBrainsMono-Light';
-}
-
-.text-bold {
-  font-family: 'JetBrainsMono-Bold';
-}
 
 /*components styles*/
 /* BUG FIX ALERT 🐛 :
@@ -32,10 +79,6 @@ html {
  such as box-border. Failure to do that will cause a failure in building the whole application
 */
 @layer components {
-  a {
-    @apply inline-block;
-  }
-
   .container {
     @apply max-w-[1320px] px-[1.25rem] lg:px-[1.875rem] xl:px-[3.75rem] mx-auto;
   }
@@ -59,10 +102,6 @@ html {
 
   .text {
     @apply font-[JetBrainsMono-Light] text-[0.875rem] leading-[1.875rem] text-gray;
-  }
-
-  body {
-    @extend .text;
   }
 
   .title {
