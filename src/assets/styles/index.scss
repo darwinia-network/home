@@ -65,10 +65,13 @@
 @layer base {
   html {
     font-family: "Euclid Circular A", ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    color: black;
   }
 }
 @tailwind components;
 @tailwind utilities;
+
+
 
 /*components styles*/
 /* BUG FIX ALERT 🐛 :
@@ -79,6 +82,56 @@
  such as box-border. Failure to do that will cause a failure in building the whole application
 */
 @layer components {
+  .text-h1 {
+    font-size: 2.5rem;
+    @apply tracking-[0.125rem] leading-[3.17rem] font-bold text-black;
+  }
+
+  .text-h2 {
+    font-size: 1.875rem;
+    @apply tracking-[0.0625rem] leading-[2.3375rem] font-semibold text-black;
+  }
+
+  .text-h3 {
+    font-size: 1.375rem;
+    @apply tracking-[0.0625rem] leading-[1.74375rem] font-bold text-black;
+  }
+
+  .text-t20 {
+    font-size: 1.25rem;
+    @apply tracking-[0.0625rem] leading-[1.585rem] font-medium text-black;
+  }
+
+  .text-t16 {
+    font-size: 1rem;
+    @apply tracking-[0.0625rem] leading-[1.6rem] font-light text-black;
+  }
+
+  .text-t16b {
+    font-size: 1rem;
+    @apply tracking-[0.0625rem] leading-[1.6rem] font-bold text-black;
+  }
+
+  .text-t14 {
+    font-size: 0.875rem;
+    @apply tracking-[0.0625rem] leading-[1.4rem] font-normal text-black;
+  }
+
+  .text-t14b {
+    font-size: 0.875rem;
+    @apply tracking-[0.0625rem] leading-[1.4rem] font-bold text-black;
+  }
+
+  .text-tag {
+    font-size: 0.625rem;
+    @apply leading-[1rem] font-bold text-black;
+  }
+
+  .text-link {
+    font-size: 0.875rem;
+    @apply tracking-[0.0625rem] leading-[1rem] font-bold text-app-link;
+  }
+
   .container {
     @apply max-w-[1320px] px-[1.25rem] lg:px-[1.875rem] xl:px-[3.75rem] mx-auto;
   }
