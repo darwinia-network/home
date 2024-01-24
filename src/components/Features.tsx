@@ -1,4 +1,4 @@
-import FeatureItem from "./FeatureItem";
+import FeatureV2 from "./FeatureV2";
 
 export const features: { icon: string; title: string; description: string }[] = [
   {
@@ -26,21 +26,21 @@ export default function Features() {
     <>
       <div className="flex flex-col gap-[60px] lg:hidden">
         {features.map(({ icon, title, description }) => (
-          <FeatureItem key={title} icon={icon} title={title} description={description} />
+          <FeatureV2 key={title} icon={icon} title={title} description={description} />
         ))}
       </div>
       <div className="lg:flex flex-col hidden gap-[90px] border w-fit">
         <div className="flex items-center justify-center">
           {features.at(1) ? (
-            <FeatureItem icon={features[1].icon} title={features[1].title} description={features[1].description} />
+            <FeatureV2 icon={features[1].icon} title={features[1].title} description={features[1].description} />
           ) : null}
         </div>
         <div className="flex items-center gap-[304px]">
           {features.at(0) ? (
-            <FeatureItem icon={features[0].icon} title={features[0].title} description={features[0].description} />
+            <FeatureV2 icon={features[0].icon} title={features[0].title} description={features[0].description} />
           ) : null}
           {features.at(2) ? (
-            <FeatureItem icon={features[2].icon} title={features[2].title} description={features[2].description} />
+            <FeatureV2 icon={features[2].icon} title={features[2].title} description={features[2].description} />
           ) : null}
         </div>
       </div>

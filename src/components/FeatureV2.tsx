@@ -4,7 +4,7 @@ interface Props {
   description: string;
 }
 
-export default function FeatureItem({ icon, title, description }: Props) {
+export default function FeatureV2({ icon, title, description }: Props) {
   return (
     <div className="w-full lg:w-[500px] flex flex-col gap-5">
       <div className="flex items-center justify-center w-[90px] h-[60px] lg:w-[180px] lg:h-[120px] bg-black rounded-[10px]">
