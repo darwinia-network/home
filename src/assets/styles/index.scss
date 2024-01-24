@@ -84,52 +84,52 @@
 @layer components {
   .text-h1 {
     font-size: 2.5rem;
-    @apply tracking-[0.125rem] leading-[3.17rem] font-bold text-black;
+    @apply tracking-[0.125rem] leading-[3.17rem] font-bold;
   }
 
   .text-h2 {
     font-size: 1.875rem;
-    @apply tracking-[0.0625rem] leading-[2.3375rem] font-semibold text-black;
+    @apply tracking-[0.0625rem] leading-[2.3375rem] font-semibold;
   }
 
   .text-h3 {
     font-size: 1.375rem;
-    @apply tracking-[0.0625rem] leading-[1.74375rem] font-bold text-black;
+    @apply tracking-[0.0625rem] leading-[1.74375rem] font-bold;
   }
 
   .text-t20 {
     font-size: 1.25rem;
-    @apply tracking-[0.0625rem] leading-[1.585rem] font-medium text-black;
+    @apply tracking-[0.0625rem] leading-[1.585rem] font-medium;
   }
 
   .text-t16 {
     font-size: 1rem;
-    @apply tracking-[0.0625rem] leading-[1.6rem] font-light text-black;
+    @apply tracking-[0.0625rem] leading-[1.6rem] font-light;
   }
 
   .text-t16b {
     font-size: 1rem;
-    @apply tracking-[0.0625rem] leading-[1.6rem] font-bold text-black;
+    @apply tracking-[0.0625rem] leading-[1.6rem] font-bold;
   }
 
   .text-t14 {
     font-size: 0.875rem;
-    @apply tracking-[0.0625rem] leading-[1.4rem] font-normal text-black;
+    @apply tracking-[0.0625rem] leading-[1.4rem] font-normal;
   }
 
   .text-t14b {
     font-size: 0.875rem;
-    @apply tracking-[0.0625rem] leading-[1.4rem] font-bold text-black;
+    @apply tracking-[0.0625rem] leading-[1.4rem] font-bold;
   }
 
   .text-tag {
     font-size: 0.625rem;
-    @apply leading-[1rem] font-bold text-black;
+    @apply leading-[1rem] font-bold;
   }
 
   .text-link {
     font-size: 0.875rem;
-    @apply tracking-[0.0625rem] leading-[1rem] font-bold text-app-link;
+    @apply tracking-[0.0625rem] leading-[1rem] font-bold;
   }
 
   .container {
