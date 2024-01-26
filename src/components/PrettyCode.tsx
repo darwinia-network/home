@@ -1,5 +1,5 @@
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
-import { oneDark } from "react-syntax-highlighter/dist/esm/styles/prism";
+import { xonokai } from "react-syntax-highlighter/dist/esm/styles/prism";
 
 interface Props {
   language: "solidity" | "typescript" | "javascript" | "rust" | "go";
@@ -11,8 +11,8 @@ export default function PrettyCode({ code, language, className }: Props) {
   return (
     <SyntaxHighlighter
       language={language}
-      style={oneDark}
-      customStyle={{ padding: "1.25rem", borderRadius: "1.25rem" }}
+      style={xonokai}
+      customStyle={{ border: "none", padding: "1.25rem", borderRadius: "1.25rem" }}
       className={className}
     >
       {code}
