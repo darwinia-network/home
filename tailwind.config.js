@@ -14,6 +14,7 @@ module.exports = {
         "app-inner-white": "#EAF0F6",
         "app-gray": "#8F8F8F",
         "app-black": "#000000",
+        "app-inner-black": "#2A2A2A",
         "app-main": "#FF0083",
         "app-line": "#000000",
         "app-link": "#FF0083",
