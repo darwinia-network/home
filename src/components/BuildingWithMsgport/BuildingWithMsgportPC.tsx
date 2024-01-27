@@ -16,7 +16,7 @@ export default function BuildingWithMsgportPC({ title, menu, link }: Props) {
   const activeMenu = menu.find(({ title }) => title === activeTitle) || menu[0];
 
   return (
-    <div className="flex gap-[6.875rem]">
+    <div className="lg:flex gap-[6.875rem] hidden">
       <div className="flex flex-col gap-[1.875rem] max-w-max items-center">
         <div className="flex flex-col items-center">
           <h2 className="text-h2 text-app-black">{title.at(0)}</h2>
