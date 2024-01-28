@@ -95,6 +95,17 @@ input:-webkit-autofill:focus {
   transition: background-color 0s 600000s, color 0s 600000s;
 }
 
+/* For Webkit-based browsers (Chrome, Safari and Opera) */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+/* For IE, Edge and Firefox */
+.scrollbar-hide {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
 /*components styles*/
 /* BUG FIX ALERT 🐛 :
  If you use @apply, always make sure that your styles end up with the "none brackets" styles.
