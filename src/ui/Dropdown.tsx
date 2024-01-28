@@ -71,7 +71,7 @@ export default function Dropdown({
 
       {isMounted && (
         <FloatingPortal>
-          <div style={floatingStyles} ref={refs.setFloating} {...getFloatingProps()} className="z-20">
+          <div style={floatingStyles} ref={refs.setFloating} {...getFloatingProps()} className="z-50">
             <div className={`${childClassName}`} style={styles} onClick={() => setIsOpen(false)}>
               {children}
             </div>

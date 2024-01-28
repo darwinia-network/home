@@ -1,21 +1,40 @@
+import { testCode } from "../../data/code/test";
 import BuildingWithMsgportMobile from "./BuildingWithMsgportMobile";
 import BuildingWithMsgportPC from "./BuildingWithMsgportPC";
 
-interface Props {
-  title: string[];
-  menu: {
-    title: string;
-    description: string;
-    code: string;
-  }[];
-  link: string; // External link
-}
+const data = [
+  {
+    title: "Prepare to Receive Messages",
+    description: "Create a workspace for the contract that needs to be deployed on the target chain.",
+    code: testCode,
+  },
+  {
+    title: "Deploy MyReceiverDapp",
+    description: "Create a workspace for the contract that needs to be deployed on the target chain.",
+    code: testCode,
+  },
+  {
+    title: "Get Calldata",
+    description: "Create a workspace for the contract that needs to be deployed on the target chain.",
+    code: testCode,
+  },
+  {
+    title: "Get Fee and Messaging Params",
+    description: "Create a workspace for the contract that needs to be deployed on the target chain.",
+    code: testCode,
+  },
+  {
+    title: "Sending Message",
+    description: "Create a workspace for the contract that needs to be deployed on the target chain.",
+    code: testCode,
+  },
+];
 
-export default function BuildingWithMsgport({ title, menu, link }: Props) {
+export default function BuildingWithMsgport() {
   return (
     <>
-      <BuildingWithMsgportMobile title={title} menu={menu} link={link} />
-      <BuildingWithMsgportPC title={title} menu={menu} link={link} />
+      <BuildingWithMsgportMobile title={["Start building with", "Darwinia Msgport"]} menu={data} link="#" />
+      <BuildingWithMsgportPC title={["Start building with", "Darwinia Msgport"]} menu={data} link="#" />
     </>
   );
 }

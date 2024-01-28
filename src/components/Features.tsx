@@ -29,7 +29,7 @@ export default function Features() {
           <FeatureV2 key={title} icon={icon} title={title} description={description} />
         ))}
       </div>
-      <div className="lg:flex flex-col hidden gap-[90px] border w-fit">
+      <div className="lg:flex flex-col hidden gap-[90px] w-fit">
         <div className="flex items-center justify-center">
           {features.at(1) ? (
             <FeatureV2 icon={features[1].icon} title={features[1].title} description={features[1].description} />
