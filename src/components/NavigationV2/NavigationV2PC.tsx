@@ -7,7 +7,7 @@ interface Props {
 
 export default function NavigationV2PC({ data }: Props) {
   return (
-    <div className="flex items-center gap-[2.5rem]">
+    <div className="hidden lg:flex items-center gap-[2.5rem]">
       {data.map(({ label, sub }) => (
         <Navigation key={label} label={label} sub={sub} />
       ))}

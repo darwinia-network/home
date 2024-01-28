@@ -48,7 +48,7 @@ export default function BuildingWithMsgportMobileMenuItem({
       >
         <div className="flex flex-col gap-5 p-5" style={{ paddingTop: btnHeight }} ref={ref}>
           <span className="text-t14 text-app-white">{description}</span>
-          <PrettyCode className="h-[16.375rem]" language="solidity" code={code} />
+          <PrettyCode className="h-[36.375rem]" language="solidity" code={code} />
         </div>
       </div>
     </div>

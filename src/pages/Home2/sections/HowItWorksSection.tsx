@@ -1,5 +1,58 @@
 export function HowItWorksSectionMobile() {
-  return null;
+  return (
+    <div className="h-[60rem] w-full bg-primary relative shrink-0">
+      <div
+        className="absolute z-20 top-1/2 left-1/2 bg-app-black shrink-0 w-[60rem] h-[80rem] flex justify-center items-center"
+        style={{ transform: "translate(-50%, -50%) rotate(10deg)" }}
+      >
+        <div className="flex flex-col gap-[1.875rem] w-screen px-[1.25rem]" style={{ transform: "rotate(-10deg)" }}>
+          <div className="flex items-center flex-nowrap text-h2">
+            <span className="text-app-white">How It</span>
+            <span className="text-app-main">Works</span>
+          </div>
+          <div className="relative">
+            <img
+              width={335}
+              height={296}
+              alt="..."
+              src="/images/how-it-works.png"
+              className="w-[20.9375rem] h-[18.5rem] shrink-0"
+            />
+            <a
+              rel="noopener noreferrer"
+              target="_blank"
+              href="/images/how-it-works.png"
+              className="shrink-0 absolute z-[21] left-0 bottom-[3rem]"
+            >
+              <img
+                width={20}
+                height={20}
+                alt="..."
+                src="/images/zoom.svg"
+                className="w-[1.25rem] h-[1.25rem] shrink-0"
+              />
+            </a>
+          </div>
+          <div className="flex flex-col gap-[1.875rem] text-t16 text-app-white">
+            <p>
+              To provide DApps with a simple and consistent chain-free capability, extensive foundational infrastructure
+              is required
+            </p>
+            <p>
+              Various messaging protocols cater to different needs, each with distinct considerations for security and
+              cost, and built on unique technologies
+            </p>
+            <p>This complex yet orderly system demands significant integration and infrastructure development</p>
+            <p>However, DApp developers no longer need to worry about these underlying protocols</p>
+            <p>
+              With Darwinia Msgport service layer, direct usage is simplified, while the Darwinia open-source community
+              handle the intricate integration and construction efforts
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
 }
 
 export function HowItWorksSectionPC() {

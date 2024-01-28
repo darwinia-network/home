@@ -85,7 +85,7 @@ export default function Dropdown({
 function Arrow({ isOpen }: { isOpen?: boolean }) {
   return (
     <div
-      className="border-t-[0.3125rem] border-t-[#8F8F8F] border-x-[0.25rem] border-x-transparent shrink-0 transition-transform"
+      className="border-t-[0.3125rem] border-t-gray border-x-[0.25rem] border-x-transparent shrink-0 transition-transform"
       style={{ transform: isOpen ? "rotateX(180deg)" : "rotateX(0)" }}
     />
   );

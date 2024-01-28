@@ -1,3 +1,4 @@
+import NavigationV2Mobile from "./NavigationV2Mobile";
 import NavigationV2PC from "./NavigationV2PC";
 
 const data: { label: string; sub: { label: string; link: string; isExternal?: boolean }[] }[] = [
@@ -54,7 +55,8 @@ const data: { label: string; sub: { label: string; link: string; isExternal?: bo
 export default function NavigationV2() {
   return (
     <>
-    <NavigationV2PC data={data} />
+      <NavigationV2Mobile data={data} />
+      <NavigationV2PC data={data} />
     </>
-  )
+  );
 }

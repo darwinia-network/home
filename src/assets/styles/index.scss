@@ -496,6 +496,36 @@ $pc-sub-menu-y: -20%;
   opacity: 1;
 }
 
+/* Drawer Fade */
+.drawer-fade-enter {
+  opacity: 0;
+}
+.drawer-fade-enter > div {
+  transform: translateX(100%);
+}
+.drawer-fade-enter-active {
+  opacity: 1;
+  transition: opacity 300ms;
+}
+.drawer-fade-enter-active > div {
+  transform: translateX(0);
+  transition: transform 300ms;
+}
+.drawer-fade-exit {
+  opacity: 1;
+}
+.drawer-fade-exit > div {
+  transform: translateX(0);
+}
+.drawer-fade-exit-active {
+  opacity: 0;
+  transition: opacity 300ms;
+}
+.drawer-fade-exit-active > div {
+  transform: translateX(100%);
+  transition: transform 300ms;
+}
+
 /* if the future there needs to be a light mode for this project,
   you can set all the light mode styles in here. Simply use
  something like document.documentElement.classList.remove('light')

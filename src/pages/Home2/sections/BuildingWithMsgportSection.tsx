@@ -1,7 +1,12 @@
 import BuildingWithMsgport from "../../../components/BuildingWithMsgport";
 
 export function BuildingWithMsgportSectionMobile() {
-  return null;
+  return (
+    <div className="pt-[20rem] pb-[6.25rem] px-[1.25rem] bg-app-white relative">
+      <div className="w-[8.5625rem] h-[8.5625rem] absolute top-[6rem] -left-[2rem] bg-app-main rounded-full z-10" />
+      <BuildingWithMsgport />
+    </div>
+  );
 }
 
 export function BuildingWithMsgportSectionPC() {

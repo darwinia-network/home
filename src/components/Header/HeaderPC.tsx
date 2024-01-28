@@ -8,7 +8,7 @@ const medias = [
 
 export default function HeaderPC() {
   return (
-    <div className="fixed top-5 left-5 z-40 py-[1.25rem] pl-[1.25rem] pr-[2.5rem] rounded-[31.25rem] transition-colors bg-app-white/60 hover:bg-app-white flex items-center gap-[2.5rem] shrink-0">
+    <div className="fixed top-5 left-5 z-40 py-[1.25rem] pl-[1.25rem] pr-[2.5rem] rounded-[31.25rem] transition-colors bg-app-white/60 hover:bg-app-white lg:flex hidden items-center gap-[2.5rem] shrink-0">
       <Link to="/" className="shrink-0">
         <img
           width={74}

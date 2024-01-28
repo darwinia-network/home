@@ -1,0 +1,93 @@
+import { useEffect, useRef, useState } from "react";
+import { Link } from "react-router-dom";
+
+interface Props {
+  data: { label: string; sub: { label: string; link: string; isExternal?: boolean }[] }[];
+}
+
+export default function NavigationV2Mobile({ data }: Props) {
+  const [activeIndex, setActiveIndex] = useState(0);
+  const [height, setHeight] = useState<(number | undefined)[]>(new Array(data.length).fill(undefined));
+  const ref = useRef<(HTMLDivElement | null)[]>(new Array(data.length).fill(null));
+
+  useEffect(() => {
+    setTimeout(() => setHeight(ref.current.map((e) => e?.clientHeight)), 0);
+  }, []);
+
+  return (
+    <div className="flex flex-col lg:hidden w-full">
+      {data.map(({ label, sub }, index) => (
+        <div key={label} className="w-full flex flex-col items-end">
+          <button
+            className="px-[1.25rem] py-[1.0625rem] flex items-center justify-end gap-[0.625rem] w-full"
+            onClick={() => setActiveIndex((prev) => (prev === index ? -1 : index))}
+          >
+            <span className="text-t16b text-app-white">{label}</span>
+            <Arrow isOpen={index === activeIndex} />
+          </button>
+          <div
+            className="transition-[height] duration-200 overflow-y-hidden w-full"
+            style={{ height: index === activeIndex ? height[index] : 0 }}
+          >
+            <div
+              className="bg-app-inner-black flex flex-col items-end"
+              ref={(node) => {
+                ref.current[index] = node;
+              }}
+            >
+              {sub.map((s) => (
+                <SubItem key={s.label} label={s.label} link={s.link} isExternal={s.isExternal} />
+              ))}
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  );
+}
+
+function SubItem({ label, link, isExternal }: { label: string; link: string; isExternal?: boolean }) {
+  const [isHovering, setIsHovering] = useState(false);
+
+  return (
+    <div
+      className="flex items-center gap-[0.9375rem] w-full"
+      onMouseEnter={() => setIsHovering(true)}
+      onMouseLeave={() => setIsHovering(false)}
+    >
+      {isExternal ? (
+        <a
+          href={link}
+          rel="noopener noreferrer"
+          target="_blank"
+          className={`w-full text-end py-[1.0625rem] text-t14b transition-colors ${
+            isHovering ? "text-app-main" : "text-app-gray"
+          }`}
+        >
+          {label}
+        </a>
+      ) : (
+        <Link
+          className={`w-full text-end py-[1.0625rem] text-t14b transition-colors ${
+            isHovering ? "text-app-main" : "text-app-gray"
+          }`}
+          to={link}
+        >
+          {label}
+        </Link>
+      )}
+      <div
+        className={`w-[0.3125rem] h-[3.125rem] transition-colors ${isHovering ? "bg-app-main" : "bg-transparent"}`}
+      />
+    </div>
+  );
+}
+
+function Arrow({ isOpen }: { isOpen?: boolean }) {
+  return (
+    <div
+      className="border-t-[0.3125rem] border-t-app-white border-x-[0.25rem] border-x-transparent shrink-0 transition-transform"
+      style={{ transform: isOpen ? "rotateX(180deg)" : "rotateX(0)" }}
+    />
+  );
+}
