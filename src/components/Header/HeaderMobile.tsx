@@ -8,7 +8,7 @@ export default function HeaderMobile() {
 
   return (
     <>
-      <div className="py-[0.625rem] pl-[0.9375rem] pr-[1.125rem] flex items-center justify-between">
+      <div className="py-[0.625rem] pl-[0.9375rem] pr-[1.125rem] flex items-center justify-between lg:hidden">
         <Link to="/">
           <img
             width={37}

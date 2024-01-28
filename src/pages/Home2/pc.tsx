@@ -12,7 +12,7 @@ import { UseCaseSectionPC } from "./sections/UseCaseSection";
 
 export default function HomeV2PC() {
   return (
-    <main className="overflow-auto lg:flex items-center hidden">
+    <main className="overflow-auto lg:flex items-center hidden scrollbar-color">
       <Header />
       <div className="flex overflow-y-hidden">
         <div className="bg-cover flex pr-[12rem]" style={{ backgroundImage: "url(/images/home-page-bg.png)" }}>

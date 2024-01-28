@@ -1,6 +1,6 @@
 import React, { useReducer } from "react";
 import "./assets/styles/app.scss";
-import Navigation from "./components/Navigation";
+// import Navigation from "./components/Navigation";
 import Routes from "./routes";
 import { accountReducer, accountInitialState, AccountContext } from "./store";
 import ScrollToTop from "./components/ScrollToTop";
@@ -10,7 +10,7 @@ function App() {
   return (
     <>
       <AccountContext.Provider value={{ state: accountState, dispatch: accountDispatch }}>
-        <Navigation />
+        {/* <Navigation /> */}
         <ScrollToTop />
         <Routes />
       </AccountContext.Provider>

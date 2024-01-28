@@ -106,6 +106,14 @@ input:-webkit-autofill:focus {
   scrollbar-width: none; /* Firefox */
 }
 
+// .scrollbar-color {
+//   scrollbar-color: #FF0083 #FF0083;
+// }
+
+// .scrollbar-color::-webkit-scrollbar-thumb:horizontal {
+//   background: #FF0083;
+// }
+
 /*components styles*/
 /* BUG FIX ALERT 🐛 :
  If you use @apply, always make sure that your styles end up with the "none brackets" styles.
