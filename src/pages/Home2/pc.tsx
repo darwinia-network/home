@@ -15,7 +15,7 @@ export default function HomeV2PC() {
     <main className="overflow-auto lg:flex items-center hidden scrollbar-color">
       <Header />
       <div className="flex overflow-y-hidden">
-        <div className="bg-cover flex pr-[12rem]" style={{ backgroundImage: "url(/images/home-page-bg.png)" }}>
+        <div className="bg-cover flex pr-[12rem]" style={{ backgroundImage: "url(/images/home-page-bg.jpg)" }}>
           <div className="px-[2.5rem] py-[3.75rem] h-[62.5rem]">
             <div className="w-[4.375rem] h-[4.375rem] bg-app-main rounded-full mb-[7.625rem] ml-[64.1875rem] mt-[16.6875rem]" />
             <PoweringYourDapps />

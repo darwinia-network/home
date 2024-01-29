@@ -13,7 +13,7 @@ export default function HomeV2Mobile() {
     <main className="w-full overflow-x-hidden lg:hidden">
       <div
         className="h-[36.25rem] w-full bg-cover relative"
-        style={{ backgroundImage: "url(/images/home-page-bg.png)" }}
+        style={{ backgroundImage: "url(/images/home-page-bg.jpg)" }}
       >
         <Header />
         <div className="absolute z-10 left-5 bottom-[3.125rem]">
