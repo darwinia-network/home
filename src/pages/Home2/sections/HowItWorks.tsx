@@ -55,11 +55,11 @@ export function HowItWorksSectionMobile() {
   );
 }
 
-export function HowItWorksSectionPC() {
+export function HowItWorksPC() {
   return (
-    <div className="relative shrink-0 w-[90rem] h-[62.5rem]">
+    <div className="relative shrink-0 w-[90rem] h-full">
       <div
-        className="absolute z-20 top-1/2 left-1/2 bg-app-black shrink-0 w-[110rem] h-[110rem] px-[7.5rem]"
+        className="absolute z-20 top-1/2 left-1/2 bg-app-black shrink-0 w-[110rem] h-[110rem]"
         style={{ transform: "translate(-50%, -50%) rotate(-20deg)" }}
       />
       <div className="absolute -top-[12.5rem] left-[13rem] z-[21] flex justify-center items-center border border-app-main/40 rounded-full w-[78.125rem] h-[78.125rem]">

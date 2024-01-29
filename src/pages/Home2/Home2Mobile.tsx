@@ -1,21 +1,21 @@
 import Copyright from "../../components/Copyright";
 import Features from "../../components/Features";
 import FooterSocialMedia from "../../components/FooterSocialMedia";
-import Header from "../../components/Header";
+import HeaderMobile from "../../components/Header/HeaderMobile";
 import PoweringYourDapps from "../../components/PoweringYourDapps";
-import { BuildingWithMsgportSectionMobile } from "./sections/BuildingWithMsgportSection";
-import { HowItWorksSectionMobile } from "./sections/HowItWorksSection";
-import { ResourcesSectionMobile } from "./sections/ResourcesSection";
-import { UseCaseSectionMobile } from "./sections/UseCaseSection";
+import { BuildingWithMsgportSectionMobile } from "./sections/BuildingWithMsgport";
+import { HowItWorksSectionMobile } from "./sections/HowItWorks";
+import { ResourcesSectionMobile } from "./sections/Resources";
+import { UseCaseSectionMobile } from "./sections/UseCase";
 
-export default function HomeV2Mobile() {
+export default function Home2Mobile() {
   return (
     <main className="w-full overflow-x-hidden lg:hidden">
       <div
         className="h-[36.25rem] w-full bg-cover relative"
         style={{ backgroundImage: "url(/images/home-page-bg.jpg)" }}
       >
-        <Header />
+        <HeaderMobile />
         <div className="absolute z-10 left-5 bottom-[3.125rem]">
           <PoweringYourDapps />
         </div>

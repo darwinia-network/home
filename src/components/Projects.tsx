@@ -78,7 +78,7 @@ const AutoInfiniteScroll = ({ items, isVertical }: { items: Project[]; isVertica
   }, []);
 
   return (
-    <div ref={containerRef} className="overflow-x-scroll scrollbar-hide" onScroll={handleScroll}>
+    <div ref={containerRef} className="overflow-x-scroll" style={{ scrollbarWidth:"none" }} onScroll={handleScroll}>
       <div className="flex items-center gap-[3.75rem]">
         {items.map((item, index) => (
           <Card key={`1-${index}`} project={item} />

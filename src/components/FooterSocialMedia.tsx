@@ -12,7 +12,13 @@ export default function FooterSocialMedia() {
   return (
     <div className="flex items-center gap-5 lg:gap-medium">
       {medias.map(({ icon, link }, index) => (
-        <a key={index} rel="noopener noreferrer" target="_blank" href={link}>
+        <a
+          key={index}
+          rel="noopener noreferrer"
+          target="_blank"
+          href={link}
+          className="transition-transform lg:hover:-translate-y-1 lg:active:translate-y-0"
+        >
           <img alt="..." width={24} height={24} src={icon} />
         </a>
       ))}

@@ -14,11 +14,11 @@ export default function FooterSection({ title, links }: Props) {
           <div key={text} className="text-t16">
             {href ? (
               isExternal ? (
-                <a target="_blank" rel="noopener noreferrer" href={href} className="text-app-white hover:underline hover:text-app-main transition-colors">
+                <a target="_blank" rel="noopener noreferrer" href={href} className="text-app-white hover:underline hover:opacity-80 transition-opacity">
                   {text}
                 </a>
               ) : (
-                <Link to={href} className="text-app-white hover:underline hover:text-app-main transition-colors">
+                <Link to={href} className="text-app-white hover:underline hover:opacity-80 transition-opacity">
                   {text}
                 </Link>
               )

@@ -13,15 +13,15 @@ export function ResourcesSectionMobile() {
   );
 }
 
-export function ResourcesSectionPC() {
+export function ResourcesPC() {
   return (
-    <div className="bg-app-white px-[7.5rem] h-[62.5rem] flex flex-col justify-center relative">
+    <div className="bg-app-white pl-[7.5rem] h-full flex flex-col justify-center relative">
       <div className="w-[20rem] h-[20rem] shrink-0 bg-app-main opacity-20 rounded-full blur-[200px] absolute z-10 -top-[11rem] right-[10rem]" />
       <div className="w-[20rem] h-[20rem] shrink-0 bg-app-main opacity-20 rounded-full blur-[200px] absolute z-10 -bottom-[14rem] left-[6rem]" />
       <div className="absolute z-10 top-0">
         <Projects isVertical />
       </div>
-      <div className="pl-[7.5rem]">
+      <div className="px-[7.5rem]">
         <ResourcesV2 />
       </div>
     </div>
