@@ -14,7 +14,7 @@ export default function PCLayout({ children }: PropsWithChildren<unknown>) {
     const listener = (ev: WheelEvent) => {
       const delta = Math.sign(ev.deltaY);
       if (ref.current) {
-        ref.current.scrollLeft += delta * 10;
+        ref.current.scrollLeft += delta * 30;
       }
       ev.preventDefault();
     };
