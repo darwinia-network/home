@@ -11,7 +11,7 @@ import {
   useInteractions,
   useTransitionStyles,
 } from "@floating-ui/react";
-import { Dispatch, PropsWithChildren, ReactElement, SetStateAction } from "react";
+import { PropsWithChildren, ReactElement } from "react";
 
 interface Props {
   isOpen: boolean;
@@ -22,7 +22,7 @@ interface Props {
   sameWidth?: boolean;
   labelClassName?: string;
   childClassName?: string;
-  setIsOpen: Dispatch<SetStateAction<boolean>>;
+  onOpenChange: (isOpen: boolean) => void;
 }
 
 export default function Dropdown({
@@ -35,11 +35,11 @@ export default function Dropdown({
   sameWidth,
   labelClassName,
   childClassName,
-  setIsOpen,
+  onOpenChange,
 }: PropsWithChildren<Props>) {
   const { refs, context, floatingStyles } = useFloating({
     open: isOpen,
-    onOpenChange: setIsOpen,
+    onOpenChange,
     middleware: [
       offset(4),
       sameWidth
@@ -74,7 +74,7 @@ export default function Dropdown({
       {isMounted && (
         <FloatingPortal>
           <div style={floatingStyles} ref={refs.setFloating} {...getFloatingProps()} className="z-50">
-            <div className={`${childClassName}`} style={styles} onClick={() => setIsOpen(false)}>
+            <div className={`${childClassName}`} style={styles} onClick={() => onOpenChange(false)}>
               {children}
             </div>
           </div>

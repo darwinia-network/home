@@ -1,33 +1,64 @@
 import { Link } from "react-router-dom";
 import Dropdown from "../../ui/Dropdown";
-import { useState } from "react";
+import { Dispatch, SetStateAction, useCallback } from "react";
 
 interface Props {
   data: { label: string; sub: { label: string; link: string; isExternal?: boolean }[] }[];
+  isNavigationActive: boolean[];
+  setIsNavigationActive: Dispatch<SetStateAction<boolean[]>>;
 }
 
-export default function NavigationV2PC({ data }: Props) {
+export default function NavigationV2PC({ data, isNavigationActive, setIsNavigationActive }: Props) {
+  const handleActiveChange = useCallback(
+    (index: number, isActive: boolean) =>
+      setIsNavigationActive((prev) => {
+        const preSate = [...prev];
+        preSate[index] = isActive;
+        return preSate;
+      }),
+    [setIsNavigationActive]
+  );
+
   return (
     <div className="hidden lg:flex items-center gap-[2.5rem]">
-      {data.map(({ label, sub }) => (
-        <Navigation key={label} label={label} sub={sub} />
+      {data.map(({ label, sub }, index) => (
+        <Navigation
+          key={label}
+          index={index}
+          label={label}
+          sub={sub}
+          isActive={isNavigationActive[index]}
+          onActiveChange={handleActiveChange}
+        />
       ))}
     </div>
   );
 }
 
-function Navigation({ label, sub }: { label: string; sub: { label: string; link: string; isExternal?: boolean }[] }) {
-  const [isOpen, setIsOpen] = useState(false);
+function Navigation({
+  index,
+  label,
+  sub,
+  isActive,
+  onActiveChange,
+}: {
+  index: number;
+  label: string;
+  sub: { label: string; link: string; isExternal?: boolean }[];
+  isActive: boolean;
+  onActiveChange: (index: number, active: boolean) => void;
+}) {
+  const handleOpenChange = useCallback((isOpen: boolean) => onActiveChange(index, isOpen), [index, onActiveChange]);
 
   return (
     <Dropdown
       hoverable
-      isOpen={isOpen}
+      isOpen={isActive}
       placement="bottom"
       label={
         <span
           className={`text-t20 whitespace-nowrap transition-colors hover:text-app-main ${
-            isOpen ? "text-app-main" : "text-app-black"
+            isActive ? "text-app-main" : "text-app-black"
           }`}
         >
           {label}
@@ -35,7 +66,7 @@ function Navigation({ label, sub }: { label: string; sub: { label: string; link:
       }
       labelClassName="flex items-center gap-[0.3125rem]"
       childClassName="rounded-[1.25rem] bg-app-black p-[1.875rem] flex flex-col"
-      setIsOpen={setIsOpen}
+      onOpenChange={handleOpenChange}
     >
       {sub.map((s) =>
         s.isExternal ? (

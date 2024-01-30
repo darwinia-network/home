@@ -2,7 +2,7 @@ export function HowItWorksSectionMobile() {
   return (
     <div className="h-[60rem] w-full bg-primary relative shrink-0">
       <div
-        className="absolute z-20 top-1/2 left-1/2 bg-app-black shrink-0 w-[60rem] h-[80rem] flex justify-center items-center"
+        className="absolute z-20 top-1/2 left-1/2 bg-app-black shrink-0 w-[999rem] h-[80rem] flex justify-center items-center"
         style={{ transform: "translate(-50%, -50%) rotate(10deg)" }}
       >
         <div className="flex flex-col gap-[1.875rem] w-screen px-[1.25rem]" style={{ transform: "rotate(-10deg)" }}>
@@ -59,7 +59,7 @@ export function HowItWorksPC() {
   return (
     <div className="relative shrink-0 w-[90rem] h-full">
       <div
-        className="absolute z-20 top-1/2 left-1/2 bg-app-black shrink-0 w-[110rem] h-[110rem]"
+        className="absolute z-20 top-1/2 left-1/2 bg-app-black shrink-0 w-[110rem] h-[999rem]"
         style={{ transform: "translate(-50%, -50%) rotate(-20deg)" }}
       />
       <div className="absolute -top-[12.5rem] left-[13rem] z-[21] flex justify-center items-center border border-app-main/40 rounded-full w-[78.125rem] h-[78.125rem]">
@@ -68,7 +68,7 @@ export function HowItWorksPC() {
         </div>
       </div>
       <div
-        className="absolute z-[22] top-1/2 left-1/2 bg-transparent shrink-0 w-[110rem] h-[110rem] px-[7.5rem] flex justify-center items-center"
+        className="absolute z-[22] top-1/2 left-1/2 bg-transparent shrink-0 w-[110rem] h-[999rem] px-[7.5rem] flex justify-center items-center"
         style={{ transform: "translate(-50%, -50%) rotate(-20deg)" }}
       >
         <div className="flex items-end" style={{ transform: "rotate(20deg)" }}>

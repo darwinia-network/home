@@ -1,7 +1,8 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import NavigationV2 from "../NavigationV2";
 import Drawer from "../../ui/Drawer";
+import NavigationV2Mobile from "../NavigationV2/NavigationV2Mobile";
+import { navigations } from "./data";
 
 export default function HeaderMobile() {
   const [isOpen, setIsOpen] = useState(false);
@@ -29,7 +30,7 @@ export default function HeaderMobile() {
       </div>
 
       <Drawer maskClosable isOpen={isOpen} onClose={() => setIsOpen(false)}>
-        <NavigationV2 />
+        <NavigationV2Mobile data={navigations} />
       </Drawer>
     </>
   );

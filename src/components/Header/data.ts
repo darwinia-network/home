@@ -1,8 +1,4 @@
-import NavigationV2Mobile from "./NavigationV2Mobile";
-import NavigationV2PC from "./NavigationV2PC";
-import useMediaQuery from "../../hooks/useMediaQuery";
-
-const data: { label: string; sub: { label: string; link: string; isExternal?: boolean }[] }[] = [
+export const navigations: { label: string; sub: { label: string; link: string; isExternal?: boolean }[] }[] = [
   {
     label: "Use Darwinia",
     sub: [
@@ -53,7 +49,7 @@ const data: { label: string; sub: { label: string; link: string; isExternal?: bo
   },
 ];
 
-export default function NavigationV2() {
-  const isMatchedMediaQuery = useMediaQuery("lg");
-  return isMatchedMediaQuery ? <NavigationV2PC data={data} /> : <NavigationV2Mobile data={data} />;
-}
+export const medias = [
+  { icon: "/images/social-media/x-black-bg.svg", link: "#" },
+  { icon: "/images/social-media/discord-black-bg.svg", link: "#" },
+];

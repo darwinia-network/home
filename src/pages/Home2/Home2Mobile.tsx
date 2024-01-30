@@ -22,7 +22,7 @@ export default function Home2Mobile() {
         <div className="absolute z-10 top-[6.25rem] right-[6.75rem] rounded-full w-[2.8125rem] h-[2.8125rem] bg-app-main" />
       </div>
 
-      <div className="pt-[6.25rem] pb-[20rem] px-[1.25rem] bg-white">
+      <div className="pt-[6.25rem] pb-[20rem] px-[1.25rem] bg-app-white">
         <Features />
       </div>
 
