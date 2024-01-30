@@ -3,7 +3,7 @@ import Features from "../../components/Features";
 import FooterSocialMedia from "../../components/FooterSocialMedia";
 import HeaderMobile from "../../components/Header/HeaderMobile";
 import PoweringYourDapps from "../../components/PoweringYourDapps";
-import { BuildingWithMsgportSectionMobile } from "./sections/BuildingWithMsgport";
+import { BuildingWithMsgportMobile } from "./sections/BuildingWithMsgport";
 import { HowItWorksSectionMobile } from "./sections/HowItWorks";
 import { ResourcesSectionMobile } from "./sections/Resources";
 import { UseCaseSectionMobile } from "./sections/UseCase";
@@ -27,7 +27,7 @@ export default function Home2Mobile() {
       </div>
 
       <HowItWorksSectionMobile />
-      <BuildingWithMsgportSectionMobile />
+      <BuildingWithMsgportMobile />
       <UseCaseSectionMobile />
       <ResourcesSectionMobile />
 

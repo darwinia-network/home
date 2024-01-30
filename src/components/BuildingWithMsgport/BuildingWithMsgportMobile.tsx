@@ -1,17 +1,8 @@
 import { useState } from "react";
 import BuildingWithMsgportMobileMenuItem from "./BuildingWithMsgportMobileMenuItem";
+import { link, menu, title } from "./data";
 
-interface Props {
-  title: string[];
-  menu: {
-    title: string;
-    description: string;
-    code: string;
-  }[];
-  link: string; // External link
-}
-
-export default function BuildingWithMsgportMobile({ title, menu, link }: Props) {
+export default function BuildingWithMsgportMobile() {
   const [activeTitle, setActiveActive] = useState(menu[0].title);
 
   return (

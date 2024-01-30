@@ -1,8 +1,24 @@
+import useApp from "../hooks/useApp";
+
 export default function PoweringYourDapps() {
+  const { isDesktopWidth, isDesktopHeight } = useApp();
+
   return (
     <div className={`flex flex-col`}>
-      <span className="text-2xl font-medium tracking-[1px] lg:text-6xl lg:font-normal text-black">{`Powering Your DApp's`}</span>
-      <div className="mt-[7px] lg:mt-3 flex flex-col text-app-main uppercase text-h1 lg:font-bold lg:tracking-[1px] lg:leading-[122px] lg:text-[120px]">
+      <span
+        className={`font-medium tracking-[1px] lg:font-normal text-black ${
+          isDesktopWidth ? (isDesktopHeight ? "text-6xl" : "text-[3.125rem]") : "text-2xl"
+        }`}
+      >{`Powering Your DApp's`}</span>
+      <div
+        className={`mt-[7px] lg:mt-3 flex flex-col text-app-main uppercase lg:font-bold lg:tracking-[1px] ${
+          isDesktopWidth
+            ? isDesktopHeight
+              ? "text-[120px] leading-[122px]"
+              : "text-[6.25rem] leading-[6.25rem]"
+            : "text-h1"
+        }`}
+      >
         <span className="whitespace-nowrap">Cross-Chain</span>
         <span>Capabilities</span>
       </div>

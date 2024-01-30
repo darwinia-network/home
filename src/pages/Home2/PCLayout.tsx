@@ -1,19 +1,21 @@
 import { PropsWithChildren, UIEventHandler, useCallback, useEffect, useRef, useState } from "react";
 import useApp from "../../hooks/useApp";
+import HeaderPC from "../../components/Header/HeaderPC";
+import { MAX_HEIGHT_ON_PC, MIN_HEIGHT_ON_PC } from "../../config/constant";
 
 export default function PCLayout({ children }: PropsWithChildren<unknown>) {
   const [scrollPercent, setScrollPercent] = useState(0);
   const ref = useRef<HTMLDivElement | null>(null);
-  const { setScrollLeft } = useApp();
+  const { setPcScrollLeft } = useApp();
 
   const handleScroll = useCallback<UIEventHandler<HTMLDivElement>>(
     (ev) => {
       const { scrollWidth, clientWidth, scrollLeft } = ev.currentTarget;
       const percent = clientWidth < scrollWidth ? (scrollLeft * 100) / (scrollWidth - clientWidth) : 0;
       setScrollPercent(percent);
-      setScrollLeft(scrollLeft);
+      setPcScrollLeft(scrollLeft);
     },
-    [setScrollLeft]
+    [setPcScrollLeft]
   );
 
   useEffect(() => {
@@ -29,15 +31,27 @@ export default function PCLayout({ children }: PropsWithChildren<unknown>) {
     };
   }, []);
 
+  useEffect(
+    () => () => {
+      setPcScrollLeft(0); // Reset
+    },
+    [setPcScrollLeft]
+  );
+
   return (
-    <main className="w-screen h-screen flex flex-col justify-center overflow-hidden">
-      <div
-        className="max-h-[80rem] min-h-[55rem] h-screen w-screen overflow-y-hidden overflow-x-scroll flex items-center"
-        style={{ scrollbarWidth: "none" }}
-        onScroll={handleScroll}
-        ref={ref}
-      >
-        {children}
+    <main className="w-screen h-screen flex flex-col justify-center overflow-hidden relative">
+      <div className="flex">
+        <div className="relative">
+          <HeaderPC />
+        </div>
+        <div
+          className="h-screen w-screen overflow-y-hidden overflow-x-scroll flex items-center"
+          style={{ maxHeight: MAX_HEIGHT_ON_PC, minHeight: MIN_HEIGHT_ON_PC, scrollbarWidth: "none" }}
+          onScroll={handleScroll}
+          ref={ref}
+        >
+          {children}
+        </div>
       </div>
       <ScrollPercentBar percent={scrollPercent} />
     </main>

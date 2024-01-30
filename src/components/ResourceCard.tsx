@@ -1,5 +1,6 @@
 import { useState } from "react";
 import RightArrowRound from "./RightArrowRound";
+import useApp from "../hooks/useApp";
 
 interface Props {
   icon: string; // File path
@@ -13,9 +14,14 @@ interface Props {
 
 export default function ResourceCard({ icon, title, description, detail }: Props) {
   const [isHovering, setIsHovering] = useState(false);
+  const { isDesktopWidth, isDesktopHeight } = useApp();
 
   return (
-    <div className="bg-app-inner-white rounded-[10px] p-5 lg:p-[60px] flex flex-col gap-10 h-fit w-full lg:w-[345px]">
+    <div
+      className={`bg-app-inner-white rounded-[10px] flex flex-col gap-10 h-fit w-full lg:w-[345px] ${
+        isDesktopWidth ? (isDesktopHeight ? "p-[60px]" : "p-[40px]") : "p-5"
+      }`}
+    >
       <img alt="" src={icon} className="w-[70px] h-[70px]" />
       <div className="flex flex-col gap-medium">
         <h3 className="text-h3 text-black">{title}</h3>

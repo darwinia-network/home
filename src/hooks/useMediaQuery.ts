@@ -1,13 +1,15 @@
 import { useEffect, useState } from "react";
+import { MAX_HEIGHT_ON_PC } from "../config/constant";
 
-type BreakpointPrefix = "sm" | "md" | "lg" | "xl" | "2xl";
+type BreakpointPrefix = "sm" | "md" | "lg" | "xl" | "2xl" | "max_h_pc";
 
-const widthMapping: Record<BreakpointPrefix, string> = {
+const mapping: Record<BreakpointPrefix, string> = {
   sm: "640px",
   md: "768px",
   lg: "1024px",
   xl: "1280px",
   "2xl": "1536px",
+  "max_h_pc": `${MAX_HEIGHT_ON_PC}px`,
 };
 
 /**
@@ -15,14 +17,20 @@ const widthMapping: Record<BreakpointPrefix, string> = {
  * @param breakpoint "sm" | "md" | "lg" | "xl" | "2xl"
  * @returns boolean
  */
-export default function useMediaQuery(breakpoint: BreakpointPrefix) {
+export default function useMediaQuery(
+  breakpoint: BreakpointPrefix,
+  direction: "horizontal" | "vertical" = "horizontal"
+) {
   const [matches, setMatches] = useState(false);
 
   useEffect(() => {
-    const mql = window.matchMedia(`(min-width: ${widthMapping[breakpoint]})`);
+    const mql =
+      direction === "horizontal"
+        ? window.matchMedia(`(min-width: ${mapping[breakpoint]})`)
+        : window.matchMedia(`(min-height: ${mapping[breakpoint]})`);
     setMatches(mql.matches);
     mql.onchange = (ev) => setMatches(ev.matches);
-  }, [breakpoint]);
+  }, [breakpoint, direction]);
 
   return matches;
 }

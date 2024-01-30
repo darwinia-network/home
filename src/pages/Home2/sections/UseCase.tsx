@@ -1,4 +1,5 @@
 import UseCases from "../../../components/UseCases";
+import useApp from "../../../hooks/useApp";
 
 export function UseCaseSectionMobile() {
   return (
@@ -14,9 +15,16 @@ export function UseCaseSectionMobile() {
 }
 
 export function UseCasePC() {
+  const { isDesktopHeight } = useApp();
   return (
     <div className="bg-app-black px-[10.625rem] h-full flex flex-col justify-center">
-      <div className="flex flex-col items-end text-[3.625rem] font-bold tracking-[0.125rem] mb-[5rem]">
+      <div
+        className={`flex items-end ${
+          isDesktopHeight
+            ? "flex-col text-[3.625rem] font-bold tracking-[0.125rem] mb-[5rem]"
+            : "items-center justify-end text-h1 mb-[3.625rem]"
+        }`}
+      >
         <span className="text-app-white whitespace-nowrap">Enabling Diverse</span>
         <span className="text-app-main whitespace-nowrap">Cross-Chain Interactions</span>
       </div>

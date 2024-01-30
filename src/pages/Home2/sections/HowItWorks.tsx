@@ -1,3 +1,5 @@
+import useApp from "../../../hooks/useApp";
+
 export function HowItWorksSectionMobile() {
   return (
     <div className="h-[60rem] w-full bg-primary relative shrink-0">
@@ -56,6 +58,8 @@ export function HowItWorksSectionMobile() {
 }
 
 export function HowItWorksPC() {
+  const { isDesktopHeight } = useApp();
+
   return (
     <div className="relative shrink-0 w-[90rem] h-full">
       <div
@@ -71,15 +75,19 @@ export function HowItWorksPC() {
         className="absolute z-[22] top-1/2 left-1/2 bg-transparent shrink-0 w-[110rem] h-[999rem] px-[7.5rem] flex justify-center items-center"
         style={{ transform: "translate(-50%, -50%) rotate(-20deg)" }}
       >
-        <div className="flex items-end" style={{ transform: "rotate(20deg)" }}>
-          <div className="flex flex-col gap-[3.75rem]">
-            <div className="flex flex-col" style={{ transform: "translate(-9rem, 2rem)" }}>
-              <span className="text-[4.375rem] font-bold tracking-[0.125rem] text-app-white whitespace-nowrap">
-                How It
-              </span>
-              <span className="text-[4.375rem] font-bold tracking-[0.125rem] text-app-main">Works</span>
+        <div className="flex items-center" style={{ transform: "rotate(20deg)" }}>
+          <div className={`flex flex-col ${isDesktopHeight ? "gap-[3.75rem]" : "gap-[3.125rem]"}`}>
+            <div
+              className={`flex ${isDesktopHeight ? "text-[4.375rem] flex-col" : "items-center gap-4 text-[3.125rem]"}`}
+              style={{ transform: "translate(-9rem, 2rem)" }}
+            >
+              <span className="font-bold tracking-[0.125rem] text-app-white whitespace-nowrap">How It</span>
+              <span className="font-bold tracking-[0.125rem] text-app-main">Works</span>
             </div>
-            <div className="flex items-end gap-[0.625rem] w-[24.25rem]" style={{ transform: "translate(-2rem, 2rem)" }}>
+            <div
+              className={`flex items-end gap-[0.625rem] ${isDesktopHeight ? "w-[24.25rem]" : "w-[33.875rem]"}`}
+              style={{ transform: "translate(-2rem, 2rem)" }}
+            >
               <div className="w-[0.375rem] h-[3.25rem] rounded-[1.125rem] bg-app-main shrink-0" />
               <div className="flex flex-col gap-5 text-t16 text-app-white">
                 <p>
@@ -92,7 +100,10 @@ export function HowItWorksPC() {
                 </p>
               </div>
             </div>
-            <div className="flex items-end gap-[0.625rem] w-[26.375rem]" style={{ transform: "translate(8rem, 2rem)" }}>
+            <div
+              className={`flex items-end gap-[0.625rem] ${isDesktopHeight ? "w-[26.375rem]" : "w-[36.875rem]"}`}
+              style={{ transform: "translate(8rem, 2rem)" }}
+            >
               <div className="w-[0.375rem] h-[3.25rem] rounded-[1.125rem] bg-app-main shrink-0" />
               <div className="flex flex-col gap-5 text-t16 text-app-white">
                 <p>This complex yet orderly system demands significant integration and infrastructure development</p>
@@ -107,13 +118,15 @@ export function HowItWorksPC() {
           <img
             alt="..."
             src="/images/how-it-works.png"
-            className="shrink-0 w-[52.625rem] h-[46.5rem]"
+            className={`shrink-0 ${isDesktopHeight ? "w-[52.625rem] h-[46.5rem]" : "w-[43.125rem] h-[38.125rem]"}`}
             style={{ transform: "translate(9rem, 0)" }}
           />
-          <div
-            className="w-[4.5rem] h-[4.5rem] rounded-full bg-app-main"
-            style={{ transform: "translate(14rem, 2rem)" }}
-          />
+          {isDesktopHeight && (
+            <div
+              className="w-[4.5rem] h-[4.5rem] rounded-full bg-app-main"
+              style={{ transform: "translate(14rem, 22rem)" }}
+            />
+          )}
         </div>
       </div>
     </div>
