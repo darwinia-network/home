@@ -1,5 +1,6 @@
 import { useState } from "react";
 import PrettyCode from "../PrettyCode";
+import RightArrowRound from "../RightArrowRound";
 
 interface Props {
   title: string[];
@@ -31,7 +32,7 @@ export default function BuildingWithMsgportPC({ title, menu, link }: Props) {
               className={`w-full rounded-[4rem] py-[1rem] text-center text-h3 transition-colors ${
                 m.title === activeTitle
                   ? "bg-app-main text-app-white hover:cursor-default"
-                  : "bg-app-inner-white text-app-black hover:bg-app-main hover:text-app-white"
+                  : "bg-app-inner-white text-app-black hover:text-app-main"
               }`}
               onClick={() => {
                 if (m.title !== activeTitle) {
@@ -43,15 +44,7 @@ export default function BuildingWithMsgportPC({ title, menu, link }: Props) {
             </button>
           ))}
         </div>
-        <a
-          className="py-[1.0625rem] pl-[84.5px] pr-[79.5px] flex items-center gap-medium rounded-[2.5rem] border border-app-black"
-          target="_blank"
-          rel="noopener noreferrer"
-          href={link}
-        >
-          <span className="text-t16b text-app-black">Try It Now</span>
-          <img alt="..." width={24} height={24} src="/images/right-arrow-black-background-round.svg" />
-        </a>
+        <TryItNow link={link} />
       </div>
 
       <div className="bg-app-black rounded-[2.5rem] px-[3.3125rem] pt-[3.375rem] pb-[4.5rem] flex flex-col gap-[3.125rem] w-[68.875rem]">
@@ -66,5 +59,23 @@ export default function BuildingWithMsgportPC({ title, menu, link }: Props) {
         />
       </div>
     </div>
+  );
+}
+
+function TryItNow({ link }: { link: string }) {
+  const [isHovering, setIsHovering] = useState(false);
+
+  return (
+    <a
+      className="py-[1.0625rem] pl-[84.5px] pr-[79.5px] flex items-center gap-medium rounded-[2.5rem] border border-app-black text-app-black transition-colors hover:border-app-main hover:text-app-main"
+      target="_blank"
+      rel="noopener noreferrer"
+      href={link}
+      onMouseEnter={() => setIsHovering(true)}
+      onMouseLeave={() => setIsHovering(false)}
+    >
+      <span className="text-t16b">Try It Now</span>
+      <RightArrowRound fill={isHovering ? "main" : "black"} />
+    </a>
   );
 }

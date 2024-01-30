@@ -11,9 +11,10 @@ import {
   useInteractions,
   useTransitionStyles,
 } from "@floating-ui/react";
-import { PropsWithChildren, ReactElement, useState } from "react";
+import { Dispatch, PropsWithChildren, ReactElement, SetStateAction } from "react";
 
 interface Props {
+  isOpen: boolean;
   label: ReactElement;
   placement?: Placement;
   hoverable?: boolean;
@@ -21,9 +22,11 @@ interface Props {
   sameWidth?: boolean;
   labelClassName?: string;
   childClassName?: string;
+  setIsOpen: Dispatch<SetStateAction<boolean>>;
 }
 
 export default function Dropdown({
+  isOpen,
   label,
   children,
   placement,
@@ -32,9 +35,8 @@ export default function Dropdown({
   sameWidth,
   labelClassName,
   childClassName,
+  setIsOpen,
 }: PropsWithChildren<Props>) {
-  const [isOpen, setIsOpen] = useState(false);
-
   const { refs, context, floatingStyles } = useFloating({
     open: isOpen,
     onOpenChange: setIsOpen,
@@ -85,7 +87,9 @@ export default function Dropdown({
 function Arrow({ isOpen }: { isOpen?: boolean }) {
   return (
     <div
-      className="border-t-[0.3125rem] border-t-gray border-x-[0.25rem] border-x-transparent shrink-0 transition-transform"
+      className={`border-t-[0.3125rem] border-x-[0.25rem] border-x-transparent shrink-0 transition-[transform,color] ${
+        isOpen ? "border-t-app-main" : "border-t-gray"
+      }`}
       style={{ transform: isOpen ? "rotateX(180deg)" : "rotateX(0)" }}
     />
   );

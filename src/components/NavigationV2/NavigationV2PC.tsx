@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import Dropdown from "../../ui/Dropdown";
+import { useState } from "react";
 
 interface Props {
   data: { label: string; sub: { label: string; link: string; isExternal?: boolean }[] }[];
@@ -16,13 +17,25 @@ export default function NavigationV2PC({ data }: Props) {
 }
 
 function Navigation({ label, sub }: { label: string; sub: { label: string; link: string; isExternal?: boolean }[] }) {
+  const [isOpen, setIsOpen] = useState(false);
+
   return (
     <Dropdown
       hoverable
+      isOpen={isOpen}
       placement="bottom"
-      label={<span className="text-t20 text-app-black whitespace-nowrap">{label}</span>}
+      label={
+        <span
+          className={`text-t20 whitespace-nowrap transition-colors hover:text-app-main ${
+            isOpen ? "text-app-main" : "text-app-black"
+          }`}
+        >
+          {label}
+        </span>
+      }
       labelClassName="flex items-center gap-[0.3125rem]"
       childClassName="rounded-[1.25rem] bg-app-black p-[1.875rem] flex flex-col"
+      setIsOpen={setIsOpen}
     >
       {sub.map((s) =>
         s.isExternal ? (

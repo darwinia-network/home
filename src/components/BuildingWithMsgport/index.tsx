@@ -1,4 +1,5 @@
 import { testCode } from "../../data/code/test";
+import useMediaQuery from "../../hooks/useMediaQuery";
 import BuildingWithMsgportMobile from "./BuildingWithMsgportMobile";
 import BuildingWithMsgportPC from "./BuildingWithMsgportPC";
 
@@ -31,10 +32,10 @@ const data = [
 ];
 
 export default function BuildingWithMsgport() {
-  return (
-    <>
-      <BuildingWithMsgportMobile title={["Start building with", "Darwinia Msgport"]} menu={data} link="#" />
-      <BuildingWithMsgportPC title={["Start building with", "Darwinia Msgport"]} menu={data} link="#" />
-    </>
+  const isMatchedMediaQuery = useMediaQuery("lg");
+  return isMatchedMediaQuery ? (
+    <BuildingWithMsgportPC title={["Start building with", "Darwinia Msgport"]} menu={data} link="#" />
+  ) : (
+    <BuildingWithMsgportMobile title={["Start building with", "Darwinia Msgport"]} menu={data} link="#" />
   );
 }
