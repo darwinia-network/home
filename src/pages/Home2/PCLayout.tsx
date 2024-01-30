@@ -12,9 +12,8 @@ export default function PCLayout({ children }: PropsWithChildren<unknown>) {
 
   useEffect(() => {
     const listener = (ev: WheelEvent) => {
-      const delta = Math.sign(ev.deltaY);
       if (ref.current) {
-        ref.current.scrollLeft += delta * 30;
+        ref.current.scrollLeft += ev.deltaY * 2;
       }
       ev.preventDefault();
     };
