@@ -16,7 +16,7 @@ export default function HeaderPC() {
   const hasActiveNavigation = isNavigationActive.some((isActive) => isActive);
 
   useEffect(() => {
-    setTimeout(() => setExpandedWidth(ref.current?.clientWidth), 0);
+    setTimeout(() => setExpandedWidth(ref.current?.clientWidth), 100);
   }, []);
 
   return (
