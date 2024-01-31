@@ -11,7 +11,7 @@ export default function HeaderPC() {
   const isPortraitHeight = useMediaQuery("max_h_pc", "vertical");
   const [isHovering, setIsHovering] = useState(false);
   const ref = useRef<HTMLDivElement | null>(null);
-  const { pcScrollLeft } = useApp();
+  const { pcScrollLeft, isDesktopHeight } = useApp();
 
   const hasActiveNavigation = isNavigationActive.some((isActive) => isActive);
 
@@ -38,7 +38,13 @@ export default function HeaderPC() {
       </Link>
       <div
         className="transition-[width] duration-200 overflow-x-hidden py-2 shrink-0"
-        style={{ width: isHovering || hasActiveNavigation || pcScrollLeft <= 580 ? expandedWidth : 0 }}
+        style={{
+          width: isDesktopHeight
+            ? undefined
+            : isHovering || hasActiveNavigation || pcScrollLeft <= 580
+            ? expandedWidth
+            : 0,
+        }}
       >
         <div className="flex items-center gap-[2.5rem] pl-[2.5rem] pr-[1.25rem] w-fit shrink-0" ref={ref}>
           <NavigationV2PC
