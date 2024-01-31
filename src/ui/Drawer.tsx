@@ -39,7 +39,7 @@ export default function Drawer({
           className="absolute right-0 top-0 h-screen w-3/4 overflow-y-auto bg-app-black flex flex-col items-end gap-[1.5rem]"
           onClick={(e) => e.stopPropagation()}
         >
-          <div className="h-[3.125rem] flex items-center justify-end px-[1.25rem]">
+          <div className="h-[3.125rem] flex items-center justify-end px-[1.25rem] shrink-0">
             <img
               width={16}
               height={16}
@@ -49,7 +49,7 @@ export default function Drawer({
               onClick={onClose}
             />
           </div>
-          {children}
+          <div className="w-full h-full overflow-auto">{children}</div>
         </div>
       </div>
     </CSSTransition>,
