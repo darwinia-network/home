@@ -4,7 +4,7 @@ export default function PoweringYourDapps() {
   const { isDesktopWidth, isDesktopHeight } = useApp();
 
   return (
-    <div className={`flex flex-col`}>
+    <div className="flex flex-col" data-aos="fade-up">
       <span
         className={`font-medium tracking-[1px] lg:font-normal text-black ${
           isDesktopWidth ? (isDesktopHeight ? "text-6xl" : "text-[3.125rem]") : "text-2xl"

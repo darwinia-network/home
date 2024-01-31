@@ -21,6 +21,7 @@ export default function Card({ icon, title, description, detail }: Props) {
       className={`bg-app-inner-white rounded-[10px] flex flex-col gap-10 h-fit w-full lg:w-[345px] ${
         isDesktopWidth ? (isDesktopHeight ? "p-[60px]" : "p-[40px]") : "p-5"
       }`}
+      data-aos="fade-up"
     >
       <img alt="" src={icon} className="w-[70px] h-[70px]" />
       <div className="flex flex-col gap-medium">

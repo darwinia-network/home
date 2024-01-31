@@ -15,7 +15,7 @@ export default function Item({ title, code, link, description }: Props) {
   const { isDesktopWidth, isDesktopHeight } = useApp();
 
   return (
-    <div className="flex flex-col gap-5 lg:gap-[1.875rem]">
+    <div className="flex flex-col gap-5 lg:gap-[1.875rem]" data-aos="fade-up">
       <div className="flex flex-col gap-5 lg:flex-row lg:justify-between lg:items-center">
         <h3 className={`text-app-white ${isDesktopWidth ? (isDesktopHeight ? "text-h1" : "text-h2") : "text-h2"}`}>
           {title}

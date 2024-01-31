@@ -10,7 +10,7 @@ export default function Feature({ icon, title, description }: Props) {
   const { isDesktopWidth, isDesktopHeight } = useApp();
 
   return (
-    <div className="w-full lg:w-[500px] flex flex-col gap-5">
+    <div className="w-full lg:w-[500px] flex flex-col gap-5" data-aos={isDesktopWidth ? "fade-left" : "fade-up"}>
       <div className="flex items-center justify-center w-[90px] h-[60px] lg:w-[180px] lg:h-[120px] bg-black rounded-[10px]">
         <img className="w-10 h-10 lg:w-20 lg:h-20" alt="..." src={icon} />
       </div>

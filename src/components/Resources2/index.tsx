@@ -33,7 +33,7 @@ const resources: { icon: string; title: string; description: string; detail: { l
 export default function Resources2() {
   return (
     <div className="flex flex-col gap-10 lg:gap-[34px]">
-      <h2 className="text-h2 text-black lg:text-[3.125rem] lg:font-bold lg:tracking-[0.125rem] lg:leading-normal">
+      <h2 className="text-h2 text-black lg:text-[3.125rem] lg:font-bold lg:tracking-[0.125rem] lg:leading-normal" data-aos="fade-up">
         Resources
       </h2>
       <div className="flex flex-col gap-10 lg:flex-row lg:gap-[88px]">

@@ -9,7 +9,7 @@ export function MobileHowItWorks() {
       >
         <div className="flex flex-col gap-[1.875rem] w-screen px-[1.25rem]" style={{ transform: "rotate(-10deg)" }}>
           <div className="flex items-center flex-nowrap text-h2">
-            <span className="text-app-white">How It</span>
+            <span className="text-app-white">How It&nbsp;</span>
             <span className="text-app-main">Works</span>
           </div>
           <div className="relative">
@@ -78,10 +78,10 @@ export function DesktopHowItWorks() {
         <div className="flex items-center" style={{ transform: "rotate(20deg)" }}>
           <div className={`flex flex-col ${isDesktopHeight ? "gap-[3.75rem]" : "gap-[3.125rem]"}`}>
             <div
-              className={`flex ${isDesktopHeight ? "text-[4.375rem] flex-col" : "items-center gap-4 text-[3.125rem]"}`}
+              className={`flex ${isDesktopHeight ? "text-[4.375rem] flex-col" : "items-center text-[3.125rem]"}`}
               style={{ transform: "translate(-9rem, 2rem)" }}
             >
-              <span className="font-bold tracking-[0.125rem] text-app-white whitespace-nowrap">How It</span>
+              <span className="font-bold tracking-[0.125rem] text-app-white whitespace-nowrap">How It&nbsp;</span>
               <span className="font-bold tracking-[0.125rem] text-app-main">Works</span>
             </div>
             <div

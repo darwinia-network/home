@@ -7,11 +7,11 @@ export default function MobileBuildingWithMsgport() {
 
   return (
     <div className="flex flex-col gap-[1.875rem] lg:hidden">
-      <div className="flex flex-col">
+      <div className="flex flex-col" data-aos="fade-up">
         <span className="text-t16b text-app-black">{title.at(0)}</span>
         <h2 className="text-h2 text-app-main">{title.at(1)}</h2>
       </div>
-      <div className="flex flex-col gap-[1.875rem]">
+      <div className="flex flex-col gap-[1.875rem]" data-aos="fade-up">
         {menu.map((m) => (
           <MobileMenuItem
             key={m.title}
@@ -28,6 +28,7 @@ export default function MobileBuildingWithMsgport() {
         target="_blank"
         rel="noopener noreferrer"
         href={link}
+        data-aos="fade-up"
       >
         <span className="text-t16b text-app-black">Try It Now</span>
         <img alt="..." width={24} height={24} src="/images/right-arrow-black-background-round.svg" />
