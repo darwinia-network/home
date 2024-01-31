@@ -1,23 +1,18 @@
 import { Link } from "react-router-dom";
 import NavigationV2PC from "../NavigationV2/NavigationV2PC";
-import { useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 import { medias, navigations } from "./data";
 import useApp from "../../hooks/useApp";
 import useMediaQuery from "../../hooks/useMediaQuery";
 
 export default function HeaderPC() {
   const [isNavigationActive, setIsNavigationActive] = useState(navigations.map(() => false));
-  const [expandedWidth, setExpandedWidth] = useState<number>();
   const isPortraitHeight = useMediaQuery("max_h_pc", "vertical");
   const [isHovering, setIsHovering] = useState(false);
   const ref = useRef<HTMLDivElement | null>(null);
   const { pcScrollLeft, isDesktopHeight } = useApp();
 
   const hasActiveNavigation = isNavigationActive.some((isActive) => isActive);
-
-  useEffect(() => {
-    setTimeout(() => setExpandedWidth(ref.current?.clientWidth), 100);
-  }, []);
 
   return (
     <div
@@ -42,11 +37,11 @@ export default function HeaderPC() {
           width: isDesktopHeight
             ? undefined
             : isHovering || hasActiveNavigation || pcScrollLeft <= 580
-            ? expandedWidth
+            ? ref.current?.clientWidth
             : 0,
         }}
       >
-        <div className="flex items-center gap-[2.5rem] pl-[2.5rem] pr-[1.25rem] w-fit shrink-0" ref={ref}>
+        <div className="flex items-center gap-[2.5rem] pl-[2.5rem] pr-[1.25rem] w-max shrink-0" ref={ref}>
           <NavigationV2PC
             data={navigations}
             isNavigationActive={isNavigationActive}
