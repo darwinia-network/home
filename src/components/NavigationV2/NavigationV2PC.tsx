@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import Dropdown from "../../ui/Dropdown";
 import { Dispatch, SetStateAction, useCallback } from "react";
+import ExternalIcon from "../ExternalIcon";
 
 interface Props {
   data: { label: string; sub: { label: string; link: string; isExternal?: boolean }[] }[];
@@ -53,6 +54,7 @@ function Navigation({
   return (
     <Dropdown
       hoverable
+      offset={12}
       isOpen={isActive}
       placement="bottom"
       label={
@@ -72,11 +74,13 @@ function Navigation({
         s.isExternal ? (
           <a
             key={s.label}
-            className="text-t16b text-app-white px-[0.9375rem] py-[0.6875rem] rounded-[0.625rem] transition-colors bg-transparent hover:bg-app-main"
+            className="text-t16b text-app-white px-[0.9375rem] py-[0.6875rem] rounded-[0.625rem] transition-colors bg-transparent hover:bg-app-main inline-flex items-center gap-1"
             rel="noopener noreferrer"
             target="_blank"
             href={s.link}
-          ></a>
+          >
+            <span>{s.label}</span> <ExternalIcon color="app-gray" />
+          </a>
         ) : (
           <Link
             key={s.label}

@@ -22,14 +22,19 @@ export default function PoweringYourDapps() {
         <span className="whitespace-nowrap">Cross-Chain</span>
         <span>Capabilities</span>
       </div>
-      <button className="mt-[22px] lg:mt-[30px] flex items-center gap-small lg:gap-medium py-[9px] px-[10px] lg:py-5 lg:px-8 rounded-[100px] bg-black w-fit transition-colors hover:bg-app-main">
-        <span className="text-t14 lg:text-t20 text-white">Develop with Darwinia</span>
+      <a
+        rel="noopener noreferrer"
+        target="_blank"
+        href="https://docs.darwinia.network/"
+        className="mt-[22px] lg:mt-[30px] flex items-center gap-small lg:gap-large py-[9px] px-4 lg:py-5 lg:px-12 rounded-[100px] bg-black w-fit transition-colors hover:bg-app-main"
+      >
+        <span className="text-t14 lg:text-t20 text-white">Try It Now</span>
         <img
           className="w-[16px] h-[16px] lg:w-[24px] lg:h-[24px]"
           alt="..."
           src="/images/right-arrow-white-background-round.svg"
         />
-      </button>
+      </a>
     </div>
   );
 }

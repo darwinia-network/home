@@ -16,6 +16,7 @@ import { PropsWithChildren, ReactElement } from "react";
 interface Props {
   isOpen: boolean;
   label: ReactElement;
+  offset?: number;
   placement?: Placement;
   hoverable?: boolean;
   clickable?: boolean;
@@ -28,6 +29,7 @@ interface Props {
 export default function Dropdown({
   isOpen,
   label,
+  offset: _offset = 8,
   children,
   placement,
   hoverable,
@@ -41,7 +43,7 @@ export default function Dropdown({
     open: isOpen,
     onOpenChange,
     middleware: [
-      offset(4),
+      offset(_offset),
       sameWidth
         ? size({
             apply({ rects, elements }) {

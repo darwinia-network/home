@@ -3,7 +3,7 @@ import useApp from "../hooks/useApp";
 
 interface Props {
   title: string;
-  links: { text: string; href?: string; isExternal?: boolean }[];
+  links: { text: string; href?: string; isExternal?: boolean; isComingSoon?: boolean }[];
 }
 
 export default function FooterSection({ title, links }: Props) {
@@ -13,7 +13,7 @@ export default function FooterSection({ title, links }: Props) {
     <div className="hidden lg:flex flex-col gap-5 h-fit max-w-max">
       <h3 className="uppercase text-xl leading-normal font-bold text-app-white">{title}</h3>
       <div className="flex flex-col gap-5">
-        {links.map(({ text, href, isExternal }) => (
+        {links.map(({ text, href, isExternal, isComingSoon }) => (
           <div key={text} className={`${isDesktopHeight ? "text-t16" : "text-t14"}`}>
             {href ? (
               isExternal ? (
@@ -31,7 +31,7 @@ export default function FooterSection({ title, links }: Props) {
                 </Link>
               )
             ) : (
-              <span className="text-white/50">{text}</span>
+              <span className={`${isComingSoon ? "text-app-white/50" : "text-app-white"}`}>{text}</span>
             )}
           </div>
         ))}

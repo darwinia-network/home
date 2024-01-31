@@ -1,5 +1,6 @@
 import { useRef, useState } from "react";
 import { Link } from "react-router-dom";
+import ExternalIcon from "../ExternalIcon";
 
 interface Props {
   data: { label: string; sub: { label: string; link: string; isExternal?: boolean }[] }[];
@@ -55,11 +56,12 @@ function SubItem({ label, link, isExternal }: { label: string; link: string; isE
           href={link}
           rel="noopener noreferrer"
           target="_blank"
-          className={`w-full text-end py-[1.0625rem] text-t14b transition-colors ${
+          className={`w-full text-end py-[1.0625rem] text-t14b transition-colors inline-flex items-center justify-end gap-2 ${
             isHovering ? "text-app-main" : "text-app-gray"
           }`}
         >
-          {label}
+          <span>{label}</span>
+          <ExternalIcon color="app-gray" width={14} height={14} />
         </a>
       ) : (
         <Link

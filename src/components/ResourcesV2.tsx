@@ -6,27 +6,27 @@ const resources: { icon: string; title: string; description: string; detail: { l
     title: "Darwinia Msgport GitHub",
     description:
       "An open-source repo providing interfaces and tools for blockchain interoperability and communication.",
-    detail: { link: "" },
+    detail: { link: "https://github.com/darwinia-network/darwinia-msgport" },
   },
   {
     icon: "/images/resources/darwinia-messages-explorer.png",
     title: "Darwinia Messages Explorer",
     description:
       "It serves as a comprehensive platform for following transactions over the Darwinia Msgport, helping users and developers to manage and analyze cross-chain data more effectively.",
-    detail: { link: "" },
+    detail: { link: "https://msgscan.darwinia.network/" },
   },
   {
     icon: "/images/resources/technical-docs.png",
     title: "Technical Docs",
     description: "Start building your Cross-Chain DApp with Darwinia Msgport.",
-    detail: { link: "" },
+    detail: { link: "https://docs.darwinia.network/darwinia-msgport-fa89f501ea1747e285b6169697e2ff77" },
   },
   {
     icon: "/images/resources/developer-assistance.png",
     title: "Developer Assistance",
     description:
       "Chat with other developers in the Developer Community, share your ideas and get answers to your technical questions.",
-    detail: { link: "" },
+    detail: { link: "https://discord.com/invite/fZDWmJKWCw" },
   },
 ];
 
