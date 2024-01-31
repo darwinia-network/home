@@ -17,7 +17,7 @@ export const navigations: { label: string; sub: { label: string; link: string; i
       { label: "Darwinia Ecosystem DApps", link: "https://apps.darwinia.network/", isExternal: true },
       { label: "Darwinia News & Updates", link: "https://medium.com/darwinianetwork", isExternal: true },
       { label: "Darwinia Roadmap", link: "https://darwinia.notion.site/c700133dd5a04c2494ceab489c75c907?v=8ff88199019d4236a3b9a190f5e7b9d5", isExternal: true },
-      { label: "Darwinia Genepaper v4", link: "/Genepaper_v4.pdf", isExternal: false },
+      { label: "Darwinia Genepaper v4", link: "/Genepaper_v4.pdf", isExternal: true },
       { label: "Paper Resources", link: "/papers", isExternal: false },
       { label: "Glossary", link: "https://docs.darwinia.network/glossary-8967fc4aa6a046a69b525dff7bf70a50", isExternal: true },
       { label: "FAQ", link: "https://darwinia.notion.site/FAQ-c9412ead803542f197ba1ccafb72c427", isExternal: true },

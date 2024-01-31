@@ -1,6 +1,9 @@
 import FooterSection from "./FooterSection";
 
-const sections: { title: string; links: { text: string; href?: string; isExternal?: boolean; isComingSoon?: boolean }[] }[] = [
+const sections: {
+  title: string;
+  links: { text: string; href?: string; isExternal?: boolean; isComingSoon?: boolean }[];
+}[] = [
   {
     title: "Developers",
     links: [
@@ -30,7 +33,7 @@ const sections: { title: string; links: { text: string; href?: string; isExterna
   {
     title: "Resources",
     links: [
-      { text: "Papers", href: "papers" },
+      { text: "Papers", href: "/papers" },
       { text: "Wiki", href: "https://docs.darwinia.network/", isExternal: true },
       {
         text: "Roadmap",
