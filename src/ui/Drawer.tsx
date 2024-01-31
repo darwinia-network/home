@@ -33,7 +33,7 @@ export default function Drawer({
       <div
         ref={nodeRef}
         onClick={() => maskClosable && onClose()}
-        className="fixed left-0 top-0 z-20 h-screen w-screen bg-app-black/60"
+        className="fixed left-0 top-0 z-50 h-screen w-screen bg-app-black/60"
       >
         <div
           className="absolute right-0 top-0 h-screen w-3/4 overflow-y-auto bg-app-black flex flex-col items-end gap-[1.5rem]"

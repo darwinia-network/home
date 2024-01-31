@@ -1,15 +1,32 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import Drawer from "../../ui/Drawer";
 import NavigationV2Mobile from "../NavigationV2/NavigationV2Mobile";
 import { navigations } from "./data";
 
 export default function HeaderMobile() {
+  const [isScrollOver, setIsScrollOver] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
+  const ref = useRef<HTMLDivElement | null>(null);
+
+  useEffect(() => {
+    const listener = () => {
+      setIsScrollOver(ref.current ? ref.current.clientHeight <= window.scrollY : false);
+    };
+    window.addEventListener("scroll", listener, false);
+    return () => {
+      window.removeEventListener("scroll", listener, false);
+    };
+  }, []);
 
   return (
     <>
-      <div className="py-[0.625rem] pl-[0.9375rem] pr-[1.125rem] flex items-center justify-between lg:hidden">
+      <div
+        className={`fixed top-0 left-0 z-[49] w-full py-[0.625rem] pl-[0.9375rem] pr-[1.125rem] flex items-center justify-between lg:hidden transition-colors ${
+          isScrollOver ? "bg-app-white/60 hover:bg-app-white backdrop-blur-[0.625rem]" : "bg-transparent"
+        }`}
+        ref={ref}
+      >
         <Link to="/">
           <img
             width={37}
