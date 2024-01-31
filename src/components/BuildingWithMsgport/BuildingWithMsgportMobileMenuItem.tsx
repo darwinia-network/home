@@ -1,5 +1,5 @@
 import PrettyCode from "../PrettyCode";
-import { useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 
 interface Props {
   title: string;
@@ -16,16 +16,9 @@ export default function BuildingWithMsgportMobileMenuItem({
   code,
   onChange = () => undefined,
 }: Props) {
-  const [expandHeight, setExpandHeight] = useState<number>();
   const [btnHeight, setBtnHeight] = useState<number>();
   const ref = useRef<HTMLDivElement | null>(null);
   const isActive = title === activeTitle;
-
-  useEffect(() => {
-    setTimeout(() => {
-      setExpandHeight(ref.current?.clientHeight);
-    }, 0);
-  }, [btnHeight]);
 
   return (
     <div className="relative" style={{ minHeight: btnHeight, paddingTop: btnHeight ? btnHeight / 2 : undefined }}>
@@ -44,7 +37,7 @@ export default function BuildingWithMsgportMobileMenuItem({
       </button>
       <div
         className="overflow-y-hidden transition-[height] duration-300 rounded-b-[2.5rem] bg-app-black"
-        style={{ height: isActive ? expandHeight : 0 }}
+        style={{ height: isActive ? ref.current?.clientHeight : 0 }}
       >
         <div className="flex flex-col gap-5 p-5" style={{ paddingTop: btnHeight }} ref={ref}>
           <span className="text-t14 text-app-white">{description}</span>
