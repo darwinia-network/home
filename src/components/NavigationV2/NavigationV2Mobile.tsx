@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 import { Link } from "react-router-dom";
 
 interface Props {
@@ -7,12 +7,7 @@ interface Props {
 
 export default function NavigationV2Mobile({ data }: Props) {
   const [activeIndex, setActiveIndex] = useState(0);
-  const [height, setHeight] = useState<(number | undefined)[]>(new Array(data.length).fill(undefined));
   const ref = useRef<(HTMLDivElement | null)[]>(new Array(data.length).fill(null));
-
-  useEffect(() => {
-    setTimeout(() => setHeight(ref.current.map((e) => e?.clientHeight)), 0);
-  }, []);
 
   return (
     <div className="flex flex-col lg:hidden w-full">
@@ -27,7 +22,7 @@ export default function NavigationV2Mobile({ data }: Props) {
           </button>
           <div
             className="transition-[height] duration-200 overflow-y-hidden w-full"
-            style={{ height: index === activeIndex ? height[index] : 0 }}
+            style={{ height: index === activeIndex ? ref.current[index]?.clientHeight : 0 }}
           >
             <div
               className="bg-app-inner-black flex flex-col items-end"
