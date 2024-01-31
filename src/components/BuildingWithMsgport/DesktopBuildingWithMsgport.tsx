@@ -4,7 +4,7 @@ import RightArrowRound from "../RightArrowRound";
 import { link, menu, title } from "./data";
 import useApp from "../../hooks/useApp";
 
-export default function BuildingWithMsgportPC() {
+export default function DesktopBuildingWithMsgport() {
   const { isDesktopHeight } = useApp();
   const [activeTitle, setActiveTitle] = useState(menu[0].title);
   const activeMenu = menu.find(({ title }) => title === activeTitle) || menu[0];

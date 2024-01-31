@@ -9,7 +9,7 @@ interface Props {
   setIsNavigationActive: Dispatch<SetStateAction<boolean[]>>;
 }
 
-export default function NavigationV2PC({ data, isNavigationActive, setIsNavigationActive }: Props) {
+export default function DesktopNavigation({ data, isNavigationActive, setIsNavigationActive }: Props) {
   const handleActiveChange = useCallback(
     (index: number, isActive: boolean) =>
       setIsNavigationActive((prev) => {

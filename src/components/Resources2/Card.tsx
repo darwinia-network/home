@@ -1,6 +1,6 @@
 import { useState } from "react";
-import RightArrowRound from "./RightArrowRound";
-import useApp from "../hooks/useApp";
+import useApp from "../../hooks/useApp";
+import RightArrowRound from "../RightArrowRound";
 
 interface Props {
   icon: string; // File path
@@ -12,7 +12,7 @@ interface Props {
   };
 }
 
-export default function ResourceCard({ icon, title, description, detail }: Props) {
+export default function Card({ icon, title, description, detail }: Props) {
   const [isHovering, setIsHovering] = useState(false);
   const { isDesktopWidth, isDesktopHeight } = useApp();
 

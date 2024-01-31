@@ -1,4 +1,9 @@
-const medias: { icon: string; link: string }[] = [
+const headerData = [
+  { icon: "/images/social-media/x-black-bg.svg", link: "https://twitter.com/DarwiniaNetwork" },
+  { icon: "/images/social-media/discord-black-bg.svg", link: "https://discord.com/invite/aQdK9H4MZS" },
+];
+
+const footerData: { icon: string; link: string }[] = [
   { icon: "/images/social-media/x-white-bg.svg", link: "https://twitter.com/DarwiniaNetwork" },
   { icon: "/images/social-media/telegram-white-bg.svg", link: "https://t.me/DarwiniaNetwork" },
   { icon: "/images/social-media/discord-white-bg.svg", link: "https://discord.com/invite/aQdK9H4MZS" },
@@ -8,10 +13,10 @@ const medias: { icon: string; link: string }[] = [
   { icon: "/images/social-media/email-white-bg.svg", link: "mailto:hello@darwinia.network" },
 ];
 
-export default function FooterSocialMedia() {
+export function FooterSocialMedia() {
   return (
     <div className="flex items-center gap-5 lg:gap-medium">
-      {medias.map(({ icon, link }, index) => (
+      {footerData.map(({ icon, link }, index) => (
         <a
           key={index}
           rel="noopener noreferrer"
@@ -20,6 +25,24 @@ export default function FooterSocialMedia() {
           className="transition-transform lg:hover:-translate-y-1 lg:active:translate-y-0"
         >
           <img alt="..." width={24} height={24} src={icon} />
+        </a>
+      ))}
+    </div>
+  );
+}
+
+export function HeaderSocialMedia() {
+  return (
+    <div className="flex items-center gap-[2.5rem]">
+      {headerData.map((media, index) => (
+        <a
+          key={index}
+          rel="noopener noreferrer"
+          target="_blank"
+          href={media.link}
+          className="shrink-0 transition-transform hover:scale-105 active:scale-95"
+        >
+          <img width={34} height={34} alt="" src={media.icon} className="shrink-0 w-[2.125rem] h-[2.125rem]" />
         </a>
       ))}
     </div>

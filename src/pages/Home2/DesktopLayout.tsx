@@ -1,21 +1,20 @@
 import { PropsWithChildren, UIEventHandler, useCallback, useEffect, useRef, useState } from "react";
 import useApp from "../../hooks/useApp";
-import HeaderPC from "../../components/Header/HeaderPC";
-import { MAX_HEIGHT_ON_PC, MIN_HEIGHT_ON_PC } from "../../config/constant";
+import DesktopHeader from "../../components/Header/DesktopHeader";
+import { MAX_HEIGHT_ON_DESKTOP, MIN_HEIGHT_ON_DESKTOP } from "../../config/constant";
 
-export default function PCLayout({ children }: PropsWithChildren<unknown>) {
-  const [scrollPercent, setScrollPercent] = useState(0);
+export default function DesktopLayout({ children }: PropsWithChildren<unknown>) {
+  const [progress, setProgress] = useState(0); // From 0 to 100
   const ref = useRef<HTMLDivElement | null>(null);
-  const { setPcScrollLeft } = useApp();
+  const { setDesktopScrollLeft } = useApp();
 
   const handleScroll = useCallback<UIEventHandler<HTMLDivElement>>(
     (ev) => {
       const { scrollWidth, clientWidth, scrollLeft } = ev.currentTarget;
-      const percent = clientWidth < scrollWidth ? (scrollLeft * 100) / (scrollWidth - clientWidth) : 0;
-      setScrollPercent(percent);
-      setPcScrollLeft(scrollLeft);
+      setProgress(clientWidth < scrollWidth ? (scrollLeft * 100) / (scrollWidth - clientWidth) : 0);
+      setDesktopScrollLeft(scrollLeft);
     },
-    [setPcScrollLeft]
+    [setDesktopScrollLeft]
   );
 
   useEffect(() => {
@@ -33,37 +32,37 @@ export default function PCLayout({ children }: PropsWithChildren<unknown>) {
 
   useEffect(
     () => () => {
-      setPcScrollLeft(0); // Reset
+      setDesktopScrollLeft(0); // Reset
     },
-    [setPcScrollLeft]
+    [setDesktopScrollLeft]
   );
 
   return (
     <main className="w-screen h-screen flex flex-col justify-center overflow-hidden relative">
       <div className="flex">
         <div className="relative">
-          <HeaderPC />
+          <DesktopHeader />
         </div>
         <div
-          className="h-screen w-screen overflow-y-hidden overflow-x-scroll flex items-center"
-          style={{ maxHeight: MAX_HEIGHT_ON_PC, minHeight: MIN_HEIGHT_ON_PC, scrollbarWidth: "none" }}
+          className="h-[99.375vh] w-screen overflow-y-hidden overflow-x-scroll flex items-center"
+          style={{ maxHeight: MAX_HEIGHT_ON_DESKTOP, minHeight: MIN_HEIGHT_ON_DESKTOP, scrollbarWidth: "none" }}
           onScroll={handleScroll}
           ref={ref}
         >
           {children}
         </div>
       </div>
-      <ScrollPercentBar percent={scrollPercent} />
+      <ProgressBar progress={progress} />
     </main>
   );
 }
 
-function ScrollPercentBar({ percent }: { percent: number }) {
+function ProgressBar({ progress }: { progress: number }) {
   return (
-    <div className="relative h-1 w-screen bg-app-black">
+    <div className="relative h-[0.625rem] w-screen bg-app-black">
       <div
-        className="absolute z-10 h-1 top-0 left-0 bg-app-main w-0 transition-[width]"
-        style={{ width: `${percent}vw` }}
+        className="absolute z-10 h-[0.625rem] top-0 left-0 bg-app-main w-0 transition-[width]"
+        style={{ width: `${progress}vw` }}
       />
     </div>
   );

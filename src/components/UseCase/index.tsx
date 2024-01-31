@@ -1,5 +1,5 @@
-import { testCode } from "../data/code/test";
-import UseCase from "./UseCase";
+import { testCode } from "../../data/code/test";
+import Item from "./Item";
 
 const cases: { title: string; code: string; link: string; description: string }[] = [
   {
@@ -18,11 +18,11 @@ const cases: { title: string; code: string; link: string; description: string }[
   },
 ];
 
-export default function UseCases() {
+export default function UseCase() {
   return (
     <div className="flex flex-col gap-[3.75rem] lg:flex-row lg:gap-[10.25rem]">
       {cases.map(({ title, code, link, description }) => (
-        <UseCase key={title} title={title} code={code} link={link} description={description} />
+        <Item key={title} title={title} code={code} link={link} description={description} />
       ))}
     </div>
   );

@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { MAX_HEIGHT_ON_PC } from "../config/constant";
+import { MAX_HEIGHT_ON_DESKTOP } from "../config/constant";
 
 type BreakpointPrefix = "sm" | "md" | "lg" | "xl" | "2xl" | "max_h_pc";
 
@@ -9,11 +9,11 @@ const mapping: Record<BreakpointPrefix, string> = {
   lg: "1024px",
   xl: "1280px",
   "2xl": "1536px",
-  "max_h_pc": `${MAX_HEIGHT_ON_PC}px`,
+  "max_h_pc": `${MAX_HEIGHT_ON_DESKTOP}px`,
 };
 
 /**
- * Check if media query matches. Refer https://tailwindcss.com/docs/responsive-design
+ * Check if media query matches. Refer to https://tailwindcss.com/docs/responsive-design
  * @param breakpoint "sm" | "md" | "lg" | "xl" | "2xl"
  * @returns boolean
  */

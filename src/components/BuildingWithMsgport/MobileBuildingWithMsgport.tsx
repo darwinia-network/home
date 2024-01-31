@@ -1,8 +1,8 @@
 import { useState } from "react";
-import BuildingWithMsgportMobileMenuItem from "./BuildingWithMsgportMobileMenuItem";
+import MobileMenuItem from "./MobileMenuItem";
 import { link, menu, title } from "./data";
 
-export default function BuildingWithMsgportMobile() {
+export default function MobileBuildingWithMsgport() {
   const [activeTitle, setActiveActive] = useState(menu[0].title);
 
   return (
@@ -13,7 +13,7 @@ export default function BuildingWithMsgportMobile() {
       </div>
       <div className="flex flex-col gap-[1.875rem]">
         {menu.map((m) => (
-          <BuildingWithMsgportMobileMenuItem
+          <MobileMenuItem
             key={m.title}
             activeTitle={activeTitle}
             title={m.title}

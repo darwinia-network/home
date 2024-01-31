@@ -1,7 +1,7 @@
-import useApp from "../hooks/useApp";
-import FeatureV2 from "./FeatureV2";
+import useApp from "../../hooks/useApp";
+import Feature from "./Feature";
 
-export const features: { icon: string; title: string; description: string }[] = [
+const features: { icon: string; title: string; description: string }[] = [
   {
     icon: "/images/features/chain-free-empowerment.png",
     title: "Chain-Free Empowerment",
@@ -29,22 +29,22 @@ export default function Features() {
     <div className={`flex flex-col w-fit ${isDesktopHeight ? "gap-[90px]" : "gap-2"}`}>
       <div className="flex items-center justify-center">
         {features.at(1) ? (
-          <FeatureV2 icon={features[1].icon} title={features[1].title} description={features[1].description} />
+          <Feature icon={features[1].icon} title={features[1].title} description={features[1].description} />
         ) : null}
       </div>
       <div className="flex items-center gap-[304px]">
         {features.at(0) ? (
-          <FeatureV2 icon={features[0].icon} title={features[0].title} description={features[0].description} />
+          <Feature icon={features[0].icon} title={features[0].title} description={features[0].description} />
         ) : null}
         {features.at(2) ? (
-          <FeatureV2 icon={features[2].icon} title={features[2].title} description={features[2].description} />
+          <Feature icon={features[2].icon} title={features[2].title} description={features[2].description} />
         ) : null}
       </div>
     </div>
   ) : (
     <div className="flex flex-col gap-[60px]">
       {features.map(({ icon, title, description }) => (
-        <FeatureV2 key={title} icon={icon} title={title} description={description} />
+        <Feature key={title} icon={icon} title={title} description={description} />
       ))}
     </div>
   );

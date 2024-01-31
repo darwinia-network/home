@@ -1,6 +1,6 @@
 import useApp from "../../../hooks/useApp";
 
-export function HowItWorksSectionMobile() {
+export function MobileHowItWorks() {
   return (
     <div className="h-[60rem] w-full bg-primary relative shrink-0">
       <div
@@ -57,7 +57,7 @@ export function HowItWorksSectionMobile() {
   );
 }
 
-export function HowItWorksPC() {
+export function DesktopHowItWorks() {
   const { isDesktopHeight } = useApp();
 
   return (

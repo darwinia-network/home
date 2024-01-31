@@ -49,7 +49,4 @@ export const navigations: { label: string; sub: { label: string; link: string; i
   },
 ];
 
-export const medias = [
-  { icon: "/images/social-media/x-black-bg.svg", link: "https://twitter.com/DarwiniaNetwork" },
-  { icon: "/images/social-media/discord-black-bg.svg", link: "https://discord.com/invite/aQdK9H4MZS" },
-];
+

@@ -1,10 +1,10 @@
 import Copyright from "../../../components/Copyright";
-import FooterSections from "../../../components/FooterSections";
-import FooterSocialMedia from "../../../components/FooterSocialMedia";
-import SubscribeSection from "../../../components/SubscribeSection";
+import FooterLinks from "../../../components/FooterLinks";
+import { FooterSocialMedia } from "../../../components/SocialMedia";
+import SubscribeWrap from "../../../components/SubscribeWrap";
 import useApp from "../../../hooks/useApp";
 
-export function FooterPC() {
+export function DesktopFooter() {
   const { isDesktopHeight } = useApp();
   return (
     <div
@@ -13,8 +13,8 @@ export function FooterPC() {
       }`}
       style={{ backgroundImage: "url(/images/footer-bg.png)" }}
     >
-      <SubscribeSection />
-      <FooterSections />
+      <SubscribeWrap />
+      <FooterLinks />
       <div className="flex items-center justify-between">
         <Copyright />
         <FooterSocialMedia />

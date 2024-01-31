@@ -1,5 +1,5 @@
 import { Route, Routes } from "react-router-dom";
-import React, { LazyExoticComponent, Suspense } from "react";
+import { LazyExoticComponent, Suspense } from "react";
 import routesArray from "./routesList";
 import LoadingSpinner from "../components/LoadingSpinner";
 

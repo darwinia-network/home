@@ -1,16 +1,17 @@
 import { Link } from "react-router-dom";
-import NavigationV2PC from "../NavigationV2/NavigationV2PC";
+import DesktopNavigation from "../Navigation2/DesktopNavigation";
 import { useRef, useState } from "react";
-import { medias, navigations } from "./data";
+import { navigations } from "./data";
 import useApp from "../../hooks/useApp";
 import useMediaQuery from "../../hooks/useMediaQuery";
+import { HeaderSocialMedia } from "../SocialMedia";
 
-export default function HeaderPC() {
+export default function DesktopHeader() {
   const [isNavigationActive, setIsNavigationActive] = useState(navigations.map(() => false));
   const isPortraitHeight = useMediaQuery("max_h_pc", "vertical");
   const [isHovering, setIsHovering] = useState(false);
   const ref = useRef<HTMLDivElement | null>(null);
-  const { pcScrollLeft, isDesktopHeight } = useApp();
+  const { desktopScrollLeft, isDesktopHeight } = useApp();
 
   const hasActiveNavigation = isNavigationActive.some((isActive) => isActive);
 
@@ -36,28 +37,18 @@ export default function HeaderPC() {
         style={{
           width: isDesktopHeight
             ? undefined
-            : isHovering || hasActiveNavigation || pcScrollLeft <= 580
+            : isHovering || hasActiveNavigation || desktopScrollLeft <= 580
             ? ref.current?.clientWidth
             : 0,
         }}
       >
         <div className="flex items-center gap-[2.5rem] pl-[2.5rem] pr-[1.25rem] w-max shrink-0" ref={ref}>
-          <NavigationV2PC
+          <DesktopNavigation
             data={navigations}
             isNavigationActive={isNavigationActive}
             setIsNavigationActive={setIsNavigationActive}
           />
-          {medias.map((media, index) => (
-            <a
-              key={index}
-              rel="noopener noreferrer"
-              target="_blank"
-              href={media.link}
-              className="shrink-0 transition-transform hover:scale-105 active:scale-95"
-            >
-              <img width={34} height={34} alt="" src={media.icon} className="shrink-0 w-[2.125rem] h-[2.125rem]" />
-            </a>
-          ))}
+          <HeaderSocialMedia />
         </div>
       </div>
     </div>

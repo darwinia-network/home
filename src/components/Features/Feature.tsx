@@ -1,4 +1,4 @@
-import useApp from "../hooks/useApp";
+import useApp from "../../hooks/useApp";
 
 interface Props {
   icon: string; // File path
@@ -6,7 +6,7 @@ interface Props {
   description: string;
 }
 
-export default function FeatureV2({ icon, title, description }: Props) {
+export default function Feature({ icon, title, description }: Props) {
   const { isDesktopWidth, isDesktopHeight } = useApp();
 
   return (

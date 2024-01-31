@@ -1,17 +1,17 @@
-import HomeV2Mobile from "./Home2Mobile";
-import HomeV2PC from "./Home2PC";
+import Mobile from "./Mobile";
+import Desktop from "./Desktop";
 import useApp from "../../hooks/useApp";
 import AppProvider from "../../providers/AppProvider";
 
-export default function HomeV2() {
+export default function Home2() {
   return (
     <AppProvider>
-      <Page />
+      <HomePage2 />
     </AppProvider>
   );
 }
 
-function Page() {
+function HomePage2() {
   const { isDesktopWidth } = useApp();
-  return isDesktopWidth ? <HomeV2PC /> : <HomeV2Mobile />;
+  return isDesktopWidth ? <Desktop /> : <Mobile />;
 }

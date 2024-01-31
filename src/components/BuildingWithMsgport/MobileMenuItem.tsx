@@ -9,7 +9,7 @@ interface Props {
   onChange?: (title: string) => void;
 }
 
-export default function BuildingWithMsgportMobileMenuItem({
+export default function MobileMenuItem({
   title,
   activeTitle,
   description,

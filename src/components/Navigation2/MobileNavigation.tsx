@@ -6,7 +6,7 @@ interface Props {
   data: { label: string; sub: { label: string; link: string; isExternal?: boolean }[] }[];
 }
 
-export default function NavigationV2Mobile({ data }: Props) {
+export default function MobileNavigation({ data }: Props) {
   const [activeIndex, setActiveIndex] = useState(0);
   const ref = useRef<(HTMLDivElement | null)[]>(new Array(data.length).fill(null));
 

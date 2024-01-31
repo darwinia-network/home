@@ -1,4 +1,4 @@
-import FooterSection from "./FooterSection";
+import Item from "./Item";
 
 const sections: {
   title: string;
@@ -70,18 +70,18 @@ const sections: {
   },
 ];
 
-export default function FooterSections() {
+export default function FooterLinks() {
   return (
     <div className="hidden lg:flex justify-between">
       {sections.at(1) ? (
         <div className="flex flex-col gap-[100px]">
           {sections.slice(0, 2).map((section) => (
-            <FooterSection key={section.title} title={section.title} links={section.links} />
+            <Item key={section.title} title={section.title} links={section.links} />
           ))}
         </div>
       ) : null}
       {sections.slice(2).map((section) => (
-        <FooterSection key={section.title} title={section.title} links={section.links} />
+        <Item key={section.title} title={section.title} links={section.links} />
       ))}
     </div>
   );

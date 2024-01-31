@@ -1,4 +1,4 @@
-import ResourceCard from "./ResourceCard";
+import Card from "./Card";
 
 const resources: { icon: string; title: string; description: string; detail: { link: string } }[] = [
   {
@@ -30,7 +30,7 @@ const resources: { icon: string; title: string; description: string; detail: { l
   },
 ];
 
-export default function ResourcesV2() {
+export default function Resources2() {
   return (
     <div className="flex flex-col gap-10 lg:gap-[34px]">
       <h2 className="text-h2 text-black lg:text-[3.125rem] lg:font-bold lg:tracking-[0.125rem] lg:leading-normal">
@@ -38,7 +38,7 @@ export default function ResourcesV2() {
       </h2>
       <div className="flex flex-col gap-10 lg:flex-row lg:gap-[88px]">
         {resources.map(({ icon, title, description, detail }) => (
-          <ResourceCard key={title} icon={icon} title={title} description={description} detail={detail} />
+          <Card key={title} icon={icon} title={title} description={description} detail={detail} />
         ))}
       </div>
     </div>

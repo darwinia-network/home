@@ -1,7 +1,7 @@
 import { useState } from "react";
-import PrettyCode from "./PrettyCode";
-import RightArrowRound from "./RightArrowRound";
-import useApp from "../hooks/useApp";
+import useApp from "../../hooks/useApp";
+import RightArrowRound from "../RightArrowRound";
+import PrettyCode from "../PrettyCode";
 
 interface Props {
   title: string;
@@ -10,7 +10,7 @@ interface Props {
   description: string;
 }
 
-export default function UseCase({ title, code, link, description }: Props) {
+export default function Item({ title, code, link, description }: Props) {
   const [isHovering, setIsHovering] = useState(false);
   const { isDesktopWidth, isDesktopHeight } = useApp();
 

@@ -1,10 +1,10 @@
 import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import Drawer from "../../ui/Drawer";
-import NavigationV2Mobile from "../NavigationV2/NavigationV2Mobile";
+import NavigationV2Mobile from "../Navigation2/MobileNavigation";
 import { navigations } from "./data";
 
-export default function HeaderMobile() {
+export default function MobileHeader() {
   const [isScrollOver, setIsScrollOver] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
   const ref = useRef<HTMLDivElement | null>(null);
