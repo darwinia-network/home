@@ -1,27 +1,108 @@
+// @font-face {
+//   font-family: "JetBrainsMono-Light";
+//   src: url("../fonts/JetBrainsMono-Light.woff2");
+// }
+// @font-face {
+//   font-family: "JetBrainsMono-Bold";
+//   src: url("../fonts/JetBrainsMono-Bold.woff2");
+// }
+
+@font-face {
+  font-family: "Euclid Circular A";
+  src: local("Euclid Circular A"), url("../fonts/Euclid\ Circular\ A\ Light.ttf");
+  font-weight: 300;
+}
+@font-face {
+  font-family: "Euclid Circular A";
+  src: local("Euclid Circular A"), url("../fonts/Euclid\ Circular\ A\ Light\ Italic.ttf");
+  font-weight: 300;
+  font-style: italic;
+}
+@font-face {
+  font-family: "Euclid Circular A";
+  src: local("Euclid Circular A"), url("../fonts/Euclid\ Circular\ A\ Regular.ttf");
+}
+@font-face {
+  font-family: "Euclid Circular A";
+  src: local("Euclid Circular A"), url("../fonts/Euclid\ Circular\ A\ Italic.ttf");
+  font-style: italic;
+}
+@font-face {
+  font-family: "Euclid Circular A";
+  src: local("Euclid Circular A"), url("../fonts/Euclid\ Circular\ A\ Medium.ttf");
+  font-weight: 500;
+}
+@font-face {
+  font-family: "Euclid Circular A";
+  src: local("Euclid Circular A"), url("../fonts/Euclid\ Circular\ A\ Medium\ Italic.ttf");
+  font-weight: 500;
+  font-style: italic;
+}
+@font-face {
+  font-family: "Euclid Circular A";
+  src: local("Euclid Circular A"), url("../fonts/Euclid\ Circular\ A\ SemiBold.ttf");
+  font-weight: 600;
+}
+@font-face {
+  font-family: "Euclid Circular A";
+  src: local("Euclid Circular A"), url("../fonts/Euclid\ Circular\ A\ SemiBold\ Italic.ttf");
+  font-weight: 600;
+  font-style: italic;
+}
+@font-face {
+  font-family: "Euclid Circular A";
+  src: local("Euclid Circular A Bold"), url("../fonts/Euclid\ Circular\ A\ Bold.ttf");
+  font-weight: 700;
+}
+@font-face {
+  font-family: "Euclid Circular A";
+  src: local("Euclid Circular A Bold Italic"), url("../fonts/Euclid\ Circular\ A\ Bold\ Italic.ttf");
+  font-weight: 700;
+  font-style: italic;
+}
+
 @tailwind base;
+@layer base {
+  html {
+    font-family: "Euclid Circular A", ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    background-color: black;
+    color: white;
+  }
+}
 @tailwind components;
 @tailwind utilities;
-@font-face {
-  font-family: "JetBrainsMono-Light";
-  src: url("../fonts/JetBrainsMono-Light.woff2");
+@layer utilities {
+  // https://css-tricks.com/snippets/css/change-autocomplete-styles-webkit-browsers/
+  /* Change Autocomplete styles in Chrome*/
+  // input:-webkit-autofill,
+  // input:-webkit-autofill:hover,
+  // input:-webkit-autofill:focus,
+  // textarea:-webkit-autofill,
+  // textarea:-webkit-autofill:hover,
+  // textarea:-webkit-autofill:focus,
+  // select:-webkit-autofill,
+  // select:-webkit-autofill:hover,
+  // select:-webkit-autofill:focus {
+  //   border: 1px solid green;
+  //   -webkit-text-fill-color: green;
+  //   -webkit-box-shadow: 0 0 0px 1000px #000 inset;
+  //   transition: background-color 5000s ease-in-out 0s;
+  // }
+
+  // https://stackoverflow.com/questions/61083813/how-to-avoid-internal-autofill-selected-style-to-be-applied
+  input:-webkit-autofill,
+  input:-webkit-autofill:focus {
+    transition: background-color 0s 600000s, color 0s 600000s;
+  }
 }
 
-@font-face {
-  font-family: "JetBrainsMono-Bold";
-  src: url("../fonts/JetBrainsMono-Bold.woff2");
-}
+// .scrollbar-color {
+//   scrollbar-color: #FF0083 #FF0083;
+// }
 
-html {
-  @apply bg-black;
-}
-
-.text-light {
-  font-family: 'JetBrainsMono-Light';
-}
-
-.text-bold {
-  font-family: 'JetBrainsMono-Bold';
-}
+// .scrollbar-color::-webkit-scrollbar-thumb:horizontal {
+//   background: #FF0083;
+// }
 
 /*components styles*/
 /* BUG FIX ALERT 🐛 :
@@ -32,8 +113,54 @@ html {
  such as box-border. Failure to do that will cause a failure in building the whole application
 */
 @layer components {
-  a {
-    @apply inline-block;
+  .text-h1 {
+    font-size: 2.5rem;
+    @apply tracking-[0.125rem] leading-[3.17rem] font-bold;
+  }
+
+  .text-h2 {
+    font-size: 1.875rem;
+    @apply tracking-[0.0625rem] leading-[2.3375rem] font-semibold;
+  }
+
+  .text-h3 {
+    font-size: 1.375rem;
+    @apply tracking-[0.0625rem] leading-[1.74375rem] font-bold;
+  }
+
+  .text-t20 {
+    font-size: 1.25rem;
+    @apply tracking-[0.0625rem] leading-[1.585rem] font-medium;
+  }
+
+  .text-t16 {
+    font-size: 1rem;
+    @apply tracking-[0.0625rem] leading-[1.6rem] font-light;
+  }
+
+  .text-t16b {
+    font-size: 1rem;
+    @apply tracking-[0.0625rem] leading-[1.6rem] font-bold;
+  }
+
+  .text-t14 {
+    font-size: 0.875rem;
+    @apply tracking-[0.0625rem] leading-[1.4rem] font-normal;
+  }
+
+  .text-t14b {
+    font-size: 0.875rem;
+    @apply tracking-[0.0625rem] leading-[1.4rem] font-bold;
+  }
+
+  .text-tag {
+    font-size: 0.625rem;
+    @apply leading-[1rem] font-bold;
+  }
+
+  .text-link {
+    font-size: 0.875rem;
+    @apply tracking-[0.0625rem] leading-[1rem] font-bold;
   }
 
   .container {
@@ -59,10 +186,6 @@ html {
 
   .text {
     @apply font-[JetBrainsMono-Light] text-[0.875rem] leading-[1.875rem] text-gray;
-  }
-
-  body {
-    @extend .text;
   }
 
   .title {
@@ -380,6 +503,36 @@ $pc-sub-menu-y: -20%;
 }
 .tokens-statistics-enter-done {
   opacity: 1;
+}
+
+/* Drawer Fade */
+.drawer-fade-enter {
+  opacity: 0;
+}
+.drawer-fade-enter > div {
+  transform: translateX(100%);
+}
+.drawer-fade-enter-active {
+  opacity: 1;
+  transition: opacity 300ms;
+}
+.drawer-fade-enter-active > div {
+  transform: translateX(0);
+  transition: transform 300ms;
+}
+.drawer-fade-exit {
+  opacity: 1;
+}
+.drawer-fade-exit > div {
+  transform: translateX(0);
+}
+.drawer-fade-exit-active {
+  opacity: 0;
+  transition: opacity 300ms;
+}
+.drawer-fade-exit-active > div {
+  transform: translateX(100%);
+  transition: transform 300ms;
 }
 
 /* if the future there needs to be a light mode for this project,
