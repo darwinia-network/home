@@ -8,9 +8,10 @@ interface Props {
   code: string;
   link: string; // External link
   description: string;
+  language: "solidity" | "javascript";
 }
 
-export default function Item({ title, code, link, description }: Props) {
+export default function Item({ title, code, link, description, language }: Props) {
   const [isHovering, setIsHovering] = useState(false);
   const { isDesktopWidth, isDesktopHeight } = useApp();
 
@@ -36,7 +37,7 @@ export default function Item({ title, code, link, description }: Props) {
         className={`lg:w-[48.75rem] ${
           isDesktopWidth ? (isDesktopHeight ? "h-[26.5rem]" : "h-[19.25rem]") : "h-[26.5rem]"
         }`}
-        language="solidity"
+        language={language}
         code={code}
       />
       <span className="text-t14 text-app-white lg:mt-[0.1875rem]">{description}</span>

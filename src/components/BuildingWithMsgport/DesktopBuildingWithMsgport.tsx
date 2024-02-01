@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import PrettyCode from "../PrettyCode";
 import RightArrowRound from "../RightArrowRound";
 import { link, menu, title } from "./data";
@@ -8,6 +8,14 @@ export default function DesktopBuildingWithMsgport() {
   const { isDesktopHeight } = useApp();
   const [activeTitle, setActiveTitle] = useState(menu[0].title);
   const activeMenu = menu.find(({ title }) => title === activeTitle) || menu[0];
+  const ref = useRef<HTMLDivElement | null>(null);
+  const [refHeight, setRefHeight] = useState<number>(0);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setRefHeight(ref.current?.clientHeight ?? 0);
+    }, 0);
+  }, [activeTitle]);
 
   return (
     <div className={`flex gap-[6.875rem] ${isDesktopHeight ? "" : "items-center"}`}>
@@ -46,15 +54,25 @@ export default function DesktopBuildingWithMsgport() {
         <TryItNow link={link} />
       </div>
 
-      <div className="bg-app-black rounded-[2.5rem] px-[3.3125rem] pt-[3.375rem] pb-[4.5rem] flex flex-col gap-[3.125rem] w-[68.875rem]">
-        <div className="flex flex-col gap-[0.375rem] items-center">
+      <div
+        className={`bg-app-black rounded-[2.5rem] px-[3.3125rem] pt-[3.375rem] pb-[4.5rem] flex flex-col justify-center gap-[3.125rem] w-[68.875rem] ${
+          isDesktopHeight ? "h-[42.875rem]" : "h-[40.375rem]"
+        }`}
+      >
+        <div className="flex flex-col gap-[0.375rem] items-center shrink-0 h-fit" ref={ref}>
           <h2 className="text-h2 text-app-white">{activeMenu.title}</h2>
-          <span className="text-t16 text-app-white">{activeMenu.description}</span>
+          <span className="text-t16 text-app-white text-center inline-block">{activeMenu.description}</span>
         </div>
         <PrettyCode
-          language="solidity"
+          language={activeMenu.language}
           code={activeMenu.code}
-          customStyle={{ height: isDesktopHeight ? "27.5rem" : "25rem", padding: "1.875rem", borderRadius: "1.25rem" }}
+          customStyle={{
+            height: `calc(${
+              isDesktopHeight ? "42.875rem" : "40.375rem"
+            } - 3.375rem - 4.5rem - 3.125rem - ${refHeight}px)`,
+            padding: "1.875rem",
+            borderRadius: "1.25rem",
+          }}
         />
       </div>
     </div>

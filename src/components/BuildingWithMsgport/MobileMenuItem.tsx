@@ -6,6 +6,7 @@ interface Props {
   activeTitle: string;
   description: string;
   code: string;
+  language: "solidity" | "javascript";
   onChange?: (title: string) => void;
 }
 
@@ -14,6 +15,7 @@ export default function MobileMenuItem({
   activeTitle,
   description,
   code,
+  language,
   onChange = () => undefined,
 }: Props) {
   const [btnHeight, setBtnHeight] = useState<number>();
@@ -40,8 +42,8 @@ export default function MobileMenuItem({
         style={{ height: isActive ? ref.current?.clientHeight : 0 }}
       >
         <div className="flex flex-col gap-5 p-5" style={{ paddingTop: btnHeight }} ref={ref}>
-          <span className="text-t14 text-app-white">{description}</span>
-          <PrettyCode className="h-[36.375rem]" language="solidity" code={code} />
+          {description ? <span className="text-t14 text-app-white">{description}</span> : null}
+          <PrettyCode className="h-[36.375rem]" language={language} code={code} />
         </div>
       </div>
     </div>

@@ -19,6 +19,7 @@ export default function MobileBuildingWithMsgport() {
             title={m.title}
             description={m.description}
             code={m.code}
+            language={m.language}
             onChange={setActiveActive}
           />
         ))}
