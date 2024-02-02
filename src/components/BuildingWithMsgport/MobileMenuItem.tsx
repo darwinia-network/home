@@ -25,7 +25,7 @@ export default function MobileMenuItem({
   return (
     <div className="relative" style={{ minHeight: btnHeight, paddingTop: btnHeight ? btnHeight / 2 : undefined }}>
       <button
-        className={`absolute top-0 left-0 right-0 rounded-[2.5rem] py-[17px] text-center text-t16b ${
+        className={`absolute top-0 left-0 right-0 rounded-[2.5rem] py-[17px] text-center text-t16b capitalize ${
           isActive ? "bg-app-main text-app-white hover:cursor-default" : "bg-app-inner-white text-app-black"
         }`}
         onClick={() => {
