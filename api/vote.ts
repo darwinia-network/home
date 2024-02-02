@@ -3,7 +3,7 @@ import { kv } from "@vercel/kv";
 import type { VercelRequest, VercelResponse } from "@vercel/node";
 import { Poll } from "./types";
 
-const HOST_URL = "https://darwinia-home-dev.vercel.app";
+const HOST_URL = "https://darwinia.network";
 const HUB_URL = process.env["HUB_URL"] || "nemes.farcaster.xyz:2283";
 const client = getSSLHubRpcClient(HUB_URL);
 
