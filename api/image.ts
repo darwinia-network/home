@@ -10,7 +10,6 @@ const fontPath = join(process.cwd(), "/api/Roboto-Regular.ttf");
 const fontData = fs.readFileSync(fontPath);
 
 export default async function handler(req: VercelRequest, res: VercelResponse) {
-  return res.send(`#${req.headers.location}, ${req.headers.host}`);
   try {
     const pollId = req.query["id"];
     if (!pollId) {
