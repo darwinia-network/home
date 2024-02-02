@@ -34,7 +34,7 @@ export default function DesktopBuildingWithMsgport() {
           {menu.map((m) => (
             <button
               key={m.title}
-              className={`w-full rounded-[4rem] text-center text-h3 transition-colors ${
+              className={`w-full rounded-[4rem] text-center text-h3 transition-colors capitalize ${
                 isDesktopHeight ? "py-[1rem]" : "py-[0.6875rem]"
               } ${
                 m.title === activeTitle

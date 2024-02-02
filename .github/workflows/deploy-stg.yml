@@ -13,20 +13,34 @@ jobs:
 
       - uses: actions/checkout@v2
         with:
-          repository: itering/actions
-          path: .github/actions
-          persist-credentials: false
-          ssh-key: "${{ secrets.ITERING_ACTIONS_DEPLOY_KEY }}"
+          repository: darwinia-network/devops
+          path: .github
+
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16
+
+      - name: Install dependencies
+        run: yarn install
+
+      - name: Build
+        run: yarn build
+
+      - name: Prepare Project Config
+        run: |
+          mv vercel.json build/
+          mv api build/
 
       - uses: ./.github/actions/smart-vercel
         name: Deploy to Vercel
         id: smart-vercel
         with:
-          node_version: 16.17.0
           vercel_token: ${{ secrets.VERCEL_TOKEN }}
           vercel_group: itering
           preview_output: true
           project_name: home
+          alias_domain: "darwinia-home-stg"
+          script_run: false
           enable_cache: true
           enable_notify_slack: true
           slack_channel: public-darwinia-ecosystem
