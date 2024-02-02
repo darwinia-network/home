@@ -2,7 +2,7 @@
   "name": "polls",
   "version": "1.0.0",
   "description": "FC Frames Polls",
-  "type": "module",
+  "private": true,
   "devDependencies": {
     "@vercel/kv": "^1.0.1",
     "@vercel/node": "^3.0.17"
