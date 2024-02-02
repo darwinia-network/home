@@ -41,6 +41,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     return res.status(500).end("Error initialize poll");
   }
   const hostUrl = `https://${req.headers.host}`;
+  return res.send(hostUrl);
 
   if (req.method === "POST") {
     let validatedMessage: Message | undefined = undefined;
