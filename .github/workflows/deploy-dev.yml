@@ -43,3 +43,4 @@ jobs:
           enable_notify_slack: true
           slack_channel: public-darwinia-ecosystem
           slack_webhook: ${{ secrets.SLACK_INCOMING_WEBHOOK_URL }}
+
