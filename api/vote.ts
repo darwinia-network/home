@@ -3,6 +3,7 @@ import { kv } from "@vercel/kv";
 import type { VercelRequest, VercelResponse } from "@vercel/node";
 import { Poll } from "./types";
 
+const HOST_URL = "https://darwinia-home-dev.vercel.app";
 const HUB_URL = process.env["HUB_URL"] || "nemes.farcaster.xyz:2283";
 const client = getSSLHubRpcClient(HUB_URL);
 
@@ -40,7 +41,6 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     console.error(err);
     return res.status(500).end("Error initialize poll");
   }
-  const hostUrl = `https://${req.headers.host}`;
 
   if (req.method === "POST") {
     let validatedMessage: Message | undefined = undefined;
@@ -53,8 +53,8 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
 
       const urlBuffer = validatedMessage?.data?.frameActionBody?.url || [];
       const urlString = Buffer.from(urlBuffer).toString("utf-8");
-      if (!urlString.startsWith(hostUrl)) {
-        console.warn(`Invalid frame url: ${urlBuffer} vs ${hostUrl}`);
+      if (!urlString.startsWith(HOST_URL)) {
+        console.warn(`Invalid frame url: ${urlBuffer} vs ${HOST_URL}`);
         return res.status(400).end(`Invalid frame url: ${urlBuffer}`);
       }
     } catch (err) {
@@ -83,7 +83,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
         return res.status(400).send(`Missing poll for #${pollId}`);
       }
 
-      const imageUrl = `${hostUrl}/api/image?id=${poll.id}&results=${voted ? "true" : "false"}&date=${Date.now()}${
+      const imageUrl = `${HOST_URL}/api/image?id=${poll.id}&results=${voted ? "true" : "false"}&date=${Date.now()}${
         fid > 0 ? `&fid=${fid}` : ""
       }`;
 
