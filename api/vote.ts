@@ -54,7 +54,6 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       const urlBuffer = validatedMessage?.data?.frameActionBody?.url || [];
       const urlString = Buffer.from(urlBuffer).toString("utf-8");
       if (!urlString.startsWith(HOST_URL)) {
-        console.warn(`Invalid frame url: ${urlBuffer} vs ${HOST_URL}`);
         return res.status(400).end(`Invalid frame url: ${urlBuffer}`);
       }
     } catch (err) {
@@ -79,7 +78,6 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
 
       const poll: Poll | null = await kv.hgetall(`poll:${pollId}`);
       if (!poll) {
-        console.warn(`Missing poll for #${pollId}`);
         return res.status(400).send(`Missing poll for #${pollId}`);
       }
 
