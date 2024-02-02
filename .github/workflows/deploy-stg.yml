@@ -39,6 +39,7 @@ jobs:
           vercel_group: itering
           preview_output: true
           project_name: home
+          alias_domain: "darwinia-home-stg"
           script_run: false
           enable_cache: true
           enable_notify_slack: true
