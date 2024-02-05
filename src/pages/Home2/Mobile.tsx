@@ -1,8 +1,7 @@
-import Copyright from "../../components/Copyright";
 import Features from "../../components/Features";
+import MobileFooter from "../../components/Footer2/MobileFooter";
 import MobileHeader from "../../components/Header/MobileHeader";
 import PoweringYourDapps from "../../components/PoweringYourDapps";
-import { FooterSocialMedia } from "../../components/SocialMedia";
 import { MobileBuildingWithMsgport } from "./sections/BuildingWithMsgport";
 import { MobileHowItWorks } from "./sections/HowItWorks";
 import { MobileResources } from "./sections/Resources";
@@ -34,11 +33,7 @@ export default function Mobile() {
         <MobileBuildingWithMsgport />
         <MobileUseCase />
         <MobileResources />
-
-        <div className="py-[1.25rem] flex flex-col gap-[1.25rem] items-center bg-app-black">
-          <FooterSocialMedia />
-          <Copyright />
-        </div>
+        <MobileFooter />
       </main>
     </>
   );
