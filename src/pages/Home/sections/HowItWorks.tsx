@@ -7,7 +7,7 @@ export function MobileHowItWorks() {
         className="absolute z-20 top-1/2 left-1/2 bg-app-black shrink-0 w-[999rem] h-[80rem] flex justify-center items-center"
         style={{ transform: "translate(-50%, -50%) rotate(10deg)" }}
       >
-        <div className="flex flex-col gap-[1.875rem] w-screen px-[1.25rem]" style={{ transform: "rotate(-10deg)" }}>
+        <div className="flex flex-col gap-[1.875rem] w-screen px-large" style={{ transform: "rotate(-10deg)" }}>
           <div className="flex items-center flex-nowrap text-h2">
             <span className="text-app-white">How It&nbsp;</span>
             <span className="text-app-main">Works</span>

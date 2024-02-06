@@ -9,7 +9,7 @@ export default function GetInvolvedPage() {
 
   return (
     <OthersPageWrap>
-      <div className="flex lg:gap-24 max-w-8xl mx-auto px-medium py-[2.5rem] lg:py-[6.25rem]">
+      <div className="flex lg:gap-24 max-w-8xl mx-auto px-large py-[2.5rem] lg:py-[6.25rem]">
         <div className="w-full flex flex-col gap-10">
           <span className="text-t14 text-app-gray">Home/Community</span>
           <h1 className="text-h1 text-app-black">{title}</h1>

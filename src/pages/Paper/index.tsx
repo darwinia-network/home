@@ -11,7 +11,7 @@ export default function Paper() {
 
   return params.paperId && paperData ? (
     <OthersPageWrap>
-      <div className="w-full lg:w-[45rem] mx-auto px-medium flex flex-col gap-[1.25rem] py-[1.25rem] lg:py-[6.25rem]">
+      <div className="w-full lg:w-[45rem] mx-auto px-large flex flex-col gap-[1.25rem] py-[1.25rem] lg:py-[6.25rem]">
         <span
           className="text-app-black/70 text-t14"
           data-aos="fade-up"

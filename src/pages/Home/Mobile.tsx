@@ -20,7 +20,7 @@ export default function Mobile() {
       </div>
 
       <div
-        className="pt-[6.25rem] pb-[20rem] px-[1.25rem] bg-app-white backdrop-blur-lg"
+        className="pt-[6.25rem] pb-[20rem] px-large bg-app-white backdrop-blur-lg"
         style={{ boxShadow: "0px -12px 20px 0px #F2F3F5" }}
       >
         <Features />

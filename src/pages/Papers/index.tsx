@@ -7,7 +7,7 @@ export default function Papers() {
 
   return (
     <OthersPageWrap>
-      <div className="container mx-auto px-medium flex flex-col items-center gap-[2.5rem] py-[2.5rem] lg:gap-[6.25rem] lg:py-[6.25rem]">
+      <div className="max-w-8xl mx-auto px-large flex flex-col items-center gap-[2.5rem] py-[2.5rem] lg:gap-[6.25rem] lg:py-[6.25rem]">
         {/* Title */}
         <div className="text-center" data-aos="fade-up">
           <h2 className="text-h2 text-app-black lg:text-h1">Paper Resources</h2>

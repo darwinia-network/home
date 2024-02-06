@@ -1,9 +1,9 @@
 import UseCase from "../../../components/UseCase";
-import { useApp }from "../../../hooks/useApp";
+import { useApp } from "../../../hooks/useApp";
 
 export function MobileUseCase() {
   return (
-    <div className="bg-app-black px-[1.25rem] py-[6.25rem] flex flex-col gap-[3.75rem]">
+    <div className="bg-app-black px-large py-[6.25rem] flex flex-col gap-[3.75rem]">
       <div className="flex flex-col text-h2" data-aos="fade-up">
         <span className="whitespace-nowrap text-app-white">Enabling Diverse</span>
         <span className="whitespace-nowrap text-app-main">Cross-Chain</span>

@@ -6,7 +6,7 @@ export function MobileResources() {
     <div className="bg-app-white pb-[6.25rem]">
       <Projects />
       <div className="h-[6.25rem]" />
-      <div className="px-[1.25rem]">
+      <div className="px-large">
         <Resources />
       </div>
     </div>

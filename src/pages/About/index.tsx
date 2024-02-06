@@ -20,13 +20,13 @@ export default function About() {
           data-aos="fade-up"
         />
       ) : (
-        <div className="px-medium flex flex-col gap-5" data-aos="fade-up">
+        <div className="px-large flex flex-col gap-5" data-aos="fade-up">
           <span className="text-t14 text-app-black/70">Home / About</span>
           <img alt="" height={180} className="h-[11.25rem] w-auto self-stretch" src="/images/about-page-hero-m.png" />
         </div>
       )}
 
-      <div className="mx-auto w-full lg:w-fit py-5 lg:pt-[3.125rem] lg:pb-[7.5rem] flex gap-[3.75rem] px-medium">
+      <div className="mx-auto w-full lg:w-fit py-5 lg:pt-[3.125rem] lg:pb-[7.5rem] flex gap-[3.75rem] px-large">
         <div className="flex flex-col gap-5 w-full lg:w-[45rem]">
           <div className="flex flex-col" data-aos="fade-up">
             <h2 className="text-h2 text-app-black">{aboutData.title}</h2>
