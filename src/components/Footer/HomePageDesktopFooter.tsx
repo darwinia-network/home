@@ -15,7 +15,7 @@ export function HomePageDesktopFooter() {
     >
       <SubscribeWrap isHomePage />
       <div className="flex justify-between">
-        <FooterLinks isHomePage />
+        <FooterLinks />
       </div>
       <div className="flex items-center justify-between">
         <Copyright />
