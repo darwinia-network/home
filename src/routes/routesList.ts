@@ -12,23 +12,7 @@ const routesList = [
   },
   {
     path: "/",
-    component: lazy(() => import("../pages/Home2")),
-  },
-  {
-    path: "/developers",
-    component: lazy(() => import("../pages/Developers")),
-  },
-  {
-    path: "/darwiniachain",
-    component: lazy(() => import("../pages/DarwiniaChain")),
-  },
-  // {
-  //   path: "/tokens",
-  //   component: lazy(() => import("../pages/Tokens")),
-  // },
-  {
-    path: "/community",
-    component: lazy(() => import("../pages/Community")),
+    component: lazy(() => import("../pages/Home")),
   },
   {
     path: "/papers",
@@ -36,7 +20,7 @@ const routesList = [
   },
   {
     path: "/papers/:paperId",
-    component: lazy(() => import("../pages/PaperSummary")),
+    component: lazy(() => import("../pages/Paper")),
   },
   {
     path: "/online-communities",
@@ -46,21 +30,6 @@ const routesList = [
     path: "/get-involved",
     component: lazy(() => import("../pages/GetInvolved")),
   },
-  /* {
-    path: "/contact-us",
-    component: lazy(() => import("../pages/Contact")),
-    children: [
-      {
-        isIndex: true,
-        path: "/",
-        component: lazy(() => import("../pages/Contact/NestedChildOne")),
-      },
-      {
-        path: "test2",
-        component: lazy(() => import("../pages/Contact/NestedChildTwo")),
-      },
-    ],
-  }, */
 ];
 
 export default routesList;

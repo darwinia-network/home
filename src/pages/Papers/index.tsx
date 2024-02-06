@@ -1,22 +1,16 @@
-import Footer from "../../components/Footer";
-import { useFooterData } from "../../data/footer";
-import { usePapersData } from "../../data/papers";
-import Hero from "../../components/Hero";
-import PapersGrid from "../../components/PapersGrid";
-
-const Papers = () => {
-  const { footerData } = useFooterData();
-  const { heroData, papersData } = usePapersData();
-
+export default function Papers() {
   return (
-    <div>
-      <Hero page={"PAPERS"} data={heroData} />
-      <div data-aos={"fade-up"} data-aos-duration={700} className={"max-w-8xl w-full mx-auto lg:px-8 px-4 inter-block-space-1"}>
-        <PapersGrid data={papersData} />
+    <div className="bg-app-white">
+      <div className="container mx-auto px-medium flex flex-col">
+        <div className="py-[2.5rem] lg:py-[6.25rem]">
+          <h2 className="text-h2">Paper Resources</h2>
+          <span className="text-t14 text-[#6F6F6F] text-center">
+            A series of papers written by experts about Darwinia Network.
+          </span>
+        </div>
+
+        <div className="flex flex-col gap-[2.5rem] lg:flex-row"></div>
       </div>
-      <Footer data={footerData} />
     </div>
   );
-};
-
-export default Papers;
+}

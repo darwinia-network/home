@@ -1,13 +1,10 @@
 import { Link } from "react-router-dom";
-import Footer from "../../components/Footer";
-import { useFooterData } from "../../data/footer";
 import { useOnlineCommunitiesData } from "../../data/onlineCommunities";
 import { Fragment } from "react";
 import PageTable from "../../components/PageTable";
 
 export default function OnlineCommunitiesPage() {
   const { title, summary, sections } = useOnlineCommunitiesData();
-  const { footerData } = useFooterData();
 
   return (
     <main>
@@ -42,7 +39,7 @@ export default function OnlineCommunitiesPage() {
         </div>
         <PageTable data={sections} />
       </div>
-      <Footer data={footerData} />
+      {/* <Footer data={footerData} /> */}
     </main>
   );
 }
