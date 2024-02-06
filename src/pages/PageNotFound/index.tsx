@@ -17,17 +17,16 @@ const PageNotFound = () => {
               "order-1 lg:order-2 mb-[2.25rem] lg:mb-0 text-center lg:text-left pl-[8%] lg:pl-0 capitalize lg:ml-[3.75rem]"
             }
           >
-            <div className={"title mb-[1.25rem] text-white lg:text lg:text-white"}>Sorry, Page Not Found</div>
+            <div className={"text-t14b mb-[1.25rem] text-app-white lg:text-t16b"}>Sorry, Page Not Found</div>
             <NavLink className={"btn"} to={"/"}>
               <>
-                <span>Go Home</span>
+                <span className="text-t14b text-app-white lg:text-t16b">Go Home</span>
                 <span className={"ml-[10px]"}>{">"}</span>
               </>
             </NavLink>
           </div>
         </div>
       </div>
-      {/* <Footer data={footerData} /> */}
     </div>
   );
 };
