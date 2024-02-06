@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import DesktopNavigation from "../Navigation2/DesktopNavigation";
+import DesktopNavigation from "../Navigation/DesktopNavigation";
 import { useRef, useState } from "react";
 import { navigations } from "./data";
 import { useApp }from "../../hooks/useApp";

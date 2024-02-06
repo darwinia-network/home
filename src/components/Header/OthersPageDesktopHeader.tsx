@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import DesktopNavigation from "../Navigation2/DesktopNavigation";
+import DesktopNavigation from "../Navigation/DesktopNavigation";
 import { HeaderSocialMedia } from "../SocialMedia";
 import { navigations } from "./data";
 import { useEffect, useRef, useState } from "react";

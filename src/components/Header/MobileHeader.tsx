@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import Drawer from "../../ui/Drawer";
-import NavigationV2Mobile from "../Navigation2/MobileNavigation";
+import NavigationV2Mobile from "../Navigation/MobileNavigation";
 import { navigations } from "./data";
 
 export default function MobileHeader() {
