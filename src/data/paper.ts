@@ -7,6 +7,7 @@ interface PaperData {
   title: string;
   fullPath: string;
   contents: string[];
+  lastUpdate: string;
 }
 
 const data: PaperData[] = [];
