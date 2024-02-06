@@ -23,20 +23,16 @@ export default function PageTable({ data }: Props) {
   }, [hash]);
 
   return (
-    <div className="hidden lg:flex flex-col gap-medium p-5 w-80 bg-table-bg h-fit sticky top-20">
-      <h3 className="text-bold text-white text-sm font-bold">On This Page</h3>
-      <div className="h-[1px] bg-white/50 w-full" />
+    <div className="hidden lg:flex flex-col gap-medium p-5 w-80 bg-table-bg h-fit sticky top-32 rounded-2xl">
+      <h3 className="text-t16b text-app-white">On This Page</h3>
+      <div className="h-[1px] bg-app-white/50 w-full" />
       {data.map(({ h1, sub }) => (
         <Fragment key={h1}>
-          <Link to={`#${h1}`} className="text-sm font-light font-[JetBrainsMono-Light] text-gray hover:underline">
+          <Link to={`#${h1}`} className="text-t14 text-app-white/90 hover:underline">
             {h1}
           </Link>
           {sub?.map(({ h2 }) => (
-            <Link
-              key={h2}
-              to={`#${h2}`}
-              className="text-sm font-light font-[JetBrainsMono-Light] text-gray hover:underline indent-4"
-            >
+            <Link key={h2} to={`#${h2}`} className="text-t14 text-app-white/90 hover:underline indent-4">
               {h2}
             </Link>
           ))}
