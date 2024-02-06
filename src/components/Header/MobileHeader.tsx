@@ -11,7 +11,7 @@ export default function MobileHeader() {
 
   useEffect(() => {
     const listener = () => {
-      setIsScrollOver(ref.current ? ref.current.clientHeight <= window.scrollY : false);
+      setIsScrollOver(ref.current ? ref.current.clientHeight / 2 <= window.scrollY : false);
     };
     window.addEventListener("scroll", listener, false);
     return () => {

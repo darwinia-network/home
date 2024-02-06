@@ -11,7 +11,7 @@ export default function OthersPageDesktopHeader() {
 
   useEffect(() => {
     const listener = () => {
-      setIsScrollOver(ref.current ? ref.current.clientHeight <= window.scrollY : false);
+      setIsScrollOver(ref.current ? ref.current.clientHeight / 2 <= window.scrollY : false);
     };
     window.addEventListener("scroll", listener, false);
     return () => {
@@ -28,7 +28,13 @@ export default function OthersPageDesktopHeader() {
     >
       <div className="max-w-8xl px-medium flex items-center justify-between w-full">
         <Link to="/">
-          <img width={60} height={60} alt="..." src="/images/darwinia-logo-black-background-round.svg" className="w-[3.75rem] h-[3.75rem] shrink-0" />
+          <img
+            width={60}
+            height={60}
+            alt="..."
+            src="/images/darwinia-logo-black-background-round.svg"
+            className="w-[3.75rem] h-[3.75rem] shrink-0"
+          />
         </Link>
         <div className="flex items-center gap-[2.5rem]">
           <DesktopNavigation
