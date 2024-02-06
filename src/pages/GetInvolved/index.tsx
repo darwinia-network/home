@@ -1,6 +1,6 @@
 import { Fragment, PropsWithChildren } from "react";
 import PageTable from "../../components/PageTable";
-import useGetInvolvedData from "../../data/getInvolved";
+import { useGetInvolvedData } from "../../data/getInvolved";
 import { Link } from "react-router-dom";
 
 export default function GetInvolvedPage() {
@@ -73,7 +73,12 @@ function Items({ data }: { data: (string | { label: string; path: string; isExte
               {typeof i === "string" ? (
                 <span>{i}</span>
               ) : i.isExternal ? (
-                <a target="_blank" rel="noopener noreferrer" href={i.path} className="underline transition-colors hover:text-primary">
+                <a
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  href={i.path}
+                  className="underline transition-colors hover:text-primary"
+                >
                   {i.label}
                 </a>
               ) : (
@@ -95,7 +100,12 @@ function Content({ data }: { data: { link: { label: string; path: string; isExte
       {data.map(({ link, text }, index) => (
         <li key={index} className="text-light text-gray text-sm font-light">
           {link.isExternal ? (
-            <a target="_blank" rel="noopener noreferrer" href={link.path} className="underline transition-colors hover:text-primary">
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              href={link.path}
+              className="underline transition-colors hover:text-primary"
+            >
               {link.label}
             </a>
           ) : (

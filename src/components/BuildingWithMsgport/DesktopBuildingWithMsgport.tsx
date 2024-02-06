@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import PrettyCode from "../PrettyCode";
 import RightArrowRound from "../RightArrowRound";
 import { link, menu, title } from "./data";
-import useApp from "../../hooks/useApp";
+import { useApp }from "../../hooks/useApp";
 
 export default function DesktopBuildingWithMsgport() {
   const { isDesktopHeight } = useApp();

@@ -1,5 +1,5 @@
 import UseCase from "../../../components/UseCase";
-import useApp from "../../../hooks/useApp";
+import { useApp }from "../../../hooks/useApp";
 
 export function MobileUseCase() {
   return (

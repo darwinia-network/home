@@ -1,4 +1,4 @@
-import useApp from "../../../hooks/useApp";
+import { useApp }from "../../../hooks/useApp";
 
 export function MobileHowItWorks() {
   return (

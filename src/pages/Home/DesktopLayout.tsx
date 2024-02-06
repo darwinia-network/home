@@ -1,5 +1,5 @@
 import { PropsWithChildren, UIEventHandler, useCallback, useEffect, useRef, useState } from "react";
-import useApp from "../../hooks/useApp";
+import { useApp }from "../../hooks/useApp";
 import DesktopHeader from "../../components/Header/DesktopHeader";
 import { MAX_HEIGHT_ON_DESKTOP, MIN_HEIGHT_ON_DESKTOP } from "../../config/constant";
 

@@ -1,6 +1,6 @@
 import MobileBuildingWithMsgportComp from "../../../components/BuildingWithMsgport/MobileBuildingWithMsgport";
 import DesktopBuildingWithMsgportComp from "../../../components/BuildingWithMsgport/DesktopBuildingWithMsgport";
-import useApp from "../../../hooks/useApp";
+import { useApp }from "../../../hooks/useApp";
 
 export function MobileBuildingWithMsgport() {
   return (

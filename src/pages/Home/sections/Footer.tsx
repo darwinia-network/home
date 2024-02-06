@@ -2,7 +2,7 @@ import Copyright from "../../../components/Copyright";
 import FooterLinks from "../../../components/FooterLinks";
 import { FooterSocialMedia } from "../../../components/SocialMedia";
 import SubscribeWrap from "../../../components/SubscribeWrap";
-import useApp from "../../../hooks/useApp";
+import { useApp }from "../../../hooks/useApp";
 
 export function DesktopFooter() {
   const { isDesktopHeight } = useApp();

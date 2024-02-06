@@ -1,5 +1,5 @@
 import { useState } from "react";
-import useApp from "../../hooks/useApp";
+import { useApp }from "../../hooks/useApp";
 import RightArrowRound from "../RightArrowRound";
 
 interface Props {

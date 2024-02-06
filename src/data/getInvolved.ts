@@ -14,7 +14,7 @@ interface GetInvolvedData {
   } & Section)[];
 }
 
-export default function useGetInvolvedData(): GetInvolvedData {
+export function useGetInvolvedData(): GetInvolvedData {
   return {
     title: "Get involved",
     summary:

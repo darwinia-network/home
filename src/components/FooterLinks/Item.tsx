@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import useApp from "../../hooks/useApp";
+import { useApp }from "../../hooks/useApp";
 
 interface Props {
   title: string;

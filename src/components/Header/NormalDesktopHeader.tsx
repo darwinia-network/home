@@ -21,14 +21,14 @@ export default function NormalDesktopHeader() {
 
   return (
     <div
-      className={`h-[6.25rem] flex justify-center items-center fixed top-0 left-0 z-40 transition-colors ${
+      className={`w-full h-[6.25rem] flex justify-center items-center fixed top-0 left-0 z-40 transition-colors ${
         isScrollOver ? "bg-app-white/60 hover:bg-app-white backdrop-blur-[0.625rem]" : "bg-transparent"
       }`}
       ref={ref}
     >
-      <div className="max-w-8xl px-medium flex items-center justify-between">
+      <div className="max-w-8xl px-medium flex items-center justify-between w-full">
         <Link to="/">
-          <img width={60} height={60} alt="..." className="w-[3.75rem] h-[3.75rem] shrink-0" />
+          <img width={60} height={60} alt="..." src="/images/darwinia-logo-black-background-round.svg" className="w-[3.75rem] h-[3.75rem] shrink-0" />
         </Link>
         <div className="flex items-center gap-[2.5rem]">
           <DesktopNavigation

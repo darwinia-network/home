@@ -2,8 +2,8 @@ import { Link } from "react-router-dom";
 import DesktopNavigation from "../Navigation2/DesktopNavigation";
 import { useRef, useState } from "react";
 import { navigations } from "./data";
-import useApp from "../../hooks/useApp";
-import useMediaQuery from "../../hooks/useMediaQuery";
+import { useApp }from "../../hooks/useApp";
+import { useMediaQuery } from "../../hooks/useMediaQuery";
 import { HeaderSocialMedia } from "../SocialMedia";
 
 export default function DesktopHeader() {
