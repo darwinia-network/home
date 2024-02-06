@@ -1,33 +1,20 @@
-import { NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
+import OthersPageWrap from "../../components/OthersPageWrap";
 
 const PageNotFound = () => {
   return (
-    <div className={`bg-center bg-cover bg-no-repeat`}>
-      <div data-aos={"fade-up"} data-aos-duration={700} className={`container space-top`}>
-        <div className={"flex flex-col lg:flex-row justify-center items-center pt-[10rem] lg:pt-[15.625rem]"}>
-          <img
-            className={"order-2 lg:order-1 w-[58.9%] max-w-[400px] lg:max-w-none lg:w-[18.25%]"}
-            src="/images/not-found.png"
-            alt="image"
-            width={438}
-            height={478}
-          />
-          <div
-            className={
-              "order-1 lg:order-2 mb-[2.25rem] lg:mb-0 text-center lg:text-left pl-[8%] lg:pl-0 capitalize lg:ml-[3.75rem]"
-            }
-          >
-            <div className={"text-t14b mb-[1.25rem] text-app-white lg:text-t16b"}>Sorry, Page Not Found</div>
-            <NavLink className={"btn"} to={"/"}>
-              <>
-                <span className="text-t14b text-app-white lg:text-t16b">Go Home</span>
-                <span className={"ml-[10px]"}>{">"}</span>
-              </>
-            </NavLink>
-          </div>
+    <OthersPageWrap>
+      <div className="h-[80vh] lg:h-fit lg:py-[10rem] flex flex-col lg:flex-row items-center justify-center gap-5 lg:gap-10 bg-app-black border-b border-b-app-white/20">
+        <img src="/images/not-found.png" alt="..." className="w-[60%] lg:w-[20rem]" data-aos="fade-up" />
+        <div className="flex flex-col gap-small" data-aos="fade-up" data-aos-delay={100}>
+          <span className="text-t14b text-app-white lg:text-t16b">Sorry, Page Not Found</span>
+          <Link
+            to="/"
+            className="text-t14b text-app-white lg:text-t16b underline transition-colors hover:text-app-main underline-offset-2 w-fit"
+          >{`Go Home >`}</Link>
         </div>
       </div>
-    </div>
+    </OthersPageWrap>
   );
 };
 
