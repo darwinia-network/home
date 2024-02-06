@@ -1,12 +1,10 @@
 import { Link } from "react-router-dom";
-import { useApp }from "../../hooks/useApp";
+import { useApp } from "../../hooks/useApp";
+import { Section as TSection } from "./types";
 
-interface Props {
-  title: string;
-  links: { text: string; href?: string; isExternal?: boolean; isComingSoon?: boolean }[];
-}
+interface Props extends TSection {}
 
-export default function Item({ title, links }: Props) {
+export default function Section({ title, links }: Props) {
   const { isDesktopHeight } = useApp();
 
   return (

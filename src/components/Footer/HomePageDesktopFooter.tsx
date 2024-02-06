@@ -1,7 +1,7 @@
 import Copyright from "../../components/Copyright";
 import FooterLinks from "../../components/FooterLinks";
 import { FooterSocialMedia } from "../../components/SocialMedia";
-import SubscribeWrap from "../../components/SubscribeWrap";
+import SubscribeWrap from "../SubscribeWrap";
 import { useApp } from "../../hooks/useApp";
 
 export function HomePageDesktopFooter() {
@@ -13,8 +13,10 @@ export function HomePageDesktopFooter() {
       }`}
       style={{ backgroundImage: "url(/images/footer-bg.png)" }}
     >
-      <SubscribeWrap />
-      <FooterLinks />
+      <SubscribeWrap isHomePage />
+      <div className="flex justify-between">
+        <FooterLinks isHomePage />
+      </div>
       <div className="flex items-center justify-between">
         <Copyright />
         <FooterSocialMedia />
