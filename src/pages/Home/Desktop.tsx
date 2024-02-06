@@ -2,7 +2,6 @@ import Features from "../../components/Features";
 import PoweringYourDapps from "../../components/PoweringYourDapps";
 import HomePageDesktopLayout from "../../layouts/HomePageDesktopLayout";
 import { DesktopBuildingWithMsgport } from "./sections/BuildingWithMsgport";
-import { DesktopFooter } from "./sections/Footer";
 import { DesktopHowItWorks } from "./sections/HowItWorks";
 import { DesktopResources } from "./sections/Resources";
 import { DesktopUseCase } from "./sections/UseCase";
@@ -27,7 +26,6 @@ export default function Desktop() {
       <DesktopBuildingWithMsgport />
       <DesktopUseCase />
       <DesktopResources />
-      <DesktopFooter />
     </HomePageDesktopLayout>
   );
 }

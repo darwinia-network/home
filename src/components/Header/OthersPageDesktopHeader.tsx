@@ -4,7 +4,7 @@ import { HeaderSocialMedia } from "../SocialMedia";
 import { navigations } from "./data";
 import { useEffect, useRef, useState } from "react";
 
-export default function NormalDesktopHeader() {
+export default function OthersPageDesktopHeader() {
   const [isNavigationActive, setIsNavigationActive] = useState(navigations.map(() => false));
   const [isScrollOver, setIsScrollOver] = useState(false);
   const ref = useRef<HTMLDivElement>(null);

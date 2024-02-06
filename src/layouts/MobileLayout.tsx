@@ -1,6 +1,6 @@
 import { PropsWithChildren } from "react";
 import MobileHeader from "../components/Header/MobileHeader";
-import MobileFooter from "../components/Footer2/MobileFooter";
+import MobileFooter from "../components/Footer/MobileFooter";
 
 export default function MobileLayout({ children }: PropsWithChildren<unknown>) {
   return (

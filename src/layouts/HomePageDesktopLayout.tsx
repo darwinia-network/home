@@ -1,7 +1,8 @@
 import { PropsWithChildren, UIEventHandler, useCallback, useEffect, useRef, useState } from "react";
 import { useApp } from "../hooks/useApp";
-import DesktopHeader from "../components/Header/DesktopHeader";
+import HomePageDesktopHeader from "../components/Header/HomePageDesktopHeader";
 import { MAX_HEIGHT_ON_DESKTOP, MIN_HEIGHT_ON_DESKTOP } from "../config/constant";
+import { HomePageDesktopFooter } from "../components/Footer/HomePageDesktopFooter";
 
 export default function HomePageDesktopLayout({ children }: PropsWithChildren<unknown>) {
   const [progress, setProgress] = useState(0); // From 0 to 100
@@ -41,7 +42,7 @@ export default function HomePageDesktopLayout({ children }: PropsWithChildren<un
     <main className="w-screen h-screen flex flex-col justify-center overflow-hidden relative">
       <div className="flex">
         <div className="relative">
-          <DesktopHeader />
+          <HomePageDesktopHeader />
         </div>
         <div
           className="h-[99.375vh] w-screen overflow-y-hidden overflow-x-scroll flex items-center"
@@ -50,6 +51,7 @@ export default function HomePageDesktopLayout({ children }: PropsWithChildren<un
           ref={ref}
         >
           {children}
+          <HomePageDesktopFooter />
         </div>
       </div>
       <ProgressBar progress={progress} />

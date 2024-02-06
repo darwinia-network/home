@@ -3,7 +3,7 @@ import FooterLinks from "../FooterLinks";
 import { FooterSocialMedia } from "../SocialMedia";
 import SubscribeWrap from "../SubscribeWrap";
 
-export default function DesktopFooter() {
+export default function OthersPageDesktopFooter() {
   return (
     <div className="bg-app-black py-[3.75rem]">
       <div className="max-w-8xl mx-auto px-medium flex justify-between">

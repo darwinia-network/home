@@ -6,7 +6,7 @@ import { useApp }from "../../hooks/useApp";
 import { useMediaQuery } from "../../hooks/useMediaQuery";
 import { HeaderSocialMedia } from "../SocialMedia";
 
-export default function DesktopHeader() {
+export default function HomePageDesktopHeader() {
   const [isNavigationActive, setIsNavigationActive] = useState(navigations.map(() => false));
   const isPortraitHeight = useMediaQuery("max_h_pc", "vertical");
   const [isHovering, setIsHovering] = useState(false);
