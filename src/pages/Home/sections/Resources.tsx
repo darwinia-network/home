@@ -1,5 +1,5 @@
 import Projects from "../../../components/Projects";
-import Resources2 from "../../../components/Resources2";
+import Resources from "../../../components/Resources";
 
 export function MobileResources() {
   return (
@@ -7,7 +7,7 @@ export function MobileResources() {
       <Projects />
       <div className="h-[6.25rem]" />
       <div className="px-[1.25rem]">
-        <Resources2 />
+        <Resources />
       </div>
     </div>
   );
@@ -22,7 +22,7 @@ export function DesktopResources() {
         <Projects isVertical />
       </div>
       <div className="px-[7.5rem]">
-        <Resources2 />
+        <Resources />
       </div>
     </div>
   );
