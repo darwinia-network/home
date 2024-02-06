@@ -78,7 +78,7 @@ export const columns: { sections: Section[] }[] = [
       {
         title: "Others",
         hiddenOnHomePage: true,
-        links: [{ text: "About darwinia.network", isExternal: false, isComingSoon: true }],
+        links: [{ text: "About darwinia.network", href: "/about", isExternal: false }],
       },
     ],
   },

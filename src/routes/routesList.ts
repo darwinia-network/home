@@ -30,6 +30,10 @@ const routesList = [
     path: "/get-involved",
     component: lazy(() => import("../pages/GetInvolved")),
   },
+  {
+    path: "/about",
+    component: lazy(() => import("../pages/About")),
+  },
 ];
 
 export default routesList;
