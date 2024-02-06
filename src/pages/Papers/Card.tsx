@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import PaperTag from "../../components/PaperTag";
 
 interface Props {
   title: string;
@@ -20,12 +21,7 @@ export default function Card({ title, authors, tags, image, id, index }: Props) 
         </div>
         <div className="flex items-center flex-wrap gap-[0.625rem]">
           {tags.map((tag) => (
-            <div
-              key={tag}
-              className="h-[1.5rem] px-[0.625rem] flex items-center rounded-[3.125rem] border border-app-gray"
-            >
-              <span className="text-tag text-app-black/70">{tag}</span>
-            </div>
+            <PaperTag key={tag} text={tag} />
           ))}
         </div>
       </div>

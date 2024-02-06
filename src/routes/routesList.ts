@@ -19,7 +19,7 @@ const routesList = [
     component: lazy(() => import("../pages/Papers")),
   },
   {
-    path: "/papers/:paperId",
+    path: "/paper/:paperId",
     component: lazy(() => import("../pages/Paper")),
   },
   {

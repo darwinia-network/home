@@ -7,7 +7,7 @@ const PageNotFound = () => {
         <div className={"flex flex-col lg:flex-row justify-center items-center pt-[10rem] lg:pt-[15.625rem]"}>
           <img
             className={"order-2 lg:order-1 w-[58.9%] max-w-[400px] lg:max-w-none lg:w-[18.25%]"}
-            src="/public/images/not-found.png"
+            src="/images/not-found.png"
             alt="image"
             width={438}
             height={478}
