@@ -6,7 +6,7 @@ module.exports = {
         "table-bg": "#222020",
         "app-white": "#F2F3F5",
         "app-inner-white": "#EAF0F6",
-        "app-gray": "#8F8F8F",
+        "app-gray": "#6F6F6F",
         "app-black": "#000000",
         "app-inner-black": "#2A2A2A",
         "app-main": "#FF0083",

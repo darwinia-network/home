@@ -1,16 +1,13 @@
 import Routes from "./routes";
 import ScrollToTop from "./components/ScrollToTop";
-import { useLocation } from "react-router-dom";
-import NormalDesktopHeader from "./components/Header/OthersPageDesktopHeader";
+import AppProvider from "./providers/AppProvider";
 
 function App() {
-  const { pathname } = useLocation();
   return (
-    <>
-      {pathname !== "/" && <NormalDesktopHeader />}
+    <AppProvider>
       <ScrollToTop />
       <Routes />
-    </>
+    </AppProvider>
   );
 }
 

@@ -5,35 +5,30 @@ interface Props {
   authors: string[];
   tags: string[];
   image: string;
-  link: string;
-  isExternal?: boolean;
+  id: string;
+  index: number;
 }
 
-export default function Card({ title, authors, tags, image, link, isExternal }: Props) {
-  return isExternal ? (
-    <a href={link} rel="noopener noreferrer" target="_blank">
-      <Inner title={title} authors={authors} tags={tags} image={image} />
-    </a>
-  ) : (
-    <Link to={link}>
-      <Inner title={title} authors={authors} tags={tags} image={image} />
-    </Link>
-  );
-}
-
-function Inner({ title, authors, tags, image }: Omit<Props, "isExternal" | "link">) {
+export default function Card({ title, authors, tags, image, id, index }: Props) {
   return (
-    <div className="rounded-[1.25rem] p-[1.25rem] bg-app-inner-white flex flex-col gap-[0.625rem]">
-      <img width={305} height={211} alt="..." src={image} className="w-full" />
-      <h3 className="text-h3 text-app-black">{title}</h3>
-      <span className="text-t12 text-[#6F6F6F]">By: {authors.join(", ")}</span>
-      <div className="flex items-center flex-wrap gap-[0.625rem]">
-        {tags.map((tag) => (
-          <div key={tag} className="h-[1.5rem] px-[0.625rem] flex items-center rounded-[3.125rem]">
-            <span className="text-tag text-app-black">{tag}</span>
-          </div>
-        ))}
+    <Link to={`/paper/${id}`} className="" data-aos="fade-up" data-aos-delay={(index + 1) * 50}>
+      <div className="rounded-[1.25rem] p-[1.25rem] bg-app-inner-white flex flex-col lg:justify-between gap-[0.625rem] lg:w-[25rem] lg:h-full transition-transform duration-300 hover:scale-[1.02]">
+        <div className="flex flex-col gap-[0.625rem]">
+          <img alt="..." src={image} className="h-[13.75] w-auto self-stretch" />
+          <h3 className="text-h3 text-app-black">{title}</h3>
+          <span className="text-t12 text-app-gray">By: {authors.join(", ")}</span>
+        </div>
+        <div className="flex items-center flex-wrap gap-[0.625rem]">
+          {tags.map((tag) => (
+            <div
+              key={tag}
+              className="h-[1.5rem] px-[0.625rem] flex items-center rounded-[3.125rem] border border-app-gray"
+            >
+              <span className="text-tag text-app-black/70">{tag}</span>
+            </div>
+          ))}
+        </div>
       </div>
-    </div>
+    </Link>
   );
 }
