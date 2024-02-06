@@ -1,52 +1,45 @@
-import { Fragment, PropsWithChildren, useMemo } from "react";
+import { Fragment, PropsWithChildren } from "react";
 import PageTable from "../../components/PageTable";
 import { useGetInvolvedData } from "../../data/getInvolved";
 import { Link } from "react-router-dom";
-import { useApp } from "../../hooks/useApp";
-import OthersPageDesktopLayout from "../../layouts/OthersPageDesktopLayout";
-import MobileLayout from "../../layouts/MobileLayout";
+import OthersPageWrap from "../../components/OthersPageWrap";
 
 export default function GetInvolvedPage() {
   const { title, summary, sections } = useGetInvolvedData();
-  const { isDesktopWidth } = useApp();
-
-  const Layout = useMemo(() => (isDesktopWidth ? OthersPageDesktopLayout : MobileLayout), [isDesktopWidth]);
 
   return (
-    <Layout>
-      <div className="pt-[3.75rem] lg:pt-[6.25rem] bg-app-white">
-        <div className="flex lg:gap-24 max-w-8xl mx-auto px-medium py-[2.5rem] lg:py-[6.25rem]">
-          <div className="w-full flex flex-col gap-10">
-            <span className="text-t14 text-app-gray">Home/Community</span>
-            <h1 className="text-h1 text-app-black">{title}</h1>
-            <div className="h-[1px] bg-app-black/50 w-full" />
-            <p className="text-t14 text-app-gray">{summary}</p>
+    <OthersPageWrap>
+      <div className="flex lg:gap-24 max-w-8xl mx-auto px-medium py-[2.5rem] lg:py-[6.25rem]">
+        <div className="w-full flex flex-col gap-10">
+          <span className="text-t14 text-app-gray">Home/Community</span>
+          <h1 className="text-h1 text-app-black">{title}</h1>
+          <div className="h-[1px] bg-app-black/50 w-full" />
+          <p className="text-t14 text-app-gray">{summary}</p>
 
-            {sections.map((section) => (
-              <Fragment key={section.h1}>
-                <H1 id={section.h1}>
-                  {section.icon} {section.h1}
-                </H1>
-                {section.description ? <Description>{section.description}</Description> : null}
-                {section.items?.length ? <Items data={section.items} /> : null}
-                {section.content?.length ? <Content data={section.content} /> : null}
-                {section.sub?.map((sub) => (
-                  <Fragment key={sub.h2}>
-                    <H2 id={sub.h2}>
-                      {sub.icon} {sub.h2}
-                    </H2>
-                    {sub.description ? <Description>{sub.description}</Description> : null}
-                    {sub.items?.length ? <Items data={sub.items} /> : null}
-                    {sub.content?.length ? <Content data={sub.content} /> : null}
-                  </Fragment>
-                ))}
-              </Fragment>
-            ))}
-          </div>
-          <PageTable data={sections} />
+          {sections.map((section) => (
+            <Fragment key={section.h1}>
+              <H1 id={section.h1}>
+                {section.icon} {section.h1}
+              </H1>
+              {section.description ? <Description>{section.description}</Description> : null}
+              {section.items?.length ? <Items data={section.items} /> : null}
+              {section.content?.length ? <Content data={section.content} /> : null}
+              {section.sub?.map((sub) => (
+                <Fragment key={sub.h2}>
+                  <H2 id={sub.h2}>
+                    {sub.icon} {sub.h2}
+                  </H2>
+                  {sub.description ? <Description>{sub.description}</Description> : null}
+                  {sub.items?.length ? <Items data={sub.items} /> : null}
+                  {sub.content?.length ? <Content data={sub.content} /> : null}
+                </Fragment>
+              ))}
+            </Fragment>
+          ))}
         </div>
+        <PageTable data={sections} />
       </div>
-    </Layout>
+    </OthersPageWrap>
   );
 }
 
