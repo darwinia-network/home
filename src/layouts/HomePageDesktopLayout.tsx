@@ -1,9 +1,9 @@
 import { PropsWithChildren, UIEventHandler, useCallback, useEffect, useRef, useState } from "react";
-import { useApp }from "../../hooks/useApp";
-import DesktopHeader from "../../components/Header/DesktopHeader";
-import { MAX_HEIGHT_ON_DESKTOP, MIN_HEIGHT_ON_DESKTOP } from "../../config/constant";
+import { useApp } from "../hooks/useApp";
+import DesktopHeader from "../components/Header/DesktopHeader";
+import { MAX_HEIGHT_ON_DESKTOP, MIN_HEIGHT_ON_DESKTOP } from "../config/constant";
 
-export default function DesktopLayout({ children }: PropsWithChildren<unknown>) {
+export default function HomePageDesktopLayout({ children }: PropsWithChildren<unknown>) {
   const [progress, setProgress] = useState(0); // From 0 to 100
   const ref = useRef<HTMLDivElement | null>(null);
   const { setDesktopScrollLeft } = useApp();
