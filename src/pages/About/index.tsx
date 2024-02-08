@@ -15,7 +15,7 @@ export default function About() {
         <img
           alt="..."
           height={490}
-          className="h-[30.625rem] w-auto self-stretch"
+          className="h-[30.625rem] w-auto self-stretch mx-auto"
           src="/images/about-page-hero.png"
           data-aos="fade-up"
         />
