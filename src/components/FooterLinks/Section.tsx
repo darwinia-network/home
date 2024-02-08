@@ -8,7 +8,7 @@ export default function Section({ title, links }: Props) {
   const { isDesktopHeight } = useApp();
 
   return (
-    <div className="hidden lg:flex flex-col gap-5 h-fit max-w-max">
+    <div className="hidden lg:flex flex-col gap-10 h-fit max-w-max">
       <h3 className="uppercase text-xl leading-normal font-bold text-app-white">{title}</h3>
       <div className="flex flex-col gap-5">
         {links.map(({ text, href, isExternal, isComingSoon }) => (

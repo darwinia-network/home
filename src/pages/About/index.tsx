@@ -32,7 +32,7 @@ export default function About() {
       <div className="mx-auto w-full lg:w-fit py-5 lg:pt-[3.125rem] lg:pb-[7.5rem] flex gap-[3.75rem] px-large">
         <div className="flex flex-col gap-5 w-full lg:w-[45rem]">
           <div className="flex flex-col" data-aos="fade-up">
-            <h2 className="text-h2 text-app-black">{aboutData.title}</h2>
+            <h2 className="lg:text-h1 text-h2 text-app-black">{aboutData.title}</h2>
             <span className="text-t12 text-app-gray">{`Page last updated: ${aboutData.lastUpdate}`}</span>
           </div>
           <div className="h-[1px] w-full bg-app-black" />

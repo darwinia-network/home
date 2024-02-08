@@ -5,11 +5,12 @@ import ExternalIcon from "../ExternalIcon";
 
 interface Props {
   data: { label: string; sub: { label: string; link: string; isExternal?: boolean }[] }[];
+  isHomePage?: boolean;
   isNavigationActive: boolean[];
   setIsNavigationActive: Dispatch<SetStateAction<boolean[]>>;
 }
 
-export default function DesktopNavigation({ data, isNavigationActive, setIsNavigationActive }: Props) {
+export default function DesktopNavigation({ data, isHomePage, isNavigationActive, setIsNavigationActive }: Props) {
   const handleActiveChange = useCallback(
     (index: number, isActive: boolean) =>
       setIsNavigationActive((prev) => {
@@ -28,6 +29,7 @@ export default function DesktopNavigation({ data, isNavigationActive, setIsNavig
           index={index}
           label={label}
           sub={sub}
+          isHomePage={isHomePage}
           isActive={isNavigationActive[index]}
           onActiveChange={handleActiveChange}
         />
@@ -40,12 +42,14 @@ function Navigation({
   index,
   label,
   sub,
+  isHomePage,
   isActive,
   onActiveChange,
 }: {
   index: number;
   label: string;
   sub: { label: string; link: string; isExternal?: boolean }[];
+  isHomePage?: boolean;
   isActive: boolean;
   onActiveChange: (index: number, active: boolean) => void;
 }) {
@@ -59,7 +63,7 @@ function Navigation({
       placement="bottom"
       label={
         <span
-          className={`text-t20 whitespace-nowrap transition-colors hover:text-app-main ${
+          className={`whitespace-nowrap transition-colors hover:text-app-main ${isHomePage ? 'text-t20' : 'text-t16b'} ${
             isActive ? "text-app-main" : "text-app-black"
           }`}
         >

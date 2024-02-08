@@ -84,7 +84,7 @@
 
   .text-t16 {
     font-size: 1rem;
-    @apply tracking-[0.0625rem] leading-[1.6rem] font-light;
+    @apply tracking-[0.0625rem] leading-[1.6rem] font-extralight;
   }
 
   .text-t16b {
@@ -94,12 +94,17 @@
 
   .text-t14 {
     font-size: 0.875rem;
-    @apply tracking-[0.0625rem] leading-[1.4rem] font-normal;
+    @apply tracking-[0.0625rem] leading-[1.4rem] font-extralight;
   }
 
   .text-t14b {
     font-size: 0.875rem;
     @apply tracking-[0.0625rem] leading-[1.4rem] font-bold;
+  }
+
+  .text-t12 {
+    font-size: 0.75rem;
+    @apply tracking-[0.0625rem] font-light;
   }
 
   .text-tag {

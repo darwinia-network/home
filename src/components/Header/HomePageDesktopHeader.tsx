@@ -45,6 +45,7 @@ export default function HomePageDesktopHeader() {
         <div className="flex items-center gap-[2.5rem] pl-[2.5rem] pr-[1.25rem] w-max shrink-0" ref={ref}>
           <DesktopNavigation
             data={navigations}
+            isHomePage
             isNavigationActive={isNavigationActive}
             setIsNavigationActive={setIsNavigationActive}
           />
