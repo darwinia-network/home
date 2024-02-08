@@ -12,17 +12,20 @@ export default function About() {
   return (
     <OthersPageWrap>
       {isDesktopWidth ? (
-        <img
-          alt="..."
-          height={490}
-          className="h-[30.625rem] w-auto self-stretch mx-auto"
-          src="/images/about-page-hero.png"
-          data-aos="fade-up"
-        />
+        <div className="w-full flex justify-center overflow-y-hidden">
+          <img
+            alt="..."
+            height={490}
+            width={1920}
+            className="h-[30.625rem] w-[120rem] shrink-0 max-w-none"
+            src="/images/about-page-hero.png"
+            data-aos="fade-up"
+          />
+        </div>
       ) : (
         <div className="px-large flex flex-col gap-5" data-aos="fade-up">
           <span className="text-t14 text-app-black/70">Home / About</span>
-          <img alt="" height={180} className="h-[11.25rem] w-auto self-stretch" src="/images/about-page-hero-m.png" />
+          <img alt="" height={180} width={335} className="h-[11.25rem] max-w-none shrink-0" src="/images/about-page-hero-m.png" />
         </div>
       )}
 
