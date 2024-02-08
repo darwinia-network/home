@@ -90,7 +90,7 @@ function Arrow({ isOpen }: { isOpen?: boolean }) {
   return (
     <div
       className={`border-t-[0.3125rem] border-x-[0.25rem] border-x-transparent shrink-0 transition-[transform,color] ${
-        isOpen ? "border-t-app-main" : "border-t-gray"
+        isOpen ? "border-t-app-main" : "border-t-app-gray"
       }`}
       style={{ transform: isOpen ? "rotateX(180deg)" : "rotateX(0)" }}
     />
