@@ -1,4 +1,4 @@
-import useApp from "../../hooks/useApp";
+import { useApp }from "../../hooks/useApp";
 
 interface Props {
   icon: string; // File path

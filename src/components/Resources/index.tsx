@@ -1,96 +1,46 @@
-import { TFunction, useTranslation } from "react-i18next";
-import { NavLink } from "react-router-dom";
+import Card from "./Card";
+
+const resources: { icon: string; title: string; description: string; detail: { link: string } }[] = [
+  {
+    icon: "/images/resources/darwinia-msgport-gitHub.png",
+    title: "Darwinia Msgport GitHub",
+    description:
+      "An open-source repo providing interfaces and tools for blockchain interoperability and communication.",
+    detail: { link: "https://github.com/darwinia-network/darwinia-msgport" },
+  },
+  {
+    icon: "/images/resources/darwinia-messages-explorer.png",
+    title: "Darwinia Messages Explorer",
+    description:
+      "It serves as a comprehensive platform for following transactions over the Darwinia Msgport, helping users and developers to manage and analyze cross-chain data more effectively.",
+    detail: { link: "https://msgscan.darwinia.network/" },
+  },
+  {
+    icon: "/images/resources/technical-docs.png",
+    title: "Technical Docs",
+    description: "Start building your Cross-Chain DApp with Darwinia Msgport.",
+    detail: { link: "https://docs.darwinia.network/darwinia-msgport-fa89f501ea1747e285b6169697e2ff77" },
+  },
+  {
+    icon: "/images/resources/developer-assistance.png",
+    title: "Developer Assistance",
+    description:
+      "Chat with other developers in the Developer Community, share your ideas and get answers to your technical questions.",
+    detail: { link: "https://discord.com/invite/fZDWmJKWCw" },
+  },
+];
 
 export default function Resources() {
-  const { t } = useTranslation();
-
   return (
-    <div className="flex flex-col gap-12">
-      <h3 className="title uppercase text-2xl lg:text-5xl lg:leading-[4rem] text-white font-bold">{t("Resources")}</h3>
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 lg:gap-16">
-        {getResourcesConfig(t).map((item, index) => (
-          <Item key={index} {...item} />
+    <div className="flex flex-col gap-10 lg:gap-[34px]">
+      <h2 className="text-h2 text-black lg:text-[3.125rem] lg:font-bold lg:tracking-[0.125rem] lg:leading-normal" data-aos="fade-up">
+        Resources
+      </h2>
+      <div className="flex flex-col gap-10 lg:flex-row lg:gap-[88px]">
+        {resources.map(({ icon, title, description, detail }) => (
+          <Card key={title} icon={icon} title={title} description={description} detail={detail} />
         ))}
       </div>
     </div>
   );
 }
-
-interface LinkCfg {
-  path: string;
-  text: string;
-  external: boolean;
-}
-
-interface ItemCfg {
-  title: string;
-  description: string;
-  link: LinkCfg;
-}
-
-const getResourcesConfig = (t: TFunction): ItemCfg[] => [
-  {
-    title: t("Technical Docs"),
-    link: {
-      text: t("Learn more"),
-      path: "https://docs.darwinia.network/",
-      external: true,
-    },
-    description: t("Start building on Darwinia Chain."),
-  },
-  {
-    title: t("Staking Rewards"),
-    link: {
-      text: t("Learn more"),
-      path: "https://docs.darwinia.network/staking-guide-d7387bfc4d3f4604860651f268ed00ba",
-      external: true,
-    },
-    description: t("Stake your RING/KTON to become a delegator or collator on Darwinia Chain."),
-  },
-  {
-    title: t("Ecosystem Dapps"),
-    link: {
-      text: t("Learn more"),
-      path: "https://apps.darwinia.network/",
-      external: true,
-    },
-    description: t("Explore Dapps building on Darwinia ecosystem."),
-  },
-  {
-    title: t("Faucet"),
-    link: {
-      text: t("Learn more"),
-      path: "https://docs.darwinia.network/testnet-faucets-98a5b8e69c7e40b59973aa36af2ac647",
-      external: true,
-    },
-    description: t("Get Test Tokens To experiment on TestNet."),
-  },
-];
-
-const Item = ({ link, title, description }: ItemCfg) => (
-  <div className="lg:flex-wrap flex flex-col justify-between border border-white p-medium h-52 lg:h-64">
-    <div className="flex flex-col">
-      <div className="title font-bold capitalize text-xl text-black bg-white px-medium">{title}</div>
-      <span className="text capitalize text-gray font-light text-sm leading-6 mt-medium">{description}</span>
-    </div>
-    <SmartLink {...link} />
-  </div>
-);
-
-const SmartLink = ({ path, text, external }: LinkCfg) =>
-  external ? (
-    <a
-      href={path}
-      target="_blank"
-      rel="noopener noreferrer"
-      className="text text-white capitalize text-sm leading-6 font-light hover:opacity-70 select-none"
-    >
-      {text}
-      {" >"}
-    </a>
-  ) : (
-    <NavLink to={path} className="text text-white capitalize text-sm leading-6 font-light hover:opacity-70 select-none">
-      {text}
-      {" >"}
-    </NavLink>
-  );

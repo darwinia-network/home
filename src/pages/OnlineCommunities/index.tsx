@@ -1,36 +1,39 @@
 import { Link } from "react-router-dom";
-import Footer from "../../components/Footer";
-import { useFooterData } from "../../data/footer";
 import { useOnlineCommunitiesData } from "../../data/onlineCommunities";
 import { Fragment } from "react";
 import PageTable from "../../components/PageTable";
+import OthersPageWrap from "../../components/OthersPageWrap";
 
 export default function OnlineCommunitiesPage() {
   const { title, summary, sections } = useOnlineCommunitiesData();
-  const { footerData } = useFooterData();
 
   return (
-    <main>
-      <div className="flex lg:gap-24 max-w-8xl mx-auto lg:px-8 px-4 mt-32 lg:mt-40">
+    <OthersPageWrap>
+      <div className="flex lg:gap-24 max-w-8xl mx-auto px-large py-[2.5rem] lg:py-[6.25rem]">
         <div className="w-full flex flex-col gap-10">
-          <span className="text-light text-gray text-sm font-light">Home/ Community</span>
-          <h1 className="text-bold text-4xl text-white font-bold">{title}</h1>
-          <div className="h-[1px] bg-white/50 w-full" />
-          <p className="text-light text-gray text-sm font-light leading-7">{summary}</p>
+          <span className="text-t14 text-app-gray">Home/Community</span>
+          <h1 className="text-h1 text-app-black">{title}</h1>
+          <div className="h-[1px] bg-app-black/50 w-full" />
+          <p className="text-t14 text-app-gray">{summary}</p>
 
           {sections.map((section) => (
             <Fragment key={section.h1}>
-              <h3 className="text-bold text-xl text-white font-bold" id={section.h1}>
+              <h3 className="text-h3 text-app-black" id={section.h1}>
                 {section.h1}
               </h3>
               {section.content.map(({ link, text }, index) => (
-                <div key={index} className="text-light text-gray text-sm font-light italic">
+                <div key={index} className="text-t14 text-app-gray italic">
                   {link.isExternal ? (
-                    <a target="_blank" rel="noopener noreferrer" href={link.path} className="underline transition-colors hover:text-primary">
+                    <a
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      href={link.path}
+                      className="underline transition-colors hover:text-app-main"
+                    >
                       {link.label}
                     </a>
                   ) : (
-                    <Link to={link.path} className="underline transition-colors hover:text-primary">
+                    <Link to={link.path} className="underline transition-colors hover:text-app-main">
                       {link.label}
                     </Link>
                   )}
@@ -42,7 +45,6 @@ export default function OnlineCommunitiesPage() {
         </div>
         <PageTable data={sections} />
       </div>
-      <Footer data={footerData} />
-    </main>
+    </OthersPageWrap>
   );
 }

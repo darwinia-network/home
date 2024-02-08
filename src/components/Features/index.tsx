@@ -1,4 +1,4 @@
-import useApp from "../../hooks/useApp";
+import { useApp }from "../../hooks/useApp";
 import Feature from "./Feature";
 
 const features: { icon: string; title: string; description: string }[] = [

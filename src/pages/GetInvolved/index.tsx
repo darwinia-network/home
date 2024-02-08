@@ -1,22 +1,20 @@
 import { Fragment, PropsWithChildren } from "react";
-import Footer from "../../components/Footer";
 import PageTable from "../../components/PageTable";
-import { useFooterData } from "../../data/footer";
-import useGetInvolvedData from "../../data/getInvolved";
+import { useGetInvolvedData } from "../../data/getInvolved";
 import { Link } from "react-router-dom";
+import OthersPageWrap from "../../components/OthersPageWrap";
 
 export default function GetInvolvedPage() {
   const { title, summary, sections } = useGetInvolvedData();
-  const { footerData } = useFooterData();
 
   return (
-    <main>
-      <div className="flex lg:gap-24 max-w-8xl mx-auto lg:px-8 px-4 mt-32 lg:mt-40">
+    <OthersPageWrap>
+      <div className="flex lg:gap-24 max-w-8xl mx-auto px-large py-[2.5rem] lg:py-[6.25rem]">
         <div className="w-full flex flex-col gap-10">
-          <span className="text-light text-gray text-sm font-light">Home/ Community</span>
-          <h1 className="text-bold text-4xl text-white font-bold">{title}</h1>
-          <div className="h-[1px] bg-white/50 w-full" />
-          <p className="text-light text-gray text-sm font-light leading-7">{summary}</p>
+          <span className="text-t14 text-app-gray">Home/Community</span>
+          <h1 className="text-h1 text-app-black">{title}</h1>
+          <div className="h-[1px] bg-app-black/50 w-full" />
+          <p className="text-t14 text-app-gray">{summary}</p>
 
           {sections.map((section) => (
             <Fragment key={section.h1}>
@@ -41,14 +39,13 @@ export default function GetInvolvedPage() {
         </div>
         <PageTable data={sections} />
       </div>
-      <Footer data={footerData} />
-    </main>
+    </OthersPageWrap>
   );
 }
 
 function H1({ id, children }: PropsWithChildren<{ id: string }>) {
   return (
-    <h3 className="text-bold text-xl text-white font-bold" id={id}>
+    <h3 className="text-app-black text-h2" id={id}>
       {children}
     </h3>
   );
@@ -56,31 +53,36 @@ function H1({ id, children }: PropsWithChildren<{ id: string }>) {
 
 function H2({ id, children }: PropsWithChildren<{ id: string }>) {
   return (
-    <h5 className="text-bold text-lg text-white font-bold" id={id}>
+    <h5 className="text-app-black text-h3" id={id}>
       {children}
     </h5>
   );
 }
 
 function Description({ children }: PropsWithChildren<unknown>) {
-  return <p className="text-light text-gray text-sm leading-7 font-light">{children}</p>;
+  return <p className="text-t14 text-app-gray">{children}</p>;
 }
 
 function Items({ data }: { data: (string | { label: string; path: string; isExternal?: boolean })[][] }) {
   return (
     <ul className="list-disc space-y-3 pl-4">
       {data.map((item, index) => (
-        <li key={index} className="text-light text-gray text-sm font-light">
+        <li key={index} className="text-t14 text-app-gray">
           {item.map((i, k) => (
             <Fragment key={k}>
               {typeof i === "string" ? (
                 <span>{i}</span>
               ) : i.isExternal ? (
-                <a target="_blank" rel="noopener noreferrer" href={i.path} className="underline transition-colors hover:text-primary">
+                <a
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  href={i.path}
+                  className="underline transition-colors hover:text-app-main"
+                >
                   {i.label}
                 </a>
               ) : (
-                <Link to={i.path} className="underline transition-colors hover:text-primary">
+                <Link to={i.path} className="underline transition-colors hover:text-app-main">
                   {i.label}
                 </Link>
               )}
@@ -96,13 +98,18 @@ function Content({ data }: { data: { link: { label: string; path: string; isExte
   return (
     <ul className="list-disc space-y-3 pl-4">
       {data.map(({ link, text }, index) => (
-        <li key={index} className="text-light text-gray text-sm font-light">
+        <li key={index} className="text-t14 text-app-gray">
           {link.isExternal ? (
-            <a target="_blank" rel="noopener noreferrer" href={link.path} className="underline transition-colors hover:text-primary">
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              href={link.path}
+              className="underline transition-colors hover:text-app-main"
+            >
               {link.label}
             </a>
           ) : (
-            <Link to={link.path} className="underline transition-colors hover:text-primary">
+            <Link to={link.path} className="underline transition-colors hover:text-app-main">
               {link.label}
             </Link>
           )}

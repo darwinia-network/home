@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import Drawer from "../../ui/Drawer";
-import NavigationV2Mobile from "../Navigation2/MobileNavigation";
+import NavigationV2Mobile from "../Navigation/MobileNavigation";
 import { navigations } from "./data";
 
 export default function MobileHeader() {
@@ -11,7 +11,7 @@ export default function MobileHeader() {
 
   useEffect(() => {
     const listener = () => {
-      setIsScrollOver(ref.current ? ref.current.clientHeight <= window.scrollY : false);
+      setIsScrollOver(ref.current ? ref.current.clientHeight / 2 <= window.scrollY : false);
     };
     window.addEventListener("scroll", listener, false);
     return () => {

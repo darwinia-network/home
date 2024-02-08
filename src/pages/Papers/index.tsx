@@ -1,22 +1,36 @@
-import Footer from "../../components/Footer";
-import { useFooterData } from "../../data/footer";
-import { usePapersData } from "../../data/papers";
-import Hero from "../../components/Hero";
-import PapersGrid from "../../components/PapersGrid";
+import { usePapersData } from "../../data/paper";
+import Card from "./Card";
+import OthersPageWrap from "../../components/OthersPageWrap";
 
-const Papers = () => {
-  const { footerData } = useFooterData();
-  const { heroData, papersData } = usePapersData();
+export default function Papers() {
+  const papersData = usePapersData();
 
   return (
-    <div>
-      <Hero page={"PAPERS"} data={heroData} />
-      <div data-aos={"fade-up"} data-aos-duration={700} className={"max-w-8xl w-full mx-auto lg:px-8 px-4 inter-block-space-1"}>
-        <PapersGrid data={papersData} />
-      </div>
-      <Footer data={footerData} />
-    </div>
-  );
-};
+    <OthersPageWrap>
+      <div className="max-w-8xl mx-auto px-large flex flex-col items-center gap-[2.5rem] py-[2.5rem] lg:gap-[6.25rem] lg:py-[6.25rem]">
+        {/* Title */}
+        <div className="text-center" data-aos="fade-up">
+          <h2 className="text-h2 text-app-black lg:text-h1">Paper Resources</h2>
+          <span className="text-t14 text-app-gray lg:text-t20">
+            A series of papers written by experts about Darwinia Network.
+          </span>
+        </div>
 
-export default Papers;
+        {/* Cards */}
+        <div className="flex flex-col gap-[2.5rem] lg:flex-row lg:justify-center">
+          {papersData.map((data, index) => (
+            <Card
+              key={data.id}
+              title={data.title}
+              authors={data.authors}
+              tags={data.tags}
+              image={data.image}
+              id={data.id}
+              index={index}
+            />
+          ))}
+        </div>
+      </div>
+    </OthersPageWrap>
+  );
+}

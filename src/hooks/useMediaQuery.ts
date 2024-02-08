@@ -17,7 +17,7 @@ const mapping: Record<BreakpointPrefix, string> = {
  * @param breakpoint "sm" | "md" | "lg" | "xl" | "2xl"
  * @returns boolean
  */
-export default function useMediaQuery(
+export function useMediaQuery(
   breakpoint: BreakpointPrefix,
   direction: "horizontal" | "vertical" = "horizontal"
 ) {
