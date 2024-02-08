@@ -81,6 +81,6 @@ export function useAboutData(): AboutData {
     contributors: new Array(14)
       .fill(0)
       .map((_, index) => ({ avatar: `/images/contributors/${index < 9 ? `0${index + 1}` : index + 1}.png` })),
-    github: "https://github.com/darwinia-network",
+    github: "https://github.com/darwinia-network/home/graphs/contributors",
   };
 }
