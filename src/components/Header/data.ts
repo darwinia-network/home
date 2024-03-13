@@ -48,6 +48,10 @@ export const navigations: { label: string; sub: { label: string; link: string; i
       { label: "Brand Assets", link: "https://darwinia.notion.site/Brand-Assets-9bd35f88f0674232954737577616f2c2", isExternal: true },
     ],
   },
+  {
+    label : "brige" ,
+    sub : [{label: "BridgePage" , link : "/bridge" , isExternal: false}]
+  }
 ];
 
 
