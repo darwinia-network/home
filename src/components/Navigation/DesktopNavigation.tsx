@@ -34,7 +34,7 @@ export default function DesktopNavigation({ data, isHomePage, isNavigationActive
           onActiveChange={handleActiveChange}
         />
       ))}
-      <a className="" href="/">
+      <a className="" href="https://helixbridge.app/?token_category=ring." target="_blank" rel="noopener noreferrer">
         <span
           className={`whitespace-nowrap transition-colors hover:text-app-main text-app-black ${
             isHomePage ? "text-t20" : "text-t16b"
