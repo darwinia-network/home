@@ -2,7 +2,7 @@ import React from 'react'
 
 const UseYourRing = () => {
   return (
-    <section className='flex flex-col lg:flex-wrap items-center justify-center pb-[] lg:pb-[48px] px-[20px] lg:px-0'>
+    <section className='flex flex-col lg:flex-wrap items-center justify-center pb-[140px] lg:pb-[48px] px-[20px] lg:px-0'>
         <img src="/images/bridge/ringformobile.png" alt="ringformobile" className='lg:hidden mb-[10px]'/>
         <div className='flex items-center justify-center flex-col lg:w-[1262px] lg:bg-no-repeat lg:bg-contain lg:bg-center gap-[10px] lg:bg-[url("/public/images/bridge/ringBg.png")]'>
             <img src="/images/bridge/ring.png" alt="ring" className='w-[100px] h-[100px] hidden lg:block'/>
@@ -10,10 +10,10 @@ const UseYourRing = () => {
             <p className='text-[16px] font-[300] leading-[25.6px] text-center text-[#6F6F6F] lg:w-[800px]'>
                 Now that you own some RING, check out some Darwinia ecosystem applications (DApps). There are DApps for finance, social media, gaming and lots of other categories.
             </p>
-            <button className='flex items-center gap-[10px] pr-[10px] pl-[15px] py-[8px] rounded-[40px] border-[1px] border-black text-black text-[16px] lg:text-[12px] font-[300] leading-[25.6px]' type='button'>
+            <a className='flex items-center gap-[10px] pr-[10px] pl-[15px] py-[8px] rounded-[40px] border-[1px] border-black text-black text-[16px] lg:text-[12px] font-[300] leading-[25.6px]' href='https://apps.darwinia.network/' target='_blank' rel='noopener noreferrer'>
             Check out DApps
             <img src="/images/bridge/cards/goIcon.svg" alt="" />
-        </button>
+        </a>
         </div>
     </section>
   )

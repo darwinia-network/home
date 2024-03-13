@@ -1,6 +1,6 @@
 import React from 'react';
 
-const BridgeCards = ({ data, scrollToRef, DecentralizedExchangesRef, CentralizedExchangesRef }: any) => {
+const BridgeCards = ({ data, scrollToRef, DecentralizedExchangesRef, CentralizedExchangesRef}: any) => {
     const handleScroll = (ref: React.RefObject<HTMLDivElement>) => {
         scrollToRef(ref);
     };
@@ -13,7 +13,16 @@ const BridgeCards = ({ data, scrollToRef, DecentralizedExchangesRef, Centralized
             <button
                 className='text-[14px] font-[700] leading-[22px] flex items-center gap-[10px] pr-[10px] pl-[15px] py-[8px] rounded-[40px] border-[1px] border-black text-black lg:text-[12px] lg:font-[300]'
                 type='button'
-                onClick={() => handleScroll(data.type === 'decentralized' ? DecentralizedExchangesRef : CentralizedExchangesRef)}>
+                onClick={() => 
+                {
+                    if(data.type === "decentralized") {
+                        handleScroll(DecentralizedExchangesRef)
+                    } else if(data.type === "decentralized2") {
+                        handleScroll(CentralizedExchangesRef)
+                    } else {
+                        window.open(data.link, '_blank');
+                    }
+                }}>
                 {data.buttonText}
                 <img src='/images/bridge/cards/goIcon.svg' alt='' />
             </button>
