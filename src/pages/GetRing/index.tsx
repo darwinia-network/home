@@ -31,7 +31,7 @@ const Ring = () => {
   return (
     <OthersPageWrap>
         <RingHero />
-        <section className='flex items-center justify-center gap-[20px] lg:gap-[40px] flex-wrap mt-[100px] 2xl:px-[320px]'>
+        <section className='flex items-center justify-center gap-[20px] lg:gap-[40px] flex-wrap mt-[100px] px-[20px] lg:px-0'>
             {
                 cardsdata.map((item , index) => {
                     return (
