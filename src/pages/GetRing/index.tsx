@@ -43,7 +43,7 @@ const Ring = () => {
         <div className='flex items-center justify-center' >
             <p className='text-[10px] font-[500] text-[#6F6F6F] lg:w-[660px] text-center my-[20px] lg:mt-[20px] lg:mb-[100px] leading-[12.6px] px-[20px] lg:px-0'>The information presented on this page, including product names, logos, and links to external web pages, is made available solely for general information purposes and is by no means an endorsement of the project, the content of its web pages, or the team. If you want to add a product or provide feedback <a href='https://github.com/darwinia-network/home/issues' target='_blank' rel='noopener noreferrer' className='text-[10px] font-[500] text-[#FF0083]'>create an issue in GitHub.</a> </p>
         </div>
-        <section className='flex flex-col lg:flex-row gap-[20px] lg:gap-[50px] justify-center mb-[100px]'>
+        <section className='flex flex-col lg:flex-row gap-[20px] lg:gap-[50px] justify-center mb-[100px] flex-wrap'>
             <DecentralizedExchanges ref={DecentralizedExchangesRef}/>
             <CentralizedExchanges ref={CentralizedExchangesRef}/>
         </section>
