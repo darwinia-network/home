@@ -4,7 +4,7 @@ const UseYourRing = () => {
   return (
     <section className='flex flex-col lg:flex-wrap items-center justify-center pb-[140px] lg:pb-[48px] px-[20px] lg:px-0'>
         <img src="/images/ring/ringformobile.png" alt="ringformobile" className='lg:hidden mb-[10px]'/>
-        <div className='flex items-center justify-center flex-col lg:w-[1262px] lg:bg-no-repeat lg:bg-contain lg:bg-center gap-[10px] lg:bg-[url("/public/images/ring/ringBg.png")]'>
+        <div className='flex items-center justify-center flex-col lg:bg-no-repeat lg:bg-contain lg:bg-center gap-[10px] lg:bg-[url("/public/images/ring/ringBg.png")] xl:w-[1262px]'>
             <img src="/images/ring/ring.png" alt="ring" className='w-[100px] h-[100px] hidden lg:block'/>
             <h2 className='font-[700] text-[22px] leading-[27.9px] tracking-[1px] text-[black]'>Use Your RING</h2>
             <p className='text-[16px] font-[300] leading-[25.6px] text-center text-[#6F6F6F] lg:w-[800px]'>
