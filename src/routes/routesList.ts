@@ -34,6 +34,10 @@ const routesList = [
     path: "/about",
     component: lazy(() => import("../pages/About")),
   },
+  {
+    path: "/bridge",
+    component: lazy(() => import("../pages/bridge")),
+  }
 ];
 
 export default routesList;
