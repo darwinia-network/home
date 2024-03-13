@@ -19,7 +19,7 @@ interface CardsData {
   const data: CardsData[] = [
     {
       id: "1",
-      image: "/images/bridge/cards/Centralized.png",
+      image: "/images/ring/cards/Centralized.png",
       title: "Centralized Exchanges",
       desc : "Exchanges are businesses that let you buy crypto using traditional currencies. They have custody over any RING you buy until you send it to a wallet you control" ,
       buttonText : "Find a CEX" ,
@@ -28,7 +28,7 @@ interface CardsData {
     } ,
     {
         id: "2",
-        image: "/images/bridge/cards/Decentralized.png",
+        image: "/images/ring/cards/Decentralized.png",
         title: "Decentralized Exchanges",
         desc : "If you want more control, buy RING using smart contracts. With a DEX you can trade digital assets without ever giving control of your funds to a centralized company or organization." ,
         buttonText : "Try a DEX" ,
@@ -38,7 +38,7 @@ interface CardsData {
       } ,
     {
         id: "3",
-        image: "/images/bridge/cards/Bridges.png",
+        image: "/images/ring/cards/Bridges.png",
         title: "Bridges",
         desc : "If you have some RING already, you can initiate sending and receiving RING through the bridge." ,
         buttonText : "Try a bridge" ,
@@ -47,7 +47,7 @@ interface CardsData {
     } ,
     {
         id: "4",
-        image: "/images/bridge/cards/ReceiveRING.png",
+        image: "/images/ring/cards/ReceiveRING.png",
         title: "Receive RING From Your Peers",
         desc : "Once you have an EVM account, all you need to do is share your address to start sending and receiving RING peer-to-peer." ,
         buttonText : "More on wallets" ,
@@ -56,7 +56,7 @@ interface CardsData {
     } ,
     {
         id: "5",
-        image: "/images/bridge/cards/EarnRING.png",
+        image: "/images/ring/cards/EarnRING.png",
         title: "Earn RING",
         desc : "You can earn RING by working for DAOs or companies that pay in crypto, winning bounties, finding software bugs and more." ,
         buttonText : "Find a DAO" ,
@@ -65,7 +65,7 @@ interface CardsData {
     } ,
     {
         id: "6",
-        image: "/images/bridge/cards/StakingRewards.png",
+        image: "/images/ring/cards/StakingRewards.png",
         title: "Staking Rewards",
         desc : "If you already have some RING, you can earn more by running a collator node or stake your RING to a collator." ,
         buttonText : "Learn more" ,
@@ -74,31 +74,31 @@ interface CardsData {
     } ,
   ];
   export const Centralizeddata : ExchangesdataType[] = [
-    {image :'/images/bridge/Gate.io.png' ,
+    {image :'/images/ring/Gate.io.png' ,
     subtext :  '' ,
     text :'Gate.io' ,
     link : "https://www.coingecko.com/en/exchanges/gate-io"
     } ,
     {
-      image :'/images/bridge/MEXC.png' ,
+      image :'/images/ring/MEXC.png' ,
       subtext :  '' ,
       text :'MEXC' , 
       link : "https://www.coingecko.com/en/exchanges/mexc"
     } ,
     {
-      image :'/images/bridge/HTX.png' ,
+      image :'/images/ring/HTX.png' ,
       subtext :  '' ,
       text :'HTX' ,
       link : "https://www.coingecko.com/en/exchanges/htx"
     } ,
     {
-      image :'/images/bridge/CoinEX.png' ,
+      image :'/images/ring/CoinEX.png' ,
       subtext :  '' ,
       text :'CoinEX' ,
       link : "https://www.coingecko.com/en/coins/coinex-token"
     } ,
     {
-      image :'/images/bridge/Poloniex.png' ,
+      image :'/images/ring/Poloniex.png' ,
       subtext :  '',
        text :'Poloniex' ,
        link : "https://www.coingecko.com/en/exchanges/poloniex"
@@ -106,37 +106,37 @@ interface CardsData {
   ]
   export const Decentralizeddata : ExchangesdataType [] = [
     {
-      image : '/images/bridge/UniswapV3.png' ,
+      image : '/images/ring/UniswapV3.png' ,
       subtext : 'Arbitrum One' ,
       text : 'Uniswap V3'  ,
       link : "https://www.coingecko.com/en/nft/uniswap-v3-positions"
     } ,
     {
-      image : '/images/bridge/UniswapV2.png' ,
+      image : '/images/ring/UniswapV2.png' ,
       subtext : 'Ethereum' ,
       text : 'Uniswap V2' ,
       link : "https://www.coingecko.com/en/exchanges/uniswap-v2-ethereum"
     } ,
     {
-      image : '/images/bridge/DeGate.png' ,
+      image : '/images/ring/DeGate.png' ,
       subtext : '',
        text : 'DeGate' ,
        link : "https://www.coingecko.com/en/coins/degate"
     } ,
     {
-      image : '/images/bridge/Snowswap.png' ,
+      image : '/images/ring/Snowswap.png' ,
       subtext : '' ,
       text : 'Snowswap' ,
       link : "https://darwinia.snowswap.xyz/"
     } ,
     {
-      image : '/images/bridge/Quickswap.png',
+      image : '/images/ring/Quickswap.png',
        subtext : '' ,
       text : 'Quickswap' ,
       link : "https://www.coingecko.com/en/coins/quickswap"
     } ,
     {
-      image : '/images/bridge/UniswapV3.png' ,
+      image : '/images/ring/UniswapV3.png' ,
       subtext : 'Arbitrum One',
        text : 'Uniswap V3' ,
        link : "https://www.coingecko.com/en/nft/uniswap-v3-positions"

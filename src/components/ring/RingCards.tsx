@@ -24,7 +24,7 @@ const RingCards = ({ data, scrollToRef, DecentralizedExchangesRef, CentralizedEx
                     }
                 }}>
                 {data.buttonText}
-                <img src='/images/bridge/cards/goIcon.svg' alt='' />
+                <img src='/images/ring/cards/goIcon.svg' alt='' />
             </button>
         </div>
     );
