@@ -34,6 +34,15 @@ export default function DesktopNavigation({ data, isHomePage, isNavigationActive
           onActiveChange={handleActiveChange}
         />
       ))}
+      <a className="" href="/">
+        <span
+          className={`whitespace-nowrap transition-colors hover:text-app-main text-app-black ${
+            isHomePage ? "text-t20" : "text-t16b"
+          } `}
+        >
+          Bridge
+        </span>
+      </a>
     </div>
   );
 }
@@ -63,9 +72,9 @@ function Navigation({
       placement="bottom"
       label={
         <span
-          className={`whitespace-nowrap transition-colors hover:text-app-main ${isHomePage ? 'text-t20' : 'text-t16b'} ${
-            isActive ? "text-app-main" : "text-app-black"
-          }`}
+          className={`whitespace-nowrap transition-colors hover:text-app-main ${
+            isHomePage ? "text-t20" : "text-t16b"
+          } ${isActive ? "text-app-main" : "text-app-black"}`}
         >
           {label}
         </span>
