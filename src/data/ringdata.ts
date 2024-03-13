@@ -43,7 +43,7 @@ interface CardsData {
         desc : "If you have some RING already, you can initiate sending and receiving RING through the bridge." ,
         buttonText : "Try a bridge" ,
         type : ""  ,
-        link : ""
+        link : "https://helixbridge.app/?token_category=ring"
     } ,
     {
         id: "4",
