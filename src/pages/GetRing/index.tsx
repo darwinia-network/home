@@ -1,15 +1,15 @@
 import React, { useRef } from 'react'
 import OthersPageWrap from '../../components/OthersPageWrap'
-import { useBridgeData } from '../../data/bridgedata'
-import BridgeCards from '../../components/bridge/BridgeCards';
-import DecentralizedExchanges from '../../components/bridge/DecentralizedExchanges';
-import CentralizedExchanges from '../../components/bridge/CentralizedExchanges';
-import UseYourRing from '../../components/bridge/UseYourRing';
-import BridgeHero from '../../components/bridge/BridgeHero';
+import { useRingData } from '../../data/ringdata'
+import RingCards from '../../components/ring/RingCards';
+import DecentralizedExchanges from '../../components/ring/DecentralizedExchanges';
+import CentralizedExchanges from '../../components/ring/CentralizedExchanges';
+import UseYourRing from '../../components/ring/UseYourRing';
+import RingHero from '../../components/ring/RingHero';
 
 
-const Bridge = () => {
-    const cardsdata = useBridgeData();
+const Ring = () => {
+    const cardsdata = useRingData();
     const DecentralizedExchangesRef = useRef<HTMLDivElement>(null);
     const CentralizedExchangesRef = useRef<HTMLDivElement>(null);
 
@@ -30,12 +30,12 @@ const Bridge = () => {
 
   return (
     <OthersPageWrap>
-        <BridgeHero />
+        <RingHero />
         <section className='flex items-center justify-center gap-[20px] lg:gap-[40px] flex-wrap mt-[100px] 2xl:px-[320px]'>
             {
                 cardsdata.map((item , index) => {
                     return (
-                        <BridgeCards data={item} key={item.title + index} scrollToRef={scrollToRef} DecentralizedExchangesRef={DecentralizedExchangesRef} CentralizedExchangesRef={CentralizedExchangesRef} />
+                        <RingCards data={item} key={item.title + index} scrollToRef={scrollToRef} DecentralizedExchangesRef={DecentralizedExchangesRef} CentralizedExchangesRef={CentralizedExchangesRef} />
                     )
                 })
             }
@@ -52,4 +52,4 @@ const Bridge = () => {
   )
 }
 
-export default Bridge
+export default Ring

@@ -1,6 +1,6 @@
 import React from 'react';
 
-const BridgeCards = ({ data, scrollToRef, DecentralizedExchangesRef, CentralizedExchangesRef}: any) => {
+const RingCards = ({ data, scrollToRef, DecentralizedExchangesRef, CentralizedExchangesRef}: any) => {
     const handleScroll = (ref: React.RefObject<HTMLDivElement>) => {
         scrollToRef(ref);
     };
@@ -30,4 +30,4 @@ const BridgeCards = ({ data, scrollToRef, DecentralizedExchangesRef, Centralized
     );
 };
 
-export default BridgeCards;
+export default RingCards;

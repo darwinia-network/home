@@ -1,6 +1,6 @@
 import React from 'react'
 
-const BridgeHero = () => {
+const RingHero = () => {
   return (
     <div className='h-[260px] lg:h-[440px] lg:bg-contain bg-no-repeat lg:bg-center w-[100%] flex items-center justify-center flex-col gap-[10px]' 
     style={{
@@ -13,4 +13,4 @@ const BridgeHero = () => {
   )
 }
 
-export default BridgeHero
+export default RingHero

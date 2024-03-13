@@ -1,7 +1,7 @@
 import React, { forwardRef, ReactNode } from 'react';
 import DecentralizedItems from './DecentralizedItems';
 import BgBlackContainer from './BgBlackContainer';
-import { Centralizeddata } from '../../data/bridgedata';
+import { Centralizeddata } from '../../data/ringdata';
 
 type CentralizedExchangesProps = {
   children?: ReactNode;

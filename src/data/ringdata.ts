@@ -143,7 +143,7 @@ interface CardsData {
     }
   ]
   
-  export function useBridgeData() {
+  export function useRingData() {
     return data;
   }
   

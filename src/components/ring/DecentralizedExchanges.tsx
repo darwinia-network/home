@@ -2,7 +2,7 @@
 import React, { forwardRef, ReactNode } from 'react';
 import DecentralizedItems from './DecentralizedItems';
 import BgBlackContainer from './BgBlackContainer';
-import { Decentralizeddata } from '../../data/bridgedata';
+import { Decentralizeddata } from '../../data/ringdata';
 
 type DecentralizedExchangesProps = {
   children?: ReactNode;

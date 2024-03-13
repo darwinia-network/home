@@ -35,8 +35,8 @@ const routesList = [
     component: lazy(() => import("../pages/About")),
   },
   {
-    path: "/bridge",
-    component: lazy(() => import("../pages/bridge")),
+    path: "/get-ring",
+    component: lazy(() => import("../pages/GetRing")),
   }
 ];
 
