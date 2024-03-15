@@ -34,6 +34,10 @@ const routesList = [
     path: "/about",
     component: lazy(() => import("../pages/About")),
   },
+  {
+    path: "/get-ring",
+    component: lazy(() => import("../pages/GetRing")),
+  }
 ];
 
 export default routesList;
