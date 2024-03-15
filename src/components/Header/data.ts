@@ -1,4 +1,9 @@
-export const navigations: { label: string; sub: { label: string; link: string; isExternal?: boolean }[] }[] = [
+export const navigations: {
+  label: string;
+  sub: { label: string; link: string; isExternal?: boolean }[];
+  link?: string;
+  isExternal?: boolean;
+}[] = [
   {
     label: "Use Darwinia",
     sub: [
@@ -105,4 +110,5 @@ export const navigations: { label: string; sub: { label: string; link: string; i
       },
     ],
   },
+  { label: "Bridge", sub: [], link: "https://helixbridge.app/?token_category=ring", isExternal: true },
 ];

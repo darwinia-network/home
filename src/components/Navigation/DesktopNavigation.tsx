@@ -4,7 +4,12 @@ import { Dispatch, SetStateAction, useCallback } from "react";
 import ExternalIcon from "../ExternalIcon";
 
 interface Props {
-  data: { label: string; sub: { label: string; link: string; isExternal?: boolean }[] }[];
+  data: {
+    label: string;
+    sub: { label: string; link: string; isExternal?: boolean }[];
+    link?: string;
+    isExternal?: boolean;
+  }[];
   isHomePage?: boolean;
   isNavigationActive: boolean[];
   setIsNavigationActive: Dispatch<SetStateAction<boolean[]>>;
@@ -23,26 +28,41 @@ export default function DesktopNavigation({ data, isHomePage, isNavigationActive
 
   return (
     <div className="hidden lg:flex items-center gap-[2.5rem]">
-      {data.map(({ label, sub }, index) => (
-        <Navigation
-          key={label}
-          index={index}
-          label={label}
-          sub={sub}
-          isHomePage={isHomePage}
-          isActive={isNavigationActive[index]}
-          onActiveChange={handleActiveChange}
-        />
-      ))}
-      <a className="" href="https://helixbridge.app/?token_category=ring." target="_blank" rel="noopener noreferrer">
-        <span
-          className={`whitespace-nowrap transition-colors hover:text-app-main text-app-black ${
-            isHomePage ? "text-t20" : "text-t16b"
-          } `}
-        >
-          Bridge
-        </span>
-      </a>
+      {data.map(({ label, sub, link, isExternal }, index) =>
+        sub.length ? (
+          <Navigation
+            key={label}
+            index={index}
+            label={label}
+            sub={sub}
+            isHomePage={isHomePage}
+            isActive={isNavigationActive[index]}
+            onActiveChange={handleActiveChange}
+          />
+        ) : isExternal ? (
+          <a
+            key={label}
+            className={`whitespace-nowrap transition-colors text-app-black hover:text-app-main ${
+              isHomePage ? "text-t20" : "text-t16b"
+            }`}
+            target="_blank"
+            rel="noopener noreferrer"
+            href={link}
+          >
+            {label}
+          </a>
+        ) : (
+          <Link
+            key={label}
+            className={`whitespace-nowrap transition-colors text-app-black hover:text-app-main ${
+              isHomePage ? "text-t20" : "text-t16b"
+            }`}
+            to={link ?? "/"}
+          >
+            {label}
+          </Link>
+        )
+      )}
     </div>
   );
 }
