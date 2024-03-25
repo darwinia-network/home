@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import PrettyCode from "../PrettyCode";
 import RightArrowRound from "../RightArrowRound";
 import { link, menu, title } from "./data";
-import { useApp }from "../../hooks/useApp";
+import { useApp } from "../../hooks/useApp";
 
 export default function DesktopBuildingWithMsgport() {
   const { isDesktopHeight } = useApp();
@@ -61,7 +61,7 @@ export default function DesktopBuildingWithMsgport() {
       >
         <div className="flex flex-col gap-[0.375rem] items-center shrink-0 h-fit" ref={ref}>
           <h2 className="text-h2 text-app-white">{activeMenu.title}</h2>
-          <span className="text-t16 text-app-white text-center inline-block">{activeMenu.description}</span>
+          <span className="inline-block text-center text-t16 text-app-white">{activeMenu.description}</span>
         </div>
         <PrettyCode
           language={activeMenu.language}
