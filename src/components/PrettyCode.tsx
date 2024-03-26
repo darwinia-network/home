@@ -14,7 +14,23 @@ export default function PrettyCode({ code, language, className, customStyle }: P
 
   useEffect(() => {
     const listener = (ev: WheelEvent) => {
-      ev.stopPropagation();
+      const scrollableDiv = ref.current?.children[0] as Element;
+
+      if (ev.deltaY > 0) {
+        if (scrollableDiv.scrollTop >= scrollableDiv.scrollHeight - scrollableDiv.clientHeight - 1) {
+          // Scrollbar is at the bottom
+          console.log("Scrolled to end");
+        } else {
+          ev.stopPropagation();
+        }
+      } else {
+        if (scrollableDiv.scrollTop === 0) {
+          // Scrollbar is at the bottom
+          console.log("Scrolled to start");
+        } else {
+          ev.stopPropagation();
+        }
+      }
     };
     ref.current?.addEventListener("wheel", listener, false);
     return () => {
