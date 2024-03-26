@@ -28,7 +28,7 @@ const DecentralizedExchanges = forwardRef<HTMLDivElement, DecentralizedExchanges
       </div>
       <div>
         <p className='text-[10px] font-[500] leading-[12.68px] text-[#6F6F6F]'>DISCLAIMER: The information presented herein, sourced from community and 
-        <span className='text-[10px] font-[500] leading-[12.68px] text-[#FF0083]'>CoinGecko</span> 
+        <span className='text-[10px] font-[500] leading-[12.68px] text-[#FF0083]'> CoinGecko</span> 
         , is made available solely for general information purposes. These DEXs aren &apos t for beginners as you &apos ll need some RING to use them.  Do your own research!</p>
       </div>
     </BgBlackContainer>
