@@ -110,5 +110,5 @@ export const navigations: {
       },
     ],
   },
-  { label: "Bridge", sub: [], link: "https://helixbridge.app/?token_category=ring", isExternal: true },
+  { label: "Bridge", sub: [], link: "https://bridge.darwinia.network", isExternal: true },
 ];
