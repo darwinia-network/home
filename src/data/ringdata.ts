@@ -23,7 +23,7 @@ interface CardsData {
       title: "Centralized Exchanges",
       desc : "Exchanges are businesses that let you buy crypto using traditional currencies. They have custody over any RING you buy until you send it to a wallet you control" ,
       buttonText : "Find a CEX" ,
-      type : "decentralized" ,
+      type : "centralized" ,
       link : null
     } ,
     {
@@ -32,7 +32,7 @@ interface CardsData {
         title: "Decentralized Exchanges",
         desc : "If you want more control, buy RING using smart contracts. With a DEX you can trade digital assets without ever giving control of your funds to a centralized company or organization." ,
         buttonText : "Try a DEX" ,
-        type : "decentralized2" ,
+        type : "decentralized" ,
         link : null
 
       } ,
