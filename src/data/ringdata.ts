@@ -23,7 +23,7 @@ interface CardsData {
       title: "Centralized Exchanges",
       desc : "Exchanges are businesses that let you buy crypto using traditional currencies. They have custody over any RING you buy until you send it to a wallet you control" ,
       buttonText : "Find a CEX" ,
-      type : "decentralized" ,
+      type : "centralized" ,
       link : null
     } ,
     {
@@ -32,7 +32,7 @@ interface CardsData {
         title: "Decentralized Exchanges",
         desc : "If you want more control, buy RING using smart contracts. With a DEX you can trade digital assets without ever giving control of your funds to a centralized company or organization." ,
         buttonText : "Try a DEX" ,
-        type : "decentralized2" ,
+        type : "decentralized" ,
         link : null
 
       } ,
@@ -77,31 +77,31 @@ interface CardsData {
     {image :'/images/ring/Gate.io.png' ,
     subtext :  '' ,
     text :'Gate.io' ,
-    link : "https://www.coingecko.com/en/exchanges/gate-io"
+    link : "https://www.gate.io/trade/RING_USDT"
     } ,
     {
       image :'/images/ring/MEXC.png' ,
       subtext :  '' ,
       text :'MEXC' , 
-      link : "https://www.coingecko.com/en/exchanges/mexc"
+      link : "https://www.mexc.com/exchange/RING_USDT"
     } ,
     {
       image :'/images/ring/HTX.png' ,
       subtext :  '' ,
       text :'HTX' ,
-      link : "https://www.coingecko.com/en/exchanges/htx"
+      link : "https://www.htx.com/trade/ring_usdt"
     } ,
     {
       image :'/images/ring/CoinEX.png' ,
       subtext :  '' ,
       text :'CoinEX' ,
-      link : "https://www.coingecko.com/en/coins/coinex-token"
+      link : "https://www.coinex.com/en/exchange/ring-usdt?currency=USDT&dest=RING#spot"
     } ,
     {
       image :'/images/ring/Poloniex.png' ,
       subtext :  '',
        text :'Poloniex' ,
-       link : "https://www.coingecko.com/en/exchanges/poloniex"
+       link : "https://poloniex.com/trade/RING_USDT?type=spot"
     }
   ]
   export const Decentralizeddata : ExchangesdataType [] = [
@@ -109,19 +109,19 @@ interface CardsData {
       image : '/images/ring/UniswapV3.png' ,
       subtext : 'Arbitrum One' ,
       text : 'Uniswap V3'  ,
-      link : "https://www.coingecko.com/en/nft/uniswap-v3-positions"
+      link : "https://app.uniswap.org/#/swap?chain=arbitrum&inputCurrency=0x9e523234d36973f9e38642886197d023c88e307e&outputCurrency=0x82af49447d8a07e3bd95bd0d56f35241523fbab1"
     } ,
     {
       image : '/images/ring/UniswapV2.png' ,
       subtext : 'Ethereum' ,
       text : 'Uniswap V2' ,
-      link : "https://www.coingecko.com/en/exchanges/uniswap-v2-ethereum"
+      link : "https://app.uniswap.org/#/swap?inputCurrency=0x9469d013805bffb7d3debe5e7839237e535ec483&outputCurrency=ETH"
     } ,
     {
       image : '/images/ring/DeGate.png' ,
       subtext : '',
        text : 'DeGate' ,
-       link : "https://www.coingecko.com/en/coins/degate"
+       link : "https://app.degate.com/trade/USDC/0x9469d013805bffb7d3debe5e7839237e535ec483"
     } ,
     {
       image : '/images/ring/Snowswap.png' ,
@@ -133,14 +133,8 @@ interface CardsData {
       image : '/images/ring/Quickswap.png',
        subtext : '' ,
       text : 'Quickswap' ,
-      link : "https://www.coingecko.com/en/coins/quickswap"
-    } ,
-    {
-      image : '/images/ring/UniswapV3.png' ,
-      subtext : 'Arbitrum One',
-       text : 'Uniswap V3' ,
-       link : "https://www.coingecko.com/en/nft/uniswap-v3-positions"
-    }
+      link : "https://quickswap.exchange/#/swap?inputCurrency=0x9c1c23e60b72bc88a043bf64afdb16a02540ae8f&outputCurrency=0x0d500b1d8e8ef31e21c99d1db9a6444d3adf1270"
+    } 
   ]
   
   export function useRingData() {

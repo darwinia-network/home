@@ -17,7 +17,7 @@ const RingCards = ({ data, scrollToRef, DecentralizedExchangesRef, CentralizedEx
                 {
                     if(data.type === "decentralized") {
                         handleScroll(DecentralizedExchangesRef)
-                    } else if(data.type === "decentralized2") {
+                    } else if(data.type === "centralized") {
                         handleScroll(CentralizedExchangesRef)
                     } else {
                         window.open(data.link, '_blank');
