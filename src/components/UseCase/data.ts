@@ -44,7 +44,7 @@ contract ExampleXAccount {
         IMessagePort(port).send{value: msg.value}(toChainId, module, message, params);
     }
 }`,
-    link: "https://docs.darwinia.network/cross-chain-abstract-account-a0aae327c3d54555818fdab1149d0608",
+    link: "https://docs.darwinia.network/msgport/user-cases/abstract-account/",
     description:
       "xAccount is a component within Darwinia Msgport, xAccount simplifies the user experience in executing cross-chain operations.",
     language: "solidity",
@@ -180,7 +180,7 @@ contract MsglineMessager is Application, AccessController {
         );
     }
 }`,
-    link: "https://docs.darwinia.network/tokenasset-bridge-c2b42b6e0c3348ddb91333a4f24ac4d9",
+    link: "https://docs.darwinia.network/msgport/user-cases/token-bridge/",
     description:
       "By utilizing Darwinia Msgport, DApp developers can facilitate efficient cross-chain transfer and management of assets, streamlining the process of moving assets between different blockchain networks.",
     language: "solidity",

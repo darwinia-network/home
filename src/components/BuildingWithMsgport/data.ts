@@ -1,6 +1,6 @@
 export const title: string[] = ["Start building with", "Darwinia Msgport"];
 
-export const link: string = "https://docs.darwinia.network/simplest-messaging-demo-045164a7d4d7413ba4a5dd65214e59e6"; // External link
+export const link: string = "https://docs.darwinia.network/msgport/tutorial/remix-demo/"; // External link
 
 export const menu: { title: string; description: string; code: string; language: "solidity" | "javascript" }[] = [
   {

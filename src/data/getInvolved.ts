@@ -43,7 +43,7 @@ export function useGetInvolvedData(): GetInvolvedData {
           [
             {
               label: "Run collator node",
-              path: "https://docs.darwinia.network/how-to-become-a-collator-af6bce360d5b49ddacc56e4587510210",
+              path: "https://docs.darwinia.network/evm/tutorial/chain/run-collator-node/",
               isExternal: true,
             },
             " in helping to further decentralize Darwinia",
@@ -86,7 +86,7 @@ export function useGetInvolvedData(): GetInvolvedData {
               {
                 link: {
                   label: "Staking guide",
-                  path: "https://docs.darwinia.network/staking-guide-d7387bfc4d3f4604860651f268ed00ba",
+                  path: "https://docs.darwinia.network/evm/tutorial/staking/",
                   isExternal: true,
                 },
               },

@@ -15,22 +15,22 @@ export const navigations: {
       },
       {
         label: "Stake RING",
-        link: "https://docs.darwinia.network/staking-guide-4306a2a3f25f4ea0b41377e267e1d319",
+        link: "https://docs.darwinia.network/evm/tutorial/staking/",
         isExternal: true,
       },
       {
         label: "Run A Node",
-        link: "https://docs.darwinia.network/run-collator-node-af6bce360d5b49ddacc56e4587510210",
+        link: "https://docs.darwinia.network/evm/tutorial/chain/run-collator-node/",
         isExternal: true,
       },
       {
         label: "Cross-Chain Asset Bridge",
-        link: "https://docs.darwinia.network/tokenasset-bridge-c2b42b6e0c3348ddb91333a4f24ac4d9",
+        link: "https://docs.darwinia.network/msgport/user-cases/token-bridge/",
         isExternal: true,
       },
       {
         label: "Cross-Chain DAO Governance",
-        link: "https://docs.darwinia.network/multi-chain-dao-governance-d3b2e194828d4af8bad8e3fa28219fc3",
+        link: "https://docs.darwinia.network/msgport/user-cases/multichain-dao-governance/",
         isExternal: true,
       },
     ],
@@ -39,11 +39,6 @@ export const navigations: {
     label: "Learn",
     sub: [
       { label: "What Is Darwinia", link: "https://docs.darwinia.network/", isExternal: true },
-      {
-        label: "What Is RING",
-        link: "https://docs.darwinia.network/token-and-economic-model-ebfbf88c76794215a4abe75ae13f596b",
-        isExternal: true,
-      },
       { label: "Darwinia Ecosystem DApps", link: "https://apps.darwinia.network/", isExternal: true },
       { label: "Darwinia News & Updates", link: "https://medium.com/darwinianetwork", isExternal: true },
       {
@@ -55,7 +50,7 @@ export const navigations: {
       { label: "Paper Resources", link: "/papers", isExternal: false },
       {
         label: "Glossary",
-        link: "https://docs.darwinia.network/glossary-8967fc4aa6a046a69b525dff7bf70a50",
+        link: "https://docs.darwinia.network/msgport/glossary/",
         isExternal: true,
       },
       { label: "FAQ", link: "https://darwinia.notion.site/FAQ-c9412ead803542f197ba1ccafb72c427", isExternal: true },
@@ -67,7 +62,7 @@ export const navigations: {
       { label: "Documentation", link: "https://docs.darwinia.network/", isExternal: true },
       {
         label: "Use Cases",
-        link: "https://docs.darwinia.network/use-cases-d707f114326a4fed8cdc6c2b37b444b1",
+        link: "https://docs.darwinia.network/msgport/user-cases/token-bridge/",
         isExternal: true,
       },
     ],
@@ -77,12 +72,12 @@ export const navigations: {
     sub: [
       {
         label: "Messaging Protocols",
-        link: "https://docs.darwinia.network/messaging-protocols-69586eedc835438cbed676ef4f35cb93",
+        link: "https://docs.darwinia.network/msgport/messaging-protocols/ormp/",
         isExternal: true,
       },
       {
         label: "Darwinia EVM+",
-        link: "https://docs.darwinia.network/darwinia-evm-df814f681ec248438cb762df8aaddbd6",
+        link: "https://docs.darwinia.network/evm/overview/",
         isExternal: true,
       },
     ],
