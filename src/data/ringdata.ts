@@ -70,7 +70,7 @@ interface CardsData {
         desc : "If you already have some RING, you can earn more by running a collator node or stake your RING to a collator." ,
         buttonText : "Learn more" ,
         type : "" ,
-        link : "https://docs.darwinia.network/staking-guide-4306a2a3f25f4ea0b41377e267e1d319"
+        link : "https://docs.darwinia.network/evm/tutorial/staking/"
     } ,
   ];
   export const Centralizeddata : ExchangesdataType[] = [

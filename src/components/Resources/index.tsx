@@ -19,7 +19,7 @@ const resources: { icon: string; title: string; description: string; detail: { l
     icon: "/images/resources/technical-docs.png",
     title: "Technical Docs",
     description: "Start building your Cross-Chain DApp with Darwinia Msgport.",
-    detail: { link: "https://docs.darwinia.network/darwinia-msgport-fa89f501ea1747e285b6169697e2ff77" },
+    detail: { link: "https://docs.darwinia.network/msgport/overview/" },
   },
   {
     icon: "/images/resources/developer-assistance.png",
