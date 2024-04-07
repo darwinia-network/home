@@ -49,12 +49,7 @@ export const columns: { sections: Section[] }[] = [
             href: "https://telemetry.polkadot.io/#list/0x91b171bb158e2d3848fa23a9f1c25182fb8e20313b2c1eb49219da7a70ce90c3",
             isExternal: true,
           },
-          { text: "Cooperation", href: "mailto:hello@darwinia.network", isExternal: true },
-          {
-            text: "Careers",
-            href: "https://darwinia.notion.site/Join-Us-d573135a4b5144bca530276d99e6d9f0",
-            isExternal: true,
-          },
+          { text: "Collaboration", href: "https://github.com/darwinia-network/collaboration", isExternal: true },
           {
             text: "Brand",
             href: "https://darwinia.notion.site/Brand-Assets-9bd35f88f0674232954737577616f2c2",
