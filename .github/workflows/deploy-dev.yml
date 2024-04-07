@@ -43,5 +43,5 @@ jobs:
           enable_cache: true
           enable_notify_comment: true
           enable_notify_slack: true
-          slack_channel: public-darwinia-ecosystem
+          slack_channel: itering-dcdao
           slack_webhook: ${{ secrets.SLACK_INCOMING_WEBHOOK_URL }}
