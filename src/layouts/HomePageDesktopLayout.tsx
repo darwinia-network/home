@@ -21,7 +21,12 @@ export default function HomePageDesktopLayout({ children }: PropsWithChildren<un
   useEffect(() => {
     const listener = (ev: WheelEvent) => {
       if (ref.current) {
-        ref.current.scrollLeft += ev.deltaY * 2;
+        const isMac = navigator.platform.toUpperCase().indexOf('MAC') >= 0;
+        if(isMac) {
+          ref.current.scrollLeft += ev.deltaY * 10;
+        } else {
+          ref.current.scrollLeft += ev.deltaY * 2;
+        }
       }
       ev.preventDefault();
     };
