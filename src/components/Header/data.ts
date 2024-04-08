@@ -20,7 +20,7 @@ export const navigations: {
       },
       {
         label: "Run A Node",
-        link: "https://docs.darwinia.network/evm/tutorial/chain/run-archive-node/",
+        link: "https://docs.darwinia.network/evm/tutorial/chain/run-collator-node/",
         isExternal: true,
       },
       {
@@ -67,7 +67,7 @@ export const navigations: {
       { label: "Documentation", link: "https://docs.darwinia.network/", isExternal: true },
       {
         label: "Use Cases",
-        link: "https://docs.darwinia.network/msgport/user-cases/token-bridge/",
+        link: "https://docs.darwinia.network/msgport/user-cases/overview/",
         isExternal: true,
       },
     ],
@@ -77,7 +77,7 @@ export const navigations: {
     sub: [
       {
         label: "Messaging Protocols",
-        link: "https://docs.darwinia.network/msgport/messaging-protocols/ormp/",
+        link: "https://docs.darwinia.network/msgport/messaging-protocols/overview/",
         isExternal: true,
       },
       {

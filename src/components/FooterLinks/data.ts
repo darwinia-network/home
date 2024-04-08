@@ -9,7 +9,7 @@ export const columns: { sections: Section[] }[] = [
           { text: "Documentation", href: "https://docs.darwinia.network/", isExternal: true },
           {
             text: "Use Cases",
-            href: "https://docs.darwinia.network/msgport/user-cases/token-bridge/",
+            href: "https://docs.darwinia.network/msgport/user-cases/overview/",
             isExternal: true,
           },
         ],
@@ -19,7 +19,7 @@ export const columns: { sections: Section[] }[] = [
         links: [
           {
             text: "Messaging Protocols",
-            href: "https://docs.darwinia.network/msgport/messaging-protocols/ormp/",
+            href: "https://docs.darwinia.network/msgport/messaging-protocols/overview/",
             isExternal: true,
           },
           {
