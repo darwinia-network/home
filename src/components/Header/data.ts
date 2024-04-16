@@ -86,8 +86,8 @@ export const navigations: {
     label: "Technology",
     sub: [
       {
-        label: "Messaging Protocols",
-        link: "https://docs.darwinia.network/msgport/messaging-protocols/overview/",
+        label: "Messaging Msgport",
+        link: "https://docs.darwinia.network/msgport/overview/",
         isExternal: true,
       },
       {
