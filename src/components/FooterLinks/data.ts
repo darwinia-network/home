@@ -9,7 +9,7 @@ export const columns: { sections: Section[] }[] = [
           { text: "Documentation", href: "https://docs.darwinia.network/", isExternal: true },
           {
             text: "Use Cases",
-            href: "https://docs.darwinia.network/msgport/user-cases/overview/",
+            href: "https://docs.darwinia.network/msgport/use-cases/overview/",
             isExternal: true,
           },
         ],
@@ -18,8 +18,8 @@ export const columns: { sections: Section[] }[] = [
         title: "Technology",
         links: [
           {
-            text: "Messaging Protocols",
-            href: "https://docs.darwinia.network/msgport/messaging-protocols/overview/",
+            text: "Darwinia Msgport",
+            href: "https://docs.darwinia.network/msgport/overview/",
             isExternal: true,
           },
           {

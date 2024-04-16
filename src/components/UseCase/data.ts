@@ -6,7 +6,7 @@ export const cases: {
   language: "solidity" | "javascript";
 }[] = [
   {
-    title: "xAccount",
+    title: "XAccount",
     code: `/// @dev ExampleXAccount is a demonstration showcasing the utilization of xAccount to execute an xCall.
 contract ExampleXAccount {
     // XAccountFactory address
@@ -44,13 +44,13 @@ contract ExampleXAccount {
         IMessagePort(port).send{value: msg.value}(toChainId, module, message, params);
     }
 }`,
-    link: "https://docs.darwinia.network/msgport/user-cases/abstract-account/",
+    link: "https://docs.darwinia.network/msgport/use-cases/xaccount/",
     description:
-      "xAccount is a component within Darwinia Msgport, xAccount simplifies the user experience in executing cross-chain operations.",
+      "XAccount is a component within Darwinia Msgport, xAccount simplifies the user experience in executing cross-chain operations.",
     language: "solidity",
   },
   {
-    title: "Asset Bridge",
+    title: "Order Clearing(Thirdparty bridge)",
     code: `// SPDX-License-Identifier: MIT
 pragma solidity ^0.8.17;
 interface ILnDefaultBridgeSource {
@@ -180,9 +180,9 @@ contract MsglineMessager is Application, AccessController {
         );
     }
 }`,
-    link: "https://docs.darwinia.network/msgport/user-cases/token-bridge/",
+    link: "https://docs.darwinia.network/msgport/user-cases/order-xclearing/",
     description:
-      "By utilizing Darwinia Msgport, DApp developers can facilitate efficient cross-chain transfer and management of assets, streamlining the process of moving assets between different blockchain networks.",
+      "By utilizing Darwinia Msgport, DApp developers can facilitate efficient cross-chain order clearing and management of assets, streamlining the process of clearing orders between different blockchain networks.",
     language: "solidity",
   },
 ];
