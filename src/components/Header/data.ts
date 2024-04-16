@@ -86,7 +86,7 @@ export const navigations: {
     label: "Technology",
     sub: [
       {
-        label: "Messaging Msgport",
+        label: "Darwinia Msgport",
         link: "https://docs.darwinia.network/msgport/overview/",
         isExternal: true,
       },
