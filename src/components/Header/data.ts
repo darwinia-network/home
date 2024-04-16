@@ -24,13 +24,23 @@ export const navigations: {
         isExternal: true,
       },
       {
-        label: "Cross-Chain Asset Bridge",
-        link: "https://docs.darwinia.network/msgport/user-cases/token-bridge/",
+        label: "Cross-Chain Order Clearing",
+        link: "https://docs.darwinia.network/msgport/use-cases/order-xclearing/",
+        isExternal: true,
+      },
+      {
+        label: "Cross-Chain Token Bridge",
+        link: "https://docs.darwinia.network/msgport/use-cases/xtoken/",
+        isExternal: true,
+      },
+      {
+        label: "Cross-Chain Abstract Account",
+        link: "https://docs.darwinia.network/msgport/use-cases/xdao/",
         isExternal: true,
       },
       {
         label: "Cross-Chain DAO Governance",
-        link: "https://docs.darwinia.network/msgport/user-cases/multichain-dao-governance/",
+        link: "https://docs.darwinia.network/msgport/use-cases/xdao/",
         isExternal: true,
       },
     ],
@@ -67,7 +77,7 @@ export const navigations: {
       { label: "Documentation", link: "https://docs.darwinia.network/", isExternal: true },
       {
         label: "Use Cases",
-        link: "https://docs.darwinia.network/msgport/user-cases/overview/",
+        link: "https://docs.darwinia.network/msgport/use-cases/overview/",
         isExternal: true,
       },
     ],
