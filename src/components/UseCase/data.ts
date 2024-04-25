@@ -44,7 +44,7 @@ contract ExampleXAccount {
         IMessagePort(port).send{value: msg.value}(toChainId, module, message, params);
     }
 }`,
-    link: "https://docs.darwinia.network/msgport/use-cases/xaccount/",
+    link: "https://docs.msgport.xyz/build/use-cases/xaccount/",
     description:
       "XAccount is a component within Darwinia Msgport, xAccount simplifies the user experience in executing cross-chain operations.",
     language: "solidity",

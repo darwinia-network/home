@@ -19,7 +19,7 @@ const resources: { icon: string; title: string; description: string; detail: { l
     icon: "/images/resources/technical-docs.png",
     title: "Build Docs",
     description: "Start building your Cross-Chain DApp on Darwinia.",
-    detail: { link: "https://darwinia-docs-dev.vercel.app/build/smart-contract/interact-with-web3js//" },
+    detail: { link: "https://docs.darwinia.network/build/smart-contract/interact-with-web3js/" },
   },
   {
     icon: "/images/resources/developer-assistance.png",

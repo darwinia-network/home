@@ -61,7 +61,7 @@ export const navigations: {
       },
       {
         label: "Run A Node",
-        link: "https://docs.darwinia.network/evm/tutorial/chain/run-collator-node/",
+        link: "https://docs.darwinia.network/build/chain/run-collator-node/",
         isExternal: true,
       },
     ],

@@ -6,10 +6,20 @@ export const columns: { sections: Section[] }[] = [
       {
         title: "Documentation",
         links: [
-          { text: "Documentation", href: "https://docs.darwinia.network/", isExternal: true },
+          { text: "Darwinia", href: "https://docs.darwinia.network/", isExternal: true },
           {
             text: "Msgport",
             href: "https://docs.msgport.xyz/",
+            isExternal: true,
+          },
+          {
+            text: "Helix Bridge",
+            href: "https://docs.helixbridge.app/",
+            isExternal: true,
+          },
+          {
+            text: "XToken",
+            href: "https://xtoken.box/docs.html",
             isExternal: true,
           },
         ],
