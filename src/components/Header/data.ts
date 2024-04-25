@@ -15,33 +15,18 @@ export const navigations: {
       },
       {
         label: "Stake RING",
-        link: "https://docs.darwinia.network/evm/tutorial/staking/",
+        link: "https://docs.darwinia.network/build/getting-started/staking/",
         isExternal: true,
       },
-      {
-        label: "Run A Node",
-        link: "https://docs.darwinia.network/evm/tutorial/chain/run-collator-node/",
-        isExternal: true,
+      { 
+        label: "Apps", 
+        link: "https://apps.darwinia.network/", 
+        isExternal: true 
       },
-      {
-        label: "Cross-Chain Order Clearing",
-        link: "https://docs.darwinia.network/msgport/use-cases/order-xclearing/",
-        isExternal: true,
-      },
-      {
-        label: "Cross-Chain Token Bridge",
-        link: "https://docs.darwinia.network/msgport/use-cases/xtoken/",
-        isExternal: true,
-      },
-      {
-        label: "Cross-Chain Abstract Account",
-        link: "https://docs.darwinia.network/msgport/use-cases/xdao/",
-        isExternal: true,
-      },
-      {
-        label: "Cross-Chain DAO Governance",
-        link: "https://docs.darwinia.network/msgport/use-cases/xdao/",
-        isExternal: true,
+      { 
+        label: "Bridge", 
+        link: "https://bridge.darwinia.network", 
+        isExternal: true 
       },
     ],
   },
@@ -54,45 +39,29 @@ export const navigations: {
         link: "https://docs.darwinia.network/ring/",
         isExternal: true,
       },
-      { label: "Darwinia Ecosystem DApps", link: "https://apps.darwinia.network/", isExternal: true },
-      { label: "Darwinia News & Updates", link: "https://medium.com/darwinianetwork", isExternal: true },
+      { label: "News & Updates", link: "https://medium.com/darwinianetwork", isExternal: true },
       {
-        label: "Darwinia Roadmap",
+        label: "Roadmap",
         link: "https://darwinia.notion.site/c700133dd5a04c2494ceab489c75c907?v=8ff88199019d4236a3b9a190f5e7b9d5",
         isExternal: true,
       },
-      { label: "Darwinia Genepaper v4", link: "/Genepaper_v4.pdf", isExternal: true },
+      { label: "Genepaper v4", link: "/Genepaper_v4.pdf", isExternal: true },
       { label: "Paper Resources", link: "/papers", isExternal: false },
-      {
-        label: "Glossary",
-        link: "https://docs.darwinia.network/msgport/glossary/",
-        isExternal: true,
-      },
-      { label: "FAQ", link: "https://docs.darwinia.network/msgport/faq/", isExternal: true },
+      { label: "FAQ", link: "https://docs.darwinia.network/learn/faq/", isExternal: true },
     ],
   },
   {
-    label: "Developers",
+    label: "Build",
     sub: [
-      { label: "Documentation", link: "https://docs.darwinia.network/", isExternal: true },
+      { label: "Smart Contract", link: "https://docs.darwinia.network/build/smart-contract/interact-with-web3js/", isExternal: true },
       {
-        label: "Use Cases",
-        link: "https://docs.darwinia.network/msgport/use-cases/overview/",
-        isExternal: true,
-      },
-    ],
-  },
-  {
-    label: "Technology",
-    sub: [
-      {
-        label: "Darwinia Msgport",
-        link: "https://docs.darwinia.network/msgport/overview/",
+        label: "Msgport",
+        link: "https://docs.msgport.xyz/build/use-cases/overview/",
         isExternal: true,
       },
       {
-        label: "Darwinia EVM+",
-        link: "https://docs.darwinia.network/evm/overview/",
+        label: "Run A Node",
+        link: "https://docs.darwinia.network/evm/tutorial/chain/run-collator-node/",
         isExternal: true,
       },
     ],
@@ -120,5 +89,4 @@ export const navigations: {
       },
     ],
   },
-  { label: "Bridge", sub: [], link: "https://bridge.darwinia.network", isExternal: true },
 ];

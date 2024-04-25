@@ -4,27 +4,12 @@ export const columns: { sections: Section[] }[] = [
   {
     sections: [
       {
-        title: "Developers",
+        title: "Documentation",
         links: [
           { text: "Documentation", href: "https://docs.darwinia.network/", isExternal: true },
           {
-            text: "Use Cases",
-            href: "https://docs.darwinia.network/msgport/use-cases/overview/",
-            isExternal: true,
-          },
-        ],
-      },
-      {
-        title: "Technology",
-        links: [
-          {
-            text: "Darwinia Msgport",
-            href: "https://docs.darwinia.network/msgport/overview/",
-            isExternal: true,
-          },
-          {
-            text: "Darwinia EVM+",
-            href: "https://docs.darwinia.network/evm/overview/",
+            text: "Msgport",
+            href: "https://docs.msgport.xyz/",
             isExternal: true,
           },
         ],
