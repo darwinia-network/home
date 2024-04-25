@@ -12,6 +12,16 @@ export const columns: { sections: Section[] }[] = [
             href: "https://docs.msgport.xyz/",
             isExternal: true,
           },
+          {
+            text: "Helix Bridge",
+            href: "https://docs.helixbridge.app/",
+            isExternal: true,
+          },
+          {
+            text: "XToken",
+            href: "https://xtoken.box/docs.html",
+            isExternal: true,
+          },
         ],
       },
     ],
