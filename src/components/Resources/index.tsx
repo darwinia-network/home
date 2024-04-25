@@ -3,23 +3,23 @@ import Card from "./Card";
 const resources: { icon: string; title: string; description: string; detail: { link: string } }[] = [
   {
     icon: "/images/resources/darwinia-msgport-gitHub.png",
-    title: "Darwinia Msgport GitHub",
+    title: "GitHub",
     description:
-      "An open-source repo providing interfaces and tools for blockchain interoperability and communication.",
-    detail: { link: "https://github.com/darwinia-network/darwinia-msgport" },
+      "Powering Your DApp’s Cross-Chain Capabilities",
+    detail: { link: "https://github.com/darwinia-network/darwinia" },
   },
   {
     icon: "/images/resources/darwinia-messages-explorer.png",
-    title: "Darwinia Messages Explorer",
+    title: "Explorer",
     description:
-      "It serves as a comprehensive platform for following transactions over the Darwinia Msgport, helping users and developers to manage and analyze cross-chain data more effectively.",
-    detail: { link: "https://msgscan.darwinia.network/" },
+      "Chain Explorer provided by Subscan",
+    detail: { link: "https://darwinia.subscan.io" },
   },
   {
     icon: "/images/resources/technical-docs.png",
-    title: "Technical Docs",
-    description: "Start building your Cross-Chain DApp with Darwinia Msgport.",
-    detail: { link: "https://docs.darwinia.network/msgport/overview/" },
+    title: "Build Docs",
+    description: "Start building your Cross-Chain DApp on Darwinia.",
+    detail: { link: "https://darwinia-docs-dev.vercel.app/build/smart-contract/interact-with-web3js//" },
   },
   {
     icon: "/images/resources/developer-assistance.png",

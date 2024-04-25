@@ -180,7 +180,7 @@ contract MsglineMessager is Application, AccessController {
         );
     }
 }`,
-    link: "https://docs.darwinia.network/msgport/user-cases/order-xclearing/",
+    link: "https://docs.msgport.xyz/build/use-cases/order-xclearing/",
     description:
       "By utilizing Darwinia Msgport, DApp developers can facilitate efficient cross-chain order clearing and management of assets, streamlining the process of clearing orders between different blockchain networks.",
     language: "solidity",
