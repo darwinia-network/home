@@ -6,7 +6,7 @@ export const columns: { sections: Section[] }[] = [
       {
         title: "Documentation",
         links: [
-          { text: "Documentation", href: "https://docs.darwinia.network/", isExternal: true },
+          { text: "Darwinia", href: "https://docs.darwinia.network/", isExternal: true },
           {
             text: "Msgport",
             href: "https://docs.msgport.xyz/",
