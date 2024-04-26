@@ -13,15 +13,25 @@ export const navigations: {
         link: "/get-ring",
         isExternal: false,
       },
-      {
-        label: "Stake RING",
-        link: "https://docs.darwinia.network/build/getting-started/staking/",
-        isExternal: true,
-      },
       { 
         label: "Apps", 
         link: "https://apps.darwinia.network/", 
         isExternal: true 
+      },
+      {
+        label: "Collator Staking",
+        link: "https://collator-staking.darwinia.network/",
+        isExternal: true,
+      },
+      {
+        label: "Explorer",
+        link: "https://darwinia.subscan.io",
+        isExternal: true,
+      },
+      {
+        label: "Govenance",
+        link: "https://darwinia2.subsquare.io/",
+        isExternal: true,
       },
       { 
         label: "Bridge", 
@@ -36,7 +46,7 @@ export const navigations: {
       { label: "What Is Darwinia", link: "https://docs.darwinia.network/", isExternal: true },
       {
         label: "What Is RING",
-        link: "https://docs.darwinia.network/ring/",
+        link: "https://docs.darwinia.network/community/ringdao/#other-utilities-of-ring",
         isExternal: true,
       },
       { label: "News & Updates", link: "https://medium.com/darwinianetwork", isExternal: true },
@@ -57,6 +67,11 @@ export const navigations: {
       {
         label: "Msgport",
         link: "https://docs.msgport.xyz/build/use-cases/overview/",
+        isExternal: true,
+      },
+      {
+        label: "Runtime(dotapps.io)",
+        link: "https://cloudflare-ipfs.com/ipns/dotapps.io/?rpc=wss%3A%2F%2Frpc.darwinia.network#/chainstate",
         isExternal: true,
       },
       {
