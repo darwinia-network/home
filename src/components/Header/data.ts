@@ -46,7 +46,7 @@ export const navigations: {
       { label: "What Is Darwinia", link: "https://docs.darwinia.network/", isExternal: true },
       {
         label: "What Is RING",
-        link: "https://docs.darwinia.network/ring/",
+        link: "https://docs.darwinia.network/community/ringdao/#other-utilities-of-ring",
         isExternal: true,
       },
       { label: "News & Updates", link: "https://medium.com/darwinianetwork", isExternal: true },
