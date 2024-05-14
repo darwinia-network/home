@@ -12,7 +12,7 @@ const routesList = [
   },
   {
     path: "/",
-    component: lazy(() => import("../pages/Home")),
+    component: lazy(() => import("../pages/NewHome")),
   },
   {
     path: "/papers",
