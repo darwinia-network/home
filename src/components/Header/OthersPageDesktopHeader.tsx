@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import DesktopNavigation from "../Navigation/DesktopNavigation";
 import { HeaderSocialMedia } from "../SocialMedia";
 import { navigations } from "./data";
@@ -19,11 +19,19 @@ export default function OthersPageDesktopHeader() {
     };
   }, []);
 
+  const path = useLocation();
+
   return (
     <div
-      className={`w-full h-[6.25rem] flex justify-center items-center fixed top-0 left-0 z-40 transition-colors ${
-        isScrollOver ? "bg-app-white/60 hover:bg-app-white backdrop-blur-[0.625rem]" : "bg-transparent"
-      }`}
+      className={
+        path.pathname === "/new-home"
+          ? `w-full h-[6.25rem] flex justify-center items-center fixed top-0 left-0 z-40 transition-colors ${
+              isScrollOver ? "bg-app-white/60 hover:bg-app-white backdrop-blur-[0.625rem]" : "bg-white"
+            }`
+          : `w-full h-[6.25rem] flex justify-center items-center fixed top-0 left-0 z-40 transition-colors ${
+              isScrollOver ? "bg-app-white/60 hover:bg-app-white backdrop-blur-[0.625rem]" : "bg-transparent"
+            }`
+      }
       ref={ref}
     >
       <div className="max-w-8xl px-medium flex items-center justify-between w-full">
