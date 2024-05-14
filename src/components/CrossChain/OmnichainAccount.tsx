@@ -2,11 +2,11 @@ import TitleAndTextSection from "./TitleAndTextSection";
 
 const OmnichainAccount = () => {
   return (
-    <section className="flex-col lg:flex-row flex items-center gap-[5rem] justify-center py-[6.25rem] px-[0.625rem]">
+    <section className="flex-col lg:flex-row flex items-center gap-[5rem] justify-center py-[6.25rem] px-[0.625rem] lg:px-[3.125rem]">
       <img
         src="/images/crossChain/omnichainAccount.png"
         alt="omnichainAccount"
-        className="lg:w-[29.063] lg:h-[27.375rem]"
+        className="lg:w-[25rem] lg:h-[23.5rem] 2xl:w-[29.063] 2xl:h-[27.375rem]"
       />
       <TitleAndTextSection
         classes="lg:w-[34.375rem]"
