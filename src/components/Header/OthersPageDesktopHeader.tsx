@@ -20,7 +20,6 @@ export default function OthersPageDesktopHeader() {
   }, []);
 
   const path = useLocation();
-  console.log(path);
 
   return (
     <div
