@@ -21,7 +21,7 @@ const Hero = () => {
         <h2 className="text-[1.5rem] font-[500] leading-[1.875rem] text-black">Powering Your DApp’s</h2>
         <h1 className="text-[2.5rem] font-[600] leading-[3.169rem] text-[#FF0083]">CROSS-CHAIN CAPABILITES</h1>
       </div>
-      <a href="https://docs.darwinia.network/" target="blank" className="px-[0.625rem] py-[0.75rem] flex items-center gap-[0.313rem] lg:gap-[0.625rem] font-[400] text-[0.875rem] lg:text-[1.25rem] text-[#F6F6F7] leading-[1.4rem] lg:leading-[1.563rem] tracking-[0.063rem] lg:px-[0.938rem] bg-black z-10 rounded-[6.25rem] lg:font-[500] lg:py-[0.938rem] transition-all delay-75 hover:bg-[#FF0083] cursor-pointer">
+      <a href="https://docs.darwinia.network/" rel="noreferrer" target="_blank" className="px-[0.625rem] py-[0.75rem] flex items-center gap-[0.313rem] lg:gap-[0.625rem] font-[400] text-[0.875rem] lg:text-[1.25rem] text-[#F6F6F7] leading-[1.4rem] lg:leading-[1.563rem] tracking-[0.063rem] lg:px-[0.938rem] bg-black z-10 rounded-[6.25rem] lg:font-[500] lg:py-[0.938rem] transition-all delay-75 hover:bg-[#FF0083] cursor-pointer">
         Develop with Darwinia
         <img src="/images/right-arrow-white-background-round.svg" alt="right-arrow" />
       </a>
