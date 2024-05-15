@@ -6,6 +6,8 @@ interface Props extends TSection {}
 
 export default function Section({ title, links }: Props) {
   const { isDesktopHeight } = useApp();
+  console.log(title);
+  console.log(links);
 
   return (
     <div className="hidden lg:flex flex-col gap-10 h-fit max-w-max">

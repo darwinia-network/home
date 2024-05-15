@@ -1,4 +1,4 @@
-import { Link, useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 import DesktopNavigation from "../Navigation/DesktopNavigation";
 import { HeaderSocialMedia } from "../SocialMedia";
 import { navigations } from "./data";
@@ -19,16 +19,10 @@ export default function OthersPageDesktopHeader() {
     };
   }, []);
 
-  const path = useLocation();
-
   return (
     <div
       className={`w-full h-[6.25rem] flex justify-center items-center fixed top-0 left-0 z-40 transition-colors ${
-        isScrollOver
-          ? "bg-app-white/60 hover:bg-app-white backdrop-blur-[0.625rem]"
-          : path.pathname === "/new-home"
-          ? "bg-white"
-          : "bg-transparent"
+        isScrollOver ? "bg-app-white/60 hover:bg-app-white backdrop-blur-[0.625rem]" : "bg-white"
       }`}
       ref={ref}
     >

@@ -10,7 +10,7 @@ export default function OthersPageDesktopFooter() {
         <FooterLinks />
 
         <div className="flex flex-col justify-between">
-          <div className="flex flex-col gap-[2.5rem]" data-aos="fade-up">
+          <div className="flex flex-col gap-[2.5rem]">
             <SubscribeWrap />
             <FooterSocialMedia />
           </div>

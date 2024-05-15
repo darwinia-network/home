@@ -28,6 +28,7 @@
     "react-router-dom": "^6.3.0",
     "react-scripts": "5.0.1",
     "react-syntax-highlighter": "^15.5.0",
+    "react-tooltip": "^5.26.4",
     "react-transition-group": "^4.4.2",
     "three": "^0.142.0",
     "typescript": "^4.7.3",

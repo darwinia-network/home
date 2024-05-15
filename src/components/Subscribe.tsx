@@ -1,5 +1,6 @@
 import { useDeferredValue, useEffect, useRef, useState } from "react";
 import { isValidEmail } from "../utils";
+import { Tooltip } from "react-tooltip";
 
 export default function Subscribe() {
   const [isValid, setIsValid] = useState(true);
@@ -57,9 +58,15 @@ export default function Subscribe() {
           <button
             disabled={!email || !isValid}
             className="h-full px-[15px] text-t16b text-app-black inline-flex items-center border border-white bg-app-white rounded-r-[50px] w-fit transition-[opacity,color] hover:bg-app-main hover:text-app-white hover:border-app-main disabled:cursor-not-allowed disabled:bg-app-white disabled:text-app-black disabled:border-app-white disabled:opacity-80"
+            data-tooltip-id="ComingSoon"
+            data-tooltip-content="Coming Soon"
+            data-tooltip-place="top"
           >
             Subscribe
           </button>
+
+          <Tooltip id="ComingSoon" />
+
           <button className="absolute -z-50 opacity-0" type="submit" />
         </form>
       </div>
