@@ -1,6 +1,5 @@
 import { useDeferredValue, useEffect, useRef, useState } from "react";
 import { isValidEmail } from "../utils";
-import { Tooltip } from "react-tooltip";
 
 export default function Subscribe() {
   const [isValid, setIsValid] = useState(true);
@@ -38,9 +37,6 @@ export default function Subscribe() {
           id="mc-embedded-subscribe-form"
           name="mc-embedded-subscribe-form"
           className="w-[360px] h-10 flex items-center"
-          data-tooltip-id="ComingSoon"
-          data-tooltip-content="Coming Soon"
-          data-tooltip-place="top"
         >
           <div
             className={`h-full px-medium flex items-center gap-medium border-y border-l rounded-l-[50px] transition-colors w-full ${
@@ -64,8 +60,6 @@ export default function Subscribe() {
           >
             Subscribe
           </button>
-
-          <Tooltip id="ComingSoon" />
 
           <button className="absolute -z-50 opacity-0" type="submit" />
         </form>
