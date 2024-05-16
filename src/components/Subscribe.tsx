@@ -38,6 +38,9 @@ export default function Subscribe() {
           id="mc-embedded-subscribe-form"
           name="mc-embedded-subscribe-form"
           className="w-[360px] h-10 flex items-center"
+          data-tooltip-id="ComingSoon"
+          data-tooltip-content="Coming Soon"
+          data-tooltip-place="top"
         >
           <div
             className={`h-full px-medium flex items-center gap-medium border-y border-l rounded-l-[50px] transition-colors w-full ${
@@ -58,9 +61,6 @@ export default function Subscribe() {
           <button
             disabled={!email || !isValid}
             className="h-full px-[15px] text-t16b text-app-black inline-flex items-center border border-white bg-app-white rounded-r-[50px] w-fit transition-[opacity,color] hover:bg-app-main hover:text-app-white hover:border-app-main disabled:cursor-not-allowed disabled:bg-app-white disabled:text-app-black disabled:border-app-white disabled:opacity-80"
-            data-tooltip-id="ComingSoon"
-            data-tooltip-content="Coming Soon"
-            data-tooltip-place="top"
           >
             Subscribe
           </button>
