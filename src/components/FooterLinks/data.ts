@@ -19,7 +19,7 @@ export const columns: { sections: Section[] }[] = [
         links: [
           {
             text: "Msgport",
-            href: "#",
+            href: "https://msgport.xyz/",
             isExternal: true,
           },
           {
