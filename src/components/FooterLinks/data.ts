@@ -12,6 +12,21 @@ export const columns: { sections: Section[] }[] = [
             href: "https://docs.darwinia.network/build/chain/run-collator-node/",
             isExternal: true,
           },
+          {
+            text: "Frontier",
+            href: "https://github.com/polkadot-evm/frontier",
+            isExternal: true,
+          },
+          {
+            text: "Substrate",
+            href: "https://substrate.io/",
+            isExternal: true,
+          },
+          {
+            text: "Polkadot",
+            href: "https://polkadot.network/",
+            isExternal: true,
+          }
         ],
       },
       {
@@ -25,6 +40,21 @@ export const columns: { sections: Section[] }[] = [
           {
             text: "XAPI",
             href: "https://github.com/xapi-box",
+            isExternal: true,
+          },
+          {
+            text: "HelixBridge",
+            href: "https://helixbridge.app/",
+            isExternal: true,
+          },
+          {
+            text: "XTOKEN",
+            href: "https://xtoken.box/",
+            isExternal: true,
+          },
+          {
+            text: "XACOUNT",
+            href: "https://xaccount.box/",
             isExternal: true,
           },
         ],
@@ -63,12 +93,22 @@ export const columns: { sections: Section[] }[] = [
   {
     sections: [
       {
-        title: "Collaboration",
+        title: "Community",
         links: [
-          { text: "Substrate_builders Program" },
-          { text: "Web3 Foundation" },
-          { text: "Web3.0 Bootcamp" },
-          { text: "Polkadot" },
+          {
+            text: "Forum",
+            href: "https://github.com/orgs/darwinia-network/discussions",
+            isExternal: true
+          },
+          { 
+            text: "RingDAO",
+            href: "https://docs.darwinia.network/community/ringdao/",
+            isExternal: true,
+          },
+          { text: "DCDAO",
+            href: "https://github.com/orgs/dcdao/discussions",
+            isExternal: true,
+          },
         ],
       },
       {
