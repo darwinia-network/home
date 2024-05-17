@@ -13,7 +13,7 @@ const OmnichainAccount = () => {
         title="Omnichain Account"
         text="XAccount, standing for Cross-Chain Abstract Account, represents a pioneering approach to account abstraction
           at the cross-chain level. DApps on Darwinia will be able to interoperate with applications on other EVM chains
-          through XAccount will be able to interoperate with applications on other EVM chains through XAccount."
+          through XAccount. The DApp for XAccount is coming soon."
       />
     </section>
   );
