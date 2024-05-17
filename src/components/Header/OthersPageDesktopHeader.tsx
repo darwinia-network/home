@@ -22,7 +22,7 @@ export default function OthersPageDesktopHeader() {
   return (
     <div
       className={`w-full h-[6.25rem] flex justify-center items-center fixed top-0 left-0 z-40 transition-colors ${
-        isScrollOver ? "bg-app-white/60 hover:bg-app-white backdrop-blur-[0.625rem]" : "bg-transparent"
+        isScrollOver ? "bg-app-white/60 hover:bg-app-white backdrop-blur-[0.625rem]" : "bg-white"
       }`}
       ref={ref}
     >

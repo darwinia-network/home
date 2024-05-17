@@ -4,22 +4,80 @@ export const columns: { sections: Section[] }[] = [
   {
     sections: [
       {
-        title: "Documentation",
+        title: "Build",
         links: [
-          { text: "Darwinia", href: "https://docs.darwinia.network/", isExternal: true },
+          { text: "Smart Contract", href: "https://docs.darwinia.network/build/smart-contract/interact-with-web3js/", isExternal: true },
           {
-            text: "Msgport",
-            href: "https://docs.msgport.xyz/",
+            text: "Node Operator",
+            href: "https://docs.darwinia.network/build/chain/run-collator-node/",
             isExternal: true,
           },
           {
-            text: "Helix Bridge",
-            href: "https://docs.helixbridge.app/",
+            text: "Frontier",
+            href: "https://github.com/polkadot-evm/frontier",
+            isExternal: true,
+          },
+          {
+            text: "Substrate",
+            href: "https://substrate.io/",
+            isExternal: true,
+          },
+          {
+            text: "Polkadot",
+            href: "https://polkadot.network/",
+            isExternal: true,
+          }
+        ],
+      },
+    ],
+  },
+  {
+    sections: [
+      {
+        title: "Community",
+        links: [
+          {
+            text: "Forum",
+            href: "https://github.com/orgs/darwinia-network/discussions",
+            isExternal: true
+          },
+          { 
+            text: "RingDAO",
+            href: "https://docs.darwinia.network/community/ringdao/",
+            isExternal: true,
+          },
+          { text: "DCDAO",
+            href: "https://github.com/orgs/dcdao/discussions",
+            isExternal: true,
+          },
+        ],
+      },
+      {
+        title: "Cross-Chain Stack",
+        links: [
+          {
+            text: "Msgport",
+            href: "https://msgport.xyz/",
+            isExternal: true,
+          },
+          {
+            text: "XAPI",
+            href: "https://github.com/xapi-box",
+            isExternal: true,
+          },
+          {
+            text: "HelixBridge",
+            href: "https://helixbridge.app/",
             isExternal: true,
           },
           {
             text: "XToken",
-            href: "https://xtoken.box/docs.html",
+            href: "https://xtoken.box/",
+            isExternal: true,
+          },
+          {
+            text: "XAccount",
+            href: "https://xaccount.box/",
             isExternal: true,
           },
         ],
@@ -45,24 +103,12 @@ export const columns: { sections: Section[] }[] = [
             isExternal: true,
           },
           { text: "Collaboration", href: "https://github.com/darwinia-network/collaboration", isExternal: true },
+//          { text: "Careers", href: "#", isExternal: true },
           {
             text: "Brand",
             href: "https://darwinia.notion.site/Brand-Assets-9bd35f88f0674232954737577616f2c2",
             isExternal: true,
           },
-        ],
-      },
-    ],
-  },
-  {
-    sections: [
-      {
-        title: "Collaboration",
-        links: [
-          { text: "Substrate_builders Program" },
-          { text: "Web3 Foundation" },
-          { text: "Web3.0 Bootcamp" },
-          { text: "Polkadot" },
         ],
       },
       {

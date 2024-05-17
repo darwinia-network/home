@@ -25,7 +25,7 @@ export const navigations: {
       },
       {
         label: "Explorer",
-        link: "https://darwinia.subscan.io",
+        link: "https://explorer.darwinia.network",
         isExternal: true,
       },
       {
