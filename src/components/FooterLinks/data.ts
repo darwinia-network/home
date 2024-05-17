@@ -29,6 +29,29 @@ export const columns: { sections: Section[] }[] = [
           }
         ],
       },
+    ],
+  },
+  {
+    sections: [
+      {
+        title: "Community",
+        links: [
+          {
+            text: "Forum",
+            href: "https://github.com/orgs/darwinia-network/discussions",
+            isExternal: true
+          },
+          { 
+            text: "RingDAO",
+            href: "https://docs.darwinia.network/community/ringdao/",
+            isExternal: true,
+          },
+          { text: "DCDAO",
+            href: "https://github.com/orgs/dcdao/discussions",
+            isExternal: true,
+          },
+        ],
+      },
       {
         title: "Cross-Chain Stack",
         links: [
@@ -48,12 +71,12 @@ export const columns: { sections: Section[] }[] = [
             isExternal: true,
           },
           {
-            text: "XTOKEN",
+            text: "XToken",
             href: "https://xtoken.box/",
             isExternal: true,
           },
           {
-            text: "XACOUNT",
+            text: "XAccount",
             href: "https://xaccount.box/",
             isExternal: true,
           },
@@ -84,29 +107,6 @@ export const columns: { sections: Section[] }[] = [
           {
             text: "Brand",
             href: "https://darwinia.notion.site/Brand-Assets-9bd35f88f0674232954737577616f2c2",
-            isExternal: true,
-          },
-        ],
-      },
-    ],
-  },
-  {
-    sections: [
-      {
-        title: "Community",
-        links: [
-          {
-            text: "Forum",
-            href: "https://github.com/orgs/darwinia-network/discussions",
-            isExternal: true
-          },
-          { 
-            text: "RingDAO",
-            href: "https://docs.darwinia.network/community/ringdao/",
-            isExternal: true,
-          },
-          { text: "DCDAO",
-            href: "https://github.com/orgs/dcdao/discussions",
             isExternal: true,
           },
         ],
