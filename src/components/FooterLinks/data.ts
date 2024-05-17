@@ -4,18 +4,18 @@ export const columns: { sections: Section[] }[] = [
   {
     sections: [
       {
-        title: "Developers",
+        title: "Build",
         links: [
-          { text: "Documentation", href: "https://docs.darwinia.network/", isExternal: true },
+          { text: "Smart Contract", href: "https://docs.darwinia.network/build/smart-contract/interact-with-web3js/", isExternal: true },
           {
-            text: "Use Cases",
-            href: "#",
+            text: "Node Operator",
+            href: "https://docs.darwinia.network/build/chain/run-collator-node/",
             isExternal: true,
           },
         ],
       },
       {
-        title: "Cross-Chain Service",
+        title: "Cross-Chain Stack",
         links: [
           {
             text: "Msgport",
@@ -23,8 +23,8 @@ export const columns: { sections: Section[] }[] = [
             isExternal: true,
           },
           {
-            text: "Darwinia EVM+",
-            href: "#",
+            text: "XAPI",
+            href: "https://github.com/xapi-box",
             isExternal: true,
           },
         ],
@@ -50,7 +50,7 @@ export const columns: { sections: Section[] }[] = [
             isExternal: true,
           },
           { text: "Collaboration", href: "https://github.com/darwinia-network/collaboration", isExternal: true },
-          { text: "Careers", href: "#", isExternal: true },
+//          { text: "Careers", href: "#", isExternal: true },
           {
             text: "Brand",
             href: "https://darwinia.notion.site/Brand-Assets-9bd35f88f0674232954737577616f2c2",
