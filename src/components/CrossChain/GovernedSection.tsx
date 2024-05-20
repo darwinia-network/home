@@ -9,7 +9,7 @@ const GovernedSection = () => {
         RingDAO refers to the next governance version of Darwinia. RING serves as the governance token for RingDAO, and
         the upgrades to Darwinia Chain will be governed by RingDAO. RING also functions as the Gas Token for Darwinia
         Chain and plays a role in Collator Staking, among other aspects. RingDAO also governs other projects, including
-        Msgport and SubAPI. <a href="https://docs.darwinia.network/community/ringdao/">Learn more</a>.
+        Msgport and XAPI. <a href="https://docs.darwinia.network/community/ringdao/">Learn more</a>.
       </p>
     </section>
   );
