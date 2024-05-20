@@ -101,12 +101,12 @@ export function useGetInvolvedData(): GetInvolvedData {
           "These DAOs offer opportunities for you to find groups that you identify with, find collaborators, and grow your impact on the Darwinia community.",
         content: [
           {
-            link: { label: "DCDAO", path: "https://twitter.com/Official_DCDAO", isExternal: true },
-            text: "community self-organized workgroup that aims to contribute to the growth and development of the Darwinia community",
+            link: { label: "RingDAO", path: "https://docs.darwinia.network/community/ringdao/", isExternal: true },
+            text: "RingDAO refers to the next governance version of Darwinia.",
           },
           {
-            link: { label: "SubAPI DAO", path: "https://github.com/subapidao", isExternal: true },
-            text: "targeting to be a SubDAO of Darwinia, working on Oracle and API integration",
+            link: { label: "DCDAO", path: "https://twitter.com/Official_DCDAO", isExternal: true },
+            text: "community self-organized workgroup that aims to contribute to the growth and development of the Darwinia community",
           },
         ],
       },
