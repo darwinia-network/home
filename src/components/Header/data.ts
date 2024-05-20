@@ -91,7 +91,7 @@ export const navigations: {
         link: "https://github.com/darwinia-network/collaboration/blob/master/grant/README.md",
         isExternal: true,
       },
-      { label: "Bug Bounty Program", link: "https://immunefi.com/bounty/darwinia/", isExternal: true },
+      { label: "Bounty Program", link: "https://github.com/darwinia-network/collaboration/blob/master/bounty/README.md", isExternal: true },
       {
         label: "Help Center",
         link: "https://darwinia.notion.site/a76d5bdc7ad242bea991c023dfca208f?v=5fb127fc9a7a4d67a3bbc3ed50445180",
