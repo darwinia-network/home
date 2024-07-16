@@ -5,7 +5,7 @@
   "private": true,
   "devDependencies": {
     "@vercel/kv": "^1.0.1",
-    "@vercel/node": "^3.0.17"
+    "@vercel/node": "^3.2.3"
   },
   "dependencies": {
     "@farcaster/hub-nodejs": "^0.10.21",
