@@ -41,7 +41,7 @@ export const columns: { sections: Section[] }[] = [
             href: "https://github.com/orgs/darwinia-network/discussions",
             isExternal: true
           },
-          { 
+          {
             text: "RingDAO",
             href: "https://docs.darwinia.network/community/ringdao/",
             isExternal: true,
@@ -93,7 +93,7 @@ export const columns: { sections: Section[] }[] = [
           { text: "Wiki", href: "https://docs.darwinia.network/", isExternal: true },
           {
             text: "Roadmap",
-            href: "https://darwinia.notion.site/c700133dd5a04c2494ceab489c75c907?v=8ff88199019d4236a3b9a190f5e7b9d5",
+            href: "https://ringdao.notion.site/10daad1d671e80a48e04edd0917f4be6?v=fffaad1d671e81cd9321000c79aeec2c",
             isExternal: true,
           },
           { text: "Blog", href: "https://medium.com/darwinianetwork", isExternal: true },
@@ -106,7 +106,7 @@ export const columns: { sections: Section[] }[] = [
 //          { text: "Careers", href: "#", isExternal: true },
           {
             text: "Brand",
-            href: "https://darwinia.notion.site/Brand-Assets-9bd35f88f0674232954737577616f2c2",
+            href: "https://ringdao.notion.site/Brand-Assets-10daad1d671e809b8cade67cfa9fe5a9?pvs=74",
             isExternal: true,
           },
         ],
