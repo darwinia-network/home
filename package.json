@@ -14,7 +14,7 @@
     "@types/react-dom": "^18.0.5",
     "@types/three": "^0.141.0",
     "aos": "^2.3.4",
-    "axios": "^1.6.0",
+    "axios": "^1.7.4",
     "babel-plugin-prismjs": "^2.1.0",
     "bignumber.js": "^9.0.2",
     "dat.gui": "^0.7.9",
