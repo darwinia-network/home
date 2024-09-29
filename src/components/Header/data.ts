@@ -7,16 +7,16 @@ export const navigations: {
   {
     label: "Use Darwinia",
     sub: [
-      // { label: "Get RING", link: "https://darwinia.notion.site/Where-can-I-get-the-RING-token-c0932eaa99454be99335fdfff106e789", isExternal: true },
+
       {
         label: "Get RING",
         link: "/get-ring",
         isExternal: false,
       },
-      { 
-        label: "Apps", 
-        link: "https://apps.darwinia.network/", 
-        isExternal: true 
+      {
+        label: "Apps",
+        link: "https://apps.darwinia.network/",
+        isExternal: true
       },
       {
         label: "Collator Staking",
@@ -33,10 +33,10 @@ export const navigations: {
         link: "https://darwinia2.subsquare.io/",
         isExternal: true,
       },
-      { 
-        label: "Bridge", 
-        link: "https://bridge.darwinia.network", 
-        isExternal: true 
+      {
+        label: "Bridge",
+        link: "https://bridge.darwinia.network",
+        isExternal: true
       },
     ],
   },
@@ -52,7 +52,7 @@ export const navigations: {
       { label: "News & Updates", link: "https://medium.com/darwinianetwork", isExternal: true },
       {
         label: "Roadmap",
-        link: "https://darwinia.notion.site/c700133dd5a04c2494ceab489c75c907?v=8ff88199019d4236a3b9a190f5e7b9d5",
+        link: "https://ringdao.notion.site/10daad1d671e80a48e04edd0917f4be6?v=fffaad1d671e81cd9321000c79aeec2c",
         isExternal: true,
       },
       { label: "Genepaper v4", link: "/Genepaper_v4.pdf", isExternal: true },
@@ -94,12 +94,12 @@ export const navigations: {
       { label: "Bounty Program", link: "https://github.com/darwinia-network/collaboration/blob/master/bounty/README.md", isExternal: true },
       {
         label: "Help Center",
-        link: "https://darwinia.notion.site/a76d5bdc7ad242bea991c023dfca208f?v=5fb127fc9a7a4d67a3bbc3ed50445180",
+        link: "https://github.com/orgs/ringecosystem/discussions",
         isExternal: true,
       },
       {
         label: "Brand Assets",
-        link: "https://darwinia.notion.site/Brand-Assets-9bd35f88f0674232954737577616f2c2",
+        link: "https://ringdao.notion.site/Brand-Assets-10daad1d671e809b8cade67cfa9fe5a9",
         isExternal: true,
       },
     ],
