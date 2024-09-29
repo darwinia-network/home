@@ -24,7 +24,7 @@ jobs:
       - name: Prepare Project Config
         run: |
           mv vercel.json build/
-          mv api build/
+          #mv api build/
 
       - uses: darwinia-network/devops/actions/smart-vercel@main
         name: Deploy to Vercel
