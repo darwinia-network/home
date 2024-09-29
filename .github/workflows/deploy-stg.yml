@@ -11,31 +11,16 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - uses: actions/setup-node@v3
-        with:
-          node-version: 16
-
-      - name: Install dependencies
-        run: yarn install
-
-      - name: Build
-        run: yarn build
-
-      - name: Prepare Project Config
-        run: |
-          mv vercel.json build/
-          mv api build/
-
       - uses: darwinia-network/devops/actions/smart-vercel@main
         name: Deploy to Vercel
         with:
+          node_version: 20
           vercel_token: ${{ secrets.VERCEL_TOKEN }}
           vercel_group: itering
           preview_output: true
           project_name: home
           alias_domain: "darwinia-home-stg"
-          script_run: false
           enable_cache: true
           enable_notify_slack: true
-          slack_channel: public-darwinia-websites-apps
+          slack_channel: public-ringdao-apps
           slack_webhook: ${{ secrets.SLACK_INCOMING_WEBHOOK_URL }}
