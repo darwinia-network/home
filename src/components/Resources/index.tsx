@@ -26,7 +26,7 @@ const resources: { icon: string; title: string; description: string; detail: { l
     title: "Developer Assistance",
     description:
       "Chat with other developers in the Developer Community, share your ideas and get answers to your technical questions.",
-    detail: { link: "https://discord.com/invite/fZDWmJKWCw" },
+    detail: { link: "https://discord.gg/rMRWY52AaJ" },
   },
 ];
 
