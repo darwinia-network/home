@@ -43,7 +43,12 @@ export const columns: { sections: Section[] }[] = [
           },
           {
             text: "RingDAO",
-            href: "https://docs.darwinia.network/community/ringdao/",
+            href: "https://ringdao.com/",
+            isExternal: true,
+          },
+          {
+            text: "KtonDAO",
+            href: "https://www.tally.xyz/gov/ktondao",
             isExternal: true,
           },
           { text: "DCDAO",

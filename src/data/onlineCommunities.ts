@@ -39,8 +39,8 @@ export function useOnlineCommunitiesData(): OnlineCommunitiesData {
         h1: "Chat Rooms",
         content: [
           {
-            link: { label: "Darwinia Discord", path: "https://discord.gg/jbRk7znn4Q", isExternal: true },
-            text: "all things Darwinia",
+            link: { label: "RingDAO Discord", path: "https://discord.gg/jbRk7znn4Q", isExternal: true },
+            text: "all things RingDAO",
           },
           {
             link: { label: "Staking Discord", path: "https://discord.gg/hp9fzFNap8", isExternal: true },
@@ -51,12 +51,12 @@ export function useOnlineCommunitiesData(): OnlineCommunitiesData {
             text: "discussion and help for Darwinia collators",
           },
           {
-            link: { label: "Governance Discord", path: "https://discord.gg/XYTB92UwKW", isExternal: true },
-            text: "discussion for Darwinia on-chain proposals",
+            link: { label: "Governance RingDAO", path: "https://discord.gg/XYTB92UwKW", isExternal: true },
+            text: "discussion for RingDAO on-chain proposals",
           },
           {
             link: { label: "Technical Discord", path: "https://discord.gg/fZDWmJKWCw", isExternal: true },
-            text: "discussion and help for Darwinia developers",
+            text: "discussion and help for RingDAO developers",
           },
           {
             link: { label: "Technical Telegram", path: "https://t.me/DarwiniaDev", isExternal: true },
@@ -85,8 +85,12 @@ export function useOnlineCommunitiesData(): OnlineCommunitiesData {
         h1: "Decentralized Autonomous Organizations (DAOs)",
         content: [
           {
-            link: { label: "RingDAO", path: "https://docs.darwinia.network/community/ringdao/", isExternal: true },
-            text: "RingDAO refers to the next governance version of Darwinia.",
+            link: { label: "RingDAO", path: "https://ringdao.com/", isExternal: true },
+            text: "Governed by RING tokens, this DAO directs the Darwinia chain, Msgport protocol, and XAPI's oracle service",
+          },
+          {
+            link: { label: "KtonDAO", path: "https://www.tally.xyz/gov/ktondao", isExternal: true },
+            text: "The DAO governed by KTON tokens.",
           },
           {
             link: { label: "DCDAO", path: "https://twitter.com/Official_DCDAO", isExternal: true },

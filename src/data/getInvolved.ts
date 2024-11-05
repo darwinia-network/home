@@ -26,7 +26,7 @@ export function useGetInvolvedData(): GetInvolvedData {
         items: [
           [
             "Join the ",
-            { label: "Darwinia Technical Discord", path: "https://discord.com/invite/fZDWmJKWCw", isExternal: true },
+            { label: "RingDAO Discord", path: "https://discord.gg/rMRWY52AaJ", isExternal: true },
           ],
           [
             "Learn about and try Darwinia at ",
@@ -80,7 +80,7 @@ export function useGetInvolvedData(): GetInvolvedData {
             description: "By staking your RING you can earn rewards whilst helping to secure the Darwinia.",
             content: [
               {
-                link: { label: "Staking Discord", path: "https://discord.gg/hp9fzFNap8", isExternal: true },
+                link: { label: "Staking Discord", path: "https://discord.gg/rMRWY52AaJ", isExternal: true },
                 text: "welcome to all interested in staking on Darwinia",
               },
               {
