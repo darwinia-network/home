@@ -18,6 +18,8 @@ jobs:
           node_version: 20
           vercel_token: ${{ secrets.VERCEL_TOKEN }}
           vercel_group: itering
+          script_install: npm i
+          script_build: npm run build
           preview_output: true
           project_name: home
           prod_mode: true
