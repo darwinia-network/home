@@ -47,6 +47,9 @@ const Ring = () => {
             <DecentralizedExchanges ref={DecentralizedExchangesRef}/>
             <CentralizedExchanges ref={CentralizedExchangesRef}/>
         </section>
+        <section className='flex flex-col lg:flex-row gap-[20px] lg:gap-[50px] justify-center mb-[100px] flex-wrap'>
+            
+        </section>
         <UseYourRing />
     </OthersPageWrap>
   )
