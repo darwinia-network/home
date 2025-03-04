@@ -38,7 +38,9 @@ const Ring = () => {
         "height": "640px",
         "chainId": 1, // 1 (Mainnet), 100 (Gnosis), 11155111 (Sepolia)
         "tokenLists": [ // All default enabled token lists. Also see https://tokenlists.org
-            "https://files.cow.fi/tokens/CowSwap.json"
+            "https://raw.githubusercontent.com/helixbox/silicon/refs/heads/main/definition/tokens/cow-widget.json",
+            "https://files.cow.fi/tokens/CowSwap.json",
+            "https://files.cow.fi/tokens/CoinGecko.json"
         ],
         "tradeType": TradeType.SWAP, // TradeType.SWAP, TradeType.LIMIT or TradeType.ADVANCED
         "sell": { // Sell token. Optionally add amount for sell orders
