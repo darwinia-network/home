@@ -45,7 +45,7 @@ const Ring = () => {
         "tradeType": TradeType.SWAP, // TradeType.SWAP, TradeType.LIMIT or TradeType.ADVANCED
         "sell": { // Sell token. Optionally add amount for sell orders
             "asset": "USDC",
-            "amount": "100"
+            "amount": "1000"
         },
         "buy": { // Buy token. Optionally add amount for buy orders
             "asset": "RING",
@@ -58,7 +58,7 @@ const Ring = () => {
             TradeType.YIELD
         ],
         "theme": "dark", // light/dark or provide your own color palette
-        "standaloneMode": false,
+        "standaloneMode": true,
         "disableToastMessages": false,
         "disableProgressBar": false,
         "hideBridgeInfo": false,
