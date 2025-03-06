@@ -155,3 +155,7 @@
   transform: translateX(100%);
   transition: transform 300ms;
 }
+
+.box-cow iframe {
+  max-height: 640px !important;
+}

@@ -7,6 +7,8 @@ import CentralizedExchanges from '../../components/ring/CentralizedExchanges';
 import UseYourRing from '../../components/ring/UseYourRing';
 import RingHero from '../../components/ring/RingHero';
 
+import { CowSwapWidget, CowSwapWidgetParams, TradeType } from '@cowprotocol/widget-react'
+
 
 const Ring = () => {
     const cardsdata = useRingData();
@@ -28,6 +30,44 @@ const Ring = () => {
         }
     };
 
+
+    //  Fill this form https://cowprotocol.typeform.com/to/rONXaxHV once you pick your "appCode"
+    const cowWidgetarams: CowSwapWidgetParams = {
+        "appCode": "darwinia-cow-app", // Name of your app (max 50 characters)
+        "width": "100%", // Width in pixels (or 100% to use all available space)
+        "height": "640px",
+        "chainId": 1, // 1 (Mainnet), 100 (Gnosis), 11155111 (Sepolia)
+        "tokenLists": [ // All default enabled token lists. Also see https://tokenlists.org
+            "https://raw.githubusercontent.com/helixbox/silicon/refs/heads/main/definition/tokens/cow-widget.json",
+            "https://files.cow.fi/tokens/CowSwap.json",
+            "https://files.cow.fi/tokens/CoinGecko.json"
+        ],
+        "tradeType": TradeType.SWAP, // TradeType.SWAP, TradeType.LIMIT or TradeType.ADVANCED
+        "sell": { // Sell token. Optionally add amount for sell orders
+            "asset": "USDC",
+            "amount": "1000"
+        },
+        "buy": { // Buy token. Optionally add amount for buy orders
+            "asset": "RING",
+            "amount": "0"
+        },
+        "enabledTradeTypes": [ // TradeType.SWAP, TradeType.LIMIT and/or TradeType.ADVANCED
+            TradeType.SWAP,
+            TradeType.LIMIT,
+            TradeType.ADVANCED,
+            TradeType.YIELD
+        ],
+        "theme": "dark", // light/dark or provide your own color palette
+        "standaloneMode": true,
+        "disableToastMessages": false,
+        "disableProgressBar": false,
+        "hideBridgeInfo": false,
+        "hideOrdersTable": false,
+        "images": {},
+        "sounds": {},
+        "customTokens": []
+    }
+
   return (
     <OthersPageWrap>
         <RingHero />
@@ -46,6 +86,9 @@ const Ring = () => {
         <section className='flex flex-col lg:flex-row gap-[20px] lg:gap-[50px] justify-center mb-[100px] flex-wrap'>
             <DecentralizedExchanges ref={DecentralizedExchangesRef}/>
             <CentralizedExchanges ref={CentralizedExchangesRef}/>
+        </section>
+        <section className='flex flex-col lg:flex-row gap-[20px] lg:gap-[50px] justify-center mb-[100px] flex-wrap box-cow'>
+            <CowSwapWidget params={cowWidgetarams} />
         </section>
         <UseYourRing />
     </OthersPageWrap>
