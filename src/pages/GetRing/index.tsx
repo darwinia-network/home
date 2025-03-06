@@ -33,7 +33,7 @@ const Ring = () => {
 
     //  Fill this form https://cowprotocol.typeform.com/to/rONXaxHV once you pick your "appCode"
     const cowWidgetarams: CowSwapWidgetParams = {
-        "appCode": "My Cool App", // Name of your app (max 50 characters)
+        "appCode": "darwinia-cow-app", // Name of your app (max 50 characters)
         "width": "100%", // Width in pixels (or 100% to use all available space)
         "height": "640px",
         "chainId": 1, // 1 (Mainnet), 100 (Gnosis), 11155111 (Sepolia)
@@ -87,7 +87,7 @@ const Ring = () => {
             <DecentralizedExchanges ref={DecentralizedExchangesRef}/>
             <CentralizedExchanges ref={CentralizedExchangesRef}/>
         </section>
-        <section className='flex flex-col lg:flex-row gap-[20px] lg:gap-[50px] justify-center mb-[100px] flex-wrap'>
+        <section className='flex flex-col lg:flex-row gap-[20px] lg:gap-[50px] justify-center mb-[100px] flex-wrap box-cow'>
             <CowSwapWidget params={cowWidgetarams} />
         </section>
         <UseYourRing />
