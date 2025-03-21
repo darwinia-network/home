@@ -1,6 +1,6 @@
-export const title: string[] = ["Start building with", "Darwinia Msgport"];
+export const title: string[] = ["Start building with", "RingDAO Msgport"];
 
-export const link: string = "https://github.com/msgport/msgport-demo"; // External link
+export const link: string = "https://github.com/ringecosystem/msgport-examples"; // External link
 
 export const menu: { title: string; description: string; code: string; language: "solidity" | "javascript" }[] = [
   {

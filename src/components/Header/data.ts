@@ -76,7 +76,7 @@ export const navigations: {
       { label: "Smart Contract", link: "https://docs.darwinia.network/build/smart-contract/interact-with-web3js/", isExternal: true },
       {
         label: "Msgport",
-        link: "https://docs.msgport.xyz/build/use-cases/overview/",
+        link: "https://msgport.ringdao.com/",
         isExternal: true,
       },
       {
