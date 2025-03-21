@@ -47,7 +47,7 @@ export function MobileHowItWorks() {
             <p>This complex yet orderly system demands significant integration and infrastructure development</p>
             <p>However, DApp developers no longer need to worry about these underlying protocols</p>
             <p>
-              With Darwinia Msgport service layer, direct usage is simplified, while the Darwinia open-source community
+              With RingDAO Msgport service layer, direct usage is simplified, while the Darwinia open-source community
               handle the intricate integration and construction efforts
             </p>
           </div>
@@ -109,7 +109,7 @@ export function DesktopHowItWorks() {
                 <p>This complex yet orderly system demands significant integration and infrastructure development</p>
                 <p>However, DApp developers no longer need to worry about these underlying protocols</p>
                 <p>
-                  With Darwinia Msgport service layer, direct usage is simplified, while the Darwinia open-source
+                  With RingDAO Msgport service layer, direct usage is simplified, while the Darwinia open-source
                   community handle the intricate integration and construction efforts
                 </p>
               </div>

@@ -20,7 +20,7 @@ const Comprehensive = () => {
           title=""
           classes="lg:w-[21.5rem] 2xl:w-[34.375rem]"
         />
-        <a href="https://msgport.xyz" rel="noreferrer" target="_blank" className="flex w-fit items-center gap-[0.625rem] text-[0.875rem] text-[#F6F6F7] leading-[1.375rem] tracking-[0.063rem] py-[0.625rem] px-[0.938rem] bg-black z-10 rounded-[6.25rem] mt-[1.25rem] font-[700] transition-all delay-75 hover:bg-[#FF0083]">
+        <a href="https://msgport.ringdao.com/" rel="noreferrer" target="_blank" className="flex w-fit items-center gap-[0.625rem] text-[0.875rem] text-[#F6F6F7] leading-[1.375rem] tracking-[0.063rem] py-[0.625rem] px-[0.938rem] bg-black z-10 rounded-[6.25rem] mt-[1.25rem] font-[700] transition-all delay-75 hover:bg-[#FF0083]">
           Learn more
           <img src="/images/right-arrow-white-background-round.svg" alt="right-arrow" />
         </a>

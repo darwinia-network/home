@@ -44,7 +44,7 @@ contract ExampleXAccount {
         IMessagePort(port).send{value: msg.value}(toChainId, module, message, params);
     }
 }`,
-    link: "https://docs.msgport.xyz/build/use-cases/xaccount/",
+    link: "https://msgport.ringdao.com/docs/learn/use-cases/xaccount.html",
     description:
       "XAccount is a component within Darwinia Msgport, xAccount simplifies the user experience in executing cross-chain operations.",
     language: "solidity",
@@ -180,7 +180,7 @@ contract MsglineMessager is Application, AccessController {
         );
     }
 }`,
-    link: "https://docs.msgport.xyz/build/use-cases/order-xclearing/",
+    link: "https://msgport.ringdao.com/docs/learn/use-cases/order-xclearing.html",
     description:
       "By utilizing Darwinia Msgport, DApp developers can facilitate efficient cross-chain order clearing and management of assets, streamlining the process of clearing orders between different blockchain networks.",
     language: "solidity",

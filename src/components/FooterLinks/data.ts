@@ -62,7 +62,7 @@ export const columns: { sections: Section[] }[] = [
         links: [
           {
             text: "Msgport",
-            href: "https://msgport.xyz/",
+            href: "https://msgport.ringdao.com/",
             isExternal: true,
           },
           {
