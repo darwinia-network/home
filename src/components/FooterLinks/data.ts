@@ -71,8 +71,8 @@ export const columns: { sections: Section[] }[] = [
             isExternal: true,
           },
           {
-            text: "HelixBridge",
-            href: "https://helixbridge.app/",
+            text: "HelixBox Bridge",
+            href: "https://bridge.helix.box/",
             isExternal: true,
           },
           {

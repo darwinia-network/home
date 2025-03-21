@@ -19,6 +19,16 @@ export const navigations: {
         isExternal: true
       },
       {
+        label: "DSafe",
+        link: "https://dsafe.darwinia.network/",
+        isExternal: true
+      },
+      {
+        label: "Names",
+        link: "https://names.darwinia.network/",
+        isExternal: true
+      },
+      {
         label: "Collator Staking",
         link: "https://collator-staking.darwinia.network/",
         isExternal: true,
@@ -30,7 +40,7 @@ export const navigations: {
       },
       {
         label: "Govenance",
-        link: "https://darwinia2.subsquare.io/",
+        link: "https://gov.ringdao.com/",
         isExternal: true,
       },
       {
@@ -77,6 +87,11 @@ export const navigations: {
       {
         label: "Run A Node",
         link: "https://docs.darwinia.network/build/chain/run-collator-node/",
+        isExternal: true,
+      },
+      {
+        label: "Network Status",
+        link: "https://status.darwinia.network/",
         isExternal: true,
       },
     ],
