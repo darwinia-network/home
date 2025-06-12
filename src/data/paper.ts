@@ -21,7 +21,7 @@ const data: PaperData[] = [
       "The Darwinia Network is an EVM-compatible parachain on Polkadot focused on DApp interoperability in a multi-chain future. It prioritizes versatility, generalizability, cost-efficiency, and programmability alongside security. Darwinia utilizes infrastructure like RingDAO Msgport, Paralink, and ORMP to connect Polkadot and EVM ecosystems and supports development in DAO governance, AI, and DeFi.",
       "The network is governed by RingDAO, using RING as its native governance and gas fee token. RING's initial supply was 2 billion, but it became deflationary after a RingDAO proposal, with the total supply now just under 2.1 billion. Darwinia employs a token burning mechanism similar to Ethereum's EIP-1559, where base transaction fees (paid in RING) are burned. Tips can be added to transactions to incentivize collators. Fees from cross-chain services like Msgport might also be converted to RING and potentially burned by governance."
     ],
-    lastUpdate: "Jane 12, 2025",
+    lastUpdate: "June 12, 2025",
   },
   {
     id: "genepaper-v4",
