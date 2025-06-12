@@ -11,6 +11,19 @@ interface PaperData {
 
 const data: PaperData[] = [
   {
+    id: "genepaper-v5",
+    image: "/images/papers/genepaper-v4.png",
+    authors: ["Alex Chien", "Denny Wang"],
+    tags: ["Cross-Chain Messaging", "RingDAO Msgport", "Darwinia EVM+"],
+    title: "Darwinia Genepaper V5",
+    fullPath: "/Genepaper_v5.pdf",
+    summaries: [
+      "The Darwinia Network is an EVM-compatible parachain on Polkadot focused on DApp interoperability in a multi-chain future. It prioritizes versatility, generalizability, cost-efficiency, and programmability alongside security. Darwinia utilizes infrastructure like RingDAO Msgport, Paralink, and ORMP to connect Polkadot and EVM ecosystems and supports development in DAO governance, AI, and DeFi.",
+      "The network is governed by RingDAO, using RING as its native governance and gas fee token. RING's initial supply was 2 billion, but it became deflationary after a RingDAO proposal, with the total supply now just under 2.1 billion. Darwinia employs a token burning mechanism similar to Ethereum's EIP-1559, where base transaction fees (paid in RING) are burned. Tips can be added to transactions to incentivize collators. Fees from cross-chain services like Msgport might also be converted to RING and potentially burned by governance."
+    ],
+    lastUpdate: "Jane 12, 2025",
+  },
+  {
     id: "genepaper-v4",
     image: "/images/papers/genepaper-v4.png",
     authors: ["Alex Chien", "Denny Wang"],
