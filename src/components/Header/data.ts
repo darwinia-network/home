@@ -65,7 +65,7 @@ export const navigations: {
         link: "https://ringdao.notion.site/10daad1d671e80a48e04edd0917f4be6?v=fffaad1d671e81cd9321000c79aeec2c",
         isExternal: true,
       },
-      { label: "Genepaper v4", link: "/Genepaper_v4.pdf", isExternal: true },
+      { label: "Genepaper v5", link: "/Genepaper_v5.pdf", isExternal: true },
       { label: "Paper Resources", link: "/papers", isExternal: false },
       { label: "FAQ", link: "https://docs.darwinia.network/learn/faq/", isExternal: true },
     ],
