@@ -5,48 +5,31 @@
   "dependencies": {
     "@cowprotocol/widget-react": "^0.13.0",
     "@floating-ui/react": "^0.26.8",
-    "@testing-library/jest-dom": "^5.16.4",
-    "@testing-library/react": "^13.3.0",
-    "@testing-library/user-event": "^13.5.0",
     "@types/dat.gui": "^0.7.7",
-    "@types/jest": "^27.5.2",
-    "@types/node": "^16.11.39",
     "@types/react": "^18.0.12",
     "@types/react-dom": "^18.0.5",
     "@types/three": "^0.141.0",
     "aos": "^2.3.4",
-    "axios": "^1.15.1",
-    "babel-plugin-prismjs": "^2.1.0",
+    "axios": "^1.21.1",
     "bignumber.js": "^9.0.2",
     "dat.gui": "^0.7.9",
-    "ethers": "6.13",
-    "i18next": "^21.8.9",
+    "ethers": "6.17",
     "lodash.throttle": "^4.1.1",
     "lottie-web": "^5.9.4",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
-    "react-i18next": "^11.17.1",
-    "react-router-dom": "^6.3.0",
-    "react-scripts": "5.0.1",
-    "react-syntax-highlighter": "^15.5.0",
+    "react-router-dom": "^7.18.7",
+    "react-syntax-highlighter": "^16.1.2",
     "react-transition-group": "^4.4.2",
-    "three": "^0.142.0",
-    "typescript": "^4.7.3",
-    "web-vitals": "^2.1.4"
+    "three": "^0.142.0"
   },
   "scripts": {
-    "start": "set PORT=3003 && react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
+    "start": "vite",
+    "build": "npm run typecheck && vite build",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
     "prepare": "husky install",
-    "lint": "eslint --ext .js,.jsx,.ts,.tsx,.json ./src --fix"
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
+    "lint": "eslint --ext .js,.jsx,.ts,.tsx,.json ./src"
   },
   "browserslist": {
     "production": [
@@ -61,12 +44,17 @@
     ]
   },
   "devDependencies": {
+    "@testing-library/dom": "^10.4.1",
+    "@testing-library/react": "^16.3.2",
     "@types/aos": "^3.0.4",
     "@types/lodash.throttle": "^4.1.7",
+    "@types/node": "^20.19.0",
     "@types/react-syntax-highlighter": "^15.5.2",
     "@types/react-transition-group": "^4.4.5",
-    "@typescript-eslint/eslint-plugin": "^5.27.1",
-    "@typescript-eslint/parser": "^5.27.1",
+    "@typescript-eslint/eslint-plugin": "^8.0.0",
+    "@typescript-eslint/parser": "^8.0.0",
+    "@vitejs/plugin-legacy": "^8.2.4",
+    "@vitejs/plugin-react": "^6.3.0",
     "autoprefixer": "^10.4.17",
     "eslint": "^8.17.0",
     "eslint-config-prettier": "^8.5.0",
@@ -76,11 +64,16 @@
     "eslint-plugin-promise": "^6.0.0",
     "eslint-plugin-react": "^7.30.0",
     "husky": "^8.0.1",
-    "lint-staged": "^13.0.0",
-    "postcss": "^8.4.35",
+    "jsdom": "^29.1.1",
+    "lint-staged": "^16.0.0",
+    "postcss": "^8.5.33",
     "prettier": "2.6.2",
-    "sass": "^1.52.3",
-    "tailwindcss": "^3.4.1"
+    "sass": "^1.108.2",
+    "tailwindcss": "^3.4.1",
+    "terser": "^5.0.0",
+    "typescript": "^5.9.3",
+    "vite": "^8.3.8",
+    "vitest": "^4.1.12"
   },
   "husky": {
     "hooks": {
