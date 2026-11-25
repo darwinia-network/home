@@ -20,7 +20,10 @@ jobs:
           vercel_token: ${{ secrets.VERCEL_TOKEN }}
           vercel_group: itering
           script_install: npm i
-          script_build: npm run build
+          # The uploaded static bundle supplies its own supported Vercel Node version.
+          script_build: |
+            npm run build
+            printf '%s\n' '{"private":true,"engines":{"node":"24.x"}}' > build/package.json
           preview_output: true
           project_name: home
           prod_mode: true
