@@ -1,4 +1,4 @@
-/// <reference types="react-scripts" />
+/// <reference types="vite/client" />
 
 export declare global {
   // eslint-disable-next-line no-unused-vars

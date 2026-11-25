@@ -1,6 +1,5 @@
 // BgBlackContainer.tsx
 import React, { ReactNode, forwardRef } from 'react';
-import PropTypes from 'prop-types';
 
 type BgBlackContainerProps = {
   children: ReactNode;
@@ -15,9 +14,5 @@ const BgBlackContainer = forwardRef<HTMLDivElement, BgBlackContainerProps>(({ ch
 });
 
 BgBlackContainer.displayName = 'BgBlackContainer';
-
-BgBlackContainer.propTypes = {
-  children: PropTypes.node.isRequired
-};
 
 export default BgBlackContainer;
